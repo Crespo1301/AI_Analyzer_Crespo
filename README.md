@@ -7,11 +7,19 @@ This is a centralized hub for comparing AI model performances across different d
 ## 🏗️ File Structure
 
 ```
-/outputs/
-├── index.html                          # Main menu/home page
-├── model_comparison_modern.html        # Sports analysis (Ravens vs Dolphins)
-├── [future_analysis].html              # Additional analyses you create
-└── README.md                           # This file
+/AI_Analyzer_Crespo/
+├─/Sports_Pages
+    ├─packers_panthers_interactive.html
+    ├─texans_broncos_interactive.html
+    ├─vikings_lions_interactive.html
+├─/Docs
+    ├─OVERVIEW.md
+    ├─PACKERS_PANTHERS_SUMMARY.md
+    ├─VIKINGS_LIONS_SUMMARY.md
+├─/Trash 
+├── analysis_template.html              # 📝 Template for new analyses
+├── README.md                           # 📚 User guide
+└── index.html                          # 🏠 HOME PAGE - Start here
 ```
 
 ## ➕ How to Add a New Analysis
