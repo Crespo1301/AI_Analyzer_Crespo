@@ -5,7 +5,6 @@
 A complete, expandable analysis hub with:
 
 1. **Home/Menu Page** (`index.html`) - Central dashboard for all analyses
-2. **Sports Analysis** (`model_comparison_modern.html`) - Working example with interactive scoring
 3. **Blank Template** (`analysis_template.html`) - Copy this to create new analyses
 4. **Documentation** (`README.md`) - Complete guide for adding new analyses
 
@@ -14,12 +13,19 @@ A complete, expandable analysis hub with:
 ## 📁 File Structure
 
 ```
-/outputs/
-├── index.html                          # 🏠 HOME PAGE - Start here
-├── model_comparison_modern.html        # 📊 Ravens vs Dolphins Analysis (example)
+/AI_Analyzer_Crespo/
+├─/Sports_Pages
+    ├─packers_panthers_interactive.html
+    ├─texans_broncos_interactive.html
+    ├─vikings_lions_interactive.html
+├─/Docs
+    ├─OVERVIEW.md
+    ├─PACKERS_PANTHERS_SUMMARY.md
+    ├─VIKINGS_LIONS_SUMMARY.md
+├─/Trash 
 ├── analysis_template.html              # 📝 Template for new analyses
 ├── README.md                           # 📚 User guide
-└── OVERVIEW.md                         # 📋 This file
+└── index.html                          # 🏠 HOME PAGE - Start here
 ```
 
 ---
