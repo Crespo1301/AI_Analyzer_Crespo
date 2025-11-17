@@ -1,0 +1,807 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vikings vs Lions Week 9 Analysis - With Results</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --text-primary: #1d1d1f;
+            --text-secondary: #6e6e73;
+            --accent-blue: #0071e3;
+            --accent-green: #30d158;
+            --accent-orange: #ff9500;
+            --accent-red: #ff3b30;
+            --accent-purple: #5856d6;
+            --background: #ffffff;
+            --surface: #f5f5f7;
+            --border: #d2d2d7;
+            --success: #34c759;
+            --error: #ff3b30;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            color: var(--text-primary);
+            background: var(--background);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: saturate(180%) blur(20px);
+            border-bottom: 1px solid var(--border);
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        nav.scrolled {
+            background: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .nav-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 40px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .nav-logo {
+            font-size: 21px;
+            font-weight: 600;
+            color: var(--text-primary);
+            letter-spacing: -0.5px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 40px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-primary);
+            text-decoration: none;
+            font-size: 14px;
+            transition: opacity 0.3s;
+        }
+
+        .nav-links a:hover {
+            opacity: 0.7;
+        }
+
+        /* Hero Section */
+        .hero {
+            margin-top: 48px;
+            padding: 100px 40px;
+            text-align: center;
+            background: linear-gradient(180deg, #f5f5f7 0%, #ffffff 100%);
+        }
+
+        .hero h1 {
+            font-size: 64px;
+            font-weight: 700;
+            letter-spacing: -2px;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #5856d6 0%, #4b0082 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero p {
+            font-size: 28px;
+            color: var(--text-secondary);
+            font-weight: 400;
+            letter-spacing: -0.5px;
+        }
+
+        /* Result Banner */
+        .result-banner {
+            background: linear-gradient(135deg, #5856d6 0%, #4b0082 100%);
+            color: white;
+            padding: 60px 40px;
+            text-align: center;
+        }
+
+        .result-banner h2 {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 30px;
+        }
+
+        .score-display {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 40px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+
+        .team-score {
+            text-align: center;
+        }
+
+        .team-name {
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 10px;
+            opacity: 0.9;
+        }
+
+        .score-number {
+            font-size: 72px;
+            font-weight: 700;
+            letter-spacing: -2px;
+        }
+
+        .winner-badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.2);
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 14px;
+            margin-top: 10px;
+            font-weight: 600;
+        }
+
+        .vs-divider {
+            font-size: 36px;
+            font-weight: 300;
+            opacity: 0.6;
+        }
+
+        .betting-results {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .betting-result {
+            background: rgba(255,255,255,0.1);
+            padding: 20px;
+            border-radius: 12px;
+        }
+
+        .betting-result-label {
+            font-size: 13px;
+            opacity: 0.8;
+            margin-bottom: 8px;
+        }
+
+        .betting-result-value {
+            font-size: 24px;
+            font-weight: 700;
+        }
+
+        /* Section */
+        .section {
+            padding: 80px 40px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title {
+            font-size: 48px;
+            font-weight: 700;
+            letter-spacing: -1.5px;
+            margin-bottom: 15px;
+        }
+
+        .section-subtitle {
+            font-size: 21px;
+            color: var(--text-secondary);
+            font-weight: 400;
+        }
+
+        /* Model Cards */
+        .model-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+        }
+
+        .model-card {
+            background: var(--background);
+            border-radius: 12px;
+            padding: 40px;
+            border: 2px solid var(--border);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .model-card.winner {
+            border-color: var(--success);
+            box-shadow: 0 8px 24px rgba(52, 199, 89, 0.15);
+        }
+
+        .model-card.loser {
+            border-color: var(--error);
+            opacity: 0.8;
+        }
+
+        .rank-badge {
+            position: absolute;
+            top: -15px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--background);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            border: 2px solid var(--border);
+        }
+
+        .model-card.winner .rank-badge {
+            border-color: var(--success);
+        }
+
+        .card-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .model-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: 700;
+            color: white;
+        }
+
+        .model-1 .model-icon { background: linear-gradient(135deg, #30d158 0%, #30c088 100%); }
+        .model-2 .model-icon { background: linear-gradient(135deg, #0071e3 0%, #0077ed 100%); }
+        .model-3 .model-icon { background: linear-gradient(135deg, #ff3b30 0%, #ff453a 100%); }
+
+        .card-title {
+            font-size: 24px;
+            font-weight: 600;
+            letter-spacing: -0.5px;
+        }
+
+        .prediction-comparison {
+            background: var(--surface);
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        .comparison-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .comparison-row:last-child {
+            border-bottom: none;
+        }
+
+        .comparison-label {
+            font-size: 14px;
+            color: var(--text-secondary);
+            font-weight: 500;
+        }
+
+        .comparison-value {
+            font-size: 17px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .result-icon {
+            font-size: 20px;
+        }
+
+        .metric {
+            margin-bottom: 24px;
+        }
+
+        .metric-label {
+            font-size: 13px;
+            color: var(--text-secondary);
+            margin-bottom: 8px;
+            display: flex;
+            justify-content: space-between;
+            font-weight: 500;
+        }
+
+        .metric-bar {
+            height: 8px;
+            background: var(--surface);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .metric-fill {
+            height: 100%;
+            border-radius: 10px;
+            transition: width 1s ease;
+        }
+
+        .model-1 .metric-fill { background: linear-gradient(90deg, #30d158 0%, #30c088 100%); }
+        .model-2 .metric-fill { background: linear-gradient(90deg, #0071e3 0%, #0077ed 100%); }
+        .model-3 .metric-fill { background: linear-gradient(90deg, #ff3b30 0%, #ff453a 100%); }
+
+        .final-score {
+            font-size: 19px;
+            font-weight: 600;
+            padding: 15px;
+            background: var(--surface);
+            border-radius: 10px;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        /* Insights */
+        .insights-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .insight-card {
+            background: var(--surface);
+            border-radius: 12px;
+            padding: 30px;
+        }
+
+        .insight-title {
+            font-size: 21px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .insight-list {
+            list-style: none;
+        }
+
+        .insight-list li {
+            padding: 12px 0;
+            border-bottom: 1px solid var(--border);
+            font-size: 15px;
+        }
+
+        .insight-list li:last-child {
+            border-bottom: none;
+        }
+
+        /* Comparison Table */
+        .comparison-table {
+            background: var(--background);
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid var(--border);
+            margin: 40px 0;
+        }
+
+        .comparison-table table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .comparison-table th {
+            background: var(--surface);
+            padding: 16px;
+            text-align: left;
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--text-secondary);
+        }
+
+        .comparison-table td {
+            padding: 16px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .comparison-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .checkmark {
+            color: var(--success);
+            font-size: 20px;
+        }
+
+        .crossmark {
+            color: var(--error);
+            font-size: 20px;
+        }
+
+        footer {
+            background: var(--surface);
+            padding: 40px;
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 13px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-content { padding: 0 20px; }
+            .nav-links { display: none; }
+            .hero { padding: 60px 20px; }
+            .hero h1 { font-size: 36px; }
+            .hero p { font-size: 19px; }
+            .section { padding: 60px 20px; }
+            .model-grid { grid-template-columns: 1fr; }
+            .score-display { flex-direction: column; gap: 20px; }
+        }
+    </style>
+</head>
+<body>
+    <nav id="navbar">
+        <div class="nav-content">
+            <div style="display: flex; align-items: center; gap: 20px;">
+                <a href="index.html" style="color: var(--text-primary); text-decoration: none; font-size: 20px; transition: opacity 0.3s;" title="Back to Home">←</a>
+                <div class="nav-logo">Vikings vs Lions Analysis</div>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#results">Results</a></li>
+                <li><a href="#models">Models</a></li>
+                <li><a href="#lessons">Lessons</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <h1>Week 9 Analysis</h1>
+        <p>Vikings @ Lions • November 2, 2025</p>
+    </section>
+
+    <section class="result-banner" id="results">
+        <h2>🏈 Actual Game Result</h2>
+        <div class="score-display">
+            <div class="team-score">
+                <div class="team-name">Minnesota Vikings</div>
+                <div class="score-number">27</div>
+                <div class="winner-badge">✓ WINNER</div>
+            </div>
+            <div class="vs-divider">@</div>
+            <div class="team-score">
+                <div class="team-name">Detroit Lions</div>
+                <div class="score-number">24</div>
+                <div class="winner-badge">8.5-point favorites</div>
+            </div>
+        </div>
+        <div class="betting-results">
+            <div class="betting-result">
+                <div class="betting-result-label">Spread Result</div>
+                <div class="betting-result-value">Vikings +8.5 ✓</div>
+            </div>
+            <div class="betting-result">
+                <div class="betting-result-label">Total (47.5)</div>
+                <div class="betting-result-value">OVER (51)</div>
+            </div>
+            <div class="betting-result">
+                <div class="betting-result-label">Outcome</div>
+                <div class="betting-result-value">UPSET</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="models">
+        <div class="section-header">
+            <h2 class="section-title">Model Performance</h2>
+            <p class="section-subtitle">How each model's predictions compared to actual results</p>
+        </div>
+
+        <div class="model-grid">
+            <!-- Model 1 -->
+            <div class="model-card loser model-1">
+                <div class="rank-badge">3️⃣</div>
+                <div class="card-header">
+                    <div class="model-icon">1</div>
+                    <div>
+                        <div class="card-title">Model 1</div>
+                        <div style="font-size: 13px; color: var(--text-secondary);">Score: 33.5/100</div>
+                    </div>
+                </div>
+
+                <div class="prediction-comparison">
+                    <div class="comparison-row">
+                        <span class="comparison-label">Predicted Score</span>
+                        <span class="comparison-value">Lions 31-17 <span class="result-icon crossmark">✗</span></span>
+                    </div>
+                    <div class="comparison-row">
+                        <span class="comparison-label">Win Probability</span>
+                        <span class="comparison-value">Lions 78% <span class="result-icon crossmark">✗</span></span>
+                    </div>
+                    <div class="comparison-row">
+                        <span class="comparison-label">Smartest Bet</span>
+                        <span class="comparison-value">UNDER 47.5 <span class="result-icon crossmark">✗</span></span>
+                    </div>
+                    <div class="comparison-row">
+                        <span class="comparison-label">Cover Prediction</span>
+                        <span class="comparison-value">Lions 54% <span class="result-icon crossmark">✗</span></span>
+                    </div>
+                </div>
+
+                <h4 style="font-size: 17px; margin: 20px 0 15px;">Category Scores</h4>
+                
+                <div class="metric">
+                    <div class="metric-label"><span>Analytical Accuracy</span><span>2/10</span></div>
+                    <div class="metric-bar"><div class="metric-fill" style="width: 20%"></div></div>
+                </div>
+                
+                <div class="metric">
+                    <div class="metric-label"><span>Betting Strategy</span><span>1/10</span></div>
+                    <div class="metric-bar"><div class="metric-fill" style="width: 10%"></div></div>
+                </div>
+                
+                <div class="metric">
+                    <div class="metric-label"><span>Prediction Coherence</span><span>0/10</span></div>
+                    <div class="metric-bar"><div class="metric-fill" style="width: 0%"></div></div>
+                </div>
+
+                <div class="final-score">Recommended UNDER with HIGH confidence - Lost</div>
+            </div>
+
+            <!-- Model 2 -->
+            <div class="model-card loser model-2">
+                <div class="rank-badge">2️⃣</div>
+                <div class="card-header">
+                    <div class="model-icon">2</div>
+                    <div>
+                        <div class="card-title">Model 2</div>
+                        <div style="font-size: 13px; color: var(--text-secondary);">Score: 35.0/100</div>
+                    </div>
+                </div>
+
+                <div class="prediction-comparison">
+                    <div class="comparison-row">
+                        <span class="comparison-label">Predicted Score</span>
+                        <span class="comparison-value">Lions 31-17 <span class="result-icon crossmark">✗</span></span>
+                    </div>
+                    <div class="comparison-row">
+                        <span class="comparison-label">Win Probability</span>
+                        <span class="comparison-value">Lions 80-85% <span class="result-icon crossmark">✗</span></span>
+                    </div>
+                    <div class="comparison-row">
+                        <span class="comparison-label">Smartest Bet</span>
+                        <span class="comparison-value">Lions -8.5 <span class="result-icon crossmark">✗</span></span>
+                    </div>
+                    <div class="comparison-row">
+                        <span class="comparison-label">Assessment</span>
+                        <span class="comparison-value">"Biggest mismatch" <span class="result-icon crossmark">✗</span></span>
+                    </div>
+                </div>
+
+                <h4 style="font-size: 17px; margin: 20px 0 15px;">Category Scores</h4>
+                
+                <div class="metric">
+                    <div class="metric-label"><span>Analytical Accuracy</span><span>2/10</span></div>
+                    <div class="metric-bar"><div class="metric-fill" style="width: 20%"></div></div>
+                </div>
+                
+                <div class="metric">
+                    <div class="metric-label"><span>Betting Strategy</span><span>0/10</span></div>
+                    <div class="metric-bar"><div class="metric-fill" style="width: 0%"></div></div>
+                </div>
+                
+                <div class="metric">
+                    <div class="metric-label"><span>Confidence Calibration</span><span>0/10</span></div>
+                    <div class="metric-bar"><div class="metric-fill" style="width: 0%"></div></div>
+                </div>
+
+                <div class="final-score">Most confident in wrong outcome - Called it "strongest play"</div>
+            </div>
+
+            <!-- Model 3 -->
+            <div class="model-card winner model-3">
+                <div class="rank-badge">🥇</div>
+                <div class="card-header">
+                    <div class="model-icon">3</div>
+                    <div>
+                        <div class="card-title">Model 3</div>
+                        <div style="font-size: 13px; color: var(--text-secondary);">Score: 85.0/100</div>
+                    </div>
+                </div>
+
+                <div class="prediction-comparison">
+                    <div class="comparison-row">
+                        <span class="comparison-label">Predicted Score</span>
+                        <span class="comparison-value">Lions 27-23 <span class="result-icon" style="color: var(--accent-orange);">~</span></span>
+                    </div>
+                    <div class="comparison-row">
+                        <span class="comparison-label">Win Probability</span>
+                        <span class="comparison-value">Lions 59% <span class="result-icon" style="color: var(--accent-orange);">~</span></span>
+                    </div>
+                    <div class="comparison-row">
+                        <span class="comparison-label">Smartest Bet</span>
+                        <span class="comparison-value">OVER 47.5 <span class="result-icon checkmark">✓</span></span>
+                    </div>
+                    <div class="comparison-row">
+                        <span class="comparison-label">Variance Assessment</span>
+                        <span class="comparison-value">High variance <span class="result-icon checkmark">✓</span></span>
+                    </div>
+                </div>
+
+                <h4 style="font-size: 17px; margin: 20px 0 15px;">Category Scores</h4>
+                
+                <div class="metric">
+                    <div class="metric-label"><span>Analytical Accuracy</span><span>8/10</span></div>
+                    <div class="metric-bar"><div class="metric-fill" style="width: 80%"></div></div>
+                </div>
+                
+                <div class="metric">
+                    <div class="metric-label"><span>Betting Strategy</span><span>10/10</span></div>
+                    <div class="metric-bar"><div class="metric-fill" style="width: 100%"></div></div>
+                </div>
+                
+                <div class="metric">
+                    <div class="metric-label"><span>Score Accuracy</span><span>8/10</span></div>
+                    <div class="metric-bar"><div class="metric-fill" style="width: 80%"></div></div>
+                </div>
+
+                <div class="final-score" style="background: linear-gradient(135deg, rgba(52, 199, 89, 0.1) 0%, rgba(52, 199, 89, 0.2) 100%); border: 1px solid var(--success);">
+                    ✓ Winning bet recommendation • Score nearly perfect (24-27 vs 27-23)
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="section-header">
+            <h2 class="section-title">Betting Results Comparison</h2>
+            <p class="section-subtitle">Profit/loss if you followed each model's recommendation</p>
+        </div>
+
+        <div class="comparison-table">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Model</th>
+                        <th>Recommended Bet</th>
+                        <th>Confidence</th>
+                        <th>Result</th>
+                        <th>P/L ($100 wager)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Model 1</strong></td>
+                        <td>UNDER 47.5 (-110)</td>
+                        <td>HIGH</td>
+                        <td><span class="crossmark">✗</span> Loss</td>
+                        <td style="color: var(--error); font-weight: 600;">-$110</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Model 2</strong></td>
+                        <td>Lions -8.5 (-110)</td>
+                        <td>Strongest Play</td>
+                        <td><span class="crossmark">✗</span> Loss</td>
+                        <td style="color: var(--error); font-weight: 600;">-$110</td>
+                    </tr>
+                    <tr style="background: rgba(52, 199, 89, 0.05);">
+                        <td><strong>Model 3</strong></td>
+                        <td>OVER 47.5 (-110)</td>
+                        <td>Moderate</td>
+                        <td><span class="checkmark">✓</span> Win</td>
+                        <td style="color: var(--success); font-weight: 600;">+$100</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div style="text-align: center; margin-top: 40px;">
+            <div style="font-size: 48px; font-weight: 700; color: var(--success);">$320</div>
+            <div style="font-size: 21px; color: var(--text-secondary); margin-top: 10px;">
+                Model 3's advantage over the other two models
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="lessons">
+        <div class="section-header">
+            <h2 class="section-title">Key Lessons Learned</h2>
+            <p class="section-subtitle">What this upset teaches us about predictions</p>
+        </div>
+
+        <div class="insights-grid">
+            <div class="insight-card">
+                <h3 class="insight-title">🎯 Why Model 3 Won</h3>
+                <ul class="insight-list">
+                    <li><strong>Realistic Confidence:</strong> 59% vs 78-85% showed better calibration</li>
+                    <li><strong>Variance Awareness:</strong> Acknowledged high variance and upset potential</li>
+                    <li><strong>Score Accuracy:</strong> Predicted 27-23, actual 24-27 (just flipped)</li>
+                    <li><strong>Bet Selection:</strong> Focused on OVER with best statistical edge</li>
+                    <li><strong>Humility:</strong> Transparent about model limitations</li>
+                </ul>
+            </div>
+
+            <div class="insight-card">
+                <h3 class="insight-title">❌ Why Models 1 & 2 Failed</h3>
+                <ul class="insight-list">
+                    <li><strong>Overconfidence:</strong> 78-85% probability way too high for road division game</li>
+                    <li><strong>Dismissive:</strong> Didn't give Vikings/McCarthy enough credit</li>
+                    <li><strong>Wrong Bets:</strong> Chased Lions-heavy positions instead of totals</li>
+                    <li><strong>Bye Week Bias:</strong> Assumed Lions coming off bye = automatic advantage</li>
+                    <li><strong>Low Variance:</strong> Underestimated game volatility</li>
+                </ul>
+            </div>
+
+            <div class="insight-card">
+                <h3 class="insight-title">📚 Prediction Lessons</h3>
+                <ul class="insight-list">
+                    <li><strong>Respect Underdogs:</strong> Especially motivated division rivals</li>
+                    <li><strong>Rookie QBs Can Win:</strong> McCarthy's 3rd start was successful</li>
+                    <li><strong>Home ≠ Guarantee:</strong> Lions were rusty/overconfident after bye</li>
+                    <li><strong>Focus on Value:</strong> OVER had better edge than spread</li>
+                    <li><strong>Beware 80%+:</strong> Such high probabilities should be rare</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>AI Analysis Hub • Analysis based on November 2, 2025 game result</p>
+    </footer>
+
+    <script>
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Animate metric bars on load
+        window.addEventListener('load', function() {
+            const fills = document.querySelectorAll('.metric-fill');
+            fills.forEach(fill => {
+                const width = fill.style.width;
+                fill.style.width = '0%';
+                setTimeout(() => {
+                    fill.style.width = width;
+                }, 100);
+            });
+        });
+    </script>
+</body>
+</html>

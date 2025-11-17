@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analysis Template - AI Hub</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --text-primary: #1d1d1f;
+            --text-secondary: #6e6e73;
+            --accent-blue: #0071e3;
+            --accent-green: #30d158;
+            --accent-orange: #ff9500;
+            --accent-red: #ff3b30;
+            --background: #ffffff;
+            --surface: #f5f5f7;
+            --border: #d2d2d7;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            color: var(--text-primary);
+            background: var(--background);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: saturate(180%) blur(20px);
+            border-bottom: 1px solid var(--border);
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        nav.scrolled {
+            background: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .nav-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 40px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .nav-logo {
+            font-size: 21px;
+            font-weight: 600;
+            color: var(--text-primary);
+            letter-spacing: -0.5px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 40px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-primary);
+            text-decoration: none;
+            font-size: 14px;
+            transition: opacity 0.3s;
+        }
+
+        .nav-links a:hover {
+            opacity: 0.7;
+        }
+
+        /* Hero Section */
+        .hero {
+            margin-top: 48px;
+            padding: 100px 40px;
+            text-align: center;
+            background: linear-gradient(180deg, #f5f5f7 0%, #ffffff 100%);
+        }
+
+        .hero h1 {
+            font-size: 64px;
+            font-weight: 700;
+            letter-spacing: -2px;
+            margin-bottom: 20px;
+            /* CUSTOMIZE THIS: Change gradient colors for your analysis */
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero p {
+            font-size: 28px;
+            color: var(--text-secondary);
+            font-weight: 400;
+            letter-spacing: -0.5px;
+        }
+
+        .section {
+            padding: 80px 40px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title {
+            font-size: 48px;
+            font-weight: 700;
+            letter-spacing: -1.5px;
+            margin-bottom: 15px;
+        }
+
+        .section-subtitle {
+            font-size: 21px;
+            color: var(--text-secondary);
+            font-weight: 400;
+        }
+
+        /* Placeholder for your custom content */
+        .content-placeholder {
+            background: var(--surface);
+            border-radius: 12px;
+            padding: 60px;
+            text-align: center;
+            border: 2px dashed var(--border);
+        }
+
+        .placeholder-icon {
+            font-size: 64px;
+            margin-bottom: 20px;
+        }
+
+        .placeholder-title {
+            font-size: 32px;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .placeholder-text {
+            font-size: 17px;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        footer {
+            background: var(--surface);
+            padding: 40px;
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 13px;
+            margin-top: 80px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-content { padding: 0 20px; }
+            .nav-links { display: none; }
+            .hero { padding: 60px 20px; }
+            .hero h1 { font-size: 36px; }
+            .hero p { font-size: 19px; }
+            .section { padding: 60px 20px; }
+        }
+    </style>
+</head>
+<body>
+    <!-- 
+    INSTRUCTIONS:
+    1. Change the title in the <head> section above
+    2. Update the hero section with your analysis title and description
+    3. Replace the placeholder content with your actual analysis
+    4. Customize colors by changing the CSS variables
+    5. Add this page to index.html as a new card
+    -->
+
+    <nav id="navbar">
+        <div class="nav-content">
+            <div style="display: flex; align-items: center; gap: 20px;">
+                <a href="index.html" style="color: var(--text-primary); text-decoration: none; font-size: 20px; transition: opacity 0.3s;" title="Back to Home">←</a>
+                <div class="nav-logo">Your Analysis Title</div>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#overview">Overview</a></li>
+                <li><a href="#analysis">Analysis</a></li>
+                <li><a href="#results">Results</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <!-- CUSTOMIZE: Update title and description -->
+        <h1>Your Analysis Title</h1>
+        <p>Brief description of what this analysis covers</p>
+    </section>
+
+    <section class="section" id="overview">
+        <div class="section-header">
+            <h2 class="section-title">Overview</h2>
+            <p class="section-subtitle">What this analysis examines</p>
+        </div>
+
+        <div class="content-placeholder">
+            <div class="placeholder-icon">📊</div>
+            <h3 class="placeholder-title">Add Your Content Here</h3>
+            <p class="placeholder-text">
+                Replace this placeholder with your actual analysis content. You can use the sports analysis (model_comparison_modern.html) as a reference for structure and styling.
+            </p>
+        </div>
+    </section>
+
+    <section class="section" id="analysis">
+        <div class="section-header">
+            <h2 class="section-title">Detailed Analysis</h2>
+            <p class="section-subtitle">Your methodology and approach</p>
+        </div>
+
+        <div class="content-placeholder">
+            <div class="placeholder-icon">🔍</div>
+            <h3 class="placeholder-title">Analysis Details</h3>
+            <p class="placeholder-text">
+                Add comparison cards, charts, tables, or any other content structure that makes sense for your specific analysis type.
+            </p>
+        </div>
+    </section>
+
+    <section class="section" id="results">
+        <div class="section-header">
+            <h2 class="section-title">Results</h2>
+            <p class="section-subtitle">Key findings and conclusions</p>
+        </div>
+
+        <div class="content-placeholder">
+            <div class="placeholder-icon">🏆</div>
+            <h3 class="placeholder-title">Results & Insights</h3>
+            <p class="placeholder-text">
+                Present your findings, winning model/approach, and key takeaways from the analysis.
+            </p>
+        </div>
+    </section>
+
+    <footer>
+        <p>AI Analysis Hub • 2025</p>
+    </footer>
+
+    <script>
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Add your custom JavaScript here
+    </script>
+</body>
+</html>

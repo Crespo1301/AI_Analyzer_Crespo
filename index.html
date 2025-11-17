@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Analysis Hub</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --text-primary: #1d1d1f;
+            --text-secondary: #6e6e73;
+            --accent-blue: #0071e3;
+            --accent-green: #30d158;
+            --accent-purple: #667eea;
+            --background: #ffffff;
+            --surface: #f5f5f7;
+            --border: #d2d2d7;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            color: var(--text-primary);
+            background: var(--background);
+            line-height: 1.6;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: saturate(180%) blur(20px);
+            border-bottom: 1px solid var(--border);
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        nav.scrolled {
+            background: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .nav-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 40px;
+            height: 56px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .nav-logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--text-primary);
+            letter-spacing: -0.5px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 40px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-primary);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            transition: opacity 0.3s;
+        }
+
+        .nav-links a:hover {
+            opacity: 0.7;
+        }
+
+        /* Hero Section */
+        .hero {
+            margin-top: 56px;
+            padding: 100px 40px 80px;
+            text-align: center;
+            background: linear-gradient(180deg, #f5f5f7 0%, #ffffff 100%);
+        }
+
+        .hero h1 {
+            font-size: 64px;
+            font-weight: 700;
+            letter-spacing: -2px;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero p {
+            font-size: 24px;
+            color: var(--text-secondary);
+            font-weight: 400;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Filter Tabs */
+        .filter-section {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 40px 40px;
+        }
+
+        .filter-tabs {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .filter-tab {
+            padding: 10px 24px;
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            background: var(--background);
+            color: var(--text-secondary);
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .filter-tab:hover {
+            border-color: var(--text-primary);
+        }
+
+        .filter-tab.active {
+            background: var(--text-primary);
+            color: white;
+            border-color: var(--text-primary);
+        }
+
+        /* Analysis Grid */
+        .analysis-grid {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 40px;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 30px;
+        }
+
+        .analysis-card {
+            background: var(--background);
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid var(--border);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .analysis-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 32px rgba(0,0,0,0.12);
+        }
+
+        .card-image {
+            width: 100%;
+            height: 220px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .card-icon {
+            font-size: 64px;
+            filter: brightness(0) invert(1);
+            opacity: 0.9;
+        }
+
+        .card-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: rgba(255,255,255,0.95);
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .card-content {
+            padding: 24px;
+        }
+
+        .card-meta {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 12px;
+            font-size: 13px;
+            color: var(--text-secondary);
+        }
+
+        .card-title {
+            font-size: 21px;
+            font-weight: 600;
+            margin-bottom: 10px;
+            letter-spacing: -0.5px;
+            color: var(--text-primary);
+        }
+
+        .card-description {
+            font-size: 15px;
+            color: var(--text-secondary);
+            line-height: 1.5;
+            margin-bottom: 20px;
+        }
+
+        .card-stats {
+            display: flex;
+            gap: 20px;
+            padding: 16px 0;
+            border-top: 1px solid var(--border);
+        }
+
+        .stat {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .stat-label {
+            font-size: 12px;
+            color: var(--text-secondary);
+            margin-bottom: 4px;
+        }
+
+        .stat-value {
+            font-size: 17px;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .view-button {
+            width: 100%;
+            padding: 12px;
+            background: var(--text-primary);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 15px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .view-button:hover {
+            background: #000;
+            transform: scale(1.02);
+        }
+
+        /* Add New Card */
+        .add-card {
+            background: linear-gradient(135deg, var(--surface) 0%, var(--background) 100%);
+            border: 2px dashed var(--border);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 400px;
+        }
+
+        .add-card:hover {
+            border-color: var(--accent-blue);
+            background: linear-gradient(135deg, #f0f0f2 0%, var(--surface) 100%);
+        }
+
+        .add-icon {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: var(--accent-blue);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 48px;
+            color: white;
+            margin-bottom: 20px;
+        }
+
+        .add-text {
+            font-size: 19px;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .add-subtext {
+            font-size: 14px;
+            color: var(--text-secondary);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--surface);
+            padding: 60px 40px;
+            margin-top: 80px;
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+        }
+
+        .footer-section h3 {
+            font-size: 17px;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section li {
+            margin-bottom: 10px;
+        }
+
+        .footer-section a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.3s;
+        }
+
+        .footer-section a:hover {
+            color: var(--text-primary);
+        }
+
+        .footer-bottom {
+            max-width: 1400px;
+            margin: 40px auto 0;
+            padding-top: 30px;
+            border-top: 1px solid var(--border);
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 13px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 40px; }
+            .hero p { font-size: 19px; }
+            .analysis-grid {
+                grid-template-columns: 1fr;
+                padding: 20px;
+            }
+            .nav-content { padding: 0 20px; }
+            .nav-links { display: none; }
+        }
+    </style>
+</head>
+<body>
+    <nav id="navbar">
+        <div class="nav-content">
+            <div class="nav-logo">
+                <span>📊</span>
+                AI Analysis Hub
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#analyses">Analyses</a></li>
+                <li><a href="#about">About</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <h1>Analysis Dashboard</h1>
+        <p>Compare AI models, evaluate performance, and discover insights across multiple analyses</p>
+    </section>
+
+    <section class="filter-section">
+        <div class="filter-tabs">
+            <button class="filter-tab active" onclick="filterAnalyses('all')">All</button>
+            <button class="filter-tab" onclick="filterAnalyses('sports')">Sports</button>
+            <button class="filter-tab" onclick="filterAnalyses('business')">Business</button>
+            <button class="filter-tab" onclick="filterAnalyses('technology')">Technology</button>
+            <button class="filter-tab" onclick="filterAnalyses('recent')">Recent</button>
+        </div>
+    </section>
+
+    <section class="analysis-grid" id="analyses">
+</div>
+        </div>
+
+        <!-- Sports Analysis Card - Vikings vs Lions WITH RESULTS -->
+        <div class="analysis-card" data-category="sports recent" onclick="openAnalysis('vikings-lions-week9')">
+            <div class="card-image" style="background: linear-gradient(135deg, #5856d6 0%, #4b0082 100%);">
+                <div class="card-icon">🏆</div>
+                <div class="card-badge">Sports</div>
+            </div>
+            <div class="card-content">
+                <div class="card-meta">
+                    <span>📅 Nov 2, 2025</span>
+                    <span>⏱️ 6 min read</span>
+                </div>
+                <h3 class="card-title">Vikings @ Lions Week 9 Results</h3>
+                <p class="card-description">Post-game analysis comparing AI predictions vs actual results. Vikings upset Lions 27-24. See which model got it right!</p>
+                <div class="card-stats">
+                    <div class="stat">
+                        <span class="stat-label">Models</span>
+                        <span class="stat-value">3</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-label">Winner</span>
+                        <span class="stat-value">85.0</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-label">Result</span>
+                        <span class="stat-value">UPSET</span>
+                    </div>
+                </div>
+                <button class="view-button" style="background: linear-gradient(135deg, #5856d6 0%, #4b0082 100%);">View Results</button>
+            </div>
+        </div>
+
+        <!-- Sports Analysis Card - Packers vs Panthers WITH RESULTS -->
+        <div class="analysis-card" data-category="sports recent" onclick="openAnalysis('packers-panthers-week9')">
+            <div class="card-image" style="background: linear-gradient(135deg, #0076B6 0%, #101820 100%);">
+                <div class="card-icon">💥</div>
+                <div class="card-badge">Sports</div>
+            </div>
+            <div class="card-content">
+                <div class="card-meta">
+                    <span>📅 Nov 2, 2025</span>
+                    <span>⏱️ 7 min read</span>
+                </div>
+                <h3 class="card-title">Packers vs Panthers Week 9 Results</h3>
+                <p class="card-description">MASSIVE upset! Panthers won 16-13 as 13-point underdogs. All 3 models predicted Packers blowout. See what went wrong!</p>
+                <div class="card-stats">
+                    <div class="stat">
+                        <span class="stat-label">Models</span>
+                        <span class="stat-value">3</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-label">Best</span>
+                        <span class="stat-value">40.0</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-label">Result</span>
+                        <span class="stat-value">ALL WRONG</span>
+                    </div>
+                </div>
+                <button class="view-button" style="background: linear-gradient(135deg, #0076B6 0%, #101820 100%);">View Results</button>
+            </div>
+        </div>
+
+        <!-- Sports Analysis Card - Texans vs Broncos WITH RESULTS -->
+        <div class="analysis-card" data-category="sports recent" onclick="openAnalysis('texans-broncos-week9')">
+            <div class="card-image" style="background: linear-gradient(135deg, #FB4F14 0%, #002244 100%);">
+                <div class="card-icon">🎯</div>
+                <div class="card-badge">Sports</div>
+            </div>
+            <div class="card-content">
+                <div class="card-meta">
+                    <span>📅 Nov 2, 2025</span>
+                    <span>⏱️ 8 min read</span>
+                </div>
+                <h3 class="card-title">Texans vs Broncos Week 9 Props</h3>
+                <p class="card-description">Defensive battle! Broncos 18-15. Model #3 nailed BOTH prop bets (Broncos UNDER 19.5 + Stroud UNDER 231.5). Winner!</p>
+                <div class="card-stats">
+                    <div class="stat">
+                        <span class="stat-label">Models</span>
+                        <span class="stat-value">3</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-label">Winner</span>
+                        <span class="stat-value">75.0</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-label">Props</span>
+                        <span class="stat-value">2/2 HIT</span>
+                    </div>
+                </div>
+                <button class="view-button" style="background: linear-gradient(135deg, #FB4F14 0%, #002244 100%);">View Props</button>
+            </div>
+        </div>
+        <!-- Add New Analysis Card -->
+        <div class="analysis-card add-card" onclick="addNewAnalysis()">
+            <div class="add-icon">+</div>
+            <div class="add-text">Add New Analysis</div>
+            <div class="add-subtext">Create a custom comparison</div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Product</h3>
+                <ul>
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#pricing">Pricing</a></li>
+                    <li><a href="#templates">Templates</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Resources</h3>
+                <ul>
+                    <li><a href="#docs">Documentation</a></li>
+                    <li><a href="#tutorials">Tutorials</a></li>
+                    <li><a href="#blog">Blog</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Company</h3>
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#careers">Careers</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Legal</h3>
+                <ul>
+                    <li><a href="#privacy">Privacy</a></li>
+                    <li><a href="#terms">Terms</a></li>
+                    <li><a href="#cookies">Cookies</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 AI Analysis Hub. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Filter analyses
+        function filterAnalyses(category) {
+            const cards = document.querySelectorAll('.analysis-card:not(.add-card)');
+            const tabs = document.querySelectorAll('.filter-tab');
+            
+            // Update active tab
+            tabs.forEach(tab => tab.classList.remove('active'));
+            event.target.classList.add('active');
+            
+            // Filter cards
+            cards.forEach(card => {
+                if (category === 'all') {
+                    card.style.display = 'block';
+                } else if (category === 'recent') {
+                    // Show only cards without "Coming Soon"
+                    const meta = card.querySelector('.card-meta');
+                    if (meta && !meta.textContent.includes('Coming Soon')) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                } else {
+                    const cardCategory = card.getAttribute('data-category');
+                    // Check if card category includes the filter category (handles multiple categories like "sports recent")
+                    card.style.display = cardCategory && cardCategory.includes(category) ? 'block' : 'none';
+                }
+            });
+        }
+
+        // Open specific analysis
+        function openAnalysis(analysisId) {
+            if (analysisId === 'vikings-lions-week9') {
+                window.location.href = 'Sports_Pages/vikings_lions_interactive.html';
+            } else if (analysisId === 'packers-panthers-week9') {
+                window.location.href = 'Sports_Pages/packers_panthers_interactive.html';
+            } else if (analysisId === 'texans-broncos-week9') {
+                window.location.href = 'Sports_Pages/Texans_broncos_interactive.html';
+            }
+        }
+
+        // Add new analysis
+        function addNewAnalysis() {
+            const title = prompt('Enter analysis title:');
+            if (title) {
+                alert(`New analysis "${title}" will be created. This feature will allow you to:\n\n• Choose analysis type\n• Add models to compare\n• Define evaluation criteria\n• Customize scoring weights\n\nComing soon!`);
+            }
+        }
+    </script>
+</body>
+</html>
