@@ -1,7 +1,7 @@
-================================================================================
+=============================================
 EXECUTIVE SUMMARY: NFL BETTING AI EVALUATION
 CS 486 - Team 5 - Carlos Crespo (NFL Betting Domain)
-================================================================================
+=============================================
 
 OBJECTIVE:
 Evaluate Claude, ChatGPT, and Gemini on NFL betting predictions across
