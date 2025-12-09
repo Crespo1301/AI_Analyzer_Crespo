@@ -1,15 +1,14 @@
-================================================================================
+=============================================
 DATA INTEGRITY & VALIDATION REPORT
 CS 486 Team 5 - NFL Betting Domain - Carlos Crespo
-================================================================================
-
+=============================================
 PURPOSE:
 This report documents the complete data rebuild process undertaken to ensure
 accuracy and integrity of the NFL betting AI evaluation results.
 
-================================================================================
+=============================================
 PROBLEM IDENTIFIED
-================================================================================
+=============================================
 
 ISSUE: Systematic model assignment errors in bet tracking spreadsheet
 
@@ -34,9 +33,9 @@ Additional errors identified in:
 ROOT CAUSE:
 Bet tracking spreadsheet did not correctly match labeled response documents.
 
-================================================================================
+=============================================
 SOLUTION: COMPLETE DATA REBUILD
-================================================================================
+=============================================
 
 APPROACH:
 Rebuild entire dataset from scratch using ONLY labeled response documents
@@ -67,9 +66,9 @@ STEP 3: OUTCOME DETERMINATION
     - Determined prop outcomes (over/under, TD/no TD)
     - Calculated P/L for all prop bets
 
-================================================================================
+=============================================
 VALIDATION METHODS
-================================================================================
+=============================================
 
 CROSS-VALIDATION:
 1. Labeled Documents → Ground Truth
@@ -87,10 +86,9 @@ INTEGRITY CHECKS:
 - All P/L calculations verified at -110 odds
 - All game results cross-checked with official sources
 
-================================================================================
+=============================================
 RESULTS COMPARISON: BEFORE vs AFTER REBUILD
-================================================================================
-
+=============================================
 BEFORE (Original Data - with errors):
   - Claude:   15-15 record, -$12.93 P/L (50.1/100 avg score)
   - ChatGPT:  10-14 record, -$24.51 P/L (47.5/100 avg score)
@@ -105,10 +103,9 @@ DRAMATIC REVERSAL:
 All three models went from UNPROFITABLE to PROFITABLE after correcting
 model assignment errors and verifying all outcomes.
 
-================================================================================
+=============================================
 KEY INSIGHTS FROM CORRECTED DATA
-================================================================================
-
+=============================================
 1. SPREAD/TOTAL STRUGGLE IS REAL
    Even with corrected data, all models unprofitable on spreads/totals:
    - Claude:   -$0.45 (break-even)
@@ -126,10 +123,9 @@ KEY INSIGHTS FROM CORRECTED DATA
    - Gemini:   Highest variance, best at props
    - Claude:   Most balanced, best at spreads (break-even)
 
-================================================================================
+=============================================
 FILES CREATED
-================================================================================
-
+=============================================
 Final Output Files:
   1. Carlos_NFL_Bet_By_Bet_FINAL_VERIFIED.csv
      Complete bet-by-bet tracking with outcomes (86 bets)
@@ -146,9 +142,9 @@ Final Output Files:
   5. Carlos_NFL_Data_Integrity_Report.txt/.md
      This document
 
-================================================================================
+=============================================
 CONFIDENCE STATEMENT
-================================================================================
+=============================================
 
 VERIFIED:
 ✅ All 86 bets traced to ground truth source documents
