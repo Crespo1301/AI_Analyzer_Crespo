@@ -1,0 +1,87 @@
+Week,Model,Prompt,Bet_Type,Recommendation,Stake,Game,Outcome,Return,P/L
+9,ChatGPT,1,Spread,KC -1.5,$6.00,Chiefs vs Bills,LOSS,$0.00,$-6.00
+9,ChatGPT,1,Moneyline,49ers ML,$6.00,49ers vs Giants,WIN,$11.45,$+5.45
+9,ChatGPT,1,Total,UNDER 48.5,$4.00,49ers vs Giants,LOSS,$0.00,$-4.00
+9,ChatGPT,1,Total,49ers/Giants UNDER 48.5,$10.00,49ers vs Giants,LOSS,$0.00,$-10.00
+9,ChatGPT,2,Prop,Tua O1.5 pass TDs,$10.00,Ravens vs Dolphins,LOSS,$0.00,$-10.00
+9,ChatGPT,2,Prop,Lamar 60+ rush yds + TD,$10.00,Ravens vs Dolphins,LOSS,$0.00,$-10.00
+9,ChatGPT,3,Total,OVER 47.5,$11.00,Vikings vs Lions,WIN,$21.00,$+10.00
+9,ChatGPT,4,Spread,Packers -12.5,$11.00,Packers vs Panthers,LOSS,$0.00,$-11.00
+9,ChatGPT,5,Prop,Stroud O1.5 pass TDs,$11.00,Texans vs Broncos,WIN,$21.00,$+10.00
+9,ChatGPT,5,Prop,Stroud U231.5 pass yds,$11.00,Texans vs Broncos,WIN,$21.00,$+10.00
+9,Claude,1,Spread,Bills +1.5,$7.00,Chiefs vs Bills,WIN,$13.36,$+6.36
+9,Claude,1,Spread,49ers -2.5,$6.00,49ers vs Giants,WIN,$11.45,$+5.45
+9,Claude,1,Total,UNDER 51.5,$3.00,Chiefs vs Bills,WIN,$5.73,$+2.73
+9,Claude,1,Total,OVER 51.5,$4.00,Chiefs vs Bills,LOSS,$0.00,$-4.00
+9,Claude,2,Prop,D. Henry O87.5 rush yds,$10.00,Ravens vs Dolphins,WIN,$19.09,$+9.09
+9,Claude,2,Prop Parlay,Lamar O1.5 TDs + rush TD,$5.00,Ravens vs Dolphins,LOSS,$0.00,$-5.00
+9,Claude,2,Prop,Tua O216.5 pass yds,$5.00,Ravens vs Dolphins,WIN,$9.55,$+4.55
+9,Claude,3,Total,UNDER 47.5,$11.00,Vikings vs Lions,LOSS,$0.00,$-11.00
+9,Claude,4,Spread,Packers -12.5,$11.00,Packers vs Panthers,LOSS,$0.00,$-11.00
+9,Claude,5,Prop,Nix O205.5 pass yds,$11.00,Texans vs Broncos,WIN,$21.00,$+10.00
+9,Claude,5,Prop,Nik Bonitto anytime sack,$11.00,Texans vs Broncos,LOSS,$0.00,$-11.00
+9,Claude,5,Prop,Sutton O58.5 rec yds,$11.00,Texans vs Broncos,WIN,$21.00,$+10.00
+9,Gemini,1,Spread,Chiefs -1.5,$10.00,Chiefs vs Bills,LOSS,$0.00,$-10.00
+9,Gemini,1,Total,Chiefs/Bills OVER 51.5,$10.00,Chiefs vs Bills,LOSS,$0.00,$-10.00
+9,Gemini,1,Spread,49ers -2.5,$10.00,49ers vs Giants,WIN,$19.09,$+9.09
+9,Gemini,1,Total,UNDER 48.5,$4.00,49ers vs Giants,LOSS,$0.00,$-4.00
+9,Gemini,2,Prop,Lamar O35.5 rush yds,$10.00,Ravens vs Dolphins,WIN,$19.09,$+9.09
+9,Gemini,2,Prop,Waddle anytime TD,$5.00,Ravens vs Dolphins,LOSS,$0.00,$-5.00
+9,Gemini,2,Prop,Tua O0.5 INT,$5.00,Ravens vs Dolphins,WIN,$9.55,$+4.55
+9,Gemini,3,Spread,Lions -8.5,$11.00,Vikings vs Lions,LOSS,$0.00,$-11.00
+9,Gemini,4,Spread,Packers -12.5,$11.00,Packers vs Panthers,LOSS,$0.00,$-11.00
+9,Gemini,5,Prop,Woody Marks O60 scrimmage,$11.00,Texans vs Broncos,LOSS,$0.00,$-11.00
+9,Gemini,5,Team Total,Denver U19.5,$11.00,Texans vs Broncos,WIN,$21.00,$+10.00
+11,ChatGPT,1,Spread,Patriots spread,$5.00,Patriots vs Jets,PUSH,$5.00,$+0.00
+11,ChatGPT,1,Total,OVER (total),$5.00,Patriots vs Jets,LOSS,$0.00,$-5.00
+11,ChatGPT,1,Moneyline,49ers ML,$5.00,49ers vs Cardinals,WIN,$9.55,$+4.55
+11,ChatGPT,2,Prop,James Cook over ~70 rush yds,$10.00,Bills vs Buccaneers,WIN,$19.09,$+9.09
+11,ChatGPT,2,Prop,Khalil Shakir rec yds over ~75,$10.00,Bills vs Buccaneers,LOSS,$0.00,$-10.00
+11,ChatGPT,3,Spread,Eagles -3 (or -1.5),$11.00,Lions vs Eagles,WIN,$21.00,$+10.00
+11,ChatGPT,4,Spread,Titans -3,$11.00,Texans vs Titans,LOSS,$0.00,$-11.00
+11,ChatGPT,5,Prop,Keenan Allen OVER 5.5-6.5 rec,$11.00,Chargers vs Jaguars,LOSS,$0.00,$-11.00
+11,ChatGPT,5,Prop,Josh Allen (JAX) sack,$11.00,Chargers vs Jaguars,WIN,$21.00,$+10.00
+11,ChatGPT,6,Spread,Vikings +spread (INVALID),$0.00,Bears vs Vikings,,$0.00,$+0.00
+11,ChatGPT,7,Total,UNDER (game total),$11.00,Commanders vs Dolphins,WIN,$21.00,$+10.00
+11,ChatGPT,7,Prop,WAS RB OVER 11.5-13.5 carries,$11.00,Commanders vs Dolphins,WIN,$21.00,$+10.00
+11,ChatGPT,7,Prop,Longest FG UNDER 47.5,$11.00,Commanders vs Dolphins,WIN,$21.00,$+10.00
+11,ChatGPT,11,Prop,QB pass yds OVER (generic),$11.00,Cowboys vs Raiders,WIN,$21.00,$+10.00
+11,ChatGPT,11,Prop,Team rush att UNDER (generic),$11.00,Cowboys vs Raiders,WIN,$21.00,$+10.00
+11,ChatGPT,11,Prop,Kicker FG Made/Longest OVER,$11.00,Cowboys vs Raiders,WIN,$21.00,$+10.00
+11,Claude,1,Spread,Jets +12.5,$4.00,Patriots vs Jets,LOSS,$0.00,$-4.00
+11,Claude,1,Total,OVER 43.5,$3.00,Patriots vs Jets,LOSS,$0.00,$-3.00
+11,Claude,1,Prop,Drake Maye O1.5 Pass TDs,$3.00,Patriots vs Jets,WIN,$5.73,$+2.73
+11,Claude,2,Prop,Josh Allen OVER 0.5 INTs,$10.00,Bills vs Buccaneers,LOSS,$0.00,$-10.00
+11,Claude,2,Prop,James Cook OVER rush yds (70.5-75.5),$10.00,Bills vs Buccaneers,WIN,$19.09,$+9.09
+11,Claude,3,Total,UNDER 47.5,$11.00,Lions vs Eagles,WIN,$21.00,$+10.00
+11,Claude,3,Spread,Eagles -1.5,$11.00,Lions vs Eagles,WIN,$21.00,$+10.00
+11,Claude,4,1H Spread,Texans 1H -3.5,$11.00,Texans vs Titans,LOSS,$0.00,$-11.00
+11,Claude,4,Total,UNDER 38.5,$11.00,Texans vs Titans,WIN,$21.00,$+10.00
+11,Claude,5,Prop,Herbert OVER 252.5 pass yds,$11.00,Chargers vs Jaguars,LOSS,$0.00,$-11.00
+11,Claude,5,Prop,McConkey OVER 5.5-6.5 rec,$11.00,Chargers vs Jaguars,LOSS,$0.00,$-11.00
+11,Claude,6,Spread,Vikings -2.5,$11.00,Bears vs Vikings,LOSS,$0.00,$-11.00
+11,Claude,6,SGP,Vikings ML + UNDER 48.5,$11.00,Bears vs Vikings,LOSS,$0.00,$-11.00
+11,Claude,7,Total,UNDER 47.5,$11.00,Commanders vs Dolphins,WIN,$21.00,$+10.00
+11,Claude,7,Prop,Achane OVER 18.5 rush att,$11.00,Commanders vs Dolphins,WIN,$21.00,$+10.00
+11,Claude,7,Prop,1Q UNDER 7.5,$11.00,Commanders vs Dolphins,WIN,$21.00,$+10.00
+11,Claude,11,Prop,Aubrey FG Made OVER 1.5,$11.00,Cowboys vs Raiders,LOSS,$0.00,$-11.00
+11,Claude,11,Team Total,Cowboys TT OVER 26.5-28.5,$11.00,Cowboys vs Raiders,WIN,$21.00,$+10.00
+11,Claude,11,Prop,Longest FG UNDER 52.5,$11.00,Cowboys vs Raiders,WIN,$21.00,$+10.00
+11,Gemini,1,Spread,Patriots -12.5,$4.00,Patriots vs Jets,WIN,$7.64,$+3.64
+11,Gemini,1,Total,UNDER 43.5,$3.00,Patriots vs Jets,WIN,$5.73,$+2.73
+11,Gemini,1,Spread,Cardinals +3.0,$4.00,49ers vs Cardinals,LOSS,$0.00,$-4.00
+11,Gemini,1,Total,OVER 48.5,$3.00,49ers vs Cardinals,WIN,$5.73,$+2.73
+11,Gemini,2,Prop,Josh Allen Anytime TD,$10.00,Bills vs Buccaneers,WIN,$19.09,$+9.09
+11,Gemini,2,Prop,Baker Mayfield Longest Comp Over 38.5,$10.00,Bills vs Buccaneers,WIN,$19.09,$+9.09
+11,Gemini,3,Total,OVER 49.5,$11.00,Lions vs Eagles,LOSS,$0.00,$-11.00
+11,Gemini,4,1H Spread,Texans 1H -3.5,$11.00,Texans vs Titans,LOSS,$0.00,$-11.00
+11,Gemini,5,Prop,Gadsden OVER 54.5 rec yds,$11.00,Chargers vs Jaguars,WIN,$21.00,$+10.00
+11,Gemini,5,Prop,Oweh OVER 0.75 sacks,$11.00,Chargers vs Jaguars,LOSS,$0.00,$-11.00
+11,Gemini,6,Prop,Swift UNDER 65.5 rush yds,$11.00,Bears vs Vikings,WIN,$21.00,$+10.00
+11,Gemini,6,Prop,Jefferson anytime TD,$11.00,Bears vs Vikings,LOSS,$0.00,$-11.00
+11,Gemini,7,Total,UNDER 47.5,$11.00,Commanders vs Dolphins,WIN,$21.00,$+10.00
+11,Gemini,7,Prop,Waddle O0.5 INT (ERROR),$0.00,Commanders vs Dolphins,,$0.00,$+0.00
+11,Gemini,7,Prop,Achane OVER 14.5 rush att,$11.00,Commanders vs Dolphins,WIN,$21.00,$+10.00
+11,Gemini,11,Team Total,Cowboys TT OVER 24.5,$11.00,Cowboys vs Raiders,WIN,$21.00,$+10.00
+11,Gemini,11,Prop,Longest FG OVER 44.5-45.5,$11.00,Cowboys vs Raiders,WIN,$21.00,$+10.00
+11,Gemini,11,Prop,Prescott Pass TDs OVER 1.5-2.5,$11.00,Cowboys vs Raiders,WIN,$21.00,$+10.00
