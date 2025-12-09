@@ -7,9 +7,9 @@ OBJECTIVE:
 Evaluate Claude, ChatGPT, and Gemini on NFL betting predictions across
 13 prompts (Weeks 9 & 11, 2025 season) using blind evaluation methodology.
 
-================================================================================
+=============================================
 KEY FINDINGS
-================================================================================
+=============================================
 
 1. ALL THREE MODELS ARE PROFITABLE OVERALL
    - ChatGPT: +$41.09 (58.3% win rate, 14-10-1 record)
@@ -38,9 +38,9 @@ KEY FINDINGS
    - Strong prop performance (69.2% win rate)
    - Smallest loss on spreads/totals (-$7.00)
 
-================================================================================
+=============================================
 METHODOLOGY & DATA INTEGRITY
-================================================================================
+=============================================
 
 DATA SOURCES:
 - Ground Truth: Labeled response documents (Prompt_X_Week_Y.pdf)
@@ -58,9 +58,9 @@ BLIND EVALUATION:
 - Identities revealed only after initial scoring complete
 - Prevents analytical bias toward any particular model
 
-================================================================================
+=============================================
 DETAILED BREAKDOWN BY WEEK
-================================================================================
+=============================================
 
 WEEK 9 (6 games, 34 bets):
   ChatGPT      4-6          $  -15.55
@@ -72,10 +72,9 @@ WEEK 11 (8 games, 52 bets):
   Claude       10-9         $   +8.82
   Gemini       12-5         $  +49.27
 
-================================================================================
+=============================================
 RECOMMENDATIONS FOR AI-ASSISTED BETTING
-================================================================================
-
+=============================================
 ✅ DO USE AI FOR:
    - Player prop analysis (all models profitable 58-73% win rate)
    - Matchup-specific insights (coverage analysis, injury impact)
@@ -91,9 +90,9 @@ RECOMMENDATIONS FOR AI-ASSISTED BETTING
    - Assume AI has 'insider' information (it doesn't)
    - Risk money you cannot afford to lose
 
-================================================================================
+=============================================
 ETHICS & TRUSTWORTHINESS ASSESSMENT
-================================================================================
+=============================================
 
 ACCURACY:
 - Overall 54-58% win rate (modest edge over 50% baseline)
@@ -115,9 +114,9 @@ BIAS CONCERNS:
 - Spread performance issues appear from legitimate prediction difficulty
 - Props success may indicate better matchup-specific analysis capability
 
-================================================================================
+=============================================
 FINAL VERDICT
-================================================================================
+=============================================
 
 OVERALL RANKING (by total P/L):
   1. ChatGPT  +$41.09  🥇
@@ -139,6 +138,6 @@ These models can be trusted for player prop analysis and matchup-specific
 insights, but should NOT be blindly followed for game outcomes (spreads/totals).
 They are tools for AUGMENTING human analysis, not replacing it.
 
-================================================================================
+=============================================
 END OF SUMMARY
-================================================================================
+=============================================
