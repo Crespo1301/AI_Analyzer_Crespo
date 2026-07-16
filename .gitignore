@@ -1,0 +1,16 @@
+.env.ai.local
+.mcp.json
+
+# Local AI/tooling state
+.agents/
+.claude/
+.code-review-graph/
+
+# Runtime/dependency noise
+node_modules/
+.DS_Store
+Thumbs.db
+
+# Windows alternate data stream artifacts copied through WSL/git
+*:Zone.Identifier
+*Zone.Identifier
