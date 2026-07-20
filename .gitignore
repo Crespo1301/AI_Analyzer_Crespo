@@ -14,3 +14,6 @@ Thumbs.db
 # Windows alternate data stream artifacts copied through WSL/git
 *:Zone.Identifier
 *Zone.Identifier
+
+# Local browser QA screenshots
+.visual-checks/
