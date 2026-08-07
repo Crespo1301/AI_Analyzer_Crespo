@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Green Bay Packers @ Carolina Panthers — Week 9 AI Betting Grades</title>
+<link rel="stylesheet" href="../assets/styles.css">
+</head>
+<body>
+<nav class="site-nav">
+  <div class="nav-row">
+    <a class="nav-back" href="../index.html"><span class="arrow">&larr;</span> AI NFL Analyzer</a>
+    <ul class="nav-links">
+      <li><a href="../index.html">Hub</a></li>
+      <li><a href="../bet-database.html">Bet Database</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <span class="eyebrow">Week 9 &middot; 2025-11-02</span>
+    <h1>Green Bay Packers @ Carolina Panthers</h1>
+    <p class="lede">Carolina Panthers won by 3 points &middot; 29 combined points &middot; every bet below is graded against the verified box score.</p>
+  </div>
+</header>
+
+<section class="scoreboard"><div id="scoreboard-mount"></div></section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Model Standings — This Game</h2>
+      <p>Ranked by real profit/loss on the bets each model actually made for Packers vs Panthers.</p>
+    </div>
+    <div class="podium" id="podium-mount"></div>
+  </div>
+</section>
+
+<section class="section alt">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Bet-by-Bet Breakdown</h2>
+      <p>Every recommendation ChatGPT, Claude, and Gemini made for this matchup, graded against the final score.</p>
+    </div>
+    <div class="insight-grid">
+      <div class="insight-card">
+        <h3><span class="chip-model ChatGPT">ChatGPT</span> &nbsp;0-1 &middot; −$11.00</h3>
+        <ul>
+          <li><strong>Spread:</strong> Packers -12.5 &mdash; <span class="badge LOSS">LOSS</span><br><span style="color:var(--ink-soft);font-size:13px;">Final margin: 3 points.</span></li>
+        </ul>
+      </div>
+      <div class="insight-card">
+        <h3><span class="chip-model Claude">Claude</span> &nbsp;0-1 &middot; −$11.00</h3>
+        <ul>
+          <li><strong>Spread:</strong> Packers -12.5 &mdash; <span class="badge LOSS">LOSS</span><br><span style="color:var(--ink-soft);font-size:13px;">Final margin: 3 points.</span></li>
+        </ul>
+      </div>
+      <div class="insight-card">
+        <h3><span class="chip-model Gemini">Gemini</span> &nbsp;0-1 &middot; −$11.00</h3>
+        <ul>
+          <li><strong>Spread:</strong> Packers -12.5 &mdash; <span class="badge LOSS">LOSS</span><br><span style="color:var(--ink-soft);font-size:13px;">Final margin: 3 points.</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Full Bet Table</h2>
+    </div>
+    <div id="bets-mount"></div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="wrap foot-row">
+    <span>CS 486 &middot; NFL Betting AI Evaluation &middot; Carlos Crespo, USF Fall 2025</span>
+    <span>Verified vs. <a href="https://www.espn.com/nfl/scoreboard/_/week/9/year/2025/seasontype/2" target="_blank" rel="noopener">ESPN</a></span>
+  </div>
+</footer>
+
+<script src="../assets/nfl-data.js"></script>
+<script src="../assets/site.js"></script>
+<script>
+  nflRenderScoreboard('packers-panthers', 'scoreboard-mount');
+  nflRenderPodium('Packers vs Panthers', 'podium-mount');
+  nflRenderBetsTable(nflBetsForGame('Packers vs Panthers'), 'bets-mount', { showGame: false });
+</script>
+</body>
+</html>

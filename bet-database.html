@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bet Database — AI NFL Analyzer</title>
+<link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+<nav class="site-nav">
+  <div class="nav-row">
+    <a class="nav-brand" href="index.html"><span class="chip">AI</span> NFL Analyzer</a>
+    <ul class="nav-links">
+      <li><a href="index.html">Hub</a></li>
+      <li><a href="bet-database.html" class="active">Bet Database</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <span class="eyebrow">All 86 Bets &middot; Verified</span>
+    <h1>Bet Database</h1>
+    <p class="lede">Every recommendation ChatGPT, Claude, and Gemini made across 13 prompts and 15 games, graded against verified final scores. Filter by model, week, or bet type to find any single bet.</p>
+  </div>
+</header>
+
+<section class="section">
+  <div class="wrap">
+    <div class="stat-row" id="model-stats"></div>
+  </div>
+</section>
+
+<section class="section alt">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Prompt Performance</h2>
+      <p>Each prompt asked a model to analyze one or more games. This is how each model did per prompt.</p>
+    </div>
+    <div id="prompt-mount"></div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>All Bets</h2>
+    </div>
+    <div class="filter-tabs" id="model-filters">
+      <button class="filter-tab active" data-model="all">All Models</button>
+      <button class="filter-tab" data-model="ChatGPT">ChatGPT</button>
+      <button class="filter-tab" data-model="Claude">Claude</button>
+      <button class="filter-tab" data-model="Gemini">Gemini</button>
+    </div>
+    <div class="filter-tabs" id="week-filters">
+      <button class="filter-tab active" data-week="all">Both Weeks</button>
+      <button class="filter-tab" data-week="9">Week 9</button>
+      <button class="filter-tab" data-week="11">Week 11</button>
+    </div>
+    <div style="overflow-x:auto;">
+      <div id="bets-mount"></div>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="wrap foot-row">
+    <span>CS 486 Team 5 &middot; Carlos Crespo &middot; University of San Francisco, Fall 2025</span>
+    <span>Source: Docs/GRADING ANALYSIS/Carlos_NFL_Bet_By_Bet_FINAL_VERIFIED.csv</span>
+  </div>
+</footer>
+
+<script src="assets/nfl-data.js"></script>
+<script src="assets/site.js"></script>
+<script>
+  (function () {
+    var summary = nflModelSummary().slice().sort(function (a, b) { return b.pl - a.pl; });
+    document.getElementById('model-stats').innerHTML = summary.map(function (s) {
+      return '<div class="stat-tile"><div class="label">' + s.model + '</div>'
+        + '<div class="value ' + (s.pl >= 0 ? '' : '') + '">' + nflMoney(s.pl) + '</div>'
+        + '<div style="font-size:13px;color:var(--ink-soft);margin-top:4px;">' + s.wins + '-' + s.losses + (s.pushes ? '-' + s.pushes : '') + ' &middot; ' + s.winPct.toFixed(1) + '% &middot; ' + s.totalBets + ' bets</div></div>';
+    }).join('');
+
+    var prompts = nflPromptSummary();
+    var rows = prompts.map(function (p) {
+      return '<tr><td>' + p.week + '</td><td>' + p.prompt + '</td>'
+        + '<td><span class="chip-model ' + p.model + '">' + p.model + '</span></td>'
+        + '<td>' + p.wins + '-' + p.losses + (p.pushes ? '-' + p.pushes : '') + '</td>'
+        + '<td class="pl-cell ' + (p.pl > 0 ? 'pos' : p.pl < 0 ? 'neg' : '') + '">' + nflMoney(p.pl) + '</td></tr>';
+    }).join('');
+    document.getElementById('prompt-mount').innerHTML =
+      '<table class="bets"><thead><tr><th>Week</th><th>Prompt</th><th>Model</th><th>Record</th><th>P/L</th></tr></thead><tbody>' + rows + '</tbody></table>';
+
+    var currentModel = 'all', currentWeek = 'all';
+    function renderBets() {
+      var bets = NFL_BETS.filter(function (b) {
+        return (currentModel === 'all' || b.model === currentModel)
+          && (currentWeek === 'all' || b.week === parseInt(currentWeek, 10));
+      });
+      nflRenderBetsTable(bets, 'bets-mount', { showWeek: true });
+    }
+    document.querySelectorAll('#model-filters .filter-tab').forEach(function (tab) {
+      tab.addEventListener('click', function () {
+        document.querySelectorAll('#model-filters .filter-tab').forEach(function (t) { t.classList.remove('active'); });
+        tab.classList.add('active');
+        currentModel = tab.getAttribute('data-model');
+        renderBets();
+      });
+    });
+    document.querySelectorAll('#week-filters .filter-tab').forEach(function (tab) {
+      tab.addEventListener('click', function () {
+        document.querySelectorAll('#week-filters .filter-tab').forEach(function (t) { t.classList.remove('active'); });
+        tab.classList.add('active');
+        currentWeek = tab.getAttribute('data-week');
+        renderBets();
+      });
+    });
+    renderBets();
+  })();
+</script>
+</body>
+</html>
