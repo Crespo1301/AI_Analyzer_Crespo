@@ -21,7 +21,8 @@ function money(n) {
 function betNote(bet, game) {
   const margin = Math.abs(game.awayScore - game.homeScore);
   const total = game.awayScore + game.homeScore;
-  if (bet.outcome === 'N/A') return 'Bet voided/invalid in original tracking — excluded from P/L.';
+  if (bet.outcome === 'N/A') return 'Bet voided/invalid in original tracking, excluded from P/L.';
+  if (bet.actual) return 'Actual: ' + bet.actual + '.';
   if (bet.betType === 'Total' || bet.betType === 'Team Total') {
     return 'Actual game total: ' + total + ' points.';
   }
@@ -39,9 +40,27 @@ function insightCard(model, bets, game) {
   return `<div class="insight-card">
         <h3><span class="chip-model ${model}">${model}</span> &nbsp;${record} &middot; ${money(pl)}</h3>
         <ul>
-          ${bets.map(b => `<li><strong>${b.betType}:</strong> ${b.recommendation} &mdash; <span class="badge ${b.outcome.replace('/', '')}">${b.outcome}</span><br><span style="color:var(--ink-soft);font-size:13px;">${betNote(b, game)}</span></li>`).join('\n          ')}
+          ${bets.map(b => `<li><strong>${b.betType}:</strong> ${b.recommendation}: <span class="badge ${b.outcome.replace('/', '')}">${b.outcome}</span>${b.corrected ? ' <span class="corrected-flag">corrected</span>' : ''}<br><span style="color:var(--ink-soft);font-size:13px;">${betNote(b, game)}</span></li>`).join('\n          ')}
         </ul>
       </div>`;
+}
+
+function legacyPanelHtml(game) {
+  if (game.legacyGrade) {
+    const rows = Object.keys(game.legacyGrade)
+      .sort((a, b) => game.legacyGrade[b] - game.legacyGrade[a])
+      .map(m => `<div class="legacy-grade-row"><span class="chip-model ${m}">${m}</span><strong>${game.legacyGrade[m].toFixed(1)} / 100</strong></div>`)
+      .join('\n        ');
+    return `<div class="legacy-panel">
+        <h3>Original CS486 Grading (human-graded reasoning quality, out of 100)</h3>
+        ${rows}
+        <p class="note" style="color:var(--ink-soft);font-size:13px;">This is the original qualitative score from reading each model's full written response (accuracy, strategy, clarity, depth, etc.), separate from the real-money P/L ranking above.</p>
+      </div>`;
+  }
+  if (game.legacyNote) {
+    return `<div class="legacy-panel"><h3>Original CS486 Grading</h3><p class="note" style="color:var(--ink-soft);font-size:13px;">${game.legacyNote}</p></div>`;
+  }
+  return '';
 }
 
 function pageHtml(game) {
@@ -53,13 +72,14 @@ function pageHtml(game) {
   const margin = Math.abs(game.awayScore - game.homeScore);
   const total = game.awayScore + game.homeScore;
   const byModel = m => bets.filter(b => b.model === m);
+  const correctedCount = bets.filter(b => b.corrected).length;
 
   return `<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>${game.away} @ ${game.home} — Week ${game.week} AI Betting Grades</title>
+<title>${game.away} @ ${game.home} - Week ${game.week} AI Betting Grades</title>
 <link rel="stylesheet" href="../assets/styles.css">
 </head>
 <body>
@@ -85,15 +105,26 @@ function pageHtml(game) {
 
 <section class="section">
   <div class="wrap">
+    ${correctedCount ? `<div class="correction-notice"><strong>${correctedCount} bet${correctedCount === 1 ? '' : 's'} corrected after ESPN verification</strong>The outcomes below reflect real box-score stats, not the original CSV grading. Rows marked "corrected" show what the original said too.</div>` : ''}
     <div class="section-head">
-      <h2>Model Standings — This Game</h2>
+      <h2>Model Standings - This Game</h2>
       <p>Ranked by real profit/loss on the bets each model actually made for ${gameLabel}.</p>
     </div>
     <div class="podium" id="podium-mount"></div>
+    ${legacyPanelHtml(game)}
   </div>
 </section>
 
 <section class="section alt">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>P/L by Model - This Game</h2>
+    </div>
+    <div class="chart-box" id="chart-mount"></div>
+  </div>
+</section>
+
+<section class="section">
   <div class="wrap">
     <div class="section-head">
       <h2>Bet-by-Bet Breakdown</h2>
@@ -127,6 +158,12 @@ function pageHtml(game) {
   nflRenderScoreboard('${game.id}', 'scoreboard-mount');
   nflRenderPodium('${gameLabel.replace(/'/g, "\\'")}', 'podium-mount');
   nflRenderBetsTable(nflBetsForGame('${gameLabel.replace(/'/g, "\\'")}'), 'bets-mount', { showGame: false });
+  (function () {
+    var standings = nflGameStandings('${gameLabel.replace(/'/g, "\\'")}');
+    nflBarChart('chart-mount', standings.map(function (s) {
+      return { label: s.model, value: s.pl, display: nflMoney(s.pl), color: NFL_MODEL_COLOR[s.model] };
+    }));
+  })();
 </script>
 </body>
 </html>

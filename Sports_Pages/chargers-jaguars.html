@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Los Angeles Chargers @ Jacksonville Jaguars — Week 11 AI Betting Grades</title>
+<title>Los Angeles Chargers @ Jacksonville Jaguars - Week 11 AI Betting Grades</title>
 <link rel="stylesheet" href="../assets/styles.css">
 </head>
 <body>
@@ -29,15 +29,26 @@
 
 <section class="section">
   <div class="wrap">
+    
     <div class="section-head">
-      <h2>Model Standings — This Game</h2>
+      <h2>Model Standings - This Game</h2>
       <p>Ranked by real profit/loss on the bets each model actually made for Chargers vs Jaguars.</p>
     </div>
     <div class="podium" id="podium-mount"></div>
+    
   </div>
 </section>
 
 <section class="section alt">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>P/L by Model - This Game</h2>
+    </div>
+    <div class="chart-box" id="chart-mount"></div>
+  </div>
+</section>
+
+<section class="section">
   <div class="wrap">
     <div class="section-head">
       <h2>Bet-by-Bet Breakdown</h2>
@@ -47,22 +58,22 @@
       <div class="insight-card">
         <h3><span class="chip-model ChatGPT">ChatGPT</span> &nbsp;1-1 &middot; −$1.00</h3>
         <ul>
-          <li><strong>Prop:</strong> Keenan Allen OVER 5.5-6.5 rec &mdash; <span class="badge LOSS">LOSS</span><br><span style="color:var(--ink-soft);font-size:13px;">Missed.</span></li>
-          <li><strong>Prop:</strong> Josh Allen (JAX) sack &mdash; <span class="badge WIN">WIN</span><br><span style="color:var(--ink-soft);font-size:13px;">Hit.</span></li>
+          <li><strong>Prop:</strong> Keenan Allen OVER 5.5-6.5 rec: <span class="badge LOSS">LOSS</span><br><span style="color:var(--ink-soft);font-size:13px;">Missed.</span></li>
+          <li><strong>Prop:</strong> Josh Allen (JAX) sack: <span class="badge WIN">WIN</span><br><span style="color:var(--ink-soft);font-size:13px;">Hit.</span></li>
         </ul>
       </div>
       <div class="insight-card">
         <h3><span class="chip-model Claude">Claude</span> &nbsp;0-2 &middot; −$22.00</h3>
         <ul>
-          <li><strong>Prop:</strong> Herbert OVER 252.5 pass yds &mdash; <span class="badge LOSS">LOSS</span><br><span style="color:var(--ink-soft);font-size:13px;">Missed.</span></li>
-          <li><strong>Prop:</strong> McConkey OVER 5.5-6.5 rec &mdash; <span class="badge LOSS">LOSS</span><br><span style="color:var(--ink-soft);font-size:13px;">Missed.</span></li>
+          <li><strong>Prop:</strong> Herbert OVER 252.5 pass yds: <span class="badge LOSS">LOSS</span><br><span style="color:var(--ink-soft);font-size:13px;">Missed.</span></li>
+          <li><strong>Prop:</strong> McConkey OVER 5.5-6.5 rec: <span class="badge LOSS">LOSS</span><br><span style="color:var(--ink-soft);font-size:13px;">Missed.</span></li>
         </ul>
       </div>
       <div class="insight-card">
         <h3><span class="chip-model Gemini">Gemini</span> &nbsp;1-1 &middot; −$1.00</h3>
         <ul>
-          <li><strong>Prop:</strong> Gadsden OVER 54.5 rec yds &mdash; <span class="badge WIN">WIN</span><br><span style="color:var(--ink-soft);font-size:13px;">Hit.</span></li>
-          <li><strong>Prop:</strong> Oweh OVER 0.75 sacks &mdash; <span class="badge LOSS">LOSS</span><br><span style="color:var(--ink-soft);font-size:13px;">Missed.</span></li>
+          <li><strong>Prop:</strong> Gadsden OVER 54.5 rec yds: <span class="badge WIN">WIN</span><br><span style="color:var(--ink-soft);font-size:13px;">Hit.</span></li>
+          <li><strong>Prop:</strong> Oweh OVER 0.75 sacks: <span class="badge LOSS">LOSS</span><br><span style="color:var(--ink-soft);font-size:13px;">Missed.</span></li>
         </ul>
       </div>
     </div>
@@ -81,7 +92,7 @@
 <footer class="site-footer">
   <div class="wrap foot-row">
     <span>CS 486 &middot; NFL Betting AI Evaluation &middot; Carlos Crespo, USF Fall 2025</span>
-    <span>Verified vs. <a href="https://www.espn.com/nfl/scoreboard/_/week/11/year/2025/seasontype/2" target="_blank" rel="noopener">ESPN</a></span>
+    <span>Verified vs. <a href="https://www.espn.com/nfl/boxscore/_/gameId/401772775" target="_blank" rel="noopener">ESPN</a></span>
   </div>
 </footer>
 
@@ -91,6 +102,12 @@
   nflRenderScoreboard('chargers-jaguars', 'scoreboard-mount');
   nflRenderPodium('Chargers vs Jaguars', 'podium-mount');
   nflRenderBetsTable(nflBetsForGame('Chargers vs Jaguars'), 'bets-mount', { showGame: false });
+  (function () {
+    var standings = nflGameStandings('Chargers vs Jaguars');
+    nflBarChart('chart-mount', standings.map(function (s) {
+      return { label: s.model, value: s.pl, display: nflMoney(s.pl), color: NFL_MODEL_COLOR[s.model] };
+    }));
+  })();
 </script>
 </body>
 </html>

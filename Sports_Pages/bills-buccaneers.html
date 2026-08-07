@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Buffalo Bills @ Tampa Bay Buccaneers — Week 11 AI Betting Grades</title>
+<title>Buffalo Bills @ Tampa Bay Buccaneers - Week 11 AI Betting Grades</title>
 <link rel="stylesheet" href="../assets/styles.css">
 </head>
 <body>
@@ -29,15 +29,26 @@
 
 <section class="section">
   <div class="wrap">
+    <div class="correction-notice"><strong>4 bets corrected after ESPN verification</strong>The outcomes below reflect real box-score stats, not the original CSV grading. Rows marked "corrected" show what the original said too.</div>
     <div class="section-head">
-      <h2>Model Standings — This Game</h2>
+      <h2>Model Standings - This Game</h2>
       <p>Ranked by real profit/loss on the bets each model actually made for Bills vs Buccaneers.</p>
     </div>
     <div class="podium" id="podium-mount"></div>
+    
   </div>
 </section>
 
 <section class="section alt">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>P/L by Model - This Game</h2>
+    </div>
+    <div class="chart-box" id="chart-mount"></div>
+  </div>
+</section>
+
+<section class="section">
   <div class="wrap">
     <div class="section-head">
       <h2>Bet-by-Bet Breakdown</h2>
@@ -45,24 +56,24 @@
     </div>
     <div class="insight-grid">
       <div class="insight-card">
-        <h3><span class="chip-model ChatGPT">ChatGPT</span> &nbsp;1-1 &middot; −$0.91</h3>
+        <h3><span class="chip-model ChatGPT">ChatGPT</span> &nbsp;0-2 &middot; −$20.00</h3>
         <ul>
-          <li><strong>Prop:</strong> James Cook over ~70 rush yds &mdash; <span class="badge WIN">WIN</span><br><span style="color:var(--ink-soft);font-size:13px;">Hit.</span></li>
-          <li><strong>Prop:</strong> Khalil Shakir rec yds over ~75 &mdash; <span class="badge LOSS">LOSS</span><br><span style="color:var(--ink-soft);font-size:13px;">Missed.</span></li>
+          <li><strong>Prop:</strong> James Cook over ~70 rush yds: <span class="badge LOSS">LOSS</span> <span class="corrected-flag">corrected</span><br><span style="color:var(--ink-soft);font-size:13px;">Actual: 16 att, 48 rush yds.</span></li>
+          <li><strong>Prop:</strong> Khalil Shakir rec yds over ~75: <span class="badge LOSS">LOSS</span><br><span style="color:var(--ink-soft);font-size:13px;">Missed.</span></li>
         </ul>
       </div>
       <div class="insight-card">
         <h3><span class="chip-model Claude">Claude</span> &nbsp;1-1 &middot; −$0.91</h3>
         <ul>
-          <li><strong>Prop:</strong> Josh Allen OVER 0.5 INTs &mdash; <span class="badge LOSS">LOSS</span><br><span style="color:var(--ink-soft);font-size:13px;">Missed.</span></li>
-          <li><strong>Prop:</strong> James Cook OVER rush yds (70.5-75.5) &mdash; <span class="badge WIN">WIN</span><br><span style="color:var(--ink-soft);font-size:13px;">Hit.</span></li>
+          <li><strong>Prop:</strong> Josh Allen OVER 0.5 INTs: <span class="badge WIN">WIN</span> <span class="corrected-flag">corrected</span><br><span style="color:var(--ink-soft);font-size:13px;">Actual: 2 INT.</span></li>
+          <li><strong>Prop:</strong> James Cook OVER rush yds (70.5-75.5): <span class="badge LOSS">LOSS</span> <span class="corrected-flag">corrected</span><br><span style="color:var(--ink-soft);font-size:13px;">Actual: 16 att, 48 rush yds.</span></li>
         </ul>
       </div>
       <div class="insight-card">
-        <h3><span class="chip-model Gemini">Gemini</span> &nbsp;2-0 &middot; +$18.18</h3>
+        <h3><span class="chip-model Gemini">Gemini</span> &nbsp;1-1 &middot; −$0.91</h3>
         <ul>
-          <li><strong>Prop:</strong> Josh Allen Anytime TD &mdash; <span class="badge WIN">WIN</span><br><span style="color:var(--ink-soft);font-size:13px;">Hit.</span></li>
-          <li><strong>Prop:</strong> Baker Mayfield Longest Comp Over 38.5 &mdash; <span class="badge WIN">WIN</span><br><span style="color:var(--ink-soft);font-size:13px;">Hit.</span></li>
+          <li><strong>Prop:</strong> Josh Allen Anytime TD: <span class="badge WIN">WIN</span><br><span style="color:var(--ink-soft);font-size:13px;">Hit.</span></li>
+          <li><strong>Prop:</strong> Baker Mayfield Longest Comp Over 38.5: <span class="badge LOSS">LOSS</span> <span class="corrected-flag">corrected</span><br><span style="color:var(--ink-soft);font-size:13px;">Actual: 28 yds (longest completion, to Sean Tucker).</span></li>
         </ul>
       </div>
     </div>
@@ -81,7 +92,7 @@
 <footer class="site-footer">
   <div class="wrap foot-row">
     <span>CS 486 &middot; NFL Betting AI Evaluation &middot; Carlos Crespo, USF Fall 2025</span>
-    <span>Verified vs. <a href="https://www.espn.com/nfl/scoreboard/_/week/11/year/2025/seasontype/2" target="_blank" rel="noopener">ESPN</a></span>
+    <span>Verified vs. <a href="https://www.espn.com/nfl/boxscore/_/gameId/401772776" target="_blank" rel="noopener">ESPN</a></span>
   </div>
 </footer>
 
@@ -91,6 +102,12 @@
   nflRenderScoreboard('bills-buccaneers', 'scoreboard-mount');
   nflRenderPodium('Bills vs Buccaneers', 'podium-mount');
   nflRenderBetsTable(nflBetsForGame('Bills vs Buccaneers'), 'bets-mount', { showGame: false });
+  (function () {
+    var standings = nflGameStandings('Bills vs Buccaneers');
+    nflBarChart('chart-mount', standings.map(function (s) {
+      return { label: s.model, value: s.pl, display: nflMoney(s.pl), color: NFL_MODEL_COLOR[s.model] };
+    }));
+  })();
 </script>
 </body>
 </html>

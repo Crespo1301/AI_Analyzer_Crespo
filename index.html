@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AI NFL Analyzer — Betting AI Evaluation Hub</title>
+<title>AI NFL Analyzer - Betting AI Evaluation Hub</title>
 <link rel="stylesheet" href="assets/styles.css">
 </head>
 <body>
@@ -22,17 +22,28 @@
   <div class="wrap">
     <span class="eyebrow">CS 486 &middot; Ethical &amp; Trustworthy AI &middot; USF Fall 2025</span>
     <h1>Can you trust an LLM with your bankroll?</h1>
-    <p class="lede">ChatGPT, Claude, and Gemini independently analyzed 15 real NFL games across Weeks 9 and 11 of the 2025 season and made 86 betting recommendations. Every bet was graded against the verified final score. This is what actually happened &mdash; being revived for the 2026 season.</p>
+    <p class="lede">ChatGPT, Claude, and Gemini independently analyzed 15 real NFL games across Weeks 9 and 11 of the 2025 season and made 86 betting recommendations. Every bet was graded against the verified final score, then independently re-checked against real ESPN box scores. This is what actually happened: v1.0 of this analyzer, now being revived for the 2026 season.</p>
   </div>
 </header>
 
 <section class="section">
   <div class="wrap">
+    <div class="correction-notice" id="correction-notice"></div>
     <div class="section-head">
       <h2>Overall Results</h2>
-      <p>Ranked by total profit/loss across all 86 bets, standard -110 odds ($11 to win $10).</p>
+      <p>Ranked by total profit/loss across all 86 bets, standard -110 odds ($11 to win $10). Corrected against real ESPN box scores.</p>
     </div>
     <div class="podium" id="hub-podium"></div>
+    <div class="stat-row mt-24" style="grid-template-columns: 1fr 1fr;">
+      <div class="chart-box">
+        <h3 style="font-size:15px;font-weight:800;margin-bottom:14px;">Total P/L by Model</h3>
+        <div id="chart-pl"></div>
+      </div>
+      <div class="chart-box">
+        <h3 style="font-size:15px;font-weight:800;margin-bottom:14px;">Win Rate by Model</h3>
+        <div id="chart-winrate"></div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -55,7 +66,7 @@
   <div class="wrap">
     <div class="section-head">
       <h2>Explore the Full Dataset</h2>
-      <p>Every one of the 86 bets, filterable by model, week, prompt, and bet type &mdash; plus prompt-by-prompt performance.</p>
+      <p>Every one of the 86 bets, filterable by model, week, prompt, and bet type, plus prompt-by-prompt performance.</p>
     </div>
     <a class="game-card" href="bet-database.html" style="max-width: 420px;">
       <div class="card-top"><span class="wk">Data</span><span class="result-tag">86 BETS</span></div>
@@ -90,6 +101,13 @@
         + '</div>';
     }).join('');
 
+    var correctedBets = NFL_BETS.filter(function (b) { return b.corrected; });
+    document.getElementById('correction-notice').innerHTML = '<strong>' + correctedBets.length + ' bets corrected after independent ESPN verification</strong>'
+      + 'The original CS486 "final verified" CSV still had grading errors on ' + correctedBets.length + ' prop bets when checked against real box-score stats (e.g. a bet graded WIN where the player actually fell short of the line). '
+      + 'The numbers on this page are the corrected totals. See the <a href="bet-database.html">Bet Database</a> for every corrected row, or the per-game pages for exact actual stat lines.';
+
+    nflRenderModelPlChart('chart-pl');
+    nflRenderWinRateChart('chart-winrate');
     nflRenderGameCards('game-cards');
 
     document.querySelectorAll('.filter-tab').forEach(function (tab) {

@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>San Francisco 49ers @ Arizona Cardinals — Week 11 AI Betting Grades</title>
+<title>San Francisco 49ers @ Arizona Cardinals - Week 11 AI Betting Grades</title>
 <link rel="stylesheet" href="../assets/styles.css">
 </head>
 <body>
@@ -29,15 +29,26 @@
 
 <section class="section">
   <div class="wrap">
+    
     <div class="section-head">
-      <h2>Model Standings — This Game</h2>
+      <h2>Model Standings - This Game</h2>
       <p>Ranked by real profit/loss on the bets each model actually made for 49ers vs Cardinals.</p>
     </div>
     <div class="podium" id="podium-mount"></div>
+    
   </div>
 </section>
 
 <section class="section alt">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>P/L by Model - This Game</h2>
+    </div>
+    <div class="chart-box" id="chart-mount"></div>
+  </div>
+</section>
+
+<section class="section">
   <div class="wrap">
     <div class="section-head">
       <h2>Bet-by-Bet Breakdown</h2>
@@ -47,7 +58,7 @@
       <div class="insight-card">
         <h3><span class="chip-model ChatGPT">ChatGPT</span> &nbsp;1-0 &middot; +$4.55</h3>
         <ul>
-          <li><strong>Moneyline:</strong> 49ers ML &mdash; <span class="badge WIN">WIN</span><br><span style="color:var(--ink-soft);font-size:13px;">Hit.</span></li>
+          <li><strong>Moneyline:</strong> 49ers ML: <span class="badge WIN">WIN</span><br><span style="color:var(--ink-soft);font-size:13px;">Hit.</span></li>
         </ul>
       </div>
       <div class="insight-card">
@@ -59,8 +70,8 @@
       <div class="insight-card">
         <h3><span class="chip-model Gemini">Gemini</span> &nbsp;1-1 &middot; −$1.27</h3>
         <ul>
-          <li><strong>Spread:</strong> Cardinals +3.0 &mdash; <span class="badge LOSS">LOSS</span><br><span style="color:var(--ink-soft);font-size:13px;">Final margin: 19 points.</span></li>
-          <li><strong>Total:</strong> OVER 48.5 &mdash; <span class="badge WIN">WIN</span><br><span style="color:var(--ink-soft);font-size:13px;">Actual game total: 63 points.</span></li>
+          <li><strong>Spread:</strong> Cardinals +3.0: <span class="badge LOSS">LOSS</span><br><span style="color:var(--ink-soft);font-size:13px;">Final margin: 19 points.</span></li>
+          <li><strong>Total:</strong> OVER 48.5: <span class="badge WIN">WIN</span><br><span style="color:var(--ink-soft);font-size:13px;">Actual game total: 63 points.</span></li>
         </ul>
       </div>
     </div>
@@ -89,6 +100,12 @@
   nflRenderScoreboard('niners-cardinals', 'scoreboard-mount');
   nflRenderPodium('49ers vs Cardinals', 'podium-mount');
   nflRenderBetsTable(nflBetsForGame('49ers vs Cardinals'), 'bets-mount', { showGame: false });
+  (function () {
+    var standings = nflGameStandings('49ers vs Cardinals');
+    nflBarChart('chart-mount', standings.map(function (s) {
+      return { label: s.model, value: s.pl, display: nflMoney(s.pl), color: NFL_MODEL_COLOR[s.model] };
+    }));
+  })();
 </script>
 </body>
 </html>
