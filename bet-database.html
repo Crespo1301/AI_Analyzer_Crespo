@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Bet Database — AI NFL Analyzer</title>
+<title>Bet Database - AI NFL Analyzer</title>
 <link rel="stylesheet" href="assets/styles.css">
 </head>
 <body>
@@ -27,7 +27,18 @@
 
 <section class="section">
   <div class="wrap">
+    <div class="correction-notice" id="correction-notice"></div>
     <div class="stat-row" id="model-stats"></div>
+    <div class="stat-row mt-24" style="grid-template-columns: 1fr 1fr;">
+      <div class="chart-box">
+        <h3 style="font-size:15px;font-weight:800;margin-bottom:14px;">Total P/L by Model</h3>
+        <div id="chart-pl"></div>
+      </div>
+      <div class="chart-box">
+        <h3 style="font-size:15px;font-weight:800;margin-bottom:14px;">Win Rate by Bet Type Group</h3>
+        <div id="chart-bettype"></div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -74,6 +85,13 @@
 <script src="assets/site.js"></script>
 <script>
   (function () {
+    var correctedBets = NFL_BETS.filter(function (b) { return b.corrected; });
+    document.getElementById('correction-notice').innerHTML = '<strong>' + correctedBets.length + ' bets corrected after independent ESPN verification</strong>'
+      + 'Rows highlighted below show "corrected" with the original CSV outcome struck through next to it. The Actual column shows the real stat line each prop was graded against.';
+
+    nflRenderModelPlChart('chart-pl');
+    nflRenderBetTypeChart('chart-bettype');
+
     var summary = nflModelSummary().slice().sort(function (a, b) { return b.pl - a.pl; });
     document.getElementById('model-stats').innerHTML = summary.map(function (s) {
       return '<div class="stat-tile"><div class="label">' + s.model + '</div>'

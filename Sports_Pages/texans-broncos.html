@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Houston Texans @ Denver Broncos — Week 9 AI Betting Grades</title>
+<title>Houston Texans @ Denver Broncos - Week 9 AI Betting Grades</title>
 <link rel="stylesheet" href="../assets/styles.css">
 </head>
 <body>
@@ -29,15 +29,26 @@
 
 <section class="section">
   <div class="wrap">
+    <div class="correction-notice"><strong>4 bets corrected after ESPN verification</strong>The outcomes below reflect real box-score stats, not the original CSV grading. Rows marked "corrected" show what the original said too.</div>
     <div class="section-head">
-      <h2>Model Standings — This Game</h2>
+      <h2>Model Standings - This Game</h2>
       <p>Ranked by real profit/loss on the bets each model actually made for Texans vs Broncos.</p>
     </div>
     <div class="podium" id="podium-mount"></div>
+    <div class="legacy-panel"><h3>Original CS486 Grading</h3><p class="note" style="color:var(--ink-soft);font-size:13px;">The original CS486 write-up scored this game (75.0 / 55.0 / 45.0 out of 100), but that grading was built on a narrative that has since been shown to misattribute bets between models (see the corrected standings above) and on 4 of 7 props whose outcomes didn't match the real ESPN box score. Not shown here since the premise it was scored on was wrong.</p></div>
   </div>
 </section>
 
 <section class="section alt">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>P/L by Model - This Game</h2>
+    </div>
+    <div class="chart-box" id="chart-mount"></div>
+  </div>
+</section>
+
+<section class="section">
   <div class="wrap">
     <div class="section-head">
       <h2>Bet-by-Bet Breakdown</h2>
@@ -45,25 +56,25 @@
     </div>
     <div class="insight-grid">
       <div class="insight-card">
-        <h3><span class="chip-model ChatGPT">ChatGPT</span> &nbsp;2-0 &middot; +$20.00</h3>
+        <h3><span class="chip-model ChatGPT">ChatGPT</span> &nbsp;1-1 &middot; −$1.00</h3>
         <ul>
-          <li><strong>Prop:</strong> Stroud O1.5 pass TDs &mdash; <span class="badge WIN">WIN</span><br><span style="color:var(--ink-soft);font-size:13px;">Hit.</span></li>
-          <li><strong>Prop:</strong> Stroud U231.5 pass yds &mdash; <span class="badge WIN">WIN</span><br><span style="color:var(--ink-soft);font-size:13px;">Hit.</span></li>
+          <li><strong>Prop:</strong> Stroud O1.5 pass TDs: <span class="badge LOSS">LOSS</span> <span class="corrected-flag">corrected</span><br><span style="color:var(--ink-soft);font-size:13px;">Actual: 6/10, 79 yds, 0 TD (backup role behind Davis Mills).</span></li>
+          <li><strong>Prop:</strong> Stroud U231.5 pass yds: <span class="badge WIN">WIN</span><br><span style="color:var(--ink-soft);font-size:13px;">Hit.</span></li>
         </ul>
       </div>
       <div class="insight-card">
-        <h3><span class="chip-model Claude">Claude</span> &nbsp;2-1 &middot; +$9.00</h3>
+        <h3><span class="chip-model Claude">Claude</span> &nbsp;1-2 &middot; −$12.00</h3>
         <ul>
-          <li><strong>Prop:</strong> Nix O205.5 pass yds &mdash; <span class="badge WIN">WIN</span><br><span style="color:var(--ink-soft);font-size:13px;">Hit.</span></li>
-          <li><strong>Prop:</strong> Nik Bonitto anytime sack &mdash; <span class="badge LOSS">LOSS</span><br><span style="color:var(--ink-soft);font-size:13px;">Missed.</span></li>
-          <li><strong>Prop:</strong> Sutton O58.5 rec yds &mdash; <span class="badge WIN">WIN</span><br><span style="color:var(--ink-soft);font-size:13px;">Hit.</span></li>
+          <li><strong>Prop:</strong> Nix O205.5 pass yds: <span class="badge LOSS">LOSS</span> <span class="corrected-flag">corrected</span><br><span style="color:var(--ink-soft);font-size:13px;">Actual: 18/37, 173 pass yds.</span></li>
+          <li><strong>Prop:</strong> Nik Bonitto anytime sack: <span class="badge WIN">WIN</span> <span class="corrected-flag">corrected</span><br><span style="color:var(--ink-soft);font-size:13px;">Actual: 1 sack.</span></li>
+          <li><strong>Prop:</strong> Sutton O58.5 rec yds: <span class="badge LOSS">LOSS</span> <span class="corrected-flag">corrected</span><br><span style="color:var(--ink-soft);font-size:13px;">Actual: 1 rec, 30 yds.</span></li>
         </ul>
       </div>
       <div class="insight-card">
         <h3><span class="chip-model Gemini">Gemini</span> &nbsp;1-1 &middot; −$1.00</h3>
         <ul>
-          <li><strong>Prop:</strong> Woody Marks O60 scrimmage &mdash; <span class="badge LOSS">LOSS</span><br><span style="color:var(--ink-soft);font-size:13px;">Missed.</span></li>
-          <li><strong>Team Total:</strong> Denver U19.5 &mdash; <span class="badge WIN">WIN</span><br><span style="color:var(--ink-soft);font-size:13px;">Actual game total: 33 points.</span></li>
+          <li><strong>Prop:</strong> Woody Marks O60 scrimmage: <span class="badge LOSS">LOSS</span><br><span style="color:var(--ink-soft);font-size:13px;">Missed.</span></li>
+          <li><strong>Team Total:</strong> Denver U19.5: <span class="badge WIN">WIN</span><br><span style="color:var(--ink-soft);font-size:13px;">Actual game total: 33 points.</span></li>
         </ul>
       </div>
     </div>
@@ -82,7 +93,7 @@
 <footer class="site-footer">
   <div class="wrap foot-row">
     <span>CS 486 &middot; NFL Betting AI Evaluation &middot; Carlos Crespo, USF Fall 2025</span>
-    <span>Verified vs. <a href="https://www.espn.com/nfl/scoreboard/_/week/9/year/2025/seasontype/2" target="_blank" rel="noopener">ESPN</a></span>
+    <span>Verified vs. <a href="https://www.espn.com/nfl/boxscore/_/gameId/401772870" target="_blank" rel="noopener">ESPN</a></span>
   </div>
 </footer>
 
@@ -92,6 +103,12 @@
   nflRenderScoreboard('texans-broncos', 'scoreboard-mount');
   nflRenderPodium('Texans vs Broncos', 'podium-mount');
   nflRenderBetsTable(nflBetsForGame('Texans vs Broncos'), 'bets-mount', { showGame: false });
+  (function () {
+    var standings = nflGameStandings('Texans vs Broncos');
+    nflBarChart('chart-mount', standings.map(function (s) {
+      return { label: s.model, value: s.pl, display: nflMoney(s.pl), color: NFL_MODEL_COLOR[s.model] };
+    }));
+  })();
 </script>
 </body>
 </html>
