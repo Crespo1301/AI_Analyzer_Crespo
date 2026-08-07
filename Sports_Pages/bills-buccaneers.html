@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Buffalo Bills @ Tampa Bay Buccaneers — Week 11 AI Betting Grades</title>
+<link rel="stylesheet" href="../assets/styles.css">
+</head>
+<body>
+<nav class="site-nav">
+  <div class="nav-row">
+    <a class="nav-back" href="../index.html"><span class="arrow">&larr;</span> AI NFL Analyzer</a>
+    <ul class="nav-links">
+      <li><a href="../index.html">Hub</a></li>
+      <li><a href="../bet-database.html">Bet Database</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <span class="eyebrow">Week 11 &middot; 2025-11-16</span>
+    <h1>Buffalo Bills @ Tampa Bay Buccaneers</h1>
+    <p class="lede">Buffalo Bills won by 12 points &middot; 76 combined points &middot; every bet below is graded against the verified box score.</p>
+  </div>
+</header>
+
+<section class="scoreboard"><div id="scoreboard-mount"></div></section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Model Standings — This Game</h2>
+      <p>Ranked by real profit/loss on the bets each model actually made for Bills vs Buccaneers.</p>
+    </div>
+    <div class="podium" id="podium-mount"></div>
+  </div>
+</section>
+
+<section class="section alt">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Bet-by-Bet Breakdown</h2>
+      <p>Every recommendation ChatGPT, Claude, and Gemini made for this matchup, graded against the final score.</p>
+    </div>
+    <div class="insight-grid">
+      <div class="insight-card">
+        <h3><span class="chip-model ChatGPT">ChatGPT</span> &nbsp;1-1 &middot; −$0.91</h3>
+        <ul>
+          <li><strong>Prop:</strong> James Cook over ~70 rush yds &mdash; <span class="badge WIN">WIN</span><br><span style="color:var(--ink-soft);font-size:13px;">Hit.</span></li>
+          <li><strong>Prop:</strong> Khalil Shakir rec yds over ~75 &mdash; <span class="badge LOSS">LOSS</span><br><span style="color:var(--ink-soft);font-size:13px;">Missed.</span></li>
+        </ul>
+      </div>
+      <div class="insight-card">
+        <h3><span class="chip-model Claude">Claude</span> &nbsp;1-1 &middot; −$0.91</h3>
+        <ul>
+          <li><strong>Prop:</strong> Josh Allen OVER 0.5 INTs &mdash; <span class="badge LOSS">LOSS</span><br><span style="color:var(--ink-soft);font-size:13px;">Missed.</span></li>
+          <li><strong>Prop:</strong> James Cook OVER rush yds (70.5-75.5) &mdash; <span class="badge WIN">WIN</span><br><span style="color:var(--ink-soft);font-size:13px;">Hit.</span></li>
+        </ul>
+      </div>
+      <div class="insight-card">
+        <h3><span class="chip-model Gemini">Gemini</span> &nbsp;2-0 &middot; +$18.18</h3>
+        <ul>
+          <li><strong>Prop:</strong> Josh Allen Anytime TD &mdash; <span class="badge WIN">WIN</span><br><span style="color:var(--ink-soft);font-size:13px;">Hit.</span></li>
+          <li><strong>Prop:</strong> Baker Mayfield Longest Comp Over 38.5 &mdash; <span class="badge WIN">WIN</span><br><span style="color:var(--ink-soft);font-size:13px;">Hit.</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Full Bet Table</h2>
+    </div>
+    <div id="bets-mount"></div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="wrap foot-row">
+    <span>CS 486 &middot; NFL Betting AI Evaluation &middot; Carlos Crespo, USF Fall 2025</span>
+    <span>Verified vs. <a href="https://www.espn.com/nfl/scoreboard/_/week/11/year/2025/seasontype/2" target="_blank" rel="noopener">ESPN</a></span>
+  </div>
+</footer>
+
+<script src="../assets/nfl-data.js"></script>
+<script src="../assets/site.js"></script>
+<script>
+  nflRenderScoreboard('bills-buccaneers', 'scoreboard-mount');
+  nflRenderPodium('Bills vs Buccaneers', 'podium-mount');
+  nflRenderBetsTable(nflBetsForGame('Bills vs Buccaneers'), 'bets-mount', { showGame: false });
+</script>
+</body>
+</html>

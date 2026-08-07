@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Washington Commanders @ Miami Dolphins — Week 11 AI Betting Grades</title>
+<link rel="stylesheet" href="../assets/styles.css">
+</head>
+<body>
+<nav class="site-nav">
+  <div class="nav-row">
+    <a class="nav-back" href="../index.html"><span class="arrow">&larr;</span> AI NFL Analyzer</a>
+    <ul class="nav-links">
+      <li><a href="../index.html">Hub</a></li>
+      <li><a href="../bet-database.html">Bet Database</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <span class="eyebrow">Week 11 &middot; 2025-11-16</span>
+    <h1>Washington Commanders @ Miami Dolphins</h1>
+    <p class="lede">Miami Dolphins won by 3 points in overtime &middot; 29 combined points &middot; every bet below is graded against the verified box score.</p>
+  </div>
+</header>
+
+<section class="scoreboard"><div id="scoreboard-mount"></div></section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Model Standings — This Game</h2>
+      <p>Ranked by real profit/loss on the bets each model actually made for Commanders vs Dolphins.</p>
+    </div>
+    <div class="podium" id="podium-mount"></div>
+  </div>
+</section>
+
+<section class="section alt">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Bet-by-Bet Breakdown</h2>
+      <p>Every recommendation ChatGPT, Claude, and Gemini made for this matchup, graded against the final score.</p>
+    </div>
+    <div class="insight-grid">
+      <div class="insight-card">
+        <h3><span class="chip-model ChatGPT">ChatGPT</span> &nbsp;3-0 &middot; +$30.00</h3>
+        <ul>
+          <li><strong>Total:</strong> UNDER (game total) &mdash; <span class="badge WIN">WIN</span><br><span style="color:var(--ink-soft);font-size:13px;">Actual game total: 29 points.</span></li>
+          <li><strong>Prop:</strong> WAS RB OVER 11.5-13.5 carries &mdash; <span class="badge WIN">WIN</span><br><span style="color:var(--ink-soft);font-size:13px;">Hit.</span></li>
+          <li><strong>Prop:</strong> Longest FG UNDER 47.5 &mdash; <span class="badge WIN">WIN</span><br><span style="color:var(--ink-soft);font-size:13px;">Hit.</span></li>
+        </ul>
+      </div>
+      <div class="insight-card">
+        <h3><span class="chip-model Claude">Claude</span> &nbsp;3-0 &middot; +$30.00</h3>
+        <ul>
+          <li><strong>Total:</strong> UNDER 47.5 &mdash; <span class="badge WIN">WIN</span><br><span style="color:var(--ink-soft);font-size:13px;">Actual game total: 29 points.</span></li>
+          <li><strong>Prop:</strong> Achane OVER 18.5 rush att &mdash; <span class="badge WIN">WIN</span><br><span style="color:var(--ink-soft);font-size:13px;">Hit.</span></li>
+          <li><strong>Prop:</strong> 1Q UNDER 7.5 &mdash; <span class="badge WIN">WIN</span><br><span style="color:var(--ink-soft);font-size:13px;">Hit.</span></li>
+        </ul>
+      </div>
+      <div class="insight-card">
+        <h3><span class="chip-model Gemini">Gemini</span> &nbsp;2-0 &middot; +$20.00</h3>
+        <ul>
+          <li><strong>Total:</strong> UNDER 47.5 &mdash; <span class="badge WIN">WIN</span><br><span style="color:var(--ink-soft);font-size:13px;">Actual game total: 29 points.</span></li>
+          <li><strong>Prop:</strong> Waddle O0.5 INT (ERROR) &mdash; <span class="badge NA">N/A</span><br><span style="color:var(--ink-soft);font-size:13px;">Bet voided/invalid in original tracking — excluded from P/L.</span></li>
+          <li><strong>Prop:</strong> Achane OVER 14.5 rush att &mdash; <span class="badge WIN">WIN</span><br><span style="color:var(--ink-soft);font-size:13px;">Hit.</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Full Bet Table</h2>
+    </div>
+    <div id="bets-mount"></div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="wrap foot-row">
+    <span>CS 486 &middot; NFL Betting AI Evaluation &middot; Carlos Crespo, USF Fall 2025</span>
+    <span>Verified vs. <a href="https://www.espn.com/nfl/scoreboard/_/week/11/year/2025/seasontype/2" target="_blank" rel="noopener">ESPN</a></span>
+  </div>
+</footer>
+
+<script src="../assets/nfl-data.js"></script>
+<script src="../assets/site.js"></script>
+<script>
+  nflRenderScoreboard('commanders-dolphins', 'scoreboard-mount');
+  nflRenderPodium('Commanders vs Dolphins', 'podium-mount');
+  nflRenderBetsTable(nflBetsForGame('Commanders vs Dolphins'), 'bets-mount', { showGame: false });
+</script>
+</body>
+</html>
