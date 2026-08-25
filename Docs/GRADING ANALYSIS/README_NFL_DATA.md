@@ -2,17 +2,24 @@
 **CS 486 Team 5 - Carlos Crespo (Team Lead)**  
 **Date: December 9, 2025**
 
+> **2026 correction note:** This folder is historical. It preserves the senior
+> project exports, but it is no longer the current source of truth for the
+> public AI Analyzer site. Use `assets/nfl-data.js`, `Docs/2026/`, and
+> `node scripts/verify-nfl-data.js` for current results. An August 2026 ESPN
+> box-score pass found additional grading and game-metadata corrections after
+> these CSVs were produced.
+
 ---
 
 ## 📁 File Inventory
 
-### Primary Data Files (VERIFIED - Use These for Report)
+### Historical Data Files
 
 1. **`Carlos_NFL_Bet_By_Bet_FINAL_VERIFIED.csv`** (6.9 KB)
    - Complete bet-by-bet tracking for all 86 bets
    - Columns: Week, Model, Prompt, Game, Bet_Type, Recommendation, Stake, Outcome, Return, P/L
    - Source: Extracted from labeled response documents
-   - Validation: All outcomes verified against official game results
+   - Validation: superseded by the August 2026 `assets/nfl-data.js` correction layer
 
 2. **`Carlos_NFL_Weekly_Summary_FINAL_VERIFIED.csv`** (1.2 KB)
    - Week-by-week performance breakdown
@@ -46,7 +53,22 @@
 
 ---
 
-## 🎯 Quick Results Summary
+## Current Corrected Results
+
+Current corrected public-site results, after applying the August 2026 ESPN
+box-score correction layer:
+
+| Model | Record | Win % | P/L |
+|------|---------|-------|----------|
+| ChatGPT | 12-12-1 | 50.0% | +$1.00 |
+| Claude | 14-17-0 | 45.2% | -$32.73 |
+| Gemini | 13-15-0 | 46.4% | -$39.17 |
+
+Overall corrected result: 39-44-1, -$70.90, -9.2% ROI.
+
+The older summary below is retained only as historical context.
+
+## Historical December 2025 Summary
 
 ### Overall Rankings
 | Rank | Model   | Record    | Win % | P/L      |

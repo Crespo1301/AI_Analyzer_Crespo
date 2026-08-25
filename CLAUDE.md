@@ -1,6 +1,6 @@
 # CLAUDE.md
 
-Repo role: active public showcase tool featured in Portfolio as `AI Model Performance Analyzer`, but lower current priority than the core business repos.
+Repo role: active public showcase tool featured in Portfolio as `AI Model Performance Analyzer`. This is no longer only an old class-project archive. It is being prepared as a more professional NFL-season tracking system for model predictions, prompt quality, bet results, and reasoning review.
 
 ## Business Context
 
@@ -9,13 +9,19 @@ Repo role: active public showcase tool featured in Portfolio as `AI Model Perfor
 
 ## Claude Role Here
 
-- Use Claude for information design, clarity of comparisons, and presentation polish.
+- Use Claude for information design, clarity of comparisons, prompt quality, reasoning rubrics, and presentation polish.
 - Let Codex handle maintenance, structure cleanup, and any GitHub closeout.
 
 ## Working Notes
 
 - Static analysis hub with HTML pages and documentation.
-- Treat this as a showcase tool, not a weekly business-critical surface.
+- `assets/nfl-data.js` is the current public truth. Older files in `Docs/GRADING ANALYSIS/` are historical and may disagree with the corrected public data.
+- For the 2026 season, preserve raw model responses in `Docs/Responses/2026/` before extracting bets.
+- Use `Docs/2026/grading-rubric.md` to score reasoning. Do not reward wordiness by itself.
+- Use `Docs/2026/iteration-system.md` when changing prompts, strategy lanes, or grading methods.
+- Use `Docs/2026/season-operations-calendar.md` when planning weekly prompt, research, bet-lock, grading, and debrief work.
+- Treat the original experiment as context only. Do not overfit new strategy to the old sample.
+- Use `Prompts/2026/templates/` as the prompt starting point.
 
 ## Useful Commands
 
@@ -23,6 +29,9 @@ Repo role: active public showcase tool featured in Portfolio as `AI Model Perfor
 bash ./scripts/stitch-doctor.sh
 bash ./scripts/stitch-proxy.sh
 bash ./scripts/magic-mcp.sh
+node scripts/verify-nfl-data.js
+node scripts/summarize-experiment.js
+node scripts/build-game-pages.js
 ```
 
 ## Shared AI Tooling

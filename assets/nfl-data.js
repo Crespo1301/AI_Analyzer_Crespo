@@ -47,20 +47,20 @@ function nflTeamLogo(teamName) {
 
 var NFL_GAMES = [
   { id: "ravens-dolphins", week: 9, prompt: 2, label: "Ravens vs Dolphins", away: "Baltimore Ravens", home: "Miami Dolphins", awayScore: 28, homeScore: 6, date: "2025-10-30", espn: "https://www.espn.com/nfl/boxscore/_/gameId/401772943" },
-  { id: "chiefs-bills", week: 9, prompt: 1, label: "Chiefs vs Bills", away: "Kansas City Chiefs", home: "Buffalo Bills", awayScore: 21, homeScore: 28, date: "2025-11-02", espn: "https://www.espn.com/nfl/scoreboard/_/week/9/year/2025/seasontype/2" },
-  { id: "niners-giants", week: 9, prompt: 1, label: "49ers vs Giants", away: "San Francisco 49ers", home: "New York Giants", awayScore: 34, homeScore: 24, date: "2025-11-02", espn: "https://www.espn.com/nfl/scoreboard/_/week/9/year/2025/seasontype/2" },
-  { id: "vikings-lions", week: 9, prompt: 3, label: "Vikings vs Lions", away: "Minnesota Vikings", home: "Detroit Lions", awayScore: 27, homeScore: 24, date: "2025-11-02", espn: "https://www.espn.com/nfl/scoreboard/_/week/9/year/2025/seasontype/2",
+  { id: "chiefs-bills", week: 9, prompt: 1, label: "Chiefs vs Bills", away: "Kansas City Chiefs", home: "Buffalo Bills", awayScore: 21, homeScore: 28, date: "2025-11-02", espn: "https://www.espn.com/nfl/boxscore/_/gameId/401772768" },
+  { id: "niners-giants", week: 9, prompt: 1, label: "49ers vs Giants", away: "San Francisco 49ers", home: "New York Giants", awayScore: 34, homeScore: 24, date: "2025-11-02", espn: "https://www.espn.com/nfl/boxscore/_/gameId/401772767" },
+  { id: "vikings-lions", week: 9, prompt: 3, label: "Vikings vs Lions", away: "Minnesota Vikings", home: "Detroit Lions", awayScore: 27, homeScore: 24, date: "2025-11-02", espn: "https://www.espn.com/nfl/boxscore/_/gameId/401772871",
     legacyGrade: { ChatGPT: 85.0, Gemini: 35.0, Claude: 33.5 } },
-  { id: "packers-panthers", week: 9, prompt: 4, label: "Packers vs Panthers", away: "Green Bay Packers", home: "Carolina Panthers", awayScore: 13, homeScore: 16, date: "2025-11-02", espn: "https://www.espn.com/nfl/scoreboard/_/week/9/year/2025/seasontype/2",
+  { id: "packers-panthers", week: 9, prompt: 4, label: "Packers vs Panthers", away: "Carolina Panthers", home: "Green Bay Packers", awayScore: 16, homeScore: 13, date: "2025-11-02", espn: "https://www.espn.com/nfl/boxscore/_/gameId/401772872",
     legacyNote: "The original CS486 write-up scored this game (40.0 / 25.0 / 25.0 out of 100), but all three models made the identical bet (Packers -12.5), so which score belongs to which model can't be reliably recovered from the surviving records. Not shown per-model to avoid a second misattribution." },
-  { id: "texans-broncos", week: 9, prompt: 5, label: "Texans vs Broncos", away: "Houston Texans", home: "Denver Broncos", awayScore: 15, homeScore: 18, date: "2025-11-02", espn: "https://www.espn.com/nfl/boxscore/_/gameId/401772870",
+  { id: "texans-broncos", week: 9, prompt: 5, label: "Texans vs Broncos", away: "Denver Broncos", home: "Houston Texans", awayScore: 18, homeScore: 15, date: "2025-11-02", espn: "https://www.espn.com/nfl/boxscore/_/gameId/401772870",
     legacyNote: "The original CS486 write-up scored this game (75.0 / 55.0 / 45.0 out of 100), but that grading was built on a narrative that has since been shown to misattribute bets between models (see the corrected standings above) and on 4 of 7 props whose outcomes didn't match the real ESPN box score. Not shown here since the premise it was scored on was wrong." },
 
-  { id: "patriots-jets", week: 11, prompt: 1, label: "Patriots vs Jets", away: "New England Patriots", home: "New York Jets", awayScore: 27, homeScore: 14, date: "2025-11-13", espn: "https://www.espn.com/nfl/boxscore/_/gameId/401772945" },
-  { id: "niners-cardinals", week: 11, prompt: 1, label: "49ers vs Cardinals", away: "San Francisco 49ers", home: "Arizona Cardinals", awayScore: 41, homeScore: 22, date: "2025-11-16", espn: "https://www.espn.com/nfl/scoreboard/_/week/11/year/2025/seasontype/2" },
-  { id: "bills-buccaneers", week: 11, prompt: 2, label: "Bills vs Buccaneers", away: "Buffalo Bills", home: "Tampa Bay Buccaneers", awayScore: 44, homeScore: 32, date: "2025-11-16", espn: "https://www.espn.com/nfl/boxscore/_/gameId/401772776" },
-  { id: "lions-eagles", week: 11, prompt: 3, label: "Lions vs Eagles", away: "Detroit Lions", home: "Philadelphia Eagles", awayScore: 9, homeScore: 16, date: "2025-11-16", espn: "https://www.espn.com/nfl/scoreboard/_/week/11/year/2025/seasontype/2" },
-  { id: "texans-titans", week: 11, prompt: 4, label: "Texans vs Titans", away: "Houston Texans", home: "Tennessee Titans", awayScore: 16, homeScore: 13, date: "2025-11-16", espn: "https://www.espn.com/nfl/scoreboard/_/week/11/year/2025/seasontype/2" },
+  { id: "patriots-jets", week: 11, prompt: 1, label: "Patriots vs Jets", away: "New York Jets", home: "New England Patriots", awayScore: 14, homeScore: 27, date: "2025-11-13", espn: "https://www.espn.com/nfl/boxscore/_/gameId/401772945" },
+  { id: "niners-cardinals", week: 11, prompt: 1, label: "49ers vs Cardinals", away: "San Francisco 49ers", home: "Arizona Cardinals", awayScore: 41, homeScore: 22, date: "2025-11-16", espn: "https://www.espn.com/nfl/boxscore/_/gameId/401772885" },
+  { id: "bills-buccaneers", week: 11, prompt: 2, label: "Bills vs Buccaneers", away: "Tampa Bay Buccaneers", home: "Buffalo Bills", awayScore: 32, homeScore: 44, date: "2025-11-16", espn: "https://www.espn.com/nfl/boxscore/_/gameId/401772776" },
+  { id: "lions-eagles", week: 11, prompt: 3, label: "Lions vs Eagles", away: "Detroit Lions", home: "Philadelphia Eagles", awayScore: 9, homeScore: 16, date: "2025-11-16", espn: "https://www.espn.com/nfl/boxscore/_/gameId/401772928" },
+  { id: "texans-titans", week: 11, prompt: 4, label: "Texans vs Titans", away: "Houston Texans", home: "Tennessee Titans", awayScore: 16, homeScore: 13, date: "2025-11-16", espn: "https://www.espn.com/nfl/boxscore/_/gameId/401772881" },
   { id: "chargers-jaguars", week: 11, prompt: 5, label: "Chargers vs Jaguars", away: "Los Angeles Chargers", home: "Jacksonville Jaguars", awayScore: 6, homeScore: 35, date: "2025-11-16", espn: "https://www.espn.com/nfl/boxscore/_/gameId/401772775" },
   { id: "bears-vikings", week: 11, prompt: 6, label: "Bears vs Vikings", away: "Chicago Bears", home: "Minnesota Vikings", awayScore: 19, homeScore: 17, date: "2025-11-16", espn: "https://www.espn.com/nfl/boxscore/_/gameId/401772880" },
   { id: "commanders-dolphins", week: 11, prompt: 7, label: "Commanders vs Dolphins", away: "Washington Commanders", home: "Miami Dolphins", awayScore: 13, homeScore: 16, ot: true, date: "2025-11-16", neutralSite: "Estadio Santiago Bernabeu, Madrid, Spain", espn: "https://www.espn.com/nfl/boxscore/_/gameId/401772631" },
@@ -166,7 +166,7 @@ var NFL_BETS = [
 
 /*
  * Every prop bet below was independently re-checked against real ESPN box
- * scores (Aug 2026). The 9 entries here are ones where the "FINAL VERIFIED"
+ * scores (Aug 2026). The 11 entries here are ones where the "FINAL VERIFIED"
  * CSV outcome does not match the actual final stat line. Per Carlos's
  * direction: correct the live numbers, keep the original CSV figures
  * visible for transparency (bet.csvOutcome / bet.csvPl), rather than
@@ -176,7 +176,7 @@ var NFL_CORRECTIONS = [
   { week: 9, model: "Gemini", prompt: 2, recommendation: "Lamar O35.5 rush yds", actual: "5 att, 14 rush yds", outcome: "LOSS", ret: 0, pl: -10.00 },
   { week: 9, model: "ChatGPT", prompt: 5, recommendation: "Stroud O1.5 pass TDs", actual: "6/10, 79 yds, 0 TD (backup role behind Davis Mills)", outcome: "LOSS", ret: 0, pl: -11.00 },
   { week: 9, model: "Claude", prompt: 5, recommendation: "Nix O205.5 pass yds", actual: "18/37, 173 pass yds", outcome: "LOSS", ret: 0, pl: -11.00 },
-  { week: 9, model: "Claude", prompt: 5, recommendation: "Nik Bonitto anytime sack", actual: "1 sack", outcome: "WIN", ret: 21.00, pl: 10.00 },
+  { week: 9, model: "Claude", prompt: 5, recommendation: "Nik Bonitto anytime sack", actual: "1 total tackle, 0 sacks", outcome: "LOSS", ret: 0, pl: -11.00 },
   { week: 9, model: "Claude", prompt: 5, recommendation: "Sutton O58.5 rec yds", actual: "1 rec, 30 yds", outcome: "LOSS", ret: 0, pl: -11.00 },
   { week: 11, model: "ChatGPT", prompt: 2, recommendation: "James Cook over ~70 rush yds", actual: "16 att, 48 rush yds", outcome: "LOSS", ret: 0, pl: -10.00 },
   { week: 11, model: "Claude", prompt: 2, recommendation: "James Cook OVER rush yds (70.5-75.5)", actual: "16 att, 48 rush yds", outcome: "LOSS", ret: 0, pl: -10.00 },
