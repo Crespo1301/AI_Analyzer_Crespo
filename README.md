@@ -25,9 +25,15 @@ Static public showcase tool for comparing AI model performance across analysis p
 - `scripts/summarize-experiment.js` prints corrected model, prompt, and bet-type performance
 - `Sports_Pages/` contains the generated per-game pages (auto-generated: see below, don't hand-edit)
 - `Docs/` holds summaries and grading-analysis material (source CSVs live in `Docs/GRADING ANALYSIS/`)
-- `Docs/2026/` holds the next-season grading rubric, weekly template, season operations calendar, iteration system, and original-experiment context
+- `Docs/2026/` holds the next-season grading rubric, weekly template, season operations calendar, iteration system, original-experiment context, and `data-workflow.md` explaining how the 2026 data files feed each other
 - `Prompts/2026/` holds reusable prompt templates and week-by-week prompt workspaces
-- `Data/2026/` holds verified intake files before they are promoted into `assets/nfl-data.js`
+- `Data/2026/teams.json` is the canonical 32-team + divisions reference
+- `Data/2026/team-context.json` is the fillable per-team season context (HC/OC/DC/QB1)
+- `Data/2026/schedule/week-XX.json` are per-week schedule scaffolds (18 files, empty until filled from NFL/ESPN)
+- `Data/2026/intake/` holds the weekly intake template + filled weekly intake files (injuries, weather, lines, matchup notes)
+- `Data/2026/rosters/` holds per-team key-player files for prop grading
+- `Docs/Responses/2026/week-XX/<model>/` is where raw model responses land before bets are extracted
+- `scripts/verify-2026-schedule.js` validates the 2026 schedule scaffolds
 - `Docs/AI-Analyzer.gif` is the committed demo asset for showing the analyzer experience in portfolio/docs contexts
 - `analysis_template.html` is a static starting point for a one-off page outside the data-driven system
 - `Trash/REVIEW_NOTES.md` explains what was retired during the Aug 2026 redesign and why

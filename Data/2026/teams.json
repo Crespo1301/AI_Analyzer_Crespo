@@ -1,0 +1,19 @@
+{
+  "season": 2026,
+  "description": "All 32 NFL teams grouped by conference and division. This is the canonical reference for prompt generation, schedule validation, and team lookups. Colors, cities, stadiums, and ESPN abbreviations are mirrored from assets/nfl-data.js NFL_TEAMS. Head coach, offensive coordinator, defensive coordinator, and QB1 fields are intentionally blank so they get filled from a cited source (team official site or ESPN team page) rather than from memory. Update these before Week 1 and re-verify after any mid-season change.",
+  "sources": {
+    "conference_division": "Permanent NFL structure",
+    "team_metadata": "assets/nfl-data.js NFL_TEAMS",
+    "personnel": "TBD - fill from https://www.nfl.com/teams/ or each team's official site"
+  },
+  "divisions": {
+    "AFC East":  ["Buffalo Bills", "Miami Dolphins", "New England Patriots", "New York Jets"],
+    "AFC North": ["Baltimore Ravens", "Cincinnati Bengals", "Cleveland Browns", "Pittsburgh Steelers"],
+    "AFC South": ["Houston Texans", "Indianapolis Colts", "Jacksonville Jaguars", "Tennessee Titans"],
+    "AFC West":  ["Denver Broncos", "Kansas City Chiefs", "Las Vegas Raiders", "Los Angeles Chargers"],
+    "NFC East":  ["Dallas Cowboys", "New York Giants", "Philadelphia Eagles", "Washington Commanders"],
+    "NFC North": ["Chicago Bears", "Detroit Lions", "Green Bay Packers", "Minnesota Vikings"],
+    "NFC South": ["Atlanta Falcons", "Carolina Panthers", "New Orleans Saints", "Tampa Bay Buccaneers"],
+    "NFC West":  ["Arizona Cardinals", "Los Angeles Rams", "San Francisco 49ers", "Seattle Seahawks"]
+  }
+}

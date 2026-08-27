@@ -1,0 +1,54 @@
+{
+  "season": 2026,
+  "week": 0,
+  "generated": "",
+  "last_verified": "",
+  "sources": {
+    "injuries": "https://www.nfl.com/injuries/ or team official injury reports",
+    "weather": "https://www.nflweather.com/ or NWS point forecast for each stadium",
+    "lines": "Any single sportsbook, named per game; do not mix books",
+    "line_movement": "Screenshot or logged snapshot at open, mid-week, and lock time"
+  },
+  "games": [
+    {
+      "game_id": "",
+      "away": "",
+      "home": "",
+      "kickoff_et": "",
+      "injuries": {
+        "away": [
+          { "player": "", "position": "", "status": "Q|D|O|IR", "note": "", "source": "" }
+        ],
+        "home": []
+      },
+      "weather": {
+        "indoor": false,
+        "forecast_temp_f": null,
+        "forecast_wind_mph": null,
+        "forecast_precip": "",
+        "source": ""
+      },
+      "rest_travel": {
+        "away_days_rest": null,
+        "home_days_rest": null,
+        "away_travel_miles": null,
+        "short_week": false,
+        "cross_country": false,
+        "notes": ""
+      },
+      "lines": {
+        "sportsbook": "",
+        "opening_spread": "",
+        "current_spread": "",
+        "opening_total": null,
+        "current_total": null,
+        "moneyline_away": null,
+        "moneyline_home": null,
+        "snapshot_time_et": ""
+      },
+      "matchup_notes": "",
+      "public_market_concern": "",
+      "questions_the_prompt_must_address": []
+    }
+  ]
+}

@@ -12,32 +12,49 @@
 
 var NFL_MODELS = ["ChatGPT", "Claude", "Gemini"];
 
-// Team branding + venue. Logos hotlinked from ESPN's public team-logo CDN.
+// Team branding + venue + league structure. Logos hotlinked from ESPN's public
+// team-logo CDN. Conference and division are permanent NFL structure.
+// All 32 teams populated as of the 2026 season foundation pass.
 var NFL_TEAMS = {
-  "Baltimore Ravens":       { abbr: "bal", primary: "#241773", secondary: "#000000", city: "Baltimore, MD",      stadium: "M&T Bank Stadium" },
-  "Miami Dolphins":         { abbr: "mia", primary: "#008E97", secondary: "#FC4C02", city: "Miami Gardens, FL",  stadium: "Hard Rock Stadium" },
-  "Kansas City Chiefs":     { abbr: "kc",  primary: "#E31837", secondary: "#FFB81C", city: "Kansas City, MO",    stadium: "GEHA Field at Arrowhead Stadium" },
-  "Buffalo Bills":          { abbr: "buf", primary: "#00338D", secondary: "#C60C30", city: "Orchard Park, NY",   stadium: "Highmark Stadium" },
-  "San Francisco 49ers":    { abbr: "sf",  primary: "#AA0000", secondary: "#B3995D", city: "Santa Clara, CA",    stadium: "Levi's Stadium" },
-  "New York Giants":        { abbr: "nyg", primary: "#0B2265", secondary: "#A71930", city: "East Rutherford, NJ", stadium: "MetLife Stadium" },
-  "Minnesota Vikings":      { abbr: "min", primary: "#4F2683", secondary: "#FFC62F", city: "Minneapolis, MN",    stadium: "U.S. Bank Stadium" },
-  "Detroit Lions":          { abbr: "det", primary: "#0076B6", secondary: "#B0B7BC", city: "Detroit, MI",        stadium: "Ford Field" },
-  "Green Bay Packers":      { abbr: "gb",  primary: "#203731", secondary: "#FFB612", city: "Green Bay, WI",      stadium: "Lambeau Field" },
-  "Carolina Panthers":      { abbr: "car", primary: "#0085CA", secondary: "#000000", city: "Charlotte, NC",      stadium: "Bank of America Stadium" },
-  "Houston Texans":         { abbr: "hou", primary: "#03202F", secondary: "#A71930", city: "Houston, TX",        stadium: "NRG Stadium" },
-  "Denver Broncos":         { abbr: "den", primary: "#FB4F14", secondary: "#002244", city: "Denver, CO",         stadium: "Empower Field at Mile High" },
-  "New England Patriots":   { abbr: "ne",  primary: "#002244", secondary: "#C60C30", city: "Foxborough, MA",     stadium: "Gillette Stadium" },
-  "New York Jets":          { abbr: "nyj", primary: "#125740", secondary: "#000000", city: "East Rutherford, NJ", stadium: "MetLife Stadium" },
-  "Arizona Cardinals":      { abbr: "ari", primary: "#97233F", secondary: "#000000", city: "Glendale, AZ",       stadium: "State Farm Stadium" },
-  "Tampa Bay Buccaneers":   { abbr: "tb",  primary: "#D50A0A", secondary: "#34302B", city: "Tampa, FL",          stadium: "Raymond James Stadium" },
-  "Philadelphia Eagles":    { abbr: "phi", primary: "#004C54", secondary: "#A5ACAF", city: "Philadelphia, PA",   stadium: "Lincoln Financial Field" },
-  "Tennessee Titans":       { abbr: "ten", primary: "#0C2340", secondary: "#4B92DB", city: "Nashville, TN",      stadium: "Nissan Stadium" },
-  "Los Angeles Chargers":   { abbr: "lac", primary: "#0080C6", secondary: "#FFC20E", city: "Inglewood, CA",      stadium: "SoFi Stadium" },
-  "Jacksonville Jaguars":   { abbr: "jax", primary: "#006778", secondary: "#101820", city: "Jacksonville, FL",   stadium: "EverBank Stadium" },
-  "Chicago Bears":          { abbr: "chi", primary: "#0B162A", secondary: "#C83803", city: "Chicago, IL",        stadium: "Soldier Field" },
-  "Washington Commanders":  { abbr: "wsh", primary: "#5A1414", secondary: "#FFB612", city: "Landover, MD",       stadium: "Commanders Field" },
-  "Dallas Cowboys":         { abbr: "dal", primary: "#041E42", secondary: "#869397", city: "Arlington, TX",      stadium: "AT&T Stadium" },
-  "Las Vegas Raiders":      { abbr: "lv",  primary: "#000000", secondary: "#A5ACAF", city: "Las Vegas, NV",      stadium: "Allegiant Stadium" }
+  "Buffalo Bills":          { abbr: "buf", conference: "AFC", division: "East",  primary: "#00338D", secondary: "#C60C30", city: "Orchard Park, NY",   stadium: "Highmark Stadium" },
+  "Miami Dolphins":         { abbr: "mia", conference: "AFC", division: "East",  primary: "#008E97", secondary: "#FC4C02", city: "Miami Gardens, FL",  stadium: "Hard Rock Stadium" },
+  "New England Patriots":   { abbr: "ne",  conference: "AFC", division: "East",  primary: "#002244", secondary: "#C60C30", city: "Foxborough, MA",     stadium: "Gillette Stadium" },
+  "New York Jets":          { abbr: "nyj", conference: "AFC", division: "East",  primary: "#125740", secondary: "#000000", city: "East Rutherford, NJ", stadium: "MetLife Stadium" },
+
+  "Baltimore Ravens":       { abbr: "bal", conference: "AFC", division: "North", primary: "#241773", secondary: "#000000", city: "Baltimore, MD",      stadium: "M&T Bank Stadium" },
+  "Cincinnati Bengals":     { abbr: "cin", conference: "AFC", division: "North", primary: "#FB4F14", secondary: "#000000", city: "Cincinnati, OH",     stadium: "Paycor Stadium" },
+  "Cleveland Browns":       { abbr: "cle", conference: "AFC", division: "North", primary: "#311D00", secondary: "#FF3C00", city: "Cleveland, OH",      stadium: "Huntington Bank Field" },
+  "Pittsburgh Steelers":    { abbr: "pit", conference: "AFC", division: "North", primary: "#FFB612", secondary: "#101820", city: "Pittsburgh, PA",     stadium: "Acrisure Stadium" },
+
+  "Houston Texans":         { abbr: "hou", conference: "AFC", division: "South", primary: "#03202F", secondary: "#A71930", city: "Houston, TX",        stadium: "NRG Stadium" },
+  "Indianapolis Colts":     { abbr: "ind", conference: "AFC", division: "South", primary: "#002C5F", secondary: "#A2AAAD", city: "Indianapolis, IN",   stadium: "Lucas Oil Stadium" },
+  "Jacksonville Jaguars":   { abbr: "jax", conference: "AFC", division: "South", primary: "#006778", secondary: "#101820", city: "Jacksonville, FL",   stadium: "EverBank Stadium" },
+  "Tennessee Titans":       { abbr: "ten", conference: "AFC", division: "South", primary: "#0C2340", secondary: "#4B92DB", city: "Nashville, TN",      stadium: "Nissan Stadium" },
+
+  "Denver Broncos":         { abbr: "den", conference: "AFC", division: "West",  primary: "#FB4F14", secondary: "#002244", city: "Denver, CO",         stadium: "Empower Field at Mile High" },
+  "Kansas City Chiefs":     { abbr: "kc",  conference: "AFC", division: "West",  primary: "#E31837", secondary: "#FFB81C", city: "Kansas City, MO",    stadium: "GEHA Field at Arrowhead Stadium" },
+  "Las Vegas Raiders":      { abbr: "lv",  conference: "AFC", division: "West",  primary: "#000000", secondary: "#A5ACAF", city: "Las Vegas, NV",      stadium: "Allegiant Stadium" },
+  "Los Angeles Chargers":   { abbr: "lac", conference: "AFC", division: "West",  primary: "#0080C6", secondary: "#FFC20E", city: "Inglewood, CA",      stadium: "SoFi Stadium" },
+
+  "Dallas Cowboys":         { abbr: "dal", conference: "NFC", division: "East",  primary: "#041E42", secondary: "#869397", city: "Arlington, TX",      stadium: "AT&T Stadium" },
+  "New York Giants":        { abbr: "nyg", conference: "NFC", division: "East",  primary: "#0B2265", secondary: "#A71930", city: "East Rutherford, NJ", stadium: "MetLife Stadium" },
+  "Philadelphia Eagles":    { abbr: "phi", conference: "NFC", division: "East",  primary: "#004C54", secondary: "#A5ACAF", city: "Philadelphia, PA",   stadium: "Lincoln Financial Field" },
+  "Washington Commanders":  { abbr: "wsh", conference: "NFC", division: "East",  primary: "#5A1414", secondary: "#FFB612", city: "Landover, MD",       stadium: "Commanders Field" },
+
+  "Chicago Bears":          { abbr: "chi", conference: "NFC", division: "North", primary: "#0B162A", secondary: "#C83803", city: "Chicago, IL",        stadium: "Soldier Field" },
+  "Detroit Lions":          { abbr: "det", conference: "NFC", division: "North", primary: "#0076B6", secondary: "#B0B7BC", city: "Detroit, MI",        stadium: "Ford Field" },
+  "Green Bay Packers":      { abbr: "gb",  conference: "NFC", division: "North", primary: "#203731", secondary: "#FFB612", city: "Green Bay, WI",      stadium: "Lambeau Field" },
+  "Minnesota Vikings":      { abbr: "min", conference: "NFC", division: "North", primary: "#4F2683", secondary: "#FFC62F", city: "Minneapolis, MN",    stadium: "U.S. Bank Stadium" },
+
+  "Atlanta Falcons":        { abbr: "atl", conference: "NFC", division: "South", primary: "#A71930", secondary: "#000000", city: "Atlanta, GA",        stadium: "Mercedes-Benz Stadium" },
+  "Carolina Panthers":      { abbr: "car", conference: "NFC", division: "South", primary: "#0085CA", secondary: "#000000", city: "Charlotte, NC",      stadium: "Bank of America Stadium" },
+  "New Orleans Saints":     { abbr: "no",  conference: "NFC", division: "South", primary: "#D3BC8D", secondary: "#101820", city: "New Orleans, LA",    stadium: "Caesars Superdome" },
+  "Tampa Bay Buccaneers":   { abbr: "tb",  conference: "NFC", division: "South", primary: "#D50A0A", secondary: "#34302B", city: "Tampa, FL",          stadium: "Raymond James Stadium" },
+
+  "Arizona Cardinals":      { abbr: "ari", conference: "NFC", division: "West",  primary: "#97233F", secondary: "#000000", city: "Glendale, AZ",       stadium: "State Farm Stadium" },
+  "Los Angeles Rams":       { abbr: "lar", conference: "NFC", division: "West",  primary: "#003594", secondary: "#FFA300", city: "Inglewood, CA",      stadium: "SoFi Stadium" },
+  "San Francisco 49ers":    { abbr: "sf",  conference: "NFC", division: "West",  primary: "#AA0000", secondary: "#B3995D", city: "Santa Clara, CA",    stadium: "Levi's Stadium" },
+  "Seattle Seahawks":       { abbr: "sea", conference: "NFC", division: "West",  primary: "#002244", secondary: "#69BE28", city: "Seattle, WA",        stadium: "Lumen Field" }
 };
 
 function nflTeamLogo(teamName) {
