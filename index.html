@@ -12,25 +12,36 @@
     <a class="nav-brand" href="index.html"><span class="chip">AI</span> NFL Analyzer</a>
     <ul class="nav-links">
       <li><a href="index.html" class="active">Hub</a></li>
+      <li><a href="#predictions-2026">2026 Picks</a></li>
       <li><a href="bet-database.html">Bet Database</a></li>
-      <li><a href="#games">Games</a></li>
+      <li><a href="#games">2025 Games</a></li>
     </ul>
   </div>
 </nav>
 
 <header class="hero">
   <div class="wrap">
-    <span class="eyebrow">CS 486 &middot; Ethical &amp; Trustworthy AI &middot; USF Fall 2025</span>
+    <span class="eyebrow">2026 NFL Season &middot; Live Model Predictions</span>
     <h1>Can you trust an LLM with your bankroll?</h1>
-    <p class="lede">ChatGPT, Claude, and Gemini independently analyzed 15 real NFL games across Weeks 9 and 11 of the 2025 season and made 86 betting recommendations. Every bet was graded against the verified final score, then independently re-checked against real ESPN box scores. This is what actually happened: v1.0 of this analyzer, now being revived for the 2026 season.</p>
+    <p class="lede">ChatGPT (GPT 5.5), Claude (Opus 4.7), and Gemini (3.1) analyze every NFL game each week with a hypothetical $20 bankroll and decide their own bet allocation. Picks are locked before kickoff, graded against the ESPN box score, and archived alongside the 2025 baseline for comparison.</p>
   </div>
 </header>
 
-<section class="section">
+<section class="section" id="predictions-2026">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Current Predictions - 2026 Season</h2>
+      <p>Locked pre-kickoff, awaiting results. Each model gets a $20 bankroll per game and decides its own straight bets, parlays, SGPs, and reserve. Full raw responses in <code>Docs/Responses/2026/</code>.</p>
+    </div>
+    <div id="predictions-2026-mount"></div>
+  </div>
+</section>
+
+<section class="section alt">
   <div class="wrap">
     <div class="correction-notice" id="correction-notice"></div>
     <div class="section-head">
-      <h2>Overall Results</h2>
+      <h2>2025 Baseline Results (v1.0)</h2>
       <p>Ranked by total profit/loss across all 86 bets, standard -110 odds ($11 to win $10). Corrected against real ESPN box scores.</p>
     </div>
     <div class="podium" id="hub-podium"></div>
@@ -47,11 +58,11 @@
   </div>
 </section>
 
-<section class="section alt" id="games">
+<section class="section" id="games">
   <div class="wrap">
     <div class="section-head">
-      <h2>All 15 Games</h2>
-      <p>Every matchup the models were tested on, both weeks.</p>
+      <h2>2025 Baseline: All 15 Games</h2>
+      <p>Every matchup the models were tested on in the 2025 experiment (Weeks 9 and 11).</p>
     </div>
     <div class="filter-tabs">
       <button class="filter-tab active" data-week="all">All</button>
@@ -86,9 +97,11 @@
 </footer>
 
 <script src="assets/nfl-data.js"></script>
+<script src="assets/nfl-predictions-2026.js"></script>
 <script src="assets/site.js"></script>
 <script>
   (function () {
+    nflRenderPredictions2026('predictions-2026-mount');
     var summary = nflModelSummary().slice().sort(function (a, b) { return b.pl - a.pl; });
     var ranks = ['rank-1', 'rank-2', 'rank-3'];
     var labels = ['1ST', '2ND', '3RD'];

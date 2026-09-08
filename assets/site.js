@@ -200,3 +200,65 @@ function nflRenderBetTypeChart(mountId) {
   });
   nflBarChart(mountId, items, { width: 640 });
 }
+
+function nflFormatBet(bet) {
+  if (bet.type === "sgp" || bet.type === "parlay") {
+    var legs = bet.legs.map(function (l) { return l.line; }).join(" + ");
+    return '<div class="pred-bet"><span class="pred-stake">$' + bet.stake + '</span> '
+      + '<span class="pred-tag">' + (bet.type === "sgp" ? "SGP" : "Parlay") + '</span> '
+      + '<span class="pred-line">' + legs + '</span> '
+      + '<span class="pred-conf">' + bet.confidence + '/10</span></div>';
+  }
+  return '<div class="pred-bet"><span class="pred-stake">$' + bet.stake + '</span> '
+    + '<span class="pred-tag">' + bet.market + '</span> '
+    + '<span class="pred-line">' + bet.line + '</span> '
+    + '<span class="pred-conf">' + bet.confidence + '/10</span></div>';
+}
+
+function nflRenderPredictions2026(mountId) {
+  var host = document.getElementById(mountId);
+  if (!host || typeof NFL_PREDICTIONS_2026 === "undefined") return;
+  var html = NFL_PREDICTIONS_2026.map(function (g) {
+    var away = NFL_TEAMS[g.away], home = NFL_TEAMS[g.home];
+    var awayLogo = away ? '<img class="pred-logo" src="' + nflTeamLogo(g.away) + '" alt="' + g.away + '">' : '';
+    var homeLogo = home ? '<img class="pred-logo" src="' + nflTeamLogo(g.home) + '" alt="' + g.home + '">' : '';
+    var locationLine = g.neutralSite || g.venue || '';
+    var cols = NFL_MODELS.map(function (model) {
+      var m = g.models[model];
+      if (!m) return '';
+      var betsHtml = m.bets.length
+        ? m.bets.map(nflFormatBet).join('')
+        : '<div class="pred-bet pred-none">No bets - full $20 reserved</div>';
+      return '<div class="pred-col">'
+        + '<div class="pred-col-head"><span class="chip-model ' + model + '">' + model + '</span>'
+        + '<span class="pred-version">' + m.version + '</span></div>'
+        + '<div class="pred-alloc"><span class="pred-exposure">$' + m.total_stake + ' exposure</span>'
+        + '<span class="pred-reserve">$' + m.reserve + ' reserve</span></div>'
+        + '<div class="pred-bets">' + betsHtml + '</div>'
+        + '<div class="pred-summary">' + m.summary + '</div>'
+        + '</div>';
+    }).join('');
+    return '<article class="pred-card" data-week="' + g.week + '">'
+      + '<header class="pred-head">'
+      + '<div class="pred-title">'
+      + awayLogo + '<span class="pred-matchup">' + g.away + ' at ' + g.home + '</span>' + homeLogo
+      + '</div>'
+      + '<div class="pred-meta">'
+      + '<span class="pred-week">Week ' + g.week + '</span>'
+      + '<span class="pred-kickoff">' + g.kickoffDisplay + '</span>'
+      + '<span class="pred-venue">' + locationLine + '</span>'
+      + '</div>'
+      + '<div class="pred-lines">'
+      + '<span>Spread: <strong>' + g.line_snapshot.spread + '</strong></span>'
+      + '<span>Total: <strong>' + g.line_snapshot.total + '</strong></span>'
+      + '<span>ML: <strong>' + g.line_snapshot.moneyline + '</strong></span>'
+      + '<span class="pred-lockdate">Locked ' + g.locked_at + '</span>'
+      + '<span class="pred-status">Awaiting Result</span>'
+      + '</div>'
+      + '</header>'
+      + '<div class="pred-grid">' + cols + '</div>'
+      + '<footer class="pred-foot">Grading source: <a href="' + g.espn + '" target="_blank" rel="noopener">ESPN box score</a> &middot; Prompt template: ' + g.prompt_template + '</footer>'
+      + '</article>';
+  }).join('');
+  host.innerHTML = html;
+}
