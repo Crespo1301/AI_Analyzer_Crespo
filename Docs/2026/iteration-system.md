@@ -52,6 +52,48 @@ Reason: models were giving confident picks without downside risk.
 Expected improvement: fewer weak props and fewer public-looking spread picks.
 ```
 
+## Change Log (actual)
+
+```text
+2026-09-08
+Prompt: bankroll-optimized (introduced as the Week 1 default)
+Change: replaced 2025-style "here is a line, size a bet on it" prompts with a
+  $20-bankroll allocation prompt. Models decide their own stakes across
+  straight bets, parlays, SGPs, and reserve. Sum must equal $20 exactly.
+  Every pick must name a specific line so it can be graded from the ESPN
+  box score.
+Reason: 2025 experiment had un-auditable "take the QB passing over" style
+  picks that could not be graded later, and had inconsistent stake sizing
+  across models. The $20 constraint gives every model the same budget and
+  forces them to reveal how they weigh conviction against edge.
+Expected improvement: every response is fully auditable; stake-sizing
+  behavior becomes a comparable variable across models; parlays get graded
+  as one bet (single stake, all legs must hit) instead of as separate rows.
+```
+
+```text
+2026-09-08
+Prompt: research-mode (drafted, becomes default starting Week 2)
+Change: prompt no longer hand-feeds injury, weather, coaching, or surface
+  context. It supplies only the fixed betting universe (teams, kickoff,
+  venue name, line snapshot with source, ESPN box-score URL) and requires
+  the model to research everything else itself and cite each source. Same
+  $20 bankroll / parlay / reserve output structure as bankroll-optimized.
+Reason: Week 1 game 1 (Patriots at Seahawks) shipped with two factual
+  errors in the hand-written pre-game context (Drake Maye's season count
+  and Lumen Field's playing surface), both caught by GPT 5.5. Also, the
+  three models are being run in fresh chats with no local context, so
+  hand-fed prompts amplify prompt-writer mistakes without letting the
+  models correct them. Research-mode shifts the fact-finding onus onto the
+  model and grades it explicitly.
+Expected improvement: eliminates prompt-writer error as a variable;
+  exposes model research quality as a graded axis separate from betting
+  judgment; scales to 16 games/week without a human intake bottleneck.
+Fallback: if any model provably lacks working search in a given week,
+  rerun that specific game under bankroll-optimized and note it in
+  result.md as a methodology inconsistency for that week.
+```
+
 ## Strategy Lanes
 
 Start with three lanes:

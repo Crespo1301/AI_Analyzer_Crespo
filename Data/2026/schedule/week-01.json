@@ -1,11 +1,35 @@
 {
   "season": 2026,
   "week": 1,
-  "window": {
-    "start": "2026-09-09",
-    "end": "2026-09-14"
-  },
-  "last_verified": "",
-  "source": "",
-  "games": []
+  "window": { "start": "2026-09-09", "end": "2026-09-14" },
+  "last_verified": "2026-09-08",
+  "source": "https://www.espn.com/nfl/game/_/gameId/401872656/patriots-seahawks",
+  "games": [
+    {
+      "id": "patriots-seahawks",
+      "date": "2026-09-09",
+      "kickoff_et": "20:20",
+      "away": "New England Patriots",
+      "home": "Seattle Seahawks",
+      "venue": "Lumen Field",
+      "neutral_site": null,
+      "network": "NBC",
+      "espn_game_id": "401872656",
+      "espn_boxscore": "https://www.espn.com/nfl/boxscore/_/gameId/401872656",
+      "notes": "2026 NFL Kickoff Game (Wednesday opener). Line at intake: SEA -3.5, total 44.5, SEA ML -170 / NE ML +142."
+    },
+    {
+      "id": "niners-rams",
+      "date": "2026-09-10",
+      "kickoff_et": "",
+      "away": "San Francisco 49ers",
+      "home": "Los Angeles Rams",
+      "venue": "Melbourne Cricket Ground",
+      "neutral_site": "Melbourne, Australia (NFL Melbourne Game, international neutral site)",
+      "network": "Netflix",
+      "espn_game_id": "401872657",
+      "espn_boxscore": "https://www.espn.com/nfl/boxscore/_/gameId/401872657",
+      "notes": "NFL international game in Melbourne. Both teams travel internationally. ESPN preview did not state ET kickoff time or projected starting QBs. Line at intake (DraftKings via ESPN): LAR -2.5, total 48.5, SF ML +164 / LAR ML -198."
+    }
+  ]
 }

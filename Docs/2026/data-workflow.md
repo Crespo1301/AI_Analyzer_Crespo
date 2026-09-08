@@ -13,8 +13,8 @@ How the 2026 data files fit together, week by week.
 | `Data/2026/rosters/<team>.json` | Per-team key players for prop grading. Only for teams whose games we run. | On any material roster change. |
 | `Data/2026/intake/week-XX-intake.json` | Injuries, weather, lines, matchup notes for one week. Feeds prompt fill and later grading. | Daily during the week. |
 | `Docs/2026/week-XX.md` | Human-readable weekly write-up. | Weekly. |
-| `Docs/Responses/2026/week-XX/<model>/` | Raw model outputs, one file per prompt. | The moment each model response comes back. |
-| `Prompts/2026/week-XX/` | Filled prompt files, one per game per template. | Weekly. |
+| `Docs/Responses/2026/week-XX/game-YY-<slug>/` | One folder per game. Holds `prompt.md`, `claude-picks.md`, `gpt-picks.md`, `gemini-picks.md`, `result.md`. | Prompt file at slate-lock. Model files as responses land. `result.md` after final whistle. |
+| `Prompts/2026/templates/` | Unfilled prompt starting points. Filled copies live in the per-game folder above, not in a parallel `Prompts/2026/week-XX/` tree (retired 2026-09-08). | On prompt-strategy change only. |
 
 ## Weekly flow (target Tuesday-to-Tuesday)
 

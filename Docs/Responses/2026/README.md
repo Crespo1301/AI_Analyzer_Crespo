@@ -1,15 +1,20 @@
 # 2026 Raw Model Responses
 
-One folder per week, one subfolder per model, one file per prompt run.
+One folder per week, one folder per game inside that, with the prompt and
+each model's raw response colocated so grading can happen without hunting
+across folders.
 
 ```text
 Docs/Responses/2026/
   week-01/
-    chatgpt/
-      game-1-baseline.md
-      game-1-context-heavy.md
-    claude/
-    gemini/
+    game-01-patriots-seahawks/
+      prompt.md          exact prompt sent (identical to all three models)
+      claude-picks.md    Claude Opus 4.7 raw response
+      gpt-picks.md       GPT 5.5 raw response
+      gemini-picks.md    Gemini 3.1 raw response (manual paste from web UI)
+      result.md          post-game: ESPN box-score URL + graded outcomes
+    game-02-<slug>/
+    ...
   week-02/
   ...
 ```
