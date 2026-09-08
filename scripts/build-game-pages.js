@@ -85,9 +85,12 @@ function pageHtml(game) {
 <body>
 <nav class="site-nav">
   <div class="nav-row">
-    <a class="nav-back" href="../index.html"><span class="arrow">&larr;</span> AI NFL Analyzer</a>
+    <a class="nav-back" href="../nfl-2025.html"><span class="arrow">&larr;</span> 2025 Baseline</a>
     <ul class="nav-links">
-      <li><a href="../index.html">Hub</a></li>
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="../nfl.html">NFL</a></li>
+      <li><a href="../nfl-2025.html">2025 Season</a></li>
+      <li><a href="../nfl-2026.html">2026 Season</a></li>
       <li><a href="../bet-database.html">Bet Database</a></li>
     </ul>
   </div>

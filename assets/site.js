@@ -215,10 +215,17 @@ function nflFormatBet(bet) {
     + '<span class="pred-conf">' + bet.confidence + '/10</span></div>';
 }
 
-function nflRenderPredictions2026(mountId) {
+function nflRenderPredictions2026(mountId, weekFilter) {
   var host = document.getElementById(mountId);
   if (!host || typeof NFL_PREDICTIONS_2026 === "undefined") return;
-  var html = NFL_PREDICTIONS_2026.map(function (g) {
+  var games = NFL_PREDICTIONS_2026.slice();
+  if (weekFilter != null) games = games.filter(function (g) { return g.week === weekFilter; });
+  if (!games.length) {
+    host.innerHTML = '<div class="empty-week"><p>No predictions locked for this week yet.</p>'
+      + '<p class="empty-week-note">Predictions are locked before kickoff on Tuesday-Wednesday of the game week. Check back after the slate is confirmed.</p></div>';
+    return;
+  }
+  var html = games.map(function (g) {
     var away = NFL_TEAMS[g.away], home = NFL_TEAMS[g.home];
     var awayLogo = away ? '<img class="pred-logo" src="' + nflTeamLogo(g.away) + '" alt="' + g.away + '">' : '';
     var homeLogo = home ? '<img class="pred-logo" src="' + nflTeamLogo(g.home) + '" alt="' + g.home + '">' : '';

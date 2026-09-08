@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NFL &middot; AI Model Performance Analyzer</title>
+<link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+<nav class="site-nav">
+  <div class="nav-row">
+    <a class="nav-brand" href="index.html"><span class="chip">AI</span> Analyzer</a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="nfl.html" class="active">NFL</a></li>
+      <li><a href="nfl-2025.html">2025 Season</a></li>
+      <li><a href="nfl-2026.html">2026 Season</a></li>
+      <li><a href="bet-database.html">Bet Database</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <span class="eyebrow">NFL Section</span>
+    <h1>NFL model performance</h1>
+    <p class="lede">Every AI Analyzer test to date is NFL. Football is graded reliably, has a large public betting market, and produces enough games per week to build sample size fast. Below: the two seasons on record, and a live status callout for the current week.</p>
+  </div>
+</header>
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Seasons</h2>
+      <p>Each season has its own page. The methodology is the same across both, but the 2026 run is treated as the reference dataset.</p>
+    </div>
+    <div class="season-grid">
+      <a class="season-card" href="nfl-2025.html">
+        <div class="season-year">2025-26</div>
+        <div class="season-tag">Baseline &middot; v1.0</div>
+        <h3>The CS486 experiment</h3>
+        <p>Original 15-game, 86-bet class project. Now shown with two rounds of independent corrections after ESPN box-score verification. Useful as a first data point; not treated as strategy proof.</p>
+        <div class="season-cta">View 2025 baseline &rarr;</div>
+      </a>
+      <a class="season-card" href="nfl-2026.html">
+        <div class="season-year">2026-27</div>
+        <div class="season-tag">Live &middot; v2.0</div>
+        <h3>The full season</h3>
+        <p>Every game every week, locked pre-kickoff, graded post-final. Weekly tabs build a real record without reconstruction.</p>
+        <div class="season-cta">View 2026 predictions &rarr;</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="section alt">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Current status</h2>
+      <p>2026 NFL Regular Season, Week 1.</p>
+    </div>
+    <div id="current-week-callout" class="current-week-callout"></div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="wrap foot-row">
+    <span>Carlos Crespo &middot; University of San Francisco</span>
+    <span>Data verified vs. ESPN box scores</span>
+  </div>
+</footer>
+
+<script src="assets/nfl-data.js"></script>
+<script src="assets/nfl-predictions-2026.js"></script>
+<script src="assets/site.js"></script>
+<script>
+  (function () {
+    var pending = NFL_PREDICTIONS_2026.filter(function (g) { return g.status === 'pending'; });
+    var host = document.getElementById('current-week-callout');
+    if (!pending.length) {
+      host.innerHTML = '<p class="note">No pending predictions right now. Check back when the next slate is set.</p>';
+      return;
+    }
+    var week = pending[0].week;
+    var html = '<div class="stat-row">'
+      + '<div class="stat-tile"><div class="label">Current Week</div><div class="value">' + week + '</div></div>'
+      + '<div class="stat-tile"><div class="label">Games With Predictions</div><div class="value">' + pending.length + '</div></div>'
+      + '<div class="stat-tile"><div class="label">Models Running</div><div class="value">3</div></div>'
+      + '<div class="stat-tile"><div class="label">Status</div><div class="value" style="font-size:16px;color:var(--gold, #b58900);">Awaiting Results</div></div>'
+      + '</div>'
+      + '<p style="margin-top:20px;"><a class="season-cta" href="nfl-2026.html">Open Week ' + week + ' picks &rarr;</a></p>';
+    host.innerHTML = html;
+  })();
+</script>
+</body>
+</html>

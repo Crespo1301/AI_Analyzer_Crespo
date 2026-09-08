@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2025 NFL Season Baseline &middot; AI Analyzer</title>
+<link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+<nav class="site-nav">
+  <div class="nav-row">
+    <a class="nav-brand" href="index.html"><span class="chip">AI</span> Analyzer</a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="nfl.html">NFL</a></li>
+      <li><a href="nfl-2025.html" class="active">2025 Season</a></li>
+      <li><a href="nfl-2026.html">2026 Season</a></li>
+      <li><a href="bet-database.html">Bet Database</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <span class="eyebrow">2025-26 Baseline &middot; v1.0</span>
+    <h1>The CS486 experiment</h1>
+    <p class="lede">15 NFL games across Weeks 9 and 11 of the 2025 season. 86 bets across 13 prompts. Originally a class project at USF. Kept as a first data point, but not treated as strategy proof: the sample is small, and the original grading had errors that needed independent verification against ESPN box scores. Both correction rounds are shown below.</p>
+  </div>
+</header>
+
+<section class="section">
+  <div class="wrap">
+    <div class="correction-notice" id="correction-notice"></div>
+    <div class="section-head">
+      <h2>Corrected Results</h2>
+      <p>Ranked by total profit/loss across all 86 bets at standard -110 odds. Corrected against real ESPN box scores. The original CSV's "all three models profitable" claim did not survive verification.</p>
+    </div>
+    <div class="podium" id="hub-podium"></div>
+    <div class="stat-row mt-24" style="grid-template-columns: 1fr 1fr;">
+      <div class="chart-box">
+        <h3 style="font-size:15px;font-weight:800;margin-bottom:14px;">Total P/L by Model</h3>
+        <div id="chart-pl"></div>
+      </div>
+      <div class="chart-box">
+        <h3 style="font-size:15px;font-weight:800;margin-bottom:14px;">Win Rate by Model</h3>
+        <div id="chart-winrate"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section alt" id="games">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>All 15 Games</h2>
+      <p>Every matchup the models were tested on. Both weeks.</p>
+    </div>
+    <div class="filter-tabs">
+      <button class="filter-tab active" data-week="all">All</button>
+      <button class="filter-tab" data-week="9">Week 9</button>
+      <button class="filter-tab" data-week="11">Week 11</button>
+    </div>
+    <div class="card-grid" id="game-cards"></div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Explore the full dataset</h2>
+      <p>Every one of the 86 bets, filterable by model, week, prompt, and bet type, plus prompt-by-prompt performance.</p>
+    </div>
+    <a class="game-card" href="bet-database.html" style="max-width: 420px;">
+      <div class="card-top"><span class="wk">Data</span><span class="result-tag">86 BETS</span></div>
+      <div class="card-body">
+        <div class="matchup">Bet Database</div>
+        <div class="score-line">Sortable table + prompt performance + model summary</div>
+      </div>
+    </a>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="wrap foot-row">
+    <span>CS 486 Team 5 &middot; Carlos Crespo &middot; University of San Francisco, Fall 2025</span>
+    <span>Data verified vs. ESPN box scores</span>
+  </div>
+</footer>
+
+<script src="assets/nfl-data.js"></script>
+<script src="assets/site.js"></script>
+<script>
+  (function () {
+    var summary = nflModelSummary().slice().sort(function (a, b) { return b.pl - a.pl; });
+    var ranks = ['rank-1', 'rank-2', 'rank-3'];
+    var labels = ['1ST', '2ND', '3RD'];
+    document.getElementById('hub-podium').innerHTML = summary.map(function (s, i) {
+      return '<div class="podium-card ' + ranks[i] + '">'
+        + '<div class="podium-rank">' + labels[i] + '</div>'
+        + '<div class="podium-model">' + s.model + '</div>'
+        + '<div class="podium-record">' + s.wins + '-' + s.losses + (s.pushes ? '-' + s.pushes : '') + ' &middot; ' + s.totalBets + ' bets &middot; ' + s.winPct.toFixed(1) + '% win rate</div>'
+        + '<div class="podium-pl ' + (s.pl >= 0 ? 'pos' : 'neg') + '">' + nflMoney(s.pl) + '</div>'
+        + '</div>';
+    }).join('');
+
+    var correctedBets = NFL_BETS.filter(function (b) { return b.corrected; });
+    document.getElementById('correction-notice').innerHTML = '<strong>' + correctedBets.length + ' bets corrected after independent ESPN verification</strong>'
+      + 'The original CS486 "final verified" CSV still had grading errors on ' + correctedBets.length + ' prop bets when checked against real box-score stats (e.g. a bet graded WIN where the player actually fell short of the line). '
+      + 'The numbers on this page are the corrected totals. See the <a href="bet-database.html">Bet Database</a> for every corrected row, or the per-game pages for exact actual stat lines.';
+
+    nflRenderModelPlChart('chart-pl');
+    nflRenderWinRateChart('chart-winrate');
+    nflRenderGameCards('game-cards');
+
+    document.querySelectorAll('.filter-tab').forEach(function (tab) {
+      tab.addEventListener('click', function () {
+        document.querySelectorAll('.filter-tab').forEach(function (t) { t.classList.remove('active'); });
+        tab.classList.add('active');
+        var wk = tab.getAttribute('data-week');
+        nflRenderGameCards('game-cards', wk === 'all' ? null : parseInt(wk, 10));
+      });
+    });
+  })();
+</script>
+</body>
+</html>

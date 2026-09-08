@@ -226,3 +226,44 @@ footer.site-footer .foot-row { display: flex; justify-content: space-between; fl
   .pred-grid { grid-template-columns: 1fr; }
   .pred-status { margin-left: 0; }
 }
+
+/* Landing page */
+.how-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; }
+.how-card { background: var(--paper); border: 1px solid var(--line); border-radius: var(--radius); padding: 24px; }
+.how-num { font-size: 12px; font-weight: 800; color: var(--ink-soft); letter-spacing: 0.6px; margin-bottom: 10px; }
+.how-card h3 { font-size: 17px; font-weight: 800; margin-bottom: 10px; letter-spacing: -0.2px; }
+.how-card p { font-size: 14px; color: var(--ink-soft); line-height: 1.55; }
+
+.model-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+.model-card { background: var(--paper); border: 1px solid var(--line); border-radius: var(--radius); padding: 24px; }
+.model-card .chip-model { display: inline-block; margin-bottom: 8px; }
+.model-version { font-size: 12px; color: var(--ink-soft); font-weight: 700; letter-spacing: 0.4px; text-transform: uppercase; margin-bottom: 14px; }
+.model-arch { font-size: 14px; line-height: 1.55; color: var(--ink); }
+.model-arch strong { color: var(--ink); font-weight: 800; }
+
+.season-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 20px; }
+.season-card { display: block; text-decoration: none; color: inherit; background: var(--paper); border: 1px solid var(--line); border-radius: var(--radius); padding: 28px; transition: transform 0.15s ease, border-color 0.15s ease; }
+.season-card:hover { transform: translateY(-2px); border-color: var(--ink); }
+.season-year { font-size: 32px; font-weight: 800; letter-spacing: -0.8px; }
+.season-tag { font-size: 11px; color: var(--ink-soft); font-weight: 700; letter-spacing: 0.4px; text-transform: uppercase; margin-top: 4px; margin-bottom: 16px; }
+.season-card h3 { font-size: 21px; font-weight: 800; margin-bottom: 10px; letter-spacing: -0.3px; }
+.season-card p { font-size: 14px; color: var(--ink-soft); line-height: 1.55; margin-bottom: 18px; }
+.season-cta { font-size: 14px; font-weight: 800; color: var(--ink); text-decoration: none; }
+
+/* NFL section current-week callout */
+.current-week-callout { }
+
+/* 2026 season page: week tabs */
+.week-tabs { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 24px; }
+.week-tab { background: var(--paper); border: 1px solid var(--line); border-radius: 8px; padding: 10px 14px; font-family: inherit; font-size: 13px; font-weight: 700; color: var(--ink-soft); cursor: pointer; display: flex; align-items: center; gap: 6px; transition: all 0.12s ease; }
+.week-tab:hover { border-color: var(--ink); color: var(--ink); }
+.week-tab.active { background: var(--ink); color: #fff; border-color: var(--ink); }
+.week-tab.no-data { opacity: 0.55; }
+.week-tab.no-data:hover { opacity: 1; }
+.week-tab-num { font-weight: 800; }
+.week-tab-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--gold, #b58900); display: inline-block; }
+.week-tab.active .week-tab-dot { background: #fff; }
+
+.empty-week { background: var(--paper); border: 1px dashed var(--line); border-radius: var(--radius); padding: 40px; text-align: center; }
+.empty-week p:first-child { font-size: 16px; font-weight: 800; margin-bottom: 8px; }
+.empty-week-note { font-size: 13px; color: var(--ink-soft); }

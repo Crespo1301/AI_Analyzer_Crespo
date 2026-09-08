@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2026 NFL Season &middot; AI Analyzer</title>
+<link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+<nav class="site-nav">
+  <div class="nav-row">
+    <a class="nav-brand" href="index.html"><span class="chip">AI</span> Analyzer</a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="nfl.html">NFL</a></li>
+      <li><a href="nfl-2025.html">2025 Season</a></li>
+      <li><a href="nfl-2026.html" class="active">2026 Season</a></li>
+      <li><a href="bet-database.html">Bet Database</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <span class="eyebrow">2026-27 Regular Season &middot; v2.0</span>
+    <h1>Live NFL model predictions</h1>
+    <p class="lede">Every game, every week, every model. Locked pre-kickoff, graded post-final against the ESPN box score. Each model gets a $20 bankroll per game and decides its own allocation across straight bets, parlays, SGPs, and reserve.</p>
+  </div>
+</header>
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Season Status</h2>
+    </div>
+    <div class="stat-row" id="season-stats"></div>
+  </div>
+</section>
+
+<section class="section alt">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Weekly Picks</h2>
+      <p>Pick a week. Weeks show predictions once locked and results once graded.</p>
+    </div>
+    <div class="week-tabs" id="week-tabs"></div>
+    <div id="predictions-mount"></div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="wrap foot-row">
+    <span>Carlos Crespo &middot; University of San Francisco</span>
+    <span>Data verified vs. ESPN box scores</span>
+  </div>
+</footer>
+
+<script src="assets/nfl-data.js"></script>
+<script src="assets/nfl-predictions-2026.js"></script>
+<script src="assets/site.js"></script>
+<script>
+  (function () {
+    var weeksWithData = {};
+    NFL_PREDICTIONS_2026.forEach(function (g) { weeksWithData[g.week] = true; });
+
+    var totalExposure = 0, totalReserve = 0, totalBets = 0;
+    NFL_PREDICTIONS_2026.forEach(function (g) {
+      NFL_MODELS.forEach(function (m) {
+        var mp = g.models[m];
+        if (!mp) return;
+        totalExposure += mp.total_stake;
+        totalReserve += mp.reserve;
+        totalBets += mp.bets.length;
+      });
+    });
+    document.getElementById('season-stats').innerHTML =
+        '<div class="stat-tile"><div class="label">Games Predicted</div><div class="value">' + NFL_PREDICTIONS_2026.length + '</div></div>'
+      + '<div class="stat-tile"><div class="label">Total Bets Locked</div><div class="value">' + totalBets + '</div></div>'
+      + '<div class="stat-tile"><div class="label">Combined Exposure</div><div class="value">$' + totalExposure.toFixed(0) + '</div></div>'
+      + '<div class="stat-tile"><div class="label">Combined Reserve</div><div class="value">$' + totalReserve.toFixed(0) + '</div></div>';
+
+    var currentWeek = Math.max.apply(null, Object.keys(weeksWithData).map(function (k) { return parseInt(k, 10); }));
+    if (!isFinite(currentWeek) || currentWeek < 1) currentWeek = 1;
+
+    var tabsHost = document.getElementById('week-tabs');
+    var tabsHtml = '';
+    for (var w = 1; w <= 18; w++) {
+      var hasData = !!weeksWithData[w];
+      var activeCls = w === currentWeek ? ' active' : '';
+      var dataCls = hasData ? ' has-data' : ' no-data';
+      tabsHtml += '<button class="week-tab' + activeCls + dataCls + '" data-week="' + w + '">'
+        + '<span class="week-tab-num">' + w + '</span>'
+        + (hasData ? '<span class="week-tab-dot" title="Predictions locked"></span>' : '')
+        + '</button>';
+    }
+    tabsHost.innerHTML = tabsHtml;
+
+    function render(week) {
+      nflRenderPredictions2026('predictions-mount', week);
+    }
+    render(currentWeek);
+
+    tabsHost.addEventListener('click', function (e) {
+      var btn = e.target.closest('.week-tab');
+      if (!btn) return;
+      tabsHost.querySelectorAll('.week-tab').forEach(function (t) { t.classList.remove('active'); });
+      btn.classList.add('active');
+      render(parseInt(btn.getAttribute('data-week'), 10));
+    });
+  })();
+</script>
+</body>
+</html>
