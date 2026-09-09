@@ -1,0 +1,150 @@
+{
+  "team": "San Francisco 49ers",
+  "season": 2026,
+  "last_verified": "2026-09-09",
+  "source": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/teams/sf/roster",
+  "offense": {
+    "qb1": {
+      "player": "Mac Jones",
+      "note": "6 yr, age 28"
+    },
+    "qb2": {
+      "player": "Brock Purdy",
+      "note": "5 yr, age 26"
+    },
+    "rb1": {
+      "player": "Christian McCaffrey",
+      "note": "10 yr, age 30"
+    },
+    "rb2": {
+      "player": "Kaelon Black",
+      "note": "0 yr, age 24"
+    },
+    "wr1": {
+      "player": "Ricky Pearsall",
+      "note": "3 yr, age 25, status: Injured Reserve"
+    },
+    "wr2": {
+      "player": "Christian Kirk",
+      "note": "9 yr, age 29, status: Injured Reserve"
+    },
+    "te1": {
+      "player": "Brayden Willis",
+      "note": "4 yr, age 26"
+    }
+  },
+  "special_teams": {
+    "k": {
+      "player": "Eddy Pineiro",
+      "note": "9 yr, age 30"
+    }
+  },
+  "depth": {
+    "qbs": [
+      {
+        "name": "Mac Jones",
+        "jersey": 10,
+        "note": "6 yr, age 28"
+      },
+      {
+        "name": "Brock Purdy",
+        "jersey": 13,
+        "note": "5 yr, age 26"
+      },
+      {
+        "name": "Kurtis Rourke",
+        "jersey": 14,
+        "note": "1 yr, age 25"
+      }
+    ],
+    "rbs": [
+      {
+        "name": "Christian McCaffrey",
+        "jersey": 23,
+        "note": "10 yr, age 30"
+      },
+      {
+        "name": "Kaelon Black",
+        "jersey": 26,
+        "note": "0 yr, age 24"
+      },
+      {
+        "name": "Jordan James",
+        "jersey": 29,
+        "note": "2 yr, age 22"
+      },
+      {
+        "name": "Isaac Guerendo",
+        "jersey": 31,
+        "note": "3 yr, age 26, status: Out"
+      },
+      {
+        "name": "Sincere McCormick",
+        "jersey": 35,
+        "note": "3 yr, age 25"
+      }
+    ],
+    "wrs": [
+      {
+        "name": "Ricky Pearsall",
+        "jersey": 1,
+        "note": "3 yr, age 25, status: Injured Reserve"
+      },
+      {
+        "name": "Christian Kirk",
+        "jersey": 3,
+        "note": "9 yr, age 29, status: Injured Reserve"
+      },
+      {
+        "name": "Mike Evans",
+        "jersey": 5,
+        "note": "13 yr, age 33"
+      },
+      {
+        "name": "Jacob Cowing",
+        "jersey": 6,
+        "note": "3 yr, age 25"
+      },
+      {
+        "name": "Demarcus Robinson",
+        "jersey": 7,
+        "note": "11 yr, age 31"
+      },
+      {
+        "name": "Brandon Aiyuk",
+        "jersey": 11,
+        "note": "6 yr, age 28, status: Out"
+      }
+    ],
+    "tes": [
+      {
+        "name": "Brayden Willis",
+        "jersey": 9,
+        "note": "4 yr, age 26"
+      },
+      {
+        "name": "Khalil Dinkins",
+        "jersey": 43,
+        "note": "0 yr, age 24"
+      },
+      {
+        "name": "George Kittle",
+        "jersey": 85,
+        "note": "10 yr, age 32, status: Questionable"
+      },
+      {
+        "name": "Jake Tonges",
+        "jersey": 88,
+        "note": "4 yr, age 27"
+      }
+    ]
+  },
+  "prop_watchlist": [],
+  "changes_log": [
+    {
+      "date": "2026-09-09",
+      "change": "Initial roster snapshot fetched from ESPN public site API before Week 1 kickoff.",
+      "source": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/teams/sf/roster"
+    }
+  ]
+}

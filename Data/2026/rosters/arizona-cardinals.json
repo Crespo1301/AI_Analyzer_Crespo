@@ -1,0 +1,150 @@
+{
+  "team": "Arizona Cardinals",
+  "season": 2026,
+  "last_verified": "2026-09-09",
+  "source": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/teams/ari/roster",
+  "offense": {
+    "qb1": {
+      "player": "Jacoby Brissett",
+      "note": "11 yr, age 33"
+    },
+    "qb2": {
+      "player": "Gardner Minshew II",
+      "note": "8 yr, age 30"
+    },
+    "rb1": {
+      "player": "Jeremiyah Love",
+      "note": "0 yr, age 21, status: Questionable"
+    },
+    "rb2": {
+      "player": "James Conner",
+      "note": "10 yr, age 31, status: Injured Reserve"
+    },
+    "wr1": {
+      "player": "Ihmir Smith-Marsette",
+      "note": "5 yr, age 27"
+    },
+    "wr2": {
+      "player": "Michael Wilson",
+      "note": "4 yr, age 26"
+    },
+    "te1": {
+      "player": "Jameson Geers",
+      "note": "0 yr, age 23, status: Injured Reserve"
+    }
+  },
+  "special_teams": {
+    "k": {
+      "player": "Chad Ryland",
+      "note": "4 yr, age 26"
+    }
+  },
+  "depth": {
+    "qbs": [
+      {
+        "name": "Jacoby Brissett",
+        "jersey": 7,
+        "note": "11 yr, age 33"
+      },
+      {
+        "name": "Gardner Minshew II",
+        "jersey": 15,
+        "note": "8 yr, age 30"
+      },
+      {
+        "name": "Carson Beck",
+        "jersey": 19,
+        "note": "0 yr, age 23"
+      }
+    ],
+    "rbs": [
+      {
+        "name": "Jeremiyah Love",
+        "jersey": 4,
+        "note": "0 yr, age 21, status: Questionable"
+      },
+      {
+        "name": "James Conner",
+        "jersey": 6,
+        "note": "10 yr, age 31, status: Injured Reserve"
+      },
+      {
+        "name": "Bam Knight",
+        "jersey": 20,
+        "note": "4 yr, age 25"
+      },
+      {
+        "name": "Tyler Allgeier",
+        "jersey": 22,
+        "note": "5 yr, age 26"
+      },
+      {
+        "name": "Trey Benson",
+        "jersey": 33,
+        "note": "3 yr, age 24, status: Injured Reserve"
+      }
+    ],
+    "wrs": [
+      {
+        "name": "Ihmir Smith-Marsette",
+        "jersey": 9,
+        "note": "5 yr, age 27"
+      },
+      {
+        "name": "Michael Wilson",
+        "jersey": 14,
+        "note": "4 yr, age 26"
+      },
+      {
+        "name": "Kendrick Bourne",
+        "jersey": 17,
+        "note": "10 yr, age 31"
+      },
+      {
+        "name": "Marvin Harrison Jr.",
+        "jersey": 18,
+        "note": "3 yr, age 24"
+      },
+      {
+        "name": "Harrison Wallace III",
+        "jersey": 30,
+        "note": "0 yr, age 23"
+      },
+      {
+        "name": "Simi Fehoko",
+        "jersey": 80,
+        "note": "6 yr, age 28"
+      }
+    ],
+    "tes": [
+      {
+        "name": "Jameson Geers",
+        "jersey": 46,
+        "note": "0 yr, age 23, status: Injured Reserve"
+      },
+      {
+        "name": "Teagan Quitoriano",
+        "jersey": 47,
+        "note": "5 yr, age 26"
+      },
+      {
+        "name": "Shawn Bowman",
+        "jersey": 48,
+        "note": "1 yr, age 26"
+      },
+      {
+        "name": "Elijah Higgins",
+        "jersey": 84,
+        "note": "4 yr, age 25"
+      }
+    ]
+  },
+  "prop_watchlist": [],
+  "changes_log": [
+    {
+      "date": "2026-09-09",
+      "change": "Initial roster snapshot fetched from ESPN public site API before Week 1 kickoff.",
+      "source": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/teams/ari/roster"
+    }
+  ]
+}

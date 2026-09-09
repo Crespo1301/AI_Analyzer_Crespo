@@ -1,0 +1,150 @@
+{
+  "team": "New England Patriots",
+  "season": 2026,
+  "last_verified": "2026-09-09",
+  "source": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/teams/ne/roster",
+  "offense": {
+    "qb1": {
+      "player": "Drake Maye",
+      "note": "3 yr, age 24"
+    },
+    "qb2": {
+      "player": "Behren Morton",
+      "note": "0 yr, age 24"
+    },
+    "rb1": {
+      "player": "Hassan Haskins",
+      "note": "4 yr, age 26"
+    },
+    "rb2": {
+      "player": "TreVeyon Henderson",
+      "note": "2 yr, age 23, status: Out"
+    },
+    "wr1": {
+      "player": "A.J. Brown",
+      "note": "8 yr, age 29"
+    },
+    "wr2": {
+      "player": "DeMario Douglas",
+      "note": "4 yr, age 25"
+    },
+    "te1": {
+      "player": "Julian Hill",
+      "note": "4 yr, age 26, status: Injured Reserve"
+    }
+  },
+  "special_teams": {
+    "k": {
+      "player": "Andy Borregales",
+      "note": "2 yr, age 23"
+    }
+  },
+  "depth": {
+    "qbs": [
+      {
+        "name": "Drake Maye",
+        "jersey": 10,
+        "note": "3 yr, age 24"
+      },
+      {
+        "name": "Behren Morton",
+        "jersey": 15,
+        "note": "0 yr, age 24"
+      },
+      {
+        "name": "Tommy DeVito",
+        "jersey": 16,
+        "note": "4 yr, age 28"
+      }
+    ],
+    "rbs": [
+      {
+        "name": "Hassan Haskins",
+        "jersey": 26,
+        "note": "4 yr, age 26"
+      },
+      {
+        "name": "TreVeyon Henderson",
+        "jersey": 32,
+        "note": "2 yr, age 23, status: Out"
+      },
+      {
+        "name": "Lan Larison",
+        "jersey": 34,
+        "note": "2 yr, age 24"
+      },
+      {
+        "name": "Rhamondre Stevenson",
+        "jersey": 38,
+        "note": "6 yr, age 28"
+      },
+      {
+        "name": "Myles Montgomery",
+        "jersey": 39,
+        "note": "0 yr, age 23, status: Injured Reserve"
+      }
+    ],
+    "wrs": [
+      {
+        "name": "A.J. Brown",
+        "jersey": 1,
+        "note": "8 yr, age 29"
+      },
+      {
+        "name": "DeMario Douglas",
+        "jersey": 3,
+        "note": "4 yr, age 25"
+      },
+      {
+        "name": "Jalen Hurd",
+        "jersey": 13,
+        "note": "4 yr, age 30"
+      },
+      {
+        "name": "Mack Hollins",
+        "jersey": 13,
+        "note": "10 yr, age 32"
+      },
+      {
+        "name": "Kyle Williams",
+        "jersey": 18,
+        "note": "2 yr, age 23"
+      },
+      {
+        "name": "Jeremiah Webb",
+        "jersey": 29,
+        "note": "1 yr, age 25, status: Injured Reserve"
+      }
+    ],
+    "tes": [
+      {
+        "name": "Julian Hill",
+        "jersey": 80,
+        "note": "4 yr, age 26, status: Injured Reserve"
+      },
+      {
+        "name": "Shane Zylstra",
+        "jersey": 80,
+        "note": "5 yr, age 29"
+      },
+      {
+        "name": "Eli Raridon",
+        "jersey": 82,
+        "note": "0 yr, age 22"
+      },
+      {
+        "name": "Tanner Arkin",
+        "jersey": 84,
+        "note": "0 yr, age 23"
+      }
+    ]
+  },
+  "prop_watchlist": [],
+  "changes_log": [
+    {
+      "date": "2026-09-09",
+      "change": "Initial roster snapshot fetched from ESPN public site API before Week 1 kickoff.",
+      "source": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/teams/ne/roster"
+    }
+  ]
+}

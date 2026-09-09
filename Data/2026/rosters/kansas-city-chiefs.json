@@ -1,0 +1,150 @@
+{
+  "team": "Kansas City Chiefs",
+  "season": 2026,
+  "last_verified": "2026-09-09",
+  "source": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/teams/kc/roster",
+  "offense": {
+    "qb1": {
+      "player": "Justin Fields",
+      "note": "6 yr, age 27"
+    },
+    "qb2": {
+      "player": "Garrett Nussmeier",
+      "note": "0 yr, age 24"
+    },
+    "rb1": {
+      "player": "Kenneth Walker III",
+      "note": "5 yr, age 25"
+    },
+    "rb2": {
+      "player": "Emmett Johnson",
+      "note": "0 yr, age 22"
+    },
+    "wr1": {
+      "player": "Xavier Worthy",
+      "note": "3 yr, age 23"
+    },
+    "wr2": {
+      "player": "Tyquan Thornton",
+      "note": "5 yr, age 26"
+    },
+    "te1": {
+      "player": "Jared Wiley",
+      "note": "3 yr, age 25"
+    }
+  },
+  "special_teams": {
+    "k": {
+      "player": "Harrison Butker",
+      "note": "10 yr, age 31"
+    }
+  },
+  "depth": {
+    "qbs": [
+      {
+        "name": "Justin Fields",
+        "jersey": 6,
+        "note": "6 yr, age 27"
+      },
+      {
+        "name": "Garrett Nussmeier",
+        "jersey": 14,
+        "note": "0 yr, age 24"
+      },
+      {
+        "name": "Patrick Mahomes",
+        "jersey": 15,
+        "note": "10 yr, age 30, status: Questionable"
+      }
+    ],
+    "rbs": [
+      {
+        "name": "Kenneth Walker III",
+        "jersey": 9,
+        "note": "5 yr, age 25"
+      },
+      {
+        "name": "Emmett Johnson",
+        "jersey": 10,
+        "note": "0 yr, age 22"
+      },
+      {
+        "name": "Brashard Smith",
+        "jersey": 24,
+        "note": "2 yr, age 23"
+      },
+      {
+        "name": "Jaydn Ott",
+        "jersey": 42,
+        "note": "0 yr, age 23"
+      },
+      {
+        "name": "Nathan Carter",
+        "jersey": 999,
+        "note": "2 yr, age 24"
+      }
+    ],
+    "wrs": [
+      {
+        "name": "Xavier Worthy",
+        "jersey": 1,
+        "note": "3 yr, age 23"
+      },
+      {
+        "name": "Tyquan Thornton",
+        "jersey": 2,
+        "note": "5 yr, age 26"
+      },
+      {
+        "name": "Rashee Rice",
+        "jersey": 4,
+        "note": "4 yr, age 26"
+      },
+      {
+        "name": "Omari Evans",
+        "jersey": 7,
+        "note": "0 yr, age 22"
+      },
+      {
+        "name": "Jeff Caldwell",
+        "jersey": 8,
+        "note": "0 yr, age 23, status: Injured Reserve"
+      },
+      {
+        "name": "Jalen Royals",
+        "jersey": 11,
+        "note": "2 yr, age 23"
+      }
+    ],
+    "tes": [
+      {
+        "name": "Jared Wiley",
+        "jersey": 12,
+        "note": "3 yr, age 25"
+      },
+      {
+        "name": "Noah Gray",
+        "jersey": 83,
+        "note": "6 yr, age 27"
+      },
+      {
+        "name": "John Michael Gyllenborg",
+        "jersey": 84,
+        "note": "0 yr, age 24, status: Injured Reserve"
+      },
+      {
+        "name": "Travis Kelce",
+        "jersey": 87,
+        "note": "14 yr, age 36"
+      }
+    ]
+  },
+  "prop_watchlist": [],
+  "changes_log": [
+    {
+      "date": "2026-09-09",
+      "change": "Initial roster snapshot fetched from ESPN public site API before Week 1 kickoff.",
+      "source": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/teams/kc/roster"
+    }
+  ]
+}

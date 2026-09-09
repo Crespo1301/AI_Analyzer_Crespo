@@ -1,0 +1,150 @@
+{
+  "team": "Carolina Panthers",
+  "season": 2026,
+  "last_verified": "2026-09-09",
+  "source": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/teams/car/roster",
+  "offense": {
+    "qb1": {
+      "player": "Bryce Young",
+      "note": "4 yr, age 25"
+    },
+    "qb2": {
+      "player": "Kenny Pickett",
+      "note": "5 yr, age 28"
+    },
+    "rb1": {
+      "player": "Trevor Etienne",
+      "note": "2 yr, age 22, status: Injured Reserve"
+    },
+    "rb2": {
+      "player": "Jonathon Brooks",
+      "note": "3 yr, age 23, status: Questionable"
+    },
+    "wr1": {
+      "player": "Tetairoa McMillan",
+      "note": "2 yr, age 23"
+    },
+    "wr2": {
+      "player": "John Metchie III",
+      "note": "4 yr, age 26"
+    },
+    "te1": {
+      "player": "Ja'Tavion Sanders",
+      "note": "3 yr, age 23"
+    }
+  },
+  "special_teams": {
+    "k": {
+      "player": "Ryan Fitzgerald",
+      "note": "2 yr, age 26"
+    }
+  },
+  "depth": {
+    "qbs": [
+      {
+        "name": "Bryce Young",
+        "jersey": 9,
+        "note": "4 yr, age 25"
+      },
+      {
+        "name": "Kenny Pickett",
+        "jersey": 12,
+        "note": "5 yr, age 28"
+      },
+      {
+        "name": "Haynes King",
+        "jersey": 16,
+        "note": "0 yr, age 25, status: Questionable"
+      }
+    ],
+    "rbs": [
+      {
+        "name": "Trevor Etienne",
+        "jersey": 23,
+        "note": "2 yr, age 22, status: Injured Reserve"
+      },
+      {
+        "name": "Jonathon Brooks",
+        "jersey": 25,
+        "note": "3 yr, age 23, status: Questionable"
+      },
+      {
+        "name": "AJ Dillon",
+        "jersey": 28,
+        "note": "7 yr, age 28"
+      },
+      {
+        "name": "Chuba Hubbard",
+        "jersey": 30,
+        "note": "6 yr, age 27, status: Questionable"
+      },
+      {
+        "name": "Anthony Tyus III",
+        "jersey": 34,
+        "note": "1 yr, age 23"
+      }
+    ],
+    "wrs": [
+      {
+        "name": "Tetairoa McMillan",
+        "jersey": 4,
+        "note": "2 yr, age 23"
+      },
+      {
+        "name": "John Metchie III",
+        "jersey": 13,
+        "note": "4 yr, age 26"
+      },
+      {
+        "name": "Jimmy Horn Jr.",
+        "jersey": 15,
+        "note": "2 yr, age 23"
+      },
+      {
+        "name": "Xavier Legette",
+        "jersey": 17,
+        "note": "3 yr, age 25, status: Questionable"
+      },
+      {
+        "name": "Jalen Coker",
+        "jersey": 18,
+        "note": "3 yr, age 24"
+      },
+      {
+        "name": "Chris Brazzell II",
+        "jersey": 19,
+        "note": "0 yr, age 22, status: Injured Reserve"
+      }
+    ],
+    "tes": [
+      {
+        "name": "Ja'Tavion Sanders",
+        "jersey": 0,
+        "note": "3 yr, age 23"
+      },
+      {
+        "name": "Darren Waller",
+        "jersey": 35,
+        "note": "9 yr, age 33"
+      },
+      {
+        "name": "Feleipe Franks",
+        "jersey": 81,
+        "note": "4 yr, age 28"
+      },
+      {
+        "name": "Tommy Tremble",
+        "jersey": 82,
+        "note": "6 yr, age 26"
+      }
+    ]
+  },
+  "prop_watchlist": [],
+  "changes_log": [
+    {
+      "date": "2026-09-09",
+      "change": "Initial roster snapshot fetched from ESPN public site API before Week 1 kickoff.",
+      "source": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/teams/car/roster"
+    }
+  ]
+}

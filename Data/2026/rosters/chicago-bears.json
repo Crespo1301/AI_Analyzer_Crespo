@@ -1,0 +1,150 @@
+{
+  "team": "Chicago Bears",
+  "season": 2026,
+  "last_verified": "2026-09-09",
+  "source": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/teams/chi/roster",
+  "offense": {
+    "qb1": {
+      "player": "Case Keenum",
+      "note": "14 yr, age 38"
+    },
+    "qb2": {
+      "player": "Tyson Bagent",
+      "note": "4 yr, age 26"
+    },
+    "rb1": {
+      "player": "D'Andre Swift",
+      "note": "7 yr, age 27, status: Questionable"
+    },
+    "rb2": {
+      "player": "Roschon Johnson",
+      "note": "4 yr, age 25"
+    },
+    "wr1": {
+      "player": "Jahdae Walker",
+      "note": "2 yr, age 24"
+    },
+    "wr2": {
+      "player": "Luther Burden III",
+      "note": "2 yr, age 22, status: Questionable"
+    },
+    "te1": {
+      "player": "Hayden Large",
+      "note": "0 yr, age 24, status: Injured Reserve"
+    }
+  },
+  "special_teams": {
+    "k": {
+      "player": "Cairo Santos",
+      "note": "13 yr, age 34"
+    }
+  },
+  "depth": {
+    "qbs": [
+      {
+        "name": "Case Keenum",
+        "jersey": 11,
+        "note": "14 yr, age 38"
+      },
+      {
+        "name": "Tyson Bagent",
+        "jersey": 17,
+        "note": "4 yr, age 26"
+      },
+      {
+        "name": "Caleb Williams",
+        "jersey": 18,
+        "note": "3 yr, age 24"
+      }
+    ],
+    "rbs": [
+      {
+        "name": "D'Andre Swift",
+        "jersey": 4,
+        "note": "7 yr, age 27, status: Questionable"
+      },
+      {
+        "name": "Roschon Johnson",
+        "jersey": 23,
+        "note": "4 yr, age 25"
+      },
+      {
+        "name": "Kyle Monangai",
+        "jersey": 25,
+        "note": "2 yr, age 24, status: Questionable"
+      },
+      {
+        "name": "Salvon Ahmed",
+        "jersey": 36,
+        "note": "5 yr, age 27"
+      },
+      {
+        "name": "Brittain Brown",
+        "jersey": 38,
+        "note": "3 yr, age 28, status: Injured Reserve"
+      }
+    ],
+    "wrs": [
+      {
+        "name": "Jahdae Walker",
+        "jersey": 9,
+        "note": "2 yr, age 24"
+      },
+      {
+        "name": "Luther Burden III",
+        "jersey": 10,
+        "note": "2 yr, age 22, status: Questionable"
+      },
+      {
+        "name": "Kalif Raymond",
+        "jersey": 14,
+        "note": "10 yr, age 32"
+      },
+      {
+        "name": "Rome Odunze",
+        "jersey": 15,
+        "note": "3 yr, age 24, status: Questionable"
+      },
+      {
+        "name": "Kaden Davis",
+        "jersey": 27,
+        "note": "1 yr, age 27"
+      },
+      {
+        "name": "Scotty Miller",
+        "jersey": 35,
+        "note": "8 yr, age 29"
+      }
+    ],
+    "tes": [
+      {
+        "name": "Hayden Large",
+        "jersey": 43,
+        "note": "0 yr, age 24, status: Injured Reserve"
+      },
+      {
+        "name": "Qadir Ismail",
+        "jersey": 80,
+        "note": "1 yr, age 26"
+      },
+      {
+        "name": "Colston Loveland",
+        "jersey": 84,
+        "note": "2 yr, age 22"
+      },
+      {
+        "name": "Cole Kmet",
+        "jersey": 85,
+        "note": "7 yr, age 27"
+      }
+    ]
+  },
+  "prop_watchlist": [],
+  "changes_log": [
+    {
+      "date": "2026-09-09",
+      "change": "Initial roster snapshot fetched from ESPN public site API before Week 1 kickoff.",
+      "source": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/teams/chi/roster"
+    }
+  ]
+}

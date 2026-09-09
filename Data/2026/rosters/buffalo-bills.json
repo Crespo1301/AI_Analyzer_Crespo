@@ -1,0 +1,145 @@
+{
+  "team": "Buffalo Bills",
+  "season": 2026,
+  "last_verified": "2026-09-09",
+  "source": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/teams/buf/roster",
+  "offense": {
+    "qb1": {
+      "player": "Shane Buechele",
+      "note": "4 yr, age 28"
+    },
+    "qb2": {
+      "player": "Kyle Allen",
+      "note": "8 yr, age 30"
+    },
+    "rb1": {
+      "player": "James Cook III",
+      "note": "5 yr, age 26"
+    },
+    "rb2": {
+      "player": "Ray Davis",
+      "note": "3 yr, age 26"
+    },
+    "wr1": {
+      "player": "Keon Coleman",
+      "note": "3 yr, age 23, status: Questionable"
+    },
+    "wr2": {
+      "player": "DJ Moore",
+      "note": "9 yr, age 29"
+    },
+    "te1": {
+      "player": "Keleki Latu",
+      "note": "1 yr, age 24"
+    }
+  },
+  "special_teams": {
+    "k": {
+      "player": "Tyler Bass",
+      "note": "7 yr, age 29"
+    }
+  },
+  "depth": {
+    "qbs": [
+      {
+        "name": "Shane Buechele",
+        "jersey": 6,
+        "note": "4 yr, age 28"
+      },
+      {
+        "name": "Kyle Allen",
+        "jersey": 11,
+        "note": "8 yr, age 30"
+      },
+      {
+        "name": "Josh Allen",
+        "jersey": 17,
+        "note": "9 yr, age 30"
+      }
+    ],
+    "rbs": [
+      {
+        "name": "James Cook III",
+        "jersey": 4,
+        "note": "5 yr, age 26"
+      },
+      {
+        "name": "Ray Davis",
+        "jersey": 7,
+        "note": "3 yr, age 26"
+      },
+      {
+        "name": "Frank Gore Jr.",
+        "jersey": 20,
+        "note": "1 yr, age 24"
+      },
+      {
+        "name": "Ty Johnson",
+        "jersey": 26,
+        "note": "8 yr, age 28, status: Questionable"
+      }
+    ],
+    "wrs": [
+      {
+        "name": "Keon Coleman",
+        "jersey": 0,
+        "note": "3 yr, age 23, status: Questionable"
+      },
+      {
+        "name": "DJ Moore",
+        "jersey": 2,
+        "note": "9 yr, age 29"
+      },
+      {
+        "name": "Joshua Palmer",
+        "jersey": 5,
+        "note": "6 yr, age 26"
+      },
+      {
+        "name": "Khalil Shakir",
+        "jersey": 10,
+        "note": "5 yr, age 26, status: Questionable"
+      },
+      {
+        "name": "Skyler Bell",
+        "jersey": 13,
+        "note": "0 yr, age 24"
+      },
+      {
+        "name": "Tyrell Shavers",
+        "jersey": 14,
+        "note": "2 yr, age 27, status: Out"
+      }
+    ],
+    "tes": [
+      {
+        "name": "Keleki Latu",
+        "jersey": 83,
+        "note": "1 yr, age 24"
+      },
+      {
+        "name": "Jackson Hawes",
+        "jersey": 85,
+        "note": "2 yr, age 25"
+      },
+      {
+        "name": "Dalton Kincaid",
+        "jersey": 86,
+        "note": "4 yr, age 26"
+      },
+      {
+        "name": "Dawson Knox",
+        "jersey": 88,
+        "note": "8 yr, age 29"
+      }
+    ]
+  },
+  "prop_watchlist": [],
+  "changes_log": [
+    {
+      "date": "2026-09-09",
+      "change": "Initial roster snapshot fetched from ESPN public site API before Week 1 kickoff.",
+      "source": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/teams/buf/roster"
+    }
+  ]
+}

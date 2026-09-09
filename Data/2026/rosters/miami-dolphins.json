@@ -1,0 +1,150 @@
+{
+  "team": "Miami Dolphins",
+  "season": 2026,
+  "last_verified": "2026-09-09",
+  "source": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/teams/mia/roster",
+  "offense": {
+    "qb1": {
+      "player": "Malik Willis",
+      "note": "5 yr, age 27"
+    },
+    "qb2": {
+      "player": "Brady Cook",
+      "note": "2 yr, age 24"
+    },
+    "rb1": {
+      "player": "Ollie Gordon II",
+      "note": "2 yr, age 22, status: Questionable"
+    },
+    "rb2": {
+      "player": "Jaylen Wright",
+      "note": "3 yr, age 23"
+    },
+    "wr1": {
+      "player": "Jalen Tolbert",
+      "note": "5 yr, age 27"
+    },
+    "wr2": {
+      "player": "Malik Washington",
+      "note": "3 yr, age 25"
+    },
+    "te1": {
+      "player": "Seydou Traore",
+      "note": "0 yr, age 24"
+    }
+  },
+  "special_teams": {
+    "k": {
+      "player": "Riley Patterson",
+      "note": "6 yr, age 27"
+    }
+  },
+  "depth": {
+    "qbs": [
+      {
+        "name": "Malik Willis",
+        "jersey": 2,
+        "note": "5 yr, age 27"
+      },
+      {
+        "name": "Brady Cook",
+        "jersey": 999,
+        "note": "2 yr, age 24"
+      },
+      {
+        "name": "Kyle McCord",
+        "jersey": 999,
+        "note": "1 yr, age 23"
+      }
+    ],
+    "rbs": [
+      {
+        "name": "Ollie Gordon II",
+        "jersey": 0,
+        "note": "2 yr, age 22, status: Questionable"
+      },
+      {
+        "name": "Jaylen Wright",
+        "jersey": 5,
+        "note": "3 yr, age 23"
+      },
+      {
+        "name": "De'Von Achane",
+        "jersey": 28,
+        "note": "4 yr, age 24"
+      },
+      {
+        "name": "Jarquez Hunter",
+        "jersey": 31,
+        "note": "2 yr, age 23"
+      },
+      {
+        "name": "Carlos Washington Jr.",
+        "jersey": 37,
+        "note": "1 yr, age 27"
+      }
+    ],
+    "wrs": [
+      {
+        "name": "Jalen Tolbert",
+        "jersey": 1,
+        "note": "5 yr, age 27"
+      },
+      {
+        "name": "Malik Washington",
+        "jersey": 6,
+        "note": "3 yr, age 25"
+      },
+      {
+        "name": "Caleb Douglas",
+        "jersey": 7,
+        "note": "0 yr, age 23"
+      },
+      {
+        "name": "Jalen Reagor",
+        "jersey": 17,
+        "note": "7 yr, age 27"
+      },
+      {
+        "name": "Chris Bell",
+        "jersey": 18,
+        "note": "0 yr, age 22"
+      },
+      {
+        "name": "Kevin Coleman Jr.",
+        "jersey": 83,
+        "note": "0 yr, age 22"
+      }
+    ],
+    "tes": [
+      {
+        "name": "Seydou Traore",
+        "jersey": 49,
+        "note": "0 yr, age 24"
+      },
+      {
+        "name": "Will Kacmarek",
+        "jersey": 82,
+        "note": "0 yr, age 23"
+      },
+      {
+        "name": "Greg Dulcich",
+        "jersey": 85,
+        "note": "5 yr, age 26"
+      },
+      {
+        "name": "Cole Turner",
+        "jersey": 87,
+        "note": "3 yr, age 26, status: Injured Reserve"
+      }
+    ]
+  },
+  "prop_watchlist": [],
+  "changes_log": [
+    {
+      "date": "2026-09-09",
+      "change": "Initial roster snapshot fetched from ESPN public site API before Week 1 kickoff.",
+      "source": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/teams/mia/roster"
+    }
+  ]
+}

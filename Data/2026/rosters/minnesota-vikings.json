@@ -1,0 +1,155 @@
+{
+  "team": "Minnesota Vikings",
+  "season": 2026,
+  "last_verified": "2026-09-09",
+  "source": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/teams/min/roster",
+  "offense": {
+    "qb1": {
+      "player": "Kyler Murray",
+      "note": "8 yr, age 29"
+    },
+    "qb2": {
+      "player": "J.J. McCarthy",
+      "note": "3 yr, age 23"
+    },
+    "rb1": {
+      "player": "Jermar Jefferson",
+      "note": "5 yr, age 26, status: Injured Reserve"
+    },
+    "rb2": {
+      "player": "Demond Claiborne",
+      "note": "0 yr, age 22"
+    },
+    "wr1": {
+      "player": "Jordan Addison",
+      "note": "4 yr, age 24"
+    },
+    "wr2": {
+      "player": "Myles Price",
+      "note": "2 yr, age 24"
+    },
+    "te1": {
+      "player": "Josh Oliver",
+      "note": "8 yr, age 29"
+    }
+  },
+  "special_teams": {
+    "k": {
+      "player": "Will Reichard",
+      "note": "3 yr, age 25"
+    }
+  },
+  "depth": {
+    "qbs": [
+      {
+        "name": "Kyler Murray",
+        "jersey": 1,
+        "note": "8 yr, age 29"
+      },
+      {
+        "name": "J.J. McCarthy",
+        "jersey": 9,
+        "note": "3 yr, age 23"
+      },
+      {
+        "name": "Carson Wentz",
+        "jersey": 11,
+        "note": "11 yr, age 33"
+      },
+      {
+        "name": "Max Brosmer",
+        "jersey": 12,
+        "note": "2 yr, age 25"
+      }
+    ],
+    "rbs": [
+      {
+        "name": "Jermar Jefferson",
+        "jersey": 17,
+        "note": "5 yr, age 26, status: Injured Reserve"
+      },
+      {
+        "name": "Demond Claiborne",
+        "jersey": 21,
+        "note": "0 yr, age 22"
+      },
+      {
+        "name": "Jordan Mason",
+        "jersey": 27,
+        "note": "5 yr, age 27"
+      },
+      {
+        "name": "Aaron Jones Sr.",
+        "jersey": 33,
+        "note": "10 yr, age 31"
+      },
+      {
+        "name": "DeeJay Dallas",
+        "jersey": 999,
+        "note": "7 yr, age 27"
+      }
+    ],
+    "wrs": [
+      {
+        "name": "Jordan Addison",
+        "jersey": 3,
+        "note": "4 yr, age 24"
+      },
+      {
+        "name": "Myles Price",
+        "jersey": 4,
+        "note": "2 yr, age 24"
+      },
+      {
+        "name": "Tai Felton",
+        "jersey": 13,
+        "note": "2 yr, age 23"
+      },
+      {
+        "name": "Jauan Jennings",
+        "jersey": 14,
+        "note": "6 yr, age 29"
+      },
+      {
+        "name": "Justin Jefferson",
+        "jersey": 18,
+        "note": "7 yr, age 27"
+      },
+      {
+        "name": "Trayvon Rudolph",
+        "jersey": 30,
+        "note": "0 yr, age 24"
+      }
+    ],
+    "tes": [
+      {
+        "name": "Josh Oliver",
+        "jersey": 84,
+        "note": "8 yr, age 29"
+      },
+      {
+        "name": "Ben Yurosek",
+        "jersey": 85,
+        "note": "2 yr, age 24, status: Injured Reserve"
+      },
+      {
+        "name": "Gavin Bartholomew",
+        "jersey": 86,
+        "note": "2 yr, age 23"
+      },
+      {
+        "name": "T.J. Hockenson",
+        "jersey": 87,
+        "note": "8 yr, age 29"
+      }
+    ]
+  },
+  "prop_watchlist": [],
+  "changes_log": [
+    {
+      "date": "2026-09-09",
+      "change": "Initial roster snapshot fetched from ESPN public site API before Week 1 kickoff.",
+      "source": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/teams/min/roster"
+    }
+  ]
+}

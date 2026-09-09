@@ -1,0 +1,150 @@
+{
+  "team": "Detroit Lions",
+  "season": 2026,
+  "last_verified": "2026-09-09",
+  "source": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/teams/det/roster",
+  "offense": {
+    "qb1": {
+      "player": "Luke Altmyer",
+      "note": "0 yr, age 23"
+    },
+    "qb2": {
+      "player": "Joshua Dobbs",
+      "note": "9 yr, age 31"
+    },
+    "rb1": {
+      "player": "Jahmyr Gibbs",
+      "note": "4 yr, age 24"
+    },
+    "rb2": {
+      "player": "Isiah Pacheco",
+      "note": "5 yr, age 27, status: Injured Reserve"
+    },
+    "wr1": {
+      "player": "Jameson Williams",
+      "note": "5 yr, age 25"
+    },
+    "wr2": {
+      "player": "Lucky Jackson",
+      "note": "1 yr, age 29"
+    },
+    "te1": {
+      "player": "Thomas Gordon",
+      "note": "1 yr, age 26"
+    }
+  },
+  "special_teams": {
+    "k": {
+      "player": "Jake Bates",
+      "note": "3 yr, age 27"
+    }
+  },
+  "depth": {
+    "qbs": [
+      {
+        "name": "Luke Altmyer",
+        "jersey": 2,
+        "note": "0 yr, age 23"
+      },
+      {
+        "name": "Joshua Dobbs",
+        "jersey": 6,
+        "note": "9 yr, age 31"
+      },
+      {
+        "name": "Jared Goff",
+        "jersey": 16,
+        "note": "11 yr, age 31"
+      }
+    ],
+    "rbs": [
+      {
+        "name": "Jahmyr Gibbs",
+        "jersey": 0,
+        "note": "4 yr, age 24"
+      },
+      {
+        "name": "Isiah Pacheco",
+        "jersey": 10,
+        "note": "5 yr, age 27, status: Injured Reserve"
+      },
+      {
+        "name": "Jacob Saylors",
+        "jersey": 25,
+        "note": "2 yr, age 26"
+      },
+      {
+        "name": "Jabari Small",
+        "jersey": 26,
+        "note": "1 yr, age 25"
+      },
+      {
+        "name": "Sione Vaki",
+        "jersey": 33,
+        "note": "3 yr, age 25"
+      }
+    ],
+    "wrs": [
+      {
+        "name": "Jameson Williams",
+        "jersey": 1,
+        "note": "5 yr, age 25"
+      },
+      {
+        "name": "Lucky Jackson",
+        "jersey": 11,
+        "note": "1 yr, age 29"
+      },
+      {
+        "name": "Jackson Meeks",
+        "jersey": 13,
+        "note": "1 yr, age 23"
+      },
+      {
+        "name": "Amon-Ra St. Brown",
+        "jersey": 14,
+        "note": "6 yr, age 26"
+      },
+      {
+        "name": "Tay Martin",
+        "jersey": 17,
+        "note": "1 yr, age 28"
+      },
+      {
+        "name": "Isaac TeSlaa",
+        "jersey": 18,
+        "note": "2 yr, age 24"
+      }
+    ],
+    "tes": [
+      {
+        "name": "Thomas Gordon",
+        "jersey": 82,
+        "note": "1 yr, age 26"
+      },
+      {
+        "name": "Tyler Conklin",
+        "jersey": 83,
+        "note": "9 yr, age 31"
+      },
+      {
+        "name": "Sam LaPorta",
+        "jersey": 87,
+        "note": "4 yr, age 25, status: Questionable"
+      },
+      {
+        "name": "Brock Wright",
+        "jersey": 89,
+        "note": "6 yr, age 27"
+      }
+    ]
+  },
+  "prop_watchlist": [],
+  "changes_log": [
+    {
+      "date": "2026-09-09",
+      "change": "Initial roster snapshot fetched from ESPN public site API before Week 1 kickoff.",
+      "source": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/teams/det/roster"
+    }
+  ]
+}

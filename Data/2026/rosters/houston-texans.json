@@ -1,0 +1,155 @@
+{
+  "team": "Houston Texans",
+  "season": 2026,
+  "last_verified": "2026-09-09",
+  "source": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/teams/hou/roster",
+  "offense": {
+    "qb1": {
+      "player": "C.J. Stroud",
+      "note": "4 yr, age 24"
+    },
+    "qb2": {
+      "player": "Davis Mills",
+      "note": "6 yr, age 27"
+    },
+    "rb1": {
+      "player": "Woody Marks",
+      "note": "2 yr, age 25"
+    },
+    "rb2": {
+      "player": "Jawhar Jordan",
+      "note": "1 yr, age 27"
+    },
+    "wr1": {
+      "player": "Tank Dell",
+      "note": "4 yr, age 26, status: Injured Reserve"
+    },
+    "wr2": {
+      "player": "Nico Collins",
+      "note": "6 yr, age 27"
+    },
+    "te1": {
+      "player": "Cade Stover",
+      "note": "3 yr, age 26"
+    }
+  },
+  "special_teams": {
+    "k": {
+      "player": "Ka'imi Fairbairn",
+      "note": "11 yr, age 32"
+    }
+  },
+  "depth": {
+    "qbs": [
+      {
+        "name": "C.J. Stroud",
+        "jersey": 7,
+        "note": "4 yr, age 24"
+      },
+      {
+        "name": "Davis Mills",
+        "jersey": 10,
+        "note": "6 yr, age 27"
+      },
+      {
+        "name": "Graham Mertz",
+        "jersey": 18,
+        "note": "2 yr, age 25, status: Injured Reserve"
+      },
+      {
+        "name": "Mark Gronowski",
+        "jersey": 999,
+        "note": "0 yr, age 24"
+      }
+    ],
+    "rbs": [
+      {
+        "name": "Woody Marks",
+        "jersey": 4,
+        "note": "2 yr, age 25"
+      },
+      {
+        "name": "Jawhar Jordan",
+        "jersey": 25,
+        "note": "1 yr, age 27"
+      },
+      {
+        "name": "Noah Whittington",
+        "jersey": 26,
+        "note": "0 yr, age 24"
+      },
+      {
+        "name": "David Montgomery",
+        "jersey": 32,
+        "note": "8 yr, age 29"
+      },
+      {
+        "name": "British Brooks",
+        "jersey": 44,
+        "note": "3 yr, age 26, status: Questionable"
+      }
+    ],
+    "wrs": [
+      {
+        "name": "Tank Dell",
+        "jersey": 1,
+        "note": "4 yr, age 26, status: Injured Reserve"
+      },
+      {
+        "name": "Nico Collins",
+        "jersey": 12,
+        "note": "6 yr, age 27"
+      },
+      {
+        "name": "Jaylin Noel",
+        "jersey": 13,
+        "note": "2 yr, age 24, status: Questionable"
+      },
+      {
+        "name": "Daniel Sobkowicz",
+        "jersey": 17,
+        "note": "0 yr, age 23"
+      },
+      {
+        "name": "Xavier Hutchinson",
+        "jersey": 19,
+        "note": "4 yr, age 26"
+      },
+      {
+        "name": "Jayden Higgins",
+        "jersey": 81,
+        "note": "2 yr, age 23, status: Injured Reserve"
+      }
+    ],
+    "tes": [
+      {
+        "name": "Cade Stover",
+        "jersey": 8,
+        "note": "3 yr, age 26"
+      },
+      {
+        "name": "Brevin Jordan",
+        "jersey": 9,
+        "note": "6 yr, age 26, status: Questionable"
+      },
+      {
+        "name": "Marlin Klein",
+        "jersey": 83,
+        "note": "0 yr, age 23"
+      },
+      {
+        "name": "Dalton Schultz",
+        "jersey": 86,
+        "note": "9 yr, age 30"
+      }
+    ]
+  },
+  "prop_watchlist": [],
+  "changes_log": [
+    {
+      "date": "2026-09-09",
+      "change": "Initial roster snapshot fetched from ESPN public site API before Week 1 kickoff.",
+      "source": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/teams/hou/roster"
+    }
+  ]
+}

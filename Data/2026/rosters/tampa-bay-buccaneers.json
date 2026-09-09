@@ -1,0 +1,145 @@
+{
+  "team": "Tampa Bay Buccaneers",
+  "season": 2026,
+  "last_verified": "2026-09-09",
+  "source": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/teams/tb/roster",
+  "offense": {
+    "qb1": {
+      "player": "Baker Mayfield",
+      "note": "9 yr, age 31"
+    },
+    "qb2": {
+      "player": "Jalon Daniels",
+      "note": "0 yr, age 23"
+    },
+    "rb1": {
+      "player": "Kenny Gainwell",
+      "note": "6 yr, age 27"
+    },
+    "rb2": {
+      "player": "Bucky Irving",
+      "note": "3 yr, age 24"
+    },
+    "wr1": {
+      "player": "Emeka Egbuka",
+      "note": "2 yr, age 23, status: Questionable"
+    },
+    "wr2": {
+      "player": "Dean Patterson",
+      "note": "0 yr, age 24"
+    },
+    "te1": {
+      "player": "Ko Kieft",
+      "note": "5 yr, age 28"
+    }
+  },
+  "special_teams": {
+    "k": {
+      "player": "Chase McLaughlin",
+      "note": "8 yr, age 30"
+    }
+  },
+  "depth": {
+    "qbs": [
+      {
+        "name": "Baker Mayfield",
+        "jersey": 6,
+        "note": "9 yr, age 31"
+      },
+      {
+        "name": "Jalon Daniels",
+        "jersey": 10,
+        "note": "0 yr, age 23"
+      },
+      {
+        "name": "Easton Stick",
+        "jersey": 999,
+        "note": "7 yr, age 30"
+      }
+    ],
+    "rbs": [
+      {
+        "name": "Kenny Gainwell",
+        "jersey": 1,
+        "note": "6 yr, age 27"
+      },
+      {
+        "name": "Bucky Irving",
+        "jersey": 7,
+        "note": "3 yr, age 24"
+      },
+      {
+        "name": "Josh Williams",
+        "jersey": 18,
+        "note": "2 yr, age 25"
+      },
+      {
+        "name": "Sean Tucker",
+        "jersey": 44,
+        "note": "4 yr, age 24, status: Questionable"
+      }
+    ],
+    "wrs": [
+      {
+        "name": "Emeka Egbuka",
+        "jersey": 2,
+        "note": "2 yr, age 23, status: Questionable"
+      },
+      {
+        "name": "Dean Patterson",
+        "jersey": 8,
+        "note": "0 yr, age 24"
+      },
+      {
+        "name": "Jalen McMillan",
+        "jersey": 11,
+        "note": "3 yr, age 24, status: Questionable"
+      },
+      {
+        "name": "Chris Godwin Jr.",
+        "jersey": 14,
+        "note": "10 yr, age 30"
+      },
+      {
+        "name": "Tez Johnson",
+        "jersey": 15,
+        "note": "2 yr, age 24"
+      },
+      {
+        "name": "Ted Hurst III",
+        "jersey": 17,
+        "note": "0 yr, age 22"
+      }
+    ],
+    "tes": [
+      {
+        "name": "Ko Kieft",
+        "jersey": 41,
+        "note": "5 yr, age 28"
+      },
+      {
+        "name": "Bauer Sharp",
+        "jersey": 84,
+        "note": "0 yr, age 23"
+      },
+      {
+        "name": "Payne Durham",
+        "jersey": 87,
+        "note": "4 yr, age 26"
+      },
+      {
+        "name": "Cade Otton",
+        "jersey": 88,
+        "note": "5 yr, age 27"
+      }
+    ]
+  },
+  "prop_watchlist": [],
+  "changes_log": [
+    {
+      "date": "2026-09-09",
+      "change": "Initial roster snapshot fetched from ESPN public site API before Week 1 kickoff.",
+      "source": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/teams/tb/roster"
+    }
+  ]
+}

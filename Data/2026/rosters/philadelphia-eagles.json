@@ -1,0 +1,155 @@
+{
+  "team": "Philadelphia Eagles",
+  "season": 2026,
+  "last_verified": "2026-09-09",
+  "source": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/teams/phi/roster",
+  "offense": {
+    "qb1": {
+      "player": "Jalen Hurts",
+      "note": "7 yr, age 28"
+    },
+    "qb2": {
+      "player": "Cole Payton",
+      "note": "0 yr, age 23"
+    },
+    "rb1": {
+      "player": "Tank Bigsby",
+      "note": "4 yr, age 24"
+    },
+    "rb2": {
+      "player": "Saquon Barkley",
+      "note": "9 yr, age 29"
+    },
+    "wr1": {
+      "player": "Hollywood Brown",
+      "note": "8 yr, age 29"
+    },
+    "wr2": {
+      "player": "DeVonta Smith",
+      "note": "6 yr, age 27"
+    },
+    "te1": {
+      "player": "Grant Calcaterra",
+      "note": "5 yr, age 27, status: Injured Reserve"
+    }
+  },
+  "special_teams": {
+    "k": {
+      "player": "Jake Elliott",
+      "note": "10 yr, age 31"
+    }
+  },
+  "depth": {
+    "qbs": [
+      {
+        "name": "Jalen Hurts",
+        "jersey": 1,
+        "note": "7 yr, age 28"
+      },
+      {
+        "name": "Cole Payton",
+        "jersey": 10,
+        "note": "0 yr, age 23"
+      },
+      {
+        "name": "Andy Dalton",
+        "jersey": 14,
+        "note": "16 yr, age 38"
+      },
+      {
+        "name": "Tanner McKee",
+        "jersey": 16,
+        "note": "4 yr, age 26"
+      }
+    ],
+    "rbs": [
+      {
+        "name": "Tank Bigsby",
+        "jersey": 8,
+        "note": "4 yr, age 24"
+      },
+      {
+        "name": "Saquon Barkley",
+        "jersey": 26,
+        "note": "9 yr, age 29"
+      },
+      {
+        "name": "Will Shipley",
+        "jersey": 28,
+        "note": "3 yr, age 24"
+      },
+      {
+        "name": "Carson Steele",
+        "jersey": 34,
+        "note": "2 yr, age 23"
+      },
+      {
+        "name": "Dameon Pierce",
+        "jersey": 39,
+        "note": "5 yr, age 26"
+      }
+    ],
+    "wrs": [
+      {
+        "name": "Hollywood Brown",
+        "jersey": 0,
+        "note": "8 yr, age 29"
+      },
+      {
+        "name": "DeVonta Smith",
+        "jersey": 6,
+        "note": "6 yr, age 27"
+      },
+      {
+        "name": "Makai Lemon",
+        "jersey": 9,
+        "note": "0 yr, age 22"
+      },
+      {
+        "name": "Dontayvion Wicks",
+        "jersey": 13,
+        "note": "4 yr, age 25"
+      },
+      {
+        "name": "Britain Covey",
+        "jersey": 18,
+        "note": "5 yr, age 29"
+      },
+      {
+        "name": "Elijah Moore",
+        "jersey": 19,
+        "note": "6 yr, age 26"
+      }
+    ],
+    "tes": [
+      {
+        "name": "Grant Calcaterra",
+        "jersey": 81,
+        "note": "5 yr, age 27, status: Injured Reserve"
+      },
+      {
+        "name": "Johnny Mundt",
+        "jersey": 83,
+        "note": "9 yr, age 31"
+      },
+      {
+        "name": "E.J. Jenkins",
+        "jersey": 84,
+        "note": "2 yr, age 27"
+      },
+      {
+        "name": "Eli Stowers",
+        "jersey": 87,
+        "note": "0 yr, age 23, status: Questionable"
+      }
+    ]
+  },
+  "prop_watchlist": [],
+  "changes_log": [
+    {
+      "date": "2026-09-09",
+      "change": "Initial roster snapshot fetched from ESPN public site API before Week 1 kickoff.",
+      "source": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/teams/phi/roster"
+    }
+  ]
+}

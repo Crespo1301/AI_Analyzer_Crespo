@@ -1,0 +1,145 @@
+{
+  "team": "New York Giants",
+  "season": 2026,
+  "last_verified": "2026-09-09",
+  "source": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/teams/nyg/roster",
+  "offense": {
+    "qb1": {
+      "player": "Jake Haener",
+      "note": "3 yr, age 27"
+    },
+    "qb2": {
+      "player": "Jaxson Dart",
+      "note": "2 yr, age 23"
+    },
+    "rb1": {
+      "player": "Najee Harris",
+      "note": "6 yr, age 28"
+    },
+    "rb2": {
+      "player": "Devin Singletary",
+      "note": "8 yr, age 29"
+    },
+    "wr1": {
+      "player": "Malachi Fields",
+      "note": "0 yr, age 23"
+    },
+    "wr2": {
+      "player": "Malik Nabers",
+      "note": "3 yr, age 23, status: Questionable"
+    },
+    "te1": {
+      "player": "Isaiah Likely",
+      "note": "5 yr, age 26"
+    }
+  },
+  "special_teams": {
+    "k": {
+      "player": "Dominic Zvada",
+      "note": "0 yr, age 22"
+    }
+  },
+  "depth": {
+    "qbs": [
+      {
+        "name": "Jake Haener",
+        "jersey": 2,
+        "note": "3 yr, age 27"
+      },
+      {
+        "name": "Jaxson Dart",
+        "jersey": 6,
+        "note": "2 yr, age 23"
+      },
+      {
+        "name": "Jameis Winston",
+        "jersey": 19,
+        "note": "12 yr, age 32"
+      }
+    ],
+    "rbs": [
+      {
+        "name": "Najee Harris",
+        "jersey": 22,
+        "note": "6 yr, age 28"
+      },
+      {
+        "name": "Devin Singletary",
+        "jersey": 26,
+        "note": "8 yr, age 29"
+      },
+      {
+        "name": "Tyrone Tracy Jr.",
+        "jersey": 29,
+        "note": "3 yr, age 26, status: Questionable"
+      },
+      {
+        "name": "Cam Skattebo",
+        "jersey": 44,
+        "note": "2 yr, age 24"
+      }
+    ],
+    "wrs": [
+      {
+        "name": "Malachi Fields",
+        "jersey": 0,
+        "note": "0 yr, age 23"
+      },
+      {
+        "name": "Malik Nabers",
+        "jersey": 1,
+        "note": "3 yr, age 23, status: Questionable"
+      },
+      {
+        "name": "Jalin Hyatt",
+        "jersey": 13,
+        "note": "4 yr, age 24"
+      },
+      {
+        "name": "Odell Beckham Jr.",
+        "jersey": 13,
+        "note": "11 yr, age 33"
+      },
+      {
+        "name": "Darnell Mooney",
+        "jersey": 17,
+        "note": "7 yr, age 28"
+      },
+      {
+        "name": "Gunner Olszewski",
+        "jersey": 80,
+        "note": "8 yr, age 29, status: Injured Reserve"
+      }
+    ],
+    "tes": [
+      {
+        "name": "Isaiah Likely",
+        "jersey": 9,
+        "note": "5 yr, age 26"
+      },
+      {
+        "name": "Theo Johnson",
+        "jersey": 84,
+        "note": "3 yr, age 25, status: Questionable"
+      },
+      {
+        "name": "Chris Manhertz",
+        "jersey": 85,
+        "note": "11 yr, age 34"
+      },
+      {
+        "name": "Thomas Fidone II",
+        "jersey": 86,
+        "note": "2 yr, age 23"
+      }
+    ]
+  },
+  "prop_watchlist": [],
+  "changes_log": [
+    {
+      "date": "2026-09-09",
+      "change": "Initial roster snapshot fetched from ESPN public site API before Week 1 kickoff.",
+      "source": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/teams/nyg/roster"
+    }
+  ]
+}

@@ -1,0 +1,150 @@
+{
+  "team": "New York Jets",
+  "season": 2026,
+  "last_verified": "2026-09-09",
+  "source": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/teams/nyj/roster",
+  "offense": {
+    "qb1": {
+      "player": "Geno Smith",
+      "note": "14 yr, age 35"
+    },
+    "qb2": {
+      "player": "Cade Klubnik",
+      "note": "0 yr, age 22"
+    },
+    "rb1": {
+      "player": "Braelon Allen",
+      "note": "3 yr, age 22"
+    },
+    "rb2": {
+      "player": "Kene Nwangwu",
+      "note": "6 yr, age 28"
+    },
+    "wr1": {
+      "player": "Garrett Wilson",
+      "note": "5 yr, age 26"
+    },
+    "wr2": {
+      "player": "Adonai Mitchell",
+      "note": "3 yr, age 23"
+    },
+    "te1": {
+      "player": "Kenyon Sadiq",
+      "note": "0 yr, age 21, status: Questionable"
+    }
+  },
+  "special_teams": {
+    "k": {
+      "player": "Jason Sanders",
+      "note": "9 yr, age 30"
+    }
+  },
+  "depth": {
+    "qbs": [
+      {
+        "name": "Geno Smith",
+        "jersey": 7,
+        "note": "14 yr, age 35"
+      },
+      {
+        "name": "Cade Klubnik",
+        "jersey": 10,
+        "note": "0 yr, age 22"
+      },
+      {
+        "name": "Bailey Zappe",
+        "jersey": 11,
+        "note": "4 yr, age 27"
+      }
+    ],
+    "rbs": [
+      {
+        "name": "Braelon Allen",
+        "jersey": 0,
+        "note": "3 yr, age 22"
+      },
+      {
+        "name": "Kene Nwangwu",
+        "jersey": 3,
+        "note": "6 yr, age 28"
+      },
+      {
+        "name": "Breece Hall",
+        "jersey": 20,
+        "note": "5 yr, age 25, status: Questionable"
+      },
+      {
+        "name": "Isaiah Davis",
+        "jersey": 32,
+        "note": "3 yr, age 24, status: Questionable"
+      },
+      {
+        "name": "Chip Trayanum",
+        "jersey": 40,
+        "note": "0 yr, age 24, status: Injured Reserve"
+      }
+    ],
+    "wrs": [
+      {
+        "name": "Garrett Wilson",
+        "jersey": 5,
+        "note": "5 yr, age 26"
+      },
+      {
+        "name": "Adonai Mitchell",
+        "jersey": 15,
+        "note": "3 yr, age 23"
+      },
+      {
+        "name": "Tim Patrick",
+        "jersey": 17,
+        "note": "9 yr, age 32"
+      },
+      {
+        "name": "Isaiah Williams",
+        "jersey": 18,
+        "note": "3 yr, age 25"
+      },
+      {
+        "name": "Caullin Lacy",
+        "jersey": 35,
+        "note": "0 yr, age 24, status: Questionable"
+      },
+      {
+        "name": "Jamaal Pritchett",
+        "jersey": 81,
+        "note": "1 yr, age 23"
+      }
+    ],
+    "tes": [
+      {
+        "name": "Kenyon Sadiq",
+        "jersey": 16,
+        "note": "0 yr, age 21, status: Questionable"
+      },
+      {
+        "name": "Mason Taylor",
+        "jersey": 85,
+        "note": "2 yr, age 22"
+      },
+      {
+        "name": "Jelani Woods",
+        "jersey": 86,
+        "note": "5 yr, age 27"
+      },
+      {
+        "name": "Jeremy Ruckert",
+        "jersey": 89,
+        "note": "5 yr, age 26"
+      }
+    ]
+  },
+  "prop_watchlist": [],
+  "changes_log": [
+    {
+      "date": "2026-09-09",
+      "change": "Initial roster snapshot fetched from ESPN public site API before Week 1 kickoff.",
+      "source": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/teams/nyj/roster"
+    }
+  ]
+}

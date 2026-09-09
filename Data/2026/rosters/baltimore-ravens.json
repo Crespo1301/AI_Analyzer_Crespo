@@ -1,0 +1,155 @@
+{
+  "team": "Baltimore Ravens",
+  "season": 2026,
+  "last_verified": "2026-09-09",
+  "source": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/teams/bal/roster",
+  "offense": {
+    "qb1": {
+      "player": "Tyler Huntley",
+      "note": "7 yr, age 28"
+    },
+    "qb2": {
+      "player": "Lamar Jackson",
+      "note": "9 yr, age 29"
+    },
+    "rb1": {
+      "player": "Derrick Henry",
+      "note": "11 yr, age 32"
+    },
+    "rb2": {
+      "player": "Adam Randall",
+      "note": "0 yr, age 22, status: Injured Reserve"
+    },
+    "wr1": {
+      "player": "Zay Flowers",
+      "note": "4 yr, age 25, status: Questionable"
+    },
+    "wr2": {
+      "player": "Ja'Kobi Lane",
+      "note": "0 yr, age 22"
+    },
+    "te1": {
+      "player": "Durham Smythe",
+      "note": "9 yr, age 31"
+    }
+  },
+  "special_teams": {
+    "k": {
+      "player": "Tyler Loop",
+      "note": "2 yr, age 25"
+    }
+  },
+  "depth": {
+    "qbs": [
+      {
+        "name": "Tyler Huntley",
+        "jersey": 5,
+        "note": "7 yr, age 28"
+      },
+      {
+        "name": "Lamar Jackson",
+        "jersey": 8,
+        "note": "9 yr, age 29"
+      },
+      {
+        "name": "Skylar Thompson",
+        "jersey": 11,
+        "note": "5 yr, age 29, status: Injured Reserve"
+      },
+      {
+        "name": "Joe Fagnano",
+        "jersey": 12,
+        "note": "0 yr, age 25"
+      }
+    ],
+    "rbs": [
+      {
+        "name": "Derrick Henry",
+        "jersey": 22,
+        "note": "11 yr, age 32"
+      },
+      {
+        "name": "Adam Randall",
+        "jersey": 23,
+        "note": "0 yr, age 22, status: Injured Reserve"
+      },
+      {
+        "name": "Rasheen Ali",
+        "jersey": 26,
+        "note": "3 yr, age 25"
+      },
+      {
+        "name": "Jonathan Ward",
+        "jersey": 35,
+        "note": "6 yr, age 28"
+      },
+      {
+        "name": "Justice Hill",
+        "jersey": 43,
+        "note": "8 yr, age 28"
+      }
+    ],
+    "wrs": [
+      {
+        "name": "Zay Flowers",
+        "jersey": 4,
+        "note": "4 yr, age 25, status: Questionable"
+      },
+      {
+        "name": "Ja'Kobi Lane",
+        "jersey": 6,
+        "note": "0 yr, age 22"
+      },
+      {
+        "name": "Rashod Bateman",
+        "jersey": 7,
+        "note": "6 yr, age 26"
+      },
+      {
+        "name": "LaJohntay Wester",
+        "jersey": 10,
+        "note": "2 yr, age 24"
+      },
+      {
+        "name": "Elijah Sarratt",
+        "jersey": 13,
+        "note": "0 yr, age 23"
+      },
+      {
+        "name": "Xavier Guillory",
+        "jersey": 16,
+        "note": "1 yr, age 25"
+      }
+    ],
+    "tes": [
+      {
+        "name": "Durham Smythe",
+        "jersey": 80,
+        "note": "9 yr, age 31"
+      },
+      {
+        "name": "Ty Pezza",
+        "jersey": 84,
+        "note": "0 yr, age 23"
+      },
+      {
+        "name": "Josh Cuevas",
+        "jersey": 85,
+        "note": "0 yr, age 23"
+      },
+      {
+        "name": "Matthew Hibner",
+        "jersey": 88,
+        "note": "0 yr, age 24"
+      }
+    ]
+  },
+  "prop_watchlist": [],
+  "changes_log": [
+    {
+      "date": "2026-09-09",
+      "change": "Initial roster snapshot fetched from ESPN public site API before Week 1 kickoff.",
+      "source": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/teams/bal/roster"
+    }
+  ]
+}

@@ -1,0 +1,155 @@
+{
+  "team": "Washington Commanders",
+  "season": 2026,
+  "last_verified": "2026-09-09",
+  "source": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/teams/wsh/roster",
+  "offense": {
+    "qb1": {
+      "player": "Jayden Daniels",
+      "note": "3 yr, age 25"
+    },
+    "qb2": {
+      "player": "Marcus Mariota",
+      "note": "12 yr, age 32, status: Questionable"
+    },
+    "rb1": {
+      "player": "Rachaad White",
+      "note": "5 yr, age 27, status: Questionable"
+    },
+    "rb2": {
+      "player": "Jacory Croskey-Merritt",
+      "note": "2 yr, age 25, status: Questionable"
+    },
+    "wr1": {
+      "player": "Stefon Diggs",
+      "note": "12 yr, age 32"
+    },
+    "wr2": {
+      "player": "Dyami Brown",
+      "note": "6 yr, age 26"
+    },
+    "te1": {
+      "player": "Quentin Moore",
+      "note": "0 yr, age 26, status: Injured Reserve"
+    }
+  },
+  "special_teams": {
+    "k": {
+      "player": "Drew Stevens",
+      "note": "0 yr, age 22"
+    }
+  },
+  "depth": {
+    "qbs": [
+      {
+        "name": "Jayden Daniels",
+        "jersey": 5,
+        "note": "3 yr, age 25"
+      },
+      {
+        "name": "Marcus Mariota",
+        "jersey": 8,
+        "note": "12 yr, age 32, status: Questionable"
+      },
+      {
+        "name": "Sam Hartman",
+        "jersey": 15,
+        "note": "1 yr, age 27"
+      },
+      {
+        "name": "Athan Kaliakmanis",
+        "jersey": 16,
+        "note": "0 yr, age 23"
+      }
+    ],
+    "rbs": [
+      {
+        "name": "Rachaad White",
+        "jersey": 1,
+        "note": "5 yr, age 27, status: Questionable"
+      },
+      {
+        "name": "Jacory Croskey-Merritt",
+        "jersey": 22,
+        "note": "2 yr, age 25, status: Questionable"
+      },
+      {
+        "name": "Craig Reynolds",
+        "jersey": 24,
+        "note": "7 yr, age 30"
+      },
+      {
+        "name": "Jeremy McNichols",
+        "jersey": 26,
+        "note": "6 yr, age 30, status: Injured Reserve"
+      },
+      {
+        "name": "Robert Henry Jr.",
+        "jersey": 30,
+        "note": "0 yr, age 24"
+      }
+    ],
+    "wrs": [
+      {
+        "name": "Stefon Diggs",
+        "jersey": 3,
+        "note": "12 yr, age 32"
+      },
+      {
+        "name": "Dyami Brown",
+        "jersey": 6,
+        "note": "6 yr, age 26"
+      },
+      {
+        "name": "Luke McCaffrey",
+        "jersey": 11,
+        "note": "3 yr, age 25"
+      },
+      {
+        "name": "Van Jefferson",
+        "jersey": 12,
+        "note": "7 yr, age 30"
+      },
+      {
+        "name": "Treylon Burks",
+        "jersey": 13,
+        "note": "5 yr, age 26"
+      },
+      {
+        "name": "Antonio Williams",
+        "jersey": 14,
+        "note": "0 yr, age 22"
+      }
+    ],
+    "tes": [
+      {
+        "name": "Quentin Moore",
+        "jersey": 40,
+        "note": "0 yr, age 26, status: Injured Reserve"
+      },
+      {
+        "name": "Colson Yankoff",
+        "jersey": 80,
+        "note": "3 yr, age 26"
+      },
+      {
+        "name": "Ben Sinnott",
+        "jersey": 82,
+        "note": "3 yr, age 24, status: Questionable"
+      },
+      {
+        "name": "Chig Okonkwo",
+        "jersey": 85,
+        "note": "5 yr, age 27"
+      }
+    ]
+  },
+  "prop_watchlist": [],
+  "changes_log": [
+    {
+      "date": "2026-09-09",
+      "change": "Initial roster snapshot fetched from ESPN public site API before Week 1 kickoff.",
+      "source": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/teams/wsh/roster"
+    }
+  ]
+}

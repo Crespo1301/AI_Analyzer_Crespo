@@ -1,0 +1,155 @@
+{
+  "team": "Atlanta Falcons",
+  "season": 2026,
+  "last_verified": "2026-09-09",
+  "source": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/teams/atl/roster",
+  "offense": {
+    "qb1": {
+      "player": "Tua Tagovailoa",
+      "note": "7 yr, age 28"
+    },
+    "qb2": {
+      "player": "Michael Penix Jr.",
+      "note": "3 yr, age 26, status: Out"
+    },
+    "rb1": {
+      "player": "Bijan Robinson",
+      "note": "4 yr, age 24"
+    },
+    "rb2": {
+      "player": "Brian Robinson Jr.",
+      "note": "5 yr, age 27"
+    },
+    "wr1": {
+      "player": "Jahan Dotson",
+      "note": "5 yr, age 26"
+    },
+    "wr2": {
+      "player": "Drake London",
+      "note": "5 yr, age 25"
+    },
+    "te1": {
+      "player": "Kyle Pitts Sr.",
+      "note": "5 yr, age 25"
+    }
+  },
+  "special_teams": {
+    "k": {
+      "player": "Nick Folk",
+      "note": "19 yr, age 41"
+    }
+  },
+  "depth": {
+    "qbs": [
+      {
+        "name": "Tua Tagovailoa",
+        "jersey": 1,
+        "note": "7 yr, age 28"
+      },
+      {
+        "name": "Michael Penix Jr.",
+        "jersey": 9,
+        "note": "3 yr, age 26, status: Out"
+      },
+      {
+        "name": "Cooper Rush",
+        "jersey": 13,
+        "note": "9 yr, age 32"
+      },
+      {
+        "name": "Jack Strand",
+        "jersey": 18,
+        "note": "0 yr, age 22"
+      }
+    ],
+    "rbs": [
+      {
+        "name": "Bijan Robinson",
+        "jersey": 7,
+        "note": "4 yr, age 24"
+      },
+      {
+        "name": "Brian Robinson Jr.",
+        "jersey": 15,
+        "note": "5 yr, age 27"
+      },
+      {
+        "name": "Tyler Goodson",
+        "jersey": 25,
+        "note": "4 yr, age 25"
+      },
+      {
+        "name": "Cash Jones",
+        "jersey": 32,
+        "note": "0 yr, age 26"
+      },
+      {
+        "name": "Trey Sermon",
+        "jersey": 44,
+        "note": "5 yr, age 27, status: Injured Reserve"
+      }
+    ],
+    "wrs": [
+      {
+        "name": "Jahan Dotson",
+        "jersey": 4,
+        "note": "5 yr, age 26"
+      },
+      {
+        "name": "Drake London",
+        "jersey": 5,
+        "note": "5 yr, age 25"
+      },
+      {
+        "name": "Olamide Zaccheaus",
+        "jersey": 14,
+        "note": "8 yr, age 29"
+      },
+      {
+        "name": "Zachariah Branch",
+        "jersey": 17,
+        "note": "0 yr, age 22"
+      },
+      {
+        "name": "Chris Blair",
+        "jersey": 19,
+        "note": "2 yr, age 28"
+      },
+      {
+        "name": "Dylan Drummond",
+        "jersey": 80,
+        "note": "2 yr, age 26"
+      }
+    ],
+    "tes": [
+      {
+        "name": "Kyle Pitts Sr.",
+        "jersey": 8,
+        "note": "5 yr, age 25"
+      },
+      {
+        "name": "Austin Hooper",
+        "jersey": 81,
+        "note": "11 yr, age 31"
+      },
+      {
+        "name": "Jack Velling",
+        "jersey": 84,
+        "note": "0 yr, age 22"
+      },
+      {
+        "name": "Nick Muse",
+        "jersey": 87,
+        "note": "3 yr, age 27"
+      }
+    ]
+  },
+  "prop_watchlist": [],
+  "changes_log": [
+    {
+      "date": "2026-09-09",
+      "change": "Initial roster snapshot fetched from ESPN public site API before Week 1 kickoff.",
+      "source": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/teams/atl/roster"
+    }
+  ]
+}

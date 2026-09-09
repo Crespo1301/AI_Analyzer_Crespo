@@ -1,0 +1,150 @@
+{
+  "team": "Los Angeles Chargers",
+  "season": 2026,
+  "last_verified": "2026-09-09",
+  "source": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/teams/lac/roster",
+  "offense": {
+    "qb1": {
+      "player": "Trey Lance",
+      "note": "6 yr, age 26"
+    },
+    "qb2": {
+      "player": "DJ Uiagalelei",
+      "note": "1 yr, age 25"
+    },
+    "rb1": {
+      "player": "Omarion Hampton",
+      "note": "2 yr, age 23"
+    },
+    "rb2": {
+      "player": "Kimani Vidal",
+      "note": "3 yr, age 25"
+    },
+    "wr1": {
+      "player": "Quentin Johnston",
+      "note": "4 yr, age 25"
+    },
+    "wr2": {
+      "player": "Tre' Harris",
+      "note": "2 yr, age 24, status: Questionable"
+    },
+    "te1": {
+      "player": "Evan Svoboda",
+      "note": "0 yr, age 23"
+    }
+  },
+  "special_teams": {
+    "k": {
+      "player": "Cameron Dicker",
+      "note": "5 yr, age 26, status: Questionable"
+    }
+  },
+  "depth": {
+    "qbs": [
+      {
+        "name": "Trey Lance",
+        "jersey": 5,
+        "note": "6 yr, age 26"
+      },
+      {
+        "name": "DJ Uiagalelei",
+        "jersey": 7,
+        "note": "1 yr, age 25"
+      },
+      {
+        "name": "Justin Herbert",
+        "jersey": 10,
+        "note": "7 yr, age 28"
+      }
+    ],
+    "rbs": [
+      {
+        "name": "Omarion Hampton",
+        "jersey": 8,
+        "note": "2 yr, age 23"
+      },
+      {
+        "name": "Kimani Vidal",
+        "jersey": 28,
+        "note": "3 yr, age 25"
+      },
+      {
+        "name": "Greg Desrosiers Jr.",
+        "jersey": 31,
+        "note": "0 yr, age 25"
+      },
+      {
+        "name": "Keaton Mitchell",
+        "jersey": 34,
+        "note": "4 yr, age 24, status: Questionable"
+      },
+      {
+        "name": "Amar Johnson",
+        "jersey": 35,
+        "note": "1 yr, age 23"
+      }
+    ],
+    "wrs": [
+      {
+        "name": "Quentin Johnston",
+        "jersey": 1,
+        "note": "4 yr, age 25"
+      },
+      {
+        "name": "Tre' Harris",
+        "jersey": 9,
+        "note": "2 yr, age 24, status: Questionable"
+      },
+      {
+        "name": "Derius Davis",
+        "jersey": 12,
+        "note": "4 yr, age 25"
+      },
+      {
+        "name": "Ladd McConkey",
+        "jersey": 15,
+        "note": "3 yr, age 24"
+      },
+      {
+        "name": "Dalevon Campbell",
+        "jersey": 81,
+        "note": "2 yr, age 24, status: Injured Reserve"
+      },
+      {
+        "name": "Theo Wease Jr.",
+        "jersey": 82,
+        "note": "1 yr, age 25"
+      }
+    ],
+    "tes": [
+      {
+        "name": "Evan Svoboda",
+        "jersey": 49,
+        "note": "0 yr, age 23"
+      },
+      {
+        "name": "David Njoku",
+        "jersey": 83,
+        "note": "12 yr, age 30"
+      },
+      {
+        "name": "Oronde Gadsden",
+        "jersey": 86,
+        "note": "2 yr, age 23"
+      },
+      {
+        "name": "Charlie Kolar",
+        "jersey": 88,
+        "note": "5 yr, age 27"
+      }
+    ]
+  },
+  "prop_watchlist": [],
+  "changes_log": [
+    {
+      "date": "2026-09-09",
+      "change": "Initial roster snapshot fetched from ESPN public site API before Week 1 kickoff.",
+      "source": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/teams/lac/roster"
+    }
+  ]
+}

@@ -1,0 +1,150 @@
+{
+  "team": "Indianapolis Colts",
+  "season": 2026,
+  "last_verified": "2026-09-09",
+  "source": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/teams/ind/roster",
+  "offense": {
+    "qb1": {
+      "player": "Anthony Richardson Sr.",
+      "note": "4 yr, age 24"
+    },
+    "qb2": {
+      "player": "Riley Leonard",
+      "note": "2 yr, age 23"
+    },
+    "rb1": {
+      "player": "Seth McGowan",
+      "note": "0 yr, age 24"
+    },
+    "rb2": {
+      "player": "DJ Giddens",
+      "note": "2 yr, age 23"
+    },
+    "wr1": {
+      "player": "D.J. Montgomery",
+      "note": "5 yr, age 29, status: Injured Reserve"
+    },
+    "wr2": {
+      "player": "Josh Downs",
+      "note": "4 yr, age 25, status: Questionable"
+    },
+    "te1": {
+      "player": "Carson Towt",
+      "note": "0 yr, age 25, status: Injured Reserve"
+    }
+  },
+  "special_teams": {
+    "k": {
+      "player": "Spencer Shrader",
+      "note": "3 yr, age 27"
+    }
+  },
+  "depth": {
+    "qbs": [
+      {
+        "name": "Anthony Richardson Sr.",
+        "jersey": 5,
+        "note": "4 yr, age 24"
+      },
+      {
+        "name": "Riley Leonard",
+        "jersey": 15,
+        "note": "2 yr, age 23"
+      },
+      {
+        "name": "Daniel Jones",
+        "jersey": 17,
+        "note": "8 yr, age 29"
+      }
+    ],
+    "rbs": [
+      {
+        "name": "Seth McGowan",
+        "jersey": 20,
+        "note": "0 yr, age 24"
+      },
+      {
+        "name": "DJ Giddens",
+        "jersey": 21,
+        "note": "2 yr, age 23"
+      },
+      {
+        "name": "Jonathan Taylor",
+        "jersey": 28,
+        "note": "7 yr, age 27"
+      },
+      {
+        "name": "Ulysses Bentley IV",
+        "jersey": 37,
+        "note": "1 yr, age 25"
+      },
+      {
+        "name": "Anderson Castle",
+        "jersey": 42,
+        "note": "0 yr, age 24"
+      }
+    ],
+    "wrs": [
+      {
+        "name": "D.J. Montgomery",
+        "jersey": 2,
+        "note": "5 yr, age 29, status: Injured Reserve"
+      },
+      {
+        "name": "Josh Downs",
+        "jersey": 2,
+        "note": "4 yr, age 25, status: Questionable"
+      },
+      {
+        "name": "Anthony Gould",
+        "jersey": 6,
+        "note": "3 yr, age 25"
+      },
+      {
+        "name": "Keenan Allen",
+        "jersey": 10,
+        "note": "13 yr, age 34"
+      },
+      {
+        "name": "Nick Westbrook-Ikhine",
+        "jersey": 12,
+        "note": "7 yr, age 29"
+      },
+      {
+        "name": "Laquon Treadwell",
+        "jersey": 13,
+        "note": "10 yr, age 31"
+      }
+    ],
+    "tes": [
+      {
+        "name": "Carson Towt",
+        "jersey": 45,
+        "note": "0 yr, age 25, status: Injured Reserve"
+      },
+      {
+        "name": "Pharaoh Brown",
+        "jersey": 49,
+        "note": "9 yr, age 32"
+      },
+      {
+        "name": "Sean McKeon",
+        "jersey": 49,
+        "note": "5 yr, age 28, status: Questionable"
+      },
+      {
+        "name": "Mo Alie-Cox",
+        "jersey": 81,
+        "note": "9 yr, age 32"
+      }
+    ]
+  },
+  "prop_watchlist": [],
+  "changes_log": [
+    {
+      "date": "2026-09-09",
+      "change": "Initial roster snapshot fetched from ESPN public site API before Week 1 kickoff.",
+      "source": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/teams/ind/roster"
+    }
+  ]
+}

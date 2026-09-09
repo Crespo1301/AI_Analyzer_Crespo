@@ -1,0 +1,145 @@
+{
+  "team": "Dallas Cowboys",
+  "season": 2026,
+  "last_verified": "2026-09-09",
+  "source": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/teams/dal/roster",
+  "offense": {
+    "qb1": {
+      "player": "Dak Prescott",
+      "note": "11 yr, age 33"
+    },
+    "qb2": {
+      "player": "Joe Milton III",
+      "note": "3 yr, age 26"
+    },
+    "rb1": {
+      "player": "Malik Davis",
+      "note": "3 yr, age 27"
+    },
+    "rb2": {
+      "player": "Israel Abanikanda",
+      "note": "3 yr, age 23"
+    },
+    "wr1": {
+      "player": "George Pickens",
+      "note": "5 yr, age 25"
+    },
+    "wr2": {
+      "player": "Camden Brown",
+      "note": "0 yr, age 22"
+    },
+    "te1": {
+      "player": "Michael Trigg",
+      "note": "0 yr, age 24"
+    }
+  },
+  "special_teams": {
+    "k": {
+      "player": "Brandon Aubrey",
+      "note": "4 yr, age 31"
+    }
+  },
+  "depth": {
+    "qbs": [
+      {
+        "name": "Dak Prescott",
+        "jersey": 4,
+        "note": "11 yr, age 33"
+      },
+      {
+        "name": "Joe Milton III",
+        "jersey": 10,
+        "note": "3 yr, age 26"
+      },
+      {
+        "name": "Sam Howell",
+        "jersey": 16,
+        "note": "5 yr, age 25"
+      }
+    ],
+    "rbs": [
+      {
+        "name": "Malik Davis",
+        "jersey": 20,
+        "note": "3 yr, age 27"
+      },
+      {
+        "name": "Israel Abanikanda",
+        "jersey": 30,
+        "note": "3 yr, age 23"
+      },
+      {
+        "name": "Javonte Williams",
+        "jersey": 33,
+        "note": "6 yr, age 26"
+      },
+      {
+        "name": "Emari Demercado",
+        "jersey": 999,
+        "note": "4 yr, age 27"
+      }
+    ],
+    "wrs": [
+      {
+        "name": "George Pickens",
+        "jersey": 3,
+        "note": "5 yr, age 25"
+      },
+      {
+        "name": "Camden Brown",
+        "jersey": 6,
+        "note": "0 yr, age 22"
+      },
+      {
+        "name": "KaVontae Turpin",
+        "jersey": 9,
+        "note": "5 yr, age 30"
+      },
+      {
+        "name": "Jordan Hudson",
+        "jersey": 18,
+        "note": "0 yr, age 22"
+      },
+      {
+        "name": "Ryan Flournoy",
+        "jersey": 19,
+        "note": "3 yr, age 26"
+      },
+      {
+        "name": "Jonathan Mingo",
+        "jersey": 81,
+        "note": "4 yr, age 25"
+      }
+    ],
+    "tes": [
+      {
+        "name": "Michael Trigg",
+        "jersey": 46,
+        "note": "0 yr, age 24"
+      },
+      {
+        "name": "DJ Rogers",
+        "jersey": 49,
+        "note": "0 yr, age 24, status: Injured Reserve"
+      },
+      {
+        "name": "Princeton Fant",
+        "jersey": 85,
+        "note": "2 yr, age 27, status: Injured Reserve"
+      },
+      {
+        "name": "Luke Schoonmaker",
+        "jersey": 86,
+        "note": "4 yr, age 27"
+      }
+    ]
+  },
+  "prop_watchlist": [],
+  "changes_log": [
+    {
+      "date": "2026-09-09",
+      "change": "Initial roster snapshot fetched from ESPN public site API before Week 1 kickoff.",
+      "source": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/teams/dal/roster"
+    }
+  ]
+}

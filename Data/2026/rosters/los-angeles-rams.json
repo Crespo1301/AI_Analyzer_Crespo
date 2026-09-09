@@ -1,0 +1,155 @@
+{
+  "team": "Los Angeles Rams",
+  "season": 2026,
+  "last_verified": "2026-09-09",
+  "source": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/teams/lar/roster",
+  "offense": {
+    "qb1": {
+      "player": "Matthew Caldwell",
+      "note": "0 yr, age 23, status: Injured Reserve"
+    },
+    "qb2": {
+      "player": "Matthew Stafford",
+      "note": "18 yr, age 38"
+    },
+    "rb1": {
+      "player": "Ronnie Rivers",
+      "note": "5 yr, age 27"
+    },
+    "rb2": {
+      "player": "Kyren Williams",
+      "note": "5 yr, age 26"
+    },
+    "wr1": {
+      "player": "Konata Mumpfield",
+      "note": "2 yr, age 23"
+    },
+    "wr2": {
+      "player": "Alex Bachman",
+      "note": "3 yr, age 30"
+    },
+    "te1": {
+      "player": "Terrance Ferguson",
+      "note": "2 yr, age 23"
+    }
+  },
+  "special_teams": {
+    "k": {
+      "player": "Harrison Mevis",
+      "note": "2 yr, age 24"
+    }
+  },
+  "depth": {
+    "qbs": [
+      {
+        "name": "Matthew Caldwell",
+        "jersey": 2,
+        "note": "0 yr, age 23, status: Injured Reserve"
+      },
+      {
+        "name": "Matthew Stafford",
+        "jersey": 9,
+        "note": "18 yr, age 38"
+      },
+      {
+        "name": "Stetson Bennett IV",
+        "jersey": 13,
+        "note": "3 yr, age 28"
+      },
+      {
+        "name": "Ty Simpson",
+        "jersey": 15,
+        "note": "0 yr, age 23"
+      }
+    ],
+    "rbs": [
+      {
+        "name": "Ronnie Rivers",
+        "jersey": 20,
+        "note": "5 yr, age 27"
+      },
+      {
+        "name": "Kyren Williams",
+        "jersey": 23,
+        "note": "5 yr, age 26"
+      },
+      {
+        "name": "Blake Corum",
+        "jersey": 24,
+        "note": "3 yr, age 25"
+      },
+      {
+        "name": "Jordan Waters",
+        "jersey": 32,
+        "note": "1 yr, age 25"
+      },
+      {
+        "name": "Dean Connors",
+        "jersey": 33,
+        "note": "0 yr, age 23"
+      }
+    ],
+    "wrs": [
+      {
+        "name": "Konata Mumpfield",
+        "jersey": 4,
+        "note": "2 yr, age 23"
+      },
+      {
+        "name": "Alex Bachman",
+        "jersey": 5,
+        "note": "3 yr, age 30"
+      },
+      {
+        "name": "CJ Daniels",
+        "jersey": 6,
+        "note": "0 yr, age 24"
+      },
+      {
+        "name": "Tutu Atwell",
+        "jersey": 8,
+        "note": "6 yr, age 26"
+      },
+      {
+        "name": "Puka Nacua",
+        "jersey": 12,
+        "note": "4 yr, age 25"
+      },
+      {
+        "name": "Davante Adams",
+        "jersey": 17,
+        "note": "13 yr, age 33"
+      }
+    ],
+    "tes": [
+      {
+        "name": "Terrance Ferguson",
+        "jersey": 18,
+        "note": "2 yr, age 23"
+      },
+      {
+        "name": "Dan Villari",
+        "jersey": 38,
+        "note": "0 yr, age 24"
+      },
+      {
+        "name": "Colby Parkinson",
+        "jersey": 84,
+        "note": "7 yr, age 27"
+      },
+      {
+        "name": "Max Klare",
+        "jersey": 86,
+        "note": "0 yr, age 23"
+      }
+    ]
+  },
+  "prop_watchlist": [],
+  "changes_log": [
+    {
+      "date": "2026-09-09",
+      "change": "Initial roster snapshot fetched from ESPN public site API before Week 1 kickoff.",
+      "source": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/teams/lar/roster"
+    }
+  ]
+}

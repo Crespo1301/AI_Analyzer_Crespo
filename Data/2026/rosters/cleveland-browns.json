@@ -1,0 +1,150 @@
+{
+  "team": "Cleveland Browns",
+  "season": 2026,
+  "last_verified": "2026-09-09",
+  "source": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/teams/cle/roster",
+  "offense": {
+    "qb1": {
+      "player": "Shedeur Sanders",
+      "note": "2 yr, age 24"
+    },
+    "qb2": {
+      "player": "Deshaun Watson",
+      "note": "10 yr, age 30"
+    },
+    "rb1": {
+      "player": "Quinshon Judkins",
+      "note": "2 yr, age 22"
+    },
+    "rb2": {
+      "player": "Dylan Sampson",
+      "note": "2 yr, age 21"
+    },
+    "wr1": {
+      "player": "Isaiah Bond",
+      "note": "2 yr, age 22"
+    },
+    "wr2": {
+      "player": "KC Concepcion",
+      "note": "0 yr, age 21"
+    },
+    "te1": {
+      "player": "Joe Royer",
+      "note": "0 yr, age 24, status: Out"
+    }
+  },
+  "special_teams": {
+    "k": {
+      "player": "Andre Szmyt",
+      "note": "2 yr, age 27"
+    }
+  },
+  "depth": {
+    "qbs": [
+      {
+        "name": "Shedeur Sanders",
+        "jersey": 2,
+        "note": "2 yr, age 24"
+      },
+      {
+        "name": "Deshaun Watson",
+        "jersey": 4,
+        "note": "10 yr, age 30"
+      },
+      {
+        "name": "Dillon Gabriel",
+        "jersey": 6,
+        "note": "2 yr, age 25, status: Injured Reserve"
+      },
+      {
+        "name": "Taylen Green",
+        "jersey": 15,
+        "note": "0 yr, age 23"
+      }
+    ],
+    "rbs": [
+      {
+        "name": "Quinshon Judkins",
+        "jersey": 10,
+        "note": "2 yr, age 22"
+      },
+      {
+        "name": "Dylan Sampson",
+        "jersey": 22,
+        "note": "2 yr, age 21"
+      },
+      {
+        "name": "Raheim Sanders",
+        "jersey": 35,
+        "note": "2 yr, age 24"
+      },
+      {
+        "name": "Jaleel McLaughlin",
+        "jersey": 999,
+        "note": "4 yr, age 25"
+      }
+    ],
+    "wrs": [
+      {
+        "name": "Isaiah Bond",
+        "jersey": 0,
+        "note": "2 yr, age 22"
+      },
+      {
+        "name": "KC Concepcion",
+        "jersey": 1,
+        "note": "0 yr, age 21"
+      },
+      {
+        "name": "Jerry Jeudy",
+        "jersey": 3,
+        "note": "7 yr, age 27"
+      },
+      {
+        "name": "Malachi Corley",
+        "jersey": 11,
+        "note": "3 yr, age 24"
+      },
+      {
+        "name": "Denzel Boston",
+        "jersey": 12,
+        "note": "0 yr, age 22"
+      },
+      {
+        "name": "Tylan Wallace",
+        "jersey": 16,
+        "note": "6 yr, age 27"
+      }
+    ],
+    "tes": [
+      {
+        "name": "Joe Royer",
+        "jersey": 18,
+        "note": "0 yr, age 24, status: Out"
+      },
+      {
+        "name": "Harold Fannin Jr.",
+        "jersey": 44,
+        "note": "2 yr, age 22"
+      },
+      {
+        "name": "Carsen Ryan",
+        "jersey": 48,
+        "note": "0 yr, age 23"
+      },
+      {
+        "name": "Blake Whiteheart",
+        "jersey": 86,
+        "note": "4 yr, age 26"
+      }
+    ]
+  },
+  "prop_watchlist": [],
+  "changes_log": [
+    {
+      "date": "2026-09-09",
+      "change": "Initial roster snapshot fetched from ESPN public site API before Week 1 kickoff.",
+      "source": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/teams/cle/roster"
+    }
+  ]
+}

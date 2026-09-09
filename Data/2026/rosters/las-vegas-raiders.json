@@ -1,0 +1,150 @@
+{
+  "team": "Las Vegas Raiders",
+  "season": 2026,
+  "last_verified": "2026-09-09",
+  "source": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/teams/lv/roster",
+  "offense": {
+    "qb1": {
+      "player": "Kirk Cousins",
+      "note": "15 yr, age 38"
+    },
+    "qb2": {
+      "player": "Aidan O'Connell",
+      "note": "4 yr, age 28"
+    },
+    "rb1": {
+      "player": "Ashton Jeanty",
+      "note": "2 yr, age 22, status: Questionable"
+    },
+    "rb2": {
+      "player": "Dylan Laube",
+      "note": "3 yr, age 26"
+    },
+    "wr1": {
+      "player": "Tre Tucker",
+      "note": "4 yr, age 25"
+    },
+    "wr2": {
+      "player": "Jalen Nailor",
+      "note": "5 yr, age 27"
+    },
+    "te1": {
+      "player": "Chris Myarick",
+      "note": "5 yr, age 30"
+    }
+  },
+  "special_teams": {
+    "k": {
+      "player": "Matt Gay",
+      "note": "7 yr, age 32"
+    }
+  },
+  "depth": {
+    "qbs": [
+      {
+        "name": "Kirk Cousins",
+        "jersey": 8,
+        "note": "15 yr, age 38"
+      },
+      {
+        "name": "Aidan O'Connell",
+        "jersey": 12,
+        "note": "4 yr, age 28"
+      },
+      {
+        "name": "Fernando Mendoza",
+        "jersey": 15,
+        "note": "0 yr, age 22"
+      }
+    ],
+    "rbs": [
+      {
+        "name": "Ashton Jeanty",
+        "jersey": 2,
+        "note": "2 yr, age 22, status: Questionable"
+      },
+      {
+        "name": "Dylan Laube",
+        "jersey": 23,
+        "note": "3 yr, age 26"
+      },
+      {
+        "name": "Mike Washington Jr.",
+        "jersey": 30,
+        "note": "0 yr, age 23"
+      },
+      {
+        "name": "Dare Ogunbowale",
+        "jersey": 32,
+        "note": "9 yr, age 32"
+      },
+      {
+        "name": "Chris Collier",
+        "jersey": 33,
+        "note": "2 yr, age 26, status: Injured Reserve"
+      }
+    ],
+    "wrs": [
+      {
+        "name": "Tre Tucker",
+        "jersey": 1,
+        "note": "4 yr, age 25"
+      },
+      {
+        "name": "Jalen Nailor",
+        "jersey": 9,
+        "note": "5 yr, age 27"
+      },
+      {
+        "name": "Dont'e Thornton Jr.",
+        "jersey": 10,
+        "note": "2 yr, age 23, status: Injured Reserve"
+      },
+      {
+        "name": "Jack Bech",
+        "jersey": 18,
+        "note": "2 yr, age 23"
+      },
+      {
+        "name": "Malik Benson",
+        "jersey": 19,
+        "note": "0 yr, age 23"
+      },
+      {
+        "name": "Dareke Young",
+        "jersey": 81,
+        "note": "5 yr, age 27"
+      }
+    ],
+    "tes": [
+      {
+        "name": "Chris Myarick",
+        "jersey": 41,
+        "note": "5 yr, age 30"
+      },
+      {
+        "name": "Patrick Gurd",
+        "jersey": 45,
+        "note": "0 yr, age 24"
+      },
+      {
+        "name": "Ian Thomas",
+        "jersey": 80,
+        "note": "9 yr, age 30"
+      },
+      {
+        "name": "Carter Runyon",
+        "jersey": 84,
+        "note": "2 yr, age 25, status: Injured Reserve"
+      }
+    ]
+  },
+  "prop_watchlist": [],
+  "changes_log": [
+    {
+      "date": "2026-09-09",
+      "change": "Initial roster snapshot fetched from ESPN public site API before Week 1 kickoff.",
+      "source": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/teams/lv/roster"
+    }
+  ]
+}

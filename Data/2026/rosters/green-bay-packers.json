@@ -1,0 +1,150 @@
+{
+  "team": "Green Bay Packers",
+  "season": 2026,
+  "last_verified": "2026-09-09",
+  "source": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/teams/gb/roster",
+  "offense": {
+    "qb1": {
+      "player": "Tyrod Taylor",
+      "note": "16 yr, age 37"
+    },
+    "qb2": {
+      "player": "Jordan Love",
+      "note": "7 yr, age 27"
+    },
+    "rb1": {
+      "player": "Josh Jacobs",
+      "note": "8 yr, age 28, status: Out"
+    },
+    "rb2": {
+      "player": "Pierre Strong Jr.",
+      "note": "4 yr, age 27"
+    },
+    "wr1": {
+      "player": "Matthew Golden",
+      "note": "2 yr, age 23"
+    },
+    "wr2": {
+      "player": "Christian Watson",
+      "note": "5 yr, age 27"
+    },
+    "te1": {
+      "player": "Drake Dabney",
+      "note": "1 yr, age 24"
+    }
+  },
+  "special_teams": {
+    "k": {
+      "player": "Trey Smack",
+      "note": "0 yr, age 23"
+    }
+  },
+  "depth": {
+    "qbs": [
+      {
+        "name": "Tyrod Taylor",
+        "jersey": 6,
+        "note": "16 yr, age 37"
+      },
+      {
+        "name": "Jordan Love",
+        "jersey": 10,
+        "note": "7 yr, age 27"
+      },
+      {
+        "name": "Kedon Slovis",
+        "jersey": 999,
+        "note": "age 25"
+      }
+    ],
+    "rbs": [
+      {
+        "name": "Josh Jacobs",
+        "jersey": 8,
+        "note": "8 yr, age 28, status: Out"
+      },
+      {
+        "name": "Pierre Strong Jr.",
+        "jersey": 22,
+        "note": "4 yr, age 27"
+      },
+      {
+        "name": "Chris Brooks",
+        "jersey": 30,
+        "note": "4 yr, age 26"
+      },
+      {
+        "name": "MarShawn Lloyd",
+        "jersey": 32,
+        "note": "3 yr, age 25"
+      },
+      {
+        "name": "Kaleb Johnson",
+        "jersey": 999,
+        "note": "2 yr, age 23"
+      }
+    ],
+    "wrs": [
+      {
+        "name": "Matthew Golden",
+        "jersey": 0,
+        "note": "2 yr, age 23"
+      },
+      {
+        "name": "Christian Watson",
+        "jersey": 9,
+        "note": "5 yr, age 27"
+      },
+      {
+        "name": "Jayden Reed",
+        "jersey": 11,
+        "note": "4 yr, age 26"
+      },
+      {
+        "name": "Bo Melton",
+        "jersey": 16,
+        "note": "3 yr, age 27"
+      },
+      {
+        "name": "Skyy Moore",
+        "jersey": 23,
+        "note": "5 yr, age 25"
+      },
+      {
+        "name": "Chris Hilton Jr.",
+        "jersey": 37,
+        "note": "0 yr, age 23"
+      }
+    ],
+    "tes": [
+      {
+        "name": "Drake Dabney",
+        "jersey": 49,
+        "note": "1 yr, age 24"
+      },
+      {
+        "name": "Josh Whyle",
+        "jersey": 81,
+        "note": "4 yr, age 27"
+      },
+      {
+        "name": "Thomas Yassmin",
+        "jersey": 84,
+        "note": "1 yr, age 26, status: Injured Reserve"
+      },
+      {
+        "name": "Tucker Kraft",
+        "jersey": 85,
+        "note": "4 yr, age 25, status: Questionable"
+      }
+    ]
+  },
+  "prop_watchlist": [],
+  "changes_log": [
+    {
+      "date": "2026-09-09",
+      "change": "Initial roster snapshot fetched from ESPN public site API before Week 1 kickoff.",
+      "source": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/teams/gb/roster"
+    }
+  ]
+}

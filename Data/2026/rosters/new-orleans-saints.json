@@ -1,0 +1,150 @@
+{
+  "team": "New Orleans Saints",
+  "season": 2026,
+  "last_verified": "2026-09-09",
+  "source": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/teams/no/roster",
+  "offense": {
+    "qb1": {
+      "player": "Spencer Rattler",
+      "note": "3 yr, age 25"
+    },
+    "qb2": {
+      "player": "Zach Wilson",
+      "note": "6 yr, age 27"
+    },
+    "rb1": {
+      "player": "Travis Etienne Jr.",
+      "note": "6 yr, age 27"
+    },
+    "rb2": {
+      "player": "Kendre Miller",
+      "note": "4 yr, age 24, status: Questionable"
+    },
+    "wr1": {
+      "player": "Jordyn Tyson",
+      "note": "0 yr, age 22, status: Injured Reserve"
+    },
+    "wr2": {
+      "player": "Trey Palmer",
+      "note": "4 yr, age 25"
+    },
+    "te1": {
+      "player": "Moliki Matavao",
+      "note": "2 yr, age 23, status: Injured Reserve"
+    }
+  },
+  "special_teams": {
+    "k": {
+      "player": "Charlie Smyth",
+      "note": "2 yr, age 25"
+    }
+  },
+  "depth": {
+    "qbs": [
+      {
+        "name": "Spencer Rattler",
+        "jersey": 2,
+        "note": "3 yr, age 25"
+      },
+      {
+        "name": "Zach Wilson",
+        "jersey": 4,
+        "note": "6 yr, age 27"
+      },
+      {
+        "name": "Tyler Shough",
+        "jersey": 6,
+        "note": "2 yr, age 26"
+      }
+    ],
+    "rbs": [
+      {
+        "name": "Travis Etienne Jr.",
+        "jersey": 3,
+        "note": "6 yr, age 27"
+      },
+      {
+        "name": "Kendre Miller",
+        "jersey": 5,
+        "note": "4 yr, age 24, status: Questionable"
+      },
+      {
+        "name": "Audric Estime",
+        "jersey": 30,
+        "note": "3 yr, age 23"
+      },
+      {
+        "name": "Ty Chandler",
+        "jersey": 32,
+        "note": "5 yr, age 28, status: Injured Reserve"
+      },
+      {
+        "name": "Zamir White",
+        "jersey": 33,
+        "note": "5 yr, age 26"
+      }
+    ],
+    "wrs": [
+      {
+        "name": "Jordyn Tyson",
+        "jersey": 0,
+        "note": "0 yr, age 22, status: Injured Reserve"
+      },
+      {
+        "name": "Trey Palmer",
+        "jersey": 10,
+        "note": "4 yr, age 25"
+      },
+      {
+        "name": "Chris Olave",
+        "jersey": 12,
+        "note": "5 yr, age 26"
+      },
+      {
+        "name": "Devaughn Vele",
+        "jersey": 14,
+        "note": "3 yr, age 28"
+      },
+      {
+        "name": "Mason Tipton",
+        "jersey": 15,
+        "note": "3 yr, age 25, status: Out"
+      },
+      {
+        "name": "Bryce Lance",
+        "jersey": 18,
+        "note": "0 yr, age 24"
+      }
+    ],
+    "tes": [
+      {
+        "name": "Moliki Matavao",
+        "jersey": 80,
+        "note": "2 yr, age 23, status: Injured Reserve"
+      },
+      {
+        "name": "Treyton Welch",
+        "jersey": 82,
+        "note": "1 yr, age 25"
+      },
+      {
+        "name": "Juwan Johnson",
+        "jersey": 83,
+        "note": "7 yr, age 29"
+      },
+      {
+        "name": "Noah Fant",
+        "jersey": 87,
+        "note": "8 yr, age 28"
+      }
+    ]
+  },
+  "prop_watchlist": [],
+  "changes_log": [
+    {
+      "date": "2026-09-09",
+      "change": "Initial roster snapshot fetched from ESPN public site API before Week 1 kickoff.",
+      "source": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/teams/no/roster"
+    }
+  ]
+}

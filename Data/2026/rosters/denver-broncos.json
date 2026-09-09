@@ -1,0 +1,150 @@
+{
+  "team": "Denver Broncos",
+  "season": 2026,
+  "last_verified": "2026-09-09",
+  "source": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/teams/den/roster",
+  "offense": {
+    "qb1": {
+      "player": "Sam Ehlinger",
+      "note": "6 yr, age 27"
+    },
+    "qb2": {
+      "player": "Jarrett Stidham",
+      "note": "7 yr, age 30"
+    },
+    "rb1": {
+      "player": "RJ Harvey",
+      "note": "2 yr, age 25"
+    },
+    "rb2": {
+      "player": "Jonah Coleman",
+      "note": "0 yr, age 23"
+    },
+    "wr1": {
+      "player": "Lil'Jordan Humphrey",
+      "note": "7 yr, age 28"
+    },
+    "wr2": {
+      "player": "Troy Franklin",
+      "note": "3 yr, age 23"
+    },
+    "te1": {
+      "player": "Evan Engram",
+      "note": "10 yr, age 32"
+    }
+  },
+  "special_teams": {
+    "k": {
+      "player": "Wil Lutz",
+      "note": "11 yr, age 32"
+    }
+  },
+  "depth": {
+    "qbs": [
+      {
+        "name": "Sam Ehlinger",
+        "jersey": 4,
+        "note": "6 yr, age 27"
+      },
+      {
+        "name": "Jarrett Stidham",
+        "jersey": 8,
+        "note": "7 yr, age 30"
+      },
+      {
+        "name": "Bo Nix",
+        "jersey": 10,
+        "note": "3 yr, age 26"
+      }
+    ],
+    "rbs": [
+      {
+        "name": "RJ Harvey",
+        "jersey": 12,
+        "note": "2 yr, age 25"
+      },
+      {
+        "name": "Jonah Coleman",
+        "jersey": 20,
+        "note": "0 yr, age 23"
+      },
+      {
+        "name": "Cody Schrader",
+        "jersey": 25,
+        "note": "3 yr, age 27"
+      },
+      {
+        "name": "J.K. Dobbins",
+        "jersey": 27,
+        "note": "7 yr, age 27"
+      },
+      {
+        "name": "Tyler Badie",
+        "jersey": 28,
+        "note": "3 yr, age 26"
+      }
+    ],
+    "wrs": [
+      {
+        "name": "Lil'Jordan Humphrey",
+        "jersey": 5,
+        "note": "7 yr, age 28"
+      },
+      {
+        "name": "Troy Franklin",
+        "jersey": 11,
+        "note": "3 yr, age 23"
+      },
+      {
+        "name": "Pat Bryant",
+        "jersey": 13,
+        "note": "2 yr, age 23"
+      },
+      {
+        "name": "Courtland Sutton",
+        "jersey": 14,
+        "note": "9 yr, age 30"
+      },
+      {
+        "name": "Jaylen Waddle",
+        "jersey": 17,
+        "note": "6 yr, age 27"
+      },
+      {
+        "name": "Marvin Mims Jr.",
+        "jersey": 19,
+        "note": "4 yr, age 24, status: Questionable"
+      }
+    ],
+    "tes": [
+      {
+        "name": "Evan Engram",
+        "jersey": 1,
+        "note": "10 yr, age 32"
+      },
+      {
+        "name": "Nate Adkins",
+        "jersey": 45,
+        "note": "4 yr, age 27"
+      },
+      {
+        "name": "Adam Trautman",
+        "jersey": 82,
+        "note": "7 yr, age 29"
+      },
+      {
+        "name": "Caleb Lohner",
+        "jersey": 84,
+        "note": "1 yr, age 24, status: Injured Reserve"
+      }
+    ]
+  },
+  "prop_watchlist": [],
+  "changes_log": [
+    {
+      "date": "2026-09-09",
+      "change": "Initial roster snapshot fetched from ESPN public site API before Week 1 kickoff.",
+      "source": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/teams/den/roster"
+    }
+  ]
+}

@@ -1,0 +1,150 @@
+{
+  "team": "Seattle Seahawks",
+  "season": 2026,
+  "last_verified": "2026-09-09",
+  "source": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/teams/sea/roster",
+  "offense": {
+    "qb1": {
+      "player": "Drew Lock",
+      "note": "8 yr, age 29"
+    },
+    "qb2": {
+      "player": "Jalen Milroe",
+      "note": "2 yr, age 23"
+    },
+    "rb1": {
+      "player": "Jadarian Price",
+      "note": "0 yr, age 22"
+    },
+    "rb2": {
+      "player": "Zach Charbonnet",
+      "note": "4 yr, age 25, status: Out"
+    },
+    "wr1": {
+      "player": "Julian Hicks",
+      "note": "1 yr, age 26"
+    },
+    "wr2": {
+      "player": "Cooper Kupp",
+      "note": "10 yr, age 33"
+    },
+    "te1": {
+      "player": "Elijah Arroyo",
+      "note": "2 yr, age 23"
+    }
+  },
+  "special_teams": {
+    "k": {
+      "player": "Jason Myers",
+      "note": "12 yr, age 35"
+    }
+  },
+  "depth": {
+    "qbs": [
+      {
+        "name": "Drew Lock",
+        "jersey": 2,
+        "note": "8 yr, age 29"
+      },
+      {
+        "name": "Jalen Milroe",
+        "jersey": 6,
+        "note": "2 yr, age 23"
+      },
+      {
+        "name": "Sam Darnold",
+        "jersey": 14,
+        "note": "9 yr, age 29"
+      }
+    ],
+    "rbs": [
+      {
+        "name": "Jadarian Price",
+        "jersey": 8,
+        "note": "0 yr, age 22"
+      },
+      {
+        "name": "Zach Charbonnet",
+        "jersey": 26,
+        "note": "4 yr, age 25, status: Out"
+      },
+      {
+        "name": "Emanuel Wilson",
+        "jersey": 27,
+        "note": "4 yr, age 27"
+      },
+      {
+        "name": "Jacardia Wright",
+        "jersey": 31,
+        "note": "1 yr, age 25"
+      },
+      {
+        "name": "George Holani",
+        "jersey": 36,
+        "note": "3 yr, age 26"
+      }
+    ],
+    "wrs": [
+      {
+        "name": "Julian Hicks",
+        "jersey": 1,
+        "note": "1 yr, age 26"
+      },
+      {
+        "name": "Cooper Kupp",
+        "jersey": 10,
+        "note": "10 yr, age 33"
+      },
+      {
+        "name": "Jaxon Smith-Njigba",
+        "jersey": 11,
+        "note": "4 yr, age 24"
+      },
+      {
+        "name": "Tory Horton",
+        "jersey": 15,
+        "note": "2 yr, age 23, status: Questionable"
+      },
+      {
+        "name": "Jake Bobo",
+        "jersey": 19,
+        "note": "4 yr, age 28, status: Injured Reserve"
+      },
+      {
+        "name": "Rashid Shaheed",
+        "jersey": 22,
+        "note": "5 yr, age 28"
+      }
+    ],
+    "tes": [
+      {
+        "name": "Elijah Arroyo",
+        "jersey": 18,
+        "note": "2 yr, age 23"
+      },
+      {
+        "name": "Eric Saubert",
+        "jersey": 81,
+        "note": "9 yr, age 32"
+      },
+      {
+        "name": "AJ Barner",
+        "jersey": 88,
+        "note": "3 yr, age 24"
+      },
+      {
+        "name": "Nick Kallerup",
+        "jersey": 89,
+        "note": "2 yr, age 25"
+      }
+    ]
+  },
+  "prop_watchlist": [],
+  "changes_log": [
+    {
+      "date": "2026-09-09",
+      "change": "Initial roster snapshot fetched from ESPN public site API before Week 1 kickoff.",
+      "source": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/teams/sea/roster"
+    }
+  ]
+}

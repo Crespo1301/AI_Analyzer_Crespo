@@ -1,0 +1,150 @@
+{
+  "team": "Tennessee Titans",
+  "season": 2026,
+  "last_verified": "2026-09-09",
+  "source": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/teams/ten/roster",
+  "offense": {
+    "qb1": {
+      "player": "Cam Ward",
+      "note": "2 yr, age 24"
+    },
+    "qb2": {
+      "player": "Mitchell Trubisky",
+      "note": "10 yr, age 32, status: Questionable"
+    },
+    "rb1": {
+      "player": "Tyjae Spears",
+      "note": "4 yr, age 25"
+    },
+    "rb2": {
+      "player": "Tony Pollard",
+      "note": "8 yr, age 29"
+    },
+    "wr1": {
+      "player": "Calvin Ridley",
+      "note": "8 yr, age 31"
+    },
+    "wr2": {
+      "player": "Wan'Dale Robinson",
+      "note": "5 yr, age 25, status: Questionable"
+    },
+    "te1": {
+      "player": "Jaren Kanak",
+      "note": "0 yr, age 22, status: Injured Reserve"
+    }
+  },
+  "special_teams": {
+    "k": {
+      "player": "Joey Slye",
+      "note": "8 yr, age 30"
+    }
+  },
+  "depth": {
+    "qbs": [
+      {
+        "name": "Cam Ward",
+        "jersey": 1,
+        "note": "2 yr, age 24"
+      },
+      {
+        "name": "Mitchell Trubisky",
+        "jersey": 10,
+        "note": "10 yr, age 32, status: Questionable"
+      },
+      {
+        "name": "Hendon Hooker",
+        "jersey": 16,
+        "note": "3 yr, age 28"
+      }
+    ],
+    "rbs": [
+      {
+        "name": "Tyjae Spears",
+        "jersey": 2,
+        "note": "4 yr, age 25"
+      },
+      {
+        "name": "Tony Pollard",
+        "jersey": 20,
+        "note": "8 yr, age 29"
+      },
+      {
+        "name": "Kalel Mullings",
+        "jersey": 31,
+        "note": "2 yr, age 23"
+      },
+      {
+        "name": "Nicholas Singleton",
+        "jersey": 32,
+        "note": "0 yr, age 22"
+      },
+      {
+        "name": "Michael Carter",
+        "jersey": 35,
+        "note": "5 yr, age 27"
+      }
+    ],
+    "wrs": [
+      {
+        "name": "Calvin Ridley",
+        "jersey": 0,
+        "note": "8 yr, age 31"
+      },
+      {
+        "name": "Wan'Dale Robinson",
+        "jersey": 4,
+        "note": "5 yr, age 25, status: Questionable"
+      },
+      {
+        "name": "Elic Ayomanor",
+        "jersey": 5,
+        "note": "2 yr, age 23"
+      },
+      {
+        "name": "Carnell Tate",
+        "jersey": 14,
+        "note": "0 yr, age 21, status: Questionable"
+      },
+      {
+        "name": "Chimere Dike",
+        "jersey": 17,
+        "note": "2 yr, age 23"
+      },
+      {
+        "name": "Tyren Montgomery",
+        "jersey": 19,
+        "note": "0 yr, age 25"
+      }
+    ],
+    "tes": [
+      {
+        "name": "Jaren Kanak",
+        "jersey": 81,
+        "note": "0 yr, age 22, status: Injured Reserve"
+      },
+      {
+        "name": "Daniel Bellinger",
+        "jersey": 82,
+        "note": "5 yr, age 25"
+      },
+      {
+        "name": "Joel Wilson",
+        "jersey": 83,
+        "note": "1 yr, age 26"
+      },
+      {
+        "name": "Gunnar Helm",
+        "jersey": 84,
+        "note": "2 yr, age 24"
+      }
+    ]
+  },
+  "prop_watchlist": [],
+  "changes_log": [
+    {
+      "date": "2026-09-09",
+      "change": "Initial roster snapshot fetched from ESPN public site API before Week 1 kickoff.",
+      "source": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/teams/ten/roster"
+    }
+  ]
+}

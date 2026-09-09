@@ -1,0 +1,155 @@
+{
+  "team": "Cincinnati Bengals",
+  "season": 2026,
+  "last_verified": "2026-09-09",
+  "source": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/teams/cin/roster",
+  "offense": {
+    "qb1": {
+      "player": "Sean Clifford",
+      "note": "2 yr, age 28"
+    },
+    "qb2": {
+      "player": "Joe Burrow",
+      "note": "7 yr, age 29"
+    },
+    "rb1": {
+      "player": "Tahj Brooks",
+      "note": "2 yr, age 24"
+    },
+    "rb2": {
+      "player": "Chase Brown",
+      "note": "4 yr, age 26"
+    },
+    "wr1": {
+      "player": "Ja'Marr Chase",
+      "note": "6 yr, age 26, status: Questionable"
+    },
+    "wr2": {
+      "player": "Tee Higgins",
+      "note": "7 yr, age 27, status: Questionable"
+    },
+    "te1": {
+      "player": "Erick All Jr.",
+      "note": "3 yr, age 25"
+    }
+  },
+  "special_teams": {
+    "k": {
+      "player": "Evan McPherson",
+      "note": "6 yr, age 27"
+    }
+  },
+  "depth": {
+    "qbs": [
+      {
+        "name": "Sean Clifford",
+        "jersey": 4,
+        "note": "2 yr, age 28"
+      },
+      {
+        "name": "Joe Burrow",
+        "jersey": 9,
+        "note": "7 yr, age 29"
+      },
+      {
+        "name": "Josh Johnson",
+        "jersey": 11,
+        "note": "12 yr, age 40"
+      },
+      {
+        "name": "Joe Flacco",
+        "jersey": 16,
+        "note": "19 yr, age 41"
+      }
+    ],
+    "rbs": [
+      {
+        "name": "Tahj Brooks",
+        "jersey": 25,
+        "note": "2 yr, age 24"
+      },
+      {
+        "name": "Chase Brown",
+        "jersey": 30,
+        "note": "4 yr, age 26"
+      },
+      {
+        "name": "Kentrel Bullock",
+        "jersey": 31,
+        "note": "0 yr, age 24"
+      },
+      {
+        "name": "Samaje Perine",
+        "jersey": 34,
+        "note": "10 yr, age 30"
+      },
+      {
+        "name": "Kendall Milton",
+        "jersey": 36,
+        "note": "1 yr, age 24"
+      }
+    ],
+    "wrs": [
+      {
+        "name": "Ja'Marr Chase",
+        "jersey": 1,
+        "note": "6 yr, age 26, status: Questionable"
+      },
+      {
+        "name": "Tee Higgins",
+        "jersey": 5,
+        "note": "7 yr, age 27, status: Questionable"
+      },
+      {
+        "name": "Ke'Shawn Williams",
+        "jersey": 12,
+        "note": "2 yr, age 24"
+      },
+      {
+        "name": "Jordan Moore",
+        "jersey": 14,
+        "note": "1 yr, age 24"
+      },
+      {
+        "name": "Noah Thomas",
+        "jersey": 17,
+        "note": "0 yr, age 22"
+      },
+      {
+        "name": "Andrei Iosivas",
+        "jersey": 80,
+        "note": "4 yr, age 26"
+      }
+    ],
+    "tes": [
+      {
+        "name": "Erick All Jr.",
+        "jersey": 83,
+        "note": "3 yr, age 25"
+      },
+      {
+        "name": "Jack Endries",
+        "jersey": 84,
+        "note": "0 yr, age 22"
+      },
+      {
+        "name": "Tanner Hudson",
+        "jersey": 87,
+        "note": "7 yr, age 31"
+      },
+      {
+        "name": "Mike Gesicki",
+        "jersey": 88,
+        "note": "9 yr, age 30"
+      }
+    ]
+  },
+  "prop_watchlist": [],
+  "changes_log": [
+    {
+      "date": "2026-09-09",
+      "change": "Initial roster snapshot fetched from ESPN public site API before Week 1 kickoff.",
+      "source": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/teams/cin/roster"
+    }
+  ]
+}
