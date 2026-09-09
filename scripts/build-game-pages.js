@@ -10,6 +10,7 @@ const path = require('path');
 const repoRoot = path.join(__dirname, '..');
 global.window = {};
 eval(fs.readFileSync(path.join(repoRoot, 'assets/nfl-data.js'), 'utf8'));
+eval(fs.readFileSync(path.join(repoRoot, 'assets/nfl-predictions-2026.js'), 'utf8'));
 
 function money(n) {
   const v = Math.round(n * 100) / 100;
@@ -199,6 +200,211 @@ function pageHtml(game) {
 `;
 }
 
+function pendingPageHtml(pred) {
+  const awayTeam = NFL_TEAMS[pred.away] || {};
+  const homeTeam = NFL_TEAMS[pred.home] || {};
+  const season = String(pred.kickoff || '').slice(0, 4) || '2026';
+  const seasonLabel = 'Season 2 · ' + season;
+  const backHref = '../nfl-2026.html';
+  const kickoffDisplay = pred.kickoffDisplay || pred.kickoff || 'Kickoff TBD';
+  const network = pred.network || '';
+  const consensus = (function () {
+    if (!pred.models) return '';
+    const active = Object.keys(pred.models).filter(m => pred.models[m] && pred.models[m].total_stake > 0);
+    if (!active.length) return 'All models reserved';
+    return active.length + ' of ' + Object.keys(pred.models).length + ' models active';
+  })();
+
+  const modelPanels = NFL_MODELS.map(m => {
+    const mp = pred.models && pred.models[m];
+    if (!mp) {
+      return `<article class="mpred">
+        <div class="mpred-head">
+          <div>
+            <div class="mpred-name">${m}</div>
+            <div class="mpred-version">pending</div>
+          </div>
+          <span class="chip-model ${m}">${m}</span>
+        </div>
+        <div class="mpred-bet none">Response not received yet.</div>
+      </article>`;
+    }
+    const betsHtml = mp.bets && mp.bets.length
+      ? mp.bets.map(b => {
+          if (b.type === 'sgp' || b.type === 'parlay') {
+            const legs = (b.legs || []).map(l => esc(l.line)).join(' + ');
+            return `<div class="mpred-bet"><div class="line1"><span class="stake tabular">$${b.stake}</span><span class="market">${b.type === 'sgp' ? 'SGP' : 'Parlay'}</span><span class="conf">Conf ${b.confidence}/10</span></div><div class="desc">${legs}</div>${b.reason ? `<div class="reason">${esc(b.reason)}</div>` : ''}</div>`;
+          }
+          return `<div class="mpred-bet"><div class="line1"><span class="stake tabular">$${b.stake}</span><span class="market">${esc(b.market)}</span><span class="conf">Conf ${b.confidence}/10</span></div><div class="desc">${esc(b.line)}</div>${b.reason ? `<div class="reason">${esc(b.reason)}</div>` : ''}</div>`;
+        }).join('')
+      : `<div class="mpred-bet none">No bets, full $${mp.reserve || 20} reserved.</div>`;
+    return `<article class="mpred">
+      <div class="mpred-head">
+        <div>
+          <div class="mpred-name">${m}</div>
+          <div class="mpred-version">${esc(mp.version || '')}</div>
+        </div>
+        <span class="chip-model ${m}">${m}</span>
+      </div>
+      <div class="mpred-alloc">
+        <span class="exposure tabular">$${mp.total_stake} exposure</span>
+        <span class="reserve tabular">$${mp.reserve} reserve</span>
+      </div>
+      ${betsHtml}
+      <div class="mpred-summary">${esc(mp.summary || '')}</div>
+    </article>`;
+  }).join('\n');
+
+  const linesRow = pred.line_snapshot ? `
+    <div class="factor-row"><div class="fr-label">Spread</div><div class="fr-body">${esc(pred.line_snapshot.spread || '')}</div></div>
+    <div class="factor-row"><div class="fr-label">Total</div><div class="fr-body">${esc(String(pred.line_snapshot.total || ''))}</div></div>
+    <div class="factor-row"><div class="fr-label">Moneyline</div><div class="fr-body">${esc(pred.line_snapshot.moneyline || '')}</div></div>
+    <div class="factor-row"><div class="fr-label">Source</div><div class="fr-body">${esc(pred.line_snapshot.source || '')}</div></div>
+  ` : '';
+
+  const responseLink = pred.responseFolder ? `<a href="https://github.com/Crespo1301/AI_Analyzer_Crespo/tree/main/${esc(pred.responseFolder)}" rel="noopener" style="color: inherit; text-decoration: underline;">Read the raw model responses on GitHub</a>` : '';
+
+  return `<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>${esc(pred.away)} at ${esc(pred.home)} &middot; Week ${pred.week} &middot; AI Analyzer</title>
+<meta name="description" content="Locked pre-kickoff AI model predictions for ${esc(pred.away)} at ${esc(pred.home)}, Week ${pred.week}, ${esc(kickoffDisplay)}. Same rules, $20 bankroll per model.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="${esc(pred.away)} at ${esc(pred.home)} &middot; Week ${pred.week} &middot; Locked">
+<meta property="og:description" content="Pre-kickoff AI model predictions locked before ${esc(kickoffDisplay)}.">
+<meta property="og:image" content="../assets/og-default.svg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+<link rel="stylesheet" href="../assets/styles.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
+
+<nav class="site-nav" aria-label="Site">
+  <div class="nav-primary">
+    <a class="nav-brand" href="../index.html"><span class="brand-mark">AI</span>Analyzer<span class="brand-sub">NFL</span></a>
+    <ul class="nav-links">
+      <li><a href="../nfl-2026.html">Week</a></li>
+      <li><a href="../schedule.html">Schedule</a></li>
+      <li><a href="../models.html">Models</a></li>
+      <li><a href="../bet-database.html">Results</a></li>
+      <li><a href="../methodology.html">Methodology</a></li>
+    </ul>
+    <div class="nav-spacer"></div>
+    <a class="nav-search" href="../bet-database.html" aria-label="Search results database">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+    </a>
+  </div>
+  <div class="nav-secondary">
+    <a href="${backHref}">&larr; ${seasonLabel}</a><span class="dot">&middot;</span>
+    <a href="../methodology.html">Grading rubric</a>
+    <span class="status"><span class="pulse"></span> Locked pre-kickoff</span>
+  </div>
+</nav>
+
+<main id="main">
+
+<section class="split-hero" style="min-height: 300px; color: var(--paper);">
+  <div class="split-side away" style="background: ${awayTeam.primary || '#0a0a0a'};">
+    <div>
+      <div class="side-tag">Away</div>
+      <div class="team-name">${(awayTeam.abbr || '').toUpperCase()}</div>
+      <div class="team-full">${esc(pred.away)}</div>
+    </div>
+    <div class="team-meta"><span>${(awayTeam.division || '')}</span></div>
+  </div>
+  <div class="split-center">
+    <span class="badge locked">Locked</span>
+    <div class="kickoff">${esc(kickoffDisplay)}</div>
+    ${network ? `<div class="network">${esc(network)}</div>` : ''}
+    <div class="consensus">${esc(consensus)}</div>
+  </div>
+  <div class="split-side home" style="background: ${homeTeam.primary || '#0a0a0a'};">
+    <div>
+      <div class="side-tag">Home</div>
+      <div class="team-name">${(homeTeam.abbr || '').toUpperCase()}</div>
+      <div class="team-full">${esc(pred.home)}</div>
+    </div>
+    <div class="team-meta"><span>${(homeTeam.division || '')}</span></div>
+  </div>
+</section>
+
+<section class="band band-paper" style="padding: 32px 0;">
+  <div class="wrap">
+    <div class="disclaimer-box">
+      <strong>Week ${pred.week} &middot; ${esc(kickoffDisplay)}.</strong> Model picks below were locked before kickoff and pushed to this repository at ${esc(pred.locked_at || '')}. Grading will run after the ESPN box score is available. Reasoning is graded separately from outcome. Prompt template: <code>${esc(pred.prompt_template || '')}</code>. ${responseLink}
+    </div>
+  </div>
+</section>
+
+<section class="band band-bone">
+  <div class="wrap">
+    <div class="band-head">
+      <div>
+        <div class="b-kicker">Market snapshot</div>
+        <div class="b-title">Opening <span class="accent">lines</span></div>
+      </div>
+    </div>
+    <div class="factors">
+      ${linesRow}
+    </div>
+  </div>
+</section>
+
+<section class="band band-paper">
+  <div class="wrap">
+    <div class="band-head">
+      <div>
+        <div class="b-kicker">Model board</div>
+        <div class="b-title">Locked <span class="accent">picks</span></div>
+      </div>
+    </div>
+    <div class="mpred-row">
+      ${modelPanels}
+    </div>
+  </div>
+</section>
+
+<section class="band band-bone">
+  <div class="wrap">
+    <div class="band-head">
+      <div>
+        <div class="b-kicker">Post-final</div>
+        <div class="b-title">Result <span class="accent">pending</span></div>
+      </div>
+    </div>
+    <div class="result-callout pending">
+      <div>
+        <div class="rc-tag">Grading Pending</div>
+        <h3>Result posts after the ESPN box score</h3>
+        <p style="color: var(--gunmetal); font-size: 14px; margin-top: 6px;">Once the game is final, bets grade against the box score and this page updates with outcomes, P/L, and separate reasoning grades per model.</p>
+      </div>
+      <a class="btn btn-outline-ink" href="${esc(pred.espn || '#')}" rel="noopener">ESPN box score &rarr;</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand"><div class="fb-name">AI Analyzer &middot; NFL</div><p>Independent NFL model-comparison study.</p></div>
+      <div class="foot-col"><h4>Season 2 &middot; 2026</h4><a href="../nfl-2026.html">Season Hub</a><a href="../schedule.html">Schedule</a><a href="../models.html">Models</a><a href="../bet-database.html">Results</a></div>
+      <div class="foot-col"><h4>System</h4><a href="../methodology.html">Methodology</a><a href="../methodology.html#rubric">Grading Rubric</a><a href="../methodology.html#iteration">Iteration Log</a></div>
+      <div class="foot-col"><h4>About</h4><a href="../about.html">About</a><a href="../nfl-2025.html">Season 1 Archive</a><a href="https://github.com/Crespo1301/AI_Analyzer_Crespo" rel="noopener">GitHub</a></div>
+    </div>
+    <div class="foot-legal"><span class="disclaimer">Locked pre-kickoff. Not financial advice.</span><span>&copy; 2026 Carlos Crespo</span></div>
+  </div>
+</footer>
+
+</body>
+</html>
+`;
+}
+
 const outDir = path.join(repoRoot, 'Sports_Pages');
 if (!fs.existsSync(outDir)) fs.mkdirSync(outDir, { recursive: true });
 NFL_GAMES.forEach(game => {
@@ -206,3 +412,10 @@ NFL_GAMES.forEach(game => {
   fs.writeFileSync(path.join(outDir, game.id + '.html'), html);
   console.log('wrote', game.id + '.html');
 });
+if (typeof NFL_PREDICTIONS_2026 !== 'undefined') {
+  NFL_PREDICTIONS_2026.forEach(pred => {
+    const html = pendingPageHtml(pred);
+    fs.writeFileSync(path.join(outDir, pred.gameId + '.html'), html);
+    console.log('wrote', pred.gameId + '.html (pending)');
+  });
+}

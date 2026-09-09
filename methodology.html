@@ -70,7 +70,7 @@
     </div>
     <p style="color: var(--gunmetal); font-size: 15px; max-width: 65ch;">The first Week 1 lockup on 2026-09-08 was retired before kickoff. The original 2026 prompt gave every model an identical, filled-in briefing with no repo access, no self-reflection block, and no lane for the models with local filesystem access to actually use it. That is not the study we want to run. The new prompt system:</p>
     <ul style="color: var(--gunmetal); font-size: 15px; padding-left: 20px; margin-top: 12px;">
-      <li>Every model gets repository access via whatever mechanism it supports. Local filesystem for Claude and Codex, raw GitHub URL fetch for Gemini.</li>
+      <li>Every model gets repository access via whatever mechanism it supports. Local filesystem for ChatGPT (via Codex CLI) and Claude, raw GitHub URL fetch for Gemini.</li>
       <li>Every model reviews its own past picks in NFL_BETS and any prior NFL_PREDICTIONS_2026 weeks, notes patterns, and adjusts.</li>
       <li>Every model does open-web research on the specific matchup and cites every source.</li>
       <li>A shared baseline lane runs the same locked question against all models with no repo access, so we can measure how much lift the repo-access and reflection actually produce.</li>

@@ -1,8 +1,8 @@
-# Codex raw response, Patriots at Seahawks, Week 1
+# ChatGPT (via Codex CLI) raw response, Patriots at Seahawks, Week 1
 
 Lane: `local-strength-claude-codex`
 Prompt version: 1.0
-Model role: Codex
+Model role: ChatGPT (interface: Codex CLI, which is ChatGPT with local-FS agent scaffolding)
 Model version reported by model: `GPT-6`
 Received: 2026-09-09, before 8:20 PM ET kickoff.
 
@@ -12,7 +12,7 @@ Received: 2026-09-09, before 8:20 PM ET kickoff.
 {
   "prompt_template": "local-strength-claude-codex",
   "prompt_version": "1.0",
-  "model_role": "Codex",
+  "model_role": "ChatGPT",
   "model_version": "GPT-6",
   "week": 1,
   "game_id": "patriots-seahawks",
@@ -64,6 +64,6 @@ Received: 2026-09-09, before 8:20 PM ET kickoff.
 
 ## Notes for grading
 
-- Codex ran the break-even math explicitly (64.03% for SEA -178, 40% for NE +150) and refused both because it could not substantiate either threshold. Exactly the restraint the rubric rewards.
-- Codex also caught the roster QB1 mispick (Drew Lock listed as QB1 for Seattle, Darnold is the actual starter) and cross-checked the FanDuel line against bet365. Same finding Claude flagged.
-- Codex identifies as `GPT-6` under the base-model version string. Log this so we can track model-version drift across the season.
+- ChatGPT (running via the Codex CLI on GPT-6 base) ran the break-even math explicitly (64.03% for SEA -178, 40% for NE +150) and refused both because it could not substantiate either threshold. Exactly the restraint the rubric rewards.
+- Also caught the roster QB1 mispick (Drew Lock listed as QB1 for Seattle, Darnold is the actual starter) and cross-checked the FanDuel line against bet365. Same finding Claude flagged.
+- Model identifies as `GPT-6` under the base-model version string. Log this so we can track model-version drift across the season. This lane used Codex CLI so ChatGPT had local filesystem access; the study treats "ChatGPT" as a model family regardless of interface.

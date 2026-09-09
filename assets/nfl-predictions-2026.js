@@ -43,6 +43,13 @@ var NFL_PREDICTIONS_2026 = [
     locked_at: "2026-09-09",
     prompt_template: "github-strength-gemini v1.0",
     models: {
+      ChatGPT: {
+        version: "GPT-6 (via Codex CLI)",
+        total_stake: 0,
+        reserve: 20,
+        summary: "Full $20 reserved. Explicit break-even math: SEA -178 needs 64.03%, NE +150 needs 40%. Neither threshold substantiated by the researched factors, so no bet. Ran via Codex CLI with local FS access, flagged the same Seahawks QB1 roster mispick Claude did.",
+        bets: []
+      },
       Claude: {
         version: "claude-opus-4-7",
         total_stake: 11,
@@ -53,13 +60,6 @@ var NFL_PREDICTIONS_2026 = [
           { type: "straight", market: "Spread", line: "NE +3.5", stake: 4, confidence: 6, reason: "Key hook past 3 with the more proven QB on the road versus first-start Darnold" },
           { type: "straight", market: "Prop", line: "Cooper Kupp UNDER 4.5 receptions", stake: 1, confidence: 5, reason: "Third read behind JSN and Shaheed per Field Gulls / 4for4, median outcome is 4 catches" }
         ]
-      },
-      Codex: {
-        version: "GPT-6",
-        total_stake: 0,
-        reserve: 20,
-        summary: "Full $20 reserved. Explicit break-even math: SEA -178 needs 64.03%, NE +150 needs 40%. Neither threshold substantiated by the researched factors, so no bet. Flagged the same Seahawks QB1 roster mispick as Claude.",
-        bets: []
       },
       Gemini: {
         version: "2.5 Flash",
