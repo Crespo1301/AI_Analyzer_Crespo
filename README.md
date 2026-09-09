@@ -1,78 +1,73 @@
-# AI Analyzer Crespo
+# AI Analyzer, NFL
 
-Static public showcase tool for comparing AI model performance across analysis pages.
+Independent, publicly auditable NFL model-comparison study. ChatGPT, Claude, Codex, and Gemini get the same weekly protocol, a $20 hypothetical bankroll per game, and their reasoning gets graded against the ESPN box score every week.
 
-## Role In The Business
+Season 2 (2026-27) is live tracking. Season 1 (2025) is preserved as the historical baseline.
 
-- This repo is one of the public showcase projects listed in `Portfolio/src/data/projects.ts`.
-- It demonstrates product thinking, information design, and results presentation.
-- It is not a weekly business-critical repo, but it still supports credibility and range.
-
-## Shared Docs
-
-- `CLAUDE.md`
-- `AI-WORKFLOW.md`
-- `SECURITY-CHECKLIST.md`
+Live site: currently `https://crespo1301.github.io/AI_Analyzer_Crespo/`. A custom domain is planned, see `Docs/2026/custom-domain-checklist.md`.
 
 ## Structure
 
-- `index.html` is the main hub: lists all 15 game pages plus the Bet Database
-- `bet-database.html` is a filterable table of all 86 verified bets plus prompt/model performance
-- `assets/nfl-data.js` is the **single source of truth** for every bet, game, and score on the site
-- `assets/styles.css` / `assets/site.js` are the shared design system and rendering helpers used by every page
-- `scripts/build-game-pages.js` generates every `Sports_Pages/*.html` game page from `assets/nfl-data.js`
-- `scripts/verify-nfl-data.js` verifies direct ESPN box-score links, scores, and the correction layer
-- `scripts/summarize-experiment.js` prints corrected model, prompt, and bet-type performance
-- `Sports_Pages/` contains the generated per-game pages (auto-generated: see below, don't hand-edit)
-- `Docs/` holds summaries and grading-analysis material (source CSVs live in `Docs/GRADING ANALYSIS/`)
-- `Docs/2026/` holds the next-season grading rubric, weekly template, season operations calendar, iteration system, original-experiment context, and `data-workflow.md` explaining how the 2026 data files feed each other
-- `Prompts/2026/` holds reusable prompt templates and week-by-week prompt workspaces
-- `Data/2026/teams.json` is the canonical 32-team + divisions reference
-- `Data/2026/team-context.json` is the fillable per-team season context (HC/OC/DC/QB1)
-- `Data/2026/schedule/week-XX.json` are per-week schedule scaffolds (18 files, empty until filled from NFL/ESPN)
-- `Data/2026/intake/` holds the weekly intake template + filled weekly intake files (injuries, weather, lines, matchup notes)
-- `Data/2026/rosters/` holds per-team key-player files for prop grading
-- `Docs/Responses/2026/week-XX/<model>/` is where raw model responses land before bets are extracted
-- `scripts/verify-2026-schedule.js` validates the 2026 schedule scaffolds
-- `Docs/AI-Analyzer.gif` is the committed demo asset for showing the analyzer experience in portfolio/docs contexts
-- `analysis_template.html` is a static starting point for a one-off page outside the data-driven system
-- `Trash/REVIEW_NOTES.md` explains what was retired during the Aug 2026 redesign and why
+- `index.html` landing page
+- `nfl-2026.html` Season 2 hub (current week, week selector, matchup grid)
+- `nfl-2025.html` Season 1 archive
+- `nfl.html` NFL section index with season selector
+- `schedule.html` all-season schedule
+- `models.html` model roster and performance
+- `bet-database.html` full results database with filters
+- `methodology.html` prompt lanes, grading rubric, iteration system, honest limitations
+- `about.html` independent status, no affiliations, contact, privacy note
+- `404.html` useful 404
+- `Sports_Pages/*.html` generated per-matchup analysis pages
+- `assets/styles.css` and `assets/site.js` shared design system
+- `assets/nfl-data.js` canonical bet, game, and corrections data
+- `assets/nfl-predictions-2026.js` Season 2 pre-game archive
+- `Data/2026/` team metadata, schedule scaffolds, intake files
+- `Docs/2026/` grading rubric, iteration system, redesign direction, custom domain checklist
+- `Prompts/2026/templates/` three current prompt lanes
+- `scripts/` verify + generator scripts
 
-## Adding a New Season/Week (data-driven pages)
+## Local development
 
-1. Fill prompts from `Prompts/2026/templates/` for each game.
-2. Save every raw model response under `Docs/Responses/2026/week-XX/`.
-3. Add the new games to `NFL_GAMES` and the new bets to `NFL_BETS` in `assets/nfl-data.js`.
-4. Run `node scripts/verify-nfl-data.js` to catch score, box-score URL, and correction-layer problems.
-5. Run `node scripts/build-game-pages.js` to regenerate every game page in `Sports_Pages/`.
-6. Run `node scripts/summarize-experiment.js` when comparing prompt/model performance.
-7. Add the game(s) to `index.html`'s hub grid: it renders automatically from `nfl-data.js` via `nflRenderGameCards()`, no manual card HTML needed.
-8. Do not hand-edit generated files in `Sports_Pages/`: edits will be lost the next time the script runs. Edit `assets/nfl-data.js` instead.
-
-## Local Development
-
-Serve the repo locally:
-
-```bash
+```
 python3 -m http.server 4173
 ```
 
-Then open `http://localhost:4173`.
+Then open `http://localhost:4173/`.
 
-Data checks:
+## Verify
 
-```bash
+```
 node scripts/verify-nfl-data.js
+node scripts/verify-2026-schedule.js
 node scripts/summarize-experiment.js
 node scripts/build-game-pages.js
+git diff --check
 ```
 
-## Working Rules
+Never hand-edit generated files under `Sports_Pages/`. Edit `assets/nfl-data.js` and regenerate.
 
-- Keep the home hub aligned with whatever analyses actually exist.
-- If you add a new analysis page, also update the landing page and summary docs.
-- Treat docs and screenshots as part of the product surface.
+## Visual QA
 
-## Security Notes
+```
+/home/cresp3/scripts/visual-check.sh --url http://localhost:4173/ --out .visual-checks/home-mobile.png
+/home/cresp3/scripts/visual-check.sh --desktop --url http://localhost:4173/ --out .visual-checks/home-desktop.png
+```
 
-Run `SECURITY-CHECKLIST.md` before publishing new analysis data. The main risks here are stale exports, accidental exposure of raw data files, and broken public links.
+See `VISUAL-QA.md`.
+
+## Weekly workflow
+
+1. Confirm the week's slate. Update `Data/2026/schedule/week-NN.json` and `Data/2026/intake/week-NN.json` with cited sources.
+2. Run the three prompt lanes (`Prompts/2026/templates/`) against each model. Save raw responses under `Docs/Responses/2026/week-NN/game-NN-slug/`.
+3. Extract structured picks into `NFL_PREDICTIONS_2026` before kickoff.
+4. Post-final: promote graded games into `NFL_GAMES` + `NFL_BETS`, run `node scripts/verify-nfl-data.js`, then `node scripts/build-game-pages.js`.
+5. Commit, push, update the weekly signals bento on the season hub.
+
+## Contribute
+
+Open issues or PRs at [github.com/Crespo1301/AI_Analyzer_Crespo](https://github.com/Crespo1301/AI_Analyzer_Crespo).
+
+## License
+
+Source code: MIT. Data snapshots and editorial text kept for study use.
