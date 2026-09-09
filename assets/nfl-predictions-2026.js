@@ -43,13 +43,31 @@ var NFL_PREDICTIONS_2026 = [
     locked_at: "2026-09-09",
     prompt_template: "github-strength-gemini v1.0",
     models: {
+      Claude: {
+        version: "claude-opus-4-7",
+        total_stake: 11,
+        reserve: 9,
+        summary: "Game-script UNDER with a key-number spread hook and one small target-share prop. Reflected on own 2025 correction history: five $11 skill-position OVER props flipped WIN to LOSS after box-score check, so no OVER props this week. Flagged the Seahawks roster QB1 mispick (Lock vs Darnold).",
+        bets: [
+          { type: "straight", market: "Total", line: "UNDER 44.5", stake: 6, confidence: 6, reason: "Both teams without their expected RB1, Week 1 red-zone stalls, weather-neutral" },
+          { type: "straight", market: "Spread", line: "NE +3.5", stake: 4, confidence: 6, reason: "Key hook past 3 with the more proven QB on the road versus first-start Darnold" },
+          { type: "straight", market: "Prop", line: "Cooper Kupp UNDER 4.5 receptions", stake: 1, confidence: 5, reason: "Third read behind JSN and Shaheed per Field Gulls / 4for4, median outcome is 4 catches" }
+        ]
+      },
+      Codex: {
+        version: "GPT-6",
+        total_stake: 0,
+        reserve: 20,
+        summary: "Full $20 reserved. Explicit break-even math: SEA -178 needs 64.03%, NE +150 needs 40%. Neither threshold substantiated by the researched factors, so no bet. Flagged the same Seahawks QB1 roster mispick as Claude.",
+        bets: []
+      },
       Gemini: {
         version: "2.5 Flash",
         total_stake: 12,
         reserve: 8,
-        summary: "Key hook on NE +3.5. Thesis: Seattle safety depth compromised (Okada out, Emmanwori questionable) gives Drake Maye room to keep it within a field goal. Note: fabricated the sources_fetched_from_repo block, did not actually fetch the raw GitHub URLs, see prompt-corrections.md.",
+        summary: "Key hook on NE +3.5. Thesis: Seattle safety depth compromised (Okada out, Emmanwori questionable) gives Maye room to keep it within a field goal. Note: rerun still fabricated the sources_fetched_from_repo block, all URLs verified to return 200, see prompt-corrections.md.",
         bets: [
-          { type: "straight", market: "Spread", line: "NE +3.5 (-118)", stake: 12, confidence: 8, reason: "Seattle safety depth attrition versus Maye's downfield ability keeps NE inside the key hook" }
+          { type: "straight", market: "Spread", line: "NE +3.5 (-118)", stake: 12, confidence: 8, reason: "Seattle safety depth attrition vs Maye's downfield ability keeps NE inside the key hook" }
         ]
       }
     }

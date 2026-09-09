@@ -5,28 +5,28 @@
   "source": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/teams/sea/roster",
   "offense": {
     "qb1": {
+      "player": "Sam Darnold",
+      "note": "9 yr, age 29, confirmed Week 1 starter per seahawks.com"
+    },
+    "qb2": {
       "player": "Drew Lock",
       "note": "8 yr, age 29"
     },
-    "qb2": {
-      "player": "Jalen Milroe",
-      "note": "2 yr, age 23"
-    },
     "rb1": {
       "player": "Jadarian Price",
-      "note": "0 yr, age 22"
+      "note": "0 yr, age 22, rookie starter with Walker traded to KC and Charbonnet on PUP"
     },
     "rb2": {
       "player": "Zach Charbonnet",
-      "note": "4 yr, age 25, status: Out"
+      "note": "4 yr, age 25, PUP-R (ACL), est. return Oct 11"
     },
     "wr1": {
-      "player": "Julian Hicks",
-      "note": "1 yr, age 26"
+      "player": "Jaxon Smith-Njigba",
+      "note": "WR1 target share per Field Gulls / 4for4 Week 1 preview"
     },
     "wr2": {
-      "player": "Cooper Kupp",
-      "note": "10 yr, age 33"
+      "player": "Rashid Shaheed",
+      "note": "WR2 per Field Gulls / 4for4 Week 1 preview"
     },
     "te1": {
       "player": "Elijah Arroyo",
@@ -139,8 +139,18 @@
       }
     ]
   },
-  "prop_watchlist": [],
+  "prop_watchlist": [
+    { "player": "Sam Darnold", "position": "QB", "why": "First Seattle start, prop props on pass yds / TDs / INTs will be popular" },
+    { "player": "Jaxon Smith-Njigba", "position": "WR", "why": "WR1 target share, popular receiving-yds and rec-total prop" },
+    { "player": "Cooper Kupp", "position": "WR", "why": "Third read in Kubiak offense, UNDER receptions has real narrative" },
+    { "player": "Jadarian Price", "position": "RB", "why": "Rookie RB1 in his first NFL start, prop-yardage lines will be soft" }
+  ],
   "changes_log": [
+    {
+      "date": "2026-09-09",
+      "change": "Corrected QB1 from Drew Lock to Sam Darnold. The auto-populate jersey-number heuristic placed Lock (#2) ahead of Darnold (#14). Both Claude and Codex flagged this while researching the Week 1 game; source: seahawks.com and Patriots game preview. Also promoted Jaxon Smith-Njigba to WR1 and Rashid Shaheed to WR2 per Field Gulls / 4for4 Week 1 preview, and clarified RB1 context (Walker traded to KC, Charbonnet on PUP-R).",
+      "source": "https://www.seahawks.com/news/sam-darnold-will-be-the-same-in-a-good-way-in-2026"
+    },
     {
       "date": "2026-09-09",
       "change": "Initial roster snapshot fetched from ESPN public site API before Week 1 kickoff.",
