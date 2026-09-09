@@ -1,5 +1,15 @@
 # Changelog
 
+## v3.1.0 - 2026-09-09
+
+- Added team logos, color accents and text fallbacks to matchup views.
+- Published all 16 scheduled Week 1 games, merging predictions by game ID.
+- Isolated current-season views from historical results and fixed prediction counts.
+- Improved mobile navigation and regenerated matchup pages.
+- Added site regression checks and a source-based weekly content-brief command.
+- Updated handoff, product context and domain planning for predictions beyond sports.
+- Verified responsive routes and logo fallbacks through browser screenshots.
+
 ## v3.0.0 &middot; 2026-09-09
 
 Season 2 launch redesign.

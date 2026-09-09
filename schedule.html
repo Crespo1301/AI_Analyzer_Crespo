@@ -83,11 +83,12 @@
 
 <script src="assets/nfl-data.js"></script>
 <script src="assets/nfl-predictions-2026.js"></script>
+<script src="assets/nfl-schedule-2026.js"></script>
 <script src="assets/site.js"></script>
 <script>
   var qs = new URLSearchParams(window.location.search);
   var wk = parseInt(qs.get("week") || nflCurrentWeek(), 10);
-  if (wk < 1 || wk > 18) wk = 1;
+  if (!Number.isInteger(wk) || wk < 1 || wk > 18) wk = 1;
   document.getElementById("week-label").textContent = "Week " + wk;
   document.getElementById("week-num").textContent = wk;
   nflRenderWeekSelect("week-select", { current: wk, baseHref: "schedule.html" });

@@ -85,9 +85,7 @@ function nflMatchupsForWeek(week) {
         espn: g.espn
       };
     });
-  if (pending.length) return pending;
-
-  var graded = NFL_GAMES.filter(function (g) { return g.week === week; })
+  var graded = NFL_GAMES.filter(function (g) { return g.week === week && String(g.date).slice(0, 4) === "2026"; })
     .map(function (g) {
       return {
         source: "graded",
@@ -100,8 +98,26 @@ function nflMatchupsForWeek(week) {
         espn: g.espn
       };
     });
-  return graded;
+  var scheduled = (typeof NFL_SCHEDULE_2026 !== "undefined" ? NFL_SCHEDULE_2026 : [])
+    .filter(function (g) { return g.week === week; });
+  var byId = {};
+  scheduled.concat(pending, graded).forEach(function (g) { byId[g.id] = g; });
+  return Object.keys(byId).map(function (id) { return byId[id]; });
 }
+
+function nflLogoMark(teamName, size) {
+  var team = NFL_TEAMS[teamName];
+  if (!team) return "";
+  return '<span class="team-logo ' + (size || '') + '" aria-hidden="true" style="--team-primary:' + team.primary + ';--team-secondary:' + team.secondary + '">'
+    + '<span>' + esc(team.abbr.toUpperCase()) + '</span>'
+    + '<img src="' + esc(nflTeamLogo(teamName)) + '" alt="" width="96" height="96" loading="lazy" decoding="async">'
+    + '</span>';
+}
+
+document.addEventListener("error", function (event) {
+  var image = event.target;
+  if (image.tagName === "IMG" && image.parentElement.classList.contains("team-logo")) image.hidden = true;
+}, true);
 
 function nflConsensusLine(models) {
   if (!models) return "";
@@ -142,12 +158,12 @@ function nflSlotFinal(game) {
     + '<a class="game-slot" href="Sports_Pages/' + esc(game.id) + '.html">'
     + '  <div class="slot-top"><span>' + esc(game.date) + '</span><span class="slot-status final">Final</span></div>'
     + '  <div class="team-row">'
-    + '    <span class="team-chip" style="background:' + esc(awayTeam.primary || "#333") + '"></span>'
+    + nflLogoMark(game.away, "compact")
     + '    <span class="team-abbr">' + esc((awayTeam.abbr || "").toUpperCase()) + '</span>'
     + '    <span class="team-score tabular ' + (awayWin ? "win" : "lose") + '">' + game.awayScore + '</span>'
     + '  </div>'
     + '  <div class="team-row">'
-    + '    <span class="team-chip" style="background:' + esc(homeTeam.primary || "#333") + '"></span>'
+    + nflLogoMark(game.home, "compact")
     + '    <span class="team-abbr">' + esc((homeTeam.abbr || "").toUpperCase()) + '</span>'
     + '    <span class="team-score tabular ' + (homeWin ? "win" : "lose") + '">' + game.homeScore + '</span>'
     + '  </div>'
@@ -162,23 +178,24 @@ function nflSlotLocked(game) {
   var kickoff = game.kickoffDisplay || "";
   var line = game.line ? (game.line.spread + " / O/U " + game.line.total) : "";
   var consensus = nflConsensusLine(game.models);
-  var pageId = game.id;
+  var isScheduled = game.source === "schedule";
+  var href = isScheduled ? game.espn : 'Sports_Pages/' + game.id + '.html';
   return ''
-    + '<a class="game-slot" href="Sports_Pages/' + esc(pageId) + '.html">'
-    + '  <div class="slot-top"><span>' + esc(kickoff) + '</span><span class="slot-status locked">Locked</span></div>'
+    + '<a class="game-slot" href="' + esc(href) + '">'
+    + '  <div class="slot-top"><span>' + esc(kickoff) + '</span><span class="slot-status ' + (isScheduled ? 'pending' : 'locked') + '">' + (isScheduled ? 'Scheduled' : 'Locked') + '</span></div>'
     + '  <div class="team-row">'
-    + '    <span class="team-chip" style="background:' + esc(awayTeam.primary || "#333") + '"></span>'
+    + nflLogoMark(game.away, "compact")
     + '    <span class="team-abbr">' + esc((awayTeam.abbr || "").toUpperCase()) + '</span>'
     + '    <span class="team-record">Away</span>'
     + '  </div>'
     + '  <div class="team-row">'
-    + '    <span class="team-chip" style="background:' + esc(homeTeam.primary || "#333") + '"></span>'
+    + nflLogoMark(game.home, "compact")
     + '    <span class="team-abbr">' + esc((homeTeam.abbr || "").toUpperCase()) + '</span>'
     + '    <span class="team-record">Home</span>'
     + '  </div>'
     + '  <div class="slot-meta">' + esc(game.network || "") + (line ? ' &middot; ' + esc(line) : "") + '</div>'
-    + '  <div class="slot-consensus">' + (consensus ? esc(consensus) : "Models locked") + '</div>'
-    + '  <div class="slot-cta">Read Picks <span aria-hidden="true">&rarr;</span></div>'
+    + '  <div class="slot-consensus">' + (consensus ? esc(consensus) : (isScheduled ? "Predictions not published" : "Models locked")) + '</div>'
+    + '  <div class="slot-cta">' + (isScheduled ? 'Game details on ESPN' : 'Read Picks') + ' <span aria-hidden="true">&rarr;</span></div>'
     + '</a>';
 }
 
@@ -240,7 +257,7 @@ function nflRenderWeekSelect(mountId, opts) {
   if (!host) return;
   var current = opts.current || nflCurrentWeek();
   var gradedWeeks = {};
-  NFL_GAMES.forEach(function (g) { gradedWeeks[g.week] = true; });
+  NFL_GAMES.filter(function (g) { return String(g.date).slice(0, 4) === "2026"; }).forEach(function (g) { gradedWeeks[g.week] = true; });
   var predictionWeeks = {};
   if (typeof NFL_PREDICTIONS_2026 !== "undefined") {
     NFL_PREDICTIONS_2026.forEach(function (g) { predictionWeeks[g.week] = true; });
@@ -280,19 +297,20 @@ function nflRenderMatchupGrid(mountId, opts) {
       ? '<span class="mteam-vs final tabular">' + g.awayScore + ' &ndash; ' + g.homeScore + '</span>'
       : '<span class="mteam-vs">@</span>';
     var kickLine = isFinal ? (g.date + ' &middot; Final') : (g.kickoffDisplay || 'Kickoff TBD');
-    var pageHref = 'Sports_Pages/' + g.id + '.html';
+    var isScheduled = g.source === "schedule";
+    var pageHref = isScheduled ? g.espn : 'Sports_Pages/' + g.id + '.html';
     return ''
       + '<a class="mgame" href="' + pageHref + '">'
       + '  <div class="mgame-head"><span>Week ' + week + '</span><span>' + esc(kickLine) + '</span></div>'
       + '  <div class="mgame-teams">'
       + '    <div class="mteam">'
-      + '      <span class="colorbar" style="background:' + esc(away.primary || "#333") + '"></span>'
+      + nflLogoMark(g.away)
       + '      <span class="abbr">' + esc((away.abbr || "").toUpperCase()) + '</span>'
       + '      <span class="name">' + esc(g.away) + '</span>'
       + '    </div>'
       + '    ' + vs
       + '    <div class="mteam">'
-      + '      <span class="colorbar" style="background:' + esc(home.primary || "#333") + '"></span>'
+      + nflLogoMark(g.home)
       + '      <span class="abbr">' + esc((home.abbr || "").toUpperCase()) + '</span>'
       + '      <span class="name">' + esc(g.home) + '</span>'
       + '    </div>'
@@ -300,7 +318,8 @@ function nflRenderMatchupGrid(mountId, opts) {
       + (consensus || isFinal ? (
           '<div class="mgame-consensus"><span class="lc">' + (isFinal ? "Outcome" : "Model Board") + '</span><span class="rc">' + esc(isFinal ? (g.awayScore + " - " + g.homeScore) : consensus) + '</span></div>'
         ) : "")
-      + '  <div class="mgame-cta"><span>' + (isFinal ? "View Analysis" : "Read Locked Picks") + '</span><span class="arrow" aria-hidden="true">&rarr;</span></div>'
+      + (isScheduled ? '<div class="mgame-consensus">Predictions not published</div>' : '')
+      + '  <div class="mgame-cta"><span>' + (isFinal ? "View Analysis" : isScheduled ? "Game details on ESPN" : "Read Locked Picks") + '</span><span class="arrow" aria-hidden="true">&rarr;</span></div>'
       + '</a>';
   }).join("");
   host.innerHTML = html;
@@ -574,13 +593,13 @@ function nflRenderGameCards(mountId, weekFilter) {
       + '  <div class="mgame-head"><span>Week ' + g.week + '</span><span>' + esc(g.date) + ' &middot; Final</span></div>'
       + '  <div class="mgame-teams">'
       + '    <div class="mteam">'
-      + '      <span class="colorbar" style="background:' + esc(away.primary || "#333") + '"></span>'
+      + nflLogoMark(g.away)
       + '      <span class="abbr">' + esc((away.abbr || "").toUpperCase()) + '</span>'
       + '      <span class="name">' + esc(g.away) + '</span>'
       + '    </div>'
       + '    <span class="mteam-vs final tabular">' + g.awayScore + ' &ndash; ' + g.homeScore + '</span>'
       + '    <div class="mteam">'
-      + '      <span class="colorbar" style="background:' + esc(home.primary || "#333") + '"></span>'
+      + nflLogoMark(g.home)
       + '      <span class="abbr">' + esc((home.abbr || "").toUpperCase()) + '</span>'
       + '      <span class="name">' + esc(g.home) + '</span>'
       + '    </div>'
@@ -596,3 +615,20 @@ function nflRenderGameCards(mountId, weekFilter) {
  * Public alias for the safe HTML helper
  * ------------------------------------------------------------------- */
 var esc = window.nflEsc;
+
+// Counts are derived from saved responses, including deliberate no-bet decisions.
+function nflRefreshPredictionCounts() {
+  if (typeof nflPredictions2026Summary !== "function") return;
+  var summaries = nflPredictions2026Summary();
+  document.querySelectorAll(".lineup-card").forEach(function (card) {
+    var label = card.querySelector(".lc-tag");
+    var summary = summaries.find(function (entry) { return label && entry.model === label.textContent.trim(); });
+    if (!summary) return;
+    card.querySelectorAll(".lc-stat").forEach(function (stat) {
+      if (/Bets locked/i.test(stat.textContent)) stat.querySelector(".n").textContent = summary.totalBets;
+    });
+    var note = card.querySelector(".lc-note");
+    if (note) note.textContent = summary.totalBets + " recorded picks. $" + summary.totalReserve + " held in reserve. Results pending review.";
+  });
+}
+nflRefreshPredictionCounts();

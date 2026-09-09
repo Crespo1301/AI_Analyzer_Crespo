@@ -1,4 +1,4 @@
-# Handoff, v3.0.0
+# Handoff, v3.1.0
 
 Date: 2026-09-09 (Season 2 kickoff night).
 
@@ -8,7 +8,7 @@ A full design, usability, and launch-readiness overhaul. See `CHANGELOG.md` for 
 
 ## Where the source of truth still lives
 
-Unchanged. `assets/nfl-data.js` remains the canonical public data source for games, bets, and corrections. `assets/nfl-predictions-2026.js` is the pre-game archive for Season 2, currently empty until fresh prompts land. Team metadata continues to come from `Data/2026/teams.json`.
+`assets/nfl-data.js` remains the canonical public data source for graded games, bets, and corrections. `assets/nfl-predictions-2026.js` contains the first Season 2 matchup with three model families, four picks, and an explicit ChatGPT reserve decision. `Data/2026/schedule/` holds the schedule source; the page generator publishes `assets/nfl-schedule-2026.js`. Week 1 has 16 scheduled games. Later weeks remain incomplete scaffolds. Team metadata continues to come from `Data/2026/teams.json`.
 
 ## What to run before touching the site
 
@@ -17,6 +17,7 @@ node scripts/verify-nfl-data.js
 node scripts/verify-2026-schedule.js
 node scripts/summarize-experiment.js
 node scripts/build-game-pages.js
+node scripts/verify-site.js
 git diff --check
 python3 -m http.server 4173
 ```
@@ -27,14 +28,33 @@ Screenshot verification: `/home/cresp3/scripts/visual-check.sh`, mobile + deskto
 
 ## Immediate open work
 
-- Run the new prompts against ChatGPT, Claude, Codex, and Gemini for tonight's Week 1 slate. Save raw responses in `Docs/Responses/2026/week-01/game-NN-slug/`.
+- Continue the remaining Week 1 slate with ChatGPT, Claude, and Gemini. Codex is a ChatGPT execution interface in the current comparison, not a fourth independent model family. Save raw responses in `Docs/Responses/2026/week-01/game-NN-slug/`.
 - Extract structured picks into `NFL_PREDICTIONS_2026` before kickoff. The strip and the season hub will pick them up automatically.
 - Post-final: promote the graded games into `NFL_GAMES` and the graded bets into `NFL_BETS` in `assets/nfl-data.js`, then regenerate Sports_Pages.
 
 ## Custom domain
 
+The umbrella brand must support predictions beyond sports and build on
+CSolutions / Carlos Crespo. NFL is the first published category. No new domain
+has been selected or purchased during this pass.
+
 `Docs/2026/custom-domain-checklist.md` has the full switch. Origin default is `https://crespo1301.github.io/AI_Analyzer_Crespo`. Search for that string across the repo to swap it when you have the domain.
 
 ## Session note
 
-Baseline before/after screenshots were skipped intentionally to save time on the launch push. If you want them for a Portfolio blog post later, git history has the pre-redesign commit at `321cde6`.
+The follow-up pass includes browser checks at mobile, tablet, and desktop sizes,
+team-logo loading and fallback checks, and screenshots in local `.visual-checks/`.
+Portfolio media now uses this build's desktop and mobile screenshots. Data and
+browser checks pass. Domain selection remains Carlos's next decision; see
+`Docs/2026/brand-domain-plan.md`. No new domain is configured.
+
+For a draft weekly content brief, run:
+
+```bash
+node scripts/content-brief.js patriots-seahawks
+```
+
+The output is a draft from recorded predictions, not permission to publish.
+Verify precise lock timing and original sources before making pre-game claims.
+Grade final results against box scores and review reasoning separately. Never
+claim that the models improve automatically as weeks pass.

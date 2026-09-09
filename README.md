@@ -1,8 +1,13 @@
 # AI Analyzer, NFL
 
-Independent, publicly auditable NFL model-comparison study. ChatGPT, Claude, Codex, and Gemini get the same weekly protocol, a $20 hypothetical bankroll per game, and their reasoning gets graded against the ESPN box score every week.
+Independent CSolutions prediction-comparison project by Carlos Crespo. NFL is
+the first category. ChatGPT (including its Codex execution interface), Claude,
+and Gemini use a $20 hypothetical budget per game. Outcomes and reasoning are
+reviewed separately against source evidence.
 
-Season 2 (2026-27) is live tracking. Season 1 (2025) is preserved as the historical baseline.
+Season 2 (2026-27) has one recorded matchup and 16 scheduled Week 1 games.
+Later weeks remain scaffolds. Season 1 is a separate historical archive with
+known corrections. See `Docs/2026/brand-domain-plan.md` for the broader brand.
 
 Live site: currently `https://crespo1301.github.io/AI_Analyzer_Crespo/`. A custom domain is planned, see `Docs/2026/custom-domain-checklist.md`.
 
@@ -42,6 +47,7 @@ node scripts/verify-nfl-data.js
 node scripts/verify-2026-schedule.js
 node scripts/summarize-experiment.js
 node scripts/build-game-pages.js
+node scripts/verify-site.js
 git diff --check
 ```
 

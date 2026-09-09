@@ -42,7 +42,7 @@
 <section class="season-banner">
   <div class="wrap">
     <span class="sb-badge">Season 2 &middot; 2026</span>
-    <span class="sb-text"><strong>Live tracking begins Week 1.</strong> Fresh prompt system, three lanes, blind test intent preserved. Yesterday's dud lockup was retired before kickoff.</span>
+    <span class="sb-text"><strong>Follow the 2026 season.</strong> Published predictions, recorded sources, and results reviewed after each game.</span>
   </div>
 </section>
 
@@ -59,7 +59,7 @@
     <h1 class="hero-headline">Same rules,<br>same $20,<br>fresh prompts.</h1>
     <p class="hero-sub">Season 2 opens with a rebuilt prompt system that gives every model repo access, whichever way that model can reach it. ChatGPT (via the Codex CLI) and Claude read the local filesystem. Gemini reads the same repo through GitHub's raw URLs. All three review their own past picks, run open-web research, and cite every source. Picks land before kickoff and get graded against the ESPN box score.</p>
     <div class="hero-cta-row">
-      <a class="btn btn-primary" href="#matchups">See Week 1 matchups</a>
+      <a class="btn btn-primary" href="#matchups">See this week's matchups</a>
       <a class="btn btn-ghost" href="methodology.html">Read the methodology</a>
     </div>
   </div>
@@ -156,13 +156,19 @@
 
 <script src="assets/nfl-data.js"></script>
 <script src="assets/nfl-predictions-2026.js"></script>
+<script src="assets/nfl-schedule-2026.js"></script>
 <script src="assets/site.js"></script>
 <script>
   nflRenderMatchupStrip("strip-mount");
   nflRenderWeekSelect("week-select", { baseHref: "schedule.html" });
   nflRenderMatchupGrid("matchup-grid");
   var wk = nflCurrentWeek();
-  document.getElementById("hero-week-tag").textContent = "Week " + wk + " · Kickoff Week";
+  document.getElementById("hero-week-tag").textContent = "Week " + wk + " · 2026 season";
+  document.querySelector("#matchups .b-kicker").textContent = "Week " + wk;
+  var summary = nflPredictions2026Summary();
+  var stats = document.querySelectorAll("#season-stats .st-value");
+  stats[0].textContent = NFL_PREDICTIONS_2026.length;
+  stats[1].textContent = summary.reduce(function (total, model) { return total + model.totalBets; }, 0);
 </script>
 </body>
 </html>
