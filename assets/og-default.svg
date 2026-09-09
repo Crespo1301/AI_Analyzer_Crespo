@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#0a0a0a"/>
+  <rect x="0" y="0" width="1200" height="8" fill="#d50a0a"/>
+  <g font-family="Arial Black, Impact, sans-serif" fill="#ffffff">
+    <text x="60" y="140" font-size="28" letter-spacing="4" fill="#d50a0a">SEASON 2 &#183; 2026-27</text>
+    <text x="60" y="290" font-size="120" font-weight="900" letter-spacing="-2">AI ANALYZER</text>
+    <text x="60" y="380" font-size="52" font-weight="800" letter-spacing="0" fill="#ffffff">NFL model-comparison study</text>
+    <text x="60" y="520" font-size="22" letter-spacing="1" fill="#8a8f98">Same rules &#183; $20 bankroll &#183; graded against ESPN &#183; three prompt lanes</text>
+    <text x="60" y="580" font-size="18" letter-spacing="1" fill="#6b7280">carloscrespo.info &#183; github.com/Crespo1301/AI_Analyzer_Crespo</text>
+  </g>
+  <g transform="translate(1000,140)" opacity="0.9">
+    <rect x="0" y="0" width="140" height="140" fill="#d50a0a"/>
+    <text x="70" y="98" text-anchor="middle" font-family="Arial Black" font-size="70" fill="#ffffff">AI</text>
+  </g>
+</svg>

@@ -3,120 +3,273 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AI Model Performance Analyzer</title>
+<title>AI Analyzer NFL, Season 2 Kicks Off Tonight</title>
+<meta name="description" content="An independent, publicly auditable NFL model-comparison study. ChatGPT, Claude, Codex, and Gemini get the same rules, a $20 hypothetical bankroll, and their reasoning gets graded against the ESPN box score every week.">
+<meta name="theme-color" content="#0a0a0a">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="AI Analyzer NFL">
+<meta property="og:title" content="AI Analyzer NFL, Season 2 Kicks Off Tonight">
+<meta property="og:description" content="An independent, publicly auditable NFL model-comparison study. Same rules, $20 bankroll, graded against the ESPN box score.">
+<meta property="og:image" content="assets/og-default.svg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
 <link rel="stylesheet" href="assets/styles.css">
 </head>
 <body>
-<nav class="site-nav">
-  <div class="nav-row">
-    <a class="nav-brand" href="index.html"><span class="chip">AI</span> Analyzer</a>
+<a class="skip-link" href="#main">Skip to main content</a>
+
+<nav class="site-nav" aria-label="Site">
+  <div class="nav-primary">
+    <a class="nav-brand" href="index.html">
+      <span class="brand-mark">AI</span>
+      Analyzer
+      <span class="brand-sub">NFL</span>
+    </a>
     <ul class="nav-links">
-      <li><a href="index.html" class="active">Home</a></li>
-      <li><a href="nfl.html">NFL</a></li>
-      <li><a href="nfl-2025.html">2025 Season</a></li>
-      <li><a href="nfl-2026.html">2026 Season</a></li>
-      <li><a href="bet-database.html">Bet Database</a></li>
+      <li><a href="nfl-2026.html">Week</a></li>
+      <li><a href="schedule.html">Schedule</a></li>
+      <li><a href="models.html">Models</a></li>
+      <li><a href="bet-database.html">Results</a></li>
+      <li><a href="methodology.html">Methodology</a></li>
     </ul>
+    <div class="nav-spacer"></div>
+    <a class="nav-search" href="bet-database.html" aria-label="Search results database">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+    </a>
+  </div>
+  <div class="nav-secondary">
+    <a href="about.html">About</a><span class="dot">&middot;</span>
+    <a href="nfl-2025.html">Season 1 Archive</a><span class="dot">&middot;</span>
+    <a href="methodology.html">Grading rubric</a>
+    <span class="status"><span class="pulse"></span> Season 2 Live</span>
   </div>
 </nav>
 
-<header class="hero">
+<section class="matchup-strip" aria-label="Current week matchups">
+  <div id="strip-mount"></div>
+</section>
+
+<main id="main">
+
+<header class="editorial-hero">
+  <div class="hero-canvas" aria-hidden="true"><img src="assets/hero-canvas.svg" alt=""></div>
   <div class="wrap">
-    <span class="eyebrow">AI Model Performance Analyzer</span>
-    <h1>Can you trust an LLM with your bankroll?</h1>
-    <p class="lede">A structured, ongoing test of whether ChatGPT, Claude, and Gemini can make better betting decisions than the market. Same prompt, blind chats, $20 bankroll per game, graded against the ESPN box score. Started as a class experiment in 2025. Now a live weekly season.</p>
+    <span class="hero-tag">Season 2 &middot; 2026-27</span>
+    <h1 class="hero-headline">The 2026 season is live.</h1>
+    <p class="hero-sub">Same rules, blind test, real box scores. ChatGPT, Claude, Codex, and Gemini each get a $20 hypothetical bankroll per game, decide their own allocation, and get graded against ESPN every week. This site is the public record of what they picked, why, and whether they were right.</p>
+    <div class="hero-cta-row">
+      <a class="btn btn-primary" href="nfl-2026.html">Enter Week 1</a>
+      <a class="btn btn-ghost" href="methodology.html">How we grade</a>
+    </div>
+    <div class="hero-related">
+      <a href="methodology.html">
+        <span class="hr-title">New prompt system, three lanes</span>
+        <span class="hr-meta">Sep 9 &middot; methodology</span>
+      </a>
+      <a href="nfl-2025.html">
+        <span class="hr-title">Season 1 archive, what we learned</span>
+        <span class="hr-meta">2025-26 &middot; baseline</span>
+      </a>
+      <a href="models.html">
+        <span class="hr-title">Model roster, four families in play</span>
+        <span class="hr-meta">this week &middot; models</span>
+      </a>
+    </div>
   </div>
 </header>
 
-<section class="section">
+<section class="band band-paper">
   <div class="wrap">
-    <div class="section-head">
-      <h2>How this works</h2>
-      <p>Simple rules, strict enforcement, full audit trail.</p>
+    <div class="band-head">
+      <div>
+        <div class="b-kicker">How it works</div>
+        <div class="b-title">Same rules, <span class="accent">every week</span></div>
+      </div>
     </div>
     <div class="how-grid">
-      <div class="how-card">
+      <div class="how-tile">
         <div class="how-num">01</div>
-        <h3>Same prompt to all three models</h3>
-        <p>Identical text sent to ChatGPT, Claude, and Gemini in fresh chats with no prior context. Removes prompt-style variance from the comparison.</p>
+        <h3>Every model reads the repo</h3>
+        <p>Local filesystem where the model supports it, raw GitHub URL fetch where it does not, plus open-web research on every matchup. Every model is expected to reflect on its own past picks and adjust.</p>
       </div>
-      <div class="how-card">
+      <div class="how-tile">
         <div class="how-num">02</div>
-        <h3>$20 bankroll per game</h3>
-        <p>Each model decides how to split the bankroll across straight bets, parlays, SGPs, or reserve. Sizing itself becomes a graded signal.</p>
+        <h3>$20 per game</h3>
+        <p>Each model decides its own allocation across straight bets, parlays, SGPs, or reserve. Reserve is a valid answer. Sizing itself becomes a graded signal.</p>
       </div>
-      <div class="how-card">
+      <div class="how-tile">
         <div class="how-num">03</div>
         <h3>Locked before kickoff</h3>
-        <p>Every pick is timestamped and pushed to this repo pre-game. No post-hoc editing. Raw model responses are saved verbatim.</p>
+        <p>Every pick is timestamped and pushed to this repo pre-game. No post-hoc editing. Raw model responses are saved verbatim in `Docs/Responses/`.</p>
       </div>
-      <div class="how-card">
+      <div class="how-tile">
         <div class="how-num">04</div>
         <h3>Graded against ESPN</h3>
-        <p>Final grading uses the ESPN box score, not memory or headlines. Every prop must be auditable against a real stat line.</p>
+        <p>Final grading uses the ESPN box score, not memory or headlines. Every prop bet is audited against a real stat line. Reasoning is graded separately from outcome.</p>
       </div>
     </div>
   </div>
 </section>
 
-<section class="section alt">
+<section class="band band-ink">
   <div class="wrap">
-    <div class="section-head">
-      <h2>Meet the models</h2>
-      <p>Three frontier LLMs, one budget each, one blind read per game.</p>
+    <div class="band-head" style="color: var(--paper); border-bottom-color: rgba(255,255,255,0.25)">
+      <div>
+        <div class="b-kicker">Model lineup</div>
+        <div class="b-title">Four families, <span class="accent">one budget</span></div>
+      </div>
+      <a class="b-more" href="models.html">Full model page &rarr;</a>
     </div>
-    <div class="model-grid">
-      <div class="model-card">
-        <div class="chip-model ChatGPT">ChatGPT</div>
-        <div class="model-version">GPT 5.5</div>
-        <div class="model-arch"><strong>Capital preservation.</strong> Runs break-even math before every bet. Refuses to bet without a demonstrated edge. Sizes to the edge, not to the conviction.</div>
-      </div>
-      <div class="model-card">
-        <div class="chip-model Claude">Claude</div>
-        <div class="model-version">Opus 4.7</div>
-        <div class="model-arch"><strong>Thesis-driven.</strong> Builds a coherent game script, commits to correlated positions on it. Takes the underdog and the Under when the read supports both.</div>
-      </div>
-      <div class="model-card">
-        <div class="chip-model Gemini">Gemini</div>
-        <div class="model-version">3.1</div>
-        <div class="model-arch"><strong>Confident concentrator.</strong> Sizes big on high-conviction reads. Pays juice on favorites, stacks correlated legs into same-game parlays.</div>
-      </div>
+    <div class="lineup">
+      <article class="lineup-card">
+        <span class="lc-numeral">01</span>
+        <div class="lc-body">
+          <span class="lc-tag">ChatGPT</span>
+          <div class="lc-model">GPT 5.5</div>
+          <div class="lc-version">OpenAI &middot; shared baseline lane</div>
+          <p style="color: rgba(255,255,255,0.75); font-size: 14px; margin-top: 4px;">Capital preservation, break-even math, sizes to edge over conviction.</p>
+        </div>
+        <div class="lc-stats">
+          <div class="lc-stat"><div class="n">&mdash;</div><div class="l">2026 ROI</div></div>
+          <div class="lc-stat"><div class="n">0</div><div class="l">Bets locked</div></div>
+          <div class="lc-stat"><div class="n">&mdash;</div><div class="l">Reason grade</div></div>
+        </div>
+        <div class="lc-note">Season 2 begins with a fresh slate.</div>
+      </article>
+      <article class="lineup-card">
+        <span class="lc-numeral">02</span>
+        <div class="lc-body">
+          <span class="lc-tag">Claude &amp; Codex</span>
+          <div class="lc-model">Repo + Web</div>
+          <div class="lc-version">Anthropic &middot; local FS + web research</div>
+          <p style="color: rgba(255,255,255,0.75); font-size: 14px; margin-top: 4px;">Read the repo directly, review their own past picks, cite factors from what they saw.</p>
+        </div>
+        <div class="lc-stats">
+          <div class="lc-stat"><div class="n">&mdash;</div><div class="l">2026 ROI</div></div>
+          <div class="lc-stat"><div class="n">0</div><div class="l">Bets locked</div></div>
+          <div class="lc-stat"><div class="n">&mdash;</div><div class="l">Reason grade</div></div>
+        </div>
+        <div class="lc-note">Fresh prompts written 2026-09-09. First run this week.</div>
+      </article>
+      <article class="lineup-card">
+        <span class="lc-numeral">03</span>
+        <div class="lc-body">
+          <span class="lc-tag">Gemini</span>
+          <div class="lc-model">Repo + Web</div>
+          <div class="lc-version">Google &middot; raw GitHub fetch + web research</div>
+          <p style="color: rgba(255,255,255,0.75); font-size: 14px; margin-top: 4px;">Same repo, same reflection on past picks, fetched through raw GitHub URLs.</p>
+        </div>
+        <div class="lc-stats">
+          <div class="lc-stat"><div class="n">&mdash;</div><div class="l">2026 ROI</div></div>
+          <div class="lc-stat"><div class="n">0</div><div class="l">Bets locked</div></div>
+          <div class="lc-stat"><div class="n">&mdash;</div><div class="l">Reason grade</div></div>
+        </div>
+        <div class="lc-note">Points at github.com/Crespo1301/AI_Analyzer_Crespo.</div>
+      </article>
     </div>
-    <p class="note" style="margin-top: 24px;">These are early archetypes based on the first two 2026 games. See the <a href="nfl-2026.html">2026 season page</a> for evolving evidence.</p>
   </div>
 </section>
 
-<section class="section">
+<section class="band band-bone">
   <div class="wrap">
-    <div class="section-head">
-      <h2>Explore the data</h2>
-      <p>Two seasons, one methodology, everything graded.</p>
+    <div class="band-head">
+      <div>
+        <div class="b-kicker">Signals</div>
+        <div class="b-title">This week's <span class="accent">signals</span></div>
+      </div>
+      <a class="b-more" href="methodology.html">Methodology &rarr;</a>
     </div>
-    <div class="season-grid">
-      <a class="season-card" href="nfl-2025.html">
-        <div class="season-year">2025-26</div>
-        <div class="season-tag">Baseline &middot; v1.0</div>
-        <h3>The CS486 experiment</h3>
-        <p>15 games, 86 bets, 13 prompts across Weeks 9 and 11 of the 2025 NFL season. Now shown with two rounds of independent corrections (11 bets re-graded after ESPN box-score verification) that flipped the original headline: no model finished the sample profitable.</p>
-        <div class="season-cta">View 2025 baseline &rarr;</div>
+    <div class="bento">
+      <a class="bento-card wide dark" href="methodology.html#reset">
+        <span class="bc-tag">Reset</span>
+        <h3>Yesterday's picks retired before kickoff</h3>
+        <p>The 2026 Week 1 lockup on Sep 8 did not honor the blind-test intent. New prompt system published today, three lanes, strength-honoring, fair-comparison baseline preserved.</p>
+        <div class="bc-meta"><span class="rule"></span>Sep 9 &middot; iteration</div>
       </a>
-      <a class="season-card" href="nfl-2026.html">
-        <div class="season-year">2026-27</div>
-        <div class="season-tag">Live &middot; v2.0</div>
-        <h3>The full season</h3>
-        <p>Every game, every week, every model, locked before kickoff. Same three models, upgraded prompt methodology, ESPN-verified grading, per-week tabs so results build across the season instead of being reconstructed after the fact.</p>
-        <div class="season-cta">View 2026 predictions &rarr;</div>
+      <a class="bento-card" href="methodology.html#rubric">
+        <span class="bc-tag">Grading</span>
+        <h3>Reasoning graded separate from outcome</h3>
+        <p>A model can pick wrong and still grade well if it named a real factor. A model can pick right on a vibe and grade low.</p>
+        <div class="bc-meta"><span class="rule"></span>rubric &middot; live</div>
+      </a>
+      <a class="bento-card" href="methodology.html#iteration">
+        <span class="bc-tag">Iteration</span>
+        <h3>Every prompt change logged</h3>
+        <p>Templates carry a version. Migrations preserve old records. Nothing gets silently overwritten.</p>
+        <div class="bc-meta"><span class="rule"></span>system &middot; live</div>
+      </a>
+      <a class="bento-card" href="nfl-2025.html">
+        <span class="bc-tag">Season 1</span>
+        <h3>The 2025 baseline, warts and all</h3>
+        <p>15 games, 86 bets, 11 corrected props. Kept public because the corrections story is the point.</p>
+        <div class="bc-meta"><span class="rule"></span>archive &middot; 2025</div>
+      </a>
+      <a class="bento-card" href="about.html">
+        <span class="bc-tag">About</span>
+        <h3>Independent project, no affiliation</h3>
+        <p>Not affiliated with the NFL or any model provider. Not financial advice. Study and portfolio purposes.</p>
+        <div class="bc-meta"><span class="rule"></span>about</div>
       </a>
     </div>
   </div>
 </section>
+
+<section class="band band-paper" style="padding-top: 40px; padding-bottom: 40px;">
+  <div class="wrap">
+    <div style="display: flex; gap: 20px; align-items: center; justify-content: space-between; flex-wrap: wrap; padding: 24px; border: 1px solid var(--line);">
+      <div>
+        <div style="font-family: var(--f-display); font-weight: 800; text-transform: uppercase; font-size: 22px; letter-spacing: 0.3px;">Multi-year study</div>
+        <p style="color: var(--gunmetal); font-size: 14px; max-width: 60ch; margin-top: 4px;">Season 2 begins the encyclopedia. Each future year captures a fresh generation of models against the same rules, so this site grows into a record of how AI research assistants evolve.</p>
+      </div>
+      <div style="display: flex; gap: 10px;">
+        <a class="btn btn-outline-ink" href="nfl-2025.html">Season 1 &middot; 2025</a>
+        <a class="btn btn-dark" href="nfl-2026.html">Season 2 &middot; 2026</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
 
 <footer class="site-footer">
-  <div class="wrap foot-row">
-    <span>Carlos Crespo &middot; University of San Francisco</span>
-    <span>Data verified vs. ESPN box scores</span>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <div class="fb-name">AI Analyzer &middot; NFL</div>
+        <p>A season-long, publicly auditable test of whether large language models can hold their own against the NFL betting market. Independent research project. No affiliation with the NFL or any model provider.</p>
+      </div>
+      <div class="foot-col">
+        <h4>Season 2 &middot; 2026</h4>
+        <a href="nfl-2026.html">Season Hub</a>
+        <a href="schedule.html">Schedule</a>
+        <a href="models.html">Models</a>
+        <a href="bet-database.html">Results</a>
+      </div>
+      <div class="foot-col">
+        <h4>System</h4>
+        <a href="methodology.html">Methodology</a>
+        <a href="methodology.html#rubric">Grading Rubric</a>
+        <a href="methodology.html#iteration">Iteration Log</a>
+      </div>
+      <div class="foot-col">
+        <h4>About</h4>
+        <a href="about.html">About</a>
+        <a href="nfl-2025.html">Season 1 Archive</a>
+        <a href="https://github.com/Crespo1301/AI_Analyzer_Crespo" rel="noopener">GitHub</a>
+      </div>
+    </div>
+    <div class="foot-legal">
+      <span class="disclaimer">This site publishes AI-generated betting research for study and portfolio purposes. Not financial advice. No gambling operator affiliation. Team abbreviations and colors are used editorially. ESPN team logos are hotlinked to their public CDN and are used to identify teams, not to imply endorsement.</span>
+      <span>&copy; 2026 Carlos Crespo</span>
+    </div>
   </div>
 </footer>
 
+<script src="assets/nfl-data.js"></script>
+<script src="assets/nfl-predictions-2026.js"></script>
+<script src="assets/site.js"></script>
+<script>
+  nflRenderMatchupStrip("strip-mount");
+</script>
 </body>
 </html>

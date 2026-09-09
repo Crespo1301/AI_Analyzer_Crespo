@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <pattern id="grid" width="80" height="80" patternUnits="userSpaceOnUse">
+      <path d="M 80 0 L 0 0 0 80" fill="none" stroke="#ffffff" stroke-width="0.5" opacity="0.15"/>
+    </pattern>
+    <pattern id="fieldLines" width="1600" height="180" patternUnits="userSpaceOnUse">
+      <line x1="0" y1="0" x2="1600" y2="0" stroke="#ffffff" stroke-width="1" opacity="0.18"/>
+      <text x="60" y="24" font-family="Arial Black, sans-serif" font-size="14" fill="#ffffff" opacity="0.28" letter-spacing="2">10</text>
+      <text x="1540" y="24" font-family="Arial Black, sans-serif" font-size="14" fill="#ffffff" opacity="0.28" letter-spacing="2" text-anchor="end">10</text>
+      <text x="60" y="104" font-family="Arial Black, sans-serif" font-size="14" fill="#ffffff" opacity="0.28" letter-spacing="2">50</text>
+      <text x="1540" y="104" font-family="Arial Black, sans-serif" font-size="14" fill="#ffffff" opacity="0.28" letter-spacing="2" text-anchor="end">50</text>
+    </pattern>
+  </defs>
+  <rect width="1600" height="900" fill="#0a0a0a"/>
+  <rect width="1600" height="900" fill="url(#grid)"/>
+  <rect y="180" width="1600" height="180" fill="url(#fieldLines)"/>
+  <rect y="540" width="1600" height="180" fill="url(#fieldLines)"/>
+
+  <g opacity="0.35">
+    <path d="M 220 450 L 320 450 L 320 470 L 220 470 Z" fill="#d50a0a"/>
+    <text x="270" y="510" font-family="Arial Black, sans-serif" font-size="42" fill="#d50a0a" text-anchor="middle" letter-spacing="4">01</text>
+  </g>
+  <g opacity="0.28">
+    <text x="900" y="820" font-family="Arial Black, sans-serif" font-size="220" fill="#ffffff" text-anchor="middle" letter-spacing="-6" opacity="0.14">WEEK</text>
+  </g>
+</svg>

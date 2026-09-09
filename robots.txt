@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://crespo1301.github.io/AI_Analyzer_Crespo/sitemap.xml

@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Methodology &middot; AI Analyzer</title>
+<meta name="description" content="How the AI Analyzer study works. Prompt lanes, grading rubric, iteration system, corrections history, honest limitations.">
+<meta property="og:title" content="Methodology &middot; AI Analyzer">
+<meta property="og:description" content="Prompt lanes, grading rubric, iteration system, corrections history.">
+<meta property="og:image" content="assets/og-default.svg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
+
+<nav class="site-nav" aria-label="Site">
+  <div class="nav-primary">
+    <a class="nav-brand" href="index.html"><span class="brand-mark">AI</span>Analyzer<span class="brand-sub">NFL</span></a>
+    <ul class="nav-links">
+      <li><a href="nfl-2026.html">Week</a></li>
+      <li><a href="schedule.html">Schedule</a></li>
+      <li><a href="models.html">Models</a></li>
+      <li><a href="bet-database.html">Results</a></li>
+      <li><a href="methodology.html" class="active">Methodology</a></li>
+    </ul>
+    <div class="nav-spacer"></div>
+    <a class="nav-search" href="bet-database.html" aria-label="Search results database">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+    </a>
+  </div>
+  <div class="nav-secondary">
+    <a href="about.html">About</a><span class="dot">&middot;</span>
+    <a href="nfl-2025.html">Season 1 Archive</a><span class="dot">&middot;</span>
+    <a href="methodology.html">Grading rubric</a>
+    <span class="status"><span class="pulse"></span> Season 2 Live</span>
+  </div>
+</nav>
+
+<main id="main">
+
+<header class="page-head">
+  <div class="wrap">
+    <div class="ph-kicker">Methodology</div>
+    <h1>How this whole thing works.</h1>
+    <p class="ph-sub">The point of the AI Analyzer is not "which AI is best." The point is a public, auditable record of how these models actually reason about NFL games when we honor their real strengths and grade them the same way every week. This page is the working manual.</p>
+  </div>
+</header>
+
+<section class="band band-paper" style="padding-top: 32px;">
+  <div class="wrap">
+    <h2 class="section-title">The rules, every week</h2>
+    <div class="how-grid">
+      <div class="how-tile"><div class="how-num">01</div><h3>Same protocol</h3><p>Every model sees the same matchup slate. Prompts are versioned. Prompt changes get logged before they ship, never after.</p></div>
+      <div class="how-tile"><div class="how-num">02</div><h3>$20 bankroll</h3><p>Each model decides its own allocation. Reserve is a valid answer. Sizing is graded, not just picks.</p></div>
+      <div class="how-tile"><div class="how-num">03</div><h3>Locked pre-kickoff</h3><p>Raw responses saved verbatim under Docs/Responses/. Picks pushed to the repo before the game starts.</p></div>
+      <div class="how-tile"><div class="how-num">04</div><h3>ESPN grading</h3><p>Every bet is checked against the actual ESPN box score. Props audit against a real stat line.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="reset" class="band band-bone">
+  <div class="wrap">
+    <div class="band-head">
+      <div>
+        <div class="b-kicker">2026-09-09</div>
+        <div class="b-title">Season 2 <span class="accent">reset</span></div>
+      </div>
+    </div>
+    <p style="color: var(--gunmetal); font-size: 15px; max-width: 65ch;">The first Week 1 lockup on 2026-09-08 was retired before kickoff. The original 2026 prompt gave every model an identical, filled-in briefing with no repo access, no self-reflection block, and no lane for the models with local filesystem access to actually use it. That is not the study we want to run. The new prompt system:</p>
+    <ul style="color: var(--gunmetal); font-size: 15px; padding-left: 20px; margin-top: 12px;">
+      <li>Every model gets repository access via whatever mechanism it supports. Local filesystem for Claude and Codex, raw GitHub URL fetch for Gemini.</li>
+      <li>Every model reviews its own past picks in NFL_BETS and any prior NFL_PREDICTIONS_2026 weeks, notes patterns, and adjusts.</li>
+      <li>Every model does open-web research on the specific matchup and cites every source.</li>
+      <li>A shared baseline lane runs the same locked question against all models with no repo access, so we can measure how much lift the repo-access and reflection actually produce.</li>
+    </ul>
+    <p style="color: var(--gunmetal); font-size: 15px; margin-top: 12px;">Prompt templates live in <code>Prompts/2026/templates/</code> in the repository.</p>
+  </div>
+</section>
+
+<section id="rubric" class="band band-paper">
+  <div class="wrap">
+    <h2 class="section-title">Grading rubric</h2>
+    <div class="factors">
+      <div class="factor-row">
+        <div class="fr-label">Pick outcome</div>
+        <div class="fr-body">Win, Loss, Push, or Not-Applicable, checked against the ESPN box score.<div class="fr-source">Source: `assets/nfl-data.js` NFL_BETS + NFL_CORRECTIONS</div></div>
+      </div>
+      <div class="factor-row">
+        <div class="fr-label">Reasoning grade</div>
+        <div class="fr-body">Scored separately from outcome. A wrong pick that named a real factor grades higher than a right pick on a vibe.<div class="fr-source">Source: `Docs/2026/grading-rubric.md`</div></div>
+      </div>
+      <div class="factor-row">
+        <div class="fr-label">Sizing quality</div>
+        <div class="fr-body">Did the model size to its actual edge, or overbet on a vibe? Reserve is a valid, graded answer.</div>
+      </div>
+      <div class="factor-row">
+        <div class="fr-label">Source honesty</div>
+        <div class="fr-body">Every cited factor must be traceable to a source the model actually read or fetched. No fabricated citations.</div>
+      </div>
+      <div class="factor-row">
+        <div class="fr-label">Self-reflection</div>
+        <div class="fr-body">Did the model actually reflect on its own past picks and adjust, or paste boilerplate?</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="iteration" class="band band-bone">
+  <div class="wrap">
+    <h2 class="section-title">Iteration system</h2>
+    <div class="factors">
+      <div class="factor-row">
+        <div class="fr-label">Prompt versioning</div>
+        <div class="fr-body">Every prompt template carries a version string. Every response records the version it answered under.</div>
+      </div>
+      <div class="factor-row">
+        <div class="fr-label">Change log</div>
+        <div class="fr-body">Every template change is logged with the reason and the effective week. Old versions stay readable in git history.<div class="fr-source">Source: `Docs/2026/iteration-system.md`</div></div>
+      </div>
+      <div class="factor-row">
+        <div class="fr-label">Migrations</div>
+        <div class="fr-body">Grading changes never silently rewrite past grades. Old grade + new grade both stay in the record.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band band-paper">
+  <div class="wrap">
+    <h2 class="section-title">Data workflow</h2>
+    <div class="factors">
+      <div class="factor-row"><div class="fr-label">1. Intake</div><div class="fr-body">Weekly schedule + injury + weather + line-snapshot filed to `Data/2026/intake/week-NN.json`. Cited sources only.</div></div>
+      <div class="factor-row"><div class="fr-label">2. Prompt</div><div class="fr-body">Model receives its lane's template with the matchup filled in. Repo access assumed.</div></div>
+      <div class="factor-row"><div class="fr-label">3. Response saved</div><div class="fr-body">Raw model response committed under `Docs/Responses/2026/week-NN/game-NN-slug/`.</div></div>
+      <div class="factor-row"><div class="fr-label">4. Bets extracted</div><div class="fr-body">Structured picks moved into `NFL_PREDICTIONS_2026` before kickoff.</div></div>
+      <div class="factor-row"><div class="fr-label">5. Kickoff</div><div class="fr-body">Predictions freeze. No post-kickoff edits without a marked correction.</div></div>
+      <div class="factor-row"><div class="fr-label">6. Grading</div><div class="fr-body">Post-final: outcomes graded from ESPN box score. Reasoning graded from rubric. Bets promoted to `NFL_BETS`, game promoted to `NFL_GAMES`.</div></div>
+      <div class="factor-row"><div class="fr-label">7. Debrief</div><div class="fr-body">Weekly summary in `Docs/2026/` notes what changed, what surprised, and what to iterate.</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="band band-bone">
+  <div class="wrap">
+    <h2 class="section-title">Limitations we own</h2>
+    <div class="disclaimer-box">
+      <p><strong>Small sample.</strong> Even a full 18-week regular season is a small sample against sportsbook lines. Do not read Season 2's final ROI as proof any model is a real edge.</p>
+      <p style="margin-top: 10px;"><strong>No live in-game data.</strong> The site does not carry a live scoreboard feed. Games mid-play show LOCKED. Only post-final results carry a FINAL badge.</p>
+      <p style="margin-top: 10px;"><strong>Not tout output.</strong> The picks are a study of model reasoning, not betting advice. Do not stake real money on them without doing your own homework.</p>
+      <p style="margin-top: 10px;"><strong>Public web dependence.</strong> When a model cites open-web sources, we trust the model to cite honestly. If a cited URL rots or returns content different from what was cited, the grade for that reasoning may fall.</p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand"><div class="fb-name">AI Analyzer &middot; NFL</div><p>Independent NFL model-comparison study.</p></div>
+      <div class="foot-col"><h4>Season 2 &middot; 2026</h4><a href="nfl-2026.html">Season Hub</a><a href="schedule.html">Schedule</a><a href="models.html">Models</a><a href="bet-database.html">Results</a></div>
+      <div class="foot-col"><h4>System</h4><a href="methodology.html">Methodology</a><a href="methodology.html#rubric">Grading Rubric</a><a href="methodology.html#iteration">Iteration Log</a></div>
+      <div class="foot-col"><h4>About</h4><a href="about.html">About</a><a href="nfl-2025.html">Season 1 Archive</a><a href="https://github.com/Crespo1301/AI_Analyzer_Crespo" rel="noopener">GitHub</a></div>
+    </div>
+    <div class="foot-legal"><span class="disclaimer">Not financial advice.</span><span>&copy; 2026 Carlos Crespo</span></div>
+  </div>
+</footer>
+
+</body>
+</html>

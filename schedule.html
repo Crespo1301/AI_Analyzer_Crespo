@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Schedule &middot; AI Analyzer</title>
+<meta name="description" content="18-week regular season schedule for the 2026-27 NFL. Current week highlighted, past weeks graded, future weeks pending.">
+<meta property="og:title" content="Schedule &middot; AI Analyzer">
+<meta property="og:description" content="18-week NFL schedule with per-week grading status.">
+<meta property="og:image" content="assets/og-default.svg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
+
+<nav class="site-nav" aria-label="Site">
+  <div class="nav-primary">
+    <a class="nav-brand" href="index.html"><span class="brand-mark">AI</span>Analyzer<span class="brand-sub">NFL</span></a>
+    <ul class="nav-links">
+      <li><a href="nfl-2026.html">Week</a></li>
+      <li><a href="schedule.html" class="active">Schedule</a></li>
+      <li><a href="models.html">Models</a></li>
+      <li><a href="bet-database.html">Results</a></li>
+      <li><a href="methodology.html">Methodology</a></li>
+    </ul>
+    <div class="nav-spacer"></div>
+    <a class="nav-search" href="bet-database.html" aria-label="Search results database">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+    </a>
+  </div>
+  <div class="nav-secondary">
+    <a href="about.html">About</a><span class="dot">&middot;</span>
+    <a href="nfl-2025.html">Season 1 Archive</a><span class="dot">&middot;</span>
+    <a href="methodology.html">Grading rubric</a>
+    <span class="status"><span class="pulse"></span> Season 2 Live</span>
+  </div>
+</nav>
+
+<main id="main">
+
+<header class="page-head">
+  <div class="wrap">
+    <div class="ph-kicker">Schedule</div>
+    <h1>Every week of Season 2.</h1>
+    <p class="ph-sub">Pick a week to jump to its matchups. Past weeks show graded results. The current week is highlighted. Future weeks show a pending state until picks lock. Nothing is fabricated in advance.</p>
+  </div>
+</header>
+
+<section class="band band-paper" style="padding-top: 32px;">
+  <div class="wrap">
+    <div class="week-select" id="week-select"></div>
+  </div>
+</section>
+
+<section class="band band-bone">
+  <div class="wrap">
+    <div class="band-head">
+      <div>
+        <div class="b-kicker" id="week-label">Week 1</div>
+        <div class="b-title">Week <span class="accent" id="week-num">1</span> matchups</div>
+      </div>
+      <a class="b-more" href="nfl-2026.html">Season hub &rarr;</a>
+    </div>
+    <div class="mgrid" id="week-grid"></div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand"><div class="fb-name">AI Analyzer &middot; NFL</div><p>Independent NFL model-comparison study. No NFL affiliation.</p></div>
+      <div class="foot-col"><h4>Season 2 &middot; 2026</h4><a href="nfl-2026.html">Season Hub</a><a href="schedule.html">Schedule</a><a href="models.html">Models</a><a href="bet-database.html">Results</a></div>
+      <div class="foot-col"><h4>System</h4><a href="methodology.html">Methodology</a><a href="methodology.html#rubric">Grading Rubric</a><a href="methodology.html#iteration">Iteration Log</a></div>
+      <div class="foot-col"><h4>About</h4><a href="about.html">About</a><a href="nfl-2025.html">Season 1 Archive</a><a href="https://github.com/Crespo1301/AI_Analyzer_Crespo" rel="noopener">GitHub</a></div>
+    </div>
+    <div class="foot-legal"><span class="disclaimer">Not financial advice.</span><span>&copy; 2026 Carlos Crespo</span></div>
+  </div>
+</footer>
+
+<script src="assets/nfl-data.js"></script>
+<script src="assets/nfl-predictions-2026.js"></script>
+<script src="assets/site.js"></script>
+<script>
+  var qs = new URLSearchParams(window.location.search);
+  var wk = parseInt(qs.get("week") || nflCurrentWeek(), 10);
+  if (wk < 1 || wk > 18) wk = 1;
+  document.getElementById("week-label").textContent = "Week " + wk;
+  document.getElementById("week-num").textContent = wk;
+  nflRenderWeekSelect("week-select", { current: wk, baseHref: "schedule.html" });
+  nflRenderMatchupGrid("week-grid", { week: wk });
+</script>
+</body>
+</html>

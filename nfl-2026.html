@@ -3,55 +3,154 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>2026 NFL Season &middot; AI Analyzer</title>
+<title>Season 2 &middot; 2026-27 NFL &middot; AI Analyzer</title>
+<meta name="description" content="Season 2 hub. Weekly ChatGPT, Claude, Codex, and Gemini predictions locked before kickoff and graded against the ESPN box score. Model lineup, current-week matchups, and reasoning grades.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Season 2 &middot; 2026-27 NFL &middot; AI Analyzer">
+<meta property="og:description" content="Season 2 hub. Weekly model predictions, locked before kickoff, graded against ESPN.">
+<meta property="og:image" content="assets/og-default.svg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
 <link rel="stylesheet" href="assets/styles.css">
 </head>
 <body>
-<nav class="site-nav">
-  <div class="nav-row">
-    <a class="nav-brand" href="index.html"><span class="chip">AI</span> Analyzer</a>
+<a class="skip-link" href="#main">Skip to main content</a>
+
+<nav class="site-nav" aria-label="Site">
+  <div class="nav-primary">
+    <a class="nav-brand" href="index.html"><span class="brand-mark">AI</span>Analyzer<span class="brand-sub">NFL</span></a>
     <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="nfl.html">NFL</a></li>
-      <li><a href="nfl-2025.html">2025 Season</a></li>
-      <li><a href="nfl-2026.html" class="active">2026 Season</a></li>
-      <li><a href="bet-database.html">Bet Database</a></li>
+      <li><a href="nfl-2026.html" class="active">Week</a></li>
+      <li><a href="schedule.html">Schedule</a></li>
+      <li><a href="models.html">Models</a></li>
+      <li><a href="bet-database.html">Results</a></li>
+      <li><a href="methodology.html">Methodology</a></li>
     </ul>
+    <div class="nav-spacer"></div>
+    <a class="nav-search" href="bet-database.html" aria-label="Search results database">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+    </a>
+  </div>
+  <div class="nav-secondary">
+    <a href="about.html">About</a><span class="dot">&middot;</span>
+    <a href="nfl-2025.html">Season 1 Archive</a><span class="dot">&middot;</span>
+    <a href="methodology.html">Grading rubric</a>
+    <span class="status"><span class="pulse"></span> Season 2 Live</span>
   </div>
 </nav>
 
-<header class="hero">
+<section class="season-banner">
   <div class="wrap">
-    <span class="eyebrow">2026-27 Regular Season &middot; v2.0</span>
-    <h1>Live NFL model predictions</h1>
-    <p class="lede">Every game, every week, every model. Locked pre-kickoff, graded post-final against the ESPN box score. Each model gets a $20 bankroll per game and decides its own allocation across straight bets, parlays, SGPs, and reserve.</p>
+    <span class="sb-badge">Season 2 &middot; 2026</span>
+    <span class="sb-text"><strong>Live tracking begins Week 1.</strong> Fresh prompt system, three lanes, blind test intent preserved. Yesterday's dud lockup was retired before kickoff.</span>
+  </div>
+</section>
+
+<section class="matchup-strip" aria-label="Current week matchups">
+  <div id="strip-mount"></div>
+</section>
+
+<main id="main">
+
+<header class="editorial-hero">
+  <div class="hero-canvas" aria-hidden="true"><img src="assets/hero-canvas.svg" alt=""></div>
+  <div class="wrap">
+    <span class="hero-tag" id="hero-week-tag">Week 1 &middot; Kickoff Night</span>
+    <h1 class="hero-headline">Same rules,<br>same $20,<br>fresh prompts.</h1>
+    <p class="hero-sub">Season 2 opens with a rebuilt prompt system that gives every model repo access, whichever way that model can reach it. Claude and Codex read the local filesystem. Gemini reads the same repo through GitHub's raw URLs. All three review their own past picks, run open-web research, and cite every source. Picks land before kickoff and get graded against the ESPN box score.</p>
+    <div class="hero-cta-row">
+      <a class="btn btn-primary" href="#matchups">See Week 1 matchups</a>
+      <a class="btn btn-ghost" href="methodology.html">Read the methodology</a>
+    </div>
   </div>
 </header>
 
-<section class="section">
+<section class="band band-paper">
   <div class="wrap">
-    <div class="section-head">
-      <h2>Season Status</h2>
+    <div class="band-head">
+      <div>
+        <div class="b-kicker">Weeks</div>
+        <div class="b-title">Regular <span class="accent">season</span></div>
+      </div>
+      <a class="b-more" href="schedule.html">Full schedule &rarr;</a>
     </div>
-    <div class="stat-row" id="season-stats"></div>
+    <div class="week-select" id="week-select"></div>
   </div>
 </section>
 
-<section class="section alt">
+<section id="matchups" class="band band-bone">
   <div class="wrap">
-    <div class="section-head">
-      <h2>Weekly Picks</h2>
-      <p>Pick a week. Weeks show predictions once locked and results once graded.</p>
+    <div class="band-head">
+      <div>
+        <div class="b-kicker">Week 1</div>
+        <div class="b-title">This week's <span class="accent">slate</span></div>
+      </div>
     </div>
-    <div class="week-tabs" id="week-tabs"></div>
-    <div id="predictions-mount"></div>
+    <div class="mgrid" id="matchup-grid"></div>
   </div>
 </section>
+
+<section class="band band-ink">
+  <div class="wrap">
+    <div class="band-head" style="color: var(--paper); border-bottom-color: rgba(255,255,255,0.25)">
+      <div>
+        <div class="b-kicker">Season snapshot</div>
+        <div class="b-title">Where <span class="accent">we stand</span></div>
+      </div>
+      <a class="b-more" href="models.html">Model page &rarr;</a>
+    </div>
+    <div class="stat-row" id="season-stats">
+      <div class="stat-tile"><div class="st-label">Games Predicted</div><div class="st-value tabular">0</div><div class="st-sub">Season 2 begins</div></div>
+      <div class="stat-tile"><div class="st-label">Bets Locked</div><div class="st-value tabular">0</div><div class="st-sub">Fresh prompt system live</div></div>
+      <div class="stat-tile"><div class="st-label">Reasoning Grades</div><div class="st-value tabular">&mdash;</div><div class="st-sub">First grades after Week 1</div></div>
+      <div class="stat-tile"><div class="st-label">Combined ROI</div><div class="st-value tabular">&mdash;</div><div class="st-sub">Post-grading</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="band band-paper">
+  <div class="wrap">
+    <div class="band-head">
+      <div>
+        <div class="b-kicker">Feed</div>
+        <div class="b-title">Methodology <span class="accent">updates</span></div>
+      </div>
+      <a class="b-more" href="methodology.html">All updates &rarr;</a>
+    </div>
+    <div class="bento">
+      <a class="bento-card wide" href="methodology.html#reset">
+        <span class="bc-tag">2026-09-09</span>
+        <h3>Prompt system reset for Season 2</h3>
+        <p>Three lanes now. Claude and Codex get local repo access. Gemini gets pointed at raw GitHub URLs. Every model does open-web research and cites every source. Fair-comparison baseline preserved.</p>
+        <div class="bc-meta"><span class="rule"></span>Iteration</div>
+      </a>
+      <a class="bento-card" href="methodology.html#rubric">
+        <span class="bc-tag">Rubric</span>
+        <h3>Reason grades separate from outcome</h3>
+        <p>A right pick on a vibe scores low. A wrong pick that named a real factor scores high.</p>
+        <div class="bc-meta"><span class="rule"></span>Grading</div>
+      </a>
+      <a class="bento-card" href="nfl-2025.html">
+        <span class="bc-tag">Season 1</span>
+        <h3>2025 baseline stays public</h3>
+        <p>15 games, 86 bets, 11 corrections. The corrections are the point.</p>
+        <div class="bc-meta"><span class="rule"></span>Archive</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+</main>
 
 <footer class="site-footer">
-  <div class="wrap foot-row">
-    <span>Carlos Crespo &middot; University of San Francisco</span>
-    <span>Data verified vs. ESPN box scores</span>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand"><div class="fb-name">AI Analyzer &middot; NFL</div><p>Independent NFL model-comparison study. No NFL affiliation, no model-provider affiliation. Study and portfolio purposes.</p></div>
+      <div class="foot-col"><h4>Season 2 &middot; 2026</h4><a href="nfl-2026.html">Season Hub</a><a href="schedule.html">Schedule</a><a href="models.html">Models</a><a href="bet-database.html">Results</a></div>
+      <div class="foot-col"><h4>System</h4><a href="methodology.html">Methodology</a><a href="methodology.html#rubric">Grading Rubric</a><a href="methodology.html#iteration">Iteration Log</a></div>
+      <div class="foot-col"><h4>About</h4><a href="about.html">About</a><a href="nfl-2025.html">Season 1 Archive</a><a href="https://github.com/Crespo1301/AI_Analyzer_Crespo" rel="noopener">GitHub</a></div>
+    </div>
+    <div class="foot-legal"><span class="disclaimer">Not financial advice. No gambling operator affiliation. Team abbreviations and colors are used editorially.</span><span>&copy; 2026 Carlos Crespo</span></div>
   </div>
 </footer>
 
@@ -59,55 +158,11 @@
 <script src="assets/nfl-predictions-2026.js"></script>
 <script src="assets/site.js"></script>
 <script>
-  (function () {
-    var weeksWithData = {};
-    NFL_PREDICTIONS_2026.forEach(function (g) { weeksWithData[g.week] = true; });
-
-    var totalExposure = 0, totalReserve = 0, totalBets = 0;
-    NFL_PREDICTIONS_2026.forEach(function (g) {
-      NFL_MODELS.forEach(function (m) {
-        var mp = g.models[m];
-        if (!mp) return;
-        totalExposure += mp.total_stake;
-        totalReserve += mp.reserve;
-        totalBets += mp.bets.length;
-      });
-    });
-    document.getElementById('season-stats').innerHTML =
-        '<div class="stat-tile"><div class="label">Games Predicted</div><div class="value">' + NFL_PREDICTIONS_2026.length + '</div></div>'
-      + '<div class="stat-tile"><div class="label">Total Bets Locked</div><div class="value">' + totalBets + '</div></div>'
-      + '<div class="stat-tile"><div class="label">Combined Exposure</div><div class="value">$' + totalExposure.toFixed(0) + '</div></div>'
-      + '<div class="stat-tile"><div class="label">Combined Reserve</div><div class="value">$' + totalReserve.toFixed(0) + '</div></div>';
-
-    var currentWeek = Math.max.apply(null, Object.keys(weeksWithData).map(function (k) { return parseInt(k, 10); }));
-    if (!isFinite(currentWeek) || currentWeek < 1) currentWeek = 1;
-
-    var tabsHost = document.getElementById('week-tabs');
-    var tabsHtml = '';
-    for (var w = 1; w <= 18; w++) {
-      var hasData = !!weeksWithData[w];
-      var activeCls = w === currentWeek ? ' active' : '';
-      var dataCls = hasData ? ' has-data' : ' no-data';
-      tabsHtml += '<button class="week-tab' + activeCls + dataCls + '" data-week="' + w + '">'
-        + '<span class="week-tab-num">' + w + '</span>'
-        + (hasData ? '<span class="week-tab-dot" title="Predictions locked"></span>' : '')
-        + '</button>';
-    }
-    tabsHost.innerHTML = tabsHtml;
-
-    function render(week) {
-      nflRenderPredictions2026('predictions-mount', week);
-    }
-    render(currentWeek);
-
-    tabsHost.addEventListener('click', function (e) {
-      var btn = e.target.closest('.week-tab');
-      if (!btn) return;
-      tabsHost.querySelectorAll('.week-tab').forEach(function (t) { t.classList.remove('active'); });
-      btn.classList.add('active');
-      render(parseInt(btn.getAttribute('data-week'), 10));
-    });
-  })();
+  nflRenderMatchupStrip("strip-mount");
+  nflRenderWeekSelect("week-select", { baseHref: "schedule.html" });
+  nflRenderMatchupGrid("matchup-grid");
+  var wk = nflCurrentWeek();
+  document.getElementById("hero-week-tag").textContent = "Week " + wk + " · Kickoff Week";
 </script>
 </body>
 </html>
