@@ -20,7 +20,41 @@
  * Source responses live in Docs/Responses/2026/week-XX/game-YY-<slug>/
  */
 
-var NFL_PREDICTIONS_2026 = [];
+var NFL_PREDICTIONS_2026 = [
+  {
+    week: 1,
+    gameId: "patriots-seahawks",
+    label: "Patriots at Seahawks",
+    away: "New England Patriots",
+    home: "Seattle Seahawks",
+    kickoff: "2026-09-09T20:20:00-04:00",
+    kickoffDisplay: "Wed Sep 9, 8:20 PM ET",
+    venue: "Lumen Field, Seattle, WA",
+    network: "NBC",
+    line_snapshot: {
+      spread: "SEA -3.5",
+      total: 44.5,
+      moneyline: "SEA -180 / NE +150",
+      source: "DraftKings via Gemini research, captured 2026-09-09"
+    },
+    espn: "https://www.espn.com/nfl/boxscore/_/gameId/401872656",
+    responseFolder: "Docs/Responses/2026/week-01/game-01-patriots-seahawks/",
+    status: "locked",
+    locked_at: "2026-09-09",
+    prompt_template: "github-strength-gemini v1.0",
+    models: {
+      Gemini: {
+        version: "2.5 Flash",
+        total_stake: 12,
+        reserve: 8,
+        summary: "Key hook on NE +3.5. Thesis: Seattle safety depth compromised (Okada out, Emmanwori questionable) gives Drake Maye room to keep it within a field goal. Note: fabricated the sources_fetched_from_repo block, did not actually fetch the raw GitHub URLs, see prompt-corrections.md.",
+        bets: [
+          { type: "straight", market: "Spread", line: "NE +3.5 (-118)", stake: 12, confidence: 8, reason: "Seattle safety depth attrition versus Maye's downfield ability keeps NE inside the key hook" }
+        ]
+      }
+    }
+  }
+];
 
 function nflPredictions2026Summary() {
   return NFL_MODELS.map(function (model) {
