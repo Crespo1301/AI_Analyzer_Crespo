@@ -1,5 +1,13 @@
 # Changelog
 
+## v3.2.0 - 2026-09-10
+
+- Recorded Seattle's 13-10 final and Cooper Kupp's 2 receptions against ESPN's completed event.
+- Graded Claude 3/3 and Gemini 1/1; preserved ChatGPT's no-bet decision separately.
+- Added final results to matchup pages, current-season views and the filterable ledger.
+- Kept original predictions intact and missing payout prices explicitly unavailable.
+- Added source-linked reasoning review and settlement regression checks.
+
 ## v3.1.0 - 2026-09-09
 
 - Added team logos, color accents and text fallbacks to matchup views.

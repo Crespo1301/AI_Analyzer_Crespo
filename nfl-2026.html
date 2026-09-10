@@ -100,10 +100,10 @@
       <a class="b-more" href="models.html">Model page &rarr;</a>
     </div>
     <div class="stat-row" id="season-stats">
-      <div class="stat-tile"><div class="st-label">Games Predicted</div><div class="st-value tabular">0</div><div class="st-sub">Season 2 begins</div></div>
+      <div class="stat-tile"><div class="st-label">Games Predicted</div><div class="st-value tabular">0</div><div class="st-sub">Recorded model responses</div></div>
       <div class="stat-tile"><div class="st-label">Bets Locked</div><div class="st-value tabular">0</div><div class="st-sub">Fresh prompt system live</div></div>
-      <div class="stat-tile"><div class="st-label">Reasoning Grades</div><div class="st-value tabular">&mdash;</div><div class="st-sub">First grades after Week 1</div></div>
-      <div class="stat-tile"><div class="st-label">Combined ROI</div><div class="st-value tabular">&mdash;</div><div class="st-sub">Post-grading</div></div>
+      <div class="stat-tile"><div class="st-label">Picks Won / Graded</div><div class="st-value tabular" id="graded-count">0 / 0</div><div class="st-sub">Reasoning reviewed separately</div></div>
+      <div class="stat-tile"><div class="st-label">Combined ROI</div><div class="st-value tabular">N/A</div><div class="st-sub">Original Claude bet prices missing</div></div>
     </div>
   </div>
 </section>
@@ -169,6 +169,8 @@
   var stats = document.querySelectorAll("#season-stats .st-value");
   stats[0].textContent = NFL_PREDICTIONS_2026.length;
   stats[1].textContent = summary.reduce(function (total, model) { return total + model.totalBets; }, 0);
+  var graded = nflGradedBets2026();
+  document.getElementById("graded-count").textContent = graded.filter(function(b){ return b.outcome === "WIN"; }).length + " / " + graded.length;
 </script>
 </body>
 </html>

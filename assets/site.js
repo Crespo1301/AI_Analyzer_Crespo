@@ -73,14 +73,17 @@ function nflMatchupsForWeek(week) {
     .filter(function (g) { return g.week === week; })
     .map(function (g) {
       return {
-        source: "prediction",
+        source: g.result && g.result.status === "final" ? "graded" : "prediction",
+        awayScore: g.result && g.result.awayScore,
+        homeScore: g.result && g.result.homeScore,
+        date: g.kickoff.slice(0, 10),
         id: g.gameId,
         label: g.label,
         away: g.away, home: g.home,
         kickoff: g.kickoff, kickoffDisplay: g.kickoffDisplay,
         network: g.network,
         line: g.line_snapshot,
-        status: g.status || "locked",
+        status: g.result ? g.result.status : (g.status || "locked"),
         models: g.models,
         espn: g.espn
       };
@@ -260,7 +263,10 @@ function nflRenderWeekSelect(mountId, opts) {
   NFL_GAMES.filter(function (g) { return String(g.date).slice(0, 4) === "2026"; }).forEach(function (g) { gradedWeeks[g.week] = true; });
   var predictionWeeks = {};
   if (typeof NFL_PREDICTIONS_2026 !== "undefined") {
-    NFL_PREDICTIONS_2026.forEach(function (g) { predictionWeeks[g.week] = true; });
+    NFL_PREDICTIONS_2026.forEach(function (g) {
+      if (g.result && g.result.status === "final") gradedWeeks[g.week] = true;
+      else predictionWeeks[g.week] = true;
+    });
   }
   var html = [];
   for (var w = 1; w <= 18; w++) {
@@ -505,7 +511,7 @@ function nflRenderBetsTable(bets, mountId, opts) {
         + '<td data-label="Actual">' + (b.actual ? esc(b.actual) : '<span style="color:var(--muted)">n/a</span>') + '</td>'
         + '<td data-label="Stake" class="tabular">$' + b.stake.toFixed(2) + '</td>'
         + '<td data-label="Outcome">' + nflOutcomeCell(b) + '</td>'
-        + '<td data-label="P/L" class="pl-cell tabular ' + (b.pl > 0 ? "pos" : b.pl < 0 ? "neg" : "") + '">' + nflMoney(b.pl) + '</td>'
+        + '<td data-label="P/L" class="pl-cell tabular ' + (b.pl > 0 ? "pos" : b.pl < 0 ? "neg" : "") + '">' + (b.pl == null ? 'Unavailable: odds missing' : nflMoney(b.pl)) + '</td>'
         + '</tr>';
     }).join("")
     + '</tbody></table></div>';
@@ -628,7 +634,11 @@ function nflRefreshPredictionCounts() {
       if (/Bets locked/i.test(stat.textContent)) stat.querySelector(".n").textContent = summary.totalBets;
     });
     var note = card.querySelector(".lc-note");
-    if (note) note.textContent = summary.totalBets + " recorded picks. $" + summary.totalReserve + " held in reserve. Results pending review.";
+    if (note) {
+      var settled = NFL_PREDICTIONS_2026.flatMap(function (g) { return g.result ? (g.result.grades[summary.model] || []) : []; });
+      var wins = settled.filter(function (g) { return g.outcome === "WIN"; }).length;
+      note.textContent = summary.totalBets + " recorded picks. " + wins + " wins from " + settled.length + " graded bets. $" + summary.totalReserve + " reserved.";
+    }
   });
 }
 nflRefreshPredictionCounts();

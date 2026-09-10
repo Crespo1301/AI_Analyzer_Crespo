@@ -228,6 +228,17 @@ function pageHtml(game) {
 }
 
 function pendingPageHtml(pred) {
+  const result = pred.result;
+  const final = result && result.status === 'final';
+  const resultReview = final ? `<section class="band band-paper" id="final-results"><div class="wrap">
+    <div class="band-head"><div><div class="b-kicker">Verified final</div><h2 class="b-title">${esc(pred.home)} ${result.homeScore}, ${esc(pred.away)} ${result.awayScore}</h2></div></div>
+    <p>${result.awayScore + result.homeScore} total points. Cooper Kupp: ${result.kuppReceptions} receptions for ${result.kuppReceivingYards} yards on ${result.kuppTargets} targets.</p>
+    <p>${Object.entries(result.grades).map(([model, grades]) => esc(model) + ': ' + (grades.length ? grades.filter(g => g.outcome === 'WIN').length + ' wins from ' + grades.length + ' bets' : 'no bet, $' + pred.models[model].reserve + ' retained')).join('. ')}.</p>
+    <p>${esc(result.payoutNote)}</p>
+    <h3>Reasoning review</h3><p>${esc(result.reasoningNotes)}</p>
+    <p>${esc(result.reasoningStatus)}. One game does not establish consistent performance.</p>
+    <p><a href="${esc(result.source)}">ESPN final box score</a> / <a href="https://github.com/Crespo1301/AI_Analyzer_Crespo/blob/main/Docs/Responses/2026/week-01/game-01-patriots-seahawks/final-review.md">Source and grading notes</a>. Verified ${esc(result.verified_at)}.</p>
+  </div></section>` : '';
   const awayTeam = NFL_TEAMS[pred.away] || {};
   const homeTeam = NFL_TEAMS[pred.home] || {};
   const season = String(pred.kickoff || '').slice(0, 4) || '2026';
@@ -257,12 +268,14 @@ function pendingPageHtml(pred) {
       </article>`;
     }
     const betsHtml = mp.bets && mp.bets.length
-      ? mp.bets.map(b => {
+      ? mp.bets.map((b, index) => {
+          const grade = final && result.grades[m] && result.grades[m][index];
+          const outcome = grade ? `<div class="reason"><strong>${esc(grade.outcome)}</strong>: ${esc(grade.actual)}. ${grade.profit === null ? 'P/L unavailable: odds not recorded.' : 'Hypothetical P/L: ' + money(grade.profit)}</div>` : '';
           if (b.type === 'sgp' || b.type === 'parlay') {
             const legs = (b.legs || []).map(l => esc(l.line)).join(' + ');
             return `<div class="mpred-bet"><div class="line1"><span class="stake tabular">$${b.stake}</span><span class="market">${b.type === 'sgp' ? 'SGP' : 'Parlay'}</span><span class="conf">Conf ${b.confidence}/10</span></div><div class="desc">${legs}</div>${b.reason ? `<div class="reason">${esc(b.reason)}</div>` : ''}</div>`;
           }
-          return `<div class="mpred-bet"><div class="line1"><span class="stake tabular">$${b.stake}</span><span class="market">${esc(b.market)}</span><span class="conf">Conf ${b.confidence}/10</span></div><div class="desc">${esc(b.line)}</div>${b.reason ? `<div class="reason">${esc(b.reason)}</div>` : ''}</div>`;
+          return `<div class="mpred-bet"><div class="line1"><span class="stake tabular">$${b.stake}</span><span class="market">${esc(b.market)}</span><span class="conf">Conf ${b.confidence}/10</span></div><div class="desc">${esc(b.line)}</div>${outcome}${b.reason ? `<div class="reason">Original rationale: ${esc(b.reason)}</div>` : ''}</div>`;
         }).join('')
       : `<div class="mpred-bet none">No bets, full $${mp.reserve || 20} reserved.</div>`;
     return `<article class="mpred">
@@ -297,10 +310,10 @@ function pendingPageHtml(pred) {
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>${esc(pred.away)} at ${esc(pred.home)} &middot; Week ${pred.week} &middot; AI Analyzer</title>
-<meta name="description" content="Locked pre-kickoff AI model predictions for ${esc(pred.away)} at ${esc(pred.home)}, Week ${pred.week}, ${esc(kickoffDisplay)}. Same rules, $20 bankroll per model.">
+<meta name="description" content="${final ? 'Final results and graded model picks' : 'Recorded model predictions'} for ${esc(pred.away)} at ${esc(pred.home)}, Week ${pred.week}. $20 hypothetical budget per model.">
 <meta property="og:type" content="article">
-<meta property="og:title" content="${esc(pred.away)} at ${esc(pred.home)} &middot; Week ${pred.week} &middot; Locked">
-<meta property="og:description" content="Pre-kickoff AI model predictions locked before ${esc(kickoffDisplay)}.">
+<meta property="og:title" content="${esc(pred.away)} at ${esc(pred.home)} &middot; Week ${pred.week} &middot; ${final ? 'Final' : 'Recorded'}">
+<meta property="og:description" content="${final ? 'Final score and model pick outcomes with original reasoning preserved.' : 'Recorded predictions and model reasoning.'}">
 <meta property="og:image" content="../assets/og-default.svg">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
@@ -327,7 +340,7 @@ function pendingPageHtml(pred) {
   <div class="nav-secondary">
     <a href="${backHref}">&larr; ${seasonLabel}</a><span class="dot">&middot;</span>
     <a href="../methodology.html">Grading rubric</a>
-    <span class="status"><span class="pulse"></span> Locked pre-kickoff</span>
+    <span class="status">${final ? 'Final / outcomes verified' : 'Recorded predictions'}</span>
   </div>
 </nav>
 
@@ -344,8 +357,8 @@ function pendingPageHtml(pred) {
     <div class="team-meta"><span>${(awayTeam.division || '')}</span></div>
   </div>
   <div class="split-center">
-    <span class="badge locked">Locked</span>
-    <div class="kickoff">${esc(kickoffDisplay)}</div>
+    <span class="badge ${final ? 'final' : 'locked'}">${final ? 'Final' : 'Locked'}</span>
+    <div class="kickoff">${final ? esc(awayTeam.abbr || pred.away) + ' ' + result.awayScore + ' / ' + esc(homeTeam.abbr || pred.home) + ' ' + result.homeScore : esc(kickoffDisplay)}</div>
     ${network ? `<div class="network">${esc(network)}</div>` : ''}
     <div class="consensus">${esc(consensus)}</div>
   </div>
@@ -363,11 +376,12 @@ function pendingPageHtml(pred) {
 <section class="band band-paper" style="padding: 32px 0;">
   <div class="wrap">
     <div class="disclaimer-box">
-      <strong>Week ${pred.week} &middot; ${esc(kickoffDisplay)}.</strong> Model picks below were locked before kickoff and pushed to this repository at ${esc(pred.locked_at || '')}. Grading will run after the ESPN box score is available. Reasoning is graded separately from outcome. Prompt template: <code>${esc(pred.prompt_template || '')}</code>. ${responseLink}
+      <strong>Week ${pred.week} &middot; ${esc(kickoffDisplay)}.</strong> Original predictions are preserved below. Recorded date: ${esc(pred.locked_at || '')}; this field does not establish a precise lock time. Each raw response identifies its prompt and model. ${final ? 'Outcomes are verified; reasoning is reviewed separately.' : 'Results will be checked after the game.'} ${responseLink}
     </div>
   </div>
 </section>
 
+${resultReview}
 <section class="band band-bone">
   <div class="wrap">
     <div class="band-head">
@@ -396,7 +410,7 @@ function pendingPageHtml(pred) {
   </div>
 </section>
 
-<section class="band band-bone">
+${final ? '' : `<section class="band band-bone">
   <div class="wrap">
     <div class="band-head">
       <div>
@@ -413,7 +427,7 @@ function pendingPageHtml(pred) {
       <a class="btn btn-outline-ink" href="${esc(pred.espn || '#')}" rel="noopener">ESPN box score &rarr;</a>
     </div>
   </div>
-</section>
+</section>`}
 
 </main>
 
@@ -425,7 +439,7 @@ function pendingPageHtml(pred) {
       <div class="foot-col"><h4>System</h4><a href="../methodology.html">Methodology</a><a href="../methodology.html#rubric">Grading Rubric</a><a href="../methodology.html#iteration">Iteration Log</a></div>
       <div class="foot-col"><h4>About</h4><a href="../about.html">About</a><a href="../nfl-2025.html">Season 1 Archive</a><a href="https://github.com/Crespo1301/AI_Analyzer_Crespo" rel="noopener">GitHub</a></div>
     </div>
-    <div class="foot-legal"><span class="disclaimer">Locked pre-kickoff. Not financial advice.</span><span>&copy; 2026 Carlos Crespo</span></div>
+    <div class="foot-legal"><span class="disclaimer">Original predictions preserved. Not financial advice.</span><span>&copy; 2026 Carlos Crespo</span></div>
   </div>
 </footer>
 
@@ -445,6 +459,6 @@ if (typeof NFL_PREDICTIONS_2026 !== 'undefined') {
   NFL_PREDICTIONS_2026.forEach(pred => {
     const html = pendingPageHtml(pred);
     fs.writeFileSync(path.join(outDir, pred.gameId + '.html'), html);
-    console.log('wrote', pred.gameId + '.html (pending)');
+    console.log('wrote', pred.gameId + '.html (' + (pred.result ? 'graded' : 'pending') + ')');
   });
 }

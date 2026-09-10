@@ -1,14 +1,9 @@
 /*
  * AI Analyzer, 2026-27 NFL season. Pre-game model predictions.
  *
- * This file holds MODEL PREDICTIONS that have not been graded yet. Each entry
- * captures what ChatGPT, Claude, and Gemini said pre-kickoff, including the
- * timestamp so the record is auditable (picks existed before the game).
- *
- * Lifecycle: as soon as a game plays and gets graded, the game + bets get
- * promoted into NFL_GAMES / NFL_BETS in assets/nfl-data.js and removed from
- * (or marked "played" in) this file. This file stays a pre-game archive so
- * picks are not silently altered after outcomes are known.
+ * Preserve original model predictions and append verified settlement in result.
+ * Date-only lock records do not establish an exact pre-kickoff timestamp.
+ * Keep the 2025 historical arrays separate from this current-season archive.
  *
  * Reset note (2026-09-09): the initial Week 1 lockup on 2026-09-08 was
  * discarded before kickoff because the prompt methodology did not honor the
@@ -41,6 +36,31 @@ var NFL_PREDICTIONS_2026 = [
     responseFolder: "Docs/Responses/2026/week-01/game-01-patriots-seahawks/",
     status: "locked",
     locked_at: "2026-09-09",
+    result: {
+      status: "final",
+      verified_at: "2026-09-10",
+      awayScore: 10,
+      homeScore: 13,
+      kuppReceptions: 2,
+      kuppReceivingYards: 35,
+      kuppTargets: 3,
+      source: "https://www.espn.com/nfl/boxscore/_/gameId/401872656",
+      apiSource: "https://site.api.espn.com/apis/site/v2/sports/football/nfl/summary?event=401872656",
+      grades: {
+        Claude: [
+          { outcome: "WIN", actual: "23 total points", odds: null, profit: null },
+          { outcome: "WIN", actual: "New England lost by 3; +3.5 covers", odds: null, profit: null },
+          { outcome: "WIN", actual: "2 receptions", odds: null, profit: null }
+        ],
+        Gemini: [
+          { outcome: "WIN", actual: "New England lost by 3; +3.5 covers", odds: -118, profit: 10.17 }
+        ],
+        ChatGPT: []
+      },
+      reasoningStatus: "Review notes published; numerical reasoning scores not assigned",
+      reasoningNotes: "All four picks hit, but outcome alone does not validate the explanations. Darnold left with a hip injury, an in-game event absent from the pre-game theses. Claude's claim that this was Darnold's first Seattle start is incorrect. Gemini's secondary-depth explanation is not established by the final margin. ChatGPT's reserve is neither a winning nor losing bet.",
+      payoutNote: "Claude did not record individual bet prices, so its profit and combined ROI remain unavailable. Gemini's $12 at -118 produces $10.17 hypothetical profit, $22.17 returned, and $30.17 including its $8 reserve."
+    },
     prompt_template: "github-strength-gemini v1.0",
     models: {
       ChatGPT: {
@@ -93,5 +113,23 @@ function nflPredictions2026Summary() {
       gamesWithBets: gamesWithBets,
       totalGames: NFL_PREDICTIONS_2026.length
     };
+  });
+}
+
+// Adapt settled predictions for the ledger without changing the historical data.
+function nflGradedBets2026() {
+  return NFL_PREDICTIONS_2026.flatMap(function (game) {
+    if (!game.result || game.result.status !== "final") return [];
+    return Object.keys(game.models).flatMap(function (model) {
+      return game.models[model].bets.map(function (bet, index) {
+        var grade = game.result.grades[model][index];
+        return {
+          season: "2026", week: game.week, model: model,
+          prompt: model === "Gemini" ? "github-strength v1.0" : "local-strength v1.0",
+          game: game.label, betType: bet.market, recommendation: bet.line,
+          actual: grade.actual, stake: bet.stake, outcome: grade.outcome, pl: grade.profit
+        };
+      });
+    });
   });
 }

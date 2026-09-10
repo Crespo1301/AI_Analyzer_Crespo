@@ -1138,3 +1138,8 @@ button { font: inherit; cursor: pointer; border: 0; background: none; color: inh
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; scroll-behavior: auto !important; }
 }
+/* Settlement prose and missing-price labels need room at narrow widths. */
+#final-results p { margin: 0 0 1rem; line-height: 1.65; max-width: 75ch; }
+#final-results h3 { margin: 1.5rem 0 .75rem; }
+#summary-row .stat-tile { min-width: 0; }
+#summary-row .st-value { font-size: 2rem; overflow-wrap: anywhere; }

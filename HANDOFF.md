@@ -1,4 +1,10 @@
-# Handoff, v3.1.0
+# Handoff, v3.2.0
+
+September 10: Patriots-Seahawks is settled in a separate `result` object in
+`assets/nfl-predictions-2026.js`. Original predictions and 2025 data are preserved.
+Claude 3/3, Gemini 1/1, ChatGPT no bet. Missing Claude prices prevent combined ROI.
+See the matchup response folder's `final-review.md` and run
+`node scripts/verify-settlement.js` alongside the existing checks.
 
 Date: 2026-09-09 (Season 2 kickoff night).
 
@@ -30,7 +36,9 @@ Screenshot verification: `/home/cresp3/scripts/visual-check.sh`, mobile + deskto
 
 - Continue the remaining Week 1 slate with ChatGPT, Claude, and Gemini. Codex is a ChatGPT execution interface in the current comparison, not a fourth independent model family. Save raw responses in `Docs/Responses/2026/week-01/game-NN-slug/`.
 - Extract structured picks into `NFL_PREDICTIONS_2026` before kickoff. The strip and the season hub will pick them up automatically.
-- Post-final: promote the graded games into `NFL_GAMES` and the graded bets into `NFL_BETS` in `assets/nfl-data.js`, then regenerate Sports_Pages.
+- Post-final: add verified settlement under the prediction's `result` object,
+  preserve its original model responses, then regenerate Sports_Pages. The ledger
+  uses `nflGradedBets2026()`; do not mix 2026 records into the 2025 arrays.
 
 ## Custom domain
 

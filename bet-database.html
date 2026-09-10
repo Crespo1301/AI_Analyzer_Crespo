@@ -100,7 +100,8 @@
     return String(g.date).slice(0,4);
   }
 
-  var allBets = NFL_BETS.slice().map(function(b){ return Object.assign({}, b, { season: betSeason(b) }); });
+  var allBets = NFL_BETS.slice().map(function(b){ return Object.assign({}, b, { season: betSeason(b) }); }).concat(nflGradedBets2026());
+  document.getElementById("f-season").value = "2026";
 
   // Populate week + market + prompt options
   var weekSet = {}, marketSet = {}, promptSet = {};
@@ -141,13 +142,14 @@
     var wins = filtered.filter(function(b){ return b.outcome === "WIN"; }).length;
     var losses = filtered.filter(function(b){ return b.outcome === "LOSS"; }).length;
     var pushes = filtered.filter(function(b){ return b.outcome === "PUSH"; }).length;
-    var pl = filtered.reduce(function(s,b){ return s + b.pl; }, 0);
+    var pl = filtered.reduce(function(s,b){ return s + (b.pl || 0); }, 0);
+    var missingPrices = filtered.some(function(b){ return b.pl == null; });
     var decided = wins + losses;
     var wr = decided ? (wins/decided*100).toFixed(1) + "%" : "-";
     document.getElementById("summary-row").innerHTML =
       '<div class="stat-tile"><div class="st-label">Bets Shown</div><div class="st-value tabular">' + filtered.length + '</div><div class="st-sub">' + wins + "-" + losses + (pushes ? "-" + pushes : "") + '</div></div>' +
       '<div class="stat-tile"><div class="st-label">Win Rate</div><div class="st-value tabular">' + wr + '</div><div class="st-sub">Decided bets</div></div>' +
-      '<div class="stat-tile"><div class="st-label">Combined P/L</div><div class="st-value tabular" style="color:' + (pl >= 0 ? "var(--win)" : "var(--loss)") + '">' + nflMoney(pl) + '</div><div class="st-sub">$20 bankroll per game</div></div>' +
+      '<div class="stat-tile"><div class="st-label">Combined P/L</div><div class="st-value tabular">' + (missingPrices ? 'Unavailable' : nflMoney(pl)) + '</div><div class="st-sub">' + (missingPrices ? 'Some original bet prices were not recorded' : 'Hypothetical returns') + '</div></div>' +
       '<div class="stat-tile"><div class="st-label">Corrections</div><div class="st-value tabular">' + filtered.filter(function(b){ return b.corrected; }).length + '</div><div class="st-sub">Preserved with originals</div></div>';
     // Table
     nflRenderBetsTable(filtered, "results-table", { showWeek: true });

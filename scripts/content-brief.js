@@ -8,7 +8,13 @@ const context = vm.createContext({});
 vm.runInContext(fs.readFileSync(path.join(root, 'assets/nfl-predictions-2026.js'), 'utf8'), context);
 const game = context.NFL_PREDICTIONS_2026.find(game => game.gameId === process.argv[2]);
 if (!game) { console.error('Pass a recorded game ID, for example: patriots-seahawks'); process.exit(1); }
-console.log(`# Draft: ${game.label}\n\nWeek ${game.week}. ${game.kickoffDisplay}.\nHypothetical budget: $20 per model. No performance or outcome claim.\n`);
+console.log(`# Draft: ${game.label}\n\nWeek ${game.week}. ${game.kickoffDisplay}.\nHypothetical budget: $20 per model. Recorded results do not establish predictive skill.\n`);
+if (game.result) {
+  console.log(`Final: ${game.away} ${game.result.awayScore}, ${game.home} ${game.result.homeScore}.\nCooper Kupp: ${game.result.kuppReceptions} receptions.\n${game.result.payoutNote}\nSource: ${game.result.source}\n`);
+  for (const [model, grades] of Object.entries(game.result.grades)) {
+    console.log(`${model}: ${grades.filter(g => g.outcome === 'WIN').length} wins from ${grades.length} bets${grades.length ? '' : ' (no bet)'}.`);
+  }
+}
 for (const [name, model] of Object.entries(game.models)) {
   console.log(`## ${name}\n${model.version}\nExposure: $${model.total_stake}. Reserve: $${model.reserve}.`);
   for (const bet of model.bets) console.log(`- ${bet.line || (bet.legs || []).map(leg => leg.line).join(' + ')} | $${bet.stake} | Model confidence: ${bet.confidence}/10`);
