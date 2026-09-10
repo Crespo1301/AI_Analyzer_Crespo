@@ -1,30 +1,21 @@
-# Week 1 Game 2 reset: 49ers at Rams
+# Week 1 Game 2, San Francisco 49ers vs Los Angeles Rams, Melbourne
 
-Status: prepared, not locked. Forced-selection v2.0 replaces configuration r1.
-Use prompt-local.md for Claude/Codex and prompt-github.md for Gemini in fresh
-independent sessions. Both require one single and one parlay with at least two
-distinct compatible legs, and the full $20 hypothetical allocation.
+Lane: `forced-selection` v2.1
+Kickoff: 2026-09-10, 8:15 PM ET at Melbourne Cricket Ground (NFL Melbourne Game, international neutral site)
+Network: Netflix
+ESPN box score (once posted): https://www.espn.com/nfl/boxscore/_/gameId/401872657
 
-Kickoff: September 10, 2026, 8:35 PM EDT / September 11, 10:35 AM AEST.
-Melbourne Cricket Ground, neutral venue, Rams designated home. Netflix.
-Verify current time and kickoff before running; no post-kickoff pre-game entries.
+Prompts in this folder use the v2.1 template which:
 
-Bovada quotes are preferred. If unavailable, use explicitly labeled reference
-prices or conditional target odds. No current prices are verified by this packet.
-Conditional selections are not actual wagers or realized profits.
+- Requires at least one single and one parlay per model (reserve must be zero).
+- Requires a Season 1 study step: models read NFL_BETS filtered to prompts 7 / 11 / 3 in week 11 and prompt 3 in week 9 (the four highest P/L Season 1 prompts) and NFL_CORRECTIONS (the 11 corrected rows, which are dominated by single-player OVER props).
+- Prefers volume-anchored props (rush attempts, kicker FG made, longest FG, 1Q totals), Team Total OVER on the favored offense, short-hook Spreads, UNDER on inflated totals. Avoids single-player OVER pass yds / rec yds / anytime sack without a defensible scheme or usage justification.
+- Requires correlated parlay legs, not independent conviction stacks.
+- Requires each ticket be labeled bovada_verified, reference_market, or conditional. Never assume -110. Never treat a proposed target as a real quote.
 
-Save exact raw responses and extracted JSON, then run:
-node scripts/validate-forced-response.js path/to/response.json
+Files here:
 
-Check source evidence, parlay compatibility, quote recency and payout rules
-manually. Record operator lock time only after review, before kickoff.
-Do not place wagers automatically.
-
-The old prompt text is removed from these active files and preserved in Git
-history. The earlier no-bet response pasted in chat is superseded; no raw model
-response files existed here at reset. Preserve first-game history and separate
-forced-selection performance from the earlier discretionary lane.
-
-Schedule references:
-- https://www.therams.com/news/rams-san-francisco-49ers-game-friday-september-11-melbourne-australia
-- https://www.netflix.com/tudum/articles/49ers-rams-game-time-australia
+- `prompt-local.md` for ChatGPT (via Codex CLI) and Claude, both of which have local filesystem access.
+- `prompt-github.md` for Gemini, which fetches raw GitHub URLs.
+- `chatgpt-picks.md`, `claude-picks.md`, `gemini-picks.md` for saved raw responses.
+- `prompt-corrections.md` for any factual issues a model reports about the prompt itself.
