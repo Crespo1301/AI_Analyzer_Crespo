@@ -54,6 +54,16 @@ Expected improvement: fewer weak props and fewer public-looking spread picks.
 
 ## Change Log (actual)
 
+### 2026-09-10: Game 2 Bovada configuration r1
+
+Instantiated both strength-lane v1.1 prompts for 49ers-Rams in Melbourne.
+Carlos specified Bovada as the actual ticket book. Require Bovada quotes,
+with other books as context only, and hold unpriced selections in reserve.
+Run-specific instructions prioritize corrected historical evidence, honest
+access reporting, official starter verification and independent current-game
+answers. This is not a controlled test of one isolated prompt change.
+No new selections or lock timestamps were created during preparation.
+
 ### 2026-09-10: All three current templates, v1.0 to v1.1
 
 - Effective next run, including remaining Week 1 games.
