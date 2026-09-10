@@ -5,28 +5,28 @@
   "source": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/teams/lar/roster",
   "offense": {
     "qb1": {
+      "player": "Matthew Stafford",
+      "note": "18 yr, age 38, confirmed Week 1 starter (Caldwell IR)"
+    },
+    "qb2": {
       "player": "Matthew Caldwell",
       "note": "0 yr, age 23, status: Injured Reserve"
     },
-    "qb2": {
-      "player": "Matthew Stafford",
-      "note": "18 yr, age 38"
-    },
     "rb1": {
-      "player": "Ronnie Rivers",
-      "note": "5 yr, age 27"
+      "player": "Kyren Williams",
+      "note": "5 yr, age 26, bell-cow, 17-20 att/gm cadence in 2025"
     },
     "rb2": {
-      "player": "Kyren Williams",
-      "note": "5 yr, age 26"
+      "player": "Blake Corum",
+      "note": "change-of-pace, replaced Ronnie Rivers assumption"
     },
     "wr1": {
-      "player": "Konata Mumpfield",
-      "note": "2 yr, age 23"
+      "player": "Puka Nacua",
+      "note": "Kubiak offense WR1, confirmed via game preview"
     },
     "wr2": {
-      "player": "Alex Bachman",
-      "note": "3 yr, age 30"
+      "player": "Konata Mumpfield",
+      "note": "2 yr, age 23, depth"
     },
     "te1": {
       "player": "Terrance Ferguson",
@@ -144,8 +144,17 @@
       }
     ]
   },
-  "prop_watchlist": [],
+  "prop_watchlist": [
+    { "player": "Kyren Williams", "position": "RB", "why": "Bell-cow rush attempts market, floor around 16.5-17.5, workhorse in game-script UNDER environments" },
+    { "player": "Matthew Stafford", "position": "QB", "why": "Long-haul travel plus MCG surface novelty depresses pass yds ceiling; UNDER pass yds a defensible read" },
+    { "player": "Puka Nacua", "position": "WR", "why": "WR1 target share with Nacua's OVER receptions a live consideration but ceiling props warned against per Season 1 corrections" }
+  ],
   "changes_log": [
+    {
+      "date": "2026-09-10",
+      "change": "Corrected QB1 from Matthew Caldwell (on IR) to Matthew Stafford. Corrected RB1 from Ronnie Rivers to Kyren Williams (2025 bell-cow). Corrected WR1 from Konata Mumpfield to Puka Nacua per Kubiak offense usage. All three corrections flagged by Claude while running the Week 1 Game 2 forced-selection prompt. Added prop watchlist.",
+      "source": "https://www.espn.com/nfl/game/_/gameId/401872657/49ers-rams"
+    },
     {
       "date": "2026-09-09",
       "change": "Initial roster snapshot fetched from ESPN public site API before Week 1 kickoff.",

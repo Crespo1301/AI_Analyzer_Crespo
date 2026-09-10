@@ -122,6 +122,56 @@ var NFL_PREDICTIONS_2026 = [
         ]
       }
     }
+  },
+  {
+    week: 1,
+    gameId: "niners-rams",
+    label: "49ers vs Rams (Melbourne)",
+    away: "San Francisco 49ers",
+    home: "Los Angeles Rams",
+    kickoff: "2026-09-10T20:15:00-04:00",
+    kickoffDisplay: "Thu Sep 10, 8:15 PM ET",
+    venue: "Melbourne Cricket Ground, Melbourne, Australia",
+    neutralSite: "Melbourne, Australia (NFL Melbourne Game, international neutral site)",
+    network: "Netflix",
+    line_snapshot: {
+      spread: "LAR -3.5 (-112)",
+      total: 48.5,
+      moneyline: "SF +170 / LAR -205",
+      source: "DraftKings via ESPN preview, captured 2026-09-10"
+    },
+    espn: "https://www.espn.com/nfl/boxscore/_/gameId/401872657",
+    responseFolder: "Docs/Responses/2026/week-01/game-02-niners-rams/",
+    status: "locked",
+    locked_at: "2026-09-10",
+    prompt_template: "forced-selection v2.1",
+    models: {
+      ChatGPT: {
+        version: "GPT-6 (via Codex CLI)",
+        total_stake: 0,
+        reserve: 20,
+        summary: "Awaiting response under forced-selection v2.1.",
+        bets: []
+      },
+      Claude: {
+        version: "claude-opus-4-7",
+        total_stake: 20,
+        reserve: 0,
+        summary: "Forced-selection v2.1. Applied W11P7 shape: game UNDER + volume-anchored RB rush attempts OVER. Avoided single-player OVER pass/rec/sack (6 of 11 Season 1 corrections). Flagged Rams roster: QB1 Stafford (not IR'd Caldwell), RB1 Kyren Williams, WR1 Puka Nacua. All tickets conditional, no Bovada quotes retrieved in-session.",
+        bets: [
+          { type: "straight", market: "Total", line: "UNDER 45.5 (min -110 conditional)", stake: 12, confidence: 6, reason: "SF WR corps thin (Pearsall + Kirk IR), 15h travel to Melbourne, MCG grass overlay, aging Stafford: true total ~42-44" },
+          { type: "straight", market: "Prop", line: "Kyren Williams OVER 16.5 rush attempts (min -115 conditional)", stake: 4, confidence: 6, reason: "2025 bell-cow, 17-20 att/gm floor, paceless game script inflates volume" },
+          { type: "sgp", market: "SGP", line: "UNDER 45.5 + Kyren Williams OVER 16.5 rush att (min +180 conditional)", stake: 4, confidence: 4, reason: "Positively correlated: paceless UNDER script raises Kyren carry share; correlation-adjusted parlay, not independent-multiplied" }
+        ]
+      },
+      Gemini: {
+        version: "pending",
+        total_stake: 0,
+        reserve: 20,
+        summary: "Awaiting response under forced-selection v2.1.",
+        bets: []
+      }
+    }
   }
 ];
 
