@@ -230,6 +230,19 @@ function pageHtml(game) {
 function pendingPageHtml(pred) {
   const result = pred.result;
   const final = result && result.status === 'final';
+  const human = pred.humanComparison;
+  const humanStake = human ? human.tickets.reduce((sum, ticket) => sum + ticket.stake, 0) : 0;
+  const humanReturn = human ? human.tickets.reduce((sum, ticket) => sum + ticket.returned, 0) : 0;
+  const humanReview = final && human ? `<section class="band band-paper" id="carlos-comparison"><div class="wrap">
+    <div class="band-head"><div><div class="b-kicker">Human comparison</div><h2 class="b-title">How the models stack up against Carlos</h2></div></div>
+    <p>I played the under, Seattle to win, and a same-game parlay. All three tickets paid out. The Seattle -3 leg pushed and was voided, so it does not count as another winning pick.</p>
+    <p><strong>$${humanStake.toFixed(2)} staked / $${humanReturn.toFixed(2)} returned / $${(humanReturn - humanStake).toFixed(2)} net profit</strong></p>
+    <div class="model-board">${human.tickets.map(ticket => `<article class="mpred"><h3>${esc(ticket.line)}</h3><p>${esc(ticket.outcome)} / Original odds ${ticket.odds > 0 ? '+' : ''}${ticket.odds}</p><p>$${ticket.stake.toFixed(2)} stake / $${ticket.returned.toFixed(2)} returned / $${(ticket.returned - ticket.stake).toFixed(2)} profit</p><p>${esc(ticket.note)}</p></article>`).join('')}</div>
+    <h3>Same game, different exposure</h3>
+    <p>Carlos: 3 winning tickets, +$${(humanReturn - humanStake).toFixed(2)} actual profit. Claude: 3 winning picks on $11, profit unavailable because prices were not saved. Gemini: 1 winning pick on $12, +$10.17 hypothetical profit. ChatGPT: no bet, $0 profit and $20 reserved.</p>
+    <p>Carlos risked more than the models' $20 budgets. Repeated exposure to the under and Seattle makes these tickets correlated, not independent tests. Raw profit is not a fair skill ranking, and one game cannot establish an edge.</p>
+    <p>${esc(human.timingNote)} Source: ${esc(human.source)}. Ticket identifiers and private screenshots are not published. These records stay separate from model statistics.</p>
+  </div></section>` : '';
   const resultReview = final ? `<section class="band band-paper" id="final-results"><div class="wrap">
     <div class="band-head"><div><div class="b-kicker">Verified final</div><h2 class="b-title">${esc(pred.home)} ${result.homeScore}, ${esc(pred.away)} ${result.awayScore}</h2></div></div>
     <p>${result.awayScore + result.homeScore} total points. Cooper Kupp: ${result.kuppReceptions} receptions for ${result.kuppReceivingYards} yards on ${result.kuppTargets} targets.</p>
@@ -382,6 +395,7 @@ function pendingPageHtml(pred) {
 </section>
 
 ${resultReview}
+${humanReview}
 <section class="band band-bone">
   <div class="wrap">
     <div class="band-head">

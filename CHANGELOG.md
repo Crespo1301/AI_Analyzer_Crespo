@@ -1,5 +1,12 @@
 # Changelog
 
+## v3.2.1 - 2026-09-10
+
+- Added Carlos's settled tickets as a separate human comparison on the game page.
+- Recorded $22.87 staked, $41.97 returned and $19.10 profit from owner-supplied screenshots.
+- Distinguished the voided Seattle -3 parlay leg, original odds and actual payout.
+- Kept model aggregates unchanged and documented timing, exposure and comparison limitations.
+
 ## v3.2.0 - 2026-09-10
 
 - Recorded Seattle's 13-10 final and Cooper Kupp's 2 receptions against ESPN's completed event.

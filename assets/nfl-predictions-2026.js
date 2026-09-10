@@ -35,6 +35,16 @@ var NFL_PREDICTIONS_2026 = [
     espn: "https://www.espn.com/nfl/boxscore/_/gameId/401872656",
     responseFolder: "Docs/Responses/2026/week-01/game-01-patriots-seahawks/",
     status: "locked",
+    humanComparison: {
+      name: "Carlos",
+      source: "Two owner-supplied settled ticket screenshots",
+      timingNote: "Added after settlement. Screenshots display September 9 at 11:26 PM; placement time is not independently established. This is a retrospective comparison, not a verified blind pre-game entry.",
+      tickets: [
+        { line: "Under 44.5", odds: -110, stake: 7, returned: 13.36, outcome: "WIN", note: "23 total points." },
+        { line: "Seattle moneyline", odds: -175, stake: 5, returned: 7.86, outcome: "WIN", note: "Seattle won 13-10." },
+        { line: "Under 44.5 + Seattle -3", odds: 239, stake: 10.87, returned: 20.75, outcome: "WIN", note: "Under won; Seattle -3 was voided. Displayed +239 is the original parlay price, not the settled payout rate. Use the ticket's actual return." }
+      ]
+    },
     locked_at: "2026-09-09",
     result: {
       status: "final",

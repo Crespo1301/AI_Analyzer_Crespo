@@ -1141,5 +1141,9 @@ button { font: inherit; cursor: pointer; border: 0; background: none; color: inh
 /* Settlement prose and missing-price labels need room at narrow widths. */
 #final-results p { margin: 0 0 1rem; line-height: 1.65; max-width: 75ch; }
 #final-results h3 { margin: 1.5rem 0 .75rem; }
+#carlos-comparison p { margin: 0 0 1rem; line-height: 1.65; max-width: 75ch; }
+#carlos-comparison h3 { margin: 1.5rem 0 .75rem; }
+#carlos-comparison .mpred { display: block; min-height: 0; padding: 24px; }
+#carlos-comparison .model-board { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr)); gap: 24px; margin: 24px 0; }
 #summary-row .stat-tile { min-width: 0; }
 #summary-row .st-value { font-size: 2rem; overflow-wrap: anywhere; }
