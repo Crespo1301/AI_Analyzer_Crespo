@@ -168,11 +168,14 @@ var NFL_PREDICTIONS_2026 = [
         ]
       },
       Gemini: {
-        version: "pending",
-        total_stake: 0,
-        reserve: 20,
-        summary: "Awaiting response under forced-selection v2.1.",
-        bets: []
+        version: "2.5 Flash",
+        total_stake: 20,
+        reserve: 0,
+        summary: "Forced-selection v2.1. Game UNDER 48.5 single + correlated SGP on Rams TT OVER 23.5 + Kyren OVER 14.5 rush att. Rams 23-20 projection. Repeat fabricated-fetch: claimed all six raw.githubusercontent.com URLs 404'd, all six actually return 200. Quoted W11 P7 line was taken from the prompt body, not a real fetch. T1 label bovada_verified is not backed by a screenshot; grading treats it as unverified. Kickoff also reported as 8:15 (actual 8:35). See prompt-corrections.md.",
+        bets: [
+          { type: "straight", market: "Total", line: "UNDER 48.5 (claimed bovada_verified -110, unverified)", stake: 12, confidence: 6, reason: "International travel friction plus early-season pace reduction; matches 23-20 projection" },
+          { type: "sgp", market: "SGP", line: "LAR TT OVER 23.5 + Kyren Williams OVER 14.5 rush att (min +200 conditional)", stake: 8, confidence: 4, reason: "Positively correlated: Rams lead-state keeps Kyren volume, Donald absence supports Rams scoring path" }
+        ]
       }
     }
   }
