@@ -54,6 +54,20 @@ Expected improvement: fewer weak props and fewer public-looking spread picks.
 
 ## Change Log (actual)
 
+### 2026-09-10: All three current templates, v1.0 to v1.1
+
+- Effective next run, including remaining Week 1 games.
+- Require per-ticket odds, sportsbook, source and quote capture time,
+  maximum loss, potential profit/return and probability-versus-price reasoning.
+- Unpriced candidates remain unfunded. SGPs need the actual combined quote.
+- Trigger: first-game Claude picks had no payout prices; Gemini embedded -118
+  in its line, rather than consistent structured fields.
+- First-game outcomes stand. Claude profit and combined ROI remain unavailable.
+  Carlos's later supplied slips cannot backfill model prices.
+- Target 100% complete accepted funded tickets. Track missing-price rejections,
+  arithmetic failures and provenance issues separately from win rate.
+- Preserve v1.0 in Git history and original prompt/response files.
+
 ```text
 2026-09-08
 Prompt: bankroll-optimized (introduced as the Week 1 default)

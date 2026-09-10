@@ -230,6 +230,35 @@ function pageHtml(game) {
 function pendingPageHtml(pred) {
   const result = pred.result;
   const final = result && result.status === 'final';
+  const modelResults = final ? `<section class="band band-paper" id="model-results"><div class="wrap">
+    <div class="band-head"><div><div class="b-kicker">LLM results and grading</div><h2 class="b-title">What each model got right</h2></div></div>
+    <p>Outcomes are checked against the final box score. Reasoning and source quality are reviewed separately. Numerical reasoning scores are not assigned until the evidence review is complete.</p>
+    ${NFL_MODELS.map(model => {
+      const entry = pred.models[model];
+      const grades = result.grades[model] || [];
+      const review = result.modelReviews && result.modelReviews[model];
+      const known = grades.every(g => g.profit != null);
+      const profit = known ? grades.reduce((sum, g) => sum + g.profit, 0) : null;
+      return `<article class="model-result">
+        <h3>${esc(model)} <span class="result-record">${grades.length ? grades.filter(g => g.outcome === 'WIN').length + '/' + grades.length + ' won' : 'No bet'}</span></h3>
+        <p>${esc(review ? review.summary : 'Outcome verified; reasoning review pending.')}</p>
+        <dl class="settlement-metrics">
+          <div><dt>Staked</dt><dd>$${entry.total_stake.toFixed(2)}</dd></div>
+          <div><dt>Reserve</dt><dd>$${entry.reserve.toFixed(2)}</dd></div>
+          <div><dt>Net profit</dt><dd>${known ? '$' + profit.toFixed(2) : 'Unavailable'}</dd></div>
+          <div><dt>Return on stake</dt><dd>${!entry.total_stake ? 'N/A: no bet' : known ? (profit / entry.total_stake * 100).toFixed(2) + '%' : 'Unavailable'}</dd></div>
+        </dl>
+${entry.bets.map((bet, index) => `<div class="graded-pick"><h4>${esc(bet.line)} <span class="result-record">${esc(grades[index].outcome)}</span></h4>
+          <p><strong>Result:</strong> ${esc(grades[index].actual)}. Stake: $${bet.stake.toFixed(2)}. Odds: ${grades[index].odds == null ? 'not recorded' : grades[index].odds}.</p>
+          <p><strong>Original reasoning:</strong> ${esc(bet.reason)}</p>
+          <p><strong>Reasoning review:</strong> ${esc(review ? review.reasoning[index] : 'Pending evidence review.')}</p></div>`).join('')}
+${!entry.bets.length && review ? '<p><strong>Decision review:</strong> ' + esc(review.reasoning[0]) + '</p>' : ''}
+        <p><strong>Pricing/data quality:</strong> ${esc(review ? review.pricing : 'Pending review.')}</p>
+        <p><strong>Reasoning grade:</strong> Pending numerical review, not zero. <a href="../methodology.html#rubric">Grading rubric</a></p>
+      </article>`;
+    }).join('')}
+    <aside class="pricing-flag"><strong>First-run flag: missing payout prices.</strong> Claude's wins remain valid, but missing odds prevent profit grading. Prompt v1.1 now requires verified per-ticket odds, potential return and risk analysis before a funded pick is accepted. Carlos's ticket prices are not substitutes for model prices.</aside>
+  </div></section>` : '';
   const human = pred.humanComparison;
   const humanStake = human ? human.tickets.reduce((sum, ticket) => sum + ticket.stake, 0) : 0;
   const humanReturn = human ? human.tickets.reduce((sum, ticket) => sum + ticket.returned, 0) : 0;
@@ -395,7 +424,7 @@ function pendingPageHtml(pred) {
 </section>
 
 ${resultReview}
-${humanReview}
+${modelResults}
 <section class="band band-bone">
   <div class="wrap">
     <div class="band-head">
@@ -423,6 +452,8 @@ ${humanReview}
     </div>
   </div>
 </section>
+
+${humanReview}
 
 ${final ? '' : `<section class="band band-bone">
   <div class="wrap">

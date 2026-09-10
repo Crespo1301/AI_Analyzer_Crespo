@@ -84,15 +84,62 @@
     <p>Review notes published; numerical reasoning scores not assigned. One game does not establish consistent performance.</p>
     <p><a href="https://www.espn.com/nfl/boxscore/_/gameId/401872656">ESPN final box score</a> / <a href="https://github.com/Crespo1301/AI_Analyzer_Crespo/blob/main/Docs/Responses/2026/week-01/game-01-patriots-seahawks/final-review.md">Source and grading notes</a>. Verified 2026-09-10.</p>
   </div></section>
-<section class="band band-paper" id="carlos-comparison"><div class="wrap">
-    <div class="band-head"><div><div class="b-kicker">Human comparison</div><h2 class="b-title">How the models stack up against Carlos</h2></div></div>
-    <p>I played the under, Seattle to win, and a same-game parlay. All three tickets paid out. The Seattle -3 leg pushed and was voided, so it does not count as another winning pick.</p>
-    <p><strong>$22.87 staked / $41.97 returned / $19.10 net profit</strong></p>
-    <div class="model-board"><article class="mpred"><h3>Under 44.5</h3><p>WIN / Original odds -110</p><p>$7.00 stake / $13.36 returned / $6.36 profit</p><p>23 total points.</p></article><article class="mpred"><h3>Seattle moneyline</h3><p>WIN / Original odds -175</p><p>$5.00 stake / $7.86 returned / $2.86 profit</p><p>Seattle won 13-10.</p></article><article class="mpred"><h3>Under 44.5 + Seattle -3</h3><p>WIN / Original odds +239</p><p>$10.87 stake / $20.75 returned / $9.88 profit</p><p>Under won; Seattle -3 was voided. Displayed +239 is the original parlay price, not the settled payout rate. Use the ticket&#39;s actual return.</p></article></div>
-    <h3>Same game, different exposure</h3>
-    <p>Carlos: 3 winning tickets, +$19.10 actual profit. Claude: 3 winning picks on $11, profit unavailable because prices were not saved. Gemini: 1 winning pick on $12, +$10.17 hypothetical profit. ChatGPT: no bet, $0 profit and $20 reserved.</p>
-    <p>Carlos risked more than the models' $20 budgets. Repeated exposure to the under and Seattle makes these tickets correlated, not independent tests. Raw profit is not a fair skill ranking, and one game cannot establish an edge.</p>
-    <p>Added after settlement. Screenshots display September 9 at 11:26 PM; placement time is not independently established. This is a retrospective comparison, not a verified blind pre-game entry. Source: Two owner-supplied settled ticket screenshots. Ticket identifiers and private screenshots are not published. These records stay separate from model statistics.</p>
+<section class="band band-paper" id="model-results"><div class="wrap">
+    <div class="band-head"><div><div class="b-kicker">LLM results and grading</div><h2 class="b-title">What each model got right</h2></div></div>
+    <p>Outcomes are checked against the final box score. Reasoning and source quality are reviewed separately. Numerical reasoning scores are not assigned until the evidence review is complete.</p>
+    <article class="model-result">
+        <h3>ChatGPT <span class="result-record">No bet</span></h3>
+        <p>No bet. Excluded from win rate, with the full $20 retained.</p>
+        <dl class="settlement-metrics">
+          <div><dt>Staked</dt><dd>$0.00</dd></div>
+          <div><dt>Reserve</dt><dd>$20.00</dd></div>
+          <div><dt>Net profit</dt><dd>$0.00</dd></div>
+          <div><dt>Return on stake</dt><dd>N/A: no bet</dd></div>
+        </dl>
+
+<p><strong>Decision review:</strong> Restraint preserved capital. Winning picks from other entrants do not prove the no-bet decision was wrong; one realized result cannot establish whether an offered price had positive expected value.</p>
+        <p><strong>Pricing/data quality:</strong> No funded ticket needs settlement. The response compared quoted moneyline break-even thresholds and declined unsupported value.</p>
+        <p><strong>Reasoning grade:</strong> Pending numerical review, not zero. <a href="../methodology.html#rubric">Grading rubric</a></p>
+      </article><article class="model-result">
+        <h3>Claude <span class="result-record">3/3 won</span></h3>
+        <p>3 wins, but outcome and explanation are different grades.</p>
+        <dl class="settlement-metrics">
+          <div><dt>Staked</dt><dd>$11.00</dd></div>
+          <div><dt>Reserve</dt><dd>$9.00</dd></div>
+          <div><dt>Net profit</dt><dd>Unavailable</dd></div>
+          <div><dt>Return on stake</dt><dd>Unavailable</dd></div>
+        </dl>
+<div class="graded-pick"><h4>UNDER 44.5 <span class="result-record">WIN</span></h4>
+          <p><strong>Result:</strong> 23 total points. Stake: $6.00. Odds: not recorded.</p>
+          <p><strong>Original reasoning:</strong> Both teams without their expected RB1, Week 1 red-zone stalls, weather-neutral</p>
+          <p><strong>Reasoning review:</strong> The total finished at 23, below 44.5. That supports the direction, not proof of the proposed RB/red-zone explanation. Darnold&#39;s unpredicted injury is a confounder.</p></div><div class="graded-pick"><h4>NE +3.5 <span class="result-record">WIN</span></h4>
+          <p><strong>Result:</strong> New England lost by 3; +3.5 covers. Stake: $4.00. Odds: not recorded.</p>
+          <p><strong>Original reasoning:</strong> Key hook past 3 with the more proven QB on the road versus first-start Darnold</p>
+          <p><strong>Reasoning review:</strong> New England lost by 3, so the +3.5 hook mattered. The first-start Darnold premise was factually wrong and must not receive reasoning credit.</p></div><div class="graded-pick"><h4>Cooper Kupp UNDER 4.5 receptions <span class="result-record">WIN</span></h4>
+          <p><strong>Result:</strong> 2 receptions. Stake: $1.00. Odds: not recorded.</p>
+          <p><strong>Original reasoning:</strong> Third read behind JSN and Shaheed per Field Gulls / 4for4, median outcome is 4 catches</p>
+          <p><strong>Reasoning review:</strong> Kupp caught 2 passes, below 4.5. Low volume matches the selection, but the claimed target hierarchy is not established by the final reception count.</p></div>
+
+        <p><strong>Pricing/data quality:</strong> Incomplete: all three original payout prices are missing. Outcomes stand; profit and ROI cannot be calculated.</p>
+        <p><strong>Reasoning grade:</strong> Pending numerical review, not zero. <a href="../methodology.html#rubric">Grading rubric</a></p>
+      </article><article class="model-result">
+        <h3>Gemini <span class="result-record">1/1 won</span></h3>
+        <p>1 win at a recorded price; the causal explanation remains unproven.</p>
+        <dl class="settlement-metrics">
+          <div><dt>Staked</dt><dd>$12.00</dd></div>
+          <div><dt>Reserve</dt><dd>$8.00</dd></div>
+          <div><dt>Net profit</dt><dd>$10.17</dd></div>
+          <div><dt>Return on stake</dt><dd>84.75%</dd></div>
+        </dl>
+<div class="graded-pick"><h4>NE +3.5 (-118) <span class="result-record">WIN</span></h4>
+          <p><strong>Result:</strong> New England lost by 3; +3.5 covers. Stake: $12.00. Odds: -118.</p>
+          <p><strong>Original reasoning:</strong> Seattle safety depth attrition vs Maye&#39;s downfield ability keeps NE inside the key hook</p>
+          <p><strong>Reasoning review:</strong> New England&#39;s 3-point loss covers +3.5. The hook was decisive; the final margin does not establish that Seattle safety depth caused the cover. The saved response also has a flagged repo-source fabrication issue.</p></div>
+
+        <p><strong>Pricing/data quality:</strong> -118 was recorded. The $12 stake yields $10.17 hypothetical profit and $22.17 returned.</p>
+        <p><strong>Reasoning grade:</strong> Pending numerical review, not zero. <a href="../methodology.html#rubric">Grading rubric</a></p>
+      </article>
+    <aside class="pricing-flag"><strong>First-run flag: missing payout prices.</strong> Claude's wins remain valid, but missing odds prevent profit grading. Prompt v1.1 now requires verified per-ticket odds, potential return and risk analysis before a funded pick is accepted. Carlos's ticket prices are not substitutes for model prices.</aside>
   </div></section>
 <section class="band band-bone">
   <div class="wrap">
@@ -170,6 +217,17 @@
     </div>
   </div>
 </section>
+
+<section class="band band-paper" id="carlos-comparison"><div class="wrap">
+    <div class="band-head"><div><div class="b-kicker">Human comparison</div><h2 class="b-title">How the models stack up against Carlos</h2></div></div>
+    <p>I played the under, Seattle to win, and a same-game parlay. All three tickets paid out. The Seattle -3 leg pushed and was voided, so it does not count as another winning pick.</p>
+    <p><strong>$22.87 staked / $41.97 returned / $19.10 net profit</strong></p>
+    <div class="model-board"><article class="mpred"><h3>Under 44.5</h3><p>WIN / Original odds -110</p><p>$7.00 stake / $13.36 returned / $6.36 profit</p><p>23 total points.</p></article><article class="mpred"><h3>Seattle moneyline</h3><p>WIN / Original odds -175</p><p>$5.00 stake / $7.86 returned / $2.86 profit</p><p>Seattle won 13-10.</p></article><article class="mpred"><h3>Under 44.5 + Seattle -3</h3><p>WIN / Original odds +239</p><p>$10.87 stake / $20.75 returned / $9.88 profit</p><p>Under won; Seattle -3 was voided. Displayed +239 is the original parlay price, not the settled payout rate. Use the ticket&#39;s actual return.</p></article></div>
+    <h3>Same game, different exposure</h3>
+    <p>Carlos: 3 winning tickets, +$19.10 actual profit. Claude: 3 winning picks on $11, profit unavailable because prices were not saved. Gemini: 1 winning pick on $12, +$10.17 hypothetical profit. ChatGPT: no bet, $0 profit and $20 reserved.</p>
+    <p>Carlos risked more than the models' $20 budgets. Repeated exposure to the under and Seattle makes these tickets correlated, not independent tests. Raw profit is not a fair skill ranking, and one game cannot establish an edge.</p>
+    <p>Added after settlement. Screenshots display September 9 at 11:26 PM; placement time is not independently established. This is a retrospective comparison, not a verified blind pre-game entry. Source: Two owner-supplied settled ticket screenshots. Ticket identifiers and private screenshots are not published. These records stay separate from model statistics.</p>
+  </div></section>
 
 
 

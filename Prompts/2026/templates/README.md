@@ -1,5 +1,15 @@
 # 2026 Prompt Templates
 
+Current prompt version: **1.1**, effective for all new runs after September 10,
+2026, including remaining Week 1 games. Every lane requires per-ticket payout
+odds, quote provenance, potential return and probability-versus-price reasoning.
+Baseline runs use supplied quotes only. Missing prices mean reserve, not -110.
+Run `node scripts/validate-priced-response.js response.json` on extracted JSON
+before accepting funded picks. A passing check verifies structure and arithmetic,
+not that the sportsbook quote or model probability is true: verify those sources.
+Save rejected raw responses and any pre-kickoff correction separately.
+Original v1.0 prompts remain in Git history and saved game responses.
+
 Reset: 2026-09-09 (Week 1 kickoff day).
 
 The previous templates were retired because they treated every model like it only had the tools the weakest interface offered. That is not the study we want to run. The 2026 methodology is built on two hard rules that apply to every model in every lane:

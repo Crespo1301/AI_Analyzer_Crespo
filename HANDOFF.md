@@ -1,4 +1,12 @@
-# Handoff, v3.2.0
+# Handoff, v3.3.0
+
+September 10 follow-up: model-first game review now separates outcome, pricing
+and per-pick reasoning. Carlos's tickets appear after model details. Numerical
+reasoning scores remain pending, not implicitly zero or based on wins alone.
+All three prompt templates are v1.1; payout odds and return math are mandatory.
+Run `node scripts/validate-priced-response.js response.json` before accepting
+future entries, and manually verify quoted sources. Test with
+`node scripts/verify-priced-response.js`. Do not retrofit first-game prices.
 
 September 10: Patriots-Seahawks is settled in a separate `result` object in
 `assets/nfl-predictions-2026.js`. Original predictions and 2025 data are preserved.

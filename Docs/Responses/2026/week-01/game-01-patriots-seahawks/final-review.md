@@ -50,3 +50,11 @@ independent experiments or evidence of durable model improvement.
 The original models, lines, stakes and rationale remain unchanged. Settlement
 lives in a separate result object. Precise original lock timing is not established
 by the date-only locked_at field; consult commit history and raw responses.
+# First-run pricing flag
+
+The v1.0 prompts omitted per-ticket payout fields. Claude's three picks can be
+graded for outcomes but not profit or ROI. Gemini supplied -118 in its line;
+future runs require structured odds fields consistently. ChatGPT placed no bet.
+Do not infer Claude's prices from defaults, later quotes or Carlos's slips.
+This is a prompt/data-completeness issue, not a change to winning outcomes.
+Prompt v1.1 applies starting with the next run, not retrospectively.

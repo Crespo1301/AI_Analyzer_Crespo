@@ -1141,6 +1141,17 @@ button { font: inherit; cursor: pointer; border: 0; background: none; color: inh
 /* Settlement prose and missing-price labels need room at narrow widths. */
 #final-results p { margin: 0 0 1rem; line-height: 1.65; max-width: 75ch; }
 #final-results h3 { margin: 1.5rem 0 .75rem; }
+#model-results p { margin: .75rem 0; max-width: 80ch; line-height: 1.65; }
+.model-result { padding: 28px 0; border-top: 1px solid var(--muted); }
+.model-result h3 { font-size: 24px; }
+.result-record { font-size: 16px; margin-left: 12px; }
+.settlement-metrics { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; margin: 24px 0; }
+.settlement-metrics dt { font-size: 13px; }
+.settlement-metrics dd { margin: 4px 0 0; font-size: 20px; font-weight: 700; overflow-wrap: anywhere; }
+.graded-pick { border-left: 3px solid var(--muted); padding: 4px 16px; margin: 20px 0; }
+.graded-pick h4 { font-size: 18px; }
+.pricing-flag { border-top: 2px solid; padding-top: 20px; line-height: 1.65; }
+@media (max-width: 600px) { .settlement-metrics { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 #carlos-comparison p { margin: 0 0 1rem; line-height: 1.65; max-width: 75ch; }
 #carlos-comparison h3 { margin: 1.5rem 0 .75rem; }
 #carlos-comparison .mpred { display: block; min-height: 0; padding: 24px; }

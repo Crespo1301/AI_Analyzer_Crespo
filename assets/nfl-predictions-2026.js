@@ -68,6 +68,27 @@ var NFL_PREDICTIONS_2026 = [
         ChatGPT: []
       },
       reasoningStatus: "Review notes published; numerical reasoning scores not assigned",
+      modelReviews: {
+        Claude: {
+          summary: "3 wins, but outcome and explanation are different grades.",
+          pricing: "Incomplete: all three original payout prices are missing. Outcomes stand; profit and ROI cannot be calculated.",
+          reasoning: [
+            "The total finished at 23, below 44.5. That supports the direction, not proof of the proposed RB/red-zone explanation. Darnold's unpredicted injury is a confounder.",
+            "New England lost by 3, so the +3.5 hook mattered. The first-start Darnold premise was factually wrong and must not receive reasoning credit.",
+            "Kupp caught 2 passes, below 4.5. Low volume matches the selection, but the claimed target hierarchy is not established by the final reception count."
+          ]
+        },
+        Gemini: {
+          summary: "1 win at a recorded price; the causal explanation remains unproven.",
+          pricing: "-118 was recorded. The $12 stake yields $10.17 hypothetical profit and $22.17 returned.",
+          reasoning: ["New England's 3-point loss covers +3.5. The hook was decisive; the final margin does not establish that Seattle safety depth caused the cover. The saved response also has a flagged repo-source fabrication issue."]
+        },
+        ChatGPT: {
+          summary: "No bet. Excluded from win rate, with the full $20 retained.",
+          pricing: "No funded ticket needs settlement. The response compared quoted moneyline break-even thresholds and declined unsupported value.",
+          reasoning: ["Restraint preserved capital. Winning picks from other entrants do not prove the no-bet decision was wrong; one realized result cannot establish whether an offered price had positive expected value."]
+        }
+      },
       reasoningNotes: "All four picks hit, but outcome alone does not validate the explanations. Darnold left with a hip injury, an in-game event absent from the pre-game theses. Claude's claim that this was Darnold's first Seattle start is incorrect. Gemini's secondary-depth explanation is not established by the final margin. ChatGPT's reserve is neither a winning nor losing bet.",
       payoutNote: "Claude did not record individual bet prices, so its profit and combined ROI remain unavailable. Gemini's $12 at -118 produces $10.17 hypothetical profit, $22.17 returned, and $30.17 including its $8 reserve."
     },

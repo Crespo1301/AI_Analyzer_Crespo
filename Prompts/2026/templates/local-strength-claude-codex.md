@@ -78,11 +78,35 @@ move together).
 Do not include a pick you cannot explain in one sentence a grader could
 audit against the box score. If you cannot audit it, do not bet it.
 
+Mandatory payout gate, effective prompt v1.1:
+A betting line is not its payout price. Every funded ticket needs numeric
+American odds, sportsbook, exact market/line, source URL or supplied snapshot,
+and quote capture time with timezone. Never substitute response time for
+quote time. Missing/unverifiable prices mean no funded bet: list the candidate
+under unpriced_candidates and keep that money in reserve. Never assume -110.
+Baseline models use only supplied quotes, without fetching external data.
+Strength-lane models research quotes or ask for a current price.
+Record maximum loss (stake), potential net profit and total return including
+stake. Positive odds A: profit = stake*A/100. Negative A: profit =
+stake*100/abs(A). Total return = stake + profit; display money to cents.
+Break-even probability is 100/(A+100) for positive odds and
+abs(A)/(abs(A)+100) for negative odds. Compare your estimated win probability
+with break-even and explain uncertainty. Confidence /10 is not a probability.
+For push-capable markets compare conditional win probability excluding
+pushes and disclose assumptions. A likely winner is not necessarily good value.
+Parlays/SGPs require the sportsbook's combined ticket price and each leg's
+exact line. Never invent combined odds by multiplying correlated leg prices.
+Record known leg prices and applicable push/void rules, or mark rules unknown.
+Preserve original odds at settlement; use actual adjusted return after voids.
+Ticket stakes plus reserve must equal the $20 bankroll.
+Use probabilities from 0 to 1, retaining at least four decimal places for
+break-even calculations. Quote time must precede the recorded lock time.
+
 Finish by returning a single fenced JSON block matching this schema:
 
 {
   "prompt_template": "local-strength-claude-codex",
-  "prompt_version": "1.0",
+  "prompt_version": "1.1",
   "model_role": "Claude" or "Codex",
   "model_version": "the exact version string you know yourself as",
   "week": [WEEK],
@@ -97,7 +121,7 @@ Finish by returning a single fenced JSON block matching this schema:
     "total": "...",
     "moneyline": "...",
     "book": "the sportsbook the number is from",
-    "captured_at": "ISO 8601 timestamp in your response time"
+    "captured_at": "Actual quote capture timestamp with timezone, not response time"
   },
   "sources_read_in_repo": ["Docs/2026/grading-rubric.md", "..."],
   "self_reflection": {
@@ -111,6 +135,7 @@ Finish by returning a single fenced JSON block matching this schema:
   "game_script": "3-4 sentence description of the most likely game flow",
   "bankroll": 20,
   "total_stake": 0-20,
+  "unpriced_candidates": [],
   "reserve": 20 - total_stake,
   "bets": [
     {
@@ -119,6 +144,17 @@ Finish by returning a single fenced JSON block matching this schema:
                 "Prop" or "SGP" or "Parlay",
       "line": "the exact line",
       "stake": number,
+      "odds_american": number,
+      "sportsbook": "quoted sportsbook",
+      "odds_source": "URL or supplied snapshot reference",
+      "odds_captured_at": "ISO 8601 with timezone",
+      "max_loss": number,
+      "potential_net_profit": number,
+      "potential_total_return": number,
+      "break_even_probability": number,
+      "estimated_win_probability": number,
+      "value_reasoning": "price, probability, uncertainty and push assumptions",
+      "settlement_rules": "push/void rules or unknown",
       "confidence": 1-10,
       "reason_wins": "one sentence, name the factor",
       "reason_loses": "one sentence, name the falsifier"

@@ -1,5 +1,13 @@
 # Changelog
 
+## v3.3.0 - 2026-09-10
+
+- Put LLM settlement, per-pick reasoning reviews and pricing quality before the human comparison.
+- Keep unassigned reasoning scores explicitly pending and no-bet outside win rates.
+- Upgrade all three prompt lanes to v1.1 with mandatory odds, provenance, return and risk fields.
+- Flag first-game missing prices without changing original picks or inventing odds.
+- Add response validation for payout arithmetic and bankroll reconciliation.
+
 ## v3.2.1 - 2026-09-10
 
 - Added Carlos's settled tickets as a separate human comparison on the game page.
