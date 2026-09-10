@@ -129,8 +129,8 @@ var NFL_PREDICTIONS_2026 = [
     label: "49ers vs Rams (Melbourne)",
     away: "San Francisco 49ers",
     home: "Los Angeles Rams",
-    kickoff: "2026-09-10T20:15:00-04:00",
-    kickoffDisplay: "Thu Sep 10, 8:15 PM ET",
+    kickoff: "2026-09-10T20:35:00-04:00",
+    kickoffDisplay: "Thu Sep 10, 8:35 PM ET",
     venue: "Melbourne Cricket Ground, Melbourne, Australia",
     neutralSite: "Melbourne, Australia (NFL Melbourne Game, international neutral site)",
     network: "Netflix",
@@ -148,10 +148,13 @@ var NFL_PREDICTIONS_2026 = [
     models: {
       ChatGPT: {
         version: "GPT-6 (via Codex CLI)",
-        total_stake: 0,
-        reserve: 20,
-        summary: "Awaiting response under forced-selection v2.1.",
-        bets: []
+        total_stake: 20,
+        reserve: 0,
+        summary: "Forced-selection v2.1. Applied W11P11 team-total shape (Rams TT OVER 23.5) plus a correlated Rams ML + Rams TT OVER 23.5 SGP. Rams 27-23 projection, ~60% Rams win probability. Corrected kickoff (8:35 not 8:15) and flagged 49ers roster (Purdy > Mac Jones). Both tickets conditional; Bovada shell only, FanDuel LAR -196 exceeded fair-value price. Also caught W9 P3 finished 1-2 -$12 overall despite its OVER winning.",
+        bets: [
+          { type: "straight", market: "Team Total", line: "LAR Team Total OVER 23.5 (min -110 conditional)", stake: 15, confidence: 6, reason: "Stafford / Nacua / Adams / Kyren against SF DL missing Collins produces 24+ Rams points" },
+          { type: "sgp", market: "SGP", line: "LAR ML + LAR Team Total OVER 23.5 (min +200 conditional)", stake: 5, confidence: 4, reason: "Positively dependent: 24+ Rams points conditional on Rams win ~70%, correlation-adjusted joint P 0.42" }
+        ]
       },
       Claude: {
         version: "claude-opus-4-7",

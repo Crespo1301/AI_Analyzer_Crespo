@@ -3,16 +3,21 @@ const fs = require('node:fs');
 const { validate: validatePrices } = require('./validate-priced-response');
 
 function validate(response) {
-  assert.equal(response.prompt_version, '2.0');
+  assert.ok(['2.0', '2.1'].includes(response.prompt_version), 'Accepted versions: 2.0, 2.1');
   assert.equal(response.prompt_template, 'forced-selection');
   assert.equal(response.forced_allocation, true);
   assert.equal(response.total_stake, 20);
   assert.equal(response.reserve, 0);
   assert.ok(Array.isArray(response.bets));
   assert.ok(response.bets.some(b => b.type === 'straight'), 'At least one single required');
-  assert.ok(response.bets.some(b => ['parlay', 'sgp'].includes(b.type)), 'At least one parlay required');
+  assert.ok(response.bets.some(b => ['parlay', 'sgp', 'same_game_parlay'].includes(b.type)), 'At least one parlay required');
+  if (response.prompt_version === '2.1') {
+    assert.ok(response.season_one_study && typeof response.season_one_study === 'object', 'v2.1 requires season_one_study block');
+    assert.ok(typeof response.season_one_study.shape_pattern_applied === 'string' && response.season_one_study.shape_pattern_applied.trim(), 'v2.1 season_one_study.shape_pattern_applied required');
+    assert.ok(typeof response.season_one_study.shape_pattern_avoided === 'string' && response.season_one_study.shape_pattern_avoided.trim(), 'v2.1 season_one_study.shape_pattern_avoided required');
+  }
   const normalized = response.bets.map(bet => {
-    assert.ok(['straight','parlay','sgp'].includes(bet.type));
+    assert.ok(['straight','parlay','sgp','same_game_parlay'].includes(bet.type));
     assert.ok(['bovada_verified','reference_market','conditional'].includes(bet.pricing_status));
     if (bet.type !== 'straight') {
       assert.ok(Array.isArray(bet.legs) && bet.legs.length >= 2, 'At least two parlay legs');

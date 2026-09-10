@@ -5,32 +5,32 @@
   "source": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/teams/sf/roster",
   "offense": {
     "qb1": {
-      "player": "Mac Jones",
-      "note": "6 yr, age 28"
+      "player": "Brock Purdy",
+      "note": "5 yr, age 26, confirmed Week 1 starter per 49ers.com depth chart"
     },
     "qb2": {
-      "player": "Brock Purdy",
-      "note": "5 yr, age 26"
+      "player": "Mac Jones",
+      "note": "6 yr, age 28, backup"
     },
     "rb1": {
       "player": "Christian McCaffrey",
-      "note": "10 yr, age 30"
+      "note": "10 yr, age 30, bell-cow"
     },
     "rb2": {
       "player": "Kaelon Black",
       "note": "0 yr, age 24"
     },
     "wr1": {
+      "player": "Jauan Jennings",
+      "note": "WR1 by usage with Pearsall and Kirk on IR"
+    },
+    "wr2": {
       "player": "Ricky Pearsall",
       "note": "3 yr, age 25, status: Injured Reserve"
     },
-    "wr2": {
-      "player": "Christian Kirk",
-      "note": "9 yr, age 29, status: Injured Reserve"
-    },
     "te1": {
-      "player": "Brayden Willis",
-      "note": "4 yr, age 26"
+      "player": "George Kittle",
+      "note": "TE1 corrected from heuristic pick"
     }
   },
   "special_teams": {
@@ -139,8 +139,17 @@
       }
     ]
   },
-  "prop_watchlist": [],
+  "prop_watchlist": [
+    { "player": "Christian McCaffrey", "position": "RB", "why": "Bell-cow with thin WR room around him, rush attempts + rec yds both live" },
+    { "player": "George Kittle", "position": "TE", "why": "Elevated target share with Pearsall + Kirk on IR" },
+    { "player": "Jauan Jennings", "position": "WR", "why": "WR1 by attrition, receptions OVER a live consideration" }
+  ],
   "changes_log": [
+    {
+      "date": "2026-09-10",
+      "change": "Corrected QB1 from Mac Jones to Brock Purdy per 49ers.com depth chart. Corrected WR1 from Ricky Pearsall (IR) to Jauan Jennings by usage. Promoted George Kittle to TE1 slot. ChatGPT (via Codex CLI) flagged the Mac Jones heuristic error while running Week 1 Game 2 forced-selection prompt. Added prop watchlist.",
+      "source": "https://www.49ers.com/team/depth-chart"
+    },
     {
       "date": "2026-09-09",
       "change": "Initial roster snapshot fetched from ESPN public site API before Week 1 kickoff.",
