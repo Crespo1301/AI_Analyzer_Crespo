@@ -1,6 +1,17 @@
 # 2026 Prompt Templates
 
-Current prompt version: **1.1**, effective for all new runs after September 10,
+## Current default: forced-selection v2.0
+
+Starting with the reset Week 1 Game 2 run, use forced-selection.md for all
+models. Require at least one single plus one parlay/SGP with two distinct
+compatible legs, and allocate the full hypothetical $20 with zero reserve.
+Use Bovada quotes first, explicit reference-market prices second, or clearly
+labeled conditional target prices. Never fabricate actual sportsbook odds.
+Validate with node scripts/validate-forced-response.js response.json.
+The v1.1 templates below remain historical/control lanes only. Do not mix
+forced selections with discretionary/no-bet runs when evaluating performance.
+
+Previous prompt version: **1.1**, initially effective for new runs after September 10,
 2026, including remaining Week 1 games. Every lane requires per-ticket payout
 odds, quote provenance, potential return and probability-versus-price reasoning.
 Baseline runs use supplied quotes only. Missing prices mean reserve, not -110.

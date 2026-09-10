@@ -1,5 +1,11 @@
 # Handoff, v3.3.0
 
+Game 2 reset: use forced-selection v2.0, now the default for future model runs.
+Both game-02-niners-rams prompt files were replaced. Minimum one single and
+one 2+ leg parlay, full $20 research allocation, zero reserve. Keep conditional
+and reference prices distinct from Bovada quotes. Use validate-forced-response.js,
+not the v1.1 validator directly. Existing Game 1 records remain unchanged.
+
 September 10 follow-up: model-first game review now separates outcome, pricing
 and per-pick reasoning. Carlos's tickets appear after model details. Numerical
 reasoning scores remain pending, not implicitly zero or based on wins alone.

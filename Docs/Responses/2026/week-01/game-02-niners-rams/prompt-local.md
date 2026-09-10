@@ -1,211 +1,140 @@
-# Week 1 Game 2: 49ers at Rams
+# Week 1 Game 2 RESET: 49ers at Rams
 
-Template: local-strength-claude-codex v1.1. Run configuration: game-02-bovada r1.
-Prepared September 10, 2026. Status: READY FOR RESEARCH, NOT LOCKED.
-No current Bovada prices have been supplied or verified in this packet.
-
-Copy the entire block below into a fresh model session.
+Forced-selection v2.0. Prepared, not locked. Supersedes the prior r1 prompt.
+Copy the complete block into a fresh independent session.
 
 ```text
-GAME 2 RUN RULES (take precedence over generic historical-reflection instructions)
-Game ID: niners-rams. Kickoff: 2026-09-10T20:35:00-04:00,
-which is September 11 at 10:35 AM AEST in Melbourne. Rams are designated
-home team at a neutral international venue, not playing at SoFi Stadium.
-Verify the schedule again before running. If kickoff has passed, stop:
-do not present retrospective analysis as a pre-game prediction.
+You are an independent entry in the CSolutions AI Analyzer NFL study.
+Run the forced-selection lane, prompt version 2.0, for San Francisco 49ers at Los Angeles Rams,
+Week 1, game_id niners-rams, kickoff 2026-09-10T20:35:00-04:00 (September 11, 10:35 AM AEST), venue Melbourne Cricket Ground, Australia; neutral venue, Rams designated home, on Netflix.
 
-Carlos uses Bovada (https://www.bovada.lv/sports/football/nfl).
-All funded tickets must use a verified Bovada quote. Other books may be
-market context only, never a substitute Bovada price. If the market cannot
-be retrieved, state that limitation and ask Carlos for screenshots with
-capture time and timezone, including BOTH sides of spreads/totals and
-moneylines plus any relevant props or a combined SGP quote.
-Do not request credentials, bypass access controls, log in, or place bets.
-Until a Bovada price is verified, put that candidate in unpriced_candidates
-and leave its stake in reserve. A generic Bovada homepage citation is not
-evidence of a specific price. Recheck prices before the actual lock.
+This is a hypothetical research allocation, not authorization to place wagers.
+Check the current time and official kickoff first. If kickoff has passed,
+stop and report that pre-game eligibility has expired. Do not use hindsight.
 
-Read your own Game 1 raw response plus final-review.md and
-prompt-corrections.md in Docs/Responses/2026/week-01/game-01-patriots-seahawks/.
-Use assets/nfl-predictions-2026.js for the current-season result review;
-the 2025 data lives separately in assets/nfl-data.js.
-Older reports assume -110, had attribution errors, and have later
-corrections. Do not infer a best market, model or prompt from their
-profitability claims. One winning game does not establish a repeatable edge.
-Carry forward exact lines, sourced facts, price math, falsifiers and reserve.
-Do not automatically favor props, unders, hooks, or any model's last pick.
-Do not read other models' Game 2 answers or Carlos's Game 2 selections.
+REQUIRED OUTPUT
+Make at least ONE straight/single pick AND ONE parlay or same-game parlay
+with at least TWO distinct, compatible legs. Allocate the full $20 across
+these tickets; reserve must be zero. More tickets are optional, not necessary.
+Every ticket needs a positive stake. A parlay is one ticket with one stake.
+Do not answer with an all-reserve allocation or omit the parlay.
+Missing prices must change the pricing label, not eliminate the required
+research selections. The allocation is forced by this experiment and does
+not establish that any selection is profitable or advisable to execute.
 
-For every source actually read, give the path/URL, access status and a short
-checkable factual excerpt (no more than 15 words from any one web source).
-If a fetch fails, say so. Another client's HTTP 200 does not prove access
-worked in your session, and a snippet is not proof of a tool call.
-Keep inference separate from retrieved facts. Never invent model version,
-successful repo reads, timestamps or depth-chart roles.
-Verify starters against official current reports, not roster ordering.
-Research current injuries, usage, weather at Melbourne's local kickoff,
-travel/acclimatization, coaching and matchups without assuming a betting angle.
+RESEARCH AND SOURCE HONESTY
+Use local repo access. Read the files and report any missing paths. Do not edit the project or push while producing this independent response.
+Read Docs/2026/grading-rubric.md, Docs/2026/iteration-system.md,
+assets/nfl-predictions-2026.js, and the previous game's saved response and
+final-review.md under Docs/Responses/2026/week-01/game-01-patriots-seahawks/.
+Review your own past response, not other entrants' answers for this game.
+Use older NFL_CORRECTIONS in assets/nfl-data.js as data-quality lessons.
+Do not treat historical assumed -110 returns or one winning game as proof
+that props, unders, any model or a prompt has a repeatable advantage.
 
-Use the v1.1 payout fields below. Probabilities are estimates, not measured
-certainty. Describe the adverse scenario and price sensitivity for each
-funded ticket. Do not force a bet if uncertainty defeats the price edge.
-Give a compact ticket table, strongest supporting and opposing evidence,
-and a valid JSON object (replace schema alternatives with actual values).
-For SGPs/parlays add legs with exact markets, sides and lines, and the
-verified combined Bovada ticket price. Keep each ticket one stake.
-Record generated_at and lock_at with timezone; lock_at is null until the
-operator accepts the verified response before kickoff.
-No predictions have been locked merely because this prompt was prepared.
+Research official current starters, injuries, usage, coaching, matchup,
+travel and weather at local kickoff. Do not infer starter status from
+roster ordering. State sources actually read, access failures and retrieval
+time. A URL alone is not proof of access. Distinguish facts from inference.
+If some research is unavailable, still make the requested selections using
+available evidence, identifying what remains unknown rather than inventing it.
+Give a straight-up winner, estimated win probability and projected score.
 
+BOVADA PRICING
+Carlos uses Bovada: https://www.bovada.lv/sports/football/nfl.
+Try to obtain current event-specific Bovada prices. Do not log in, request
+credentials, bypass access controls or place bets.
+Classify EVERY ticket as exactly one of:
+- bovada_verified: exact line and current Bovada price actually retrieved
+  or supplied in a timestamped screenshot.
+- reference_market: exact line and price verified at another named book;
+  NOT a verified Bovada offer.
+- conditional: exact proposed line and minimum acceptable American odds,
+  derived from your probability/value assessment; NOT an observed quote.
 
-You are running as an entry in the AI Analyzer 2026 NFL model-comparison
-study for San Francisco 49ers at Los Angeles Rams, Week 1, 2026-09-10, kickoff 8:35 PM ET (2026-09-10T20:35:00-04:00) at
-Melbourne Cricket Ground, Melbourne, Australia (neutral international site; Rams designated home), broadcast on Netflix.
+If Bovada is inaccessible, use verified reference-market prices where
+available. If those are also unavailable, provide conditional selections.
+Never label a proposed target price as a real quote. Never assume -110.
+For a conditional ticket, odds_american, sportsbook, odds_source and
+odds_captured_at must be null; populate minimum_acceptable_odds instead.
+Explain how the minimum follows from estimated probability and uncertainty.
+Source access problems are not a reason to give no selections.
 
-You have direct read access to this repository. Use it. Before you make a
-single pick, do all of the following in order and cite what you found:
+PARLAY REQUIREMENTS
+List each leg's market, selection and exact line. Explain dependence,
+overlapping exposure with singles, and how the whole ticket can fail.
+Use the sportsbook's actual combined quote when verified. Do not multiply
+correlated leg prices or marginal probabilities as if independent.
+Without a combined quote, the parlay must be conditional, with a clearly
+labeled minimum acceptable combined price and joint probability estimate.
+Do not choose contradictory legs or repeat the same leg twice.
+Record push/void rules if verified; otherwise say unknown. Preserve original
+quotes at settlement and use the adjusted actual return after voids.
 
-1. Read Docs/2026/grading-rubric.md so you know how your reasoning will be
-   scored. Reasoning quality is graded separately from pick outcome. Name
-   factors that could actually matter to the result.
-2. Read Docs/2026/iteration-system.md so you know how prompt versions are
-   tracked. Note the prompt template and version you are answering under.
-3. Read assets/nfl-data.js. Read every entry in NFL_CORRECTIONS. Those
-   are the ways the 2025 season was actually wrong once we checked box
-   scores. Do not repeat the same error patterns (bet-to-model
-   misattribution, missing OT flags, wrong dates on Thursday and Monday
-   games, prop outcomes assumed from confidence instead of stat lines).
-4. Reflect on your own past behavior. In NFL_BETS, filter the rows to
-   your own model name. Read every pick, its stake, its outcome, and its
-   corrected value if a correction exists. Look for a pattern you can
-   actually cite. Where did you overbet on low-conviction props? Where
-   did you name a factor that actually mattered to the result? Adjust
-   this week's allocation and reasoning to keep what worked and stop what
-   did not. Do the same for any prior weeks in NFL_PREDICTIONS_2026 if
-   they exist.
-5. Read Data/2026/teams.json and Data/2026/team-context.json for the two
-   teams playing. Note whatever is filled in and whatever is blank.
-6. If a per-week intake file exists at
-   Data/2026/intake/week-01.json, read it. If it does not exist, say
-   so and use the open web to fill the gap.
-7. Do open-web research on this specific matchup. Cite every source you
-   use with a full URL. At minimum, verify the current spread, total, and
-   moneyline, and note which sportsbook the number is from. Look at
-   injury reports from an authoritative outlet (ESPN, NFL.com, or the
-   team's own official injury designation page). News about a team may
-   change how you read that team overall, not just for this one bet, so
-   let that update your priors when it should.
+PAYOUT AND RISK
+Each ticket must report stake, maximum loss, estimated win probability,
+odds basis, potential net profit, total return including stake, break-even
+probability and strongest supporting AND opposing evidence.
+At American odds A>0: profit=stake*A/100; at A<0: profit=stake*100/abs(A).
+Return=stake+profit. Break-even=100/(A+100) for positive A, otherwise
+abs(A)/(abs(A)+100). Use minimum_acceptable_odds for conditional math and
+label those amounts as hypothetical AT THE TARGET PRICE.
+Round money to cents; probabilities use 0..1 and four or more decimals
+for break-even. For pushes, disclose conditional-on-decision assumptions.
+Your probability estimate is not a measured certainty. State uncertainty,
+what price makes the ticket unattractive, and whether forced selection
+resulted in weak or possibly negative value. Do not fabricate positive value.
 
-Then decide. You have a $20 hypothetical bankroll for this single game.
-You may split it across as many or as few bets as you want. You may keep
-some or all of it in reserve if the edge is not there. Reserve is a
-valid allocation.
-
-For every straight bet return:
-- market
-- specific line or number you are targeting
-  (for example "UNDER 47.5" or "Player X OVER 62.5 rush yds")
-- side
-- stake in dollars
-- confidence from 1 to 10
-- the specific factor that should make this bet win, named from what
-  you actually read or researched (not a vibe)
-- what would falsify this bet, i.e. what would have to happen for it to
-  lose
-
-For every parlay or same-game parlay, return the same for each leg plus
-the reason the correlation between legs is real (why the legs should
-move together).
-
-Do not include a pick you cannot explain in one sentence a grader could
-audit against the box score. If you cannot audit it, do not bet it.
-
-Mandatory payout gate, effective prompt v1.1:
-A betting line is not its payout price. Every funded ticket needs numeric
-American odds, sportsbook, exact market/line, source URL or supplied snapshot,
-and quote capture time with timezone. Never substitute response time for
-quote time. Missing/unverifiable prices mean no funded bet: list the candidate
-under unpriced_candidates and keep that money in reserve. Never assume -110.
-Baseline models use only supplied quotes, without fetching external data.
-Strength-lane models research quotes or ask for a current price.
-Record maximum loss (stake), potential net profit and total return including
-stake. Positive odds A: profit = stake*A/100. Negative A: profit =
-stake*100/abs(A). Total return = stake + profit; display money to cents.
-Break-even probability is 100/(A+100) for positive odds and
-abs(A)/(abs(A)+100) for negative odds. Compare your estimated win probability
-with break-even and explain uncertainty. Confidence /10 is not a probability.
-For push-capable markets compare conditional win probability excluding
-pushes and disclose assumptions. A likely winner is not necessarily good value.
-Parlays/SGPs require the sportsbook's combined ticket price and each leg's
-exact line. Never invent combined odds by multiplying correlated leg prices.
-Record known leg prices and applicable push/void rules, or mark rules unknown.
-Preserve original odds at settlement; use actual adjusted return after voids.
-Ticket stakes plus reserve must equal the $20 bankroll.
-Use probabilities from 0 to 1, retaining at least four decimal places for
-break-even calculations. Quote time must precede the recorded lock time.
-
-Finish by returning a single fenced JSON block matching this schema:
-
+ANSWER FORMAT
+1. Winner, projected score and concise game script.
+2. Ticket table including the required single and parlay, totaling $20.
+3. Evidence, failure scenarios, correlation and missing-data notes.
+4. One valid JSON object. Use actual values, not schema placeholders:
 {
-  "prompt_template": "local-strength-claude-codex",
-  "prompt_version": "1.1",
-  "model_role": "Claude" or "Codex",
-  "model_version": "the exact version string you know yourself as",
+  "prompt_template": "forced-selection",
+  "prompt_version": "2.0",
+  "model_role": "your model family",
+  "model_version": "actual known version, or unknown",
+  "generated_at": "actual ISO timestamp with timezone",
+  "lock_at": null,
   "week": 1,
   "game_id": "niners-rams",
-  "away": "San Francisco 49ers",
-  "home": "Los Angeles Rams",
-  "kickoff_et": "8:35 PM ET (2026-09-10T20:35:00-04:00)",
-  "venue": "Melbourne Cricket Ground, Melbourne, Australia (neutral international site; Rams designated home)",
-  "network": "Netflix",
-  "line_snapshot": {
-    "spread": "...",
-    "total": "...",
-    "moneyline": "...",
-    "book": "the sportsbook the number is from",
-    "captured_at": "Actual quote capture timestamp with timezone, not response time"
-  },
-  "sources_read_in_repo": ["Docs/2026/grading-rubric.md", "..."],
-  "self_reflection": {
-    "past_bets_reviewed": "brief note of which of your own past picks you looked at",
-    "patterns_noticed": "one or two sentences on your own tendencies",
-    "adjustments_this_week": "one or two sentences on what you changed for this game"
-  },
-  "sources_from_web": [
-    {"url": "https://...", "for": "spread" or "injury" or "weather"}
-  ],
-  "game_script": "3-4 sentence description of the most likely game flow",
+  "forced_allocation": true,
   "bankroll": 20,
-  "total_stake": 0-20,
-  "unpriced_candidates": [],
-  "reserve": 20 - total_stake,
+  "total_stake": 20,
+  "reserve": 0,
   "bets": [
     {
-      "type": "straight" or "parlay" or "sgp",
-      "market": "Spread" or "Moneyline" or "Total" or "Team Total" or
-                "Prop" or "SGP" or "Parlay",
-      "line": "the exact line",
-      "stake": number,
-      "odds_american": number,
-      "sportsbook": "quoted sportsbook",
-      "odds_source": "URL or supplied snapshot reference",
-      "odds_captured_at": "ISO 8601 with timezone",
-      "max_loss": number,
-      "potential_net_profit": number,
-      "potential_total_return": number,
-      "break_even_probability": number,
-      "estimated_win_probability": number,
-      "value_reasoning": "price, probability, uncertainty and push assumptions",
-      "settlement_rules": "push/void rules or unknown",
-      "confidence": 1-10,
-      "reason_wins": "one sentence, name the factor",
-      "reason_loses": "one sentence, name the falsifier"
+      "type": "straight",
+      "market": "actual market",
+      "line": "exact selection and threshold",
+      "stake": 0,
+      "pricing_status": "conditional",
+      "odds_american": null,
+      "minimum_acceptable_odds": 0,
+      "sportsbook": null,
+      "odds_source": null,
+      "odds_captured_at": null,
+      "payout_basis": "minimum_acceptable_odds",
+      "max_loss": 0,
+      "potential_net_profit": 0,
+      "potential_total_return": 0,
+      "break_even_probability": 0,
+      "estimated_win_probability": 0,
+      "value_reasoning": "price, probability and uncertainty",
+      "reason_wins": "specific supporting factor",
+      "reason_loses": "specific failure scenario",
+      "settlement_rules": "verified rules or unknown",
+      "legs": []
     }
   ],
-  "reasoning_summary": "3-6 sentences, what you actually saw when you read
-    the repo and did research, in your own voice, not marketing"
+  "sources": [],
+  "reasoning_summary": "concise evidence-based summary"
 }
-
-Do not soften the pick to match the market. Do not add a pick you would
-not be able to defend to a grader who has read the same rubric you did.
+The example shows field names only: replace zeros with your actual numbers,
+include BOTH required ticket types, and provide a legs array for the parlay.
+For verified quotes set minimum_acceptable_odds=null and payout_basis to
+odds_american. Save all records under this new lane. Conditional and reference
+tickets must not be reported as verified Bovada wagers or actual returns.
+Operator acceptance alone cannot turn an unverified quote into a verified one.
 ```

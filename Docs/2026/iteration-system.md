@@ -54,6 +54,18 @@ Expected improvement: fewer weak props and fewer public-looking spread picks.
 
 ## Change Log (actual)
 
+### 2026-09-10: Forced-selection v2.0 and Game 2 reset
+
+Carlos requested at least one single and one 2+ leg parlay in every future
+run, with full $20 hypothetical allocation. Replaced both active Game 2
+prompt files; the old text remains in Git history only. No saved response
+files existed in that folder to delete. The earlier chat-supplied no-bet
+response is superseded, not evidence for the reset experiment.
+Missing Bovada quotes now permit labeled reference or conditional research
+cards, never invented observed odds. Added a separate validator and lane.
+This changes selection incentives and must not be treated as evidence that
+forced picks outperform the discretionary lane. Preserve all Game 1 records.
+
 ### 2026-09-10: Game 2 Bovada configuration r1
 
 Instantiated both strength-lane v1.1 prompts for 49ers-Rams in Melbourne.

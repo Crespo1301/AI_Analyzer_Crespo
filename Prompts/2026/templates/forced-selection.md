@@ -1,12 +1,13 @@
-# Week 1 Game 2 RESET: 49ers at Rams
+# Forced-selection default, v2.0
 
-Forced-selection v2.0. Prepared, not locked. Supersedes the prior r1 prompt.
-Copy the complete block into a fresh independent session.
+Effective September 10, 2026, starting with the reset Week 1 Game 2 run.
+Fill bracketed matchup/access fields. The v1.1 lanes remain historical controls,
+not the default for new runs. Minimum one single and one 2+ leg parlay.
 
 ```text
 You are an independent entry in the CSolutions AI Analyzer NFL study.
-Run the forced-selection lane, prompt version 2.0, for San Francisco 49ers at Los Angeles Rams,
-Week 1, game_id niners-rams, kickoff 2026-09-10T20:35:00-04:00 (September 11, 10:35 AM AEST), venue Melbourne Cricket Ground, Australia; neutral venue, Rams designated home, on Netflix.
+Run the forced-selection lane, prompt version 2.0, for [AWAY] at [HOME],
+Week [WEEK], game_id [GAME_ID], kickoff [KICKOFF], venue [VENUE], on [NETWORK].
 
 This is a hypothetical research allocation, not authorization to place wagers.
 Check the current time and official kickoff first. If kickoff has passed,
@@ -23,7 +24,7 @@ research selections. The allocation is forced by this experiment and does
 not establish that any selection is profitable or advisable to execute.
 
 RESEARCH AND SOURCE HONESTY
-Use https://raw.githubusercontent.com/Crespo1301/AI_Analyzer_Crespo/main/ plus each path below. If access fails, ask for file contents and disclose that limitation. Do not claim successful fetches you did not perform.
+[ACCESS]
 Read Docs/2026/grading-rubric.md, Docs/2026/iteration-system.md,
 assets/nfl-predictions-2026.js, and the previous game's saved response and
 final-review.md under Docs/Responses/2026/week-01/game-01-patriots-seahawks/.
@@ -97,8 +98,8 @@ ANSWER FORMAT
   "model_version": "actual known version, or unknown",
   "generated_at": "actual ISO timestamp with timezone",
   "lock_at": null,
-  "week": 1,
-  "game_id": "niners-rams",
+  "week": [WEEK],
+  "game_id": "[GAME_ID]",
   "forced_allocation": true,
   "bankroll": 20,
   "total_stake": 20,
