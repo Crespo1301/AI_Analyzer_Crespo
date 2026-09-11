@@ -501,7 +501,12 @@ NFL_GAMES.forEach(game => {
   console.log('wrote', game.id + '.html');
 });
 if (typeof NFL_PREDICTIONS_2026 !== 'undefined') {
+  const promotedIds = new Set(NFL_GAMES.map(g => g.id));
   NFL_PREDICTIONS_2026.forEach(pred => {
+    if (promotedIds.has(pred.gameId)) {
+      // Promoted into NFL_GAMES + NFL_BETS; graded page emitted above.
+      return;
+    }
     const html = pendingPageHtml(pred);
     fs.writeFileSync(path.join(outDir, pred.gameId + '.html'), html);
     console.log('wrote', pred.gameId + '.html (' + (pred.result ? 'graded' : 'pending') + ')');

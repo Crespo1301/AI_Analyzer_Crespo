@@ -125,6 +125,14 @@
 <script src="assets/nfl-predictions-2026.js"></script>
 <script src="assets/site.js"></script>
 <script>
+  // Restrict every visual on this page to Season 1 (2025) data only.
+  var _origGames = NFL_GAMES;
+  var _origBets = NFL_BETS;
+  NFL_GAMES = _origGames.filter(function(g){ return String(g.date).slice(0,4) === "2025"; });
+  var _s1Labels = {};
+  NFL_GAMES.forEach(function(g){ _s1Labels[g.label] = true; });
+  NFL_BETS = _origBets.filter(function(b){ return _s1Labels[b.game]; });
+
   document.getElementById("s1-games").textContent = NFL_GAMES.length;
   document.getElementById("s1-bets").textContent = NFL_BETS.filter(function(b){ return b.outcome !== "N/A"; }).length;
   nflRenderGameCards("s1-grid");

@@ -263,10 +263,17 @@ function nflPredictions2026Summary() {
   });
 }
 
-// Adapt settled predictions for the ledger without changing the historical data.
+// Historical adapter kept for pending-only games. Once a game is promoted
+// into NFL_GAMES + NFL_BETS in assets/nfl-data.js, its ledger rows live
+// there and this adapter skips it to avoid double-counting. See
+// Docs/2026/iteration-system.md entry 2026-09-11.
 function nflGradedBets2026() {
+  var promotedIds = (typeof NFL_GAMES !== "undefined")
+    ? NFL_GAMES.reduce(function (set, g) { set[g.id] = true; return set; }, {})
+    : {};
   return NFL_PREDICTIONS_2026.flatMap(function (game) {
     if (!game.result || game.result.status !== "final") return [];
+    if (promotedIds[game.gameId]) return [];
     return Object.keys(game.models).flatMap(function (model) {
       return game.models[model].bets.map(function (bet, index) {
         var grade = game.result.grades[model][index];

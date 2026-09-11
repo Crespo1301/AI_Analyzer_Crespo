@@ -54,6 +54,41 @@ Expected improvement: fewer weak props and fewer public-looking spread picks.
 
 ## Change Log (actual)
 
+### 2026-09-11: Promote Season 2 graded games into NFL_GAMES + NFL_BETS
+
+Per the weekly loop step 4, graded results move out of the pending
+NFL_PREDICTIONS_2026 archive and into `assets/nfl-data.js` as the canonical
+NFL_GAMES + NFL_BETS records. First promotion covers Week 1 Game 1
+(Patriots at Seahawks, SEA 13-10) and Game 2 (49ers vs Rams Melbourne,
+SF 27-7). Eleven rows added to NFL_BETS across the two games:
+
+- Game 1: Claude 3 rows (UNDER 44.5 WIN, NE +3.5 WIN, Kupp UNDER 4.5 rec
+  WIN, all at conditional -110), Gemini 1 row (NE +3.5 WIN at recorded
+  -118). ChatGPT reserved fully, no rows recorded.
+- Game 2: ChatGPT 2 rows (LAR TT OVER 23.5 LOSS at conditional -110,
+  SGP LAR ML + LAR TT OVER 23.5 LOSS at conditional +200), Claude 3
+  rows (UNDER 45.5 WIN at conditional -110, Kyren OVER 16.5 rush att
+  LOSS at conditional -115, SGP UNDER 45.5 + Kyren OVER 16.5 LOSS at
+  conditional +180), Gemini 2 rows (UNDER 48.5 WIN at claimed -110,
+  SGP LAR TT OVER 23.5 + Kyren OVER 14.5 LOSS at conditional +220).
+
+The `prompt` column on each row records the lane and version used:
+"LS-1.0" for local-strength v1.0 (Claude Game 1), "GS-1.0" for
+github-strength v1.0 (Gemini Game 1), "FS-2.1" for forced-selection v2.1
+(all Game 2 tickets).
+
+Reserved (no-bet) tickets are not recorded as NFL_BETS rows. They stay
+in the NFL_PREDICTIONS_2026 result block as a reasoning record but do
+not distort win-rate math in NFL_BETS.
+
+The `nflGradedBets2026` adapter now skips predictions whose gameId has
+been promoted into NFL_GAMES, so bet-database.html and
+summarize-experiment.js do not double-count the same tickets.
+
+Season 1 archive page (`nfl-2025.html`) filters NFL_GAMES and NFL_BETS
+to 2025 dates only, so promoted Season 2 games do not appear in the
+Season 1 archive. Season 2 hub already filters correctly.
+
 ### 2026-09-10: Forced-selection v2.0 and Game 2 reset
 
 Carlos requested at least one single and one 2+ leg parlay in every future

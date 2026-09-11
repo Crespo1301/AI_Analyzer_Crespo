@@ -81,7 +81,11 @@ var NFL_GAMES = [
   { id: "chargers-jaguars", week: 11, prompt: 5, label: "Chargers vs Jaguars", away: "Los Angeles Chargers", home: "Jacksonville Jaguars", awayScore: 6, homeScore: 35, date: "2025-11-16", espn: "https://www.espn.com/nfl/boxscore/_/gameId/401772775" },
   { id: "bears-vikings", week: 11, prompt: 6, label: "Bears vs Vikings", away: "Chicago Bears", home: "Minnesota Vikings", awayScore: 19, homeScore: 17, date: "2025-11-16", espn: "https://www.espn.com/nfl/boxscore/_/gameId/401772880" },
   { id: "commanders-dolphins", week: 11, prompt: 7, label: "Commanders vs Dolphins", away: "Washington Commanders", home: "Miami Dolphins", awayScore: 13, homeScore: 16, ot: true, date: "2025-11-16", neutralSite: "Estadio Santiago Bernabeu, Madrid, Spain", espn: "https://www.espn.com/nfl/boxscore/_/gameId/401772631" },
-  { id: "cowboys-raiders", week: 11, prompt: 11, label: "Cowboys vs Raiders", away: "Dallas Cowboys", home: "Las Vegas Raiders", awayScore: 33, homeScore: 16, date: "2025-11-17", espn: "https://www.espn.com/nfl/boxscore/_/gameId/401772819" }
+  { id: "cowboys-raiders", week: 11, prompt: 11, label: "Cowboys vs Raiders", away: "Dallas Cowboys", home: "Las Vegas Raiders", awayScore: 33, homeScore: 16, date: "2025-11-17", espn: "https://www.espn.com/nfl/boxscore/_/gameId/401772819" },
+
+  // ------ Season 2 (2026-27) promoted graded games ------
+  { id: "patriots-seahawks", week: 1, prompt: "S2-W1G1", label: "Patriots at Seahawks", away: "New England Patriots", home: "Seattle Seahawks", awayScore: 10, homeScore: 13, date: "2026-09-09", espn: "https://www.espn.com/nfl/boxscore/_/gameId/401872656" },
+  { id: "niners-rams", week: 1, prompt: "S2-W1G2", label: "49ers vs Rams (Melbourne)", away: "San Francisco 49ers", home: "Los Angeles Rams", awayScore: 27, homeScore: 7, date: "2026-09-10", neutralSite: "Melbourne Cricket Ground, Melbourne, Australia", espn: "https://www.espn.com/nfl/boxscore/_/gameId/401872657" }
 ];
 
 // Columns: week, model, prompt, betType, recommendation, stake, game, outcome, return, pl
@@ -172,7 +176,22 @@ var NFL_BETS = [
   [11,"Gemini",7,"Prop","Achane OVER 14.5 rush att",11.00,"Commanders vs Dolphins","WIN",21.00,10.00],
   [11,"Gemini",11,"Team Total","Cowboys TT OVER 24.5",11.00,"Cowboys vs Raiders","WIN",21.00,10.00],
   [11,"Gemini",11,"Prop","Longest FG OVER 44.5-45.5",11.00,"Cowboys vs Raiders","WIN",21.00,10.00],
-  [11,"Gemini",11,"Prop","Prescott Pass TDs OVER 1.5-2.5",11.00,"Cowboys vs Raiders","WIN",21.00,10.00]
+  [11,"Gemini",11,"Prop","Prescott Pass TDs OVER 1.5-2.5",11.00,"Cowboys vs Raiders","WIN",21.00,10.00],
+
+  // ------ Season 2 (2026-27), Week 1, Patriots at Seahawks (SEA 13, NE 10). ChatGPT reserved fully, no rows. ------
+  [1,"Claude","LS-1.0","Total","UNDER 44.5 (@ -110 conditional)",6.00,"Patriots at Seahawks","WIN",11.45,5.45],
+  [1,"Claude","LS-1.0","Spread","NE +3.5 (@ -110 conditional)",4.00,"Patriots at Seahawks","WIN",7.64,3.64],
+  [1,"Claude","LS-1.0","Prop","Cooper Kupp UNDER 4.5 receptions (@ -110 conditional)",1.00,"Patriots at Seahawks","WIN",1.91,0.91],
+  [1,"Gemini","GS-1.0","Spread","NE +3.5 (@ -118)",12.00,"Patriots at Seahawks","WIN",22.17,10.17],
+
+  // ------ Season 2 (2026-27), Week 1, 49ers vs Rams Melbourne (SF 27, LAR 7). ------
+  [1,"ChatGPT","FS-2.1","Team Total","LAR Team Total OVER 23.5 (@ -110 conditional)",15.00,"49ers vs Rams (Melbourne)","LOSS",0.00,-15.00],
+  [1,"ChatGPT","FS-2.1","SGP","LAR ML + LAR TT OVER 23.5 (@ +200 conditional)",5.00,"49ers vs Rams (Melbourne)","LOSS",0.00,-5.00],
+  [1,"Claude","FS-2.1","Total","UNDER 45.5 (@ -110 conditional)",12.00,"49ers vs Rams (Melbourne)","WIN",22.91,10.91],
+  [1,"Claude","FS-2.1","Prop","Kyren Williams OVER 16.5 rush att (@ -115 conditional)",4.00,"49ers vs Rams (Melbourne)","LOSS",0.00,-4.00],
+  [1,"Claude","FS-2.1","SGP","UNDER 45.5 + Kyren OVER 16.5 rush att (@ +180 conditional)",4.00,"49ers vs Rams (Melbourne)","LOSS",0.00,-4.00],
+  [1,"Gemini","FS-2.1","Total","UNDER 48.5 (@ -110 claimed bovada_verified, unverified)",12.00,"49ers vs Rams (Melbourne)","WIN",22.91,10.91],
+  [1,"Gemini","FS-2.1","SGP","LAR TT OVER 23.5 + Kyren OVER 14.5 rush att (@ +220 conditional)",8.00,"49ers vs Rams (Melbourne)","LOSS",0.00,-8.00]
 ].map(function (row) {
   return {
     week: row[0], model: row[1], prompt: row[2], betType: row[3],
