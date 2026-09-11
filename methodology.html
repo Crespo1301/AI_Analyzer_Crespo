@@ -81,27 +81,32 @@
 
 <section id="rubric" class="band band-paper">
   <div class="wrap">
-    <h2 class="section-title">Grading rubric</h2>
+    <h2 class="section-title">Grading rubric (v2, effective 2026-09-11)</h2>
+    <p style="color: var(--gunmetal); font-size: 15px; max-width: 65ch; margin-bottom: 20px;">v1 rewarded "the model named a real factor" even when the outcome disagreed. Sports predictions are wrong all the time, and the team that looks better on paper is often the team that loses. v2 rebalances so <strong>outcome is the primary axis</strong> and reasoning is a secondary lens describing pick quality relative to the outcome.</p>
     <div class="factors">
       <div class="factor-row">
-        <div class="fr-label">Pick outcome</div>
-        <div class="fr-body">Win, Loss, Push, or Not-Applicable, checked against the ESPN box score.<div class="fr-source">Source: `assets/nfl-data.js` NFL_BETS + NFL_CORRECTIONS</div></div>
+        <div class="fr-label">Pick outcome (primary)</div>
+        <div class="fr-body">WIN, LOSS, PUSH, VOID, or UNGRADABLE. Drives win rate, ROI, and running P/L. The primary axis for ranking models.<div class="fr-source">Source: assets/nfl-data.js NFL_BETS + NFL_CORRECTIONS</div></div>
       </div>
       <div class="factor-row">
-        <div class="fr-label">Reasoning grade</div>
-        <div class="fr-body">Scored separately from outcome. A wrong pick that named a real factor grades higher than a right pick on a vibe.<div class="fr-source">Source: `Docs/2026/grading-rubric.md`</div></div>
+        <div class="fr-label">Reasoning (0-5, capped by outcome)</div>
+        <div class="fr-body">A LOSS caps at 4/5. The default LOSS grade is 3, not 4, because plausible-on-paper losses are the modal outcome in sports betting. A WIN with generic public reasoning caps at 2/5. Hallucinated citation or fabricated fetch caps reasoning at 1/5 regardless of outcome.<div class="fr-source">Source: Docs/2026/grading-rubric.md v2</div></div>
       </div>
       <div class="factor-row">
-        <div class="fr-label">Sizing quality</div>
-        <div class="fr-body">Did the model size to its actual edge, or overbet on a vibe? Reserve is a valid, graded answer.</div>
+        <div class="fr-label">Sizing (0-3)</div>
+        <div class="fr-body">Independent of outcome. Did stake scale with stated edge and confidence? Flat sizing or heuristics ($11 max) score lower than sizing calibrated to a stated probability.</div>
       </div>
       <div class="factor-row">
-        <div class="fr-label">Source honesty</div>
-        <div class="fr-body">Every cited factor must be traceable to a source the model actually read or fetched. No fabricated citations.</div>
+        <div class="fr-label">Source Honesty (0-3)</div>
+        <div class="fr-body">Every cited source verifiable. Pricing labels (bovada_verified / reference_market / conditional) match the evidence. Fabricated fetch reports, fake verified-price labels, and hallucinated citations score 0 and cap the reasoning grade at 1/5.</div>
       </div>
       <div class="factor-row">
-        <div class="fr-label">Self-reflection</div>
-        <div class="fr-body">Did the model actually reflect on its own past picks and adjust, or paste boilerplate?</div>
+        <div class="fr-label">Self-Reflection (0-2)</div>
+        <div class="fr-body">Did the model read its own prior picks, cite specific patterns, and change behavior this week? Claimed reflection contradicted by the rest of the response scores 0.</div>
+      </div>
+      <div class="factor-row">
+        <div class="fr-label">Primary ranking</div>
+        <div class="fr-body">Season ROI. Reasoning, Sizing, Honesty, and Reflection are secondary axes that explain <em>how</em> the model got its ROI. A model that finishes with the best ROI is the best NFL picker this season.</div>
       </div>
     </div>
   </div>

@@ -146,5 +146,23 @@
       "change": "Initial roster snapshot fetched from ESPN public site API before Week 1 kickoff.",
       "source": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/teams/no/roster"
     }
-  ]
+  ],
+  "season_record": {
+    "season": 2026,
+    "wins": 0,
+    "losses": 0,
+    "ties": 0,
+    "points_for": 0,
+    "points_against": 0,
+    "games_played": 0,
+    "last_game": null,
+    "next_game": null
+  },
+  "health_snapshot": {
+    "as_of": "2026-09-11",
+    "out": [],
+    "questionable": [],
+    "ir": [],
+    "notes": ""
+  }
 }

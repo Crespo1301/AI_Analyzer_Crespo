@@ -4,32 +4,43 @@ The 2026 AI Analyzer should be easy to adjust as the NFL season develops. The
 system should let us change prompts, strategy, grading, and presentation without
 breaking the weekly record.
 
-## Weekly Loop
+## Weekly Loop (v2, effective 2026-09-11)
 
-1. **Prepare the slate**
-   - Choose games.
-   - Pull lines, weather, injury notes, rest/travel notes, and matchup context.
-   - Save the research in `Data/2026/week-XX-research.md`.
+1. **Update team profiles**
+   - Run `node scripts/update-team-profiles.js` to recompute `season_record`
+     from graded `NFL_GAMES` entries.
+   - Hand-edit `Data/2026/rosters/<team-slug>.json` `health_snapshot` for
+     the two teams playing: fill `out`, `questionable`, `ir`, `notes`, and
+     stamp `as_of` with today's date. Cite the team's official injury
+     report URL in the accompanying `changes_log` entry when a designation
+     changes.
 
-2. **Run prompts**
-   - Start from `Prompts/2026/templates/`.
-   - Save filled prompts by week.
-   - Save every raw model response in `Docs/Responses/2026/week-XX/`.
+2. **Create prompts**
+   - Fill `Prompts/2026/templates/forced-selection.md` v2.2 for the game.
+   - The prompt references both team profiles by path so the model has a
+     single source of team truth (roster, health, record).
 
-3. **Extract bets**
-   - Convert each response into structured picks.
+3. **Run prompts**
+   - Save every raw response in `Docs/Responses/2026/week-XX/`.
+
+4. **Extract bets**
+   - Convert each response into structured picks in
+     `NFL_PREDICTIONS_2026`.
    - Preserve the original wording.
    - Flag vague, missing-line, or ungradable picks immediately.
 
-4. **Grade after the games**
-   - Add game and bet rows to `assets/nfl-data.js`.
+5. **Grade after the games**
+   - Add game and bet rows to `assets/nfl-data.js` NFL_GAMES + NFL_BETS.
    - Add direct ESPN box-score links.
    - Run `node scripts/verify-nfl-data.js`.
    - Run `node scripts/build-game-pages.js`.
+   - Re-run `node scripts/update-team-profiles.js` so the season_record
+     block on each played team advances before next week's prompts run.
 
-5. **Review and adjust**
+6. **Review and adjust**
    - Score outcomes.
-   - Score reasoning using `Docs/2026/grading-rubric.md`.
+   - Score reasoning using `Docs/2026/grading-rubric.md` v2. Outcome is
+     the primary axis; reasoning is bounded by outcome.
    - Write one short weekly note on what changed for the next slate.
 
 ## Change Log For Prompts
@@ -53,6 +64,45 @@ Expected improvement: fewer weak props and fewer public-looking spread picks.
 ```
 
 ## Change Log (actual)
+
+### 2026-09-11: Grading rubric v2 and team-profile workflow
+
+Two changes shipped after the Week 1 Rams / 49ers Melbourne outcome.
+
+**Grading rubric v2** in `Docs/2026/grading-rubric.md`. v1 rewarded "the
+model named a real factor" even when the outcome disagreed. Sports
+predictions are wrong all the time, and the team that looks better on
+paper is often the team that loses; Week 1's Rams beat-down by SF is
+the working example. v1 would score a wrong-side LAR pick citing "real
+factors" (Aaron Donald out, Collins out, MCG surface, Stafford
+continuity) at 5/5 reasoning; v2 caps a LOSS at 4/5 and defaults it to
+3/5. WIN with generic public reasoning caps at 2/5. Fabricated
+citations cap the reasoning grade at 1/5 regardless of outcome. Primary
+ranking is season ROI; reasoning, sizing, source honesty, and
+self-reflection are secondary axes explaining how the model got there.
+Methodology page updated to match.
+
+**Team-profile workflow.** Every `Data/2026/rosters/<team-slug>.json`
+is now a team profile: the existing roster plus a new
+`season_record` block (auto-computed from NFL_GAMES) and a
+`health_snapshot` block (out / questionable / IR / notes, dated
+as_of). New script `scripts/update-team-profiles.js` recomputes
+season_record for all 32 teams from NFL_GAMES; run it after each week's
+promotion so the next week's prompts start from current records. The
+health_snapshot is hand-edited per playing team before each game.
+
+**Weekly loop revised.** New order: update team profiles → create
+prompts → run prompts → extract → grade → re-run profile updater →
+review. The team-profile step is the load-bearing new addition.
+
+**Forced-selection prompt bumped to v2.2.** New required blocks:
+`team_profiles_read` (with as_of, record, health), plus prompt_version
+"2.2". Reasoning rubric reference points at v2. Removes W9 P3 from the
+top-P/L reference set (ChatGPT caught in v2.1 that it finished 1-2
+-$12). Adds an explicit "do not stack same-team exposure across single
+and SGP" rule (ChatGPT lost the full $20 in Week 1 Game 2 to this
+pattern). Closes the Gemini fake-quote workaround by requiring quoted
+snippets to be absent from the prompt body.
 
 ### 2026-09-11: Promote Season 2 graded games into NFL_GAMES + NFL_BETS
 

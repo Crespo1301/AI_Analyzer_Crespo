@@ -140,10 +140,26 @@
     ]
   },
   "prop_watchlist": [
-    { "player": "Sam Darnold", "position": "QB", "why": "First Seattle start, prop props on pass yds / TDs / INTs will be popular" },
-    { "player": "Jaxon Smith-Njigba", "position": "WR", "why": "WR1 target share, popular receiving-yds and rec-total prop" },
-    { "player": "Cooper Kupp", "position": "WR", "why": "Third read in Kubiak offense, UNDER receptions has real narrative" },
-    { "player": "Jadarian Price", "position": "RB", "why": "Rookie RB1 in his first NFL start, prop-yardage lines will be soft" }
+    {
+      "player": "Sam Darnold",
+      "position": "QB",
+      "why": "First Seattle start, prop props on pass yds / TDs / INTs will be popular"
+    },
+    {
+      "player": "Jaxon Smith-Njigba",
+      "position": "WR",
+      "why": "WR1 target share, popular receiving-yds and rec-total prop"
+    },
+    {
+      "player": "Cooper Kupp",
+      "position": "WR",
+      "why": "Third read in Kubiak offense, UNDER receptions has real narrative"
+    },
+    {
+      "player": "Jadarian Price",
+      "position": "RB",
+      "why": "Rookie RB1 in his first NFL start, prop-yardage lines will be soft"
+    }
   ],
   "changes_log": [
     {
@@ -156,5 +172,38 @@
       "change": "Initial roster snapshot fetched from ESPN public site API before Week 1 kickoff.",
       "source": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/teams/sea/roster"
     }
-  ]
+  ],
+  "season_record": {
+    "season": 2026,
+    "wins": 1,
+    "losses": 0,
+    "ties": 0,
+    "points_for": 13,
+    "points_against": 10,
+    "games_played": 1,
+    "last_game": {
+      "week": 1,
+      "date": "2026-09-09",
+      "opponent": "New England Patriots",
+      "site": "home",
+      "result": "W",
+      "score": "13-10",
+      "espn": "https://www.espn.com/nfl/boxscore/_/gameId/401872656"
+    },
+    "next_game": null
+  },
+  "health_snapshot": {
+    "as_of": "2026-09-11",
+    "out": [
+      "S Ty Okada (hamstring, est. return Sep 20)"
+    ],
+    "questionable": [
+      "WR Tory Horton (hamstring)",
+      "S Nick Emmanwori (ankle)"
+    ],
+    "ir": [
+      "WR Irv Charles"
+    ],
+    "notes": "Week 1 win over NE 13-10. Darnold left with hip injury in-game; monitor before Week 2."
+  }
 }

@@ -145,9 +145,21 @@
     ]
   },
   "prop_watchlist": [
-    { "player": "Kyren Williams", "position": "RB", "why": "Bell-cow rush attempts market, floor around 16.5-17.5, workhorse in game-script UNDER environments" },
-    { "player": "Matthew Stafford", "position": "QB", "why": "Long-haul travel plus MCG surface novelty depresses pass yds ceiling; UNDER pass yds a defensible read" },
-    { "player": "Puka Nacua", "position": "WR", "why": "WR1 target share with Nacua's OVER receptions a live consideration but ceiling props warned against per Season 1 corrections" }
+    {
+      "player": "Kyren Williams",
+      "position": "RB",
+      "why": "Bell-cow rush attempts market, floor around 16.5-17.5, workhorse in game-script UNDER environments"
+    },
+    {
+      "player": "Matthew Stafford",
+      "position": "QB",
+      "why": "Long-haul travel plus MCG surface novelty depresses pass yds ceiling; UNDER pass yds a defensible read"
+    },
+    {
+      "player": "Puka Nacua",
+      "position": "WR",
+      "why": "WR1 target share with Nacua's OVER receptions a live consideration but ceiling props warned against per Season 1 corrections"
+    }
   ],
   "changes_log": [
     {
@@ -160,5 +172,37 @@
       "change": "Initial roster snapshot fetched from ESPN public site API before Week 1 kickoff.",
       "source": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/teams/lar/roster"
     }
-  ]
+  ],
+  "season_record": {
+    "season": 2026,
+    "wins": 0,
+    "losses": 1,
+    "ties": 0,
+    "points_for": 7,
+    "points_against": 27,
+    "games_played": 1,
+    "last_game": {
+      "week": 1,
+      "date": "2026-09-10",
+      "opponent": "San Francisco 49ers",
+      "site": "home",
+      "result": "L",
+      "score": "7-27",
+      "espn": "https://www.espn.com/nfl/boxscore/_/gameId/401872657"
+    },
+    "next_game": null
+  },
+  "health_snapshot": {
+    "as_of": "2026-09-11",
+    "out": [
+      "DT Aaron Donald (coach’s decision, est. return Sep 21)"
+    ],
+    "questionable": [],
+    "ir": [
+      "QB Matthew Caldwell",
+      "LB Keir Thomas II (groin)",
+      "RB Zach Charbonnet (PUP-R, ACL)"
+    ],
+    "notes": "Week 1 loss to SF 7-27 in Melbourne. Stafford 15/25 155 0TD 1INT. Kyren Williams 11 att 41 yds 1 TD."
+  }
 }

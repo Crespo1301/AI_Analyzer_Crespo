@@ -146,5 +146,38 @@
       "change": "Initial roster snapshot fetched from ESPN public site API before Week 1 kickoff.",
       "source": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/teams/ne/roster"
     }
-  ]
+  ],
+  "season_record": {
+    "season": 2026,
+    "wins": 0,
+    "losses": 1,
+    "ties": 0,
+    "points_for": 10,
+    "points_against": 13,
+    "games_played": 1,
+    "last_game": {
+      "week": 1,
+      "date": "2026-09-09",
+      "opponent": "Seattle Seahawks",
+      "site": "away",
+      "result": "L",
+      "score": "10-13",
+      "espn": "https://www.espn.com/nfl/boxscore/_/gameId/401872656"
+    },
+    "next_game": null
+  },
+  "health_snapshot": {
+    "as_of": "2026-09-11",
+    "out": [
+      "RB TreVeyon Henderson (ankle, est. return Sep 20)",
+      "C Ben Brown (knee, est. return Sep 20)"
+    ],
+    "questionable": [],
+    "ir": [
+      "S Brenden Schooler (NFI-R, est. Oct 11)",
+      "P Bryce Baringer",
+      "LB Khalil Jacobs"
+    ],
+    "notes": "Week 1 loss to SEA 10-13. No update since kickoff report."
+  }
 }

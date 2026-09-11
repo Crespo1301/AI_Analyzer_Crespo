@@ -140,9 +140,21 @@
     ]
   },
   "prop_watchlist": [
-    { "player": "Christian McCaffrey", "position": "RB", "why": "Bell-cow with thin WR room around him, rush attempts + rec yds both live" },
-    { "player": "George Kittle", "position": "TE", "why": "Elevated target share with Pearsall + Kirk on IR" },
-    { "player": "Jauan Jennings", "position": "WR", "why": "WR1 by attrition, receptions OVER a live consideration" }
+    {
+      "player": "Christian McCaffrey",
+      "position": "RB",
+      "why": "Bell-cow with thin WR room around him, rush attempts + rec yds both live"
+    },
+    {
+      "player": "George Kittle",
+      "position": "TE",
+      "why": "Elevated target share with Pearsall + Kirk on IR"
+    },
+    {
+      "player": "Jauan Jennings",
+      "position": "WR",
+      "why": "WR1 by attrition, receptions OVER a live consideration"
+    }
   ],
   "changes_log": [
     {
@@ -155,5 +167,40 @@
       "change": "Initial roster snapshot fetched from ESPN public site API before Week 1 kickoff.",
       "source": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/teams/sf/roster"
     }
-  ]
+  ],
+  "season_record": {
+    "season": 2026,
+    "wins": 1,
+    "losses": 0,
+    "ties": 0,
+    "points_for": 27,
+    "points_against": 7,
+    "games_played": 1,
+    "last_game": {
+      "week": 1,
+      "date": "2026-09-10",
+      "opponent": "Los Angeles Rams",
+      "site": "away",
+      "result": "W",
+      "score": "27-7",
+      "espn": "https://www.espn.com/nfl/boxscore/_/gameId/401872657"
+    },
+    "next_game": null
+  },
+  "health_snapshot": {
+    "as_of": "2026-09-11",
+    "out": [
+      "DT Alfred Collins (knee)"
+    ],
+    "questionable": [
+      "DT James Thompson Jr. (hamstring)"
+    ],
+    "ir": [
+      "WR Ricky Pearsall",
+      "WR Christian Kirk",
+      "DE Sam Okuayinonu",
+      "DE Mykel Williams (PUP-R, knee ACL)"
+    ],
+    "notes": "Week 1 win over LAR 27-7 in Melbourne. Purdy 25/34 205 3TD 1INT."
+  }
 }
