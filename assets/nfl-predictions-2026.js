@@ -145,6 +145,66 @@ var NFL_PREDICTIONS_2026 = [
     status: "locked",
     locked_at: "2026-09-10",
     prompt_template: "forced-selection v2.1",
+    result: {
+      status: "final",
+      verified_at: "2026-09-11",
+      awayScore: 27,
+      homeScore: 7,
+      ot: false,
+      total: 34,
+      kyrenWilliams: { rushAttempts: 11, rushYards: 41, touchdowns: 1 },
+      blakeCorum: { rushAttempts: 10, rushYards: 54 },
+      brockPurdy: { comp: 25, att: 34, yds: 205, td: 3, int: 1 },
+      matthewStafford: { comp: 15, att: 25, yds: 155, td: 0, int: 1 },
+      source: "https://www.espn.com/nfl/boxscore/_/gameId/401872657",
+      grades: {
+        ChatGPT: [
+          { outcome: "LOSS", actual: "Rams team total 7, well below 23.5", odds: -110, profit: -15.00 },
+          { outcome: "LOSS", actual: "Rams lost 7-27; SGP requires Rams ML win and TT OVER 23.5, both legs failed", odds: 200, profit: -5.00 }
+        ],
+        Claude: [
+          { outcome: "WIN", actual: "Game total 34, below 45.5", odds: -110, profit: 10.91 },
+          { outcome: "LOSS", actual: "Kyren Williams 11 attempts, below 16.5", odds: -115, profit: -4.00 },
+          { outcome: "LOSS", actual: "SGP fails on Kyren leg (11 rush att, needed 17+); UNDER 45.5 leg was a WIN", odds: 180, profit: -4.00 }
+        ],
+        Gemini: [
+          { outcome: "WIN", actual: "Game total 34, below 48.5", odds: -110, profit: 10.91 },
+          { outcome: "LOSS", actual: "SGP fails on both legs: Rams TT 7 (needed 24+) and Kyren 11 rush att (needed 15+)", odds: 220, profit: -8.00 }
+        ]
+      },
+      netProfitByModel: { ChatGPT: -20.00, Claude: 2.91, Gemini: 2.91 },
+      reasoningStatus: "Review notes published; numerical reasoning scores not assigned",
+      modelReviews: {
+        ChatGPT: {
+          summary: "Full $20 lost. Rams-win + Rams-scoring thesis was completely wrong; both tickets shared the Rams-side leg.",
+          pricing: "Both tickets stayed conditional per v2.1 honesty. Fair-value math was disciplined; the input probability was where the miss lived. Rams win probability estimated at 0.60; actual outcome was a 20-point Rams loss with a 7-point team total.",
+          reasoning: [
+            "Team-total shape borrowed from W11P11 was applied to the wrong side of the matchup. LAR reached 7 points, not 24. The shape works when the favored offense is actually favored by real talent gap, not just by number, and when the underdog defense is genuinely below average. SF's front held despite Collins being out; Rams offense could not answer.",
+            "Correlation SGP was correct that Rams win and Rams TT OVER 23.5 are dependent, but concentrating $20 on one shared premise removed diversification. ChatGPT flagged that concentration risk explicitly in value_reasoning and still took it. Grade the honesty (transparent), not the outcome (wrong)."
+          ]
+        },
+        Claude: {
+          summary: "Net +$2.91. UNDER 45.5 cashed cleanly. Volume-anchored Kyren prop and correlated SGP both lost when the Rams got blown out and abandoned the run.",
+          pricing: "All three tickets conditional; no Bovada quotes retrieved. UNDER 45.5 was significantly stronger than the fair line (game finished 34).",
+          reasoning: [
+            "UNDER 45.5 was the right shape read. Both offenses failed to sustain drives in an early Melbourne pace-and-travel environment. Reasoning correctly named the constraints (thin SF WR room, aging Stafford, MCG grass overlay) even though the final was one-sided rather than the low-scoring grinder Claude projected.",
+            "Kyren OVER 16.5 rush attempts is the classic Season 1 failure pattern rebranded: a volume-anchored prop on the losing team. Once Rams trailed, they went pass-first and Kyren finished with 11 carries. Claude's shape was correct in theory (bell-cow, paceless script) but wrong in application because game script broke his direction.",
+            "Correlated SGP was internally consistent (paceless UNDER script raises Kyren volume) but shared exposure with the Kyren single, so a single miss killed two tickets. The correlation is real; the ticket construction stacked risk instead of hedging it."
+          ]
+        },
+        Gemini: {
+          summary: "Net +$2.91. UNDER 48.5 cashed at the higher hook. SGP failed on both legs (LAR TT 7, Kyren 11 rush att).",
+          pricing: "T1 was labeled bovada_verified at -110 without a screenshot; treated as unverified. T2 was conditional at +200 minimum. UNDER cashed on the game total regardless of odds source.",
+          reasoning: [
+            "UNDER 48.5 direction was right. Reasoning cited travel friction and pace reduction; final total 34 confirms the direction even though the specific injury and international-site chain of causation was not the primary driver (SF just outplayed LAR).",
+            "SGP was directionally wrong on both legs. The Rams TT OVER 23.5 leg contradicts the UNDER 48.5 direction Gemini also took: the two picks together only both win in a narrow ~44-48 total with Rams 24+, which is a 20-30% band. Constructing tickets that both win in a narrow band is not a bug; concentrating $20 on a narrow band while claiming a $12 UNDER wins independently is inconsistent.",
+            "Third fabricated repo-fetch in three attempts. bovada_verified label unsupported. These are systematic honesty problems distinct from the pick outcome and are graded separately."
+          ]
+        }
+      },
+      reasoningNotes: "All three models projected the Rams to win. Only Claude picked the right winner (SF); ChatGPT and Gemini both had LAR. The game-script UNDER read was right (Claude 45.5 UNDER + Gemini 48.5 UNDER both cashed). The volume-on-losing-team prop shape failed for both Claude and Gemini (Kyren went pass-abandoned once Rams fell behind). ChatGPT's Rams-scoring thesis was the wrong side of the matchup and cost the full $20.",
+      payoutNote: "Claude and Gemini both net +$2.91 at conditional -110 pricing on the UNDER. ChatGPT nets -$20.00. All amounts remain hypothetical at target prices; no live Bovada slips were placed or observed."
+    },
     models: {
       ChatGPT: {
         version: "GPT-6 (via Codex CLI)",
