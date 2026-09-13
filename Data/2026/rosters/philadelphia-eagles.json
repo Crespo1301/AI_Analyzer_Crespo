@@ -147,6 +147,11 @@
   "prop_watchlist": [],
   "changes_log": [
     {
+      "date": "2026-09-13",
+      "change": "Week 1 health_snapshot refreshed from ESPN roster feed: 2 out, 2 questionable, 5 IR.",
+      "source": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/teams/phi/roster"
+    },
+    {
       "date": "2026-09-09",
       "change": "Initial roster snapshot fetched from ESPN public site API before Week 1 kickoff.",
       "source": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/teams/phi/roster"
@@ -164,10 +169,22 @@
     "next_game": null
   },
   "health_snapshot": {
-    "as_of": "2026-09-11",
-    "out": [],
-    "questionable": [],
-    "ir": [],
-    "notes": ""
+    "as_of": "2026-09-13",
+    "out": [
+      "LB Jonathan Greenard",
+      "S Tucker Large"
+    ],
+    "questionable": [
+      "CB Tariq Castro-Fields",
+      "WR Danny Gray"
+    ],
+    "ir": [
+      "CB Jakorian Bennett",
+      "TE Grant Calcaterra",
+      "S Andre' Sam",
+      "TE Eli Stowers",
+      "WR Johnny Wilson"
+    ],
+    "notes": "Auto-refreshed from ESPN roster feed for Week 1. Verify against team's own injury report before locking picks."
   }
 }

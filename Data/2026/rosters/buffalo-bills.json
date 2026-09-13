@@ -137,6 +137,11 @@
   "prop_watchlist": [],
   "changes_log": [
     {
+      "date": "2026-09-13",
+      "change": "Week 1 health_snapshot refreshed from ESPN roster feed: 3 out, 4 questionable, 1 IR.",
+      "source": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/teams/buf/roster"
+    },
+    {
       "date": "2026-09-09",
       "change": "Initial roster snapshot fetched from ESPN public site API before Week 1 kickoff.",
       "source": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/teams/buf/roster"
@@ -154,10 +159,21 @@
     "next_game": null
   },
   "health_snapshot": {
-    "as_of": "2026-09-11",
-    "out": [],
-    "questionable": [],
-    "ir": [],
-    "notes": ""
+    "as_of": "2026-09-13",
+    "out": [
+      "DT Phidarian Mathis [suspension]",
+      "WR Tyrell Shavers",
+      "CB Dorian Strong"
+    ],
+    "questionable": [
+      "RB Ty Johnson",
+      "CB Jordan Hancock",
+      "DT T.J. Sanders",
+      "OT Jedrick Wills Jr."
+    ],
+    "ir": [
+      "DT Zane Durant"
+    ],
+    "notes": "Auto-refreshed from ESPN roster feed for Week 1. Verify against team's own injury report before locking picks."
   }
 }

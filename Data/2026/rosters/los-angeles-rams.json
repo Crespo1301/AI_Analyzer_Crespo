@@ -163,6 +163,11 @@
   ],
   "changes_log": [
     {
+      "date": "2026-09-13",
+      "change": "Week 1 health_snapshot refreshed from ESPN roster feed: 5 out, 3 questionable, 6 IR.",
+      "source": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/teams/lar/roster"
+    },
+    {
       "date": "2026-09-10",
       "change": "Corrected QB1 from Matthew Caldwell (on IR) to Matthew Stafford. Corrected RB1 from Ronnie Rivers to Kyren Williams (2025 bell-cow). Corrected WR1 from Konata Mumpfield to Puka Nacua per Kubiak offense usage. All three corrections flagged by Claude while running the Week 1 Game 2 forced-selection prompt. Added prop watchlist.",
       "source": "https://www.espn.com/nfl/game/_/gameId/401872657/49ers-rams"
@@ -193,16 +198,27 @@
     "next_game": null
   },
   "health_snapshot": {
-    "as_of": "2026-09-11",
+    "as_of": "2026-09-13",
     "out": [
-      "DT Aaron Donald (coach’s decision, est. return Sep 21)"
+      "WR Tutu Atwell",
+      "WR CJ Daniels",
+      "TE Max Klare",
+      "G Bill Murray",
+      "QB Ty Simpson"
     ],
-    "questionable": [],
+    "questionable": [
+      "TE Davis Allen",
+      "S Kam Curl",
+      "CB Zech McPhearson"
+    ],
     "ir": [
       "QB Matthew Caldwell",
-      "LB Keir Thomas II (groin)",
-      "RB Zach Charbonnet (PUP-R, ACL)"
+      "G Justin Dedich",
+      "DE Daniel Rickert",
+      "LB Keir Thomas II",
+      "OT Keagen Trost",
+      "LB Eddie Walls III"
     ],
-    "notes": "Week 1 loss to SF 7-27 in Melbourne. Stafford 15/25 155 0TD 1INT. Kyren Williams 11 att 41 yds 1 TD."
+    "notes": "Auto-refreshed from ESPN roster feed for Week 1. Verify against team's own injury report before locking picks."
   }
 }

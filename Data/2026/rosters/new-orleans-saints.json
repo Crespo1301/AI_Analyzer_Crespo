@@ -142,6 +142,11 @@
   "prop_watchlist": [],
   "changes_log": [
     {
+      "date": "2026-09-13",
+      "change": "Week 1 health_snapshot refreshed from ESPN roster feed: 5 out, 1 questionable, 10 IR.",
+      "source": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/teams/no/roster"
+    },
+    {
       "date": "2026-09-09",
       "change": "Initial roster snapshot fetched from ESPN public site API before Week 1 kickoff.",
       "source": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/teams/no/roster"
@@ -159,10 +164,29 @@
     "next_game": null
   },
   "health_snapshot": {
-    "as_of": "2026-09-11",
-    "out": [],
-    "questionable": [],
-    "ir": [],
-    "notes": ""
+    "as_of": "2026-09-13",
+    "out": [
+      "TE Oscar Delp",
+      "WR Brock Rechsteiner [suspension]",
+      "DE Cameron Jordan",
+      "OT Nick Saldiveri",
+      "WR Mason Tipton"
+    ],
+    "questionable": [
+      "RB Alvin Kamara"
+    ],
+    "ir": [
+      "DT Bryan Bresee",
+      "RB Ty Chandler",
+      "RB Audric Estime",
+      "LB Jaylan Ford",
+      "CB David Long Jr.",
+      "TE Moliki Matavao",
+      "G Dillon Radunz",
+      "S Lorenzo Styles Jr.",
+      "WR Jordyn Tyson",
+      "CB Rejzohn Wright"
+    ],
+    "notes": "Auto-refreshed from ESPN roster feed for Week 1. Verify against team's own injury report before locking picks."
   }
 }

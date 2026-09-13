@@ -158,6 +158,11 @@
   ],
   "changes_log": [
     {
+      "date": "2026-09-13",
+      "change": "Week 1 health_snapshot refreshed from ESPN roster feed: 9 out, 2 questionable, 12 IR.",
+      "source": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/teams/sf/roster"
+    },
+    {
       "date": "2026-09-10",
       "change": "Corrected QB1 from Mac Jones to Brock Purdy per 49ers.com depth chart. Corrected WR1 from Ricky Pearsall (IR) to Jauan Jennings by usage. Promoted George Kittle to TE1 slot. ChatGPT (via Codex CLI) flagged the Mac Jones heuristic error while running Week 1 Game 2 forced-selection prompt. Added prop watchlist.",
       "source": "https://www.49ers.com/team/depth-chart"
@@ -188,19 +193,36 @@
     "next_game": null
   },
   "health_snapshot": {
-    "as_of": "2026-09-11",
+    "as_of": "2026-09-13",
     "out": [
-      "DT Alfred Collins (knee)"
+      "WR Brandon Aiyuk",
+      "OT Enrique Cruz Jr.",
+      "RB Jordan James",
+      "QB Kurtis Rourke",
+      "WR Jordan Watkins",
+      "LB Tatum Bethune",
+      "CB Ephesians Prysock",
+      "RB Isaac Guerendo",
+      "DE Mykel Williams"
     ],
     "questionable": [
-      "DT James Thompson Jr. (hamstring)"
+      "WR De'Zhaun Stribling",
+      "TE Jake Tonges"
     ],
     "ir": [
-      "WR Ricky Pearsall",
+      "DT Alfred Collins",
+      "DE Andrew Farmer II",
+      "S Darrick Forrest",
+      "CB Nate Hobbs",
+      "DE Mikail Kamara",
       "WR Christian Kirk",
-      "DE Sam Okuayinonu",
-      "DE Mykel Williams (PUP-R, knee ACL)"
+      "LB Nick Martin",
+      "DT Sam Okuayinonu",
+      "WR Ricky Pearsall",
+      "OT Austen Pleasants",
+      "C Brett Toth",
+      "OT Nick Zakelj"
     ],
-    "notes": "Week 1 win over LAR 27-7 in Melbourne. Purdy 25/34 205 3TD 1INT."
+    "notes": "Auto-refreshed from ESPN roster feed for Week 1. Verify against team's own injury report before locking picks."
   }
 }

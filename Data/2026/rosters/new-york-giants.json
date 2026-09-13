@@ -137,6 +137,11 @@
   "prop_watchlist": [],
   "changes_log": [
     {
+      "date": "2026-09-13",
+      "change": "Week 1 health_snapshot refreshed from ESPN roster feed: 0 out, 2 questionable, 7 IR.",
+      "source": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/teams/nyg/roster"
+    },
+    {
       "date": "2026-09-09",
       "change": "Initial roster snapshot fetched from ESPN public site API before Week 1 kickoff.",
       "source": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/teams/nyg/roster"
@@ -154,10 +159,21 @@
     "next_game": null
   },
   "health_snapshot": {
-    "as_of": "2026-09-11",
+    "as_of": "2026-09-13",
     "out": [],
-    "questionable": [],
-    "ir": [],
-    "notes": ""
+    "questionable": [
+      "WR Malik Nabers",
+      "CB DJ James"
+    ],
+    "ir": [
+      "WR Calvin Austin III",
+      "CB Jarrick Bernard-Converse",
+      "CB Korie Black",
+      "CB Thaddeus Dixon",
+      "WR Gunner Olszewski",
+      "CB Rico Payton",
+      "DT Roy Robertson-Harris"
+    ],
+    "notes": "Auto-refreshed from ESPN roster feed for Week 1. Verify against team's own injury report before locking picks."
   }
 }

@@ -65,6 +65,43 @@ Expected improvement: fewer weak props and fewer public-looking spread picks.
 
 ## Change Log (actual)
 
+### 2026-09-12: Retire templates, write from evidence week by week
+
+Removed `Prompts/2026/templates/` entirely. Templates rewarded copying
+language rather than reading evidence; the v2.0 -> v2.1 -> v2.2
+progression was symptomatic of the wrong abstraction. Replaced with:
+
+- `Docs/2026/what-has-worked.md`: living analytic doc, updated after
+  every graded slate. Anchored in NFL_BETS across Seasons 1 and 2 as of
+  the update date. Contains the current record of P/L-positive shapes,
+  the loss patterns to avoid, and pointers to the rubric v2 axes.
+- `scripts/prep-week1-prompts.js`: one-off generator that embedded the
+  current what-has-worked content directly into each Week 1 game prompt.
+  Not reusable next week. When Week 2 comes, rewrite what-has-worked.md
+  from the new evidence, then write a new prep-weekN generator that
+  embeds the new state.
+
+Also added `scripts/refresh-week-health.js` which reads
+`Data/2026/schedule/week-XX.json`, fetches the ESPN roster feed for
+every team playing that week, and populates each team's
+`health_snapshot` block from the injury designations in the feed. Ran
+against Week 1; 32/32 teams updated.
+
+New weekly loop step ordering:
+
+1. `node scripts/update-team-profiles.js` (updates season_record from
+   graded NFL_GAMES).
+2. `node scripts/refresh-week-health.js <week>` (updates
+   health_snapshot from ESPN roster feed).
+3. Manually augment health_snapshot for anything ESPN doesn't cover.
+4. Rewrite `Docs/2026/what-has-worked.md` from the current NFL_BETS
+   state.
+5. Write a new `scripts/prep-weekN-prompts.js` that embeds the current
+   what-has-worked content.
+6. Run it.
+7. Send prompts, save raw responses, extract picks, grade, promote,
+   re-run step 1.
+
 ### 2026-09-11: Grading rubric v2 and team-profile workflow
 
 Two changes shipped after the Week 1 Rams / 49ers Melbourne outcome.

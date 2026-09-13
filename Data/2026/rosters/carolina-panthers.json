@@ -142,6 +142,11 @@
   "prop_watchlist": [],
   "changes_log": [
     {
+      "date": "2026-09-13",
+      "change": "Week 1 health_snapshot refreshed from ESPN roster feed: 4 out, 0 questionable, 5 IR.",
+      "source": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/teams/car/roster"
+    },
+    {
       "date": "2026-09-09",
       "change": "Initial roster snapshot fetched from ESPN public site API before Week 1 kickoff.",
       "source": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/teams/car/roster"
@@ -159,10 +164,21 @@
     "next_game": null
   },
   "health_snapshot": {
-    "as_of": "2026-09-11",
-    "out": [],
+    "as_of": "2026-09-13",
+    "out": [
+      "LB Patrick Jones II",
+      "OT Ikem Ekwonu",
+      "OT Taylor Moton",
+      "DT Tershawn Wharton"
+    ],
     "questionable": [],
-    "ir": [],
-    "notes": ""
+    "ir": [
+      "WR Chris Brazzell II",
+      "G Brady Christensen",
+      "RB Trevor Etienne",
+      "LB Bam Martin-Scott",
+      "LB Nic Scourton"
+    ],
+    "notes": "Auto-refreshed from ESPN roster feed for Week 1. Verify against team's own injury report before locking picks."
   }
 }

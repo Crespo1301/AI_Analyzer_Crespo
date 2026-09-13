@@ -142,6 +142,11 @@
   "prop_watchlist": [],
   "changes_log": [
     {
+      "date": "2026-09-13",
+      "change": "Week 1 health_snapshot refreshed from ESPN roster feed: 9 out, 0 questionable, 7 IR.",
+      "source": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/teams/ne/roster"
+    },
+    {
       "date": "2026-09-09",
       "change": "Initial roster snapshot fetched from ESPN public site API before Week 1 kickoff.",
       "source": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/teams/ne/roster"
@@ -167,17 +172,28 @@
     "next_game": null
   },
   "health_snapshot": {
-    "as_of": "2026-09-11",
+    "as_of": "2026-09-13",
     "out": [
-      "RB TreVeyon Henderson (ankle, est. return Sep 20)",
-      "C Ben Brown (knee, est. return Sep 20)"
+      "C Ben Brown",
+      "WR Efton Chism III",
+      "RB TreVeyon Henderson",
+      "QB Behren Morton",
+      "OL Walter Rouse",
+      "LB Erick Hunter",
+      "CB Karon Prunty",
+      "LB Harold Landry III",
+      "S Brenden Schooler"
     ],
     "questionable": [],
     "ir": [
-      "S Brenden Schooler (NFI-R, est. Oct 11)",
       "P Bryce Baringer",
-      "LB Khalil Jacobs"
+      "WR A.J. Brown",
+      "OT Marcus Bryant",
+      "TE Julian Hill",
+      "LB Khalil Jacobs",
+      "RB Myles Montgomery",
+      "WR Jeremiah Webb"
     ],
-    "notes": "Week 1 loss to SEA 10-13. No update since kickoff report."
+    "notes": "Auto-refreshed from ESPN roster feed for Week 1. Verify against team's own injury report before locking picks."
   }
 }

@@ -142,6 +142,11 @@
   "prop_watchlist": [],
   "changes_log": [
     {
+      "date": "2026-09-13",
+      "change": "Week 1 health_snapshot refreshed from ESPN roster feed: 3 out, 1 questionable, 7 IR.",
+      "source": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/teams/cle/roster"
+    },
+    {
       "date": "2026-09-09",
       "change": "Initial roster snapshot fetched from ESPN public site API before Week 1 kickoff.",
       "source": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/teams/cle/roster"
@@ -159,10 +164,24 @@
     "next_game": null
   },
   "health_snapshot": {
-    "as_of": "2026-09-11",
-    "out": [],
-    "questionable": [],
-    "ir": [],
-    "notes": ""
+    "as_of": "2026-09-13",
+    "out": [
+      "G Teven Jenkins",
+      "LB Jeremiah Owusu-Koramoah",
+      "TE Joe Royer"
+    ],
+    "questionable": [
+      "C Parker Brailsford"
+    ],
+    "ir": [
+      "DT Elijah Chatman",
+      "DT Kalia Davis",
+      "QB Dillon Gabriel",
+      "G Kendrick Green",
+      "CB Damarri Mathis",
+      "LB Edefuan Ulofoshio",
+      "DE Alex Wright"
+    ],
+    "notes": "Auto-refreshed from ESPN roster feed for Week 1. Verify against team's own injury report before locking picks."
   }
 }

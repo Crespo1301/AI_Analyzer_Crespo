@@ -147,6 +147,11 @@
   "prop_watchlist": [],
   "changes_log": [
     {
+      "date": "2026-09-13",
+      "change": "Week 1 health_snapshot refreshed from ESPN roster feed: 2 out, 0 questionable, 4 IR.",
+      "source": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/teams/wsh/roster"
+    },
+    {
       "date": "2026-09-09",
       "change": "Initial roster snapshot fetched from ESPN public site API before Week 1 kickoff.",
       "source": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/teams/wsh/roster"
@@ -164,10 +169,18 @@
     "next_game": null
   },
   "health_snapshot": {
-    "as_of": "2026-09-11",
-    "out": [],
+    "as_of": "2026-09-13",
+    "out": [
+      "DE Dorance Armstrong [suspension]",
+      "DE Deatrich Wise Jr."
+    ],
     "questionable": [],
-    "ir": [],
-    "notes": ""
+    "ir": [
+      "CB Trey Amos",
+      "RB Jeremy McNichols",
+      "DT Jer'Zhan Newton",
+      "OT Laremy Tunsil"
+    ],
+    "notes": "Auto-refreshed from ESPN roster feed for Week 1. Verify against team's own injury report before locking picks."
   }
 }

@@ -142,6 +142,11 @@
   "prop_watchlist": [],
   "changes_log": [
     {
+      "date": "2026-09-13",
+      "change": "Week 1 health_snapshot refreshed from ESPN roster feed: 2 out, 1 questionable, 4 IR.",
+      "source": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/teams/lac/roster"
+    },
+    {
       "date": "2026-09-09",
       "change": "Initial roster snapshot fetched from ESPN public site API before Week 1 kickoff.",
       "source": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/teams/lac/roster"
@@ -159,10 +164,20 @@
     "next_game": null
   },
   "health_snapshot": {
-    "as_of": "2026-09-11",
-    "out": [],
-    "questionable": [],
-    "ir": [],
-    "notes": ""
+    "as_of": "2026-09-13",
+    "out": [
+      "CB Deane Leonard",
+      "OT Isaiah World"
+    ],
+    "questionable": [
+      "LB Tuli Tuipulotu"
+    ],
+    "ir": [
+      "C Tyler Biadasz",
+      "FB Scott Matlock",
+      "LB Denzel Perryman",
+      "G Branson Taylor"
+    ],
+    "notes": "Auto-refreshed from ESPN roster feed for Week 1. Verify against team's own injury report before locking picks."
   }
 }

@@ -163,6 +163,11 @@
   ],
   "changes_log": [
     {
+      "date": "2026-09-13",
+      "change": "Week 1 health_snapshot refreshed from ESPN roster feed: 10 out, 0 questionable, 5 IR.",
+      "source": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/teams/sea/roster"
+    },
+    {
       "date": "2026-09-09",
       "change": "Corrected QB1 from Drew Lock to Sam Darnold. The auto-populate jersey-number heuristic placed Lock (#2) ahead of Darnold (#14). Both Claude and Codex flagged this while researching the Week 1 game; source: seahawks.com and Patriots game preview. Also promoted Jaxon Smith-Njigba to WR1 and Rashid Shaheed to WR2 per Field Gulls / 4for4 Week 1 preview, and clarified RB1 context (Walker traded to KC, Charbonnet on PUP-R).",
       "source": "https://www.seahawks.com/news/sam-darnold-will-be-the-same-in-a-good-way-in-2026"
@@ -193,17 +198,27 @@
     "next_game": null
   },
   "health_snapshot": {
-    "as_of": "2026-09-11",
+    "as_of": "2026-09-13",
     "out": [
-      "S Ty Okada (hamstring, est. return Sep 20)"
+      "QB Sam Darnold [doubtful]",
+      "WR Tory Horton",
+      "TE Nick Kallerup",
+      "QB Jalen Milroe",
+      "G Beau Stephens",
+      "CB Terrion Arnold",
+      "S Nick Emmanwori",
+      "DE Mike Morris",
+      "S Ty Okada",
+      "RB Zach Charbonnet"
     ],
-    "questionable": [
-      "WR Tory Horton (hamstring)",
-      "S Nick Emmanwori (ankle)"
-    ],
+    "questionable": [],
     "ir": [
-      "WR Irv Charles"
+      "WR Jake Bobo",
+      "WR Irv Charles",
+      "S Bud Clark",
+      "FB Robbie Ouzts",
+      "G Mason Richman"
     ],
-    "notes": "Week 1 win over NE 13-10. Darnold left with hip injury in-game; monitor before Week 2."
+    "notes": "Auto-refreshed from ESPN roster feed for Week 1. Verify against team's own injury report before locking picks."
   }
 }

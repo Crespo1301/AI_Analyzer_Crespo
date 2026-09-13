@@ -142,6 +142,11 @@
   "prop_watchlist": [],
   "changes_log": [
     {
+      "date": "2026-09-13",
+      "change": "Week 1 health_snapshot refreshed from ESPN roster feed: 3 out, 5 questionable, 9 IR.",
+      "source": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/teams/chi/roster"
+    },
+    {
       "date": "2026-09-09",
       "change": "Initial roster snapshot fetched from ESPN public site API before Week 1 kickoff.",
       "source": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/teams/chi/roster"
@@ -159,10 +164,30 @@
     "next_game": null
   },
   "health_snapshot": {
-    "as_of": "2026-09-11",
-    "out": [],
-    "questionable": [],
-    "ir": [],
-    "notes": ""
+    "as_of": "2026-09-13",
+    "out": [
+      "CB Kyler Gordon",
+      "LB Noah Sewell",
+      "DT Shemar Turner"
+    ],
+    "questionable": [
+      "QB Tyson Bagent",
+      "WR Rome Odunze",
+      "OT Ozzy Trapilo",
+      "S Xavier Woods",
+      "S Marlen Sewell"
+    ],
+    "ir": [
+      "RB Brittain Brown",
+      "S Coby Bryant",
+      "LB Tony Fields II",
+      "CB Dallis Flowers",
+      "DE Jonathan Garvin",
+      "LB Ruben Hyppolite II",
+      "TE Nikola Kalinic",
+      "TE Hayden Large",
+      "LB Nephi Sewell"
+    ],
+    "notes": "Auto-refreshed from ESPN roster feed for Week 1. Verify against team's own injury report before locking picks."
   }
 }
