@@ -346,6 +346,60 @@ var NFL_PREDICTIONS_2026 = [
         ]
       }
     }
+  },
+  {
+    week: 1,
+    gameId: "jets-titans",
+    label: "Jets at Titans",
+    away: "New York Jets",
+    home: "Tennessee Titans",
+    kickoff: "2026-09-13T13:00:00-04:00",
+    kickoffDisplay: "Sun Sep 13, 1:00 PM ET",
+    venue: "Nissan Stadium, Nashville, TN",
+    network: "CBS",
+    line_snapshot: {
+      spread: "TEN -1.5",
+      total: 39.5,
+      moneyline: "TEN -118 / NYJ +100",
+      source: "FanDuel via ChatGPT + Claude research, 2026-09-13; lowest total on the board"
+    },
+    espn: "https://www.espn.com/nfl/boxscore/_/gameId/401872924",
+    responseFolder: "Docs/Responses/2026/week-01/game-05-jets-titans/",
+    status: "locked",
+    locked_at: "2026-09-13",
+    prompt_template: "forced-selection v3.0 (independent-derivation)",
+    models: {
+      ChatGPT: {
+        version: "GPT-6 (via Codex CLI)",
+        total_stake: 20,
+        reserve: 0,
+        summary: "Jets +1.5 $14 (FanDuel reference -112) + SGP Jets ML + game UNDER 38.5 $6 (conditional min +260). Projected Tennessee 20-19 (pick'em). Cited real NFL_BETS rows for derivations. Confirmed Cam Ward as Titans QB1.",
+        bets: [
+          { type: "straight", market: "Spread", line: "New York Jets +1.5 (@ -112 FanDuel reference)", stake: 14, confidence: 5, reason: "Geno Smith + Hall keep NYJ within 1 pt vs Titans priced only 1.5 higher" },
+          { type: "sgp", market: "SGP", line: "New York Jets ML + game UNDER 38.5 (min +260 conditional)", stake: 6, confidence: 3, reason: "Correlated: close low-scoring Jets win" }
+        ]
+      },
+      Claude: {
+        version: "claude-opus-4-7",
+        total_stake: 20,
+        reserve: 0,
+        summary: "Jets ML $10 (conditional min +100) + SGP Jets +1.5 + game UNDER 39.5 $10 (conditional min +200). Projected New York 20-17. Cited W11 Texans/Titans UNDER 38.5 +$10 as same-franchise analogue. Flagged 3 roster errors: Jets RB1 Hall (not Allen), Titans TE1 (Kanak on IR, actual Helm), Wan'Dale Robinson mislabeled Questionable.",
+        bets: [
+          { type: "straight", market: "Moneyline", line: "New York Jets ML (min +100 conditional)", stake: 10, confidence: 5, reason: "Cam Ward first career start vs Sauce Gardner/Quinnen Williams front; Geno more established" },
+          { type: "sgp", market: "SGP", line: "New York Jets +1.5 + game UNDER 39.5 (min +200 conditional)", stake: 10, confidence: 4, reason: "Independent legs, mild positive correlation, no shared player-volume premise" }
+        ]
+      },
+      Gemini: {
+        version: "2.5 Flash",
+        total_stake: 20,
+        reserve: 0,
+        summary: "Jets +1.5 $12 (claimed bovada_verified -110, unverified; Bovada showed no event prices per other models) + SGP game UNDER 40.5 + Hall OVER 15.5 rush att $8 (conditional min +190). Projected NYJ 20-17. SIXTH confirmed fabricated repo-fetch. Fourth unverifiable bovada_verified label. Also mislabeled Titans QB1 as Will Levis (actual: Cam Ward, correctly in roster file). Grading concerns inline in gemini-picks.md.",
+        bets: [
+          { type: "straight", market: "Spread", line: "New York Jets +1.5 (claimed bovada_verified -110, treated as reference_market)", stake: 12, confidence: 5, reason: "Jets DL controls LOS in low total" },
+          { type: "sgp", market: "SGP", line: "Game UNDER 40.5 + Breece Hall OVER 15.5 rush att (min +190 conditional)", stake: 8, confidence: 4, reason: "Correlated: low-scoring game preserves Jets ground volume; note this is same volume-prop shape flagged as losing by Claude/ChatGPT" }
+        ]
+      }
+    }
   }
 ];
 

@@ -29,8 +29,8 @@
       "note": "5 yr, age 25, status: Questionable"
     },
     "te1": {
-      "player": "Jaren Kanak",
-      "note": "0 yr, age 22, status: Injured Reserve"
+      "player": "Gunnar Helm",
+      "note": "Actual healthy TE1 (Kanak on IR); corrected from heuristic pick"
     }
   },
   "special_teams": {
