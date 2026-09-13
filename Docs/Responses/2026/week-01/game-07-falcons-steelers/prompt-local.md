@@ -7,8 +7,9 @@ derives shape patterns from raw graded data instead of receiving them
 pre-summarized.
 
 Save the raw response next to this file as `claude-picks.md` or
-`chatgpt-picks.md`. If the model flagged a factual issue in the prompt,
-save `prompt-corrections.md` alongside.
+`chatgpt-picks.md`. Any grading concerns (roster heuristic errors
+flagged, factual issues) go inline in the picks file itself as a
+"Grading concerns" section, not in a separate corrections doc.
 
 ## The prompt (copy from here down)
 
@@ -33,7 +34,9 @@ This study tracks real graded outcomes across two seasons. Do NOT
 read any repository summary, review, or handoff doc that tells you
 "what has worked" or "what to avoid" for betting shapes. That would
 feed you our bias. The study is designed so you derive shape patterns
-independently from the raw graded data. Read:
+independently from the raw graded data.
+
+Read:
 
 - assets/nfl-data.js NFL_BETS: every graded ticket across Seasons 1
   and 2. Filter, count, sort by P/L yourself.

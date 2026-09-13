@@ -4,8 +4,10 @@ For: Gemini, or any model without local filesystem access.
 Kickoff: 2026-09-13 1:00 PM ET at Acrisure Stadium, FOX.
 Written: 2026-09-13. v3.0 is the independent-derivation lane.
 
-Save the raw response next to this file as `gemini-picks.md`. If Gemini
-reports a URL 404 or refused fetch, save `prompt-corrections.md` alongside.
+Save the raw response next to this file as `gemini-picks.md`. Any
+grading concerns (fabricated fetches, unverifiable pricing labels,
+heuristic-only derivations) go inline in the picks file itself as a
+"Grading concerns" section, not in a separate corrections doc.
 
 ## The prompt (copy from here down)
 
@@ -30,7 +32,7 @@ This study tracks real graded outcomes across two seasons. Do NOT
 read any repository summary, review, or handoff doc that tells you
 "what has worked" or "what to avoid" for betting shapes. That would
 feed you our bias. The study is designed so you derive shape patterns
-independently from the raw graded data. Read:
+independently from the raw graded data.
 
 You do not have local filesystem access. The study's tracked graded data
 lives in a public repository at

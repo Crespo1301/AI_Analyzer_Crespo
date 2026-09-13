@@ -70,7 +70,7 @@ This study tracks real graded outcomes across two seasons. Do NOT
 read any repository summary, review, or handoff doc that tells you
 "what has worked" or "what to avoid" for betting shapes. That would
 feed you our bias. The study is designed so you derive shape patterns
-independently from the raw graded data. Read:
+independently from the raw graded data.
 
 ${opts.evidenceCitation}
 
@@ -206,7 +206,9 @@ function githubProfileCitation(awaySlug, homeSlug) {
 - https://raw.githubusercontent.com/Crespo1301/AI_Analyzer_Crespo/main/Data/2026/rosters/${homeSlug}.json`;
 }
 
-const LOCAL_EVIDENCE = `- assets/nfl-data.js NFL_BETS: every graded ticket across Seasons 1
+const LOCAL_EVIDENCE = `Read:
+
+- assets/nfl-data.js NFL_BETS: every graded ticket across Seasons 1
   and 2. Filter, count, sort by P/L yourself.
 - assets/nfl-data.js NFL_CORRECTIONS: the 11 rows where the box score
   overturned the original grade. Read them.
@@ -282,8 +284,9 @@ derives shape patterns from raw graded data instead of receiving them
 pre-summarized.
 
 Save the raw response next to this file as \`claude-picks.md\` or
-\`chatgpt-picks.md\`. If the model flagged a factual issue in the prompt,
-save \`prompt-corrections.md\` alongside.
+\`chatgpt-picks.md\`. Any grading concerns (roster heuristic errors
+flagged, factual issues) go inline in the picks file itself as a
+"Grading concerns" section, not in a separate corrections doc.
 
 ## The prompt (copy from here down)
 
@@ -298,8 +301,10 @@ For: Gemini, or any model without local filesystem access.
 Kickoff: ${kickoffDisplay(g)} at ${g.neutral_site || g.venue}, ${g.network}.
 Written: 2026-09-13. v3.0 is the independent-derivation lane.
 
-Save the raw response next to this file as \`gemini-picks.md\`. If Gemini
-reports a URL 404 or refused fetch, save \`prompt-corrections.md\` alongside.
+Save the raw response next to this file as \`gemini-picks.md\`. Any
+grading concerns (fabricated fetches, unverifiable pricing labels,
+heuristic-only derivations) go inline in the picks file itself as a
+"Grading concerns" section, not in a separate corrections doc.
 
 ## The prompt (copy from here down)
 
