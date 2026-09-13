@@ -5,7 +5,9 @@
   "source": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/teams/buf/roster",
   "offense": {
     "qb1": {
-      "player": "Shane Buechele",
+      "player": "Josh Allen",
+      "corrected_note": "Franchise QB; jersey-heuristic picked Buechele in error",
+      "heuristic_pick": "Shane Buechele",
       "note": "4 yr, age 28"
     },
     "qb2": {

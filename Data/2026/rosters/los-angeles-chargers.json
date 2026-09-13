@@ -5,7 +5,9 @@
   "source": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/teams/lac/roster",
   "offense": {
     "qb1": {
-      "player": "Trey Lance",
+      "player": "Justin Herbert",
+      "corrected_note": "Franchise QB; jersey-heuristic picked Trey Lance in error",
+      "heuristic_pick": "Trey Lance",
       "note": "6 yr, age 26"
     },
     "qb2": {

@@ -5,7 +5,9 @@
   "source": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/teams/gb/roster",
   "offense": {
     "qb1": {
-      "player": "Tyrod Taylor",
+      "player": "Jordan Love",
+      "corrected_note": "Franchise QB per Week 1 previews; jersey-heuristic picked Tyrod Taylor in error",
+      "heuristic_pick": "Tyrod Taylor",
       "note": "16 yr, age 37"
     },
     "qb2": {

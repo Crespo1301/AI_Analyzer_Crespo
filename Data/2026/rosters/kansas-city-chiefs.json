@@ -5,7 +5,9 @@
   "source": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/teams/kc/roster",
   "offense": {
     "qb1": {
-      "player": "Justin Fields",
+      "player": "Patrick Mahomes",
+      "corrected_note": "Franchise QB, Week 1 return from Dec 2025 injury; jersey-heuristic picked Fields in error",
+      "heuristic_pick": "Justin Fields",
       "note": "6 yr, age 27"
     },
     "qb2": {

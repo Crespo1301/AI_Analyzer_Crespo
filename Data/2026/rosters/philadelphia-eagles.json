@@ -13,7 +13,9 @@
       "note": "0 yr, age 23"
     },
     "rb1": {
-      "player": "Tank Bigsby",
+      "player": "Saquon Barkley",
+      "corrected_note": "Lead back; jersey-heuristic picked Bigsby in error",
+      "heuristic_pick": "Tank Bigsby",
       "note": "4 yr, age 24"
     },
     "rb2": {

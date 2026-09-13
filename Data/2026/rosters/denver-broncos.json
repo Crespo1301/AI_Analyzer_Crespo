@@ -5,7 +5,9 @@
   "source": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/teams/den/roster",
   "offense": {
     "qb1": {
-      "player": "Sam Ehlinger",
+      "player": "Bo Nix",
+      "corrected_note": "Franchise QB, Week 1 starter; jersey-heuristic picked Ehlinger in error",
+      "heuristic_pick": "Sam Ehlinger",
       "note": "6 yr, age 27"
     },
     "qb2": {

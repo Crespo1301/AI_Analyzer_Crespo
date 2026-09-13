@@ -5,8 +5,8 @@
   "source": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/teams/chi/roster",
   "offense": {
     "qb1": {
-      "player": "Case Keenum",
-      "note": "14 yr, age 38"
+      "player": "Caleb Williams",
+      "note": "3 yr, age 24 — starter per public depth chart; jersey-heuristic previously picked Case Keenum in error"
     },
     "qb2": {
       "player": "Tyson Bagent",

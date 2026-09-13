@@ -13,7 +13,9 @@
       "note": "6 yr, age 27"
     },
     "rb1": {
-      "player": "Woody Marks",
+      "player": "David Montgomery",
+      "corrected_note": "Lead back per SI Week 1 preview; jersey-heuristic picked Marks in error",
+      "heuristic_pick": "Woody Marks",
       "note": "2 yr, age 25"
     },
     "rb2": {

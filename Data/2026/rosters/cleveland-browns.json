@@ -5,7 +5,9 @@
   "source": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/teams/cle/roster",
   "offense": {
     "qb1": {
-      "player": "Shedeur Sanders",
+      "player": "Deshaun Watson",
+      "corrected_note": "Week 1 starter per SI/Athlon; jersey-heuristic previously picked Sanders in error",
+      "heuristic_pick": "Shedeur Sanders",
       "note": "2 yr, age 24"
     },
     "qb2": {

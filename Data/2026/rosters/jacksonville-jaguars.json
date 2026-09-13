@@ -5,7 +5,9 @@
   "source": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/teams/jax/roster",
   "offense": {
     "qb1": {
-      "player": "Quinn Ewers",
+      "player": "Trevor Lawrence",
+      "corrected_note": "Week 1 starter, franchise QB; jersey-heuristic picked Ewers (rookie) in error",
+      "heuristic_pick": "Quinn Ewers",
       "note": "2 yr, age 23"
     },
     "qb2": {

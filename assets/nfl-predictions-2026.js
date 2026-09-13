@@ -461,6 +461,141 @@ var NFL_PREDICTIONS_2026 = [
       Claude: { version: "claude-opus-4-7", total_stake: 20, reserve: 0, summary: "Game UNDER 42.5 $12 conditional -110 + SGP Steelers ML + Falcons TT UNDER 17.5 $8 conditional +140. Steelers 24-13. FOUR roster errors flagged (ATL QB1, ATL WR1, PIT QB1, PIT TE1). Cited Darnold Seattle debut UNDER 44.5 as direct analogue to Cooper Rush emergency start.", bets: [{type:"straight", market:"Total", line:"UNDER 42.5 (min -110 conditional)", stake:12, confidence:6, reason:"Cooper Rush emergency start caps ATL ceiling; Rodgers pace-slowing offense; total already low"}, {type:"sgp", market:"SGP", line:"Steelers ML + Falcons TT UNDER 17.5 (min +140 conditional)", stake:8, confidence:4, reason:"Independent legs, mild positive correlation, no shared player premise"}] },
       Gemini: { version: "2.5 Flash", total_stake: 20, reserve: 0, summary: "Steelers -3.5 $12 claimed bovada_verified -104 (odds_source is legalsportsbetting.com not Bovada, unverified) + SGP UNDER 42.5 + Steelers ML $8 conditional +150. Steelers 23-13. SEVENTH fabricated repo-fetch. FIFTH unverifiable bovada_verified label. Grading concerns inline in gemini-picks.md.", bets: [{type:"straight", market:"Spread", line:"Pittsburgh Steelers -3.5 (claimed bovada_verified -104, treated as reference_market)", stake:12, confidence:6, reason:"Rodgers vs Rush emergency start on wet grass"}, {type:"parlay", market:"SGP", line:"Game UNDER 42.5 + Steelers ML (min +150 conditional)", stake:8, confidence:5, reason:"Low-scoring rain game favors Steelers win + UNDER"}] }
     }
+  },
+  {
+    week: 1, gameId: "bears-panthers", label: "Bears at Panthers",
+    away: "Chicago Bears", home: "Carolina Panthers",
+    kickoff: "2026-09-13T13:00:00-04:00", kickoffDisplay: "Sun Sep 13, 1:00 PM ET",
+    venue: "Bank of America Stadium, Charlotte, NC", network: "FOX",
+    line_snapshot: { spread: "CHI -3", total: 47.0, moneyline: "CHI -155 / CAR +130", source: "FanDuel via Codex research, 2026-09-13" },
+    espn: "https://www.espn.com/nfl/boxscore/_/gameId/401872661",
+    responseFolder: "Docs/Responses/2026/week-01/game-08-bears-panthers/",
+    status: "locked", locked_at: "2026-09-13", prompt_template: "forced-selection v3.0",
+    models: {
+      ChatGPT: { version: "GPT-6 (Codex CLI)", total_stake: 20, reserve: 0, summary: "Bears -3 $14 conditional -110 + SGP Bears ML + game OVER 47.5 $6 conditional +220. Projected Bears 27-23. Depth charts verified.", bets: [{type:"straight", market:"Spread", line:"Chicago Bears -3 (min -110 conditional)", stake:14, confidence:6, reason:"Ben Johnson offense debut + Caleb Williams + Odunze vs CAR missing Jones II"}, {type:"parlay", market:"SGP", line:"Bears ML + game OVER 47.5 (min +220 conditional)", stake:6, confidence:3, reason:"Bears offensive script drives both legs"}] },
+      Claude: { version: "claude-opus-4-7", total_stake: 20, reserve: 0, summary: "CHI TT OVER 24.5 $12 conditional -110 + SGP Bears ML + game OVER 47.5 $8 conditional +180. Projected Bears 27-20. Applied W11 P11 Cowboys TT OVER shape.", bets: [{type:"straight", market:"Team Total", line:"Chicago Bears TT OVER 24.5 (min -110 conditional)", stake:12, confidence:6, reason:"Ben Johnson + Caleb Williams + Odunze active vs Panthers thin edge/TE/WR"}, {type:"sgp", market:"SGP", line:"Bears ML + game OVER 47.5 (min +180 conditional)", stake:8, confidence:4, reason:"Correlated but independent legs, no shared player-volume premise"}] },
+      Gemini: { version: "2.5 Flash", total_stake: 20, reserve: 0, summary: "Bears -3.0 $12 claimed bovada_verified -110 (odds_source usatoday.com not Bovada) + SGP OVER 46.5 + Williams 2+ Pass TDs $8 conditional +160. 8th fabricated repo fetch. 6th unverifiable bovada label. T2 leg 2 is Season 1 loss family. Grading concerns inline.", bets: [{type:"straight", market:"Spread", line:"Chicago Bears -3.0 (claimed bovada_verified -110, treated as reference_market)", stake:12, confidence:6, reason:"Ben Johnson debut"}, {type:"parlay", market:"SGP", line:"Game OVER 46.5 + Williams 2+ Pass TDs (min +160 conditional)", stake:8, confidence:5, reason:"High-tempo offensive script; note single-player OVER pass TDs shape flagged as losing"}] }
+    }
+  },
+  {
+    week: 1, gameId: "browns-jaguars", label: "Browns at Jaguars",
+    away: "Cleveland Browns", home: "Jacksonville Jaguars",
+    kickoff: "2026-09-13T13:00:00-04:00", kickoffDisplay: "Sun Sep 13, 1:00 PM ET",
+    venue: "EverBank Stadium, Jacksonville, FL", network: "CBS",
+    line_snapshot: { spread: "JAX -8.5", total: 40.5, moneyline: "JAX -400 / CLE +320", source: "FanDuel via Codex research, 2026-09-13" },
+    espn: "https://www.espn.com/nfl/boxscore/_/gameId/401872922",
+    responseFolder: "Docs/Responses/2026/week-01/game-09-browns-jaguars/",
+    status: "locked", locked_at: "2026-09-13", prompt_template: "forced-selection v3.0",
+    models: {
+      ChatGPT: { version: "GPT-6 (Codex CLI)", total_stake: 20, reserve: 0, summary: "JAX -8.5 $14 conditional -110 + SGP Jaguars ML + game OVER 40.5 $6 conditional +220. Projected Jaguars win. Note: -8.5 approaches big-favorite threshold.", bets: [{type:"straight", market:"Spread", line:"Jacksonville Jaguars -8.5 (min -110 conditional)", stake:14, confidence:6, reason:"JAX home vs CLE road with QB uncertainty (Shedeur Sanders)"}, {type:"parlay", market:"SGP", line:"Jaguars ML + game OVER 40.5 (min +220 conditional)", stake:6, confidence:3, reason:"JAX-controlled win with offense script"}] },
+      Claude: { version: "claude-opus-4-7", total_stake: 20, reserve: 0, summary: "Game UNDER 40.5 $12 conditional -110 + SGP Jaguars ML + game UNDER 40.5 $8 conditional +200. Projected Jaguars 20-16. Both QBs uncertain drives UNDER.", bets: [{type:"straight", market:"Total", line:"UNDER 40.5 (min -110 conditional)", stake:12, confidence:6, reason:"Both teams non-established QBs; interior line issues; defensive opener"}, {type:"sgp", market:"SGP", line:"JAX ML + game UNDER 40.5 (min +200 conditional)", stake:8, confidence:4, reason:"Home team ML in low-total spot, independent legs"}] },
+      Gemini: { version: "pending", total_stake: 0, reserve: 20, summary: "Awaiting v3.0 response.", bets: [] }
+    }
+  },
+  {
+    week: 1, gameId: "bills-texans", label: "Bills at Texans",
+    away: "Buffalo Bills", home: "Houston Texans",
+    kickoff: "2026-09-13T13:00:00-04:00", kickoffDisplay: "Sun Sep 13, 1:00 PM ET",
+    venue: "NRG Stadium, Houston, TX", network: "CBS",
+    line_snapshot: { spread: "BUF -1.5", total: 45.5, moneyline: "BUF -125 / HOU +105", source: "FanDuel via Codex research, 2026-09-13" },
+    espn: "https://www.espn.com/nfl/boxscore/_/gameId/401872660",
+    responseFolder: "Docs/Responses/2026/week-01/game-10-bills-texans/",
+    status: "locked", locked_at: "2026-09-13", prompt_template: "forced-selection v3.0",
+    models: {
+      ChatGPT: { version: "GPT-6 (Codex CLI)", total_stake: 20, reserve: 0, summary: "Bills -1.5 $14 conditional -110 + SGP Bills ML + game OVER 44.5 $6 conditional +220. Projected Bills win.", bets: [{type:"straight", market:"Spread", line:"Buffalo Bills -1.5 (min -110 conditional)", stake:14, confidence:6, reason:"Josh Allen edge over Stroud in pick-em environment"}, {type:"parlay", market:"SGP", line:"Bills ML + game OVER 44.5 (min +220 conditional)", stake:6, confidence:3, reason:"Bills offense drives both legs"}] },
+      Claude: { version: "claude-opus-4-7", total_stake: 20, reserve: 0, summary: "HOU +3 $12 conditional -110 + SGP HOU ML + game UNDER 46.5 $8 conditional +200. Projected Texans 24-20 (contrarian). Hook underdog shape (3-0 in study).", bets: [{type:"straight", market:"Spread", line:"Houston Texans +3 (min -110 conditional)", stake:12, confidence:5, reason:"Hook across key number 3 on home team, Stroud healthy vs BUF road"}, {type:"sgp", market:"SGP", line:"HOU ML + game UNDER 46.5 (min +200 conditional)", stake:8, confidence:4, reason:"Home upset in low-scoring defensive struggle"}] },
+      Gemini: { version: "pending", total_stake: 0, reserve: 20, summary: "Awaiting v3.0 response.", bets: [] }
+    }
+  },
+  {
+    week: 1, gameId: "dolphins-raiders", label: "Dolphins at Raiders",
+    away: "Miami Dolphins", home: "Las Vegas Raiders",
+    kickoff: "2026-09-13T16:25:00-04:00", kickoffDisplay: "Sun Sep 13, 4:25 PM ET",
+    venue: "Allegiant Stadium, Las Vegas, NV", network: "FOX",
+    line_snapshot: { spread: "LV -3", total: 42.5, moneyline: "LV -155 / MIA +130", source: "FanDuel via Codex research, 2026-09-13" },
+    espn: "https://www.espn.com/nfl/boxscore/_/gameId/401872928",
+    responseFolder: "Docs/Responses/2026/week-01/game-11-dolphins-raiders/",
+    status: "locked", locked_at: "2026-09-13", prompt_template: "forced-selection v3.0",
+    models: {
+      ChatGPT: { version: "GPT-6 (Codex CLI)", total_stake: 20, reserve: 0, summary: "Raiders -3 $14 conditional -110 + SGP Raiders ML + game OVER 39.5 $6 conditional +220.", bets: [{type:"straight", market:"Spread", line:"Las Vegas Raiders -3 (min -110 conditional)", stake:14, confidence:6, reason:"LV home with Cousins/Jeanty vs MIA road with QB uncertainty"}, {type:"parlay", market:"SGP", line:"Raiders ML + game OVER 39.5 (min +220 conditional)", stake:6, confidence:3, reason:"LV offensive script"}] },
+      Claude: { version: "claude-opus-4-7", total_stake: 20, reserve: 0, summary: "LV Raiders ML $12 conditional -140 + SGP LV ML + Jeanty OVER 15.5 rush att $8 conditional +140. Volume prop on winning side (corrected from Game 2 Kyren pattern).", bets: [{type:"straight", market:"Moneyline", line:"LV Raiders ML (min -140 conditional)", stake:12, confidence:6, reason:"LV home Cousins/Jeanty stability vs MIA QB uncertainty"}, {type:"sgp", market:"SGP", line:"LV ML + Jeanty OVER 15.5 rush att (min +140 conditional)", stake:8, confidence:5, reason:"Volume-anchored rush attempts on projected winning side (Game 2 Kyren correction: Kyren was losing side; Jeanty projected winning)"}] },
+      Gemini: { version: "pending", total_stake: 0, reserve: 20, summary: "Awaiting v3.0 response.", bets: [] }
+    }
+  },
+  {
+    week: 1, gameId: "packers-vikings", label: "Packers at Vikings",
+    away: "Green Bay Packers", home: "Minnesota Vikings",
+    kickoff: "2026-09-13T16:25:00-04:00", kickoffDisplay: "Sun Sep 13, 4:25 PM ET",
+    venue: "U.S. Bank Stadium, Minneapolis, MN", network: "CBS",
+    line_snapshot: { spread: "MIN -1.5 to -4", total: 42.5, moneyline: "MIN -140 / GB +120", source: "FanDuel via research, 2026-09-13" },
+    espn: "https://www.espn.com/nfl/boxscore/_/gameId/401872927",
+    responseFolder: "Docs/Responses/2026/week-01/game-12-packers-vikings/",
+    status: "locked", locked_at: "2026-09-13", prompt_template: "forced-selection v3.0",
+    models: {
+      ChatGPT: { version: "GPT-6 (Codex CLI)", total_stake: 20, reserve: 0, summary: "Vikings -1.5 $14 conditional -110 + SGP Vikings ML + game OVER 46.5 $6 conditional +220.", bets: [{type:"straight", market:"Spread", line:"Minnesota Vikings -1.5 (min -110 conditional)", stake:14, confidence:6, reason:"MIN home with GB decimated"}, {type:"parlay", market:"SGP", line:"Vikings ML + game OVER 46.5 (min +220 conditional)", stake:6, confidence:3, reason:"MIN offense script"}] },
+      Claude: { version: "claude-opus-4-7", total_stake: 20, reserve: 0, summary: "Vikings -4 $12 conditional -110 + SGP Vikings ML + game UNDER 42.5 $8 conditional +180. Projected Vikings 24-17. GB missing 5+ starters (Jacobs, Parsons, Musgrave). Flagged Vikings QB1 heuristic HARD ERROR (Kyler Murray listed but plays for Arizona).", bets: [{type:"straight", market:"Spread", line:"Minnesota Vikings -4 (min -110 conditional)", stake:12, confidence:6, reason:"GB missing RB1 Jacobs + edge Parsons + multiple DTs; MIN home with intact skill group"}, {type:"sgp", market:"SGP", line:"Vikings ML + game UNDER 42.5 (min +180 conditional)", stake:8, confidence:4, reason:"MIN 24-14 style, GB offense can't sustain without Jacobs"}] },
+      Gemini: { version: "pending", total_stake: 0, reserve: 20, summary: "Awaiting v3.0 response.", bets: [] }
+    }
+  },
+  {
+    week: 1, gameId: "commanders-eagles", label: "Commanders at Eagles",
+    away: "Washington Commanders", home: "Philadelphia Eagles",
+    kickoff: "2026-09-13T16:25:00-04:00", kickoffDisplay: "Sun Sep 13, 4:25 PM ET",
+    venue: "Lincoln Financial Field, Philadelphia, PA", network: "FOX",
+    line_snapshot: { spread: "PHI -3.5 to -5.5", total: 47.5, moneyline: "PHI -200 / WSH +170", source: "FanDuel via research, 2026-09-13" },
+    espn: "https://www.espn.com/nfl/boxscore/_/gameId/401872929",
+    responseFolder: "Docs/Responses/2026/week-01/game-13-commanders-eagles/",
+    status: "locked", locked_at: "2026-09-13", prompt_template: "forced-selection v3.0",
+    models: {
+      ChatGPT: { version: "GPT-6 (Codex CLI)", total_stake: 20, reserve: 0, summary: "Eagles -5.5 $14 conditional -110 + SGP Eagles ML + game OVER 44.5 $6 conditional +220.", bets: [{type:"straight", market:"Spread", line:"Philadelphia Eagles -5.5 (min -110 conditional)", stake:14, confidence:6, reason:"PHI home decisively better"}, {type:"parlay", market:"SGP", line:"Eagles ML + game OVER 44.5 (min +220 conditional)", stake:6, confidence:3, reason:"PHI offense script"}] },
+      Claude: { version: "claude-opus-4-7", total_stake: 20, reserve: 0, summary: "Eagles -3.5 $12 conditional -115 + SGP Eagles ML + game OVER 47.5 $8 conditional +180. Projected PHI 27-20. Flagged Eagles RB1 heuristic (Bigsby listed, actual Saquon Barkley).", bets: [{type:"straight", market:"Spread", line:"Philadelphia Eagles -3.5 (min -115 conditional)", stake:12, confidence:6, reason:"Hurts + Barkley home vs WAS road; PHI healthy, WAS missing 2 DEs"}, {type:"sgp", market:"SGP", line:"Eagles ML + game OVER 47.5 (min +180 conditional)", stake:8, confidence:4, reason:"27-24 style with offensive script pushing total"}] },
+      Gemini: { version: "pending", total_stake: 0, reserve: 20, summary: "Awaiting v3.0 response.", bets: [] }
+    }
+  },
+  {
+    week: 1, gameId: "cardinals-chargers", label: "Cardinals at Chargers",
+    away: "Arizona Cardinals", home: "Los Angeles Chargers",
+    kickoff: "2026-09-13T16:25:00-04:00", kickoffDisplay: "Sun Sep 13, 4:25 PM ET",
+    venue: "SoFi Stadium, Inglewood, CA", network: "CBS",
+    line_snapshot: { spread: "LAC -6.5 to -9.5", total: 46.5, moneyline: "LAC -320 / ARI +260", source: "FanDuel via research, 2026-09-13" },
+    espn: "https://www.espn.com/nfl/boxscore/_/gameId/401872926",
+    responseFolder: "Docs/Responses/2026/week-01/game-14-cardinals-chargers/",
+    status: "locked", locked_at: "2026-09-13", prompt_template: "forced-selection v3.0",
+    models: {
+      ChatGPT: { version: "GPT-6 (Codex CLI)", total_stake: 20, reserve: 0, summary: "Chargers -9.5 $14 conditional -110 + SGP Chargers ML + game OVER 47.5 $6 conditional +220. Note: -9.5 approaches big-favorite threshold flagged as losing shape.", bets: [{type:"straight", market:"Spread", line:"Los Angeles Chargers -9.5 (min -110 conditional)", stake:14, confidence:6, reason:"LAC home, ARI depleted"}, {type:"parlay", market:"SGP", line:"Chargers ML + game OVER 47.5 (min +220 conditional)", stake:6, confidence:3, reason:"LAC offensive script"}] },
+      Claude: { version: "claude-opus-4-7", total_stake: 20, reserve: 0, summary: "LAC -6.5 $12 conditional -110 + SGP LAC ML + game UNDER 44.5 $8 conditional +180. Flagged both team QB1 heuristic errors (ARI has Brissett listed but actual Kyler Murray; LAC has Lance listed but actual Herbert).", bets: [{type:"straight", market:"Spread", line:"Los Angeles Chargers -6.5 (min -110 conditional)", stake:12, confidence:6, reason:"LAC home with Herbert vs ARI depleted WR/S/CB + RB1 Q"}, {type:"sgp", market:"SGP", line:"LAC ML + game UNDER 44.5 (min +180 conditional)", stake:8, confidence:4, reason:"LAC controls low-scoring game"}] },
+      Gemini: { version: "pending", total_stake: 0, reserve: 20, summary: "Awaiting v3.0 response.", bets: [] }
+    }
+  },
+  {
+    week: 1, gameId: "cowboys-giants", label: "Cowboys at Giants (SNF)",
+    away: "Dallas Cowboys", home: "New York Giants",
+    kickoff: "2026-09-13T20:20:00-04:00", kickoffDisplay: "Sun Sep 13, 8:20 PM ET",
+    venue: "MetLife Stadium, East Rutherford, NJ", network: "NBC",
+    line_snapshot: { spread: "DAL -2.5 to -3", total: 48.5, moneyline: "DAL -140 / NYG +120", source: "FanDuel via research, 2026-09-13" },
+    espn: "https://www.espn.com/nfl/boxscore/_/gameId/401872930",
+    responseFolder: "Docs/Responses/2026/week-01/game-15-cowboys-giants/",
+    status: "locked", locked_at: "2026-09-13", prompt_template: "forced-selection v3.0",
+    models: {
+      ChatGPT: { version: "GPT-6 (Codex CLI)", total_stake: 20, reserve: 0, summary: "Cowboys -2.5 $14 conditional -110 + SGP Cowboys ML + game OVER 48.5 $6 conditional +220.", bets: [{type:"straight", market:"Spread", line:"Dallas Cowboys -2.5 (min -110 conditional)", stake:14, confidence:6, reason:"DAL road favorite through key number"}, {type:"parlay", market:"SGP", line:"Cowboys ML + game OVER 48.5 (min +220 conditional)", stake:6, confidence:3, reason:"DAL offensive script"}] },
+      Claude: { version: "claude-opus-4-7", total_stake: 20, reserve: 0, summary: "Cowboys -3 $12 conditional -115 + SGP Cowboys ML + Cowboys TT OVER 24.5 $8 conditional +150. Projected DAL 27-17. Applied W11 P11 Cowboys shape (same franchise). Flagged Giants QB1 heuristic uncertainty (Jake Haener listed).", bets: [{type:"straight", market:"Spread", line:"Dallas Cowboys -3 (min -115 conditional)", stake:12, confidence:6, reason:"DAL healthy Prescott + Pickens vs NYG QB uncertainty and Nabers Q"}, {type:"sgp", market:"SGP", line:"Cowboys ML + Cowboys TT OVER 24.5 (min +150 conditional)", stake:8, confidence:4, reason:"W11 P11 Cowboys shape reapplied with SGP concentration awareness (Game 2 lesson - sized to $8)"}] },
+      Gemini: { version: "pending", total_stake: 0, reserve: 20, summary: "Awaiting v3.0 response.", bets: [] }
+    }
+  },
+  {
+    week: 1, gameId: "broncos-chiefs", label: "Broncos at Chiefs (MNF)",
+    away: "Denver Broncos", home: "Kansas City Chiefs",
+    kickoff: "2026-09-14T20:15:00-04:00", kickoffDisplay: "Mon Sep 14, 8:15 PM ET",
+    venue: "GEHA Field at Arrowhead Stadium, Kansas City, MO", network: "ABC/ESPN",
+    line_snapshot: { spread: "KC -2.5 to -3.5", total: 43.5, moneyline: "KC -150 / DEN +130", source: "FanDuel via research, 2026-09-13" },
+    espn: "https://www.espn.com/nfl/boxscore/_/gameId/401872931",
+    responseFolder: "Docs/Responses/2026/week-01/game-16-broncos-chiefs/",
+    status: "locked", locked_at: "2026-09-13", prompt_template: "forced-selection v3.0",
+    models: {
+      ChatGPT: { version: "GPT-6 (Codex CLI)", total_stake: 20, reserve: 0, summary: "Chiefs -2.5 $14 conditional -110 + SGP Chiefs ML + game OVER 43.5 $6 conditional +220.", bets: [{type:"straight", market:"Spread", line:"Kansas City Chiefs -2.5 (min -110 conditional)", stake:14, confidence:6, reason:"KC home MNF opener"}, {type:"parlay", market:"SGP", line:"Chiefs ML + game OVER 43.5 (min +220 conditional)", stake:6, confidence:3, reason:"KC offensive script"}] },
+      Claude: { version: "claude-opus-4-7", total_stake: 20, reserve: 0, summary: "Chiefs -3.5 $12 conditional -110 + SGP Chiefs ML + game UNDER 44.5 $8 conditional +180. Flagged Broncos QB1 heuristic HARD error (Sam Ehlinger listed, actual Bo Nix).", bets: [{type:"straight", market:"Spread", line:"Kansas City Chiefs -3.5 (min -110 conditional)", stake:12, confidence:6, reason:"KC home MNF, hook through key number 3; Bo Nix (year 2) at road"}, {type:"sgp", market:"SGP", line:"Chiefs ML + game UNDER 44.5 (min +180 conditional)", stake:8, confidence:4, reason:"24-17 style KC win, defenses hold OVER"}] },
+      Gemini: { version: "pending", total_stake: 0, reserve: 20, summary: "Awaiting v3.0 response.", bets: [] }
+    }
   }
 ];
 
