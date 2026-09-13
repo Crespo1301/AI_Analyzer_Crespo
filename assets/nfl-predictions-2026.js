@@ -475,6 +475,25 @@ var NFL_PREDICTIONS_2026 = [
       ChatGPT: { version: "GPT-6 (Codex CLI)", total_stake: 20, reserve: 0, summary: "Bears -3 $14 conditional -110 + SGP Bears ML + game OVER 47.5 $6 conditional +220. Projected Bears 27-23. Depth charts verified.", bets: [{type:"straight", market:"Spread", line:"Chicago Bears -3 (min -110 conditional)", stake:14, confidence:6, reason:"Ben Johnson offense debut + Caleb Williams + Odunze vs CAR missing Jones II"}, {type:"parlay", market:"SGP", line:"Bears ML + game OVER 47.5 (min +220 conditional)", stake:6, confidence:3, reason:"Bears offensive script drives both legs"}] },
       Claude: { version: "claude-opus-4-7", total_stake: 20, reserve: 0, summary: "CHI TT OVER 24.5 $12 conditional -110 + SGP Bears ML + game OVER 47.5 $8 conditional +180. Projected Bears 27-20. Applied W11 P11 Cowboys TT OVER shape.", bets: [{type:"straight", market:"Team Total", line:"Chicago Bears TT OVER 24.5 (min -110 conditional)", stake:12, confidence:6, reason:"Ben Johnson + Caleb Williams + Odunze active vs Panthers thin edge/TE/WR"}, {type:"sgp", market:"SGP", line:"Bears ML + game OVER 47.5 (min +180 conditional)", stake:8, confidence:4, reason:"Correlated but independent legs, no shared player-volume premise"}] },
       Gemini: { version: "2.5 Flash", total_stake: 20, reserve: 0, summary: "Bears -3.0 $12 claimed bovada_verified -110 (odds_source usatoday.com not Bovada) + SGP OVER 46.5 + Williams 2+ Pass TDs $8 conditional +160. 8th fabricated repo fetch. 6th unverifiable bovada label. T2 leg 2 is Season 1 loss family. Grading concerns inline.", bets: [{type:"straight", market:"Spread", line:"Chicago Bears -3.0 (claimed bovada_verified -110, treated as reference_market)", stake:12, confidence:6, reason:"Ben Johnson debut"}, {type:"parlay", market:"SGP", line:"Game OVER 46.5 + Williams 2+ Pass TDs (min +160 conditional)", stake:8, confidence:5, reason:"High-tempo offensive script; note single-player OVER pass TDs shape flagged as losing"}] }
+    },
+    result: {
+      status: "final", verified_at: "2026-09-13", awayScore: 59, homeScore: 37,
+      source: "https://www.espn.com/nfl/game/_/gameId/401872661",
+      note: "Bears 59, Panthers 37. Total 96. CHI covered -3 easily. OVER 46.5/47.5 wins. Williams 2 pass TDs.",
+      grades: {
+        ChatGPT: [
+          { outcome: "WIN", actual: "CHI won by 22, covered -3", odds: -110, profit: 12.73 },
+          { outcome: "WIN", actual: "CHI ML win + 96 total OVER 47.5", odds: 220, profit: 13.20 }
+        ],
+        Claude: [
+          { outcome: "WIN", actual: "CHI scored 59, TT OVER 24.5 wins by 34.5", odds: -110, profit: 10.91 },
+          { outcome: "WIN", actual: "CHI ML win + 96 total OVER 47.5", odds: 180, profit: 14.40 }
+        ],
+        Gemini: [
+          { outcome: "WIN", actual: "CHI won by 22, covered -3.0", odds: -110, profit: 10.91 },
+          { outcome: "WIN", actual: "96 total OVER 46.5 + Williams 2 pass TDs (>=2)", odds: 160, profit: 12.80 }
+        ]
+      }
     }
   },
   {
@@ -489,7 +508,23 @@ var NFL_PREDICTIONS_2026 = [
     models: {
       ChatGPT: { version: "GPT-6 (Codex CLI)", total_stake: 20, reserve: 0, summary: "JAX -8.5 $14 conditional -110 + SGP Jaguars ML + game OVER 40.5 $6 conditional +220. Projected Jaguars win. Note: -8.5 approaches big-favorite threshold.", bets: [{type:"straight", market:"Spread", line:"Jacksonville Jaguars -8.5 (min -110 conditional)", stake:14, confidence:6, reason:"JAX home vs CLE road with QB uncertainty (Shedeur Sanders)"}, {type:"parlay", market:"SGP", line:"Jaguars ML + game OVER 40.5 (min +220 conditional)", stake:6, confidence:3, reason:"JAX-controlled win with offense script"}] },
       Claude: { version: "claude-opus-4-7", total_stake: 20, reserve: 0, summary: "Game UNDER 40.5 $12 conditional -110 + SGP Jaguars ML + game UNDER 40.5 $8 conditional +200. Projected Jaguars 20-16. Both QBs uncertain drives UNDER.", bets: [{type:"straight", market:"Total", line:"UNDER 40.5 (min -110 conditional)", stake:12, confidence:6, reason:"Both teams non-established QBs; interior line issues; defensive opener"}, {type:"sgp", market:"SGP", line:"JAX ML + game UNDER 40.5 (min +200 conditional)", stake:8, confidence:4, reason:"Home team ML in low-total spot, independent legs"}] },
-      Gemini: { version: "pending", total_stake: 0, reserve: 20, summary: "Awaiting v3.0 response.", bets: [] }
+      Gemini: { version: "EXPIRED", total_stake: 0, reserve: 20, summary: "No response submitted before 1:00 PM ET kickoff. Pre-game eligibility expired.", bets: [] }
+    },
+    result: {
+      status: "final", verified_at: "2026-09-13", awayScore: 10, homeScore: 34,
+      source: "https://www.espn.com/nfl/game/_/gameId/401872922",
+      note: "Jaguars 34, Browns 10. Total 44. JAX covered -8.5 easily. OVER 40.5 wins by 3.5.",
+      grades: {
+        ChatGPT: [
+          { outcome: "WIN", actual: "JAX won by 24, covered -8.5", odds: -110, profit: 12.73 },
+          { outcome: "WIN", actual: "JAX ML + 44 total OVER 40.5", odds: 220, profit: 13.20 }
+        ],
+        Claude: [
+          { outcome: "LOSS", actual: "44 total went OVER 40.5", odds: -110, profit: -12.00 },
+          { outcome: "LOSS", actual: "SGP UNDER 40.5 leg failed (44 total)", odds: 200, profit: -8.00 }
+        ],
+        Gemini: []
+      }
     }
   },
   {
@@ -504,7 +539,23 @@ var NFL_PREDICTIONS_2026 = [
     models: {
       ChatGPT: { version: "GPT-6 (Codex CLI)", total_stake: 20, reserve: 0, summary: "Bills -1.5 $14 conditional -110 + SGP Bills ML + game OVER 44.5 $6 conditional +220. Projected Bills win.", bets: [{type:"straight", market:"Spread", line:"Buffalo Bills -1.5 (min -110 conditional)", stake:14, confidence:6, reason:"Josh Allen edge over Stroud in pick-em environment"}, {type:"parlay", market:"SGP", line:"Bills ML + game OVER 44.5 (min +220 conditional)", stake:6, confidence:3, reason:"Bills offense drives both legs"}] },
       Claude: { version: "claude-opus-4-7", total_stake: 20, reserve: 0, summary: "HOU +3 $12 conditional -110 + SGP HOU ML + game UNDER 46.5 $8 conditional +200. Projected Texans 24-20 (contrarian). Hook underdog shape (3-0 in study).", bets: [{type:"straight", market:"Spread", line:"Houston Texans +3 (min -110 conditional)", stake:12, confidence:5, reason:"Hook across key number 3 on home team, Stroud healthy vs BUF road"}, {type:"sgp", market:"SGP", line:"HOU ML + game UNDER 46.5 (min +200 conditional)", stake:8, confidence:4, reason:"Home upset in low-scoring defensive struggle"}] },
-      Gemini: { version: "pending", total_stake: 0, reserve: 20, summary: "Awaiting v3.0 response.", bets: [] }
+      Gemini: { version: "EXPIRED", total_stake: 0, reserve: 20, summary: "No response submitted before 1:00 PM ET kickoff. Pre-game eligibility expired.", bets: [] }
+    },
+    result: {
+      status: "final", verified_at: "2026-09-13", awayScore: 36, homeScore: 31,
+      source: "https://www.espn.com/nfl/game/_/gameId/401872660",
+      note: "Bills 36, Texans 31. Total 67. BUF won by 5, covered -1.5. OVER 44.5 wins by 22.5.",
+      grades: {
+        ChatGPT: [
+          { outcome: "WIN", actual: "BUF won by 5, covered -1.5", odds: -110, profit: 12.73 },
+          { outcome: "WIN", actual: "BUF ML + 67 total OVER 44.5", odds: 220, profit: 13.20 }
+        ],
+        Claude: [
+          { outcome: "LOSS", actual: "BUF won by 5, HOU +3 lost", odds: -110, profit: -12.00 },
+          { outcome: "LOSS", actual: "SGP both legs failed - HOU lost, 67 total OVER 46.5", odds: 200, profit: -8.00 }
+        ],
+        Gemini: []
+      }
     }
   },
   {
@@ -519,7 +570,7 @@ var NFL_PREDICTIONS_2026 = [
     models: {
       ChatGPT: { version: "GPT-6 (Codex CLI)", total_stake: 20, reserve: 0, summary: "Raiders -3 $14 conditional -110 + SGP Raiders ML + game OVER 39.5 $6 conditional +220.", bets: [{type:"straight", market:"Spread", line:"Las Vegas Raiders -3 (min -110 conditional)", stake:14, confidence:6, reason:"LV home with Cousins/Jeanty vs MIA road with QB uncertainty"}, {type:"parlay", market:"SGP", line:"Raiders ML + game OVER 39.5 (min +220 conditional)", stake:6, confidence:3, reason:"LV offensive script"}] },
       Claude: { version: "claude-opus-4-7", total_stake: 20, reserve: 0, summary: "LV Raiders ML $12 conditional -140 + SGP LV ML + Jeanty OVER 15.5 rush att $8 conditional +140. Volume prop on winning side (corrected from Game 2 Kyren pattern).", bets: [{type:"straight", market:"Moneyline", line:"LV Raiders ML (min -140 conditional)", stake:12, confidence:6, reason:"LV home Cousins/Jeanty stability vs MIA QB uncertainty"}, {type:"sgp", market:"SGP", line:"LV ML + Jeanty OVER 15.5 rush att (min +140 conditional)", stake:8, confidence:5, reason:"Volume-anchored rush attempts on projected winning side (Game 2 Kyren correction: Kyren was losing side; Jeanty projected winning)"}] },
-      Gemini: { version: "pending", total_stake: 0, reserve: 20, summary: "Awaiting v3.0 response.", bets: [] }
+      Gemini: { version: "2.5 Flash", total_stake: 20, reserve: 0, summary: "Miami +3.5 $12 reference_market DK -115 + SGP UNDER 40.5 + Achane OVER 68.5 rush yds $8 conditional +185 target. Contrarian road-dog take: Bowers OUT thesis. 9th fabricated GitHub raw fetch pattern documented. SGP leg 2 is single-player OVER family (6+ S1 losses). Also fabricated 'Fernando Mendoza Heisman #1 pick backup QB' claim. Grading concerns inline.", bets: [{type:"straight", market:"Spread", line:"Miami Dolphins +3.5 (DK reference_market -115)", stake:12, confidence:6, reason:"Bowers OUT limits Cousins; Achane controls tempo"}, {type:"parlay", market:"SGP", line:"UNDER 40.5 + Achane OVER 68.5 rush yds (min +160 conditional, target +185)", stake:8, confidence:4, reason:"Low-total game script feeds Achane volume; single-player OVER family flagged"}] }
     }
   },
   {
@@ -534,7 +585,7 @@ var NFL_PREDICTIONS_2026 = [
     models: {
       ChatGPT: { version: "GPT-6 (Codex CLI)", total_stake: 20, reserve: 0, summary: "Vikings -1.5 $14 conditional -110 + SGP Vikings ML + game OVER 46.5 $6 conditional +220.", bets: [{type:"straight", market:"Spread", line:"Minnesota Vikings -1.5 (min -110 conditional)", stake:14, confidence:6, reason:"MIN home with GB decimated"}, {type:"parlay", market:"SGP", line:"Vikings ML + game OVER 46.5 (min +220 conditional)", stake:6, confidence:3, reason:"MIN offense script"}] },
       Claude: { version: "claude-opus-4-7", total_stake: 20, reserve: 0, summary: "Vikings -4 $12 conditional -110 + SGP Vikings ML + game UNDER 42.5 $8 conditional +180. Projected Vikings 24-17. GB missing 5+ starters (Jacobs, Parsons, Musgrave). Flagged Vikings QB1 heuristic HARD ERROR (Kyler Murray listed but plays for Arizona).", bets: [{type:"straight", market:"Spread", line:"Minnesota Vikings -4 (min -110 conditional)", stake:12, confidence:6, reason:"GB missing RB1 Jacobs + edge Parsons + multiple DTs; MIN home with intact skill group"}, {type:"sgp", market:"SGP", line:"Vikings ML + game UNDER 42.5 (min +180 conditional)", stake:8, confidence:4, reason:"MIN 24-14 style, GB offense can't sustain without Jacobs"}] },
-      Gemini: { version: "pending", total_stake: 0, reserve: 20, summary: "Awaiting v3.0 response.", bets: [] }
+      Gemini: { version: "2.5 Flash", total_stake: 20, reserve: 0, summary: "MIN -2.5 $12 reference_market -110 + SGP MIN ML (-135) + UNDER 46.5 (-110) $8 reference_market +230. CRITICAL HALLUCINATION: claims Kyler Murray is Vikings QB1 (Murray plays for Arizona; actual Vikings QB1 is McCarthy). Also fabricates that O'Connell named Murray QB1 over Wentz. 10th fabricated GitHub fetch. UNDER 46.5 line does not exist (real total 42.5). Grading concerns inline.", bets: [{type:"single", market:"Spread", line:"Minnesota Vikings -2.5 (reference_market -110)", stake:12, confidence:6, reason:"MIN home divisional favorite; GB missing Jacobs/Parsons/Banks"}, {type:"parlay", market:"SGP", line:"MIN ML (-135) + UNDER 46.5 (-110) reference +230", stake:8, confidence:4, reason:"Correlated home-fav-ML + UNDER; note UNDER line at 46.5 does not match real 42.5 total"}] }
     }
   },
   {
@@ -549,7 +600,7 @@ var NFL_PREDICTIONS_2026 = [
     models: {
       ChatGPT: { version: "GPT-6 (Codex CLI)", total_stake: 20, reserve: 0, summary: "Eagles -5.5 $14 conditional -110 + SGP Eagles ML + game OVER 44.5 $6 conditional +220.", bets: [{type:"straight", market:"Spread", line:"Philadelphia Eagles -5.5 (min -110 conditional)", stake:14, confidence:6, reason:"PHI home decisively better"}, {type:"parlay", market:"SGP", line:"Eagles ML + game OVER 44.5 (min +220 conditional)", stake:6, confidence:3, reason:"PHI offense script"}] },
       Claude: { version: "claude-opus-4-7", total_stake: 20, reserve: 0, summary: "Eagles -3.5 $12 conditional -115 + SGP Eagles ML + game OVER 47.5 $8 conditional +180. Projected PHI 27-20. Flagged Eagles RB1 heuristic (Bigsby listed, actual Saquon Barkley).", bets: [{type:"straight", market:"Spread", line:"Philadelphia Eagles -3.5 (min -115 conditional)", stake:12, confidence:6, reason:"Hurts + Barkley home vs WAS road; PHI healthy, WAS missing 2 DEs"}, {type:"sgp", market:"SGP", line:"Eagles ML + game OVER 47.5 (min +180 conditional)", stake:8, confidence:4, reason:"27-24 style with offensive script pushing total"}] },
-      Gemini: { version: "pending", total_stake: 0, reserve: 20, summary: "Awaiting v3.0 response.", bets: [] }
+      Gemini: { version: "2.5 Flash", total_stake: 0, reserve: 20, summary: "EXPIRED - Gemini honored pre-game eligibility rule. Response arrived 2min 6sec after 4:25 PM ET kickoff. No allocation. Positive Source Honesty signal.", bets: [] }
     }
   },
   {
@@ -564,7 +615,7 @@ var NFL_PREDICTIONS_2026 = [
     models: {
       ChatGPT: { version: "GPT-6 (Codex CLI)", total_stake: 20, reserve: 0, summary: "Chargers -9.5 $14 conditional -110 + SGP Chargers ML + game OVER 47.5 $6 conditional +220. Note: -9.5 approaches big-favorite threshold flagged as losing shape.", bets: [{type:"straight", market:"Spread", line:"Los Angeles Chargers -9.5 (min -110 conditional)", stake:14, confidence:6, reason:"LAC home, ARI depleted"}, {type:"parlay", market:"SGP", line:"Chargers ML + game OVER 47.5 (min +220 conditional)", stake:6, confidence:3, reason:"LAC offensive script"}] },
       Claude: { version: "claude-opus-4-7", total_stake: 20, reserve: 0, summary: "LAC -6.5 $12 conditional -110 + SGP LAC ML + game UNDER 44.5 $8 conditional +180. Flagged both team QB1 heuristic errors (ARI has Brissett listed but actual Kyler Murray; LAC has Lance listed but actual Herbert).", bets: [{type:"straight", market:"Spread", line:"Los Angeles Chargers -6.5 (min -110 conditional)", stake:12, confidence:6, reason:"LAC home with Herbert vs ARI depleted WR/S/CB + RB1 Q"}, {type:"sgp", market:"SGP", line:"LAC ML + game UNDER 44.5 (min +180 conditional)", stake:8, confidence:4, reason:"LAC controls low-scoring game"}] },
-      Gemini: { version: "pending", total_stake: 0, reserve: 20, summary: "Awaiting v3.0 response.", bets: [] }
+      Gemini: { version: "EXPIRED", total_stake: 0, reserve: 20, summary: "No response submitted before 4:25 PM ET kickoff. Pre-game eligibility expired.", bets: [] }
     }
   },
   {
