@@ -642,3 +642,33 @@ function nflRefreshPredictionCounts() {
   });
 }
 nflRefreshPredictionCounts();
+
+// Mobile hamburger toggle: injected into every page's .site-nav on load.
+(function initNavToggle() {
+  if (typeof document === "undefined") return;
+  document.querySelectorAll(".site-nav").forEach(function (nav) {
+    if (nav.querySelector(".nav-toggle")) return;
+    var primary = nav.querySelector(".nav-primary");
+    var links = nav.querySelector(".nav-links");
+    if (!primary || !links) return;
+    var btn = document.createElement("button");
+    btn.type = "button";
+    btn.className = "nav-toggle";
+    btn.setAttribute("aria-label", "Toggle menu");
+    btn.setAttribute("aria-expanded", "false");
+    btn.setAttribute("aria-controls", "site-nav-links");
+    btn.innerHTML = '<span class="nav-toggle-bars"><span></span><span></span><span></span></span>';
+    links.id = links.id || "site-nav-links";
+    primary.insertBefore(btn, links);
+    btn.addEventListener("click", function () {
+      var open = nav.classList.toggle("open");
+      btn.setAttribute("aria-expanded", open ? "true" : "false");
+    });
+    links.addEventListener("click", function (e) {
+      if (e.target.tagName === "A") { nav.classList.remove("open"); btn.setAttribute("aria-expanded", "false"); }
+    });
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && nav.classList.contains("open")) { nav.classList.remove("open"); btn.setAttribute("aria-expanded", "false"); }
+    });
+  });
+})();
