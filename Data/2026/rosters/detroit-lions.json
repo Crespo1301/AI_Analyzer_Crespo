@@ -21,16 +21,16 @@
       "note": "5 yr, age 27, status: Injured Reserve"
     },
     "wr1": {
-      "player": "Jameson Williams",
-      "note": "5 yr, age 25"
+      "player": "Amon-Ra St. Brown",
+      "note": "Target-share leader per detroitlions.com depth chart; corrected from heuristic listing of Jameson Williams (Williams is deep threat / WR2)"
     },
     "wr2": {
-      "player": "Lucky Jackson",
-      "note": "1 yr, age 29"
+      "player": "Jameson Williams",
+      "note": "5 yr, age 25, deep threat"
     },
     "te1": {
-      "player": "Thomas Gordon",
-      "note": "1 yr, age 26"
+      "player": "Sam LaPorta",
+      "note": "off injury report per Athlon 2026-09-13; corrected from heuristic listing of Thomas Gordon"
     }
   },
   "special_teams": {

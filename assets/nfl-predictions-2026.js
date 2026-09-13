@@ -325,8 +325,26 @@ var NFL_PREDICTIONS_2026 = [
           { type: "sgp", market: "SGP", line: "Detroit Lions ML + game OVER 49.5 (min +220 conditional)", stake: 6, confidence: 3, reason: "Correlated: sustained Detroit offensive production drives both legs" }
         ]
       },
-      Claude: { version: "pending", total_stake: 0, reserve: 20, summary: "Awaiting v3.0 response.", bets: [] },
-      Gemini: { version: "pending", total_stake: 0, reserve: 20, summary: "Awaiting v3.0 response.", bets: [] }
+      Claude: {
+        version: "claude-opus-4-7",
+        total_stake: 20,
+        reserve: 0,
+        summary: "Detroit Team Total OVER 27.5 $12 (conditional min -110) + SGP Detroit ML + Saints Team Total UNDER 20.5 $8 (conditional min +150). Projected Detroit 30-17. Applied W11 P11 Cowboys TT OVER shape. Flagged 4 heuristic errors (Saints QB1, Lions QB1, Lions WR1, Lions TE1). Self-reflection: stopped same-team volume prop on losing side (Game 2 Kyren pattern).",
+        bets: [
+          { type: "straight", market: "Team Total", line: "Detroit Lions Team Total OVER 27.5 (min -110 conditional)", stake: 12, confidence: 6, reason: "Lions offense healthy top-to-bottom, Ford Field dome, Saints missing Cam Jordan" },
+          { type: "sgp", market: "SGP", line: "Detroit ML + Saints Team Total UNDER 20.5 (min +150 conditional)", stake: 8, confidence: 4, reason: "Kamara out, Tyson IR, Matavao IR, Shough on road; two independent legs on same directional thesis without shared player-volume premise" }
+        ]
+      },
+      Gemini: {
+        version: "2.5 Flash",
+        total_stake: 20,
+        reserve: 0,
+        summary: "Detroit -7 $12 (claimed bovada_verified but odds_source is usatoday.com, treated as reference_market) + SGP Detroit TT OVER 27.5 + Gibbs Anytime TD $8 (conditional min +135). Projected Detroit 31-17. FIFTH confirmed fabricated repo-fetch (all raw URLs return 200). Third unverifiable bovada_verified label. Derivations remain conventional heuristics without NFL_BETS row citations. Grading concerns inline in gemini-picks.md.",
+        bets: [
+          { type: "straight", market: "Spread", line: "Detroit -7 (claimed bovada_verified -105, treated as reference_market)", stake: 12, confidence: 6, reason: "Lions dominate Ford Field vs Saints missing Kamara + Cam Jordan" },
+          { type: "sgp", market: "SGP", line: "Detroit TT OVER 27.5 + Gibbs Anytime TD (min +135 conditional)", stake: 8, confidence: 4, reason: "Correlated Detroit scoring script" }
+        ]
+      }
     }
   }
 ];
