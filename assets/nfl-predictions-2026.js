@@ -445,6 +445,22 @@ var NFL_PREDICTIONS_2026 = [
       },
       Gemini: { version: "pending", total_stake: 0, reserve: 20, summary: "Awaiting v3.0 response.", bets: [] }
     }
+  },
+  {
+    week: 1, gameId: "falcons-steelers", label: "Falcons at Steelers",
+    away: "Atlanta Falcons", home: "Pittsburgh Steelers",
+    kickoff: "2026-09-13T13:00:00-04:00", kickoffDisplay: "Sun Sep 13, 1:00 PM ET",
+    venue: "Acrisure Stadium, Pittsburgh, PA", network: "FOX",
+    line_snapshot: { spread: "PIT -5.5 to -6.5", total: 42.5, moneyline: "PIT -280 / ATL +230", source: "FanDuel / SI via ChatGPT + Claude research, 2026-09-13" },
+    espn: "https://www.espn.com/nfl/boxscore/_/gameId/401872658",
+    responseFolder: "Docs/Responses/2026/week-01/game-07-falcons-steelers/",
+    status: "locked", locked_at: "2026-09-13",
+    prompt_template: "forced-selection v3.0",
+    models: {
+      ChatGPT: { version: "GPT-6 (Codex CLI)", total_stake: 20, reserve: 0, summary: "Steelers -5.5 $14 FanDuel reference -115 + SGP Steelers ML + UNDER 40.5 $6 conditional +190. Steelers 24-13. Flagged ATL QB1 (Rush actual starter after Tua ruled out) and PIT QB1 (Rodgers not Rudolph).", bets: [{type:"straight", market:"Spread", line:"Pittsburgh Steelers -5.5 (@ -115 FanDuel reference)", stake:14, confidence:6, reason:"ATL missing both QB1 (Tua) and QB2 (Penix); Rush emergency start vs Rodgers at home"}, {type:"sgp", market:"SGP", line:"Steelers ML + UNDER 40.5 (min +190 conditional)", stake:6, confidence:3, reason:"PIT-controlled win compatible with sub-41 total"}] },
+      Claude: { version: "claude-opus-4-7", total_stake: 20, reserve: 0, summary: "Game UNDER 42.5 $12 conditional -110 + SGP Steelers ML + Falcons TT UNDER 17.5 $8 conditional +140. Steelers 24-13. FOUR roster errors flagged (ATL QB1, ATL WR1, PIT QB1, PIT TE1). Cited Darnold Seattle debut UNDER 44.5 as direct analogue to Cooper Rush emergency start.", bets: [{type:"straight", market:"Total", line:"UNDER 42.5 (min -110 conditional)", stake:12, confidence:6, reason:"Cooper Rush emergency start caps ATL ceiling; Rodgers pace-slowing offense; total already low"}, {type:"sgp", market:"SGP", line:"Steelers ML + Falcons TT UNDER 17.5 (min +140 conditional)", stake:8, confidence:4, reason:"Independent legs, mild positive correlation, no shared player premise"}] },
+      Gemini: { version: "2.5 Flash", total_stake: 20, reserve: 0, summary: "Steelers -3.5 $12 claimed bovada_verified -104 (odds_source is legalsportsbetting.com not Bovada, unverified) + SGP UNDER 42.5 + Steelers ML $8 conditional +150. Steelers 23-13. SEVENTH fabricated repo-fetch. FIFTH unverifiable bovada_verified label. Grading concerns inline in gemini-picks.md.", bets: [{type:"straight", market:"Spread", line:"Pittsburgh Steelers -3.5 (claimed bovada_verified -104, treated as reference_market)", stake:12, confidence:6, reason:"Rodgers vs Rush emergency start on wet grass"}, {type:"parlay", market:"SGP", line:"Game UNDER 42.5 + Steelers ML (min +150 conditional)", stake:8, confidence:5, reason:"Low-scoring rain game favors Steelers win + UNDER"}] }
+    }
   }
 ];
 

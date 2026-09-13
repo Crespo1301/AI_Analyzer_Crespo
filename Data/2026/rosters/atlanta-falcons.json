@@ -5,12 +5,12 @@
   "source": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/teams/atl/roster",
   "offense": {
     "qb1": {
-      "player": "Tua Tagovailoa",
-      "note": "7 yr, age 28"
+      "player": "Cooper Rush",
+      "note": "Actual Week 1 starter per NFL.com after Tua's Thursday oblique; Rush battling back spasms but confirmed to start"
     },
     "qb2": {
-      "player": "Michael Penix Jr.",
-      "note": "3 yr, age 26, status: Out"
+      "player": "Tua Tagovailoa",
+      "note": "OUT Week 1 (oblique, Thursday injury)"
     },
     "rb1": {
       "player": "Bijan Robinson",

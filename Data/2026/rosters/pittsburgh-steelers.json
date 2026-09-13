@@ -5,12 +5,12 @@
   "source": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/teams/pit/roster",
   "offense": {
     "qb1": {
-      "player": "Mason Rudolph",
-      "note": "9 yr, age 31"
+      "player": "Aaron Rodgers",
+      "note": "confirmed Week 1 starter per steelers.com depth chart; 22nd NFL season, age 42, his final campaign"
     },
     "qb2": {
-      "player": "Aaron Rodgers",
-      "note": "22 yr, age 42"
+      "player": "Mason Rudolph",
+      "note": "9 yr, age 31, backup"
     },
     "rb1": {
       "player": "Rico Dowdle",
