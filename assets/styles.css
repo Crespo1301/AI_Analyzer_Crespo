@@ -1275,3 +1275,33 @@ button { font: inherit; cursor: pointer; border: 0; background: none; color: inh
 
 /* Focus rings for keyboard nav (accessibility). */
 a:focus-visible, button:focus-visible, .btn:focus-visible, .wt-card:focus-visible { outline: 2px solid #0f7a2f; outline-offset: 2px; border-radius: 4px; }
+
+/* ================================================================
+ * MATCHUP GRID LITE — simplified card layout (touch-first)
+ * ================================================================ */
+.mgrid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 12px; }
+.mgame-lite { display: flex; flex-direction: column; background: var(--paper); color: var(--ink); border: 1px solid var(--line); border-radius: 8px; overflow: hidden; text-decoration: none; transition: border-color 120ms, transform 120ms; }
+.mgame-lite:hover, .mgame-lite:focus-visible { border-color: var(--ink); outline: none; }
+.mgame-lite:active { transform: scale(0.99); }
+.mgl-top { display: flex; align-items: center; justify-content: space-between; padding: 10px 14px; background: var(--bone); border-bottom: 1px solid var(--line); font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; font-weight: 700; }
+.mgl-week { color: var(--muted); }
+.mchip { display: inline-block; padding: 3px 8px; border-radius: 3px; font-size: 10px; letter-spacing: 0.08em; }
+.mchip.final { background: #0f7a2f; color: #fff; }
+.mchip.locked { background: var(--ink); color: var(--paper); }
+.mchip.sched { background: transparent; color: var(--muted); border: 1px solid var(--line); }
+.mgl-teams { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 10px; padding: 16px 14px; }
+.mgl-team { display: flex; justify-content: center; align-items: center; }
+.mgl-abbr { display: inline-flex; align-items: center; justify-content: center; min-width: 64px; padding: 8px 12px; border-radius: 4px; background: var(--tc); color: var(--paper); font-family: var(--f-display); font-weight: 800; font-size: 20px; letter-spacing: 0.6px; text-shadow: 0 1px 0 rgba(0,0,0,0.15); }
+.mgl-mid { text-align: center; min-width: 0; }
+.mscore { font-family: var(--f-display); font-weight: 800; font-size: 22px; line-height: 1; }
+.mtime { font-size: 12px; color: var(--muted); line-height: 1.35; }
+.mgl-foot { display: flex; align-items: center; justify-content: space-between; padding: 12px 14px; border-top: 1px solid var(--line); font-family: var(--f-display); font-weight: 700; font-size: 12px; text-transform: uppercase; letter-spacing: 0.08em; min-height: 44px; }
+.mgl-foot .arrow { color: var(--nfl-red); transition: transform 120ms; }
+.mgame-lite:hover .mgl-foot .arrow { transform: translateX(3px); }
+
+@media (max-width: 720px) {
+  .mgrid { grid-template-columns: 1fr; gap: 10px; }
+  .mgl-teams { padding: 14px 12px; gap: 8px; }
+  .mgl-abbr { min-width: 56px; font-size: 18px; padding: 7px 10px; }
+  .mscore { font-size: 20px; }
+}

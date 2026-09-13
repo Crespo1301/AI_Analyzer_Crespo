@@ -298,34 +298,22 @@ function nflRenderMatchupGrid(mountId, opts) {
     var away = NFL_TEAMS[g.away] || {};
     var home = NFL_TEAMS[g.home] || {};
     var isFinal = g.status === "final";
-    var consensus = g.models ? nflConsensusLine(g.models) : "";
-    var vs = isFinal
-      ? '<span class="mteam-vs final tabular">' + g.awayScore + ' &ndash; ' + g.homeScore + '</span>'
-      : '<span class="mteam-vs">@</span>';
-    var kickLine = isFinal ? (g.date + ' &middot; Final') : (g.kickoffDisplay || 'Kickoff TBD');
     var isScheduled = g.source === "schedule";
     var pageHref = isScheduled ? g.espn : 'Sports_Pages/' + g.id + '.html';
+    var statusChip = isFinal ? '<span class="mchip final">Final</span>' : isScheduled ? '<span class="mchip sched">Scheduled</span>' : '<span class="mchip locked">Locked</span>';
+    var scoreOrTime = isFinal
+      ? '<div class="mscore tabular">' + g.awayScore + ' &ndash; ' + g.homeScore + '</div>'
+      : '<div class="mtime">' + esc(g.kickoffDisplay || 'TBD') + '</div>';
+    var cta = isFinal ? 'View grading' : isScheduled ? 'ESPN details' : 'Read picks';
     return ''
-      + '<a class="mgame" href="' + pageHref + '">'
-      + '  <div class="mgame-head"><span>Week ' + week + '</span><span>' + esc(kickLine) + '</span></div>'
-      + '  <div class="mgame-teams">'
-      + '    <div class="mteam">'
-      + nflLogoMark(g.away)
-      + '      <span class="abbr">' + esc((away.abbr || "").toUpperCase()) + '</span>'
-      + '      <span class="name">' + esc(g.away) + '</span>'
-      + '    </div>'
-      + '    ' + vs
-      + '    <div class="mteam">'
-      + nflLogoMark(g.home)
-      + '      <span class="abbr">' + esc((home.abbr || "").toUpperCase()) + '</span>'
-      + '      <span class="name">' + esc(g.home) + '</span>'
-      + '    </div>'
-      + '  </div>'
-      + (consensus || isFinal ? (
-          '<div class="mgame-consensus"><span class="lc">' + (isFinal ? "Outcome" : "Model Board") + '</span><span class="rc">' + esc(isFinal ? (g.awayScore + " - " + g.homeScore) : consensus) + '</span></div>'
-        ) : "")
-      + (isScheduled ? '<div class="mgame-consensus">Predictions not published</div>' : '')
-      + '  <div class="mgame-cta"><span>' + (isFinal ? "View Analysis" : isScheduled ? "Game details on ESPN" : "Read Locked Picks") + '</span><span class="arrow" aria-hidden="true">&rarr;</span></div>'
+      + '<a class="mgame-lite" href="' + pageHref + '">'
+      + '<div class="mgl-top">' + statusChip + '<span class="mgl-week">Wk ' + week + '</span></div>'
+      + '<div class="mgl-teams">'
+      + '<div class="mgl-team" style="--tc:' + (away.primary || '#0a0a0a') + '"><span class="mgl-abbr">' + esc((away.abbr || "").toUpperCase()) + '</span></div>'
+      + '<div class="mgl-mid">' + scoreOrTime + '</div>'
+      + '<div class="mgl-team home" style="--tc:' + (home.primary || '#0a0a0a') + '"><span class="mgl-abbr">' + esc((home.abbr || "").toUpperCase()) + '</span></div>'
+      + '</div>'
+      + '<div class="mgl-foot"><span>' + cta + '</span><span class="arrow" aria-hidden="true">&rarr;</span></div>'
       + '</a>';
   }).join("");
   host.innerHTML = html;
