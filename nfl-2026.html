@@ -100,6 +100,9 @@
     </div>
     <div class="wt-summary" id="wt-summary"></div>
     <div class="week-tracker" id="wt-cards"></div>
+    <div class="tracker-divider"><span>Season to date</span></div>
+    <div class="wt-summary" id="st-summary"></div>
+    <div class="week-tracker" id="st-cards"></div>
   </div>
 </section>
 
@@ -209,6 +212,26 @@
         "<div class=\"wt-note\">$" + s.staked.toFixed(2) + " staked &middot; " + note.join(" &middot; ") + "</div></div>";
     }).join("");
     document.getElementById("wt-cards").innerHTML = cards;
+
+    if (typeof nflSeasonTracker2026 === "function") {
+      var season = nflSeasonTracker2026();
+      var sPl = 0, sStaked = 0, sW = 0, sL = 0;
+      Object.keys(season.models).forEach(function (m) { var s = season.models[m]; sPl += s.pl; sStaked += s.staked; sW += s.wins; sL += s.losses; });
+      document.getElementById("st-summary").innerHTML = "<span><strong>" + season.gamesFinal + " / " + season.gamesTotal + "</strong> games graded season-wide</span>" +
+        "<span><strong>" + sW + "-" + sL + "</strong> bets settled</span>" +
+        "<span class=\"" + cls(sPl) + "\">Season P/L: <strong>" + money(sPl) + "</strong></span>" +
+        "<span>Season staked: <strong>$" + sStaked.toFixed(2) + "</strong></span>";
+      var sCards = Object.keys(season.models).map(function (m) {
+        var s = season.models[m];
+        var record = s.pushes ? (s.wins + "-" + s.losses + "-" + s.pushes) : (s.wins + "-" + s.losses);
+        var roi = s.staked ? ((s.pl / s.staked) * 100).toFixed(1) + "% ROI" : "n/a";
+        return "<div class=\"wt-card\"><h4>" + m + "</h4>" +
+          "<div class=\"wt-record\">" + record + "</div>" +
+          "<div class=\"wt-pl " + cls(s.pl) + "\">" + money(s.pl) + "</div>" +
+          "<div class=\"wt-note\">$" + s.staked.toFixed(2) + " staked &middot; " + roi + "</div></div>";
+      }).join("");
+      document.getElementById("st-cards").innerHTML = sCards;
+    }
   })();
 </script>
 </body>

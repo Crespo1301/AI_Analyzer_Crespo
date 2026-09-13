@@ -630,7 +630,7 @@ var NFL_PREDICTIONS_2026 = [
     models: {
       ChatGPT: { version: "Codex CLI", total_stake: 20, reserve: 0, summary: "Cowboys -2.5 $14 conditional -110 + SGP Cowboys ML + game OVER 48.5 $6 conditional +220.", bets: [{type:"straight", market:"Spread", line:"Dallas Cowboys -2.5 (min -110 conditional)", stake:14, confidence:6, reason:"DAL road favorite through key number"}, {type:"parlay", market:"SGP", line:"Cowboys ML + game OVER 48.5 (min +220 conditional)", stake:6, confidence:3, reason:"DAL offensive script"}] },
       Claude: { version: "Claude Code", total_stake: 20, reserve: 0, summary: "Cowboys -3 $12 conditional -115 + SGP Cowboys ML + Cowboys TT OVER 24.5 $8 conditional +150. Projected DAL 27-17. Applied W11 P11 Cowboys shape (same franchise). Flagged Giants QB1 heuristic uncertainty (Jake Haener listed).", bets: [{type:"straight", market:"Spread", line:"Dallas Cowboys -3 (min -115 conditional)", stake:12, confidence:6, reason:"DAL healthy Prescott + Pickens vs NYG QB uncertainty and Nabers Q"}, {type:"sgp", market:"SGP", line:"Cowboys ML + Cowboys TT OVER 24.5 (min +150 conditional)", stake:8, confidence:4, reason:"W11 P11 Cowboys shape reapplied with SGP concentration awareness (Game 2 lesson - sized to $8)"}] },
-      Gemini: { version: "pending", total_stake: 0, reserve: 20, summary: "Awaiting v3.0 response.", bets: [] }
+      Gemini: { version: "Gemini web", total_stake: 20, reserve: 0, summary: "DAL -3.0 $12 reference_market DK -105 + SGP DAL ML (-158) + OVER 47.5 (-110) $8 reference_market +210. 11th fabricated GitHub fetch. HALLUCINATION: Quinnen Williams claimed as Cowboys DT1 (plays for NYJ). Internal line inconsistency (DK snippet 48.5 vs SGP 47.5). Grading concerns inline.", bets: [{type:"single", market:"Spread", line:"Dallas Cowboys -3.0 (reference_market DK -105)", stake:12, confidence:6, reason:"DAL projected win by 7; road favorite at key number"}, {type:"parlay", market:"SGP", line:"DAL ML (-158) + OVER 47.5 (-110) reference +210", stake:8, confidence:4, reason:"Correlated favorite ML + OVER; note internal line inconsistency"}] }
     }
   },
   {
@@ -739,6 +739,26 @@ function nflWeekTracker2026(week) {
     });
   });
   return { week: wk, gamesTotal: gamesTotal, gamesFinal: gamesFinal, models: perModel };
+}
+
+function nflSeasonTracker2026() {
+  var perModel = {};
+  NFL_MODELS.forEach(function (m) { perModel[m] = { wins: 0, losses: 0, pushes: 0, pl: 0, staked: 0, gamesGraded: 0, gamesExpired: 0, gamesPending: 0 }; });
+  var weeks = {};
+  NFL_PREDICTIONS_2026.forEach(function (g) { weeks[g.week] = true; });
+  var gamesFinal = 0, gamesTotal = 0;
+  Object.keys(weeks).forEach(function (wk) {
+    var t = nflWeekTracker2026(parseInt(wk, 10));
+    gamesFinal += t.gamesFinal;
+    gamesTotal += t.gamesTotal;
+    NFL_MODELS.forEach(function (m) {
+      var w = t.models[m], s = perModel[m];
+      s.wins += w.wins; s.losses += w.losses; s.pushes += w.pushes;
+      s.pl += w.pl; s.staked += w.staked;
+      s.gamesGraded += w.gamesGraded; s.gamesExpired += w.gamesExpired; s.gamesPending += w.gamesPending;
+    });
+  });
+  return { gamesTotal: gamesTotal, gamesFinal: gamesFinal, models: perModel };
 }
 
 function nflGradedBets2026() {

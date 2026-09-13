@@ -1187,3 +1187,67 @@ button { font: inherit; cursor: pointer; border: 0; background: none; color: inh
 .wt-note { font-size: 12px; color: var(--gunmetal); margin-top: 6px; }
 .wt-summary { display: flex; flex-wrap: wrap; gap: 12px 24px; padding: 14px 18px; border-radius: 8px; background: rgba(0,0,0,0.04); margin-bottom: 12px; font-size: 14px; }
 .wt-summary strong { font-variant-numeric: tabular-nums; }
+
+/* Tracker divider between weekly and season sections. */
+.tracker-divider { display: flex; align-items: center; gap: 12px; margin: 32px 0 16px; color: var(--gunmetal); font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 700; }
+.tracker-divider::before, .tracker-divider::after { content: ""; flex: 1; height: 1px; background: var(--line); }
+
+/* Mobile design pass: touch targets, breathing room, cleaner nav */
+@media (max-width: 720px) {
+  :root { --pad-x-mobile: 16px; }
+  /* Bigger tap targets across links and buttons. */
+  .nav-links a { padding: 14px 8px; min-height: 44px; display: flex; align-items: center; }
+  .btn, .b-more, .bento-card, .wt-card, .mpred, .stat-tile { -webkit-tap-highlight-color: rgba(0,0,0,0.06); }
+  .btn { padding: 14px 20px; min-height: 48px; font-size: 15px; }
+  /* Tighter type scale so hero, band titles, big numbers don't overwhelm. */
+  .b-title { font-size: clamp(22px, 6vw, 30px); line-height: 1.15; }
+  .b-kicker { font-size: 11px; letter-spacing: 0.14em; }
+  .hero-headline, .editorial-hero h1 { font-size: clamp(30px, 8vw, 42px); line-height: 1.1; }
+  /* Section rhythm: bands were doubling up. */
+  .band { padding: 44px 0; }
+  .band-head { flex-direction: column; align-items: flex-start; gap: 8px; margin-bottom: 24px; }
+  .band-head .b-more { align-self: flex-start; }
+  /* Weekly tracker cards: single column on phones with real spacing. */
+  .week-tracker { grid-template-columns: 1fr; gap: 12px; }
+  .wt-card { padding: 16px 18px; }
+  .wt-record { font-size: 26px; }
+  .wt-pl { font-size: 18px; }
+  .wt-summary { flex-direction: column; gap: 8px; padding: 14px 16px; font-size: 13px; }
+  .wt-summary > span { display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+  /* Model prediction cards: full-bleed feel and larger inline outcomes. */
+  .mpred { padding: 20px 18px; }
+  .mpred-name { font-size: 18px; }
+  .mpred-version { font-size: 12px; }
+  .mpred-bet { padding: 12px 0; }
+  .mpred-bet .line1 { flex-wrap: wrap; gap: 6px 10px; }
+  .mpred-bet .stake { font-size: 15px; }
+  .mpred-bet .market { font-size: 12px; }
+  .mpred-bet .desc { font-size: 14px; line-height: 1.5; margin-top: 4px; }
+  .mpred-bet .reason { font-size: 12px; line-height: 1.5; margin-top: 4px; }
+  .pick-outcome { font-size: 12px; }
+  .pick-badge { font-size: 11px; padding: 3px 8px; }
+  .mpred-total { padding: 10px 12px; font-size: 14px; }
+  /* Split-hero (game page) needs to breathe more on mobile. */
+  .split-hero { min-height: 240px !important; grid-template-columns: 1fr 1fr; }
+  .split-hero .team-name { font-size: 22px; }
+  .split-hero .team-full { font-size: 12px; }
+  .split-hero .split-center { padding: 12px 8px; }
+  .split-hero .kickoff { font-size: 13px; }
+  .split-hero .network { font-size: 11px; }
+  /* Long titles like "Broncos at Chiefs" should not overflow. */
+  .site-nav .status { display: none; }
+  .nav-secondary { flex-wrap: wrap; gap: 8px 10px; font-size: 12px; }
+  /* Foot grid compresses. */
+  .foot-grid { grid-template-columns: 1fr 1fr; gap: 20px; }
+  .foot-brand { grid-column: 1 / -1; }
+}
+
+/* Extra-narrow phones (<= 400px): stack allocation row. */
+@media (max-width: 400px) {
+  .mpred-alloc { flex-direction: column; align-items: flex-start; gap: 4px; }
+  .stat-row { grid-template-columns: 1fr; }
+  .stat-tile { padding: 16px; }
+}
+
+/* Focus rings for keyboard nav (accessibility). */
+a:focus-visible, button:focus-visible, .btn:focus-visible, .wt-card:focus-visible { outline: 2px solid #0f7a2f; outline-offset: 2px; border-radius: 4px; }
