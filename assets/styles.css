@@ -1158,3 +1158,32 @@ button { font: inherit; cursor: pointer; border: 0; background: none; color: inh
 #carlos-comparison .model-board { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr)); gap: 24px; margin: 24px 0; }
 #summary-row .stat-tile { min-width: 0; }
 #summary-row .st-value { font-size: 2rem; overflow-wrap: anywhere; }
+
+/* Pick badges and P/L colors (2026 pending page grading). */
+.pick-badge { display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: 12px; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; margin-right: 8px; }
+.badge-win { background: #0f7a2f; color: #fff; }
+.badge-loss { background: #b21f2a; color: #fff; }
+.badge-push { background: #6b6b6b; color: #fff; }
+.badge-pending { background: #d6d6d6; color: #333; }
+.pick-pl { font-weight: 700; font-variant-numeric: tabular-nums; margin-right: 10px; }
+.pl-win { color: #0f7a2f; }
+.pl-loss { color: #b21f2a; }
+.pl-flat { color: #6b6b6b; }
+.pick-outcome { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 10px; margin-top: 6px; font-size: 13px; line-height: 1.5; }
+.pick-actual { color: var(--gunmetal); flex: 1 1 200px; min-width: 0; }
+.mpred-total { display: flex; justify-content: space-between; align-items: center; margin: 8px 0 12px; padding: 8px 12px; border-radius: 6px; background: rgba(0,0,0,0.04); font-weight: 700; font-size: 15px; }
+.mpred-total.pl-win { background: rgba(15,122,47,0.12); color: #0f7a2f; }
+.mpred-total.pl-loss { background: rgba(178,31,42,0.12); color: #b21f2a; }
+.mpred-total.pl-flat { background: rgba(0,0,0,0.06); color: #444; }
+.mpred-expired { opacity: 0.75; }
+.mpred-expired .mpred-name::after { content: " · EXPIRED"; color: #b21f2a; font-weight: 700; font-size: 12px; }
+
+/* Weekly tracker on nfl-2026.html */
+.week-tracker { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr)); gap: 16px; margin-top: 16px; }
+.wt-card { padding: 18px 20px; border-radius: 10px; background: var(--paper); border: 1px solid var(--muted); }
+.wt-card h4 { margin: 0 0 6px; font-size: 16px; letter-spacing: 0.02em; }
+.wt-record { font-size: 28px; font-weight: 800; font-variant-numeric: tabular-nums; }
+.wt-pl { font-size: 20px; font-weight: 700; margin-top: 4px; font-variant-numeric: tabular-nums; }
+.wt-note { font-size: 12px; color: var(--gunmetal); margin-top: 6px; }
+.wt-summary { display: flex; flex-wrap: wrap; gap: 12px 24px; padding: 14px 18px; border-radius: 8px; background: rgba(0,0,0,0.04); margin-bottom: 12px; font-size: 14px; }
+.wt-summary strong { font-variant-numeric: tabular-nums; }

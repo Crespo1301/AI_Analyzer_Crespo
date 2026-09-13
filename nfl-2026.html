@@ -90,6 +90,19 @@
   </div>
 </section>
 
+<section class="band band-paper" id="week-tracker-section">
+  <div class="wrap">
+    <div class="band-head">
+      <div>
+        <div class="b-kicker" id="wt-kicker">Week 1 tracker</div>
+        <div class="b-title">Weekly <span class="accent">results</span></div>
+      </div>
+    </div>
+    <div class="wt-summary" id="wt-summary"></div>
+    <div class="week-tracker" id="wt-cards"></div>
+  </div>
+</section>
+
 <section class="band band-ink">
   <div class="wrap">
     <div class="band-head" style="color: var(--paper); border-bottom-color: rgba(255,255,255,0.25)">
@@ -171,6 +184,32 @@
   stats[1].textContent = summary.reduce(function (total, model) { return total + model.totalBets; }, 0);
   var graded = nflGradedBets2026();
   document.getElementById("graded-count").textContent = graded.filter(function(b){ return b.outcome === "WIN"; }).length + " / " + graded.length;
+
+  (function renderWeekTracker() {
+    var tracker = nflWeekTracker2026(wk);
+    document.getElementById("wt-kicker").textContent = "Week " + tracker.week + " tracker";
+    function money(n) { var v = Math.round(n * 100) / 100; var sign = v > 0 ? "+" : v < 0 ? "-" : ""; return sign + "$" + Math.abs(v).toFixed(2); }
+    function cls(pl) { return pl > 0 ? "pl-win" : pl < 0 ? "pl-loss" : "pl-flat"; }
+    var totalPl = 0, totalStaked = 0, totalWins = 0, totalLosses = 0;
+    Object.keys(tracker.models).forEach(function (m) { var s = tracker.models[m]; totalPl += s.pl; totalStaked += s.staked; totalWins += s.wins; totalLosses += s.losses; });
+    document.getElementById("wt-summary").innerHTML = "<span><strong>" + tracker.gamesFinal + " / " + tracker.gamesTotal + "</strong> games graded</span>" +
+      "<span><strong>" + totalWins + "-" + totalLosses + "</strong> combined bets</span>" +
+      "<span class=\"" + cls(totalPl) + "\">Combined P/L: <strong>" + money(totalPl) + "</strong></span>" +
+      "<span>Combined staked: <strong>$" + totalStaked.toFixed(2) + "</strong></span>";
+    var cards = Object.keys(tracker.models).map(function (m) {
+      var s = tracker.models[m];
+      var record = s.pushes ? (s.wins + "-" + s.losses + "-" + s.pushes) : (s.wins + "-" + s.losses);
+      var note = [];
+      if (s.gamesGraded) note.push(s.gamesGraded + " game" + (s.gamesGraded === 1 ? "" : "s") + " graded");
+      if (s.gamesPending) note.push(s.gamesPending + " pending");
+      if (s.gamesExpired) note.push(s.gamesExpired + " expired");
+      return "<div class=\"wt-card\"><h4>" + m + "</h4>" +
+        "<div class=\"wt-record\">" + record + "</div>" +
+        "<div class=\"wt-pl " + cls(s.pl) + "\">" + money(s.pl) + "</div>" +
+        "<div class=\"wt-note\">$" + s.staked.toFixed(2) + " staked &middot; " + note.join(" &middot; ") + "</div></div>";
+    }).join("");
+    document.getElementById("wt-cards").innerHTML = cards;
+  })();
 </script>
 </body>
 </html>

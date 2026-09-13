@@ -95,14 +95,14 @@ var NFL_PREDICTIONS_2026 = [
     prompt_template: "github-strength-gemini v1.0",
     models: {
       ChatGPT: {
-        version: "GPT-6 (via Codex CLI)",
+        version: "Codex CLI",
         total_stake: 0,
         reserve: 20,
         summary: "Full $20 reserved. Explicit break-even math: SEA -178 needs 64.03%, NE +150 needs 40%. Neither threshold substantiated by the researched factors, so no bet. Ran via Codex CLI with local FS access, flagged the same Seahawks QB1 roster mispick Claude did.",
         bets: []
       },
       Claude: {
-        version: "claude-opus-4-7",
+        version: "Claude Code",
         total_stake: 11,
         reserve: 9,
         summary: "Game-script UNDER with a key-number spread hook and one small target-share prop. Reflected on own 2025 correction history: five $11 skill-position OVER props flipped WIN to LOSS after box-score check, so no OVER props this week. Flagged the Seahawks roster QB1 mispick (Lock vs Darnold).",
@@ -113,7 +113,7 @@ var NFL_PREDICTIONS_2026 = [
         ]
       },
       Gemini: {
-        version: "2.5 Flash",
+        version: "Gemini web",
         total_stake: 12,
         reserve: 8,
         summary: "Key hook on NE +3.5. Thesis: Seattle safety depth compromised (Okada out, Emmanwori questionable) gives Maye room to keep it within a field goal. Note: rerun still fabricated the sources_fetched_from_repo block, all URLs verified to return 200, see prompt-corrections.md.",
@@ -207,7 +207,7 @@ var NFL_PREDICTIONS_2026 = [
     },
     models: {
       ChatGPT: {
-        version: "GPT-6 (via Codex CLI)",
+        version: "Codex CLI",
         total_stake: 20,
         reserve: 0,
         summary: "Forced-selection v2.1. Applied W11P11 team-total shape (Rams TT OVER 23.5) plus a correlated Rams ML + Rams TT OVER 23.5 SGP. Rams 27-23 projection, ~60% Rams win probability. Corrected kickoff (8:35 not 8:15) and flagged 49ers roster (Purdy > Mac Jones). Both tickets conditional; Bovada shell only, FanDuel LAR -196 exceeded fair-value price. Also caught W9 P3 finished 1-2 -$12 overall despite its OVER winning.",
@@ -217,7 +217,7 @@ var NFL_PREDICTIONS_2026 = [
         ]
       },
       Claude: {
-        version: "claude-opus-4-7",
+        version: "Claude Code",
         total_stake: 20,
         reserve: 0,
         summary: "Forced-selection v2.1. Applied W11P7 shape: game UNDER + volume-anchored RB rush attempts OVER. Avoided single-player OVER pass/rec/sack (6 of 11 Season 1 corrections). Flagged Rams roster: QB1 Stafford (not IR'd Caldwell), RB1 Kyren Williams, WR1 Puka Nacua. All tickets conditional, no Bovada quotes retrieved in-session.",
@@ -228,7 +228,7 @@ var NFL_PREDICTIONS_2026 = [
         ]
       },
       Gemini: {
-        version: "2.5 Flash",
+        version: "Gemini web",
         total_stake: 20,
         reserve: 0,
         summary: "Forced-selection v2.1. Game UNDER 48.5 single + correlated SGP on Rams TT OVER 23.5 + Kyren OVER 14.5 rush att. Rams 23-20 projection. Repeat fabricated-fetch: claimed all six raw.githubusercontent.com URLs 404'd, all six actually return 200. Quoted W11 P7 line was taken from the prompt body, not a real fetch. T1 label bovada_verified is not backed by a screenshot; grading treats it as unverified. Kickoff also reported as 8:15 (actual 8:35). See prompt-corrections.md.",
@@ -262,7 +262,7 @@ var NFL_PREDICTIONS_2026 = [
     prompt_template: "forced-selection v3.0 (independent-derivation)",
     models: {
       ChatGPT: {
-        version: "GPT-6 (via Codex CLI)",
+        version: "Codex CLI",
         total_stake: 20,
         reserve: 0,
         summary: "Tampa +3.5 $14 (FanDuel reference_market -105) + SGP Cincinnati ML + game UNDER 50.5 $6 (conditional +250). Projection Cinci 27-24. Independent derivations cited specific NFL_BETS rows. Flagged Bengals QB1 Clifford->Burrow heuristic error.",
@@ -272,7 +272,7 @@ var NFL_PREDICTIONS_2026 = [
         ]
       },
       Claude: {
-        version: "claude-opus-4-7",
+        version: "Claude Code",
         total_stake: 20,
         reserve: 0,
         summary: "Game UNDER 50.5 $12 (conditional -115) + SGP Tampa +3.5 + UNDER 50.5 $8 (conditional +200). Projection Cinci 23-20. Cited game UNDER 8-4 record and short-underdog hook 3-0 from raw NFL_BETS. Flagged Bengals QB1 mispick and Bucs TE1 verification (Kieft vs Otton).",
@@ -282,7 +282,7 @@ var NFL_PREDICTIONS_2026 = [
         ]
       },
       Gemini: {
-        version: "2.5 Flash",
+        version: "Gemini web",
         total_stake: 20,
         reserve: 0,
         summary: "Cincinnati -3.5 $12 (claimed bovada_verified -115, unverified) + SGP Bengals TT OVER 24.5 + Burrow OVER 1.5 Pass TDs $8 (conditional min +140). Projection Cinci 27-20. Fourth confirmed fabricated repo-fetch (all raw URLs return 200). Derivations cited conventional heuristics not NFL_BETS rows. T2 leg 2 is exactly the Season 1 loss family Claude and ChatGPT flagged. See prompt-corrections.md.",
@@ -316,7 +316,7 @@ var NFL_PREDICTIONS_2026 = [
     prompt_template: "forced-selection v3.0 (independent-derivation)",
     models: {
       ChatGPT: {
-        version: "GPT-6 (via Codex CLI)",
+        version: "Codex CLI",
         total_stake: 20,
         reserve: 0,
         summary: "Detroit -6.5 $14 (FanDuel reference_market -122) + SGP DET ML + game OVER 49.5 $6 (conditional min +220). Projected Detroit 31-20. Flagged Lions QB1 Altmyer->Goff and Saints QB1 Rattler->Shough heuristic errors. Independent derivations cited specific NFL_BETS rows. Self-reflection reduced SGP exposure vs Rams game blowout.",
@@ -326,7 +326,7 @@ var NFL_PREDICTIONS_2026 = [
         ]
       },
       Claude: {
-        version: "claude-opus-4-7",
+        version: "Claude Code",
         total_stake: 20,
         reserve: 0,
         summary: "Detroit Team Total OVER 27.5 $12 (conditional min -110) + SGP Detroit ML + Saints Team Total UNDER 20.5 $8 (conditional min +150). Projected Detroit 30-17. Applied W11 P11 Cowboys TT OVER shape. Flagged 4 heuristic errors (Saints QB1, Lions QB1, Lions WR1, Lions TE1). Self-reflection: stopped same-team volume prop on losing side (Game 2 Kyren pattern).",
@@ -336,7 +336,7 @@ var NFL_PREDICTIONS_2026 = [
         ]
       },
       Gemini: {
-        version: "2.5 Flash",
+        version: "Gemini web",
         total_stake: 20,
         reserve: 0,
         summary: "Detroit -7 $12 (claimed bovada_verified but odds_source is usatoday.com, treated as reference_market) + SGP Detroit TT OVER 27.5 + Gibbs Anytime TD $8 (conditional min +135). Projected Detroit 31-17. FIFTH confirmed fabricated repo-fetch (all raw URLs return 200). Third unverifiable bovada_verified label. Derivations remain conventional heuristics without NFL_BETS row citations. Grading concerns inline in gemini-picks.md.",
@@ -370,7 +370,7 @@ var NFL_PREDICTIONS_2026 = [
     prompt_template: "forced-selection v3.0 (independent-derivation)",
     models: {
       ChatGPT: {
-        version: "GPT-6 (via Codex CLI)",
+        version: "Codex CLI",
         total_stake: 20,
         reserve: 0,
         summary: "Jets +1.5 $14 (FanDuel reference -112) + SGP Jets ML + game UNDER 38.5 $6 (conditional min +260). Projected Tennessee 20-19 (pick'em). Cited real NFL_BETS rows for derivations. Confirmed Cam Ward as Titans QB1.",
@@ -380,7 +380,7 @@ var NFL_PREDICTIONS_2026 = [
         ]
       },
       Claude: {
-        version: "claude-opus-4-7",
+        version: "Claude Code",
         total_stake: 20,
         reserve: 0,
         summary: "Jets ML $10 (conditional min +100) + SGP Jets +1.5 + game UNDER 39.5 $10 (conditional min +200). Projected New York 20-17. Cited W11 Texans/Titans UNDER 38.5 +$10 as same-franchise analogue. Flagged 3 roster errors: Jets RB1 Hall (not Allen), Titans TE1 (Kanak on IR, actual Helm), Wan'Dale Robinson mislabeled Questionable.",
@@ -390,7 +390,7 @@ var NFL_PREDICTIONS_2026 = [
         ]
       },
       Gemini: {
-        version: "2.5 Flash",
+        version: "Gemini web",
         total_stake: 20,
         reserve: 0,
         summary: "Jets +1.5 $12 (claimed bovada_verified -110, unverified; Bovada showed no event prices per other models) + SGP game UNDER 40.5 + Hall OVER 15.5 rush att $8 (conditional min +190). Projected NYJ 20-17. SIXTH confirmed fabricated repo-fetch. Fourth unverifiable bovada_verified label. Also mislabeled Titans QB1 as Will Levis (actual: Cam Ward, correctly in roster file). Grading concerns inline in gemini-picks.md.",
@@ -424,7 +424,7 @@ var NFL_PREDICTIONS_2026 = [
     prompt_template: "forced-selection v3.0 (independent-derivation)",
     models: {
       ChatGPT: {
-        version: "GPT-6 (via Codex CLI, model_role field 'Codex')",
+        version: "Codex CLI",
         total_stake: 20,
         reserve: 0,
         summary: "Ravens -3.5 $14 (FanDuel reference -102) + SGP Ravens ML + game UNDER 47.5 $6 (conditional min +240). Projected Ravens 27-20. Flagged Ravens QB1 Huntley->Lamar and Colts QB1 Richardson->Jones. Cited real NFL_BETS rows.",
@@ -434,7 +434,7 @@ var NFL_PREDICTIONS_2026 = [
         ]
       },
       Claude: {
-        version: "claude-opus-4-7",
+        version: "Claude Code",
         total_stake: 20,
         reserve: 0,
         summary: "Ravens -3 $12 (conditional min -120) + SGP Ravens ML + game UNDER 47.5 $8 (conditional min +180). Projected Ravens 26-16. FOUR roster heuristic errors flagged (Ravens QB1, Colts QB1, Colts RB1 Jonathan Taylor buried by jersey number, Colts WR1). Cited Darnold Seattle debut UNDER 44.5 as direct analogue to Jones first-game-back.",
@@ -457,9 +457,9 @@ var NFL_PREDICTIONS_2026 = [
     status: "locked", locked_at: "2026-09-13",
     prompt_template: "forced-selection v3.0",
     models: {
-      ChatGPT: { version: "GPT-6 (Codex CLI)", total_stake: 20, reserve: 0, summary: "Steelers -5.5 $14 FanDuel reference -115 + SGP Steelers ML + UNDER 40.5 $6 conditional +190. Steelers 24-13. Flagged ATL QB1 (Rush actual starter after Tua ruled out) and PIT QB1 (Rodgers not Rudolph).", bets: [{type:"straight", market:"Spread", line:"Pittsburgh Steelers -5.5 (@ -115 FanDuel reference)", stake:14, confidence:6, reason:"ATL missing both QB1 (Tua) and QB2 (Penix); Rush emergency start vs Rodgers at home"}, {type:"sgp", market:"SGP", line:"Steelers ML + UNDER 40.5 (min +190 conditional)", stake:6, confidence:3, reason:"PIT-controlled win compatible with sub-41 total"}] },
-      Claude: { version: "claude-opus-4-7", total_stake: 20, reserve: 0, summary: "Game UNDER 42.5 $12 conditional -110 + SGP Steelers ML + Falcons TT UNDER 17.5 $8 conditional +140. Steelers 24-13. FOUR roster errors flagged (ATL QB1, ATL WR1, PIT QB1, PIT TE1). Cited Darnold Seattle debut UNDER 44.5 as direct analogue to Cooper Rush emergency start.", bets: [{type:"straight", market:"Total", line:"UNDER 42.5 (min -110 conditional)", stake:12, confidence:6, reason:"Cooper Rush emergency start caps ATL ceiling; Rodgers pace-slowing offense; total already low"}, {type:"sgp", market:"SGP", line:"Steelers ML + Falcons TT UNDER 17.5 (min +140 conditional)", stake:8, confidence:4, reason:"Independent legs, mild positive correlation, no shared player premise"}] },
-      Gemini: { version: "2.5 Flash", total_stake: 20, reserve: 0, summary: "Steelers -3.5 $12 claimed bovada_verified -104 (odds_source is legalsportsbetting.com not Bovada, unverified) + SGP UNDER 42.5 + Steelers ML $8 conditional +150. Steelers 23-13. SEVENTH fabricated repo-fetch. FIFTH unverifiable bovada_verified label. Grading concerns inline in gemini-picks.md.", bets: [{type:"straight", market:"Spread", line:"Pittsburgh Steelers -3.5 (claimed bovada_verified -104, treated as reference_market)", stake:12, confidence:6, reason:"Rodgers vs Rush emergency start on wet grass"}, {type:"parlay", market:"SGP", line:"Game UNDER 42.5 + Steelers ML (min +150 conditional)", stake:8, confidence:5, reason:"Low-scoring rain game favors Steelers win + UNDER"}] }
+      ChatGPT: { version: "Codex CLI", total_stake: 20, reserve: 0, summary: "Steelers -5.5 $14 FanDuel reference -115 + SGP Steelers ML + UNDER 40.5 $6 conditional +190. Steelers 24-13. Flagged ATL QB1 (Rush actual starter after Tua ruled out) and PIT QB1 (Rodgers not Rudolph).", bets: [{type:"straight", market:"Spread", line:"Pittsburgh Steelers -5.5 (@ -115 FanDuel reference)", stake:14, confidence:6, reason:"ATL missing both QB1 (Tua) and QB2 (Penix); Rush emergency start vs Rodgers at home"}, {type:"sgp", market:"SGP", line:"Steelers ML + UNDER 40.5 (min +190 conditional)", stake:6, confidence:3, reason:"PIT-controlled win compatible with sub-41 total"}] },
+      Claude: { version: "Claude Code", total_stake: 20, reserve: 0, summary: "Game UNDER 42.5 $12 conditional -110 + SGP Steelers ML + Falcons TT UNDER 17.5 $8 conditional +140. Steelers 24-13. FOUR roster errors flagged (ATL QB1, ATL WR1, PIT QB1, PIT TE1). Cited Darnold Seattle debut UNDER 44.5 as direct analogue to Cooper Rush emergency start.", bets: [{type:"straight", market:"Total", line:"UNDER 42.5 (min -110 conditional)", stake:12, confidence:6, reason:"Cooper Rush emergency start caps ATL ceiling; Rodgers pace-slowing offense; total already low"}, {type:"sgp", market:"SGP", line:"Steelers ML + Falcons TT UNDER 17.5 (min +140 conditional)", stake:8, confidence:4, reason:"Independent legs, mild positive correlation, no shared player premise"}] },
+      Gemini: { version: "Gemini web", total_stake: 20, reserve: 0, summary: "Steelers -3.5 $12 claimed bovada_verified -104 (odds_source is legalsportsbetting.com not Bovada, unverified) + SGP UNDER 42.5 + Steelers ML $8 conditional +150. Steelers 23-13. SEVENTH fabricated repo-fetch. FIFTH unverifiable bovada_verified label. Grading concerns inline in gemini-picks.md.", bets: [{type:"straight", market:"Spread", line:"Pittsburgh Steelers -3.5 (claimed bovada_verified -104, treated as reference_market)", stake:12, confidence:6, reason:"Rodgers vs Rush emergency start on wet grass"}, {type:"parlay", market:"SGP", line:"Game UNDER 42.5 + Steelers ML (min +150 conditional)", stake:8, confidence:5, reason:"Low-scoring rain game favors Steelers win + UNDER"}] }
     }
   },
   {
@@ -472,9 +472,9 @@ var NFL_PREDICTIONS_2026 = [
     responseFolder: "Docs/Responses/2026/week-01/game-08-bears-panthers/",
     status: "locked", locked_at: "2026-09-13", prompt_template: "forced-selection v3.0",
     models: {
-      ChatGPT: { version: "GPT-6 (Codex CLI)", total_stake: 20, reserve: 0, summary: "Bears -3 $14 conditional -110 + SGP Bears ML + game OVER 47.5 $6 conditional +220. Projected Bears 27-23. Depth charts verified.", bets: [{type:"straight", market:"Spread", line:"Chicago Bears -3 (min -110 conditional)", stake:14, confidence:6, reason:"Ben Johnson offense debut + Caleb Williams + Odunze vs CAR missing Jones II"}, {type:"parlay", market:"SGP", line:"Bears ML + game OVER 47.5 (min +220 conditional)", stake:6, confidence:3, reason:"Bears offensive script drives both legs"}] },
-      Claude: { version: "claude-opus-4-7", total_stake: 20, reserve: 0, summary: "CHI TT OVER 24.5 $12 conditional -110 + SGP Bears ML + game OVER 47.5 $8 conditional +180. Projected Bears 27-20. Applied W11 P11 Cowboys TT OVER shape.", bets: [{type:"straight", market:"Team Total", line:"Chicago Bears TT OVER 24.5 (min -110 conditional)", stake:12, confidence:6, reason:"Ben Johnson + Caleb Williams + Odunze active vs Panthers thin edge/TE/WR"}, {type:"sgp", market:"SGP", line:"Bears ML + game OVER 47.5 (min +180 conditional)", stake:8, confidence:4, reason:"Correlated but independent legs, no shared player-volume premise"}] },
-      Gemini: { version: "2.5 Flash", total_stake: 20, reserve: 0, summary: "Bears -3.0 $12 claimed bovada_verified -110 (odds_source usatoday.com not Bovada) + SGP OVER 46.5 + Williams 2+ Pass TDs $8 conditional +160. 8th fabricated repo fetch. 6th unverifiable bovada label. T2 leg 2 is Season 1 loss family. Grading concerns inline.", bets: [{type:"straight", market:"Spread", line:"Chicago Bears -3.0 (claimed bovada_verified -110, treated as reference_market)", stake:12, confidence:6, reason:"Ben Johnson debut"}, {type:"parlay", market:"SGP", line:"Game OVER 46.5 + Williams 2+ Pass TDs (min +160 conditional)", stake:8, confidence:5, reason:"High-tempo offensive script; note single-player OVER pass TDs shape flagged as losing"}] }
+      ChatGPT: { version: "Codex CLI", total_stake: 20, reserve: 0, summary: "Bears -3 $14 conditional -110 + SGP Bears ML + game OVER 47.5 $6 conditional +220. Projected Bears 27-23. Depth charts verified.", bets: [{type:"straight", market:"Spread", line:"Chicago Bears -3 (min -110 conditional)", stake:14, confidence:6, reason:"Ben Johnson offense debut + Caleb Williams + Odunze vs CAR missing Jones II"}, {type:"parlay", market:"SGP", line:"Bears ML + game OVER 47.5 (min +220 conditional)", stake:6, confidence:3, reason:"Bears offensive script drives both legs"}] },
+      Claude: { version: "Claude Code", total_stake: 20, reserve: 0, summary: "CHI TT OVER 24.5 $12 conditional -110 + SGP Bears ML + game OVER 47.5 $8 conditional +180. Projected Bears 27-20. Applied W11 P11 Cowboys TT OVER shape.", bets: [{type:"straight", market:"Team Total", line:"Chicago Bears TT OVER 24.5 (min -110 conditional)", stake:12, confidence:6, reason:"Ben Johnson + Caleb Williams + Odunze active vs Panthers thin edge/TE/WR"}, {type:"sgp", market:"SGP", line:"Bears ML + game OVER 47.5 (min +180 conditional)", stake:8, confidence:4, reason:"Correlated but independent legs, no shared player-volume premise"}] },
+      Gemini: { version: "Gemini web", total_stake: 20, reserve: 0, summary: "Bears -3.0 $12 claimed bovada_verified -110 (odds_source usatoday.com not Bovada) + SGP OVER 46.5 + Williams 2+ Pass TDs $8 conditional +160. 8th fabricated repo fetch. 6th unverifiable bovada label. T2 leg 2 is Season 1 loss family. Grading concerns inline.", bets: [{type:"straight", market:"Spread", line:"Chicago Bears -3.0 (claimed bovada_verified -110, treated as reference_market)", stake:12, confidence:6, reason:"Ben Johnson debut"}, {type:"parlay", market:"SGP", line:"Game OVER 46.5 + Williams 2+ Pass TDs (min +160 conditional)", stake:8, confidence:5, reason:"High-tempo offensive script; note single-player OVER pass TDs shape flagged as losing"}] }
     },
     result: {
       status: "final", verified_at: "2026-09-13", awayScore: 59, homeScore: 37,
@@ -506,8 +506,8 @@ var NFL_PREDICTIONS_2026 = [
     responseFolder: "Docs/Responses/2026/week-01/game-09-browns-jaguars/",
     status: "locked", locked_at: "2026-09-13", prompt_template: "forced-selection v3.0",
     models: {
-      ChatGPT: { version: "GPT-6 (Codex CLI)", total_stake: 20, reserve: 0, summary: "JAX -8.5 $14 conditional -110 + SGP Jaguars ML + game OVER 40.5 $6 conditional +220. Projected Jaguars win. Note: -8.5 approaches big-favorite threshold.", bets: [{type:"straight", market:"Spread", line:"Jacksonville Jaguars -8.5 (min -110 conditional)", stake:14, confidence:6, reason:"JAX home vs CLE road with QB uncertainty (Shedeur Sanders)"}, {type:"parlay", market:"SGP", line:"Jaguars ML + game OVER 40.5 (min +220 conditional)", stake:6, confidence:3, reason:"JAX-controlled win with offense script"}] },
-      Claude: { version: "claude-opus-4-7", total_stake: 20, reserve: 0, summary: "Game UNDER 40.5 $12 conditional -110 + SGP Jaguars ML + game UNDER 40.5 $8 conditional +200. Projected Jaguars 20-16. Both QBs uncertain drives UNDER.", bets: [{type:"straight", market:"Total", line:"UNDER 40.5 (min -110 conditional)", stake:12, confidence:6, reason:"Both teams non-established QBs; interior line issues; defensive opener"}, {type:"sgp", market:"SGP", line:"JAX ML + game UNDER 40.5 (min +200 conditional)", stake:8, confidence:4, reason:"Home team ML in low-total spot, independent legs"}] },
+      ChatGPT: { version: "Codex CLI", total_stake: 20, reserve: 0, summary: "JAX -8.5 $14 conditional -110 + SGP Jaguars ML + game OVER 40.5 $6 conditional +220. Projected Jaguars win. Note: -8.5 approaches big-favorite threshold.", bets: [{type:"straight", market:"Spread", line:"Jacksonville Jaguars -8.5 (min -110 conditional)", stake:14, confidence:6, reason:"JAX home vs CLE road with QB uncertainty (Shedeur Sanders)"}, {type:"parlay", market:"SGP", line:"Jaguars ML + game OVER 40.5 (min +220 conditional)", stake:6, confidence:3, reason:"JAX-controlled win with offense script"}] },
+      Claude: { version: "Claude Code", total_stake: 20, reserve: 0, summary: "Game UNDER 40.5 $12 conditional -110 + SGP Jaguars ML + game UNDER 40.5 $8 conditional +200. Projected Jaguars 20-16. Both QBs uncertain drives UNDER.", bets: [{type:"straight", market:"Total", line:"UNDER 40.5 (min -110 conditional)", stake:12, confidence:6, reason:"Both teams non-established QBs; interior line issues; defensive opener"}, {type:"sgp", market:"SGP", line:"JAX ML + game UNDER 40.5 (min +200 conditional)", stake:8, confidence:4, reason:"Home team ML in low-total spot, independent legs"}] },
       Gemini: { version: "EXPIRED", total_stake: 0, reserve: 20, summary: "No response submitted before 1:00 PM ET kickoff. Pre-game eligibility expired.", bets: [] }
     },
     result: {
@@ -537,8 +537,8 @@ var NFL_PREDICTIONS_2026 = [
     responseFolder: "Docs/Responses/2026/week-01/game-10-bills-texans/",
     status: "locked", locked_at: "2026-09-13", prompt_template: "forced-selection v3.0",
     models: {
-      ChatGPT: { version: "GPT-6 (Codex CLI)", total_stake: 20, reserve: 0, summary: "Bills -1.5 $14 conditional -110 + SGP Bills ML + game OVER 44.5 $6 conditional +220. Projected Bills win.", bets: [{type:"straight", market:"Spread", line:"Buffalo Bills -1.5 (min -110 conditional)", stake:14, confidence:6, reason:"Josh Allen edge over Stroud in pick-em environment"}, {type:"parlay", market:"SGP", line:"Bills ML + game OVER 44.5 (min +220 conditional)", stake:6, confidence:3, reason:"Bills offense drives both legs"}] },
-      Claude: { version: "claude-opus-4-7", total_stake: 20, reserve: 0, summary: "HOU +3 $12 conditional -110 + SGP HOU ML + game UNDER 46.5 $8 conditional +200. Projected Texans 24-20 (contrarian). Hook underdog shape (3-0 in study).", bets: [{type:"straight", market:"Spread", line:"Houston Texans +3 (min -110 conditional)", stake:12, confidence:5, reason:"Hook across key number 3 on home team, Stroud healthy vs BUF road"}, {type:"sgp", market:"SGP", line:"HOU ML + game UNDER 46.5 (min +200 conditional)", stake:8, confidence:4, reason:"Home upset in low-scoring defensive struggle"}] },
+      ChatGPT: { version: "Codex CLI", total_stake: 20, reserve: 0, summary: "Bills -1.5 $14 conditional -110 + SGP Bills ML + game OVER 44.5 $6 conditional +220. Projected Bills win.", bets: [{type:"straight", market:"Spread", line:"Buffalo Bills -1.5 (min -110 conditional)", stake:14, confidence:6, reason:"Josh Allen edge over Stroud in pick-em environment"}, {type:"parlay", market:"SGP", line:"Bills ML + game OVER 44.5 (min +220 conditional)", stake:6, confidence:3, reason:"Bills offense drives both legs"}] },
+      Claude: { version: "Claude Code", total_stake: 20, reserve: 0, summary: "HOU +3 $12 conditional -110 + SGP HOU ML + game UNDER 46.5 $8 conditional +200. Projected Texans 24-20 (contrarian). Hook underdog shape (3-0 in study).", bets: [{type:"straight", market:"Spread", line:"Houston Texans +3 (min -110 conditional)", stake:12, confidence:5, reason:"Hook across key number 3 on home team, Stroud healthy vs BUF road"}, {type:"sgp", market:"SGP", line:"HOU ML + game UNDER 46.5 (min +200 conditional)", stake:8, confidence:4, reason:"Home upset in low-scoring defensive struggle"}] },
       Gemini: { version: "EXPIRED", total_stake: 0, reserve: 20, summary: "No response submitted before 1:00 PM ET kickoff. Pre-game eligibility expired.", bets: [] }
     },
     result: {
@@ -568,9 +568,9 @@ var NFL_PREDICTIONS_2026 = [
     responseFolder: "Docs/Responses/2026/week-01/game-11-dolphins-raiders/",
     status: "locked", locked_at: "2026-09-13", prompt_template: "forced-selection v3.0",
     models: {
-      ChatGPT: { version: "GPT-6 (Codex CLI)", total_stake: 20, reserve: 0, summary: "Raiders -3 $14 conditional -110 + SGP Raiders ML + game OVER 39.5 $6 conditional +220.", bets: [{type:"straight", market:"Spread", line:"Las Vegas Raiders -3 (min -110 conditional)", stake:14, confidence:6, reason:"LV home with Cousins/Jeanty vs MIA road with QB uncertainty"}, {type:"parlay", market:"SGP", line:"Raiders ML + game OVER 39.5 (min +220 conditional)", stake:6, confidence:3, reason:"LV offensive script"}] },
-      Claude: { version: "claude-opus-4-7", total_stake: 20, reserve: 0, summary: "LV Raiders ML $12 conditional -140 + SGP LV ML + Jeanty OVER 15.5 rush att $8 conditional +140. Volume prop on winning side (corrected from Game 2 Kyren pattern).", bets: [{type:"straight", market:"Moneyline", line:"LV Raiders ML (min -140 conditional)", stake:12, confidence:6, reason:"LV home Cousins/Jeanty stability vs MIA QB uncertainty"}, {type:"sgp", market:"SGP", line:"LV ML + Jeanty OVER 15.5 rush att (min +140 conditional)", stake:8, confidence:5, reason:"Volume-anchored rush attempts on projected winning side (Game 2 Kyren correction: Kyren was losing side; Jeanty projected winning)"}] },
-      Gemini: { version: "2.5 Flash", total_stake: 20, reserve: 0, summary: "Miami +3.5 $12 reference_market DK -115 + SGP UNDER 40.5 + Achane OVER 68.5 rush yds $8 conditional +185 target. Contrarian road-dog take: Bowers OUT thesis. 9th fabricated GitHub raw fetch pattern documented. SGP leg 2 is single-player OVER family (6+ S1 losses). Also fabricated 'Fernando Mendoza Heisman #1 pick backup QB' claim. Grading concerns inline.", bets: [{type:"straight", market:"Spread", line:"Miami Dolphins +3.5 (DK reference_market -115)", stake:12, confidence:6, reason:"Bowers OUT limits Cousins; Achane controls tempo"}, {type:"parlay", market:"SGP", line:"UNDER 40.5 + Achane OVER 68.5 rush yds (min +160 conditional, target +185)", stake:8, confidence:4, reason:"Low-total game script feeds Achane volume; single-player OVER family flagged"}] }
+      ChatGPT: { version: "Codex CLI", total_stake: 20, reserve: 0, summary: "Raiders -3 $14 conditional -110 + SGP Raiders ML + game OVER 39.5 $6 conditional +220.", bets: [{type:"straight", market:"Spread", line:"Las Vegas Raiders -3 (min -110 conditional)", stake:14, confidence:6, reason:"LV home with Cousins/Jeanty vs MIA road with QB uncertainty"}, {type:"parlay", market:"SGP", line:"Raiders ML + game OVER 39.5 (min +220 conditional)", stake:6, confidence:3, reason:"LV offensive script"}] },
+      Claude: { version: "Claude Code", total_stake: 20, reserve: 0, summary: "LV Raiders ML $12 conditional -140 + SGP LV ML + Jeanty OVER 15.5 rush att $8 conditional +140. Volume prop on winning side (corrected from Game 2 Kyren pattern).", bets: [{type:"straight", market:"Moneyline", line:"LV Raiders ML (min -140 conditional)", stake:12, confidence:6, reason:"LV home Cousins/Jeanty stability vs MIA QB uncertainty"}, {type:"sgp", market:"SGP", line:"LV ML + Jeanty OVER 15.5 rush att (min +140 conditional)", stake:8, confidence:5, reason:"Volume-anchored rush attempts on projected winning side (Game 2 Kyren correction: Kyren was losing side; Jeanty projected winning)"}] },
+      Gemini: { version: "Gemini web", total_stake: 20, reserve: 0, summary: "Miami +3.5 $12 reference_market DK -115 + SGP UNDER 40.5 + Achane OVER 68.5 rush yds $8 conditional +185 target. Contrarian road-dog take: Bowers OUT thesis. 9th fabricated GitHub raw fetch pattern documented. SGP leg 2 is single-player OVER family (6+ S1 losses). Also fabricated 'Fernando Mendoza Heisman #1 pick backup QB' claim. Grading concerns inline.", bets: [{type:"straight", market:"Spread", line:"Miami Dolphins +3.5 (DK reference_market -115)", stake:12, confidence:6, reason:"Bowers OUT limits Cousins; Achane controls tempo"}, {type:"parlay", market:"SGP", line:"UNDER 40.5 + Achane OVER 68.5 rush yds (min +160 conditional, target +185)", stake:8, confidence:4, reason:"Low-total game script feeds Achane volume; single-player OVER family flagged"}] }
     }
   },
   {
@@ -583,9 +583,9 @@ var NFL_PREDICTIONS_2026 = [
     responseFolder: "Docs/Responses/2026/week-01/game-12-packers-vikings/",
     status: "locked", locked_at: "2026-09-13", prompt_template: "forced-selection v3.0",
     models: {
-      ChatGPT: { version: "GPT-6 (Codex CLI)", total_stake: 20, reserve: 0, summary: "Vikings -1.5 $14 conditional -110 + SGP Vikings ML + game OVER 46.5 $6 conditional +220.", bets: [{type:"straight", market:"Spread", line:"Minnesota Vikings -1.5 (min -110 conditional)", stake:14, confidence:6, reason:"MIN home with GB decimated"}, {type:"parlay", market:"SGP", line:"Vikings ML + game OVER 46.5 (min +220 conditional)", stake:6, confidence:3, reason:"MIN offense script"}] },
-      Claude: { version: "claude-opus-4-7", total_stake: 20, reserve: 0, summary: "Vikings -4 $12 conditional -110 + SGP Vikings ML + game UNDER 42.5 $8 conditional +180. Projected Vikings 24-17. GB missing 5+ starters (Jacobs, Parsons, Musgrave). Flagged Vikings QB1 heuristic HARD ERROR (Kyler Murray listed but plays for Arizona).", bets: [{type:"straight", market:"Spread", line:"Minnesota Vikings -4 (min -110 conditional)", stake:12, confidence:6, reason:"GB missing RB1 Jacobs + edge Parsons + multiple DTs; MIN home with intact skill group"}, {type:"sgp", market:"SGP", line:"Vikings ML + game UNDER 42.5 (min +180 conditional)", stake:8, confidence:4, reason:"MIN 24-14 style, GB offense can't sustain without Jacobs"}] },
-      Gemini: { version: "2.5 Flash", total_stake: 20, reserve: 0, summary: "MIN -2.5 $12 reference_market -110 + SGP MIN ML (-135) + UNDER 46.5 (-110) $8 reference_market +230. CRITICAL HALLUCINATION: claims Kyler Murray is Vikings QB1 (Murray plays for Arizona; actual Vikings QB1 is McCarthy). Also fabricates that O'Connell named Murray QB1 over Wentz. 10th fabricated GitHub fetch. UNDER 46.5 line does not exist (real total 42.5). Grading concerns inline.", bets: [{type:"single", market:"Spread", line:"Minnesota Vikings -2.5 (reference_market -110)", stake:12, confidence:6, reason:"MIN home divisional favorite; GB missing Jacobs/Parsons/Banks"}, {type:"parlay", market:"SGP", line:"MIN ML (-135) + UNDER 46.5 (-110) reference +230", stake:8, confidence:4, reason:"Correlated home-fav-ML + UNDER; note UNDER line at 46.5 does not match real 42.5 total"}] }
+      ChatGPT: { version: "Codex CLI", total_stake: 20, reserve: 0, summary: "Vikings -1.5 $14 conditional -110 + SGP Vikings ML + game OVER 46.5 $6 conditional +220.", bets: [{type:"straight", market:"Spread", line:"Minnesota Vikings -1.5 (min -110 conditional)", stake:14, confidence:6, reason:"MIN home with GB decimated"}, {type:"parlay", market:"SGP", line:"Vikings ML + game OVER 46.5 (min +220 conditional)", stake:6, confidence:3, reason:"MIN offense script"}] },
+      Claude: { version: "Claude Code", total_stake: 20, reserve: 0, summary: "Vikings -4 $12 conditional -110 + SGP Vikings ML + game UNDER 42.5 $8 conditional +180. Projected Vikings 24-17. GB missing 5+ starters (Jacobs, Parsons, Musgrave). Flagged Vikings QB1 heuristic HARD ERROR (Kyler Murray listed but plays for Arizona).", bets: [{type:"straight", market:"Spread", line:"Minnesota Vikings -4 (min -110 conditional)", stake:12, confidence:6, reason:"GB missing RB1 Jacobs + edge Parsons + multiple DTs; MIN home with intact skill group"}, {type:"sgp", market:"SGP", line:"Vikings ML + game UNDER 42.5 (min +180 conditional)", stake:8, confidence:4, reason:"MIN 24-14 style, GB offense can't sustain without Jacobs"}] },
+      Gemini: { version: "Gemini web", total_stake: 20, reserve: 0, summary: "MIN -2.5 $12 reference_market -110 + SGP MIN ML (-135) + UNDER 46.5 (-110) $8 reference_market +230. CRITICAL HALLUCINATION: claims Kyler Murray is Vikings QB1 (Murray plays for Arizona; actual Vikings QB1 is McCarthy). Also fabricates that O'Connell named Murray QB1 over Wentz. 10th fabricated GitHub fetch. UNDER 46.5 line does not exist (real total 42.5). Grading concerns inline.", bets: [{type:"single", market:"Spread", line:"Minnesota Vikings -2.5 (reference_market -110)", stake:12, confidence:6, reason:"MIN home divisional favorite; GB missing Jacobs/Parsons/Banks"}, {type:"parlay", market:"SGP", line:"MIN ML (-135) + UNDER 46.5 (-110) reference +230", stake:8, confidence:4, reason:"Correlated home-fav-ML + UNDER; note UNDER line at 46.5 does not match real 42.5 total"}] }
     }
   },
   {
@@ -598,9 +598,9 @@ var NFL_PREDICTIONS_2026 = [
     responseFolder: "Docs/Responses/2026/week-01/game-13-commanders-eagles/",
     status: "locked", locked_at: "2026-09-13", prompt_template: "forced-selection v3.0",
     models: {
-      ChatGPT: { version: "GPT-6 (Codex CLI)", total_stake: 20, reserve: 0, summary: "Eagles -5.5 $14 conditional -110 + SGP Eagles ML + game OVER 44.5 $6 conditional +220.", bets: [{type:"straight", market:"Spread", line:"Philadelphia Eagles -5.5 (min -110 conditional)", stake:14, confidence:6, reason:"PHI home decisively better"}, {type:"parlay", market:"SGP", line:"Eagles ML + game OVER 44.5 (min +220 conditional)", stake:6, confidence:3, reason:"PHI offense script"}] },
-      Claude: { version: "claude-opus-4-7", total_stake: 20, reserve: 0, summary: "Eagles -3.5 $12 conditional -115 + SGP Eagles ML + game OVER 47.5 $8 conditional +180. Projected PHI 27-20. Flagged Eagles RB1 heuristic (Bigsby listed, actual Saquon Barkley).", bets: [{type:"straight", market:"Spread", line:"Philadelphia Eagles -3.5 (min -115 conditional)", stake:12, confidence:6, reason:"Hurts + Barkley home vs WAS road; PHI healthy, WAS missing 2 DEs"}, {type:"sgp", market:"SGP", line:"Eagles ML + game OVER 47.5 (min +180 conditional)", stake:8, confidence:4, reason:"27-24 style with offensive script pushing total"}] },
-      Gemini: { version: "2.5 Flash", total_stake: 0, reserve: 20, summary: "EXPIRED - Gemini honored pre-game eligibility rule. Response arrived 2min 6sec after 4:25 PM ET kickoff. No allocation. Positive Source Honesty signal.", bets: [] }
+      ChatGPT: { version: "Codex CLI", total_stake: 20, reserve: 0, summary: "Eagles -5.5 $14 conditional -110 + SGP Eagles ML + game OVER 44.5 $6 conditional +220.", bets: [{type:"straight", market:"Spread", line:"Philadelphia Eagles -5.5 (min -110 conditional)", stake:14, confidence:6, reason:"PHI home decisively better"}, {type:"parlay", market:"SGP", line:"Eagles ML + game OVER 44.5 (min +220 conditional)", stake:6, confidence:3, reason:"PHI offense script"}] },
+      Claude: { version: "Claude Code", total_stake: 20, reserve: 0, summary: "Eagles -3.5 $12 conditional -115 + SGP Eagles ML + game OVER 47.5 $8 conditional +180. Projected PHI 27-20. Flagged Eagles RB1 heuristic (Bigsby listed, actual Saquon Barkley).", bets: [{type:"straight", market:"Spread", line:"Philadelphia Eagles -3.5 (min -115 conditional)", stake:12, confidence:6, reason:"Hurts + Barkley home vs WAS road; PHI healthy, WAS missing 2 DEs"}, {type:"sgp", market:"SGP", line:"Eagles ML + game OVER 47.5 (min +180 conditional)", stake:8, confidence:4, reason:"27-24 style with offensive script pushing total"}] },
+      Gemini: { version: "Gemini web", total_stake: 0, reserve: 20, summary: "EXPIRED - Gemini honored pre-game eligibility rule. Response arrived 2min 6sec after 4:25 PM ET kickoff. No allocation. Positive Source Honesty signal.", bets: [] }
     }
   },
   {
@@ -613,8 +613,8 @@ var NFL_PREDICTIONS_2026 = [
     responseFolder: "Docs/Responses/2026/week-01/game-14-cardinals-chargers/",
     status: "locked", locked_at: "2026-09-13", prompt_template: "forced-selection v3.0",
     models: {
-      ChatGPT: { version: "GPT-6 (Codex CLI)", total_stake: 20, reserve: 0, summary: "Chargers -9.5 $14 conditional -110 + SGP Chargers ML + game OVER 47.5 $6 conditional +220. Note: -9.5 approaches big-favorite threshold flagged as losing shape.", bets: [{type:"straight", market:"Spread", line:"Los Angeles Chargers -9.5 (min -110 conditional)", stake:14, confidence:6, reason:"LAC home, ARI depleted"}, {type:"parlay", market:"SGP", line:"Chargers ML + game OVER 47.5 (min +220 conditional)", stake:6, confidence:3, reason:"LAC offensive script"}] },
-      Claude: { version: "claude-opus-4-7", total_stake: 20, reserve: 0, summary: "LAC -6.5 $12 conditional -110 + SGP LAC ML + game UNDER 44.5 $8 conditional +180. Flagged both team QB1 heuristic errors (ARI has Brissett listed but actual Kyler Murray; LAC has Lance listed but actual Herbert).", bets: [{type:"straight", market:"Spread", line:"Los Angeles Chargers -6.5 (min -110 conditional)", stake:12, confidence:6, reason:"LAC home with Herbert vs ARI depleted WR/S/CB + RB1 Q"}, {type:"sgp", market:"SGP", line:"LAC ML + game UNDER 44.5 (min +180 conditional)", stake:8, confidence:4, reason:"LAC controls low-scoring game"}] },
+      ChatGPT: { version: "Codex CLI", total_stake: 20, reserve: 0, summary: "Chargers -9.5 $14 conditional -110 + SGP Chargers ML + game OVER 47.5 $6 conditional +220. Note: -9.5 approaches big-favorite threshold flagged as losing shape.", bets: [{type:"straight", market:"Spread", line:"Los Angeles Chargers -9.5 (min -110 conditional)", stake:14, confidence:6, reason:"LAC home, ARI depleted"}, {type:"parlay", market:"SGP", line:"Chargers ML + game OVER 47.5 (min +220 conditional)", stake:6, confidence:3, reason:"LAC offensive script"}] },
+      Claude: { version: "Claude Code", total_stake: 20, reserve: 0, summary: "LAC -6.5 $12 conditional -110 + SGP LAC ML + game UNDER 44.5 $8 conditional +180. Flagged both team QB1 heuristic errors (ARI has Brissett listed but actual Kyler Murray; LAC has Lance listed but actual Herbert).", bets: [{type:"straight", market:"Spread", line:"Los Angeles Chargers -6.5 (min -110 conditional)", stake:12, confidence:6, reason:"LAC home with Herbert vs ARI depleted WR/S/CB + RB1 Q"}, {type:"sgp", market:"SGP", line:"LAC ML + game UNDER 44.5 (min +180 conditional)", stake:8, confidence:4, reason:"LAC controls low-scoring game"}] },
       Gemini: { version: "EXPIRED", total_stake: 0, reserve: 20, summary: "No response submitted before 4:25 PM ET kickoff. Pre-game eligibility expired.", bets: [] }
     }
   },
@@ -628,8 +628,8 @@ var NFL_PREDICTIONS_2026 = [
     responseFolder: "Docs/Responses/2026/week-01/game-15-cowboys-giants/",
     status: "locked", locked_at: "2026-09-13", prompt_template: "forced-selection v3.0",
     models: {
-      ChatGPT: { version: "GPT-6 (Codex CLI)", total_stake: 20, reserve: 0, summary: "Cowboys -2.5 $14 conditional -110 + SGP Cowboys ML + game OVER 48.5 $6 conditional +220.", bets: [{type:"straight", market:"Spread", line:"Dallas Cowboys -2.5 (min -110 conditional)", stake:14, confidence:6, reason:"DAL road favorite through key number"}, {type:"parlay", market:"SGP", line:"Cowboys ML + game OVER 48.5 (min +220 conditional)", stake:6, confidence:3, reason:"DAL offensive script"}] },
-      Claude: { version: "claude-opus-4-7", total_stake: 20, reserve: 0, summary: "Cowboys -3 $12 conditional -115 + SGP Cowboys ML + Cowboys TT OVER 24.5 $8 conditional +150. Projected DAL 27-17. Applied W11 P11 Cowboys shape (same franchise). Flagged Giants QB1 heuristic uncertainty (Jake Haener listed).", bets: [{type:"straight", market:"Spread", line:"Dallas Cowboys -3 (min -115 conditional)", stake:12, confidence:6, reason:"DAL healthy Prescott + Pickens vs NYG QB uncertainty and Nabers Q"}, {type:"sgp", market:"SGP", line:"Cowboys ML + Cowboys TT OVER 24.5 (min +150 conditional)", stake:8, confidence:4, reason:"W11 P11 Cowboys shape reapplied with SGP concentration awareness (Game 2 lesson - sized to $8)"}] },
+      ChatGPT: { version: "Codex CLI", total_stake: 20, reserve: 0, summary: "Cowboys -2.5 $14 conditional -110 + SGP Cowboys ML + game OVER 48.5 $6 conditional +220.", bets: [{type:"straight", market:"Spread", line:"Dallas Cowboys -2.5 (min -110 conditional)", stake:14, confidence:6, reason:"DAL road favorite through key number"}, {type:"parlay", market:"SGP", line:"Cowboys ML + game OVER 48.5 (min +220 conditional)", stake:6, confidence:3, reason:"DAL offensive script"}] },
+      Claude: { version: "Claude Code", total_stake: 20, reserve: 0, summary: "Cowboys -3 $12 conditional -115 + SGP Cowboys ML + Cowboys TT OVER 24.5 $8 conditional +150. Projected DAL 27-17. Applied W11 P11 Cowboys shape (same franchise). Flagged Giants QB1 heuristic uncertainty (Jake Haener listed).", bets: [{type:"straight", market:"Spread", line:"Dallas Cowboys -3 (min -115 conditional)", stake:12, confidence:6, reason:"DAL healthy Prescott + Pickens vs NYG QB uncertainty and Nabers Q"}, {type:"sgp", market:"SGP", line:"Cowboys ML + Cowboys TT OVER 24.5 (min +150 conditional)", stake:8, confidence:4, reason:"W11 P11 Cowboys shape reapplied with SGP concentration awareness (Game 2 lesson - sized to $8)"}] },
       Gemini: { version: "pending", total_stake: 0, reserve: 20, summary: "Awaiting v3.0 response.", bets: [] }
     }
   },
@@ -643,8 +643,8 @@ var NFL_PREDICTIONS_2026 = [
     responseFolder: "Docs/Responses/2026/week-01/game-16-broncos-chiefs/",
     status: "locked", locked_at: "2026-09-13", prompt_template: "forced-selection v3.0",
     models: {
-      ChatGPT: { version: "GPT-6 (Codex CLI)", total_stake: 20, reserve: 0, summary: "Chiefs -2.5 $14 conditional -110 + SGP Chiefs ML + game OVER 43.5 $6 conditional +220.", bets: [{type:"straight", market:"Spread", line:"Kansas City Chiefs -2.5 (min -110 conditional)", stake:14, confidence:6, reason:"KC home MNF opener"}, {type:"parlay", market:"SGP", line:"Chiefs ML + game OVER 43.5 (min +220 conditional)", stake:6, confidence:3, reason:"KC offensive script"}] },
-      Claude: { version: "claude-opus-4-7", total_stake: 20, reserve: 0, summary: "Chiefs -3.5 $12 conditional -110 + SGP Chiefs ML + game UNDER 44.5 $8 conditional +180. Flagged Broncos QB1 heuristic HARD error (Sam Ehlinger listed, actual Bo Nix).", bets: [{type:"straight", market:"Spread", line:"Kansas City Chiefs -3.5 (min -110 conditional)", stake:12, confidence:6, reason:"KC home MNF, hook through key number 3; Bo Nix (year 2) at road"}, {type:"sgp", market:"SGP", line:"Chiefs ML + game UNDER 44.5 (min +180 conditional)", stake:8, confidence:4, reason:"24-17 style KC win, defenses hold OVER"}] },
+      ChatGPT: { version: "Codex CLI", total_stake: 20, reserve: 0, summary: "Chiefs -2.5 $14 conditional -110 + SGP Chiefs ML + game OVER 43.5 $6 conditional +220.", bets: [{type:"straight", market:"Spread", line:"Kansas City Chiefs -2.5 (min -110 conditional)", stake:14, confidence:6, reason:"KC home MNF opener"}, {type:"parlay", market:"SGP", line:"Chiefs ML + game OVER 43.5 (min +220 conditional)", stake:6, confidence:3, reason:"KC offensive script"}] },
+      Claude: { version: "Claude Code", total_stake: 20, reserve: 0, summary: "Chiefs -3.5 $12 conditional -110 + SGP Chiefs ML + game UNDER 44.5 $8 conditional +180. Flagged Broncos QB1 heuristic HARD error (Sam Ehlinger listed, actual Bo Nix).", bets: [{type:"straight", market:"Spread", line:"Kansas City Chiefs -3.5 (min -110 conditional)", stake:12, confidence:6, reason:"KC home MNF, hook through key number 3; Bo Nix (year 2) at road"}, {type:"sgp", market:"SGP", line:"Chiefs ML + game UNDER 44.5 (min +180 conditional)", stake:8, confidence:4, reason:"24-17 style KC win, defenses hold OVER"}] },
       Gemini: { version: "pending", total_stake: 0, reserve: 20, summary: "Awaiting v3.0 response.", bets: [] }
     }
   }
@@ -676,6 +676,71 @@ function nflPredictions2026Summary() {
 // into NFL_GAMES + NFL_BETS in assets/nfl-data.js, its ledger rows live
 // there and this adapter skips it to avoid double-counting. See
 // Docs/2026/iteration-system.md entry 2026-09-11.
+function nflWeekTracker2026(week) {
+  var wk = week || 1;
+  var perModel = {};
+  NFL_MODELS.forEach(function (m) { perModel[m] = { wins: 0, losses: 0, pushes: 0, pl: 0, staked: 0, gamesGraded: 0, gamesExpired: 0, gamesPending: 0 }; });
+  var gamesFinal = 0, gamesTotal = 0;
+  // Games promoted into NFL_GAMES also have their bets tracked in NFL_BETS; count those from NFL_BETS.
+  var promotedIds = {};
+  if (typeof NFL_GAMES !== "undefined") {
+    NFL_GAMES.forEach(function (g) {
+      if (g.week === wk && g.season === "2026") {
+        promotedIds[g.id] = true;
+        gamesTotal += 1;
+        gamesFinal += 1;
+      }
+    });
+  }
+  if (typeof NFL_BETS !== "undefined") {
+    NFL_BETS.forEach(function (b) {
+      if (b.season !== "2026" || b.week !== wk) return;
+      var slot = perModel[b.model];
+      if (!slot) return;
+      slot.staked += b.stake || 0;
+      slot.gamesGraded = slot.gamesGraded;
+      if (b.outcome === 'WIN') slot.wins += 1;
+      else if (b.outcome === 'LOSS') slot.losses += 1;
+      else if (b.outcome === 'PUSH') slot.pushes += 1;
+      if (typeof b.pl === 'number') slot.pl += b.pl;
+    });
+    // Recount gamesGraded from promoted set per model.
+    NFL_MODELS.forEach(function (m) {
+      var seen = {};
+      NFL_BETS.forEach(function (b) { if (b.season === "2026" && b.week === wk && b.model === m) seen[b.game] = true; });
+      perModel[m].gamesGraded = Object.keys(seen).length;
+    });
+  }
+  NFL_PREDICTIONS_2026.forEach(function (game) {
+    if (game.week !== wk) return;
+    if (promotedIds[game.gameId]) return;
+    gamesTotal += 1;
+    var isFinal = game.result && game.result.status === 'final';
+    if (isFinal) gamesFinal += 1;
+    NFL_MODELS.forEach(function (m) {
+      var mp = game.models && game.models[m];
+      if (!mp) return;
+      var slot = perModel[m];
+      if (mp.version === 'EXPIRED' || (mp.total_stake === 0 && mp.bets.length === 0 && !isFinal)) {
+        if (mp.version === 'EXPIRED') slot.gamesExpired += 1;
+        return;
+      }
+      slot.staked += mp.total_stake || 0;
+      if (!isFinal) { slot.gamesPending += 1; return; }
+      slot.gamesGraded += 1;
+      var grades = (game.result.grades && game.result.grades[m]) || [];
+      grades.forEach(function (g) {
+        if (!g) return;
+        if (g.outcome === 'WIN') slot.wins += 1;
+        else if (g.outcome === 'LOSS') slot.losses += 1;
+        else if (g.outcome === 'PUSH') slot.pushes += 1;
+        if (typeof g.profit === 'number') slot.pl += g.profit;
+      });
+    });
+  });
+  return { week: wk, gamesTotal: gamesTotal, gamesFinal: gamesFinal, models: perModel };
+}
+
 function nflGradedBets2026() {
   var promotedIds = (typeof NFL_GAMES !== "undefined")
     ? NFL_GAMES.reduce(function (set, g) { set[g.id] = true; return set; }, {})

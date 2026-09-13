@@ -309,18 +309,33 @@ ${!entry.bets.length && review ? '<p><strong>Decision review:</strong> ' + esc(r
         <div class="mpred-bet none">Response not received yet.</div>
       </article>`;
     }
+    const grades = final && result.grades && result.grades[m] ? result.grades[m] : [];
+    const decided = grades.filter(g => g && (g.outcome === 'WIN' || g.outcome === 'LOSS' || g.outcome === 'PUSH'));
+    const wins = decided.filter(g => g.outcome === 'WIN').length;
+    const losses = decided.filter(g => g.outcome === 'LOSS').length;
+    const pushes = decided.filter(g => g.outcome === 'PUSH').length;
+    const totalPl = decided.reduce((s, g) => s + (typeof g.profit === 'number' ? g.profit : 0), 0);
+    const plClass = totalPl > 0 ? 'pl-win' : totalPl < 0 ? 'pl-loss' : 'pl-flat';
+    const recordStr = decided.length ? (pushes ? `${wins}-${losses}-${pushes}` : `${wins}-${losses}`) : '';
+    const isExpired = mp.version === 'EXPIRED';
     const betsHtml = mp.bets && mp.bets.length
       ? mp.bets.map((b, index) => {
-          const grade = final && result.grades[m] && result.grades[m][index];
-          const outcome = grade ? `<div class="reason"><strong>${esc(grade.outcome)}</strong>: ${esc(grade.actual)}. ${grade.profit === null ? 'P/L unavailable: odds not recorded.' : 'Hypothetical P/L: ' + money(grade.profit)}</div>` : '';
+          const grade = grades[index];
+          const badgeClass = grade ? (grade.outcome === 'WIN' ? 'badge-win' : grade.outcome === 'LOSS' ? 'badge-loss' : grade.outcome === 'PUSH' ? 'badge-push' : 'badge-pending') : '';
+          const badge = grade ? `<span class="pick-badge ${badgeClass}">${esc(grade.outcome)}</span>` : '';
+          const plStr = grade && typeof grade.profit === 'number' ? `<span class="pick-pl ${grade.profit > 0 ? 'pl-win' : grade.profit < 0 ? 'pl-loss' : 'pl-flat'}">${money(grade.profit)}</span>` : '';
+          const outcomeRow = grade ? `<div class="pick-outcome">${badge}${plStr}<span class="pick-actual">${esc(grade.actual || '')}</span></div>` : '';
           if (b.type === 'sgp' || b.type === 'parlay') {
             const legs = (b.legs || []).map(l => esc(l.line)).join(' + ');
-            return `<div class="mpred-bet"><div class="line1"><span class="stake tabular">$${b.stake}</span><span class="market">${b.type === 'sgp' ? 'SGP' : 'Parlay'}</span><span class="conf">Conf ${b.confidence}/10</span></div><div class="desc">${legs}</div>${b.reason ? `<div class="reason">${esc(b.reason)}</div>` : ''}</div>`;
+            return `<div class="mpred-bet"><div class="line1"><span class="stake tabular">$${b.stake}</span><span class="market">${b.type === 'sgp' ? 'SGP' : 'Parlay'}</span><span class="conf">Conf ${b.confidence}/10</span></div><div class="desc">${esc(b.line)}${legs ? ' &middot; ' + legs : ''}</div>${outcomeRow}${b.reason ? `<div class="reason">${esc(b.reason)}</div>` : ''}</div>`;
           }
-          return `<div class="mpred-bet"><div class="line1"><span class="stake tabular">$${b.stake}</span><span class="market">${esc(b.market)}</span><span class="conf">Conf ${b.confidence}/10</span></div><div class="desc">${esc(b.line)}</div>${outcome}${b.reason ? `<div class="reason">Original rationale: ${esc(b.reason)}</div>` : ''}</div>`;
+          return `<div class="mpred-bet"><div class="line1"><span class="stake tabular">$${b.stake}</span><span class="market">${esc(b.market)}</span><span class="conf">Conf ${b.confidence}/10</span></div><div class="desc">${esc(b.line)}</div>${outcomeRow}${b.reason ? `<div class="reason">Original rationale: ${esc(b.reason)}</div>` : ''}</div>`;
         }).join('')
-      : `<div class="mpred-bet none">No bets, full $${mp.reserve || 20} reserved.</div>`;
-    return `<article class="mpred">
+      : isExpired
+        ? `<div class="mpred-bet none">EXPIRED. Response not received before kickoff. Full $${mp.reserve || 20} reserved.</div>`
+        : `<div class="mpred-bet none">No bets, full $${mp.reserve || 20} reserved.</div>`;
+    const totalsRow = decided.length ? `<div class="mpred-total ${plClass}"><span>${recordStr}</span><span class="tabular">${money(totalPl)}</span></div>` : (isExpired ? `<div class="mpred-total pl-flat"><span>EXPIRED</span><span class="tabular">$0.00</span></div>` : '');
+    return `<article class="mpred${isExpired ? ' mpred-expired' : ''}">
       <div class="mpred-head">
         <div>
           <div class="mpred-name">${m}</div>
@@ -332,6 +347,7 @@ ${!entry.bets.length && review ? '<p><strong>Decision review:</strong> ' + esc(r
         <span class="exposure tabular">$${mp.total_stake} exposure</span>
         <span class="reserve tabular">$${mp.reserve} reserve</span>
       </div>
+      ${totalsRow}
       ${betsHtml}
       <div class="mpred-summary">${esc(mp.summary || '')}</div>
     </article>`;
