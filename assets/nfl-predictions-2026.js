@@ -400,6 +400,51 @@ var NFL_PREDICTIONS_2026 = [
         ]
       }
     }
+  },
+  {
+    week: 1,
+    gameId: "ravens-colts",
+    label: "Ravens at Colts",
+    away: "Baltimore Ravens",
+    home: "Indianapolis Colts",
+    kickoff: "2026-09-13T13:00:00-04:00",
+    kickoffDisplay: "Sun Sep 13, 1:00 PM ET",
+    venue: "Lucas Oil Stadium, Indianapolis, IN",
+    network: "CBS",
+    line_snapshot: {
+      spread: "BAL -3 to -3.5",
+      total: 47.5,
+      moneyline: "BAL -178 / IND +150",
+      source: "FanDuel via ChatGPT + Claude research, 2026-09-13"
+    },
+    espn: "https://www.espn.com/nfl/boxscore/_/gameId/401872659",
+    responseFolder: "Docs/Responses/2026/week-01/game-06-ravens-colts/",
+    status: "locked",
+    locked_at: "2026-09-13",
+    prompt_template: "forced-selection v3.0 (independent-derivation)",
+    models: {
+      ChatGPT: {
+        version: "GPT-6 (via Codex CLI, model_role field 'Codex')",
+        total_stake: 20,
+        reserve: 0,
+        summary: "Ravens -3.5 $14 (FanDuel reference -102) + SGP Ravens ML + game UNDER 47.5 $6 (conditional min +240). Projected Ravens 27-20. Flagged Ravens QB1 Huntley->Lamar and Colts QB1 Richardson->Jones. Cited real NFL_BETS rows.",
+        bets: [
+          { type: "straight", market: "Spread", line: "Baltimore Ravens -3.5 (@ -102 FanDuel reference)", stake: 14, confidence: 6, reason: "Lamar healthy vs Jones first game post-Achilles; Colts missing WR1" },
+          { type: "sgp", market: "SGP", line: "Ravens ML + game UNDER 47.5 (min +240 conditional)", stake: 6, confidence: 3, reason: "Correlated: Baltimore-controlled win compatible with sub-48 game" }
+        ]
+      },
+      Claude: {
+        version: "claude-opus-4-7",
+        total_stake: 20,
+        reserve: 0,
+        summary: "Ravens -3 $12 (conditional min -120) + SGP Ravens ML + game UNDER 47.5 $8 (conditional min +180). Projected Ravens 26-16. FOUR roster heuristic errors flagged (Ravens QB1, Colts QB1, Colts RB1 Jonathan Taylor buried by jersey number, Colts WR1). Cited Darnold Seattle debut UNDER 44.5 as direct analogue to Jones first-game-back.",
+        bets: [
+          { type: "straight", market: "Spread", line: "Baltimore Ravens -3 (min -120 conditional)", stake: 12, confidence: 6, reason: "Lamar healthy vs Jones first game post-Achilles; Colts WR1 Montgomery IR, Downs Q" },
+          { type: "sgp", market: "SGP", line: "Ravens ML + game UNDER 47.5 (min +180 conditional)", stake: 8, confidence: 4, reason: "ML ~0.64, UNDER ~0.55, mild positive correlation to ~0.40 joint; fair ~+140-170" }
+        ]
+      },
+      Gemini: { version: "pending", total_stake: 0, reserve: 20, summary: "Awaiting v3.0 response.", bets: [] }
+    }
   }
 ];
 

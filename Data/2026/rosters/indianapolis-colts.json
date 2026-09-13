@@ -5,28 +5,28 @@
   "source": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/teams/ind/roster",
   "offense": {
     "qb1": {
-      "player": "Anthony Richardson Sr.",
-      "note": "4 yr, age 24"
+      "player": "Daniel Jones",
+      "note": "confirmed Week 1 starter per colts.com depth chart and SI; Richardson is QB2 per Steichen"
     },
     "qb2": {
-      "player": "Riley Leonard",
-      "note": "2 yr, age 23"
+      "player": "Anthony Richardson Sr.",
+      "note": "4 yr, age 24, QB2 per official Colts announcement"
     },
     "rb1": {
-      "player": "Seth McGowan",
-      "note": "0 yr, age 24"
+      "player": "Jonathan Taylor",
+      "note": "bell-cow; buried in heuristic depth by jersey number (#28)"
     },
     "rb2": {
       "player": "DJ Giddens",
       "note": "2 yr, age 23"
     },
     "wr1": {
-      "player": "D.J. Montgomery",
-      "note": "5 yr, age 29, status: Injured Reserve"
+      "player": "Josh Downs",
+      "note": "4 yr, age 25, status: Questionable; healthy WR1 with Montgomery on IR"
     },
     "wr2": {
-      "player": "Josh Downs",
-      "note": "4 yr, age 25, status: Questionable"
+      "player": "D.J. Montgomery",
+      "note": "5 yr, age 29, status: Injured Reserve"
     },
     "te1": {
       "player": "Carson Towt",

@@ -5,12 +5,12 @@
   "source": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/teams/bal/roster",
   "offense": {
     "qb1": {
-      "player": "Tyler Huntley",
-      "note": "7 yr, age 28"
+      "player": "Lamar Jackson",
+      "note": "confirmed Week 1 starter per baltimoreravens.com depth chart; healthy per Covers/CBS previews"
     },
     "qb2": {
-      "player": "Lamar Jackson",
-      "note": "9 yr, age 29"
+      "player": "Tyler Huntley",
+      "note": "7 yr, age 28, backup"
     },
     "rb1": {
       "player": "Derrick Henry",
