@@ -5,11 +5,11 @@
   "source": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/teams/no/roster",
   "offense": {
     "qb1": {
-      "player": "Spencer Rattler",
-      "note": "3 yr, age 25"
+      "player": "Tyler Shough",
+      "note": "confirmed Week 1 starter per neworleanssaints.com depth chart"
     },
     "qb2": {
-      "player": "Zach Wilson",
+      "player": "Spencer Rattler",
       "note": "6 yr, age 27"
     },
     "rb1": {

@@ -292,6 +292,42 @@ var NFL_PREDICTIONS_2026 = [
         ]
       }
     }
+  },
+  {
+    week: 1,
+    gameId: "saints-lions",
+    label: "Saints at Lions",
+    away: "New Orleans Saints",
+    home: "Detroit Lions",
+    kickoff: "2026-09-13T13:00:00-04:00",
+    kickoffDisplay: "Sun Sep 13, 1:00 PM ET",
+    venue: "Ford Field, Detroit, MI",
+    network: "FOX",
+    line_snapshot: {
+      spread: "DET -6.5",
+      total: 49.5,
+      moneyline: "DET -335 / NO +270",
+      source: "FanDuel via ChatGPT research, 2026-09-13"
+    },
+    espn: "https://www.espn.com/nfl/boxscore/_/gameId/401872923",
+    responseFolder: "Docs/Responses/2026/week-01/game-04-saints-lions/",
+    status: "locked",
+    locked_at: "2026-09-13",
+    prompt_template: "forced-selection v3.0 (independent-derivation)",
+    models: {
+      ChatGPT: {
+        version: "GPT-6 (via Codex CLI)",
+        total_stake: 20,
+        reserve: 0,
+        summary: "Detroit -6.5 $14 (FanDuel reference_market -122) + SGP DET ML + game OVER 49.5 $6 (conditional min +220). Projected Detroit 31-20. Flagged Lions QB1 Altmyer->Goff and Saints QB1 Rattler->Shough heuristic errors. Independent derivations cited specific NFL_BETS rows. Self-reflection reduced SGP exposure vs Rams game blowout.",
+        bets: [
+          { type: "straight", market: "Spread", line: "Detroit Lions -6.5 (@ -122 FanDuel reference)", stake: 14, confidence: 6, reason: "Goff/Gibbs and Detroit home offense produce 7+ margin vs Saints missing Cam Jordan and Kamara questionable" },
+          { type: "sgp", market: "SGP", line: "Detroit Lions ML + game OVER 49.5 (min +220 conditional)", stake: 6, confidence: 3, reason: "Correlated: sustained Detroit offensive production drives both legs" }
+        ]
+      },
+      Claude: { version: "pending", total_stake: 0, reserve: 20, summary: "Awaiting v3.0 response.", bets: [] },
+      Gemini: { version: "pending", total_stake: 0, reserve: 20, summary: "Awaiting v3.0 response.", bets: [] }
+    }
   }
 ];
 

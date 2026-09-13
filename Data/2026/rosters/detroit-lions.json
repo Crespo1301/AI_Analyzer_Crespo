@@ -5,8 +5,8 @@
   "source": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/teams/det/roster",
   "offense": {
     "qb1": {
-      "player": "Luke Altmyer",
-      "note": "0 yr, age 23"
+      "player": "Jared Goff",
+      "note": "confirmed Week 1 starter per detroitlions.com depth chart"
     },
     "qb2": {
       "player": "Joshua Dobbs",
