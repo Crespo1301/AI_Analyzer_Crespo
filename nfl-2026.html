@@ -90,6 +90,19 @@
   </div>
 </section>
 
+<section class="exec-summary" id="exec-summary" aria-labelledby="exec-summary-heading">
+  <div class="wrap">
+    <div class="exec-inner">
+      <div class="exec-lede">
+        <div class="exec-eyebrow">Season 2 &middot; leaderboard</div>
+        <h2 class="exec-title" id="exec-summary-heading"><span id="exec-leader">&nbsp;</span></h2>
+        <p class="exec-sub" id="exec-sub">Loading grading&hellip;</p>
+      </div>
+      <ol class="exec-podium" id="exec-podium"></ol>
+    </div>
+  </div>
+</section>
+
 <section class="band band-paper" id="week-tracker-section">
   <div class="wrap">
     <div class="band-head">
@@ -215,6 +228,32 @@
 
     if (typeof nflSeasonTracker2026 === "function") {
       var season = nflSeasonTracker2026();
+      (function renderExec() {
+        var ranked = Object.keys(season.models).map(function (m) { var s = season.models[m]; return { model: m, pl: s.pl, staked: s.staked, wins: s.wins, losses: s.losses, roi: s.staked ? (s.pl / s.staked) : 0 }; });
+        ranked.sort(function (a, b) { return b.pl - a.pl; });
+        var leader = ranked[0];
+        var leaderEl = document.getElementById("exec-leader");
+        var subEl = document.getElementById("exec-sub");
+        if (leader && (leader.wins + leader.losses) > 0) {
+          leaderEl.textContent = leader.model + " leads";
+          subEl.innerHTML = "<span class=\"" + cls(leader.pl) + "\"><strong>" + money(leader.pl) + "</strong></span> across <strong>" + leader.wins + "-" + leader.losses + "</strong> settled bets &middot; <strong>" + (leader.roi * 100).toFixed(1) + "%</strong> ROI on $" + leader.staked.toFixed(0);
+        } else {
+          leaderEl.textContent = "Season 2 in progress";
+          subEl.textContent = "No bets settled yet.";
+        }
+        var podium = ranked.map(function (r, i) {
+          var record = (r.wins + r.losses > 0) ? (r.wins + "-" + r.losses) : "-";
+          var roi = r.staked ? ((r.roi * 100).toFixed(1) + "%") : "-";
+          return "<li class=\"exec-rank rank-" + (i + 1) + "\">" +
+            "<span class=\"exec-place\">" + (i + 1) + "</span>" +
+            "<span class=\"exec-model\">" + r.model + "</span>" +
+            "<span class=\"exec-record\">" + record + "</span>" +
+            "<span class=\"exec-money " + cls(r.pl) + "\">" + money(r.pl) + "</span>" +
+            "<span class=\"exec-roi\">" + roi + "</span>" +
+            "</li>";
+        }).join("");
+        document.getElementById("exec-podium").innerHTML = podium;
+      })();
       var sPl = 0, sStaked = 0, sW = 0, sL = 0;
       Object.keys(season.models).forEach(function (m) { var s = season.models[m]; sPl += s.pl; sStaked += s.staked; sW += s.wins; sL += s.losses; });
       document.getElementById("st-summary").innerHTML = "<span><strong>" + season.gamesFinal + " / " + season.gamesTotal + "</strong> games graded season-wide</span>" +
