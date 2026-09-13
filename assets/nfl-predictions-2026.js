@@ -291,6 +291,25 @@ var NFL_PREDICTIONS_2026 = [
           { type: "sgp", market: "SGP", line: "Bengals TT OVER 24.5 + Burrow OVER 1.5 Pass TDs (min +140 conditional)", stake: 8, confidence: 4, reason: "Correlated Bengals scoring script; T2 leg 2 is Season 1 loss family" }
         ]
       }
+    },
+    result: {
+      status: "final", verified_at: "2026-09-13", awayScore: 27, homeScore: 33,
+      source: "https://www.espn.com/nfl/game/_/gameId/401872925",
+      note: "Bengals 33, Bucs 27. Total 60. CIN covered -3.5. OVER 50.5 wins. Burrow 1 pass TD (Burrow OVER 1.5 leg lost).",
+      grades: {
+        ChatGPT: [
+          { outcome: "LOSS", actual: "CIN won by 6, TB +3.5 lost", odds: -105, profit: -14.00 },
+          { outcome: "LOSS", actual: "SGP UNDER 50.5 leg failed (60 total)", odds: 250, profit: -6.00 }
+        ],
+        Claude: [
+          { outcome: "LOSS", actual: "60 total went OVER 50.5", odds: -115, profit: -12.00 },
+          { outcome: "LOSS", actual: "SGP both legs failed (TB dog lost, OVER hit)", odds: 200, profit: -8.00 }
+        ],
+        Gemini: [
+          { outcome: "WIN", actual: "CIN won by 6, covered -3.5", odds: -115, profit: 10.43 },
+          { outcome: "LOSS", actual: "SGP Burrow OVER 1.5 pass TDs leg failed (1 pass TD)", odds: 140, profit: -8.00 }
+        ]
+      }
     }
   },
   {
@@ -343,6 +362,25 @@ var NFL_PREDICTIONS_2026 = [
         bets: [
           { type: "straight", market: "Spread", line: "Detroit -7 (claimed bovada_verified -105, treated as reference_market)", stake: 12, confidence: 6, reason: "Lions dominate Ford Field vs Saints missing Kamara + Cam Jordan" },
           { type: "sgp", market: "SGP", line: "Detroit TT OVER 27.5 + Gibbs Anytime TD (min +135 conditional)", stake: 8, confidence: 4, reason: "Correlated Detroit scoring script" }
+        ]
+      }
+    },
+    result: {
+      status: "final", verified_at: "2026-09-13", awayScore: 30, homeScore: 31,
+      source: "https://www.espn.com/nfl/game/_/gameId/401872923",
+      note: "Lions 31, Saints 30 in OT. Kellen Moore went for two and the win. Total 61. DET won by 1 (spread lost). OVER 49.5. Saints TT 30 > 20.5. Gibbs 2 rush TDs.",
+      grades: {
+        ChatGPT: [
+          { outcome: "LOSS", actual: "DET won by 1 in OT, -6.5 lost", odds: -122, profit: -14.00 },
+          { outcome: "WIN", actual: "DET ML + 61 total OVER 49.5", odds: 220, profit: 13.20 }
+        ],
+        Claude: [
+          { outcome: "WIN", actual: "DET scored 31, TT OVER 27.5 wins", odds: -110, profit: 10.91 },
+          { outcome: "LOSS", actual: "SGP Saints TT UNDER 20.5 leg failed (NO 30)", odds: 150, profit: -8.00 }
+        ],
+        Gemini: [
+          { outcome: "LOSS", actual: "DET won by 1 in OT, -7 lost", odds: -105, profit: -12.00 },
+          { outcome: "WIN", actual: "DET TT OVER 27.5 + Gibbs 2 rush TDs", odds: 135, profit: 10.80 }
         ]
       }
     }
@@ -399,6 +437,25 @@ var NFL_PREDICTIONS_2026 = [
           { type: "sgp", market: "SGP", line: "Game UNDER 40.5 + Breece Hall OVER 15.5 rush att (min +190 conditional)", stake: 8, confidence: 4, reason: "Correlated: low-scoring game preserves Jets ground volume; note this is same volume-prop shape flagged as losing by Claude/ChatGPT" }
         ]
       }
+    },
+    result: {
+      status: "final", verified_at: "2026-09-13", awayScore: 23, homeScore: 10,
+      source: "https://www.espn.com/nfl/game/_/gameId/401872924",
+      note: "Jets 23, Titans 10. NYJ won outright by 13. Total 33 (UNDER 38.5/39.5/40.5). Breece Hall 22 rush attempts.",
+      grades: {
+        ChatGPT: [
+          { outcome: "WIN", actual: "NYJ won outright, +1.5 wins", odds: -112, profit: 12.50 },
+          { outcome: "WIN", actual: "NYJ ML + 33 total UNDER 38.5", odds: 260, profit: 15.60 }
+        ],
+        Claude: [
+          { outcome: "WIN", actual: "NYJ won outright, ML wins", odds: 100, profit: 10.00 },
+          { outcome: "WIN", actual: "NYJ +1.5 + 33 total UNDER 39.5", odds: 200, profit: 20.00 }
+        ],
+        Gemini: [
+          { outcome: "WIN", actual: "NYJ won outright, +1.5 wins", odds: -110, profit: 10.91 },
+          { outcome: "WIN", actual: "UNDER 40.5 + Hall 22 rush att OVER 15.5", odds: 190, profit: 15.20 }
+        ]
+      }
     }
   },
   {
@@ -443,7 +500,23 @@ var NFL_PREDICTIONS_2026 = [
           { type: "sgp", market: "SGP", line: "Ravens ML + game UNDER 47.5 (min +180 conditional)", stake: 8, confidence: 4, reason: "ML ~0.64, UNDER ~0.55, mild positive correlation to ~0.40 joint; fair ~+140-170" }
         ]
       },
-      Gemini: { version: "pending", total_stake: 0, reserve: 20, summary: "Awaiting v3.0 response.", bets: [] }
+      Gemini: { version: "EXPIRED", total_stake: 0, reserve: 20, summary: "No response submitted before 1:00 PM ET kickoff. Pre-game eligibility expired.", bets: [] }
+    },
+    result: {
+      status: "final", verified_at: "2026-09-13", awayScore: 41, homeScore: 23,
+      source: "https://www.espn.com/nfl/game/_/gameId/401872659",
+      note: "Ravens 41, Colts 23. BAL won by 18. Total 64 (OVER 47.5).",
+      grades: {
+        ChatGPT: [
+          { outcome: "WIN", actual: "BAL won by 18, covered -3.5", odds: -102, profit: 13.73 },
+          { outcome: "LOSS", actual: "SGP UNDER 47.5 leg failed (64 total)", odds: 240, profit: -6.00 }
+        ],
+        Claude: [
+          { outcome: "WIN", actual: "BAL won by 18, covered -3", odds: -120, profit: 10.00 },
+          { outcome: "LOSS", actual: "SGP UNDER 47.5 leg failed (64 total)", odds: 180, profit: -8.00 }
+        ],
+        Gemini: []
+      }
     }
   },
   {
@@ -460,6 +533,25 @@ var NFL_PREDICTIONS_2026 = [
       ChatGPT: { version: "Codex CLI", total_stake: 20, reserve: 0, summary: "Steelers -5.5 $14 FanDuel reference -115 + SGP Steelers ML + UNDER 40.5 $6 conditional +190. Steelers 24-13. Flagged ATL QB1 (Rush actual starter after Tua ruled out) and PIT QB1 (Rodgers not Rudolph).", bets: [{type:"straight", market:"Spread", line:"Pittsburgh Steelers -5.5 (@ -115 FanDuel reference)", stake:14, confidence:6, reason:"ATL missing both QB1 (Tua) and QB2 (Penix); Rush emergency start vs Rodgers at home"}, {type:"sgp", market:"SGP", line:"Steelers ML + UNDER 40.5 (min +190 conditional)", stake:6, confidence:3, reason:"PIT-controlled win compatible with sub-41 total"}] },
       Claude: { version: "Claude Code", total_stake: 20, reserve: 0, summary: "Game UNDER 42.5 $12 conditional -110 + SGP Steelers ML + Falcons TT UNDER 17.5 $8 conditional +140. Steelers 24-13. FOUR roster errors flagged (ATL QB1, ATL WR1, PIT QB1, PIT TE1). Cited Darnold Seattle debut UNDER 44.5 as direct analogue to Cooper Rush emergency start.", bets: [{type:"straight", market:"Total", line:"UNDER 42.5 (min -110 conditional)", stake:12, confidence:6, reason:"Cooper Rush emergency start caps ATL ceiling; Rodgers pace-slowing offense; total already low"}, {type:"sgp", market:"SGP", line:"Steelers ML + Falcons TT UNDER 17.5 (min +140 conditional)", stake:8, confidence:4, reason:"Independent legs, mild positive correlation, no shared player premise"}] },
       Gemini: { version: "Gemini web", total_stake: 20, reserve: 0, summary: "Steelers -3.5 $12 claimed bovada_verified -104 (odds_source is legalsportsbetting.com not Bovada, unverified) + SGP UNDER 42.5 + Steelers ML $8 conditional +150. Steelers 23-13. SEVENTH fabricated repo-fetch. FIFTH unverifiable bovada_verified label. Grading concerns inline in gemini-picks.md.", bets: [{type:"straight", market:"Spread", line:"Pittsburgh Steelers -3.5 (claimed bovada_verified -104, treated as reference_market)", stake:12, confidence:6, reason:"Rodgers vs Rush emergency start on wet grass"}, {type:"parlay", market:"SGP", line:"Game UNDER 42.5 + Steelers ML (min +150 conditional)", stake:8, confidence:5, reason:"Low-scoring rain game favors Steelers win + UNDER"}] }
+    },
+    result: {
+      status: "final", verified_at: "2026-09-13", awayScore: 13, homeScore: 20,
+      source: "https://www.espn.com/nfl/game/_/gameId/401872658",
+      note: "Steelers 20, Falcons 13. PIT won by 7 (covered -5.5). Total 33 (UNDER 42.5). Falcons TT 13 < 17.5. T.J. Watt pick-6 late.",
+      grades: {
+        ChatGPT: [
+          { outcome: "WIN", actual: "PIT won by 7, covered -5.5", odds: -115, profit: 12.17 },
+          { outcome: "WIN", actual: "PIT ML + 33 total UNDER 40.5", odds: 190, profit: 11.40 }
+        ],
+        Claude: [
+          { outcome: "WIN", actual: "33 total UNDER 42.5", odds: -110, profit: 10.91 },
+          { outcome: "WIN", actual: "PIT ML + ATL TT 13 UNDER 17.5", odds: 140, profit: 11.20 }
+        ],
+        Gemini: [
+          { outcome: "WIN", actual: "PIT won by 7, covered -3.5", odds: -104, profit: 11.54 },
+          { outcome: "WIN", actual: "UNDER 42.5 + PIT ML", odds: 150, profit: 12.00 }
+        ]
+      }
     }
   },
   {
