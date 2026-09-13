@@ -32,22 +32,41 @@ read any repository summary, review, or handoff doc that tells you
 feed you our bias. The study is designed so you derive shape patterns
 independently from the raw graded data. Read:
 
-- https://raw.githubusercontent.com/Crespo1301/AI_Analyzer_Crespo/main/assets/nfl-data.js
-- https://raw.githubusercontent.com/Crespo1301/AI_Analyzer_Crespo/main/assets/nfl-predictions-2026.js
-- https://raw.githubusercontent.com/Crespo1301/AI_Analyzer_Crespo/main/Docs/2026/grading-rubric.md
-  (grading rules only; safe to read).
+You do not have local filesystem access. The study's tracked graded data
+lives in a public repository at
+https://github.com/Crespo1301/AI_Analyzer_Crespo. Try to fetch it. Try
+any URL you can: raw.githubusercontent.com paths for the files listed
+below, github.com blob paths, the live site at
+https://crespo1301.github.io/AI_Analyzer_Crespo/, or any public mirror
+you can reach. The paths that matter:
 
-Also list the folder https://github.com/Crespo1301/AI_Analyzer_Crespo/tree/main/Docs/Responses/2026/week-01/
-and fetch any prior game's chatgpt-picks.md, claude-picks.md, or
-gemini-picks.md that matches your own model_role. Do not fetch any
-doc that summarizes shapes or gives betting guidance (any
-what-has-worked.md, redesign-direction.md, or final-review.md that
-contains conclusions rather than raw data). If you find such a file,
-note that you ignored it.
+- assets/nfl-data.js  (contains NFL_BETS and NFL_CORRECTIONS)
+- assets/nfl-predictions-2026.js
+- Data/2026/rosters/<away-slug>.json and <home-slug>.json
+- Docs/2026/grading-rubric.md  (grading rules only; safe to read)
 
-Every URL you claim to have fetched must include a short snippet that
-is NOT present in this prompt body. Snippets copied verbatim from
-this prompt do not prove a fetch.
+Do NOT fetch any repository doc that summarizes shapes or gives
+betting guidance. Specifically do not fetch any file named
+what-has-worked.md, redesign-direction.md, or final-review.md when it
+contains conclusions rather than raw data.
+
+Absolute honesty rules on fetches:
+
+- If a URL returns a real response you actually read, include in the
+  sources block a short verbatim snippet from that response that is
+  NOT present in this prompt body. Any snippet already visible in this
+  prompt is not proof of a fetch.
+- If a URL returns 404 or your tool refuses to fetch it, say so
+  explicitly and set fetch_succeeded: false. Do NOT invent a snippet.
+- If none of the repository URLs work for you at all, say so at the
+  top of your response and derive your shape patterns from open-web
+  sources ONLY (public betting-industry retrospectives, box-score
+  archives, whatever you can actually verify). Cite each with a URL
+  and a quoted snippet.
+
+Grading rubric v2 caps reasoning at 1/5 when a citation is
+fabricated. There is no upside to claiming a fetch you did not
+perform.
 
 Derive, on your own, and cite the specific games or rows that support
 each derivation:
