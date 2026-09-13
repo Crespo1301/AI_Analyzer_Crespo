@@ -65,6 +65,41 @@ Expected improvement: fewer weak props and fewer public-looking spread picks.
 
 ## Change Log (actual)
 
+### 2026-09-13: Prompt v3.0, independent-derivation lane
+
+Retired the analytic doc `Docs/2026/what-has-worked.md` (added yesterday)
+and rewrote the Week 1 prompt generator so the prompt does NOT include
+any summary of "what has worked" or "what to avoid" for betting shapes.
+
+The point of tracking real graded outcomes across seasons is so the
+models can derive shape patterns themselves from that data. Feeding
+them our reads creates bias and turns the study into a language-copy
+exercise. v3.0 requires each model to filter NFL_BETS and
+NFL_CORRECTIONS on its own, cite specific rows for each pattern it
+proposes, and refuse to lean on conventional betting-industry
+heuristics without a citation to actual repository rows.
+
+Concrete changes:
+
+- Deleted `Docs/2026/what-has-worked.md` so it cannot leak.
+- `scripts/prep-week1-prompts.js` regenerated all 28 Week 1 prompts at
+  v3.0. Each prompt tells the model NOT to read any repo doc that
+  summarizes shapes or gives betting guidance, names specific files
+  to avoid (what-has-worked.md, redesign-direction.md, final-review.md
+  when it carries conclusions), and requires the model to log that it
+  ignored any such file in its sources block.
+- JSON schema gains `independent_derivations {profitable_shapes,
+  losing_shapes}` block replacing v2.1/v2.2's `season_one_study`
+  block. Every proposed shape must cite specific games or rows.
+- `scripts/validate-forced-response.js` updated to accept v2.2 and
+  v3.0 and to require the new `independent_derivations`,
+  `team_profiles_read`, and `self_reflection` blocks on v3.0.
+
+The grading rubric v2 already includes a Source Honesty axis; a
+model that reads a shape-summary doc despite the prompt's
+instruction not to has a Source Honesty failure and caps at 1/5
+reasoning.
+
 ### 2026-09-12: Retire templates, write from evidence week by week
 
 Removed `Prompts/2026/templates/` entirely. Templates rewarded copying

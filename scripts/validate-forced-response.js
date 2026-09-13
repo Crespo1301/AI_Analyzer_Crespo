@@ -3,7 +3,7 @@ const fs = require('node:fs');
 const { validate: validatePrices } = require('./validate-priced-response');
 
 function validate(response) {
-  assert.ok(['2.0', '2.1'].includes(response.prompt_version), 'Accepted versions: 2.0, 2.1');
+  assert.ok(['2.0', '2.1', '2.2', '3.0'].includes(response.prompt_version), 'Accepted versions: 2.0, 2.1, 2.2, 3.0');
   assert.equal(response.prompt_template, 'forced-selection');
   assert.equal(response.forced_allocation, true);
   assert.equal(response.total_stake, 20);
@@ -11,10 +11,17 @@ function validate(response) {
   assert.ok(Array.isArray(response.bets));
   assert.ok(response.bets.some(b => b.type === 'straight'), 'At least one single required');
   assert.ok(response.bets.some(b => ['parlay', 'sgp', 'same_game_parlay'].includes(b.type)), 'At least one parlay required');
-  if (response.prompt_version === '2.1') {
-    assert.ok(response.season_one_study && typeof response.season_one_study === 'object', 'v2.1 requires season_one_study block');
-    assert.ok(typeof response.season_one_study.shape_pattern_applied === 'string' && response.season_one_study.shape_pattern_applied.trim(), 'v2.1 season_one_study.shape_pattern_applied required');
-    assert.ok(typeof response.season_one_study.shape_pattern_avoided === 'string' && response.season_one_study.shape_pattern_avoided.trim(), 'v2.1 season_one_study.shape_pattern_avoided required');
+  if (response.prompt_version === '2.1' || response.prompt_version === '2.2') {
+    assert.ok(response.season_one_study && typeof response.season_one_study === 'object', 'v2.1/v2.2 requires season_one_study block');
+    assert.ok(typeof response.season_one_study.shape_pattern_applied === 'string' && response.season_one_study.shape_pattern_applied.trim(), 'v2.1/v2.2 season_one_study.shape_pattern_applied required');
+    assert.ok(typeof response.season_one_study.shape_pattern_avoided === 'string' && response.season_one_study.shape_pattern_avoided.trim(), 'v2.1/v2.2 season_one_study.shape_pattern_avoided required');
+  }
+  if (response.prompt_version === '3.0') {
+    assert.ok(response.independent_derivations && typeof response.independent_derivations === 'object', 'v3.0 requires independent_derivations block');
+    assert.ok(Array.isArray(response.independent_derivations.profitable_shapes), 'v3.0 requires independent_derivations.profitable_shapes array');
+    assert.ok(Array.isArray(response.independent_derivations.losing_shapes), 'v3.0 requires independent_derivations.losing_shapes array');
+    assert.ok(response.self_reflection && typeof response.self_reflection === 'object', 'v3.0 requires self_reflection block');
+    assert.ok(response.team_profiles_read && (Array.isArray(response.team_profiles_read)), 'v3.0 requires team_profiles_read array');
   }
   const normalized = response.bets.map(bet => {
     assert.ok(['straight','parlay','sgp','same_game_parlay'].includes(bet.type));
