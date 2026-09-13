@@ -238,6 +238,60 @@ var NFL_PREDICTIONS_2026 = [
         ]
       }
     }
+  },
+  {
+    week: 1,
+    gameId: "buccaneers-bengals",
+    label: "Buccaneers at Bengals",
+    away: "Tampa Bay Buccaneers",
+    home: "Cincinnati Bengals",
+    kickoff: "2026-09-13T13:00:00-04:00",
+    kickoffDisplay: "Sun Sep 13, 1:00 PM ET",
+    venue: "Paycor Stadium, Cincinnati, OH",
+    network: "FOX",
+    line_snapshot: {
+      spread: "CIN -3.5",
+      total: 50.5,
+      moneyline: "CIN -205 / TB +172",
+      source: "FanDuel via ChatGPT + Claude research, 2026-09-13"
+    },
+    espn: "https://www.espn.com/nfl/boxscore/_/gameId/401872925",
+    responseFolder: "Docs/Responses/2026/week-01/game-03-buccaneers-bengals/",
+    status: "locked",
+    locked_at: "2026-09-13",
+    prompt_template: "forced-selection v3.0 (independent-derivation)",
+    models: {
+      ChatGPT: {
+        version: "GPT-6 (via Codex CLI)",
+        total_stake: 20,
+        reserve: 0,
+        summary: "Tampa +3.5 $14 (FanDuel reference_market -105) + SGP Cincinnati ML + game UNDER 50.5 $6 (conditional +250). Projection Cinci 27-24. Independent derivations cited specific NFL_BETS rows. Flagged Bengals QB1 Clifford->Burrow heuristic error.",
+        bets: [
+          { type: "straight", market: "Spread", line: "Tampa Bay +3.5 (@ -105 FanDuel reference)", stake: 14, confidence: 6, reason: "Tampa's Mayfield/Bucky Irving structure keeps within a FG; Burrow returning from 2025 toe injury" },
+          { type: "sgp", market: "SGP", line: "Cincinnati ML + game UNDER 50.5 (min +250 conditional)", stake: 6, confidence: 3, reason: "Correlated: controlled Bengals win compatible with sub-51 total" }
+        ]
+      },
+      Claude: {
+        version: "claude-opus-4-7",
+        total_stake: 20,
+        reserve: 0,
+        summary: "Game UNDER 50.5 $12 (conditional -115) + SGP Tampa +3.5 + UNDER 50.5 $8 (conditional +200). Projection Cinci 23-20. Cited game UNDER 8-4 record and short-underdog hook 3-0 from raw NFL_BETS. Flagged Bengals QB1 mispick and Bucs TE1 verification (Kieft vs Otton).",
+        bets: [
+          { type: "straight", market: "Total", line: "UNDER 50.5 (min -115 conditional)", stake: 12, confidence: 6, reason: "Burrow first live action since 2025 toe injury, Chase/Higgins limited, TB missing WR3 + change-of-pace RB" },
+          { type: "sgp", market: "SGP", line: "TB +3.5 + UNDER 50.5 (min +200 conditional)", stake: 8, confidence: 4, reason: "Correlated: low-scoring game shrinks margin variance; hook naturally aligned with UNDER" }
+        ]
+      },
+      Gemini: {
+        version: "2.5 Flash",
+        total_stake: 20,
+        reserve: 0,
+        summary: "Cincinnati -3.5 $12 (claimed bovada_verified -115, unverified) + SGP Bengals TT OVER 24.5 + Burrow OVER 1.5 Pass TDs $8 (conditional min +140). Projection Cinci 27-20. Fourth confirmed fabricated repo-fetch (all raw URLs return 200). Derivations cited conventional heuristics not NFL_BETS rows. T2 leg 2 is exactly the Season 1 loss family Claude and ChatGPT flagged. See prompt-corrections.md.",
+        bets: [
+          { type: "straight", market: "Spread", line: "Cincinnati -3.5 (claimed bovada_verified -115, treated as reference_market)", stake: 12, confidence: 7, reason: "Bengals full skill health vs TB missing McMillan" },
+          { type: "sgp", market: "SGP", line: "Bengals TT OVER 24.5 + Burrow OVER 1.5 Pass TDs (min +140 conditional)", stake: 8, confidence: 4, reason: "Correlated Bengals scoring script; T2 leg 2 is Season 1 loss family" }
+        ]
+      }
+    }
   }
 ];
 

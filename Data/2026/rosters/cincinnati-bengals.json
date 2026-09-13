@@ -5,11 +5,11 @@
   "source": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/teams/cin/roster",
   "offense": {
     "qb1": {
-      "player": "Sean Clifford",
-      "note": "2 yr, age 28"
+      "player": "Joe Burrow",
+      "note": "confirmed Week 1 starter per bengals.com depth chart; returning from 2025 toe injury"
     },
     "qb2": {
-      "player": "Joe Burrow",
+      "player": "Sean Clifford",
       "note": "7 yr, age 29"
     },
     "rb1": {
