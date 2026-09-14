@@ -663,6 +663,25 @@ var NFL_PREDICTIONS_2026 = [
       ChatGPT: { version: "Codex CLI", total_stake: 20, reserve: 0, summary: "Raiders -3 $14 conditional -110 + SGP Raiders ML + game OVER 39.5 $6 conditional +220.", bets: [{type:"straight", market:"Spread", line:"Las Vegas Raiders -3 (min -110 conditional)", stake:14, confidence:6, reason:"LV home with Cousins/Jeanty vs MIA road with QB uncertainty"}, {type:"parlay", market:"SGP", line:"Raiders ML + game OVER 39.5 (min +220 conditional)", stake:6, confidence:3, reason:"LV offensive script"}] },
       Claude: { version: "Claude Code", total_stake: 20, reserve: 0, summary: "LV Raiders ML $12 conditional -140 + SGP LV ML + Jeanty OVER 15.5 rush att $8 conditional +140. Volume prop on winning side (corrected from Game 2 Kyren pattern).", bets: [{type:"straight", market:"Moneyline", line:"LV Raiders ML (min -140 conditional)", stake:12, confidence:6, reason:"LV home Cousins/Jeanty stability vs MIA QB uncertainty"}, {type:"sgp", market:"SGP", line:"LV ML + Jeanty OVER 15.5 rush att (min +140 conditional)", stake:8, confidence:5, reason:"Volume-anchored rush attempts on projected winning side (Game 2 Kyren correction: Kyren was losing side; Jeanty projected winning)"}] },
       Gemini: { version: "Gemini web", total_stake: 20, reserve: 0, summary: "Miami +3.5 $12 reference_market DK -115 + SGP UNDER 40.5 + Achane OVER 68.5 rush yds $8 conditional +185 target. Contrarian road-dog take: Bowers OUT thesis. 9th fabricated GitHub raw fetch pattern documented. SGP leg 2 is single-player OVER family (6+ S1 losses). Also fabricated 'Fernando Mendoza Heisman #1 pick backup QB' claim. Grading concerns inline.", bets: [{type:"straight", market:"Spread", line:"Miami Dolphins +3.5 (DK reference_market -115)", stake:12, confidence:6, reason:"Bowers OUT limits Cousins; Achane controls tempo"}, {type:"parlay", market:"SGP", line:"UNDER 40.5 + Achane OVER 68.5 rush yds (min +160 conditional, target +185)", stake:8, confidence:4, reason:"Low-total game script feeds Achane volume; single-player OVER family flagged"}] }
+    },
+    result: {
+      status: "final", verified_at: "2026-09-13", awayScore: 13, homeScore: 27,
+      source: "https://www.espn.com/nfl/game/_/gameId/401872928",
+      note: "Raiders 27, Dolphins 13. LV won by 14. Total 40. Jeanty 23 rush att, Achane 36 rush yds. Cousins 3 pass TDs (2 to Jeanty rec).",
+      grades: {
+        ChatGPT: [
+          { outcome: "WIN", actual: "LV won by 14, covered -3", odds: -110, profit: 12.73 },
+          { outcome: "WIN", actual: "LV ML + 40 total OVER 39.5", odds: 220, profit: 13.20 }
+        ],
+        Claude: [
+          { outcome: "WIN", actual: "LV won outright, ML wins", odds: -140, profit: 8.57 },
+          { outcome: "WIN", actual: "LV ML + Jeanty 23 rush att OVER 15.5", odds: 140, profit: 11.20 }
+        ],
+        Gemini: [
+          { outcome: "LOSS", actual: "LV won by 14, MIA +3.5 lost", odds: -115, profit: -12.00 },
+          { outcome: "LOSS", actual: "SGP Achane 36 rush yds < 68.5 (UNDER 40.5 hit)", odds: 185, profit: -8.00 }
+        ]
+      }
     }
   },
   {
@@ -678,6 +697,25 @@ var NFL_PREDICTIONS_2026 = [
       ChatGPT: { version: "Codex CLI", total_stake: 20, reserve: 0, summary: "Vikings -1.5 $14 conditional -110 + SGP Vikings ML + game OVER 46.5 $6 conditional +220.", bets: [{type:"straight", market:"Spread", line:"Minnesota Vikings -1.5 (min -110 conditional)", stake:14, confidence:6, reason:"MIN home with GB decimated"}, {type:"parlay", market:"SGP", line:"Vikings ML + game OVER 46.5 (min +220 conditional)", stake:6, confidence:3, reason:"MIN offense script"}] },
       Claude: { version: "Claude Code", total_stake: 20, reserve: 0, summary: "Vikings -4 $12 conditional -110 + SGP Vikings ML + game UNDER 42.5 $8 conditional +180. Projected Vikings 24-17. GB missing 5+ starters (Jacobs, Parsons, Musgrave). Flagged Vikings QB1 heuristic HARD ERROR (Kyler Murray listed but plays for Arizona).", bets: [{type:"straight", market:"Spread", line:"Minnesota Vikings -4 (min -110 conditional)", stake:12, confidence:6, reason:"GB missing RB1 Jacobs + edge Parsons + multiple DTs; MIN home with intact skill group"}, {type:"sgp", market:"SGP", line:"Vikings ML + game UNDER 42.5 (min +180 conditional)", stake:8, confidence:4, reason:"MIN 24-14 style, GB offense can't sustain without Jacobs"}] },
       Gemini: { version: "Gemini web", total_stake: 20, reserve: 0, summary: "MIN -2.5 $12 reference_market -110 + SGP MIN ML (-135) + UNDER 46.5 (-110) $8 reference_market +230. CRITICAL HALLUCINATION: claims Kyler Murray is Vikings QB1 (Murray plays for Arizona; actual Vikings QB1 is McCarthy). Also fabricates that O'Connell named Murray QB1 over Wentz. 10th fabricated GitHub fetch. UNDER 46.5 line does not exist (real total 42.5). Grading concerns inline.", bets: [{type:"single", market:"Spread", line:"Minnesota Vikings -2.5 (reference_market -110)", stake:12, confidence:6, reason:"MIN home divisional favorite; GB missing Jacobs/Parsons/Banks"}, {type:"parlay", market:"SGP", line:"MIN ML (-135) + UNDER 46.5 (-110) reference +230", stake:8, confidence:4, reason:"Correlated home-fav-ML + UNDER; note UNDER line at 46.5 does not match real 42.5 total"}] }
+    },
+    result: {
+      status: "final", verified_at: "2026-09-13", awayScore: 22, homeScore: 39,
+      source: "https://www.espn.com/nfl/game/_/gameId/401872927",
+      note: "Vikings 39, Packers 22. MIN won by 17. Total 61 - shootout crushed UNDER thesis.",
+      grades: {
+        ChatGPT: [
+          { outcome: "WIN", actual: "MIN won by 17, covered -1.5", odds: -110, profit: 12.73 },
+          { outcome: "WIN", actual: "MIN ML + 61 total OVER 46.5", odds: 220, profit: 13.20 }
+        ],
+        Claude: [
+          { outcome: "WIN", actual: "MIN won by 17, covered -4", odds: -110, profit: 10.91 },
+          { outcome: "LOSS", actual: "SGP UNDER 42.5 leg failed (61 total)", odds: 180, profit: -8.00 }
+        ],
+        Gemini: [
+          { outcome: "WIN", actual: "MIN won by 17, covered -2.5", odds: -110, profit: 10.91 },
+          { outcome: "LOSS", actual: "SGP UNDER 46.5 leg failed (61 total)", odds: 230, profit: -8.00 }
+        ]
+      }
     }
   },
   {
@@ -693,6 +731,22 @@ var NFL_PREDICTIONS_2026 = [
       ChatGPT: { version: "Codex CLI", total_stake: 20, reserve: 0, summary: "Eagles -5.5 $14 conditional -110 + SGP Eagles ML + game OVER 44.5 $6 conditional +220.", bets: [{type:"straight", market:"Spread", line:"Philadelphia Eagles -5.5 (min -110 conditional)", stake:14, confidence:6, reason:"PHI home decisively better"}, {type:"parlay", market:"SGP", line:"Eagles ML + game OVER 44.5 (min +220 conditional)", stake:6, confidence:3, reason:"PHI offense script"}] },
       Claude: { version: "Claude Code", total_stake: 20, reserve: 0, summary: "Eagles -3.5 $12 conditional -115 + SGP Eagles ML + game OVER 47.5 $8 conditional +180. Projected PHI 27-20. Flagged Eagles RB1 heuristic (Bigsby listed, actual Saquon Barkley).", bets: [{type:"straight", market:"Spread", line:"Philadelphia Eagles -3.5 (min -115 conditional)", stake:12, confidence:6, reason:"Hurts + Barkley home vs WAS road; PHI healthy, WAS missing 2 DEs"}, {type:"sgp", market:"SGP", line:"Eagles ML + game OVER 47.5 (min +180 conditional)", stake:8, confidence:4, reason:"27-24 style with offensive script pushing total"}] },
       Gemini: { version: "Gemini web", total_stake: 0, reserve: 20, summary: "EXPIRED - Gemini honored pre-game eligibility rule. Response arrived 2min 6sec after 4:25 PM ET kickoff. No allocation. Positive Source Honesty signal.", bets: [] }
+    },
+    result: {
+      status: "final", verified_at: "2026-09-13", awayScore: 22, homeScore: 24,
+      source: "https://www.espn.com/nfl/game/_/gameId/401872929",
+      note: "Eagles 24, Commanders 22. PHI won by 2. Total 46. WAS 2-pt conversion failed late.",
+      grades: {
+        ChatGPT: [
+          { outcome: "LOSS", actual: "PHI won by only 2, -5.5 lost", odds: -110, profit: -14.00 },
+          { outcome: "WIN", actual: "PHI ML + 46 total OVER 44.5", odds: 220, profit: 13.20 }
+        ],
+        Claude: [
+          { outcome: "LOSS", actual: "PHI won by only 2, -3.5 lost", odds: -115, profit: -12.00 },
+          { outcome: "LOSS", actual: "SGP OVER 47.5 leg failed (46 total)", odds: 180, profit: -8.00 }
+        ],
+        Gemini: []
+      }
     }
   },
   {
@@ -708,6 +762,22 @@ var NFL_PREDICTIONS_2026 = [
       ChatGPT: { version: "Codex CLI", total_stake: 20, reserve: 0, summary: "Chargers -9.5 $14 conditional -110 + SGP Chargers ML + game OVER 47.5 $6 conditional +220. Note: -9.5 approaches big-favorite threshold flagged as losing shape.", bets: [{type:"straight", market:"Spread", line:"Los Angeles Chargers -9.5 (min -110 conditional)", stake:14, confidence:6, reason:"LAC home, ARI depleted"}, {type:"parlay", market:"SGP", line:"Chargers ML + game OVER 47.5 (min +220 conditional)", stake:6, confidence:3, reason:"LAC offensive script"}] },
       Claude: { version: "Claude Code", total_stake: 20, reserve: 0, summary: "LAC -6.5 $12 conditional -110 + SGP LAC ML + game UNDER 44.5 $8 conditional +180. Flagged both team QB1 heuristic errors (ARI has Brissett listed but actual Kyler Murray; LAC has Lance listed but actual Herbert).", bets: [{type:"straight", market:"Spread", line:"Los Angeles Chargers -6.5 (min -110 conditional)", stake:12, confidence:6, reason:"LAC home with Herbert vs ARI depleted WR/S/CB + RB1 Q"}, {type:"sgp", market:"SGP", line:"LAC ML + game UNDER 44.5 (min +180 conditional)", stake:8, confidence:4, reason:"LAC controls low-scoring game"}] },
       Gemini: { version: "EXPIRED", total_stake: 0, reserve: 20, summary: "No response submitted before 4:25 PM ET kickoff. Pre-game eligibility expired.", bets: [] }
+    },
+    result: {
+      status: "final", verified_at: "2026-09-13", awayScore: 26, homeScore: 14,
+      source: "https://www.espn.com/nfl/game/_/gameId/401872926",
+      note: "Cardinals 26, Chargers 14. ARI won outright as underdog. Total 40. LAC laid an egg at home.",
+      grades: {
+        ChatGPT: [
+          { outcome: "LOSS", actual: "LAC lost outright, -9.5 way off", odds: -110, profit: -14.00 },
+          { outcome: "LOSS", actual: "SGP LAC ML leg failed (ARI won 26-14)", odds: 220, profit: -6.00 }
+        ],
+        Claude: [
+          { outcome: "LOSS", actual: "LAC lost outright, -6.5 lost", odds: -110, profit: -12.00 },
+          { outcome: "LOSS", actual: "SGP LAC ML leg failed (ARI won 26-14)", odds: 180, profit: -8.00 }
+        ],
+        Gemini: []
+      }
     }
   },
   {
