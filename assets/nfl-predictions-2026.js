@@ -793,6 +793,25 @@ var NFL_PREDICTIONS_2026 = [
       ChatGPT: { version: "Codex CLI", total_stake: 20, reserve: 0, summary: "Cowboys -2.5 $14 conditional -110 + SGP Cowboys ML + game OVER 48.5 $6 conditional +220.", bets: [{type:"straight", market:"Spread", line:"Dallas Cowboys -2.5 (min -110 conditional)", stake:14, confidence:6, reason:"DAL road favorite through key number"}, {type:"parlay", market:"SGP", line:"Cowboys ML + game OVER 48.5 (min +220 conditional)", stake:6, confidence:3, reason:"DAL offensive script"}] },
       Claude: { version: "Claude Code", total_stake: 20, reserve: 0, summary: "Cowboys -3 $12 conditional -115 + SGP Cowboys ML + Cowboys TT OVER 24.5 $8 conditional +150. Projected DAL 27-17. Applied W11 P11 Cowboys shape (same franchise). Flagged Giants QB1 heuristic uncertainty (Jake Haener listed).", bets: [{type:"straight", market:"Spread", line:"Dallas Cowboys -3 (min -115 conditional)", stake:12, confidence:6, reason:"DAL healthy Prescott + Pickens vs NYG QB uncertainty and Nabers Q"}, {type:"sgp", market:"SGP", line:"Cowboys ML + Cowboys TT OVER 24.5 (min +150 conditional)", stake:8, confidence:4, reason:"W11 P11 Cowboys shape reapplied with SGP concentration awareness (Game 2 lesson - sized to $8)"}] },
       Gemini: { version: "Gemini web", total_stake: 20, reserve: 0, summary: "DAL -3.0 $12 reference_market DK -105 + SGP DAL ML (-158) + OVER 47.5 (-110) $8 reference_market +210. 11th fabricated GitHub fetch. HALLUCINATION: Quinnen Williams claimed as Cowboys DT1 (plays for NYJ). Internal line inconsistency (DK snippet 48.5 vs SGP 47.5). Grading concerns inline.", bets: [{type:"single", market:"Spread", line:"Dallas Cowboys -3.0 (reference_market DK -105)", stake:12, confidence:6, reason:"DAL projected win by 7; road favorite at key number"}, {type:"parlay", market:"SGP", line:"DAL ML (-158) + OVER 47.5 (-110) reference +210", stake:8, confidence:4, reason:"Correlated favorite ML + OVER; note internal line inconsistency"}] }
+    },
+    result: {
+      status: "final", verified_at: "2026-09-14", awayScore: 20, homeScore: 28,
+      source: "https://www.espn.com/nfl/game/_/gameId/401872930",
+      note: "Giants 28, Cowboys 20. NYG upset in Harbaugh debut. Total 48. All DAL-side tickets bust.",
+      grades: {
+        ChatGPT: [
+          { outcome: "LOSS", actual: "DAL lost outright by 8, -2.5 lost", odds: -110, profit: -14.00 },
+          { outcome: "LOSS", actual: "SGP DAL ML leg failed (NYG 28-20)", odds: 220, profit: -6.00 }
+        ],
+        Claude: [
+          { outcome: "LOSS", actual: "DAL lost outright by 8, -3 lost", odds: -115, profit: -12.00 },
+          { outcome: "LOSS", actual: "SGP DAL ML leg failed (also DAL scored only 20, TT UNDER 24.5)", odds: 150, profit: -8.00 }
+        ],
+        Gemini: [
+          { outcome: "LOSS", actual: "DAL lost outright by 8, -3.0 lost", odds: -105, profit: -12.00 },
+          { outcome: "LOSS", actual: "SGP DAL ML leg failed (OVER 47.5 hit but ML failed)", odds: 210, profit: -8.00 }
+        ]
+      }
     }
   },
   {
