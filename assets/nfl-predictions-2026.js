@@ -827,6 +827,25 @@ var NFL_PREDICTIONS_2026 = [
       ChatGPT: { version: "Codex CLI", total_stake: 20, reserve: 0, summary: "Chiefs -2.5 $14 conditional -110 + SGP Chiefs ML + game OVER 43.5 $6 conditional +220.", bets: [{type:"straight", market:"Spread", line:"Kansas City Chiefs -2.5 (min -110 conditional)", stake:14, confidence:6, reason:"KC home MNF opener"}, {type:"parlay", market:"SGP", line:"Chiefs ML + game OVER 43.5 (min +220 conditional)", stake:6, confidence:3, reason:"KC offensive script"}] },
       Claude: { version: "Claude Code", total_stake: 20, reserve: 0, summary: "Chiefs -3.5 $12 conditional -110 + SGP Chiefs ML + game UNDER 44.5 $8 conditional +180. Flagged Broncos QB1 heuristic HARD error (Sam Ehlinger listed, actual Bo Nix).", bets: [{type:"straight", market:"Spread", line:"Kansas City Chiefs -3.5 (min -110 conditional)", stake:12, confidence:6, reason:"KC home MNF, hook through key number 3; Bo Nix (year 2) at road"}, {type:"sgp", market:"SGP", line:"Chiefs ML + game UNDER 44.5 (min +180 conditional)", stake:8, confidence:4, reason:"24-17 style KC win, defenses hold OVER"}] },
       Gemini: { version: "Gemini web", total_stake: 20, reserve: 0, summary: "DEN +2.5 $12 reference_market +100 + SGP KC ML (-147) + UNDER 43.5 (-112) $8 reference_market +220. Coherent hedge: KC wins narrow, DEN covers hook, game stays UNDER. 12th fabricated GitHub fetch. reference_market label is honest (odds from thesportsgeek/usatoday, not Bovada).", bets: [{type:"straight", market:"Spread", line:"Denver Broncos +2.5 (reference_market +100)", stake:12, confidence:5, reason:"KC wins narrow, DEN covers hook"}, {type:"parlay", market:"SGP", line:"KC ML (-147) + UNDER 43.5 (-112) reference +220", stake:8, confidence:4, reason:"Correlated home-fav-ML + UNDER on defensive divisional opener"}] }
+    },
+    result: {
+      status: "final", verified_at: "2026-09-15", awayScore: 10, homeScore: 31,
+      source: "https://www.espn.com/nfl/game/_/gameId/401872931",
+      note: "Chiefs 31, Broncos 10. KC won by 21. Total 41 (UNDER 43.5/44.5). DEN +2.5 dog busted.",
+      grades: {
+        ChatGPT: [
+          { outcome: "WIN", actual: "KC won by 21, covered -2.5", odds: -110, profit: 12.73 },
+          { outcome: "LOSS", actual: "SGP OVER 43.5 leg failed (41 total)", odds: 220, profit: -6.00 }
+        ],
+        Claude: [
+          { outcome: "WIN", actual: "KC won by 21, covered -3.5", odds: -110, profit: 10.91 },
+          { outcome: "WIN", actual: "KC ML + 41 total UNDER 44.5", odds: 180, profit: 14.40 }
+        ],
+        Gemini: [
+          { outcome: "LOSS", actual: "KC won by 21, DEN +2.5 lost", odds: 100, profit: -12.00 },
+          { outcome: "WIN", actual: "KC ML + 41 total UNDER 43.5", odds: 220, profit: 17.60 }
+        ]
+      }
     }
   }
 ];
