@@ -70,7 +70,7 @@
 <section class="band band-paper" style="padding: 32px 0;">
   <div class="wrap">
     <div class="disclaimer-box">
-      <strong>Week 1 &middot; Sun Sep 13, 1:00 PM ET.</strong> Original predictions are preserved below. Recorded date: 2026-09-13; this field does not establish a precise lock time. Each raw response identifies its prompt and model. Outcomes are verified; reasoning is reviewed separately. <a href="https://github.com/Crespo1301/AI_Analyzer_Crespo/tree/main/Docs/Responses/2026/week-01/game-09-browns-jaguars/" rel="noopener" style="color: inherit; text-decoration: underline;">Read the raw model responses on GitHub</a>
+      <strong>Week 1 &middot; Sun Sep 13, 1:00 PM ET.</strong> Original predictions are preserved below. Recorded date: 2026-09-13; this field does not establish a precise lock time. Each raw response identifies its prompt and model. Outcomes are verified; reasoning is reviewed separately. 
     </div>
   </div>
 </section>
@@ -221,6 +221,239 @@
   </div>
 </section>
 
+<section class="band band-bone"><div class="wrap"><div class="band-head"><div><div class="b-kicker">Raw responses</div><div class="b-title">What each model <span class="accent">actually wrote</span></div></div></div><div class="raw-picks"><article class="rp-card"><div class="rp-head"><div class="rp-name">ChatGPT</div><span class="rp-tag">raw response</span></div><details open><summary>Show ChatGPT's full response</summary><pre># ChatGPT forced-selection v3.0
+
+## Summary
+
+Projected winner: **Jaguars**. Projected script: a controlled favorite win with enough offense to challenge 40.5. Full $20 allocation: $14 straight spread target and $6 SGP.
+
+## Roster heuristic errors flagged
+
+Official depth-chart verification is required before lock; local jersey ordering is only a weak heuristic. No roster file was changed without a confirmed game-specific correction.
+
+## Independent evidence and self-reflection
+
+Raw NFL_BETS/NFL_CORRECTIONS showed the strongest positive rows in exact straight spreads/totals, while player props and my prior correlated Rams scoring exposure produced the clearest losses or corrections. I kept the auditable spread and capped the SGP at $6.
+
+## Grading concerns
+
+FanDuel is market context. Bovada loaded without an event quote, so both tickets are conditional and no price is presented as verified. I ignored what-has-worked.md, redesign-direction.md and conclusion-bearing final-review.md.
+
+## JSON
+
+```json
+{
+  &quot;prompt_template&quot;: &quot;forced-selection&quot;,
+  &quot;prompt_version&quot;: &quot;3.0&quot;,
+  &quot;model_role&quot;: &quot;Codex&quot;,
+  &quot;model_version&quot;: &quot;GPT-6&quot;,
+  &quot;generated_at&quot;: &quot;2026-09-13T12:00:00-04:00&quot;,
+  &quot;lock_at&quot;: null,
+  &quot;week&quot;: 1,
+  &quot;game_id&quot;: &quot;browns-jaguars&quot;,
+  &quot;forced_allocation&quot;: true,
+  &quot;bankroll&quot;: 20,
+  &quot;total_stake&quot;: 20,
+  &quot;reserve&quot;: 0,
+  &quot;team_profiles_read&quot;: [
+    {
+      &quot;path&quot;: &quot;Data/2026/rosters/cleveland-browns.json&quot;,
+      &quot;as_of&quot;: &quot;2026-09-13&quot;,
+      &quot;season_record&quot;: &quot;0-0, 0 games, 0 PF, 0 PA&quot;,
+      &quot;health_key_players&quot;: [
+        &quot;G Teven Jenkins&quot;,
+        &quot;LB Jeremiah Owusu-Koramoah&quot;,
+        &quot;TE Joe Royer&quot;,
+        &quot;C Parker Brailsford&quot;
+      ]
+    },
+    {
+      &quot;path&quot;: &quot;Data/2026/rosters/jacksonville-jaguars.json&quot;,
+      &quot;as_of&quot;: &quot;2026-09-13&quot;,
+      &quot;season_record&quot;: &quot;0-0, 0 games, 0 PF, 0 PA&quot;,
+      &quot;health_key_players&quot;: [
+        &quot;RB LeQuint Allen Jr.&quot;,
+        &quot;CB Devon Marshall&quot;
+      ]
+    }
+  ],
+  &quot;independent_derivations&quot;: {
+    &quot;profitable_shapes&quot;: [
+      {
+        &quot;shape&quot;: &quot;Exact straight spreads/totals&quot;,
+        &quot;citations&quot;: [
+          &quot;assets/nfl-data.js: Claude 49ers-Rams UNDER 45.5 +10.91&quot;,
+          &quot;assets/nfl-data.js: Gemini Patriots +3.5 +10.17&quot;,
+          &quot;assets/nfl-data.js: ChatGPT Vikings-Lions OVER 47.5 and Eagles -3 +10 each&quot;
+        ]
+      }
+    ],
+    &quot;losing_shapes&quot;: [
+      {
+        &quot;shape&quot;: &quot;Player touchdown/yardage/sack props&quot;,
+        &quot;citations&quot;: [
+          &quot;assets/nfl-data.js NFL_CORRECTIONS: Stroud, Nix, Bonitto, Sutton, Cook, Maye and Lamar rows&quot;
+        ]
+      },
+      {
+        &quot;shape&quot;: &quot;Correlated all-in team-total exposure&quot;,
+        &quot;citations&quot;: [
+          &quot;assets/nfl-predictions-2026.js: ChatGPT Game 2 Rams over 23.5 plus SGP, Rams scored 7&quot;
+        ]
+      }
+    ]
+  },
+  &quot;self_reflection&quot;: {
+    &quot;past_picks_reviewed&quot;: &quot;ChatGPT Game 1 and Game 2 responses, NFL_BETS, NFL_CORRECTIONS and current-season archive.&quot;,
+    &quot;pattern_kept&quot;: &quot;Exact auditable game markets.&quot;,
+    &quot;pattern_stopped&quot;: &quot;Large correlated exposure and uncertain props.&quot;
+  },
+  &quot;bets&quot;: [
+    {
+      &quot;type&quot;: &quot;straight&quot;,
+      &quot;market&quot;: &quot;Spread&quot;,
+      &quot;line&quot;: &quot;Jacksonville Jaguars -8.5&quot;,
+      &quot;stake&quot;: 14.0,
+      &quot;pricing_status&quot;: &quot;conditional&quot;,
+      &quot;odds_american&quot;: null,
+      &quot;minimum_acceptable_odds&quot;: -110,
+      &quot;sportsbook&quot;: null,
+      &quot;odds_source&quot;: null,
+      &quot;odds_captured_at&quot;: null,
+      &quot;payout_basis&quot;: &quot;minimum_acceptable_odds&quot;,
+      &quot;max_loss&quot;: 14.0,
+      &quot;potential_net_profit&quot;: 12.73,
+      &quot;potential_total_return&quot;: 26.73,
+      &quot;break_even_probability&quot;: 0.5238095238,
+      &quot;estimated_win_probability&quot;: 0.56,
+      &quot;value_reasoning&quot;: &quot;FanDuel line was observed but exact executable price is not carried into this ticket; -110 is only a hypothetical minimum target.&quot;,
+      &quot;reason_wins&quot;: &quot;Jaguars has the stronger researched matchup and roster context.&quot;,
+      &quot;reason_loses&quot;: &quot;The underdog covers through a quarterback, turnover or late-score swing.&quot;,
+      &quot;settlement_rules&quot;: &quot;Standard full-game spread; push rules apply if landed.&quot;,
+      &quot;legs&quot;: []
+    },
+    {
+      &quot;type&quot;: &quot;parlay&quot;,
+      &quot;market&quot;: &quot;SGP&quot;,
+      &quot;line&quot;: &quot;Jaguars moneyline + OVER 40.5 total points&quot;,
+      &quot;stake&quot;: 6.0,
+      &quot;pricing_status&quot;: &quot;conditional&quot;,
+      &quot;odds_american&quot;: null,
+      &quot;minimum_acceptable_odds&quot;: 220,
+      &quot;sportsbook&quot;: null,
+      &quot;odds_source&quot;: null,
+      &quot;odds_captured_at&quot;: null,
+      &quot;payout_basis&quot;: &quot;minimum_acceptable_odds&quot;,
+      &quot;max_loss&quot;: 6.0,
+      &quot;potential_net_profit&quot;: 13.2,
+      &quot;potential_total_return&quot;: 19.2,
+      &quot;break_even_probability&quot;: 0.3125,
+      &quot;estimated_win_probability&quot;: 0.33,
+      &quot;value_reasoning&quot;: &quot;No combined Bovada quote was exposed; +220 is hypothetical and the forced ticket may be negative value below that threshold.&quot;,
+      &quot;reason_wins&quot;: &quot;A controlled Jaguars win is compatible with the over 40.5 script.&quot;,
+      &quot;reason_loses&quot;: &quot;A low-scoring win, upset or stalled offense leaves the total short.&quot;,
+      &quot;settlement_rules&quot;: &quot;SGP push/void rules unknown.&quot;,
+      &quot;legs&quot;: [
+        {
+          &quot;market&quot;: &quot;Moneyline&quot;,
+          &quot;selection&quot;: &quot;Jaguars&quot;,
+          &quot;line&quot;: &quot;moneyline&quot;,
+          &quot;price_status&quot;: &quot;conditional&quot;
+        },
+        {
+          &quot;market&quot;: &quot;Total&quot;,
+          &quot;selection&quot;: &quot;OVER&quot;,
+          &quot;line&quot;: &quot;40.5&quot;,
+          &quot;price_status&quot;: &quot;conditional&quot;
+        }
+      ]
+    }
+  ],
+  &quot;sources&quot;: [
+    {
+      &quot;path&quot;: &quot;Docs/2026/grading-rubric.md&quot;,
+      &quot;fetch_succeeded&quot;: true,
+      &quot;excerpt&quot;: &quot;Outcome is primary; reasoning is bounded by outcome.&quot;
+    },
+    {
+      &quot;path&quot;: &quot;assets/nfl-data.js&quot;,
+      &quot;fetch_succeeded&quot;: true,
+      &quot;excerpt&quot;: &quot;NFL_BETS and NFL_CORRECTIONS contain graded tickets and correction overlays.&quot;
+    },
+    {
+      &quot;path&quot;: &quot;Data/2026/rosters/cleveland-browns.json&quot;,
+      &quot;fetch_succeeded&quot;: true,
+      &quot;excerpt&quot;: &quot;Current team profile and health snapshot read.&quot;
+    },
+    {
+      &quot;path&quot;: &quot;Data/2026/rosters/jacksonville-jaguars.json&quot;,
+      &quot;fetch_succeeded&quot;: true,
+      &quot;excerpt&quot;: &quot;Current team profile and health snapshot read.&quot;
+    },
+    {
+      &quot;url&quot;: &quot;https://www.fanduel.com/research/nfl/scores&quot;,
+      &quot;fetch_succeeded&quot;: true,
+      &quot;excerpt&quot;: &quot;FanDuel matchup market lists Jacksonville Jaguars -8.5 and total 40.5.&quot;
+    },
+    {
+      &quot;url&quot;: &quot;https://www.bovada.lv/sports/football/nfl&quot;,
+      &quot;fetch_succeeded&quot;: true,
+      &quot;excerpt&quot;: &quot;Bovada NFL page loaded without event-specific quote.&quot;
+    }
+  ],
+  &quot;reasoning_summary&quot;: &quot;Pregame eligibility is active. FanDuel provided market context for Jacksonville Jaguars -8.5 and total 40.5; Bovada did not expose an event-specific quote. The forced allocation uses a $14 conditional spread target and $6 conditional SGP, with no props or Bovada verification claim.&quot;
+}
+```
+</pre></details></article><article class="rp-card"><div class="rp-head"><div class="rp-name">Claude</div><span class="rp-tag">raw response</span></div><details open><summary>Show Claude's full response</summary><pre># Claude raw response, Browns at Jaguars, Week 1 Game 9
+
+Lane: forced-selection v3.0 (batch run)
+Model role: Claude
+Model version: claude-opus-4-7
+Generated at: 2026-09-13T12:02:00-04:00
+
+## Summary
+
+Winner: Jacksonville 20, Cleveland 16 (36 total). Both teams open with rookie/second-year QBs (Shedeur Sanders CLE, Quinn Ewers JAX per roster heuristic — needs verification against official charts). Defensive-heavy game script projected. UNDER-side and hook underdog structure.
+
+T1: Game UNDER 40.5 $12 conditional min -110.
+T2: SGP JAX ML + game UNDER 40.5 $8 conditional min +200.
+
+## Response
+
+```json
+{
+  &quot;prompt_template&quot;: &quot;forced-selection&quot;, &quot;prompt_version&quot;: &quot;3.0&quot;,
+  &quot;model_role&quot;: &quot;Claude&quot;, &quot;model_version&quot;: &quot;claude-opus-4-7&quot;,
+  &quot;generated_at&quot;: &quot;2026-09-13T12:02:00-04:00&quot;,
+  &quot;week&quot;: 1, &quot;game_id&quot;: &quot;browns-jaguars&quot;, &quot;forced_allocation&quot;: true,
+  &quot;bankroll&quot;: 20, &quot;total_stake&quot;: 20, &quot;reserve&quot;: 0,
+  &quot;team_profiles_read&quot;: [
+    { &quot;path&quot;: &quot;Data/2026/rosters/cleveland-browns.json&quot;, &quot;as_of&quot;: &quot;2026-09-13&quot;, &quot;season_record&quot;: &quot;0-0&quot;, &quot;health_key_players&quot;: [&quot;G Teven Jenkins out&quot;, &quot;LB Jeremiah Owusu-Koramoah out&quot;] },
+    { &quot;path&quot;: &quot;Data/2026/rosters/jacksonville-jaguars.json&quot;, &quot;as_of&quot;: &quot;2026-09-13&quot;, &quot;season_record&quot;: &quot;0-0&quot;, &quot;health_key_players&quot;: [&quot;RB LeQuint Allen Jr. questionable&quot;, &quot;CB Devon Marshall questionable&quot;] }
+  ],
+  &quot;roster_heuristic_verification_notes&quot;: [
+    &quot;Browns qb1 listed as Shedeur Sanders — verify against official depth chart; Watson could be alternative starter.&quot;,
+    &quot;Jaguars qb1 listed as Quinn Ewers — verify against official chart; if wrong, Trevor Lawrence historically the starter.&quot;
+  ],
+  &quot;independent_derivations&quot;: {
+    &quot;profitable_shapes&quot;: [
+      {&quot;shape&quot;: &quot;Game total UNDER at defensible number, especially with QB uncertainty on both sides&quot;, &quot;record&quot;: &quot;8-4&quot;, &quot;citation&quot;: &quot;S2W1 Pats/Sea UNDER 44.5 +$5.45 (Darnold debut premise); W11 Texans/Titans UNDER 38.5 +$10; W11 Com/Mia UNDER 47.5 +$10 x2; W11 Pats/Jets UNDER 43.5 +$2.73; W9 Chiefs/Bills UNDER 51.5 +$2.73; S2W1 SF/LAR UNDER 45.5 +$10.91; S2W1 SF/LAR UNDER 48.5 +$10.91&quot;},
+      {&quot;shape&quot;: &quot;Short-underdog hook near key number&quot;, &quot;record&quot;: &quot;3-0&quot;, &quot;citation&quot;: &quot;W9 Bills +1.5 +$6.36; S2W1 NE +3.5 +$3.64 &amp; +$10.17&quot;}
+    ],
+    &quot;losing_shapes&quot;: [
+      {&quot;shape&quot;: &quot;Single-player OVER pass/rec/sack&quot;, &quot;citation&quot;: &quot;6 of 11 NFL_CORRECTIONS&quot;},
+      {&quot;shape&quot;: &quot;Volume-anchored rush-attempts OVER on losing team&quot;, &quot;citation&quot;: &quot;S2W1 Kyren OVER 16.5 -$8&quot;}
+    ]
+  },
+  &quot;self_reflection&quot;: {&quot;past_picks_reviewed&quot;: [&quot;Game 1 UNDER 44.5 cashed on QB asymmetry (Darnold Seattle debut)&quot;, &quot;Game 5 UNDER 39.5 SGP with hook underdog structure&quot;], &quot;pattern_kept&quot;: &quot;UNDER when both offenses face structural uncertainty (rookie/second-year QBs)&quot;, &quot;pattern_stopped&quot;: &quot;Volume props on projected losing team&quot;},
+  &quot;bets&quot;: [
+    { &quot;type&quot;: &quot;straight&quot;, &quot;market&quot;: &quot;game_total&quot;, &quot;line&quot;: &quot;UNDER 40.5&quot;, &quot;stake&quot;: 12.0, &quot;pricing_status&quot;: &quot;conditional&quot;, &quot;minimum_acceptable_odds&quot;: -110, &quot;payout_basis&quot;: &quot;minimum_acceptable_odds&quot;, &quot;max_loss&quot;: 12.0, &quot;potential_net_profit&quot;: 10.91, &quot;potential_total_return&quot;: 22.91, &quot;break_even_probability&quot;: 0.5238, &quot;estimated_win_probability&quot;: 0.57, &quot;reason_wins&quot;: &quot;Both teams starting non-established QBs; interior line depth issues (Jenkins out CLE); no elite explosive offense; low-scoring defensive opener&quot;, &quot;reason_loses&quot;: &quot;One QB has surprisingly clean pocket day + explosive TD to break number&quot;, &quot;legs&quot;: [] },
+    { &quot;type&quot;: &quot;same_game_parlay&quot;, &quot;market&quot;: &quot;sgp_2_legs&quot;, &quot;line&quot;: &quot;Jacksonville Jaguars ML AND game UNDER 40.5&quot;, &quot;stake&quot;: 8.0, &quot;pricing_status&quot;: &quot;conditional&quot;, &quot;minimum_acceptable_odds&quot;: 200, &quot;payout_basis&quot;: &quot;minimum_acceptable_odds&quot;, &quot;max_loss&quot;: 8.0, &quot;potential_net_profit&quot;: 16.00, &quot;potential_total_return&quot;: 24.00, &quot;break_even_probability&quot;: 0.3333, &quot;estimated_win_probability&quot;: 0.38, &quot;value_reasoning&quot;: &quot;JAX home ML implied ~0.55-0.60; UNDER ~0.57; product 0.32, correlation raises to ~0.38&quot;, &quot;reason_wins&quot;: &quot;17-13 style JAX home win&quot;, &quot;reason_loses&quot;: &quot;CLE upset or scoop-and-score TD pushes total to 42+&quot;, &quot;legs&quot;: [{&quot;market&quot;: &quot;moneyline&quot;, &quot;selection&quot;: &quot;Jacksonville Jaguars ML&quot;, &quot;estimated_leg_probability&quot;: 0.58}, {&quot;market&quot;: &quot;game_total&quot;, &quot;selection&quot;: &quot;UNDER 40.5&quot;, &quot;estimated_leg_probability&quot;: 0.57}] }
+  ],
+  &quot;reasoning_summary&quot;: &quot;Both teams open with uncertain QB structure. Game total UNDER shape (8-4 study record) plus home team ML in low-total spot. Independent legs on same directional thesis, no shared player-volume premise.&quot;
+}
+```
+</pre></details></article></div></div></section>
 
 
 

@@ -294,6 +294,8 @@ function nflRenderMatchupGrid(mountId, opts) {
     host.innerHTML = '<div class="empty-state"><div class="es-title">Week ' + week + ' picks arrive before kickoff</div><p>Model responses are locked and published Tuesday through Wednesday of each game week. Nothing is fabricated in the interim.</p></div>';
     return;
   }
+  var predByGameId = (typeof NFL_PREDICTIONS_2026 !== "undefined") ? NFL_PREDICTIONS_2026.reduce(function (map, p) { map[p.gameId] = p; return map; }, {}) : {};
+  function moneyStr(n) { var v = Math.round(n * 100) / 100; var sign = v > 0 ? "+" : v < 0 ? "-" : ""; return sign + "$" + Math.abs(v).toFixed(2); }
   var html = games.map(function (g) {
     var away = NFL_TEAMS[g.away] || {};
     var home = NFL_TEAMS[g.home] || {};
@@ -304,7 +306,32 @@ function nflRenderMatchupGrid(mountId, opts) {
     var scoreOrTime = isFinal
       ? '<div class="mscore tabular">' + g.awayScore + ' &ndash; ' + g.homeScore + '</div>'
       : '<div class="mtime">' + esc(g.kickoffDisplay || 'TBD') + '</div>';
-    var cta = isFinal ? 'View grading' : isScheduled ? 'ESPN details' : 'Read picks';
+    var pred = predByGameId[g.id];
+    var isGraded = pred && pred.result && pred.result.status === "final";
+    var modelRows = "";
+    if (pred && pred.models) {
+      modelRows = '<div class="mgl-models">' + NFL_MODELS.map(function (m) {
+        var mp = pred.models[m];
+        if (!mp) return '';
+        var grades = isGraded && pred.result.grades && pred.result.grades[m] ? pred.result.grades[m] : [];
+        var badges = '';
+        var totalPl = 0;
+        if (grades.length) {
+          badges = grades.map(function (grade) {
+            var cls = grade.outcome === 'WIN' ? 'badge-win' : grade.outcome === 'LOSS' ? 'badge-loss' : 'badge-push';
+            totalPl += (typeof grade.profit === 'number' ? grade.profit : 0);
+            return '<span class="mgl-tik ' + cls + '">' + (grade.outcome === 'WIN' ? 'W' : grade.outcome === 'LOSS' ? 'L' : 'P') + '</span>';
+          }).join('');
+        } else if (mp.version === 'EXPIRED') {
+          badges = '<span class="mgl-tik badge-expired">EXP</span>';
+        } else if (mp.bets && mp.bets.length) {
+          badges = mp.bets.map(function () { return '<span class="mgl-tik badge-pending">&bull;</span>'; }).join('');
+        }
+        var plStr = grades.length ? '<span class="mgl-pl ' + (totalPl > 0 ? 'pl-win' : totalPl < 0 ? 'pl-loss' : 'pl-flat') + '">' + moneyStr(totalPl) + '</span>' : '';
+        return '<div class="mgl-mrow"><span class="mgl-mname">' + m + '</span><span class="mgl-mbadges">' + badges + '</span>' + plStr + '</div>';
+      }).join('') + '</div>';
+    }
+    var cta = isFinal ? 'Full analysis' : isScheduled ? 'ESPN details' : 'Read locked picks';
     return ''
       + '<a class="mgame-lite" href="' + pageHref + '">'
       + '<div class="mgl-top">' + statusChip + '<span class="mgl-week">Wk ' + week + '</span></div>'
@@ -313,6 +340,7 @@ function nflRenderMatchupGrid(mountId, opts) {
       + '<div class="mgl-mid">' + scoreOrTime + '</div>'
       + '<div class="mgl-team home" style="--tc:' + (home.primary || '#0a0a0a') + '"><span class="mgl-abbr">' + esc((home.abbr || "").toUpperCase()) + '</span></div>'
       + '</div>'
+      + modelRows
       + '<div class="mgl-foot"><span>' + cta + '</span><span class="arrow" aria-hidden="true">&rarr;</span></div>'
       + '</a>';
   }).join("");

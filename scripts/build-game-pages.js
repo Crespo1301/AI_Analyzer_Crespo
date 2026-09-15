@@ -360,7 +360,15 @@ ${!entry.bets.length && review ? '<p><strong>Decision review:</strong> ' + esc(r
     <div class="factor-row"><div class="fr-label">Source</div><div class="fr-body">${esc(pred.line_snapshot.source || '')}</div></div>
   ` : '';
 
-  const responseLink = pred.responseFolder ? `<a href="https://github.com/Crespo1301/AI_Analyzer_Crespo/tree/main/${esc(pred.responseFolder)}" rel="noopener" style="color: inherit; text-decoration: underline;">Read the raw model responses on GitHub</a>` : '';
+  const responseLink = '';
+  const modelFileMap = { ChatGPT: 'chatgpt-picks.md', Claude: 'claude-picks.md', Gemini: 'gemini-picks.md' };
+  const rawPicksBlocks = pred.responseFolder ? NFL_MODELS.map(m => {
+    const filePath = path.join(repoRoot, pred.responseFolder, modelFileMap[m]);
+    if (!fs.existsSync(filePath)) return '';
+    const content = fs.readFileSync(filePath, 'utf8');
+    return `<article class="rp-card"><div class="rp-head"><div class="rp-name">${m}</div><span class="rp-tag">raw response</span></div><details open><summary>Show ${m}'s full response</summary><pre>${esc(content)}</pre></details></article>`;
+  }).filter(Boolean).join('') : '';
+  const rawPicksSection = rawPicksBlocks ? `<section class="band band-bone"><div class="wrap"><div class="band-head"><div><div class="b-kicker">Raw responses</div><div class="b-title">What each model <span class="accent">actually wrote</span></div></div></div><div class="raw-picks">${rawPicksBlocks}</div></div></section>` : '';
 
   return `<!DOCTYPE html>
 <html lang="en">
@@ -469,6 +477,7 @@ ${modelResults}
   </div>
 </section>
 
+${rawPicksSection}
 ${humanReview}
 
 ${final ? '' : `<section class="band band-bone">

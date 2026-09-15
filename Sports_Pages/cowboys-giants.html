@@ -70,7 +70,7 @@
 <section class="band band-paper" style="padding: 32px 0;">
   <div class="wrap">
     <div class="disclaimer-box">
-      <strong>Week 1 &middot; Sun Sep 13, 8:20 PM ET.</strong> Original predictions are preserved below. Recorded date: 2026-09-13; this field does not establish a precise lock time. Each raw response identifies its prompt and model. Outcomes are verified; reasoning is reviewed separately. <a href="https://github.com/Crespo1301/AI_Analyzer_Crespo/tree/main/Docs/Responses/2026/week-01/game-15-cowboys-giants/" rel="noopener" style="color: inherit; text-decoration: underline;">Read the raw model responses on GitHub</a>
+      <strong>Week 1 &middot; Sun Sep 13, 8:20 PM ET.</strong> Original predictions are preserved below. Recorded date: 2026-09-13; this field does not establish a precise lock time. Each raw response identifies its prompt and model. Outcomes are verified; reasoning is reviewed separately. 
     </div>
   </div>
 </section>
@@ -227,6 +227,285 @@
   </div>
 </section>
 
+<section class="band band-bone"><div class="wrap"><div class="band-head"><div><div class="b-kicker">Raw responses</div><div class="b-title">What each model <span class="accent">actually wrote</span></div></div></div><div class="raw-picks"><article class="rp-card"><div class="rp-head"><div class="rp-name">ChatGPT</div><span class="rp-tag">raw response</span></div><details open><summary>Show ChatGPT's full response</summary><pre># ChatGPT forced-selection v3.0
+
+## Summary
+
+Projected winner: **Cowboys**. Projected script: a controlled favorite win with enough offense to challenge 48.5. Full $20 allocation: $14 straight spread target and $6 SGP.
+
+## Roster heuristic errors flagged
+
+Official depth-chart verification is required before lock; local jersey ordering is only a weak heuristic. No roster file was changed without a confirmed game-specific correction.
+
+## Independent evidence and self-reflection
+
+Raw NFL_BETS/NFL_CORRECTIONS showed the strongest positive rows in exact straight spreads/totals, while player props and my prior correlated Rams scoring exposure produced the clearest losses or corrections. I kept the auditable spread and capped the SGP at $6.
+
+## Grading concerns
+
+FanDuel is market context. Bovada loaded without an event quote, so both tickets are conditional and no price is presented as verified. I ignored what-has-worked.md, redesign-direction.md and conclusion-bearing final-review.md.
+
+## JSON
+
+```json
+{
+  &quot;prompt_template&quot;: &quot;forced-selection&quot;,
+  &quot;prompt_version&quot;: &quot;3.0&quot;,
+  &quot;model_role&quot;: &quot;Codex&quot;,
+  &quot;model_version&quot;: &quot;GPT-6&quot;,
+  &quot;generated_at&quot;: &quot;2026-09-13T12:00:00-04:00&quot;,
+  &quot;lock_at&quot;: null,
+  &quot;week&quot;: 1,
+  &quot;game_id&quot;: &quot;cowboys-giants&quot;,
+  &quot;forced_allocation&quot;: true,
+  &quot;bankroll&quot;: 20,
+  &quot;total_stake&quot;: 20,
+  &quot;reserve&quot;: 0,
+  &quot;team_profiles_read&quot;: [
+    {
+      &quot;path&quot;: &quot;Data/2026/rosters/dallas-cowboys.json&quot;,
+      &quot;as_of&quot;: &quot;2026-09-13&quot;,
+      &quot;season_record&quot;: &quot;0-0, 0 games, 0 PF, 0 PA&quot;,
+      &quot;health_key_players&quot;: []
+    },
+    {
+      &quot;path&quot;: &quot;Data/2026/rosters/new-york-giants.json&quot;,
+      &quot;as_of&quot;: &quot;2026-09-13&quot;,
+      &quot;season_record&quot;: &quot;0-0, 0 games, 0 PF, 0 PA&quot;,
+      &quot;health_key_players&quot;: [
+        &quot;WR Malik Nabers&quot;,
+        &quot;CB DJ James&quot;
+      ]
+    }
+  ],
+  &quot;independent_derivations&quot;: {
+    &quot;profitable_shapes&quot;: [
+      {
+        &quot;shape&quot;: &quot;Exact straight spreads/totals&quot;,
+        &quot;citations&quot;: [
+          &quot;assets/nfl-data.js: Claude 49ers-Rams UNDER 45.5 +10.91&quot;,
+          &quot;assets/nfl-data.js: Gemini Patriots +3.5 +10.17&quot;,
+          &quot;assets/nfl-data.js: ChatGPT Vikings-Lions OVER 47.5 and Eagles -3 +10 each&quot;
+        ]
+      }
+    ],
+    &quot;losing_shapes&quot;: [
+      {
+        &quot;shape&quot;: &quot;Player touchdown/yardage/sack props&quot;,
+        &quot;citations&quot;: [
+          &quot;assets/nfl-data.js NFL_CORRECTIONS: Stroud, Nix, Bonitto, Sutton, Cook, Maye and Lamar rows&quot;
+        ]
+      },
+      {
+        &quot;shape&quot;: &quot;Correlated all-in team-total exposure&quot;,
+        &quot;citations&quot;: [
+          &quot;assets/nfl-predictions-2026.js: ChatGPT Game 2 Rams over 23.5 plus SGP, Rams scored 7&quot;
+        ]
+      }
+    ]
+  },
+  &quot;self_reflection&quot;: {
+    &quot;past_picks_reviewed&quot;: &quot;ChatGPT Game 1 and Game 2 responses, NFL_BETS, NFL_CORRECTIONS and current-season archive.&quot;,
+    &quot;pattern_kept&quot;: &quot;Exact auditable game markets.&quot;,
+    &quot;pattern_stopped&quot;: &quot;Large correlated exposure and uncertain props.&quot;
+  },
+  &quot;bets&quot;: [
+    {
+      &quot;type&quot;: &quot;straight&quot;,
+      &quot;market&quot;: &quot;Spread&quot;,
+      &quot;line&quot;: &quot;Dallas Cowboys -2.5&quot;,
+      &quot;stake&quot;: 14.0,
+      &quot;pricing_status&quot;: &quot;conditional&quot;,
+      &quot;odds_american&quot;: null,
+      &quot;minimum_acceptable_odds&quot;: -110,
+      &quot;sportsbook&quot;: null,
+      &quot;odds_source&quot;: null,
+      &quot;odds_captured_at&quot;: null,
+      &quot;payout_basis&quot;: &quot;minimum_acceptable_odds&quot;,
+      &quot;max_loss&quot;: 14.0,
+      &quot;potential_net_profit&quot;: 12.73,
+      &quot;potential_total_return&quot;: 26.73,
+      &quot;break_even_probability&quot;: 0.5238095238,
+      &quot;estimated_win_probability&quot;: 0.56,
+      &quot;value_reasoning&quot;: &quot;FanDuel line was observed but exact executable price is not carried into this ticket; -110 is only a hypothetical minimum target.&quot;,
+      &quot;reason_wins&quot;: &quot;Cowboys has the stronger researched matchup and roster context.&quot;,
+      &quot;reason_loses&quot;: &quot;The underdog covers through a quarterback, turnover or late-score swing.&quot;,
+      &quot;settlement_rules&quot;: &quot;Standard full-game spread; push rules apply if landed.&quot;,
+      &quot;legs&quot;: []
+    },
+    {
+      &quot;type&quot;: &quot;parlay&quot;,
+      &quot;market&quot;: &quot;SGP&quot;,
+      &quot;line&quot;: &quot;Cowboys moneyline + OVER 48.5 total points&quot;,
+      &quot;stake&quot;: 6.0,
+      &quot;pricing_status&quot;: &quot;conditional&quot;,
+      &quot;odds_american&quot;: null,
+      &quot;minimum_acceptable_odds&quot;: 220,
+      &quot;sportsbook&quot;: null,
+      &quot;odds_source&quot;: null,
+      &quot;odds_captured_at&quot;: null,
+      &quot;payout_basis&quot;: &quot;minimum_acceptable_odds&quot;,
+      &quot;max_loss&quot;: 6.0,
+      &quot;potential_net_profit&quot;: 13.2,
+      &quot;potential_total_return&quot;: 19.2,
+      &quot;break_even_probability&quot;: 0.3125,
+      &quot;estimated_win_probability&quot;: 0.33,
+      &quot;value_reasoning&quot;: &quot;No combined Bovada quote was exposed; +220 is hypothetical and the forced ticket may be negative value below that threshold.&quot;,
+      &quot;reason_wins&quot;: &quot;A controlled Cowboys win is compatible with the over 48.5 script.&quot;,
+      &quot;reason_loses&quot;: &quot;A low-scoring win, upset or stalled offense leaves the total short.&quot;,
+      &quot;settlement_rules&quot;: &quot;SGP push/void rules unknown.&quot;,
+      &quot;legs&quot;: [
+        {
+          &quot;market&quot;: &quot;Moneyline&quot;,
+          &quot;selection&quot;: &quot;Cowboys&quot;,
+          &quot;line&quot;: &quot;moneyline&quot;,
+          &quot;price_status&quot;: &quot;conditional&quot;
+        },
+        {
+          &quot;market&quot;: &quot;Total&quot;,
+          &quot;selection&quot;: &quot;OVER&quot;,
+          &quot;line&quot;: &quot;48.5&quot;,
+          &quot;price_status&quot;: &quot;conditional&quot;
+        }
+      ]
+    }
+  ],
+  &quot;sources&quot;: [
+    {
+      &quot;path&quot;: &quot;Docs/2026/grading-rubric.md&quot;,
+      &quot;fetch_succeeded&quot;: true,
+      &quot;excerpt&quot;: &quot;Outcome is primary; reasoning is bounded by outcome.&quot;
+    },
+    {
+      &quot;path&quot;: &quot;assets/nfl-data.js&quot;,
+      &quot;fetch_succeeded&quot;: true,
+      &quot;excerpt&quot;: &quot;NFL_BETS and NFL_CORRECTIONS contain graded tickets and correction overlays.&quot;
+    },
+    {
+      &quot;path&quot;: &quot;Data/2026/rosters/dallas-cowboys.json&quot;,
+      &quot;fetch_succeeded&quot;: true,
+      &quot;excerpt&quot;: &quot;Current team profile and health snapshot read.&quot;
+    },
+    {
+      &quot;path&quot;: &quot;Data/2026/rosters/new-york-giants.json&quot;,
+      &quot;fetch_succeeded&quot;: true,
+      &quot;excerpt&quot;: &quot;Current team profile and health snapshot read.&quot;
+    },
+    {
+      &quot;url&quot;: &quot;https://www.fanduel.com/research/nfl/scores&quot;,
+      &quot;fetch_succeeded&quot;: true,
+      &quot;excerpt&quot;: &quot;FanDuel matchup market lists Dallas Cowboys -2.5 and total 48.5.&quot;
+    },
+    {
+      &quot;url&quot;: &quot;https://www.bovada.lv/sports/football/nfl&quot;,
+      &quot;fetch_succeeded&quot;: true,
+      &quot;excerpt&quot;: &quot;Bovada NFL page loaded without event-specific quote.&quot;
+    }
+  ],
+  &quot;reasoning_summary&quot;: &quot;Pregame eligibility is active. FanDuel provided market context for Dallas Cowboys -2.5 and total 48.5; Bovada did not expose an event-specific quote. The forced allocation uses a $14 conditional spread target and $6 conditional SGP, with no props or Bovada verification claim.&quot;
+}
+```
+</pre></details></article><article class="rp-card"><div class="rp-head"><div class="rp-name">Claude</div><span class="rp-tag">raw response</span></div><details open><summary>Show Claude's full response</summary><pre># Claude raw response, Cowboys at Giants, Week 1 Game 15 (SNF)
+
+Lane: forced-selection v3.0 (batch run)
+Model role: Claude
+Model version: claude-opus-4-7
+Generated at: 2026-09-13T12:14:00-04:00
+
+## Summary
+
+Winner: Dallas Cowboys 27, New York Giants 17 (44 total). Cowboys QB1 Prescott confirmed. Cowboys RB1 heuristic Malik Davis — likely error (actual could be a different back). Giants QB1 Jake Haener — HARD error, actual likely Russell Wilson or Jaxson Dart. Giants WR Malik Nabers questionable + Najee Harris as RB1 confirmed via free agency.
+
+T1: DAL -3 $12 conditional min -110.
+T2: SGP DAL ML + DAL Team Total OVER 24.5 $8 conditional min +150.
+
+## Roster corrections flagged
+
+- Giants qb1 listed as Jake Haener. Actual Week 1 starter needs verification (possibly Russell Wilson or Jaxson Dart).
+- Cowboys rb1 listed as Malik Davis - verify.
+
+## Response
+
+```json
+{
+  &quot;prompt_template&quot;: &quot;forced-selection&quot;, &quot;prompt_version&quot;: &quot;3.0&quot;,
+  &quot;model_role&quot;: &quot;Claude&quot;, &quot;model_version&quot;: &quot;claude-opus-4-7&quot;,
+  &quot;generated_at&quot;: &quot;2026-09-13T12:14:00-04:00&quot;,
+  &quot;week&quot;: 1, &quot;game_id&quot;: &quot;cowboys-giants&quot;, &quot;forced_allocation&quot;: true,
+  &quot;bankroll&quot;: 20, &quot;total_stake&quot;: 20, &quot;reserve&quot;: 0,
+  &quot;team_profiles_read&quot;: [
+    { &quot;path&quot;: &quot;Data/2026/rosters/dallas-cowboys.json&quot;, &quot;as_of&quot;: &quot;2026-09-13&quot;, &quot;season_record&quot;: &quot;0-0&quot;, &quot;health_key_players&quot;: [&quot;No key game designations&quot;] },
+    { &quot;path&quot;: &quot;Data/2026/rosters/new-york-giants.json&quot;, &quot;as_of&quot;: &quot;2026-09-13&quot;, &quot;season_record&quot;: &quot;0-0&quot;, &quot;health_key_players&quot;: [&quot;WR Malik Nabers questionable&quot;, &quot;CB DJ James questionable&quot;] }
+  ],
+  &quot;roster_heuristic_errors_flagged&quot;: [
+    &quot;Giants qb1 listed as Jake Haener. Actual Week 1 starter needs verification (Russell Wilson or Jaxson Dart possible).&quot;,
+    &quot;Cowboys rb1 listed as Malik Davis - verify.&quot;
+  ],
+  &quot;independent_derivations&quot;: {
+    &quot;profitable_shapes&quot;: [
+      {&quot;shape&quot;: &quot;Team-Total OVER on decisively-better favored offense (Cowboys shape from W11 P11 - 8-1 +$69 was Cowboys)&quot;, &quot;record&quot;: &quot;2-0&quot;, &quot;citation&quot;: &quot;W11 Claude Cowboys TT OVER 26.5-28.5 +$10; W11 Gemini Cowboys TT OVER 24.5 +$10&quot;},
+      {&quot;shape&quot;: &quot;Short-favorite spread through hook&quot;, &quot;record&quot;: &quot;2-0&quot;, &quot;citation&quot;: &quot;W9 49ers -2.5, W11 Eagles -1.5&quot;}
+    ],
+    &quot;losing_shapes&quot;: [
+      {&quot;shape&quot;: &quot;Concentrated same-side team-total OVER on wrong-side thesis&quot;, &quot;citation&quot;: &quot;S2W1 ChatGPT LAR TT OVER 23.5 -$20&quot;}
+    ]
+  },
+  &quot;self_reflection&quot;: {&quot;past_picks_reviewed&quot;: [&quot;Game 8 CHI TT OVER structure (Cowboys shape reapplied)&quot;], &quot;pattern_kept&quot;: &quot;Team-Total OVER on genuinely-better team when the favored team is actually favored to win&quot;, &quot;pattern_stopped&quot;: &quot;N/A - not stacking multiple same-side tickets like Game 2 ChatGPT&quot;},
+  &quot;bets&quot;: [
+    { &quot;type&quot;: &quot;straight&quot;, &quot;market&quot;: &quot;spread&quot;, &quot;line&quot;: &quot;Dallas Cowboys -3&quot;, &quot;stake&quot;: 12.0, &quot;pricing_status&quot;: &quot;conditional&quot;, &quot;minimum_acceptable_odds&quot;: -115, &quot;payout_basis&quot;: &quot;minimum_acceptable_odds&quot;, &quot;max_loss&quot;: 12.0, &quot;potential_net_profit&quot;: 10.43, &quot;potential_total_return&quot;: 22.43, &quot;break_even_probability&quot;: 0.5349, &quot;estimated_win_probability&quot;: 0.58, &quot;reason_wins&quot;: &quot;DAL healthy with Prescott + Pickens vs NYG QB uncertainty and Nabers Q&quot;, &quot;reason_loses&quot;: &quot;Push at exactly 3 or NYG covers as home dog&quot;, &quot;settlement_rules&quot;: &quot;Push at 3 is a real risk&quot;, &quot;legs&quot;: [] },
+    { &quot;type&quot;: &quot;same_game_parlay&quot;, &quot;market&quot;: &quot;sgp_2_legs&quot;, &quot;line&quot;: &quot;Dallas Cowboys ML AND Cowboys Team Total OVER 24.5&quot;, &quot;stake&quot;: 8.0, &quot;pricing_status&quot;: &quot;conditional&quot;, &quot;minimum_acceptable_odds&quot;: 150, &quot;payout_basis&quot;: &quot;minimum_acceptable_odds&quot;, &quot;max_loss&quot;: 8.0, &quot;potential_net_profit&quot;: 12.00, &quot;potential_total_return&quot;: 20.00, &quot;break_even_probability&quot;: 0.4000, &quot;estimated_win_probability&quot;: 0.48, &quot;value_reasoning&quot;: &quot;DAL ML ~0.66; DAL TT OVER 24.5 ~0.60; correlation strong (Cowboys winning through offense drives both); joint ~0.48. Note: this replicates the W11 P11 shape but with SGP concentration risk. Sized at $8 to limit exposure per Game 2 lesson.&quot;, &quot;reason_wins&quot;: &quot;Cowboys 27-20 style win with Prescott 2+ TDs&quot;, &quot;reason_loses&quot;: &quot;Prescott turnover start, Cowboys win low-scoring 17-13 (TT UNDER)&quot;, &quot;legs&quot;: [{&quot;market&quot;: &quot;moneyline&quot;, &quot;selection&quot;: &quot;Dallas Cowboys ML&quot;, &quot;estimated_leg_probability&quot;: 0.66}, {&quot;market&quot;: &quot;team_total&quot;, &quot;selection&quot;: &quot;Cowboys team total OVER 24.5&quot;, &quot;estimated_leg_probability&quot;: 0.60}] }
+  ],
+  &quot;reasoning_summary&quot;: &quot;DAL home Prescott vs NYG road with QB uncertainty and Nabers Q. W11 P11 Cowboys shape directly applied (same franchise) with awareness of Game 2 concentration risk - SGP sized at $8 not larger.&quot;
+}
+```
+</pre></details></article><article class="rp-card"><div class="rp-head"><div class="rp-name">Gemini</div><span class="rp-tag">raw response</span></div><details open><summary>Show Gemini's full response</summary><pre># Gemini raw response, Cowboys at Giants, Week 1 Game 15 (SNF)
+
+Lane: forced-selection v3.0
+Model role: Gemini
+Model version: gemini web (self-identifies as CSolutions AI Analyzer)
+Generated at: 2026-09-13T18:06:51-04:00
+
+## Summary
+
+Winner: Dallas Cowboys 27, Giants 20. Dak Prescott anchors passing game, Parsons/Q.Williams pressure NYG.
+
+T1: Dallas Cowboys -3.0 $12 reference_market DraftKings -105.
+T2: SGP DAL ML (-158) + OVER 47.5 (-110) $8 reference_market +210.
+
+## Grading concerns flagged inline (per rubric v2)
+
+- **11th fabricated GitHub raw fetch pattern.** Public repo returns 200 not 404. Consistent lie.
+- Claims &quot;Quinnen Williams (DT1)&quot; for Cowboys. Quinnen Williams plays for the New York Jets, not Cowboys. **12th significant player-team hallucination this season** (Kyler Murray/Vikings was 10th; adds to fabricated Raiders backup QB claim earlier).
+- Claims &quot;Dallas 6-game ATS streak at MetLife&quot; - unverifiable claim without citation to specific games and years.
+- DraftKings quoted line (48.5) contradicts Gemini&#39;s own SGP (47.5). Line inconsistency within same response.
+
+## Response
+
+```json
+{
+  &quot;prompt_template&quot;: &quot;forced-selection&quot;, &quot;prompt_version&quot;: &quot;3.0&quot;,
+  &quot;model_role&quot;: &quot;Gemini&quot;, &quot;model_version&quot;: &quot;gemini web&quot;,
+  &quot;generated_at&quot;: &quot;2026-09-13T18:06:51-04:00&quot;,
+  &quot;week&quot;: 1, &quot;game_id&quot;: &quot;cowboys-giants&quot;, &quot;forced_allocation&quot;: true,
+  &quot;bankroll&quot;: 20, &quot;total_stake&quot;: 20, &quot;reserve&quot;: 0,
+  &quot;team_profiles_read&quot;: [
+    { &quot;path&quot;: &quot;Data/2026/rosters/dallas-cowboys.json&quot;, &quot;as_of&quot;: &quot;2026-09-13&quot;, &quot;season_record&quot;: &quot;0-0&quot;, &quot;health_key_players&quot;: [&quot;Dak Prescott ACTIVE&quot;, &quot;Micah Parsons ACTIVE&quot;, &quot;Quinnen Williams claimed ACTIVE - HALLUCINATION, Williams plays for NYJ&quot;] },
+    { &quot;path&quot;: &quot;Data/2026/rosters/new-york-giants.json&quot;, &quot;as_of&quot;: &quot;2026-09-13&quot;, &quot;season_record&quot;: &quot;0-0&quot;, &quot;health_key_players&quot;: [&quot;Malik Nabers ACTIVE&quot;] }
+  ],
+  &quot;grading_concerns_flagged&quot;: [
+    &quot;11th fabricated GitHub raw fetch pattern.&quot;,
+    &quot;Quinnen Williams hallucinated as Cowboys DT1; he plays for the New York Jets.&quot;,
+    &quot;Unverifiable &#39;Dallas 6-game ATS streak at MetLife&#39; claim.&quot;,
+    &quot;Internal line inconsistency: DK snippet says 48.5, SGP uses 47.5.&quot;
+  ],
+  &quot;bets&quot;: [
+    { &quot;type&quot;: &quot;single&quot;, &quot;market&quot;: &quot;spread&quot;, &quot;line&quot;: &quot;Dallas Cowboys -3.0&quot;, &quot;stake&quot;: 12.0, &quot;pricing_status&quot;: &quot;reference_market&quot;, &quot;odds_american&quot;: -105, &quot;sportsbook&quot;: &quot;DraftKings&quot;, &quot;max_loss&quot;: 12.0, &quot;potential_net_profit&quot;: 11.43, &quot;potential_total_return&quot;: 23.43, &quot;break_even_probability&quot;: 0.512, &quot;estimated_win_probability&quot;: 0.560 },
+    { &quot;type&quot;: &quot;parlay&quot;, &quot;market&quot;: &quot;sgp_2_legs&quot;, &quot;line&quot;: &quot;DAL ML (-158) + OVER 47.5 (-110)&quot;, &quot;stake&quot;: 8.0, &quot;pricing_status&quot;: &quot;reference_market&quot;, &quot;odds_american&quot;: 210, &quot;max_loss&quot;: 8.0, &quot;potential_net_profit&quot;: 16.80, &quot;potential_total_return&quot;: 24.80, &quot;break_even_probability&quot;: 0.323, &quot;estimated_win_probability&quot;: 0.365 }
+  ],
+  &quot;reasoning_summary&quot;: &quot;$12 DAL -3.0 straight DK -105 + $8 SGP DAL ML + OVER 47.5 at +210.&quot;
+}
+```
+</pre></details></article></div></div></section>
 
 
 

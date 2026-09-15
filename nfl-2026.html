@@ -55,9 +55,9 @@
 <header class="editorial-hero">
   <div class="hero-canvas" aria-hidden="true"><img src="assets/hero-canvas.svg" alt=""></div>
   <div class="wrap">
-    <span class="hero-tag" id="hero-week-tag">Week 1 &middot; Kickoff Night</span>
-    <h1 class="hero-headline">Same rules,<br>same $20,<br>fresh prompts.</h1>
-    <p class="hero-sub">Season 2 opens with a rebuilt prompt system that gives every model repo access, whichever way that model can reach it. ChatGPT (via the Codex CLI) and Claude read the local filesystem. Gemini reads the same repo through GitHub's raw URLs. All three review their own past picks, run open-web research, and cite every source. Picks land before kickoff and get graded against the ESPN box score.</p>
+    <span class="hero-tag" id="hero-week-tag">Season 2 &middot; live</span>
+    <h1 class="hero-headline">Three AI models.<br>Same $20 a game.<br>Real graded results.</h1>
+    <p class="hero-sub">Each week we give ChatGPT, Claude, and Gemini identical $20 bankrolls and identical prompts, and lock their picks before kickoff. Whichever model happens to be the best available at prompt-time is used &mdash; the exact version is recorded with the response, not pinned by us. Every pick is graded against the ESPN box score. No cherry-picking, no post-hoc edits.</p>
     <div class="hero-cta-row">
       <a class="btn btn-primary" href="#matchups">See this week's matchups</a>
       <a class="btn btn-ghost" href="methodology.html">Read the methodology</a>
@@ -87,6 +87,37 @@
       </div>
     </div>
     <div class="mgrid" id="matchup-grid"></div>
+  </div>
+</section>
+
+<section class="band band-paper" id="week1-recap">
+  <div class="wrap">
+    <div class="band-head">
+      <div>
+        <div class="b-kicker">Week 1 recap</div>
+        <div class="b-title">How each <span class="accent">model played</span></div>
+      </div>
+    </div>
+    <div class="recap-grid">
+      <div class="recap-card recap-1st">
+        <div class="recap-tag">1st &middot; ChatGPT via Codex CLI</div>
+        <div class="recap-headline">Steady sweep of the 1 PM slate</div>
+        <p>Went 18-12 across all 16 games with a disciplined $14 spread + $6 SGP structure every week. Only bad slot was Cardinals-Chargers (0-2, -$20) and the SNF Giants upset (0-2, -$20). Everywhere else it grinded out spread + correlated-SGP wins.</p>
+        <div class="recap-numbers"><span><strong>+$114.18</strong> profit</span><span><strong>+38.1%</strong> ROI</span><span><strong>60%</strong> hit rate</span></div>
+      </div>
+      <div class="recap-card recap-2nd">
+        <div class="recap-tag">2nd &middot; Gemini via web app</div>
+        <div class="recap-headline">Highest ROI, most red flags</div>
+        <p>Went 12-9 on the 21 tickets it did file, but expired 4 entire games without responding before kickoff (Games 9, 10, 14, plus a late Game 13 submission). Fabricated a GitHub "404" line every single game (repo is public and returns 200); hallucinated player-team assignments (Kyler Murray on Vikings, Quinnen Williams on Cowboys).</p>
+        <div class="recap-numbers"><span><strong>+$56.18</strong> profit</span><span><strong>+26.5%</strong> ROI</span><span><strong>4 games</strong> expired</span></div>
+      </div>
+      <div class="recap-card recap-3rd">
+        <div class="recap-tag">3rd &middot; Claude via Claude Code</div>
+        <div class="recap-headline">Contrarian dogs cost too much</div>
+        <p>Went 17-17. Bailed out by the MNF UNDER SGP hitting for +$14.40, otherwise this was a losing week. Contrarian home-dog plays (HOU +3, MIN -4, DAL -3 SNF) added up. Big wins on Jets +1.5 SGP (+$20) and Falcons-Steelers sweep couldn't offset the damage.</p>
+        <div class="recap-numbers"><span><strong>+$13.23</strong> profit</span><span><strong>+4.3%</strong> ROI</span><span><strong>50%</strong> hit rate</span></div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -148,9 +179,9 @@
     </div>
     <div class="bento">
       <a class="bento-card wide" href="methodology.html#reset">
-        <span class="bc-tag">2026-09-09</span>
-        <h3>Prompt system reset for Season 2</h3>
-        <p>Three lanes now. ChatGPT (via Codex CLI) and Claude get local repo access. Gemini gets pointed at raw GitHub URLs. Every model does open-web research and cites every source. Fair-comparison baseline preserved.</p>
+        <span class="bc-tag">Week 1 recap</span>
+        <h3>ChatGPT sweeps Week 1</h3>
+        <p>ChatGPT led with 18-12 and +$114.18 on $300 (+38.1% ROI). Gemini +$56.18 on $212 (4 games expired without a response). Claude ground back to +$13.23 on a Monday-night SGP after sitting negative all evening.</p>
         <div class="bc-meta"><span class="rule"></span>Iteration</div>
       </a>
       <a class="bento-card" href="methodology.html#rubric">

@@ -1340,3 +1340,57 @@ a:focus-visible, button:focus-visible, .btn:focus-visible, .wt-card:focus-visibl
   .exec-record::after { content: " \00b7 " attr(data-roi); }
   .exec-money { grid-column: 3; }
 }
+
+/* Inline model results on matchup cards */
+.mgl-models { padding: 4px 14px 12px; display: flex; flex-direction: column; gap: 4px; border-top: 1px solid var(--line); }
+.mgl-mrow { display: flex; align-items: center; gap: 10px; font-size: 12px; padding: 4px 0; }
+.mgl-mname { font-family: var(--f-display); font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; font-size: 11px; color: var(--muted); min-width: 58px; }
+.mgl-mbadges { display: flex; gap: 4px; flex: 1; }
+.mgl-tik { display: inline-flex; align-items: center; justify-content: center; min-width: 22px; height: 22px; padding: 0 6px; border-radius: 3px; font-family: var(--f-display); font-weight: 800; font-size: 11px; letter-spacing: 0.04em; }
+.mgl-tik.badge-win { background: rgba(15,122,47,0.15); color: #0f7a2f; border: 1px solid rgba(15,122,47,0.3); }
+.mgl-tik.badge-loss { background: rgba(178,31,42,0.12); color: #b21f2a; border: 1px solid rgba(178,31,42,0.28); }
+.mgl-tik.badge-push { background: rgba(0,0,0,0.06); color: #444; border: 1px solid rgba(0,0,0,0.1); }
+.mgl-tik.badge-pending { background: transparent; color: var(--muted); border: 1px dashed var(--line); min-width: 14px; padding: 0 4px; }
+.mgl-tik.badge-expired { background: rgba(0,0,0,0.05); color: var(--muted); border: 1px solid var(--line); }
+.mgl-pl { font-variant-numeric: tabular-nums; font-weight: 800; font-size: 12px; margin-left: auto; }
+
+/* Inline raw picks/response blocks */
+.raw-picks { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr)); gap: 20px; margin-top: 16px; }
+.raw-picks .rp-card { background: var(--paper); border: 1px solid var(--line); border-radius: 8px; padding: 20px 22px; }
+.raw-picks .rp-head { display: flex; align-items: center; justify-content: space-between; padding-bottom: 12px; margin-bottom: 12px; border-bottom: 1px solid var(--line); }
+.raw-picks .rp-name { font-family: var(--f-display); font-weight: 800; font-size: 16px; letter-spacing: 0.02em; }
+.raw-picks .rp-tag { font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); font-weight: 700; }
+.raw-picks details { margin-top: 12px; }
+.raw-picks summary { cursor: pointer; font-family: var(--f-display); font-weight: 700; font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); padding: 8px 0; user-select: none; }
+.raw-picks summary:hover { color: var(--ink); }
+.raw-picks pre { white-space: pre-wrap; word-wrap: break-word; font-family: 'SFMono-Regular', 'Consolas', 'Menlo', monospace; font-size: 12px; line-height: 1.55; background: var(--bone); padding: 14px 16px; border-radius: 6px; margin: 8px 0 0; max-height: 480px; overflow: auto; border: 1px solid var(--line); }
+.raw-picks .rp-body p { font-size: 14px; line-height: 1.6; margin: 0 0 10px; }
+.raw-picks .rp-body h2, .raw-picks .rp-body h3 { font-family: var(--f-display); font-size: 13px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); margin: 14px 0 6px; }
+.raw-picks .rp-body ul { margin: 0 0 10px; padding-left: 22px; font-size: 13px; line-height: 1.55; }
+.raw-picks .rp-body strong { font-weight: 700; }
+.raw-picks .rp-body code { background: var(--bone); padding: 1px 5px; border-radius: 3px; font-size: 12px; }
+
+/* Week 1 recap cards */
+.recap-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: 16px; }
+.recap-card { padding: 22px 24px; border-radius: 10px; background: var(--paper); border: 1px solid var(--line); border-top: 3px solid var(--muted); }
+.recap-card.recap-1st { border-top-color: #0f7a2f; }
+.recap-card.recap-2nd { border-top-color: #b8860b; }
+.recap-card.recap-3rd { border-top-color: var(--nfl-red); }
+.recap-tag { font-family: var(--f-display); font-weight: 700; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin-bottom: 8px; }
+.recap-headline { font-family: var(--f-display); font-weight: 800; font-size: 18px; letter-spacing: -0.005em; line-height: 1.2; margin-bottom: 10px; }
+.recap-card p { font-size: 14px; line-height: 1.55; margin: 0 0 14px; color: var(--gunmetal); }
+.recap-numbers { display: flex; flex-wrap: wrap; gap: 8px 16px; padding-top: 12px; border-top: 1px solid var(--line); font-size: 12px; }
+.recap-numbers strong { font-family: var(--f-display); font-weight: 800; font-variant-numeric: tabular-nums; font-size: 15px; color: var(--ink); }
+
+/* Design polish: general spacing tighten across the site */
+:root { --band-py: 56px; }
+.band { padding: var(--band-py) 0; }
+.band-head { margin-bottom: 28px; }
+.b-title { letter-spacing: -0.01em; line-height: 1.1; }
+.b-kicker { font-weight: 800; }
+@media (max-width: 720px) {
+  :root { --band-py: 40px; }
+  .recap-card { padding: 18px 20px; }
+  .recap-headline { font-size: 16px; }
+  .recap-card p { font-size: 13px; }
+}

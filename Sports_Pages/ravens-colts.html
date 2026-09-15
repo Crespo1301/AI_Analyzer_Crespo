@@ -70,7 +70,7 @@
 <section class="band band-paper" style="padding: 32px 0;">
   <div class="wrap">
     <div class="disclaimer-box">
-      <strong>Week 1 &middot; Sun Sep 13, 1:00 PM ET.</strong> Original predictions are preserved below. Recorded date: 2026-09-13; this field does not establish a precise lock time. Each raw response identifies its prompt and model. Outcomes are verified; reasoning is reviewed separately. <a href="https://github.com/Crespo1301/AI_Analyzer_Crespo/tree/main/Docs/Responses/2026/week-01/game-06-ravens-colts/" rel="noopener" style="color: inherit; text-decoration: underline;">Read the raw model responses on GitHub</a>
+      <strong>Week 1 &middot; Sun Sep 13, 1:00 PM ET.</strong> Original predictions are preserved below. Recorded date: 2026-09-13; this field does not establish a precise lock time. Each raw response identifies its prompt and model. Outcomes are verified; reasoning is reviewed separately. 
     </div>
   </div>
 </section>
@@ -221,6 +221,143 @@
   </div>
 </section>
 
+<section class="band band-bone"><div class="wrap"><div class="band-head"><div><div class="b-kicker">Raw responses</div><div class="b-title">What each model <span class="accent">actually wrote</span></div></div></div><div class="raw-picks"><article class="rp-card"><div class="rp-head"><div class="rp-name">ChatGPT</div><span class="rp-tag">raw response</span></div><details open><summary>Show ChatGPT's full response</summary><pre># ChatGPT (via Codex CLI) raw response, Ravens at Colts, Week 1 Game 6
+
+Lane: forced-selection v3.0 (independent-derivation)
+Model role: ChatGPT (Codex interface, model_role field says &quot;Codex&quot;, model family is ChatGPT for study purposes)
+Model version reported by model: GPT-6
+Generated at: 2026-09-13T11:49:36-04:00 (~1h10m before 1:00 PM ET kickoff)
+
+## Summary
+
+Winner: Baltimore Ravens 27, Indianapolis Colts 20.
+
+Tickets ($20, zero reserve):
+- T1: Ravens -3.5 $14 (FanDuel reference_market -102).
+- T2: SGP Ravens ML + game UNDER 47.5 $6 (conditional min +240).
+
+Roster flags:
+- Ravens QB1 = Lamar Jackson (heuristic listed Tyler Huntley).
+- Colts QB1 = Daniel Jones (heuristic listed Anthony Richardson).
+
+Ignored bias-carrying files.
+
+## Response
+
+```json
+{
+  &quot;prompt_template&quot;: &quot;forced-selection&quot;,
+  &quot;prompt_version&quot;: &quot;3.0&quot;,
+  &quot;model_role&quot;: &quot;Codex&quot;,
+  &quot;model_version&quot;: &quot;GPT-6&quot;,
+  &quot;generated_at&quot;: &quot;2026-09-13T11:49:36-04:00&quot;,
+  &quot;lock_at&quot;: null,
+  &quot;week&quot;: 1,
+  &quot;game_id&quot;: &quot;ravens-colts&quot;,
+  &quot;forced_allocation&quot;: true,
+  &quot;bankroll&quot;: 20,
+  &quot;total_stake&quot;: 20,
+  &quot;reserve&quot;: 0,
+  &quot;team_profiles_read&quot;: [
+    { &quot;path&quot;: &quot;Data/2026/rosters/baltimore-ravens.json&quot;, &quot;as_of&quot;: &quot;2026-09-13&quot;, &quot;season_record&quot;: &quot;0-0, 0 games, 0 points for, 0 points against&quot;, &quot;health_key_players&quot;: [&quot;Teddye Buchanan OUT&quot;, &quot;Nnamdi Madubuike OUT&quot;, &quot;Devontez Walker QUESTIONABLE&quot;, &quot;Zay Flowers no game designation&quot;] },
+    { &quot;path&quot;: &quot;Data/2026/rosters/indianapolis-colts.json&quot;, &quot;as_of&quot;: &quot;2026-09-13&quot;, &quot;season_record&quot;: &quot;0-0, 0 games, 0 points for, 0 points against&quot;, &quot;health_key_players&quot;: [&quot;Austin Ajiake OUT&quot;, &quot;Cam Taylor-Britt suspended&quot;, &quot;Sean McKeon QUESTIONABLE&quot;, &quot;D.J. Montgomery, Will Mallory, Cameron Mitchell and Carson Towt IR&quot;] }
+  ],
+  &quot;independent_derivations&quot;: {
+    &quot;profitable_shapes&quot;: [
+      { &quot;shape&quot;: &quot;Exact straight spread or total&quot;, &quot;citations&quot;: [&quot;Claude 49ers-Rams UNDER 45.5 +10.91&quot;, &quot;Gemini Patriots +3.5 +10.17&quot;, &quot;ChatGPT Vikings-Lions OVER 47.5 +10&quot;, &quot;ChatGPT Eagles -3 Lions-Eagles +10&quot;] }
+    ],
+    &quot;losing_shapes&quot;: [
+      { &quot;shape&quot;: &quot;Player yardage/TD/sack props with weak stat-line auditability&quot;, &quot;citations&quot;: [&quot;NFL_CORRECTIONS: Stroud TD, Nix yards, Bonitto sack, Sutton yards, Cook rush, Maye TD, Lamar rush&quot;] },
+      { &quot;shape&quot;: &quot;All-in exposure to one team-total premise&quot;, &quot;citations&quot;: [&quot;ChatGPT Game 2 Rams TT OVER 23.5 $15 + correlated SGP $5; Rams scored 7&quot;] }
+    ]
+  },
+  &quot;self_reflection&quot;: { &quot;past_picks_reviewed&quot;: &quot;ChatGPT Game 1 &amp; 2 responses plus ChatGPT NFL_BETS rows and NFL_CORRECTIONS.&quot;, &quot;pattern_kept&quot;: &quot;Exact spread/total lines tied to auditable game outcomes; name a concrete injury or matchup factor.&quot;, &quot;pattern_stopped&quot;: &quot;Do not put most of the bankroll behind a correlated team-scoring thesis.&quot; },
+  &quot;bets&quot;: [
+    { &quot;type&quot;: &quot;straight&quot;, &quot;market&quot;: &quot;Spread&quot;, &quot;line&quot;: &quot;Baltimore Ravens -3.5&quot;, &quot;stake&quot;: 14.0, &quot;pricing_status&quot;: &quot;reference_market&quot;, &quot;odds_american&quot;: -102, &quot;minimum_acceptable_odds&quot;: null, &quot;sportsbook&quot;: &quot;FanDuel&quot;, &quot;odds_source&quot;: &quot;https://www.fanduel.com/research/nfl/matchups/9156/ravens-colts&quot;, &quot;odds_captured_at&quot;: &quot;2026-09-13T11:49:36-04:00&quot;, &quot;payout_basis&quot;: &quot;odds_american&quot;, &quot;max_loss&quot;: 14.0, &quot;potential_net_profit&quot;: 13.73, &quot;potential_total_return&quot;: 27.73, &quot;break_even_probability&quot;: 0.5050, &quot;estimated_win_probability&quot;: 0.56, &quot;reason_wins&quot;: &quot;Depth charts confirm Lamar Jackson and Henry as Baltimore core; Colts list Daniel Jones first, Ajiake out.&quot;, &quot;reason_loses&quot;: &quot;IND wins or loses by &lt;=3; Taylor controls game and Baltimore missing defenders matters.&quot;, &quot;legs&quot;: [] },
+    { &quot;type&quot;: &quot;sgp&quot;, &quot;market&quot;: &quot;SGP&quot;, &quot;line&quot;: &quot;Baltimore Ravens ML + UNDER 47.5&quot;, &quot;stake&quot;: 6.0, &quot;pricing_status&quot;: &quot;conditional&quot;, &quot;odds_american&quot;: null, &quot;minimum_acceptable_odds&quot;: 240, &quot;sportsbook&quot;: null, &quot;odds_source&quot;: null, &quot;odds_captured_at&quot;: null, &quot;payout_basis&quot;: &quot;minimum_acceptable_odds&quot;, &quot;max_loss&quot;: 6.0, &quot;potential_net_profit&quot;: 14.40, &quot;potential_total_return&quot;: 20.40, &quot;break_even_probability&quot;: 0.2941, &quot;estimated_win_probability&quot;: 0.31, &quot;reason_wins&quot;: &quot;Baltimore-controlled Lamar/Henry win compatible with slower game under 47.5.&quot;, &quot;reason_loses&quot;: &quot;IND upset, defensive TD, OT, or late explosive scoring surge over 47.5.&quot;, &quot;legs&quot;: [ { &quot;market&quot;: &quot;Moneyline&quot;, &quot;selection&quot;: &quot;Baltimore Ravens&quot; }, { &quot;market&quot;: &quot;Total&quot;, &quot;selection&quot;: &quot;UNDER 47.5&quot; } ] }
+  ],
+  &quot;reasoning_summary&quot;: &quot;Official schedule confirms this is still pregame at 1:00 PM ET. Local roster files misidentified both QBs; official charts have Lamar Jackson first for BAL and Daniel Jones first for IND. FanDuel reference market: Ravens -3.5, -178, total 47.5. Bovada exposed no event price. $14 reference-market spread + $6 conditional ML/UNDER SGP; SGP explicitly priced at min +240.&quot;
+}
+```
+</pre></details></article><article class="rp-card"><div class="rp-head"><div class="rp-name">Claude</div><span class="rp-tag">raw response</span></div><details open><summary>Show Claude's full response</summary><pre># Claude raw response, Ravens at Colts, Week 1 Game 6
+
+Lane: forced-selection v3.0 (independent-derivation)
+Model role: Claude
+Model version reported by model: claude-opus-4-7
+Generated at: 2026-09-13T11:43:00-04:00 (~1h17m before 1:00 PM ET kickoff)
+
+## Summary
+
+Winner: Baltimore Ravens 26, Indianapolis Colts 16.
+
+Ravens open on the road at Lucas Oil against a Daniel Jones team returning from Dec 2025 torn Achilles. Baltimore controls clock through Henry + Lamar-designed runs; forces two early Jones incompletions; opens 14-3 by half; garbage TD late for Colts.
+
+Tickets ($20, zero reserve):
+- T1: Ravens -3 $12 conditional min -120.
+- T2: SGP Ravens ML + game UNDER 47.5 $8 conditional min +180.
+
+**Four roster heuristic errors flagged (most this game):**
+- Ravens QB1 = Lamar Jackson (heuristic listed Huntley #5).
+- Colts QB1 = Daniel Jones (heuristic listed Anthony Richardson).
+- Colts RB1 = Jonathan Taylor (buried in heuristic depth by jersey number #28; heuristic listed Seth McGowan).
+- Colts WR1 = Josh Downs or Keenan Allen (heuristic listed D.J. Montgomery who is on IR).
+
+Historical analogue cited: W11 Texans/Titans UNDER 38.5 shape applied to Jones-first-game-back QB-asymmetry, same shape as Darnold Seattle debut UNDER 44.5 that cashed Week 1 Game 1.
+
+Ignored bias-carrying files.
+
+## Response
+
+```json
+{
+  &quot;prompt_template&quot;: &quot;forced-selection&quot;,
+  &quot;prompt_version&quot;: &quot;3.0&quot;,
+  &quot;model_role&quot;: &quot;Claude&quot;,
+  &quot;model_version&quot;: &quot;claude-opus-4-7&quot;,
+  &quot;generated_at&quot;: &quot;2026-09-13T11:43:00-04:00&quot;,
+  &quot;week&quot;: 1,
+  &quot;game_id&quot;: &quot;ravens-colts&quot;,
+  &quot;forced_allocation&quot;: true,
+  &quot;bankroll&quot;: 20,
+  &quot;total_stake&quot;: 20,
+  &quot;reserve&quot;: 0,
+  &quot;team_profiles_read&quot;: [
+    { &quot;path&quot;: &quot;Data/2026/rosters/baltimore-ravens.json&quot;, &quot;as_of&quot;: &quot;2026-09-13&quot;, &quot;season_record&quot;: &quot;0-0&quot;, &quot;health_key_players&quot;: [&quot;QB Lamar Jackson active&quot;, &quot;WR Zay Flowers listed Q in JSON but active per previews&quot;, &quot;DT Nnamdi Madubuike out&quot;, &quot;LB Teddye Buchanan out&quot;] },
+    { &quot;path&quot;: &quot;Data/2026/rosters/indianapolis-colts.json&quot;, &quot;as_of&quot;: &quot;2026-09-13&quot;, &quot;season_record&quot;: &quot;0-0&quot;, &quot;health_key_players&quot;: [&quot;QB Daniel Jones returning from Dec 2025 torn Achilles (starter per SI/Colts.com)&quot;, &quot;WR Josh Downs questionable&quot;, &quot;WR D.J. Montgomery IR&quot;, &quot;CB Cam Taylor-Britt suspended&quot;] }
+  ],
+  &quot;roster_heuristic_errors_flagged&quot;: [
+    &quot;Ravens qb1 listed as Tyler Huntley (#5). Actual starter is Lamar Jackson (#8).&quot;,
+    &quot;Colts qb1 listed as Anthony Richardson (#5). Actual Week 1 starter is Daniel Jones (#17); Richardson QB2 per Colts.com/SI.&quot;,
+    &quot;Colts rb1 listed as Seth McGowan (#20). Actual RB1 is Jonathan Taylor (#28), buried in the JSON depth by jersey number.&quot;,
+    &quot;Colts wr1 listed as D.J. Montgomery (IR). Actual healthy WR1 is Josh Downs or Keenan Allen.&quot;
+  ],
+  &quot;independent_derivations&quot;: {
+    &quot;profitable_shapes&quot;: [
+      { &quot;shape&quot;: &quot;Game total UNDER at a defensible number&quot;, &quot;record&quot;: &quot;8-4&quot;, &quot;citation&quot;: &quot;W11 Lions/Eagles UNDER 47.5 +$10; W11 Texans/Titans UNDER 38.5 +$10; W11 Com/Mia UNDER 47.5 +$10 (Claude &amp; Gemini); W11 Pats/Jets UNDER 43.5 +$2.73; W9 Chiefs/Bills UNDER 51.5 +$2.73; S2W1 Pats/Sea UNDER 44.5 +$5.45; S2W1 SF/LAR UNDER 45.5 +$10.91 (Claude); S2W1 SF/LAR UNDER 48.5 +$10.91 (Gemini).&quot; },
+      { &quot;shape&quot;: &quot;Short-favorite spread at or near key number&quot;, &quot;record&quot;: &quot;2-0&quot;, &quot;citation&quot;: &quot;W9 Claude 49ers -2.5 +$5.45; W11 Claude Eagles -1.5 +$10.&quot; },
+      { &quot;shape&quot;: &quot;Short-underdog through a hook near key number&quot;, &quot;record&quot;: &quot;3-0&quot;, &quot;citation&quot;: &quot;W9 Bills +1.5 +$6.36; S2W1 NE +3.5 +$3.64 (Claude) and +$10.17 (Gemini).&quot; },
+      { &quot;shape&quot;: &quot;Team-Total OVER on favored offense&quot;, &quot;record&quot;: &quot;2-0 small sample&quot;, &quot;citation&quot;: &quot;W11 Cowboys TT OVER 26.5-28.5 +$10 (Claude); W11 Cowboys TT OVER 24.5 +$10 (Gemini).&quot; }
+    ],
+    &quot;losing_shapes&quot;: [
+      { &quot;shape&quot;: &quot;Single-player OVER on QB pass yds / WR rec yds / anytime sack&quot;, &quot;citation&quot;: &quot;NFL_CORRECTIONS: Nix, Bonitto, Sutton, Herbert, McConkey, Stroud. 6 of 11.&quot; },
+      { &quot;shape&quot;: &quot;Big-favorite double-digit spreads&quot;, &quot;citation&quot;: &quot;W9 Packers -12.5 all three lost.&quot; },
+      { &quot;shape&quot;: &quot;Volume-anchored rush-attempts OVER on losing side&quot;, &quot;citation&quot;: &quot;S2W1 Claude Kyren OVER 16.5 -$4 + SGP -$4.&quot; },
+      { &quot;shape&quot;: &quot;Concentrated same-side team-total OVER on wrong-side thesis&quot;, &quot;citation&quot;: &quot;S2W1 ChatGPT LAR TT OVER 23.5 -$15 + SGP -$5.&quot; }
+    ]
+  },
+  &quot;self_reflection&quot;: {
+    &quot;past_picks_reviewed&quot;: [&quot;Docs/Responses/2026/week-01/game-01-patriots-seahawks/claude-picks.md (3-0 on $11; UNDER 44.5 cashed on QB-asymmetry premise)&quot;, &quot;Docs/Responses/2026/week-01/game-02-niners-rams/claude-picks.md (1-2; UNDER cashed, Kyren volume prop on losing side lost)&quot;],
+    &quot;pattern_kept&quot;: &quot;Game total UNDER when QB-asymmetry (returning-from-injury or debut) caps one offense&#39;s ceiling. Jones first game post-Achilles directly analogous to Darnold Seattle debut.&quot;,
+    &quot;pattern_stopped&quot;: &quot;Same-team volume prop as second leg. This SGP pairs ML with game total, not a same-team player prop.&quot;
+  },
+  &quot;bets&quot;: [
+    { &quot;type&quot;: &quot;straight&quot;, &quot;market&quot;: &quot;spread&quot;, &quot;line&quot;: &quot;Baltimore Ravens -3&quot;, &quot;stake&quot;: 12.00, &quot;pricing_status&quot;: &quot;conditional&quot;, &quot;odds_american&quot;: null, &quot;minimum_acceptable_odds&quot;: -120, &quot;sportsbook&quot;: null, &quot;odds_source&quot;: null, &quot;odds_captured_at&quot;: null, &quot;payout_basis&quot;: &quot;minimum_acceptable_odds&quot;, &quot;max_loss&quot;: 12.00, &quot;potential_net_profit&quot;: 10.00, &quot;potential_total_return&quot;: 22.00, &quot;break_even_probability&quot;: 0.5455, &quot;estimated_win_probability&quot;: 0.57, &quot;reason_wins&quot;: &quot;Lamar healthy, full Ravens skill vs Jones first game back from torn Achilles; Colts missing WR1 Montgomery and Downs questionable.&quot;, &quot;reason_loses&quot;: &quot;Baltimore wins by exactly 3 (push) or IND wins.&quot;, &quot;settlement_rules&quot;: &quot;Reg + OT; 3-pt Baltimore win pushes.&quot;, &quot;legs&quot;: [] },
+    { &quot;type&quot;: &quot;same_game_parlay&quot;, &quot;market&quot;: &quot;sgp_2_legs&quot;, &quot;line&quot;: &quot;Ravens ML AND game UNDER 47.5&quot;, &quot;stake&quot;: 8.00, &quot;pricing_status&quot;: &quot;conditional&quot;, &quot;odds_american&quot;: null, &quot;minimum_acceptable_odds&quot;: 180, &quot;sportsbook&quot;: null, &quot;odds_source&quot;: null, &quot;odds_captured_at&quot;: null, &quot;payout_basis&quot;: &quot;minimum_acceptable_odds&quot;, &quot;max_loss&quot;: 8.00, &quot;potential_net_profit&quot;: 14.40, &quot;potential_total_return&quot;: 22.40, &quot;break_even_probability&quot;: 0.3571, &quot;estimated_win_probability&quot;: 0.40, &quot;value_reasoning&quot;: &quot;Ravens ML ~0.64 at -176, UNDER ~0.55; product 0.35, mild correlation raises to ~0.40. Fair ~+140-+170; +180 min leaves positive edge.&quot;, &quot;reason_wins&quot;: &quot;Ravens 24-14 style, Henry-led clock control caps Colts scoring.&quot;, &quot;reason_loses&quot;: &quot;Shootout (Ravens 34, Colts 20 = 54) burns UNDER while ML cashes.&quot;, &quot;legs&quot;: [ { &quot;market&quot;: &quot;moneyline&quot;, &quot;selection&quot;: &quot;Baltimore Ravens ML&quot;, &quot;estimated_leg_probability&quot;: 0.64 }, { &quot;market&quot;: &quot;game_total&quot;, &quot;selection&quot;: &quot;UNDER 47.5&quot;, &quot;estimated_leg_probability&quot;: 0.55 } ] }
+  ],
+  &quot;reasoning_summary&quot;: &quot;Four roster heuristic errors flagged (Ravens QB1, Colts QB1, Colts RB1, Colts WR1). Independent NFL_BETS read: game-total UNDER 8-4, short-underdog hook 3-0, team-total OVER on favored 2-0 as profitable; single-player OVER props, big-favorite double-digit spreads, same-team volume-prop on losing side, and concentrated wrong-side team totals as losing. Game maps to Lamar-vs-Jones QB asymmetry which fits both a favored-side short spread (-3) and game-total UNDER (Jones first-game-back ceiling capping scoring). $12 Ravens -3 straight + $8 Ravens ML + UNDER 47.5 SGP for positive-correlation two-leg parlay, zero reserve, every ticket conditional.&quot;
+}
+```
+</pre></details></article></div></div></section>
 
 
 
