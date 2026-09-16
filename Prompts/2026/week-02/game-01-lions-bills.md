@@ -13,54 +13,43 @@ parlay with at least TWO distinct, compatible legs. Allocate the full
 $20 across these tickets; reserve must be zero. Every ticket needs a
 positive stake. A parlay is one ticket with one stake.
 
-INDEPENDENT EVIDENCE REVIEW (mandatory, this is the point of the study)
-This study tracks real graded outcomes across two seasons. Do NOT
-read any repository summary, review, or handoff doc that tells you
-"what has worked" or "what to avoid" for betting shapes. That would
-feed you our bias. The study is designed so you derive shape patterns
-independently from the raw graded data.
+LANE-SPECIFIC INSTRUCTIONS - READ THE ONE THAT MATCHES YOU
 
-You do not have local filesystem access. The study's tracked graded data
-lives in a public repository at
-https://github.com/Crespo1301/AI_Analyzer_Crespo. Try to fetch it. Try
-any URL you can: raw.githubusercontent.com paths for the files listed
-below, github.com blob paths, the live site at
-https://crespo1301.github.io/AI_Analyzer_Crespo/, or any public mirror
-you can reach. The paths that matter:
+  * If you are Claude (Claude Code) or ChatGPT (Codex CLI): you have
+    local filesystem access to the repository at
+    /home/cresp3/AI_Analyzer_Crespo. Read these files directly:
+      - assets/nfl-data.js  (NFL_BETS, NFL_CORRECTIONS - historical graded rows)
+      - assets/nfl-predictions-2026.js  (every Week 1 2026 pick, result, and grade, including your own)
+      - Data/2026/rosters/detroit-lions.json
+      - Data/2026/rosters/buffalo-bills.json
+      - Docs/2026/grading-rubric.md
+      - Docs/2026/week-01-analysis.md  (safe to read; it is retrospective, not future guidance)
+    Do NOT read Docs/2026/what-has-worked.md if it exists; that is a
+    biased summary and defeats the study's independent-derivation goal.
+    Cite specific rows or blocks in your reasoning, with a short quoted
+    snippet you actually pulled from the file.
 
-- assets/nfl-data.js  (contains NFL_BETS and NFL_CORRECTIONS)
-- assets/nfl-predictions-2026.js  (contains all Week 1 graded results and each model's own past picks)
-- Data/2026/rosters/<away-slug>.json and <home-slug>.json
-- Docs/2026/grading-rubric.md  (grading rules only; safe to read)
+  * If you are Gemini (web app): you do NOT have working repository
+    access. Every attempt in Week 1 fabricated a "404" for
+    raw.githubusercontent.com URLs that in fact return 200. Stop
+    attempting repository fetches. Do open-web research only:
+      - Live sportsbook odds (name the book: DraftKings, FanDuel,
+        Bovada if you can actually reach the page, ESPN BET, etc.).
+      - Each team's official injury report / depth chart page.
+      - ESPN, PFF, or beat-writer coverage on the specific matchup.
+    Cite every source with a full URL and a short snippet you
+    actually read (not a title, not something you invented). Do NOT
+    claim to have read raw.githubusercontent.com/... paths. That
+    claim will be graded as a fabricated fetch and cap reasoning at
+    1/5 under rubric v2.
+    A human paste from the repository may appear inside this prompt;
+    if it does, treat that inline text as your only repository input.
 
-Do NOT fetch any repository doc that summarizes shapes or gives
-betting guidance. Specifically do not fetch any file named
-what-has-worked.md, redesign-direction.md, or final-review.md when it
-contains conclusions rather than raw data.
-
-Absolute honesty rules on fetches:
-
-- If a URL returns a real response you actually read, include in the
-  sources block a short verbatim snippet from that response that is
-  NOT present in this prompt body. Any snippet already visible in this
-  prompt is not proof of a fetch.
-- If a URL returns 404 or your tool refuses to fetch it, say so
-  explicitly and set fetch_succeeded: false. Do NOT invent a snippet.
-- If none of the repository URLs work for you at all, say so at the
-  top of your response and derive your shape patterns from open-web
-  sources ONLY (public betting-industry retrospectives, box-score
-  archives, whatever you can actually verify). Cite each with a URL
-  and a quoted snippet.
-
-Grading rubric v2 caps reasoning at 1/5 when a citation is
-fabricated. There is no upside to claiming a fetch you did not
-perform. Note: this repository is PUBLIC and its raw URLs return 200,
-not 404. A claim that raw.githubusercontent.com paths under this repo
-returned 404 is a known-false claim.
-
-WEEK 1 CONTEXT AVAILABLE FOR REVIEW
-Week 1 is complete and every game is graded in assets/nfl-predictions-2026.js.
-You have your own model's Week 1 picks and outcomes there. Read them.
+WEEK 1 CONTEXT
+Week 1 is fully graded. Both teams played:
+  - Detroit beat New Orleans 31-30 in OT. Gibbs 2 rush TDs. Season 1-0.
+  - Buffalo beat Houston 36-31. Allen led a shootout win. Season 1-0.
+Both teams played high-scoring OVER-friendly games. Update priors.
 
 BET-TYPE COVERAGE (mandatory reflection point)
 Reviewing Week 1, all three models leaned heavily on GAME-LEVEL wagers:
@@ -82,107 +71,114 @@ This is an active concern for two reasons:
 
 Do not force a player prop where you do not have real conviction.
 Do not stack multiple single-player OVER props (that shape has
-lost consistently across Season 1). But: at least CONSIDER whether
-a defensible player-level pick (rush attempts on the projected
-winning side, a TT+prop compound, an Anytime TD tied to red-zone
-role) fits this specific matchup better than a reflex
-"favorite spread + ML/total SGP" that is highly correlated with
-your public read.
+lost consistently across Season 1 and hurt Gemini in Week 1's
+Bucs-Bengals and Dolphins-Raiders SGPs).
+
+But: at least CONSIDER whether a defensible player-level pick
+(rush attempts on the projected winning side, a team-total +
+player-role compound, an Anytime TD tied to red-zone role) fits
+this specific matchup better than a reflex "favorite spread +
+ML/total SGP" that is highly correlated with your public read.
+The winners from that shape in Week 1 were volume-anchored
+(Jeanty 23 rush att, Hall 22 rush att), not ceiling-anchored
+(Burrow 2+ pass TDs missed at 1 TD, Achane 68.5+ rush yds missed
+at 36).
 
 If you choose to stick with a game-level ticket, explicitly say
 you considered a player-level angle and rejected it, and why.
 
-Derive, on your own, and cite the specific games or rows that support
-each derivation:
+INDEPENDENT EVIDENCE REVIEW
+The study tracks real graded outcomes across two seasons. Derive,
+on your own, and cite the specific games or rows that support each
+derivation:
 
-- Which pick shapes (bet types, market sides, sizing patterns) have
-  generated the highest positive P/L in this study to date? Name the
-  specific games and prompts where they cashed.
-- Which pick shapes have generated the most losses or the most
-  box-score-audit corrections? Name the specific games and rows.
-- What is your own model's Week 1 record and P/L? What patterns did
-  your own picks share that won, and what patterns did they share
-  that lost? Filter to your own model_role and describe what you see.
+- Which pick shapes have generated the highest positive P/L in this
+  study to date? Name the specific games and prompts where they cashed.
+- Which pick shapes have generated the most losses or box-score-audit
+  corrections? Name the specific games and rows.
+- What is your OWN model's Week 1 record and P/L in Season 2? What
+  patterns did your winning picks share, and what patterns did your
+  losing picks share? Filter to your own model_role in
+  assets/nfl-predictions-2026.js (Claude/Codex lanes) or use the
+  published leaderboard (Gemini lane).
 
 Do not repeat conventional betting-industry heuristics unless the data
 in this repository specifically supports them. Do not assume any pattern
 holds without a citation to the actual rows.
 
-TEAM PROFILE STEP
-Read both team profiles and cite specific values in your reasoning:
-- https://raw.githubusercontent.com/Crespo1301/AI_Analyzer_Crespo/main/Data/2026/rosters/detroit-lions.json
-- https://raw.githubusercontent.com/Crespo1301/AI_Analyzer_Crespo/main/Data/2026/rosters/buffalo-bills.json
+TEAM PROFILE STEP (local-access lanes only)
+Claude and Codex: read these files directly. Cite specific values in
+your reasoning:
+  - Data/2026/rosters/detroit-lions.json
+  - Data/2026/rosters/buffalo-bills.json
 
 Each profile contains: roster (offense skill positions, kicker, depth
-tables), season_record (through the most recent graded game), and
-health_snapshot (out / questionable / IR players as_of a specific
-date). Name any health_snapshot player you are letting drive a pick.
-If health_snapshot.as_of is older than 24 hours before kickoff, note
-it as a staleness risk and verify against the team's own injury
-report before locking your bet.
-
-Both teams played in Week 1. Detroit beat New Orleans 31-30 in OT
-(their season_record is now 1-0). Buffalo beat Houston 36-31 (also
-1-0). Update your priors accordingly.
+tables), season_record (through Week 1), health_snapshot (out /
+questionable / IR players as_of a specific date). Both files now
+carry an updated season_record.last_game block with the Week 1
+outcome. Name any health_snapshot player you are letting drive a
+pick. If health_snapshot.as_of is older than 24 hours before
+kickoff, note it as a staleness risk and verify against the team's
+own injury report.
 
 The auto-populated rosters use a jersey-number heuristic that has been
-wrong before (in Season 2 Week 1 alone: Broncos QB1, Chargers QB1,
-Cardinals QB1, Vikings QB1, Eagles RB1, Giants QB1, Chiefs QB1, Bears
-QB1 were all flagged as heuristic errors). Verify starters
-independently against the team's own depth chart page and flag any
-error.
+wrong before. In Season 2 Week 1 the following starters were all
+flagged as heuristic errors: Broncos QB1 (Ehlinger -> Bo Nix),
+Chargers QB1 (Lance -> Herbert), Cardinals QB1 (Brissett -> Murray),
+Vikings QB1 (Murray -> McCarthy), Eagles RB1 (Bigsby -> Barkley),
+Giants QB1, Chiefs QB1, Bears QB1. Verify starters independently
+against the team's own depth chart page and flag any error you see
+in the DET or BUF file.
+
+Gemini: use ESPN's public depth-chart pages (espn.com/nfl/team/depth
+/_/name/det and .../buf) and the team's own site (detroitlions.com,
+buffalobills.com) instead of the roster JSON files.
 
 SELF-REFLECTION
-Your own model's Week 1 P/L is in the repo. State how your own past
-behavior changes this week's allocation. If your Week 1 shapes
-included specific losing patterns (contrarian home dogs, road big
-favorites, single-player OVER props, uncorrelated 3+ leg parlays,
-etc.), say what you are or are not repeating and why.
+Your own model's Week 1 P/L is a matter of record. State it. State
+which of your own past picks you read, and how they changed this
+week's allocation. If your Week 1 shapes included specific losing
+patterns (contrarian home dogs, road big favorites, single-player
+OVER props, uncorrelated 3+ leg parlays, ceiling props on a losing
+game script, etc.), say what you are or are not repeating and why.
 
 RESEARCH
 Do open-web research on this specific matchup. Cite every source with
 a full URL and a short snippet you actually read (not just a title).
 At minimum verify the current spread, total, and moneyline and note
 which sportsbook. Read each team's official injury report and depth
-chart page for Week 2 news. Buffalo's offense showed OVER tendencies
-in Week 1 (36 points at home vs Houston, went OVER 44.5). Detroit's
-offense was OVER-heavy too (30 points, needed OT to beat Saints).
-News about a team can update your priors on that team overall, not
-just for one bet.
+chart page. News about a team can update your priors on that team
+overall, not just for one bet.
 
 BOVADA PRICING HONESTY
 Carlos places tickets on Bovada. Try to obtain current event-specific
 Bovada prices from https://www.bovada.lv/sports/football/nfl. Do not
 log in, request credentials, bypass access controls, or place bets.
 Classify EVERY ticket as exactly one of:
-- bovada_verified: exact line and current Bovada price actually
-  retrieved. Include timestamped screenshot reference or the exact
-  captured_at time in ISO 8601.
-- reference_market: exact line and price verified at another named
-  book; NOT a verified Bovada offer.
-- conditional: exact proposed line and minimum acceptable American
-  odds, derived from your probability and value assessment; NOT an
-  observed quote.
+  - bovada_verified: exact line and current Bovada price actually
+    retrieved. Include the exact captured_at time in ISO 8601. If you
+    could not reach bovada.lv, do NOT use this label.
+  - reference_market: exact line and price verified at another named
+    book; NOT a verified Bovada offer.
+  - conditional: exact proposed line and minimum acceptable American
+    odds, derived from your probability and value assessment; NOT an
+    observed quote.
 
 Never label a proposed target as a real quote. Never assume -110.
-Under grading rubric v2, an unverified bovada_verified label is
-treated as a Source Honesty failure and caps your reasoning grade at
-1/5.
+Under grading rubric v2, an unverified bovada_verified label is a
+Source Honesty failure and caps reasoning grade at 1/5.
 
 GRADING PROCESS (Docs/2026/grading-rubric.md v2)
 You will be graded on outcome first, then reasoning, then sizing,
-then source honesty, then self-reflection. Outcome is primary.
-- LOSS caps at 4/5 reasoning; default LOSS grade is 3/5.
-- WIN with generic public reasoning caps at 2/5.
-- Fabricated citation or fabricated fetch caps reasoning at 1/5
-  regardless of outcome.
-- Sizing (0-3), Source Honesty (0-3), Self-Reflection (0-2) are
-  separate axes.
-- Season ROI drives the primary ranking.
-
-If you quote a snippet from a repository file to prove a fetch,
-choose a snippet that is NOT present in this prompt body. Snippets
-repeated verbatim from this prompt do not prove a fetch.
+then source honesty, then self-reflection.
+  - LOSS caps at 4/5 reasoning; default LOSS grade is 3/5.
+  - WIN with generic public reasoning caps at 2/5.
+  - Fabricated citation or fabricated fetch caps reasoning at 1/5
+    regardless of outcome. This includes claimed 404s on public
+    raw.githubusercontent.com URLs that in fact return 200.
+  - Sizing (0-3), Source Honesty (0-3), Self-Reflection (0-2) are
+    separate axes.
+  - Season ROI drives the primary ranking.
 
 PAYOUT AND RISK
 Each ticket must report stake, maximum loss, estimated win
@@ -197,9 +193,8 @@ ANSWER FORMAT
 2. Team profile notes: cite specific season_record and health_snapshot
    values used. Flag any roster heuristic error.
 3. Independent derivations from the graded data: which shapes you
-   derived as historically profitable in this study's data, which as
-   historically losing, citing the specific rows. Do NOT rely on
-   external betting-industry heuristics without a citation.
+   derived as historically profitable, which as losing, citing the
+   specific rows.
 4. Self-reflection: your Week 1 record and P/L for your own model,
    which of your own past picks you read, and how they changed this
    week's allocation.
@@ -207,7 +202,7 @@ ANSWER FORMAT
    $20 with zero reserve.
 6. Evidence, failure scenarios, correlation and missing-data notes.
 7. One valid JSON object with fields:
-   prompt_template ("forced-selection"), prompt_version ("3.0"),
+   prompt_template ("forced-selection"), prompt_version ("3.1"),
    model_role, model_version, generated_at, week (2),
    game_id ("lions-bills"), forced_allocation (true), bankroll (20),
    total_stake (20), reserve (0),
@@ -217,7 +212,7 @@ ANSWER FORMAT
      [...], each with a citation to specific games or rows},
    self_reflection {past_picks_reviewed, pattern_kept,
      pattern_stopped},
-   bets (with the per-ticket fields per pricing-honesty spec),
+   bets (with per-ticket fields per pricing-honesty spec),
    sources (with fetch_succeeded per URL and quoted snippet where
      applicable),
    reasoning_summary.
