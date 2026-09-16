@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Week 1 analysis · Research · AI Analyzer</title>
-<meta name="description" content="What worked, what didn&#39;t, and the bet-type coverage observation.">
+<title>Week 1 analysis, Research, AI Analyzer</title>
+<meta name="description" content="What worked, what did not, and the bet-type coverage observation.">
 <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
 <link rel="stylesheet" href="../assets/styles.css">
+<link rel="stylesheet" href="../assets/research.css">
+
 </head><body>
 <nav class="site-nav" aria-label="Site"><div class="nav-primary">
   <a class="nav-brand" href="../index.html"><span class="brand-mark">AI</span>Analyzer<span class="brand-sub">NFL</span></a>
@@ -13,18 +15,26 @@
     <li><a href="../models.html">Models</a></li>
     <li><a href="../bet-database.html">Results</a></li>
     <li><a href="../methodology.html">Methodology</a></li>
-    <li><a href="../research/index.html">Research</a></li>
+    <li><a href="../research/index.html" class="active">Research</a></li>
   </ul>
 </div></nav>
-<main id="main"><section class="band band-paper"><div class="wrap">
-<div class="band-head"><div><div class="b-kicker">Research</div><div class="b-title">Week 1 analysis</div></div><a class="b-more" href="index.html">&larr; Research index</a></div><div class="doc-body"><h1>Week 1 Analysis — 2026 Season</h1>
+<main id="main">
+
+  <section class="research-hero">
+    <div class="wrap">
+      <div class="rh-eyebrow">Research doc</div>
+      <h1 class="rh-h1">Week 1 analysis</h1>
+      <p class="rh-lede">What worked, what did not, and the bet-type coverage observation.</p>
+    </div>
+  </section>
+  <div class="wrap"><article class="doc-body"><h1>Week 1 Analysis, 2026 Season</h1>
 
 <h2>Final leaderboard</h2>
 <table class="doc-table"><thead><tr><th>Rank</th><th>Model</th><th>Record</th><th>P/L</th><th>Staked</th><th>ROI</th><th>Note</th></tr></thead><tbody><tr><td>1</td><td>ChatGPT (via Codex CLI)</td><td>18-12</td><td>+$114.18</td><td>$300</td><td>+38.1%</td><td>Sole model to file for all 16 games.</td></tr><tr><td>2</td><td>Gemini (web app)</td><td>12-9</td><td>+$56.18</td><td>$212</td><td>+26.5%</td><td>4 games expired without a response.</td></tr><tr><td>3</td><td>Claude (via Claude Code)</td><td>17-17</td><td>+$13.23</td><td>$311</td><td>+4.3%</td><td>Rescued by MNF SGP hit.</td></tr></tbody></table>
 
 <h2>What actually worked</h2>
 
-<ul><li><strong>Short-favorite spreads through the hook.</strong> Steelers -5.5, Ravens -3, Bears -3, MIN -4, KC -3.5 all cashed. When the projected winning team is decisively better and the number is not a big-favorite trap, this shape hit repeatedly.</li><li><strong>Home-favorite ML + game UNDER SGPs on defensive matchups.</strong> Claude&#39;s MNF Chiefs ML + UNDER 44.5 (+$14.40) and Falcons-Steelers UNDER 42.5 SGP (+$11.20). ChatGPT&#39;s Bills ML + OVER 44.5 in the shootout also cashed for the right structural reason (correlated home offense on the winning side, matched with the total direction).</li><li><strong>Team-Total OVER on the projected winning offense against a compromised opponent.</strong> Claude&#39;s Bears TT OVER 24.5 (Bears scored 59, +$10.91) and DET TT OVER 27.5 (+$10.91) both delivered clean.</li><li><strong>Volume-anchored rush attempts on the projected winning side.</strong> Gemini&#39;s Ashton Jeanty OVER 15.5 rush att in Game 11 (Jeanty had 23) and Breece Hall OVER 15.5 in Game 5 (Hall had 22). Not a random single-player OVER — a <em>volume</em> leg on the winning team is different from a <em>ceiling</em> leg on either team.</li></ul>
+<ul><li><strong>Short-favorite spreads through the hook.</strong> Steelers -5.5, Ravens -3, Bears -3, MIN -4, KC -3.5 all cashed. When the projected winning team is decisively better and the number is not a big-favorite trap, this shape hit repeatedly.</li><li><strong>Home-favorite ML + game UNDER SGPs on defensive matchups.</strong> Claude&#39;s MNF Chiefs ML + UNDER 44.5 (+$14.40) and Falcons-Steelers UNDER 42.5 SGP (+$11.20). ChatGPT&#39;s Bills ML + OVER 44.5 in the shootout also cashed for the right structural reason (correlated home offense on the winning side, matched with the total direction).</li><li><strong>Team-Total OVER on the projected winning offense against a compromised opponent.</strong> Claude&#39;s Bears TT OVER 24.5 (Bears scored 59, +$10.91) and DET TT OVER 27.5 (+$10.91) both delivered clean.</li><li><strong>Volume-anchored rush attempts on the projected winning side.</strong> Gemini&#39;s Ashton Jeanty OVER 15.5 rush att in Game 11 (Jeanty had 23) and Breece Hall OVER 15.5 in Game 5 (Hall had 22). Not a random single-player OVER, a <em>volume</em> leg on the winning team is different from a <em>ceiling</em> leg on either team.</li></ul>
 
 <h2>What didn&#39;t work</h2>
 
@@ -36,18 +46,18 @@
 
 <ul><li>ChatGPT: <strong>0</strong> player-prop legs across 32 tickets.</li><li>Claude: <strong>0</strong> player-prop legs across 32 tickets. Only exception was a Cowboys TT OVER 24.5 which is team-level, not player-level.</li><li>Gemini: <strong>5</strong> player-prop legs across the 21 tickets it filed (Burrow pass TDs, Gibbs anytime TD, Hall rush att, Achane rush yds, Williams pass TDs). Two of those were the <em>ceiling</em> shape (Burrow, Achane) and lost. Three were <em>volume</em> on projected winning side (Jeanty, Hall, and to a lesser extent Williams TDs which is technically ceiling but at a low-bar 2+) and hit.</li></ul>
 
-<p>The takeaway is not &quot;more player props&quot; — it&#39;s that a defensible <strong>volume-anchored</strong> player leg (rush attempts, red-zone role, target volume) on the projected winning side has been the sharpest edge in the study so far, and the models are systematically under-using it in favor of a reflex <code>spread + ML/total SGP</code> pattern.</p>
+<p>The takeaway is not &quot;more player props&quot;, it&#39;s that a defensible <strong>volume-anchored</strong> player leg (rush attempts, red-zone role, target volume) on the projected winning side has been the sharpest edge in the study so far, and the models are systematically under-using it in favor of a reflex <code>spread + ML/total SGP</code> pattern.</p>
 
 <h2>What&#39;s staying in Week 2 prompts</h2>
 
-<p>1. <code>forced-selection v3.0</code> template, unchanged in bones — one straight, one parlay, $20 forced allocation.</p>
+<p>1. <code>forced-selection v3.0</code> template, unchanged in bones, one straight, one parlay, $20 forced allocation.</p>
 <p>2. Independent-derivation lane preserved. Models still derive shapes from graded rows, not from summary docs.</p>
 <p>3. <code>bovada_verified</code> / <code>reference_market</code> / <code>conditional</code> pricing honesty labels unchanged.</p>
 <p>4. Grading rubric v2 unchanged.</p>
 
 <h2>What&#39;s being adjusted for Week 2</h2>
 
-<p>1. <strong>Explicit bet-type coverage note.</strong> Prompt now flags that Week 1 was game-level heavy and prompts each model to at least consider a player-level angle grounded in the team profile data before defaulting to a game-level SGP. This is not a mandate — it&#39;s a required reflection point.</p>
+<p>1. <strong>Explicit bet-type coverage note.</strong> Prompt now flags that Week 1 was game-level heavy and prompts each model to at least consider a player-level angle grounded in the team profile data before defaulting to a game-level SGP. This is not a mandate, it&#39;s a required reflection point.</p>
 <p>2. <strong>Volume vs ceiling distinction.</strong> Prompt now names the shape distinction (rush attempts / red-zone role vs. TD ceiling / passing OVER) so models can reason about which they&#39;re actually taking.</p>
 <p>3. <strong>Season records are live.</strong> Both teams&#39; <code>season_record</code> blocks reflect Week 1 outcomes so post-Week-1 momentum reads are grounded, not &quot;0-0 season opener&quot; as they were last week.</p>
 
@@ -57,6 +67,7 @@
 
 <p>There is no fix on our side. If Gemini wants a clean Source Honesty grade in Week 2, it can either fetch the raw URLs correctly (they work) or truthfully report that its tool cannot fetch them and derive from open-web sources only. The prompt already tells it that.</p>
 
-</div>
-</div></section></main>
+</article></div>
+</main>
+<footer class="site-footer"><div class="wrap"><div class="foot-legal"><span>AI Analyzer, NFL research corpus</span><span>&copy; 2026 Carlos Crespo</span></div></div></footer>
 </body></html>

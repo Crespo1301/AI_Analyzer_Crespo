@@ -1,4 +1,4 @@
-# Redesign Direction — AI Analyzer, 2026-27 NFL Season
+# Redesign Direction, AI Analyzer, 2026-27 NFL Season
 
 Status: Phase 1 proposal for approval. No code touched yet.
 Season context: 2026-27 regular season kicks off 2026-09-09. This is the first fully live-tracked season for the analyzer, and the site should treat Week 1 as the current experience from launch day forward.
@@ -103,17 +103,17 @@ Search icon far right (site-wide search across analyses, bets, methodology posts
 
 Route map:
 
-- `/` — Landing. Brand statement, project pitch, "Enter the 2026 Season" primary CTA into `/nfl-2026.html`. Small pointer to the 2025 archive and to Portfolio.
-- `/nfl-2026.html` — Current season hub. Editorial hero, matchup strip for the current week, model lineup tiles, this-week signals bento, methodology feed.
-- `/schedule.html` (new) — All-season schedule with week selector (1 through 18 + playoffs), each week collapses to a matchup list, empty weeks render pending state honestly.
-- `/models.html` (new) — Model performance page, current season by default with a season selector for historical seasons. ChatGPT / Claude / Gemini tiles with cumulative stats for the selected season, reasoning-grade histograms, iteration log, prompt-version breakdown. Once two seasons exist, adds a "Progression" strip that shows how each model family has changed year over year (2025 Season 1 model version and record, then 2026 Season 2 model version and record, and so on).
-- `/results.html` — Redesigned `bet-database.html`. Filterable table, week / model / market / outcome facets, direct ESPN box-score links.
-- `/methodology.html` (new) — Grading rubric, iteration system, correction history, data-workflow diagram, honest limitations.
-- `/about.html` (new) — Independent status, no league affiliation, disclosure of AI-generated content, contact, privacy note.
-- `/nfl-2025.html` — Season 1 (v1.0). Framed as "Season 1 · 2025 · v1.0 · Model generation: GPT-5 launch era / Claude 3.7 / Gemini 2.5". Clear disclosure at the top about sample size (Weeks 9 and 11 only, 15 games) and correction history, so readers see it as the starting point of a multi-year study, not as a proof of current-model performance. Cross-links to methodology, model lineup of that era, and Season 2 (2026).
-- `/nfl.html` — NFL section index. Season selector (Season 1 · 2025, Season 2 · 2026), progression view once two seasons exist, points to current season by default.
-- `/Sports_Pages/*.html` — Redesigned per-matchup pages, regenerated from `scripts/build-game-pages.js`.
-- `/404.html` (new) — Useful 404 with links to Week hub, Schedule, and Results.
+- `/`, Landing. Brand statement, project pitch, "Enter the 2026 Season" primary CTA into `/nfl-2026.html`. Small pointer to the 2025 archive and to Portfolio.
+- `/nfl-2026.html`, Current season hub. Editorial hero, matchup strip for the current week, model lineup tiles, this-week signals bento, methodology feed.
+- `/schedule.html` (new), All-season schedule with week selector (1 through 18 + playoffs), each week collapses to a matchup list, empty weeks render pending state honestly.
+- `/models.html` (new), Model performance page, current season by default with a season selector for historical seasons. ChatGPT / Claude / Gemini tiles with cumulative stats for the selected season, reasoning-grade histograms, iteration log, prompt-version breakdown. Once two seasons exist, adds a "Progression" strip that shows how each model family has changed year over year (2025 Season 1 model version and record, then 2026 Season 2 model version and record, and so on).
+- `/results.html`, Redesigned `bet-database.html`. Filterable table, week / model / market / outcome facets, direct ESPN box-score links.
+- `/methodology.html` (new), Grading rubric, iteration system, correction history, data-workflow diagram, honest limitations.
+- `/about.html` (new), Independent status, no league affiliation, disclosure of AI-generated content, contact, privacy note.
+- `/nfl-2025.html`, Season 1 (v1.0). Framed as "Season 1 · 2025 · v1.0 · Model generation: GPT-5 launch era / Claude 3.7 / Gemini 2.5". Clear disclosure at the top about sample size (Weeks 9 and 11 only, 15 games) and correction history, so readers see it as the starting point of a multi-year study, not as a proof of current-model performance. Cross-links to methodology, model lineup of that era, and Season 2 (2026).
+- `/nfl.html`, NFL section index. Season selector (Season 1 · 2025, Season 2 · 2026), progression view once two seasons exist, points to current season by default.
+- `/Sports_Pages/*.html`, Redesigned per-matchup pages, regenerated from `scripts/build-game-pages.js`.
+- `/404.html` (new), Useful 404 with links to Week hub, Schedule, and Results.
 
 Search, filters, week selection, and menus all wired to real content. No empty destinations added just to fill navigation.
 

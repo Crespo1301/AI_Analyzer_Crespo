@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Research · Research · AI Analyzer</title>
-<meta name="description" content="All study research materials — team profiles, grading rubric, weekly analyses, and iteration history — published as a single browseable index.">
+<title>Research, Research, AI Analyzer</title>
+<meta name="description" content="All study research materials, published as browseable HTML.">
 <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
 <link rel="stylesheet" href="../assets/styles.css">
+<link rel="stylesheet" href="../assets/research.css">
+
 </head><body>
 <nav class="site-nav" aria-label="Site"><div class="nav-primary">
   <a class="nav-brand" href="../index.html"><span class="brand-mark">AI</span>Analyzer<span class="brand-sub">NFL</span></a>
@@ -13,31 +15,58 @@
     <li><a href="../models.html">Models</a></li>
     <li><a href="../bet-database.html">Results</a></li>
     <li><a href="../methodology.html">Methodology</a></li>
-    <li><a href="../research/index.html">Research</a></li>
+    <li><a href="../research/index.html" class="active">Research</a></li>
   </ul>
 </div></nav>
-<main id="main"><section class="band band-paper"><div class="wrap">
+<main id="main">
 
-  <div class="band-head"><div><div class="b-kicker">Research corpus</div><div class="b-title">Everything the models can reference</div></div></div>
-  <p>This is a mirror of the study's research materials as browseable HTML so any model — including web-only lanes — can reach them without needing repo access. Every page here rebuilds on push from <code>Data/</code> and <code>Docs/</code> and is safe to cite directly.</p>
+  <section class="research-hero">
+    <div class="wrap">
+      <div class="rh-eyebrow">Research corpus</div>
+      <h1 class="rh-h1">Everything the models can cite</h1>
+      <p class="rh-lede">A public mirror of the study's research materials, rebuilt on every push. Any web-only model can reach these pages at stable URLs without needing repo access.</p>
+    </div>
+  </section>
+  <div class="wrap">
+    <div class="research-cards">
+      <a class="rc rc-teams" href="teams/index.html">
+        <div class="rc-kicker">32 profiles</div>
+        <h3>Team profiles</h3>
+        <p>Verified starters, depth chart, health snapshot, and season record for every team. Grouped by division.</p>
+      </a>
+      <a class="rc rc-rubric" href="rubric.html">
+        <div class="rc-kicker">v2, effective 2026-09-11</div>
+        <h3>Grading rubric</h3>
+        <p>Outcome primary, reasoning secondary. Sizing, source honesty, and self-reflection scored on separate axes.</p>
+      </a>
+      <a class="rc rc-analysis" href="week-01-analysis.html">
+        <div class="rc-kicker">Retrospective</div>
+        <h3>Week 1 analysis</h3>
+        <p>Full recap. What worked, what did not, model-by-model P/L, and the bet-type coverage observation heading into Week 2.</p>
+      </a>
+      <a class="rc rc-iter" href="iteration-system.html">
+        <div class="rc-kicker">System doc</div>
+        <h3>Iteration log</h3>
+        <p>How the prompt template, grading rubric, and roster verification evolve week to week.</p>
+      </a>
+      <a class="rc rc-ledger" href="../bet-database.html">
+        <div class="rc-kicker">Live ledger</div>
+        <h3>Bet database</h3>
+        <p>Every graded pick from Season 1 and Season 2. Filterable. This is the raw data the shape derivations should cite.</p>
+      </a>
+      <a class="rc rc-season" href="../nfl-2026.html">
+        <div class="rc-kicker">Live standings</div>
+        <h3>Season hub</h3>
+        <p>Current leaderboard, weekly tracker, and per-game locked picks. Where the study lives now.</p>
+      </a>
+    </div>
 
-  <h2>Team profiles</h2>
-  <p>32 profiles at <a href="teams/index.html">/research/teams/</a> — each with roster, verified-starter notes, depth chart, health snapshot, and season record with last-game and next-game blocks.</p>
+    <section class="research-note">
+      <h2>Note for web-only models</h2>
+      <p>Every page linked above is at a stable public URL under <code>/research/</code> or <code>/</code>. Fetching these will actually resolve. Do not attempt <code>raw.githubusercontent.com</code> paths, they have never worked for the web lane and fabricated 404s cap reasoning at 1/5 under the source-honesty axis of rubric v2.</p>
+    </section>
+  </div>
 
-  <h2>Grading rubric</h2>
-  <p><a href="rubric.html">Grading rubric v2</a>. Outcome primary; reasoning secondary; sizing, source honesty, and self-reflection scored separately.</p>
-
-  <h2>Weekly analyses</h2>
-  <p><a href="week-01-analysis.html">Week 1 analysis</a> — what worked, what didn't, model-by-model P/L, and the bet-type coverage observation.</p>
-
-  <h2>Iteration system</h2>
-  <p><a href="iteration-system.html">Iteration system</a> — how the prompt template, rubric, and roster verification are adjusted week-to-week.</p>
-
-  <h2>Live results</h2>
-  <p>Bet-by-bet grades and the running leaderboard live outside this section: <a href="../bet-database.html">bet database</a> and <a href="../nfl-2026.html">2026 season hub</a>.</p>
-
-  <h2>Note for web-only models (Gemini)</h2>
-  <p>Every page above is public HTML at a stable <code>/research/…</code> path. Fetching these instead of <code>raw.githubusercontent.com</code> paths will actually resolve. Fabricated 404s on public URLs are graded as Source Honesty failures under rubric v2.</p>
-
-</div></section></main>
+</main>
+<footer class="site-footer"><div class="wrap"><div class="foot-legal"><span>AI Analyzer, NFL research corpus</span><span>&copy; 2026 Carlos Crespo</span></div></div></footer>
 </body></html>

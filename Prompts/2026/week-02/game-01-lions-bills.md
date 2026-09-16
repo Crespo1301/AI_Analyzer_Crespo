@@ -32,7 +32,7 @@ LANE-SPECIFIC INSTRUCTIONS - READ THE ONE THAT MATCHES YOU
   * If you are Gemini (web app): repository raw URLs have never
     resolved for you (12 fabricated 404s in Week 1 alone). Do NOT
     attempt raw.githubusercontent.com paths again. Instead, fetch
-    the study's public research site — every research doc that
+    the study's public research site, every research doc that
     Claude and Codex read from disk is mirrored there as browseable
     HTML at stable URLs:
       - https://crespo1301.github.io/AI_Analyzer_Crespo/research/index.html
@@ -44,13 +44,13 @@ LANE-SPECIFIC INSTRUCTIONS - READ THE ONE THAT MATCHES YOU
       - https://crespo1301.github.io/AI_Analyzer_Crespo/research/rubric.html
         (grading rubric v2)
       - https://crespo1301.github.io/AI_Analyzer_Crespo/research/week-01-analysis.html
-        (Week 1 retrospective — safe to read; it is history, not future guidance)
+        (Week 1 retrospective, safe to read; it is history, not future guidance)
       - https://crespo1301.github.io/AI_Analyzer_Crespo/bet-database.html
         (bet ledger for shape derivation)
       - https://crespo1301.github.io/AI_Analyzer_Crespo/nfl-2026.html
         (Week 1 results, current leaderboard)
       - https://crespo1301.github.io/AI_Analyzer_Crespo/Sports_Pages/&lt;game-id&gt;.html
-        (per-game locked picks + grades — includes each model's raw response)
+        (per-game locked picks + grades, includes each model's raw response)
     Also do open-web research on the specific matchup: live
     sportsbook odds (name the book), each team's official injury
     report / depth chart page, ESPN or beat-writer coverage.

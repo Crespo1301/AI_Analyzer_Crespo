@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Iteration system · Research · AI Analyzer</title>
-<meta name="description" content="How weekly prompts, rubric, and roster corrections are updated over the season.">
+<title>Iteration system, Research, AI Analyzer</title>
+<meta name="description" content="How weekly prompts, rubric, and roster corrections evolve.">
 <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
 <link rel="stylesheet" href="../assets/styles.css">
+<link rel="stylesheet" href="../assets/research.css">
+
 </head><body>
 <nav class="site-nav" aria-label="Site"><div class="nav-primary">
   <a class="nav-brand" href="../index.html"><span class="brand-mark">AI</span>Analyzer<span class="brand-sub">NFL</span></a>
@@ -13,11 +15,19 @@
     <li><a href="../models.html">Models</a></li>
     <li><a href="../bet-database.html">Results</a></li>
     <li><a href="../methodology.html">Methodology</a></li>
-    <li><a href="../research/index.html">Research</a></li>
+    <li><a href="../research/index.html" class="active">Research</a></li>
   </ul>
 </div></nav>
-<main id="main"><section class="band band-paper"><div class="wrap">
-<div class="band-head"><div><div class="b-kicker">Research</div><div class="b-title">Iteration system</div></div><a class="b-more" href="index.html">&larr; Research index</a></div><div class="doc-body"><h1>2026 Iteration System</h1>
+<main id="main">
+
+  <section class="research-hero">
+    <div class="wrap">
+      <div class="rh-eyebrow">Research doc</div>
+      <h1 class="rh-h1">Iteration system</h1>
+      <p class="rh-lede">How weekly prompts, rubric, and roster corrections evolve.</p>
+    </div>
+  </section>
+  <div class="wrap"><article class="doc-body"><h1>2026 Iteration System</h1>
 
 <p>The 2026 AI Analyzer should be easy to adjust as the NFL season develops. The</p>
 <p>system should let us change prompts, strategy, grading, and presentation without</p>
@@ -68,7 +78,7 @@ Prompt: context-heavy
 Change: added explicit &quot;what would make this bet lose&quot; field.
 Reason: models were giving confident picks without downside risk.
 Expected improvement: fewer weak props and fewer public-looking spread picks.
-</pre></code>
+</code></pre>
 
 <h2>Change Log (actual)</h2>
 
@@ -265,7 +275,7 @@ Reason: 2025 experiment had un-auditable &quot;take the QB passing over&quot; st
 Expected improvement: every response is fully auditable; stake-sizing
   behavior becomes a comparable variable across models; parlays get graded
   as one bet (single stake, all legs must hit) instead of as separate rows.
-</pre></code>
+</code></pre>
 
 <pre><code>2026-09-08
 Prompt: research-mode (drafted, becomes default starting Week 2)
@@ -287,7 +297,7 @@ Expected improvement: eliminates prompt-writer error as a variable;
 Fallback: if any model provably lacks working search in a given week,
   rerun that specific game under bankroll-optimized and note it in
   result.md as a methodology inconsistency for that week.
-</pre></code>
+</code></pre>
 
 <h2>Strategy Lanes</h2>
 
@@ -310,6 +320,7 @@ Fallback: if any model provably lacks working search in a given week,
 <p>The system is improving if it gets cleaner, more auditable, and more selective,</p>
 <p>even before it becomes profitable.</p>
 
-</div>
-</div></section></main>
+</article></div>
+</main>
+<footer class="site-footer"><div class="wrap"><div class="foot-legal"><span>AI Analyzer, NFL research corpus</span><span>&copy; 2026 Carlos Crespo</span></div></div></footer>
 </body></html>

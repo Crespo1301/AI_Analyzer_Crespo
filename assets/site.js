@@ -184,8 +184,8 @@ function nflSlotPending(placeholderIdx) {
   return ''
     + '<div class="scoreboard-slot placeholder" aria-hidden="true">'
     + '  <div class="sb-status">TBD</div>'
-    + '  <div class="sb-team"><span class="sb-abbr">&mdash;</span></div>'
-    + '  <div class="sb-team"><span class="sb-abbr">&mdash;</span></div>'
+    + '  <div class="sb-team"><span class="sb-abbr">,</span></div>'
+    + '  <div class="sb-team"><span class="sb-abbr">,</span></div>'
     + '</div>';
 }
 
