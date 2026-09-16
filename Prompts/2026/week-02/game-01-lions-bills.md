@@ -62,6 +62,36 @@ WEEK 1 CONTEXT AVAILABLE FOR REVIEW
 Week 1 is complete and every game is graded in assets/nfl-predictions-2026.js.
 You have your own model's Week 1 picks and outcomes there. Read them.
 
+BET-TYPE COVERAGE (mandatory reflection point)
+Reviewing Week 1, all three models leaned heavily on GAME-LEVEL wagers:
+spreads, moneylines, game totals, and SGPs shaped as "favorite ML +
+game OVER/UNDER". Player-level analysis was almost entirely absent
+from your reasoning even though your team profiles carry roster,
+depth chart, prop_watchlist, and health_snapshot data specifically
+to inform prop-level opinions.
+
+This is an active concern for two reasons:
+1. In the study's earlier data, generic game/score picks with vague
+   reasoning were a losing family. Grading rubric v2 was designed
+   partly in response - a WIN with generic public reasoning caps at
+   2/5 while a pick with specific factor citation (roster edge,
+   snap-count trend, injury-driven volume shift) can grade higher.
+2. When you already know a player's role, health, and matchup, and
+   have a defensible price, a player prop can carry sharper edge
+   than a spread whose price already absorbs public heat.
+
+Do not force a player prop where you do not have real conviction.
+Do not stack multiple single-player OVER props (that shape has
+lost consistently across Season 1). But: at least CONSIDER whether
+a defensible player-level pick (rush attempts on the projected
+winning side, a TT+prop compound, an Anytime TD tied to red-zone
+role) fits this specific matchup better than a reflex
+"favorite spread + ML/total SGP" that is highly correlated with
+your public read.
+
+If you choose to stick with a game-level ticket, explicitly say
+you considered a player-level angle and rejected it, and why.
+
 Derive, on your own, and cite the specific games or rows that support
 each derivation:
 
