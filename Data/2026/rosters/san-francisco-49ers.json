@@ -183,12 +183,10 @@
     "games_played": 1,
     "last_game": {
       "week": 1,
-      "date": "2026-09-10",
       "opponent": "Los Angeles Rams",
-      "site": "away",
-      "result": "W",
-      "score": "27-7",
-      "espn": "https://www.espn.com/nfl/boxscore/_/gameId/401872657"
+      "result": "W 27-7",
+      "date": "2026-09-11",
+      "notes": ""
     },
     "next_game": null
   },

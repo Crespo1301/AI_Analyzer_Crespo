@@ -162,12 +162,10 @@
     "games_played": 1,
     "last_game": {
       "week": 1,
-      "date": "2026-09-09",
       "opponent": "Seattle Seahawks",
-      "site": "away",
-      "result": "L",
-      "score": "10-13",
-      "espn": "https://www.espn.com/nfl/boxscore/_/gameId/401872656"
+      "result": "L 10-13",
+      "date": "2026-09-10",
+      "notes": ""
     },
     "next_game": null
   },

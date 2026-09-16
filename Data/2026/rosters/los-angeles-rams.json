@@ -188,12 +188,10 @@
     "games_played": 1,
     "last_game": {
       "week": 1,
-      "date": "2026-09-10",
       "opponent": "San Francisco 49ers",
-      "site": "home",
-      "result": "L",
-      "score": "7-27",
-      "espn": "https://www.espn.com/nfl/boxscore/_/gameId/401872657"
+      "result": "L 7-27",
+      "date": "2026-09-11",
+      "notes": ""
     },
     "next_game": null
   },

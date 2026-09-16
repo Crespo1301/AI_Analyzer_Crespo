@@ -1439,3 +1439,27 @@ a:focus-visible, button:focus-visible, .btn:focus-visible, .wt-card:focus-visibl
   .recap-headline { font-size: 16px; }
   .recap-card p { font-size: 13px; }
 }
+
+/* ================================================================
+ * HERO LITE — compact scoreboard-style hero replacing the text-heavy header
+ * ================================================================ */
+.hero-lite { background: var(--ink); color: var(--paper); padding: 44px 0 40px; border-bottom: 1px solid var(--ink-2); }
+.hero-lite-inner { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: 40px; align-items: center; }
+.hero-lite-tag { display: inline-block; font-family: var(--f-display); font-weight: 800; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--nfl-red); margin-bottom: 12px; }
+.hero-lite-headline { font-family: var(--f-display); font-size: clamp(30px, 5.5vw, 52px); line-height: 1.02; letter-spacing: -0.015em; margin: 0; font-weight: 800; }
+.hero-lite-nums { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.hl-num { padding: 18px 16px; background: rgba(255,255,255,0.05); border-radius: 8px; border-left: 3px solid var(--nfl-red); display: flex; flex-direction: column; gap: 4px; }
+.hl-n { font-family: var(--f-display); font-weight: 800; font-size: clamp(22px, 3vw, 30px); font-variant-numeric: tabular-nums; line-height: 1; }
+.hl-n.pl-win { color: #7ee091; }
+.hl-n.pl-loss { color: #ff7b83; }
+.hl-l { font-family: var(--f-display); font-weight: 700; font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.6); }
+
+@media (max-width: 900px) {
+  .hero-lite-inner { grid-template-columns: 1fr; gap: 24px; }
+  .hero-lite { padding: 32px 0; }
+}
+@media (max-width: 500px) {
+  .hero-lite-nums { grid-template-columns: 1fr; gap: 8px; }
+  .hl-num { padding: 14px 16px; flex-direction: row; align-items: baseline; justify-content: space-between; }
+  .hl-n { font-size: 22px; }
+}

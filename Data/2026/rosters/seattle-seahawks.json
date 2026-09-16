@@ -188,12 +188,10 @@
     "games_played": 1,
     "last_game": {
       "week": 1,
-      "date": "2026-09-09",
       "opponent": "New England Patriots",
-      "site": "home",
-      "result": "W",
-      "score": "13-10",
-      "espn": "https://www.espn.com/nfl/boxscore/_/gameId/401872656"
+      "result": "W 13-10",
+      "date": "2026-09-10",
+      "notes": ""
     },
     "next_game": null
   },

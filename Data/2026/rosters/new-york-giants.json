@@ -149,13 +149,19 @@
   ],
   "season_record": {
     "season": 2026,
-    "wins": 0,
+    "wins": 1,
     "losses": 0,
     "ties": 0,
-    "points_for": 0,
-    "points_against": 0,
-    "games_played": 0,
-    "last_game": null,
+    "points_for": 28,
+    "points_against": 20,
+    "games_played": 1,
+    "last_game": {
+      "week": 1,
+      "opponent": "Dallas Cowboys",
+      "result": "W 28-20",
+      "date": "2026-09-14",
+      "notes": "John Harbaugh Giants debut win over DAL."
+    },
     "next_game": null
   },
   "health_snapshot": {

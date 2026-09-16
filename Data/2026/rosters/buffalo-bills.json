@@ -157,8 +157,21 @@
     "points_for": 36,
     "points_against": 31,
     "games_played": 1,
-    "last_game": { "week": 1, "opponent": "Houston Texans", "result": "W 36-31", "date": "2026-09-13", "notes": "Josh Allen led shootout win at NRG." },
-    "next_game": { "week": 2, "opponent": "Detroit Lions", "date": "2026-09-17", "location": "home (Highmark Stadium)", "kickoff_et": "8:15 PM", "network": "Prime Video (TNF)" }
+    "last_game": {
+      "week": 1,
+      "opponent": "Houston Texans",
+      "result": "W 36-31",
+      "date": "2026-09-13",
+      "notes": ""
+    },
+    "next_game": {
+      "week": 2,
+      "opponent": "Detroit Lions",
+      "date": "2026-09-17",
+      "location": "home (Highmark Stadium)",
+      "kickoff_et": "8:15 PM",
+      "network": "Prime Video (TNF)"
+    }
   },
   "health_snapshot": {
     "as_of": "2026-09-13",

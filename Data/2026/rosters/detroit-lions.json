@@ -160,8 +160,21 @@
     "points_for": 31,
     "points_against": 30,
     "games_played": 1,
-    "last_game": { "week": 1, "opponent": "New Orleans Saints", "result": "W 31-30 OT", "date": "2026-09-13", "notes": "Kellen Moore go-for-2 walkoff. Gibbs 2 rush TDs." },
-    "next_game": { "week": 2, "opponent": "Buffalo Bills", "date": "2026-09-17", "location": "away (Highmark Stadium)", "kickoff_et": "8:15 PM", "network": "Prime Video (TNF)" }
+    "last_game": {
+      "week": 1,
+      "opponent": "New Orleans Saints",
+      "result": "W 31-30",
+      "date": "2026-09-13",
+      "notes": "Kellen Moore go-for-2 walkoff. Gibbs 2 rush TDs."
+    },
+    "next_game": {
+      "week": 2,
+      "opponent": "Buffalo Bills",
+      "date": "2026-09-17",
+      "location": "away (Highmark Stadium)",
+      "kickoff_et": "8:15 PM",
+      "network": "Prime Video (TNF)"
+    }
   },
   "health_snapshot": {
     "as_of": "2026-09-13",

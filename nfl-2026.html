@@ -52,29 +52,44 @@
 
 <main id="main">
 
-<header class="editorial-hero">
-  <div class="hero-canvas" aria-hidden="true"><img src="assets/hero-canvas.svg" alt=""></div>
+<header class="hero-lite">
   <div class="wrap">
-    <span class="hero-tag" id="hero-week-tag">Season 2 &middot; live</span>
-    <h1 class="hero-headline">Three AI models.<br>Same $20 a game.<br>Real graded results.</h1>
-    <p class="hero-sub">Each week we give ChatGPT, Claude, and Gemini identical $20 bankrolls and identical prompts, and lock their picks before kickoff. Whichever model happens to be the best available at prompt-time is used &mdash; the exact version is recorded with the response, not pinned by us. Every pick is graded against the ESPN box score. No cherry-picking, no post-hoc edits.</p>
-    <div class="hero-cta-row">
-      <a class="btn btn-primary" href="#matchups">See this week's matchups</a>
-      <a class="btn btn-ghost" href="methodology.html">Read the methodology</a>
+    <div class="hero-lite-inner">
+      <div class="hero-lite-lede">
+        <span class="hero-lite-tag" id="hero-week-tag">Season 2 &middot; live</span>
+        <h1 class="hero-lite-headline">$20 per game.<br>Three AI models.<br>Graded live.</h1>
+      </div>
+      <div class="hero-lite-nums" id="hero-lite-nums"></div>
     </div>
   </div>
 </header>
 
-<section class="band band-paper">
+<section class="exec-summary" id="exec-summary" aria-labelledby="exec-summary-heading">
+  <div class="wrap">
+    <div class="exec-inner">
+      <div class="exec-lede">
+        <div class="exec-eyebrow">Season 2 &middot; leaderboard</div>
+        <h2 class="exec-title" id="exec-summary-heading"><span id="exec-leader">&nbsp;</span></h2>
+        <p class="exec-sub" id="exec-sub">Loading grading&hellip;</p>
+      </div>
+      <ol class="exec-podium" id="exec-podium"></ol>
+    </div>
+  </div>
+</section>
+
+<section class="band band-paper" id="week-tracker-section">
   <div class="wrap">
     <div class="band-head">
       <div>
-        <div class="b-kicker">Weeks</div>
-        <div class="b-title">Regular <span class="accent">season</span></div>
+        <div class="b-kicker" id="wt-kicker">Week tracker</div>
+        <div class="b-title">Weekly <span class="accent">results</span></div>
       </div>
-      <a class="b-more" href="schedule.html">Full schedule &rarr;</a>
     </div>
-    <div class="week-select" id="week-select"></div>
+    <div class="wt-summary" id="wt-summary"></div>
+    <div class="week-tracker" id="wt-cards"></div>
+    <div class="tracker-divider"><span>Season to date</span></div>
+    <div class="wt-summary" id="st-summary"></div>
+    <div class="week-tracker" id="st-cards"></div>
   </div>
 </section>
 
@@ -82,10 +97,12 @@
   <div class="wrap">
     <div class="band-head">
       <div>
-        <div class="b-kicker">Week 1</div>
+        <div class="b-kicker" id="matchups-kicker">Week 2</div>
         <div class="b-title">This week's <span class="accent">slate</span></div>
       </div>
+      <a class="b-more" href="schedule.html">Full schedule &rarr;</a>
     </div>
+    <div class="week-select" id="week-select"></div>
     <div class="mgrid" id="matchup-grid"></div>
   </div>
 </section>
@@ -117,53 +134,6 @@
         <p>Went 17-17. Bailed out by the MNF UNDER SGP hitting for +$14.40, otherwise this was a losing week. Contrarian home-dog plays (HOU +3, MIN -4, DAL -3 SNF) added up. Big wins on Jets +1.5 SGP (+$20) and Falcons-Steelers sweep couldn't offset the damage.</p>
         <div class="recap-numbers"><span><strong>+$13.23</strong> profit</span><span><strong>+4.3%</strong> ROI</span><span><strong>50%</strong> hit rate</span></div>
       </div>
-    </div>
-  </div>
-</section>
-
-<section class="exec-summary" id="exec-summary" aria-labelledby="exec-summary-heading">
-  <div class="wrap">
-    <div class="exec-inner">
-      <div class="exec-lede">
-        <div class="exec-eyebrow">Season 2 &middot; leaderboard</div>
-        <h2 class="exec-title" id="exec-summary-heading"><span id="exec-leader">&nbsp;</span></h2>
-        <p class="exec-sub" id="exec-sub">Loading grading&hellip;</p>
-      </div>
-      <ol class="exec-podium" id="exec-podium"></ol>
-    </div>
-  </div>
-</section>
-
-<section class="band band-paper" id="week-tracker-section">
-  <div class="wrap">
-    <div class="band-head">
-      <div>
-        <div class="b-kicker" id="wt-kicker">Week 1 tracker</div>
-        <div class="b-title">Weekly <span class="accent">results</span></div>
-      </div>
-    </div>
-    <div class="wt-summary" id="wt-summary"></div>
-    <div class="week-tracker" id="wt-cards"></div>
-    <div class="tracker-divider"><span>Season to date</span></div>
-    <div class="wt-summary" id="st-summary"></div>
-    <div class="week-tracker" id="st-cards"></div>
-  </div>
-</section>
-
-<section class="band band-ink">
-  <div class="wrap">
-    <div class="band-head" style="color: var(--paper); border-bottom-color: rgba(255,255,255,0.25)">
-      <div>
-        <div class="b-kicker">Season snapshot</div>
-        <div class="b-title">Where <span class="accent">we stand</span></div>
-      </div>
-      <a class="b-more" href="models.html">Model page &rarr;</a>
-    </div>
-    <div class="stat-row" id="season-stats">
-      <div class="stat-tile"><div class="st-label">Games Predicted</div><div class="st-value tabular">0</div><div class="st-sub">Recorded model responses</div></div>
-      <div class="stat-tile"><div class="st-label">Bets Locked</div><div class="st-value tabular">0</div><div class="st-sub">Fresh prompt system live</div></div>
-      <div class="stat-tile"><div class="st-label">Picks Won / Graded</div><div class="st-value tabular" id="graded-count">0 / 0</div><div class="st-sub">Reasoning reviewed separately</div></div>
-      <div class="stat-tile"><div class="st-label">Combined ROI</div><div class="st-value tabular">N/A</div><div class="st-sub">Original Claude bet prices missing</div></div>
     </div>
   </div>
 </section>
@@ -223,14 +193,23 @@
   nflRenderWeekSelect("week-select", { baseHref: "schedule.html" });
   nflRenderMatchupGrid("matchup-grid");
   var wk = nflCurrentWeek();
-  document.getElementById("hero-week-tag").textContent = "Week " + wk + " · 2026 season";
-  document.querySelector("#matchups .b-kicker").textContent = "Week " + wk;
-  var summary = nflPredictions2026Summary();
-  var stats = document.querySelectorAll("#season-stats .st-value");
-  stats[0].textContent = NFL_PREDICTIONS_2026.length;
-  stats[1].textContent = summary.reduce(function (total, model) { return total + model.totalBets; }, 0);
-  var graded = nflGradedBets2026();
-  document.getElementById("graded-count").textContent = graded.filter(function(b){ return b.outcome === "WIN"; }).length + " / " + graded.length;
+  document.getElementById("hero-week-tag").textContent = "Season 2 · Week " + wk;
+  var mkicker = document.getElementById("matchups-kicker");
+  if (mkicker) mkicker.textContent = "Week " + wk;
+  function money(n) { var v = Math.round(n * 100) / 100; var sign = v > 0 ? "+" : v < 0 ? "-" : ""; return sign + "$" + Math.abs(v).toFixed(2); }
+  function cls(pl) { return pl > 0 ? "pl-win" : pl < 0 ? "pl-loss" : "pl-flat"; }
+  if (typeof nflSeasonTracker2026 === "function") {
+    var sTotals = nflSeasonTracker2026();
+    var totalPl = 0, totalStaked = 0, gamesFinal = sTotals.gamesFinal;
+    Object.keys(sTotals.models).forEach(function (m) { totalPl += sTotals.models[m].pl; totalStaked += sTotals.models[m].staked; });
+    var heroNums = document.getElementById("hero-lite-nums");
+    if (heroNums) {
+      heroNums.innerHTML =
+        '<div class="hl-num"><span class="hl-n ' + cls(totalPl) + '">' + money(totalPl) + '</span><span class="hl-l">Combined P/L</span></div>' +
+        '<div class="hl-num"><span class="hl-n">' + gamesFinal + '</span><span class="hl-l">Games graded</span></div>' +
+        '<div class="hl-num"><span class="hl-n">$' + totalStaked.toFixed(0) + '</span><span class="hl-l">Total staked</span></div>';
+    }
+  }
 
   (function renderWeekTracker() {
     var tracker = nflWeekTracker2026(wk);

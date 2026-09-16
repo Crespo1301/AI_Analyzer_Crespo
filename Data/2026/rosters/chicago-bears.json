@@ -154,13 +154,19 @@
   ],
   "season_record": {
     "season": 2026,
-    "wins": 0,
+    "wins": 1,
     "losses": 0,
     "ties": 0,
-    "points_for": 0,
-    "points_against": 0,
-    "games_played": 0,
-    "last_game": null,
+    "points_for": 59,
+    "points_against": 37,
+    "games_played": 1,
+    "last_game": {
+      "week": 1,
+      "opponent": "Carolina Panthers",
+      "result": "W 59-37",
+      "date": "2026-09-13",
+      "notes": "Ben Johnson debut. 59-37 shootout. Williams 2 pass TDs, Swift 3 rush TDs."
+    },
     "next_game": null
   },
   "health_snapshot": {
