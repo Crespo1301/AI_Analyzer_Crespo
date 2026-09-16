@@ -5,7 +5,24 @@
     "start": "2026-09-17",
     "end": "2026-09-21"
   },
-  "last_verified": "",
-  "source": "",
-  "games": []
+  "last_verified": "2026-09-16",
+  "source": "https://www.espn.com/nfl/schedule/_/week/2/year/2026/seasontype/2",
+  "games": [
+    { "id": "lions-bills", "away": "Detroit Lions", "home": "Buffalo Bills", "date": "2026-09-17", "kickoff_et": "8:15 PM", "network": "Prime Video", "espn_boxscore": "https://www.espn.com/nfl/boxscore/_/gameId/401872932" },
+    { "id": "panthers-falcons", "away": "Carolina Panthers", "home": "Atlanta Falcons", "date": "2026-09-20", "kickoff_et": "1:00 PM", "network": "FOX", "espn_boxscore": "https://www.espn.com/nfl/boxscore/_/gameId/401872933" },
+    { "id": "vikings-bears", "away": "Minnesota Vikings", "home": "Chicago Bears", "date": "2026-09-20", "kickoff_et": "1:00 PM", "network": "FOX", "espn_boxscore": "https://www.espn.com/nfl/boxscore/_/gameId/401872937" },
+    { "id": "eagles-titans", "away": "Philadelphia Eagles", "home": "Tennessee Titans", "date": "2026-09-20", "kickoff_et": "1:00 PM", "network": "FOX", "espn_boxscore": "https://www.espn.com/nfl/boxscore/_/gameId/401872939" },
+    { "id": "steelers-patriots", "away": "Pittsburgh Steelers", "home": "New England Patriots", "date": "2026-09-20", "kickoff_et": "1:00 PM", "network": "CBS", "espn_boxscore": "https://www.espn.com/nfl/boxscore/_/gameId/401872946" },
+    { "id": "packers-jets", "away": "Green Bay Packers", "home": "New York Jets", "date": "2026-09-20", "kickoff_et": "1:00 PM", "network": "FOX", "espn_boxscore": "https://www.espn.com/nfl/boxscore/_/gameId/401872936" },
+    { "id": "browns-buccaneers", "away": "Cleveland Browns", "home": "Tampa Bay Buccaneers", "date": "2026-09-20", "kickoff_et": "1:00 PM", "network": "CBS", "espn_boxscore": "https://www.espn.com/nfl/boxscore/_/gameId/401872935" },
+    { "id": "saints-ravens", "away": "New Orleans Saints", "home": "Baltimore Ravens", "date": "2026-09-20", "kickoff_et": "1:00 PM", "network": "CBS", "espn_boxscore": "https://www.espn.com/nfl/boxscore/_/gameId/401872938" },
+    { "id": "bengals-texans", "away": "Cincinnati Bengals", "home": "Houston Texans", "date": "2026-09-20", "kickoff_et": "1:00 PM", "network": "CBS", "espn_boxscore": "https://www.espn.com/nfl/boxscore/_/gameId/401872934" },
+    { "id": "jaguars-broncos", "away": "Jacksonville Jaguars", "home": "Denver Broncos", "date": "2026-09-20", "kickoff_et": "4:05 PM", "network": "CBS", "espn_boxscore": "https://www.espn.com/nfl/boxscore/_/gameId/401872940" },
+    { "id": "raiders-chargers", "away": "Las Vegas Raiders", "home": "Los Angeles Chargers", "date": "2026-09-20", "kickoff_et": "4:05 PM", "network": "CBS", "espn_boxscore": "https://www.espn.com/nfl/boxscore/_/gameId/401872941" },
+    { "id": "commanders-cowboys", "away": "Washington Commanders", "home": "Dallas Cowboys", "date": "2026-09-20", "kickoff_et": "4:25 PM", "network": "FOX", "espn_boxscore": "https://www.espn.com/nfl/boxscore/_/gameId/401872944" },
+    { "id": "seahawks-cardinals", "away": "Seattle Seahawks", "home": "Arizona Cardinals", "date": "2026-09-20", "kickoff_et": "4:25 PM", "network": "FOX", "espn_boxscore": "https://www.espn.com/nfl/boxscore/_/gameId/401872943" },
+    { "id": "dolphins-niners", "away": "Miami Dolphins", "home": "San Francisco 49ers", "date": "2026-09-20", "kickoff_et": "4:25 PM", "network": "FOX", "espn_boxscore": "https://www.espn.com/nfl/boxscore/_/gameId/401872942" },
+    { "id": "colts-chiefs", "away": "Indianapolis Colts", "home": "Kansas City Chiefs", "date": "2026-09-20", "kickoff_et": "8:20 PM", "network": "NBC", "espn_boxscore": "https://www.espn.com/nfl/boxscore/_/gameId/401872945" },
+    { "id": "giants-rams", "away": "New York Giants", "home": "Los Angeles Rams", "date": "2026-09-21", "kickoff_et": "8:15 PM", "network": "ABC/ESPN", "espn_boxscore": "https://www.espn.com/nfl/boxscore/_/gameId/401872947" }
+  ]
 }

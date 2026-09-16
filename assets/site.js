@@ -158,20 +158,10 @@ function nflSlotFinal(game) {
   var awayWin = game.awayScore > game.homeScore;
   var homeWin = game.homeScore > game.awayScore;
   return ''
-    + '<a class="game-slot" href="Sports_Pages/' + esc(game.id) + '.html">'
-    + '  <div class="slot-top"><span>' + esc(game.date) + '</span><span class="slot-status final">Final</span></div>'
-    + '  <div class="team-row">'
-    + nflLogoMark(game.away, "compact")
-    + '    <span class="team-abbr">' + esc((awayTeam.abbr || "").toUpperCase()) + '</span>'
-    + '    <span class="team-score tabular ' + (awayWin ? "win" : "lose") + '">' + game.awayScore + '</span>'
-    + '  </div>'
-    + '  <div class="team-row">'
-    + nflLogoMark(game.home, "compact")
-    + '    <span class="team-abbr">' + esc((homeTeam.abbr || "").toUpperCase()) + '</span>'
-    + '    <span class="team-score tabular ' + (homeWin ? "win" : "lose") + '">' + game.homeScore + '</span>'
-    + '  </div>'
-    + '  <div class="slot-consensus">' + esc(game.label) + '</div>'
-    + '  <div class="slot-cta">View Analysis <span aria-hidden="true">&rarr;</span></div>'
+    + '<a class="scoreboard-slot" href="Sports_Pages/' + esc(game.id) + '.html">'
+    + '  <div class="sb-status final">Final</div>'
+    + '  <div class="sb-team' + (awayWin ? ' winner' : '') + '"><span class="sb-abbr">' + esc((awayTeam.abbr || "").toUpperCase()) + '</span><span class="sb-score tabular">' + game.awayScore + '</span></div>'
+    + '  <div class="sb-team' + (homeWin ? ' winner' : '') + '"><span class="sb-abbr">' + esc((homeTeam.abbr || "").toUpperCase()) + '</span><span class="sb-score tabular">' + game.homeScore + '</span></div>'
     + '</a>';
 }
 
@@ -179,36 +169,23 @@ function nflSlotLocked(game) {
   var awayTeam = NFL_TEAMS[game.away] || {};
   var homeTeam = NFL_TEAMS[game.home] || {};
   var kickoff = game.kickoffDisplay || "";
-  var line = game.line ? (game.line.spread + " / O/U " + game.line.total) : "";
-  var consensus = nflConsensusLine(game.models);
   var isScheduled = game.source === "schedule";
   var href = isScheduled ? game.espn : 'Sports_Pages/' + game.id + '.html';
+  var timeShort = kickoff.replace(/^[A-Za-z]{3}\s+[A-Za-z]{3}\s+\d+,?\s*/, '').replace(/\s+ET$/, '');
   return ''
-    + '<a class="game-slot" href="' + esc(href) + '">'
-    + '  <div class="slot-top"><span>' + esc(kickoff) + '</span><span class="slot-status ' + (isScheduled ? 'pending' : 'locked') + '">' + (isScheduled ? 'Scheduled' : 'Locked') + '</span></div>'
-    + '  <div class="team-row">'
-    + nflLogoMark(game.away, "compact")
-    + '    <span class="team-abbr">' + esc((awayTeam.abbr || "").toUpperCase()) + '</span>'
-    + '    <span class="team-record">Away</span>'
-    + '  </div>'
-    + '  <div class="team-row">'
-    + nflLogoMark(game.home, "compact")
-    + '    <span class="team-abbr">' + esc((homeTeam.abbr || "").toUpperCase()) + '</span>'
-    + '    <span class="team-record">Home</span>'
-    + '  </div>'
-    + '  <div class="slot-meta">' + esc(game.network || "") + (line ? ' &middot; ' + esc(line) : "") + '</div>'
-    + '  <div class="slot-consensus">' + (consensus ? esc(consensus) : (isScheduled ? "Predictions not published" : "Models locked")) + '</div>'
-    + '  <div class="slot-cta">' + (isScheduled ? 'Game details on ESPN' : 'Read Picks') + ' <span aria-hidden="true">&rarr;</span></div>'
+    + '<a class="scoreboard-slot" href="' + esc(href) + '">'
+    + '  <div class="sb-status ' + (isScheduled ? 'sched' : 'locked') + '">' + esc(timeShort || (isScheduled ? 'Scheduled' : 'Locked')) + '</div>'
+    + '  <div class="sb-team"><span class="sb-abbr">' + esc((awayTeam.abbr || "").toUpperCase()) + '</span><span class="sb-side">@</span></div>'
+    + '  <div class="sb-team"><span class="sb-abbr">' + esc((homeTeam.abbr || "").toUpperCase()) + '</span><span class="sb-side">' + esc(game.network || 'Home') + '</span></div>'
     + '</a>';
 }
 
 function nflSlotPending(placeholderIdx) {
   return ''
-    + '<div class="game-slot" aria-hidden="true">'
-    + '  <div class="slot-top"><span>TBD</span><span class="slot-status pending">Pending</span></div>'
-    + '  <div class="team-row"><span class="team-chip" style="background:#333"></span><span class="team-abbr">TBD</span></div>'
-    + '  <div class="team-row"><span class="team-chip" style="background:#333"></span><span class="team-abbr">TBD</span></div>'
-    + '  <div class="slot-consensus">Prompts locked before kickoff</div>'
+    + '<div class="scoreboard-slot placeholder" aria-hidden="true">'
+    + '  <div class="sb-status">TBD</div>'
+    + '  <div class="sb-team"><span class="sb-abbr">&mdash;</span></div>'
+    + '  <div class="sb-team"><span class="sb-abbr">&mdash;</span></div>'
     + '</div>';
 }
 

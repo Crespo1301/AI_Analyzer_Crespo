@@ -231,21 +231,22 @@ button { font: inherit; cursor: pointer; border: 0; background: none; color: inh
 }
 .strip-label {
   flex: 0 0 auto;
-  padding: 12px 20px;
+  padding: 8px 14px;
   display: flex; flex-direction: column; justify-content: center;
   background: var(--ink);
   border-right: 1px solid var(--ink-3);
-  min-width: 140px;
+  min-width: 96px;
 }
 .strip-label .kicker {
-  font-family: var(--f-display); font-weight: 700;
-  font-size: 12px; letter-spacing: 1.4px; text-transform: uppercase;
+  font-family: var(--f-display); font-weight: 800;
+  font-size: 9px; letter-spacing: 0.14em; text-transform: uppercase;
   color: var(--nfl-red);
 }
 .strip-label .week {
   font-family: var(--f-display); font-weight: 800;
-  font-size: 22px; letter-spacing: 0.6px; text-transform: uppercase;
+  font-size: 16px; letter-spacing: 0.02em; text-transform: uppercase;
   color: var(--paper);
+  line-height: 1.1;
 }
 .strip-viewport {
   flex: 1; min-width: 0;
@@ -267,13 +268,57 @@ button { font: inherit; cursor: pointer; border: 0; background: none; color: inh
 }
 .strip-arrow:hover { background: var(--ink); }
 .strip-arrow[disabled] { opacity: 0.25; cursor: default; }
-.strip-arrow.left { left: 140px; }
+.strip-arrow.left { left: 96px; }
 .strip-arrow.right { right: 0; }
+.strip-arrow { width: 32px; }
 @media (max-width: 720px) {
-  .strip-label { min-width: 108px; padding: 10px 14px; }
-  .strip-label .week { font-size: 18px; }
-  .strip-arrow.left { left: 108px; }
-  .strip-arrow { width: 32px; }
+  .strip-label { min-width: 78px; padding: 6px 10px; }
+  .strip-label .kicker { font-size: 8px; }
+  .strip-label .week { font-size: 14px; }
+  .strip-arrow.left { left: 78px; }
+  .strip-arrow { width: 26px; }
+}
+
+/* ESPN-style compact scoreboard slot (top strip) */
+.scoreboard-slot {
+  flex: 0 0 132px;
+  padding: 8px 12px;
+  border-right: 1px solid var(--ink-3);
+  display: flex; flex-direction: column; gap: 3px;
+  color: var(--paper);
+  min-height: 84px;
+  justify-content: center;
+  text-decoration: none;
+  transition: background 120ms;
+}
+.scoreboard-slot:hover { background: rgba(255,255,255,0.04); }
+.scoreboard-slot.placeholder { opacity: 0.45; pointer-events: none; }
+.sb-status {
+  font-family: var(--f-display); font-weight: 700;
+  font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase;
+  color: rgba(255,255,255,0.55);
+  margin-bottom: 2px;
+}
+.sb-status.final { color: #7ee091; }
+.sb-status.locked { color: rgba(255,255,255,0.75); }
+.sb-status.sched { color: rgba(255,255,255,0.55); }
+.sb-team {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 8px;
+  font-family: var(--f-display); font-weight: 700;
+  color: rgba(255,255,255,0.85);
+}
+.sb-team.winner { color: var(--paper); }
+.sb-abbr { font-size: 13px; letter-spacing: 0.04em; }
+.sb-score { font-size: 15px; font-variant-numeric: tabular-nums; font-weight: 800; }
+.sb-team:not(.winner) .sb-score { color: rgba(255,255,255,0.5); }
+.sb-side { font-family: var(--f-body); font-weight: 500; font-size: 10px; color: rgba(255,255,255,0.45); letter-spacing: 0; text-transform: none; }
+
+@media (max-width: 720px) {
+  .scoreboard-slot { flex: 0 0 116px; padding: 6px 10px; min-height: 72px; }
+  .sb-abbr { font-size: 12px; }
+  .sb-score { font-size: 14px; }
+  .sb-status { font-size: 9px; }
 }
 
 .game-slot {
