@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Grading rubric v2 · Research · AI Analyzer</title>
+<meta name="description" content="Outcome-primary grading rubric for locked model picks. Version 2.">
+<link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+<link rel="stylesheet" href="../assets/styles.css">
+</head><body>
+<nav class="site-nav" aria-label="Site"><div class="nav-primary">
+  <a class="nav-brand" href="../index.html"><span class="brand-mark">AI</span>Analyzer<span class="brand-sub">NFL</span></a>
+  <ul class="nav-links">
+    <li><a href="../nfl-2026.html">Week</a></li>
+    <li><a href="../schedule.html">Schedule</a></li>
+    <li><a href="../models.html">Models</a></li>
+    <li><a href="../bet-database.html">Results</a></li>
+    <li><a href="../methodology.html">Methodology</a></li>
+    <li><a href="../research/index.html">Research</a></li>
+  </ul>
+</div></nav>
+<main id="main"><section class="band band-paper"><div class="wrap">
+<div class="band-head"><div><div class="b-kicker">Research</div><div class="b-title">Grading rubric v2</div></div><a class="b-more" href="index.html">&larr; Research index</a></div><div class="doc-body"><h1>2026 Grading Rubric, v2</h1>
+
+<p>Effective 2026-09-11. Supersedes v1. v1&#39;s core error was rewarding &quot;the model named a real factor&quot; even when the outcome disagreed. Sports predictions are wrong all the time, and the team that looks better on paper is often the team that loses. The Week 1 Rams (LAR was the 3.5-point home favorite versus SF, and got beaten 27-7 in Melbourne) is a working example. Under v1 a wrong-side pick could earn a 5/5 reasoning score for citing correct-but-defeated factors. That is the wrong incentive for a betting-model study.</p>
+
+<p>v2 rebalances so <strong>outcome is the primary axis, reasoning is a secondary lens that describes the pick&#39;s quality relative to the outcome.</strong></p>
+
+<h2>Outcome Score (primary)</h2>
+
+<p>Each bet still gets:</p>
+
+<ul><li><code>WIN</code></li><li><code>LOSS</code></li><li><code>PUSH</code></li><li><code>VOID</code></li><li><code>UNGRADABLE</code></li></ul>
+
+<p>Only use <code>UNGRADABLE</code> when the pick is too vague to verify (no player, no line, no sportsbook number).</p>
+
+<p>The outcome score drives the model&#39;s win rate, ROI, and running P/L. Those are the numbers that decide who is picking better this season.</p>
+
+<h2>Reasoning Score (secondary, bounded by outcome)</h2>
+
+<p>Use a 0 to 5 score, capped by the outcome column.</p>
+
+<table class="doc-table"><thead><tr><th>Score</th><th>For a WIN</th><th>For a LOSS</th></tr></thead><tbody><tr><td>5</td><td>Named a real factor pre-kickoff that clearly drove the result; the pick was not a vibe.</td><td><strong>Not available for a LOSS.</strong></td></tr><tr><td>4</td><td>Named a real factor pre-kickoff and the pick worked directly through it.</td><td>Named a factor that was actually decisive on the winning side (the model saw the right dynamic but bet the wrong side); rare.</td></tr><tr><td>3</td><td>Reasoning was plausible; the pick worked, but not necessarily through the cited factor.</td><td>Reasoning was plausible on paper; football variance beat it. This is the common LOSS grade.</td></tr><tr><td>2</td><td>Reasoning was generic or public; the pick worked anyway.</td><td>Reasoning was generic, public, or team-quality vibes without market reason.</td></tr><tr><td>1</td><td>Reasoning leaned on a wrong fact, stale injury note, or irrelevant angle; the pick worked by luck.</td><td>Reasoning leaned on a wrong fact, stale injury note, or irrelevant angle.</td></tr><tr><td>0</td><td>No usable reasoning; the pick worked.</td><td>No usable reasoning, hallucinated facts, or no raw response available.</td></tr></tbody></table>
+
+<p><strong>Hard caps and rules.</strong></p>
+
+<ul><li>A LOSS caps at <strong>4/5</strong>. The model does not get a 5 for a losing pick, even if every named factor was real and defensible. &quot;Real factor&quot; is a floor for entering the reasoning conversation, not a ceiling that beats being wrong.</li><li>The <strong>default LOSS grade is 3</strong>, not 4. Plausible-on-paper losses are the modal outcome in sports betting; 3 is the base state, not something to reward against.</li><li>A WIN with <strong>generic or public reasoning caps at 2/5</strong>. Right pick, wrong process is still bad process.</li><li><strong>Hallucinated citation, fabricated fetch, or unverifiable claimed &quot;verified price&quot;</strong> overrides the outcome column and caps the reasoning grade at 1/5 regardless of WIN or LOSS. See Source Honesty below.</li></ul>
+
+<h2>Sizing Score (0 to 3)</h2>
+
+<p>New axis in v2. Independent of outcome.</p>
+
+<table class="doc-table"><thead><tr><th>Score</th><th>Meaning</th></tr></thead><tbody><tr><td>3</td><td>Sizing scaled with the stated edge; low-confidence picks got small stakes; the model sized down when uncertainty was high.</td></tr><tr><td>2</td><td>Sizing was directional (bigger stakes on higher-confidence picks) but not calibrated to a stated probability.</td></tr><tr><td>1</td><td>Sizing was flat or defaulted to a heuristic (&quot;$11 max&quot;), decoupled from stated confidence.</td></tr><tr><td>0</td><td>Sizing was inverted (bigger stakes on lower-confidence picks) or all-in on a single premise.</td></tr></tbody></table>
+
+<h2>Source Honesty Score (0 to 3)</h2>
+
+<p>New axis in v2. This is where fabricated fetches, fake <code>bovada_verified</code> labels without screenshots, and hallucinated citations get punished.</p>
+
+<table class="doc-table"><thead><tr><th>Score</th><th>Meaning</th></tr></thead><tbody><tr><td>3</td><td>Every cited source is verifiable. Pricing labels (<code>bovada_verified</code> / <code>reference_market</code> / <code>conditional</code>) match the evidence. Every quoted snippet is really in the file the model claims it came from.</td></tr><tr><td>2</td><td>Cited sources are real but incomplete; some pricing labels are borderline (e.g., a <code>reference_market</code> claim that lacks a captured timestamp).</td></tr><tr><td>1</td><td>A cited source did not open, a <code>bovada_verified</code> label lacks any evidence, or a quoted snippet is actually only in the prompt body rather than in the fetched file.</td></tr><tr><td>0</td><td>Fabricated fetch report (e.g., claimed 404 on URLs that curl shows returning 200), fabricated citations, or hallucinated stat lines.</td></tr></tbody></table>
+
+<p>A Source Honesty score of 1 or 0 caps the reasoning score at 1/5 regardless of outcome.</p>
+
+<h2>Self-Reflection Score (0 to 2)</h2>
+
+<p>New axis in v2, specific to prompt lanes that require the model to review its own past behavior.</p>
+
+<table class="doc-table"><thead><tr><th>Score</th><th>Meaning</th></tr></thead><tbody><tr><td>2</td><td>The model read its own prior picks, cited specific patterns (over-allocation, correction shape), and changed its behavior this week accordingly.</td></tr><tr><td>1</td><td>The model claimed to reflect but did not cite specifics, or reflected but did not change behavior when the record clearly called for it.</td></tr><tr><td>0</td><td>No self-reflection, or claimed reflection contradicted by the rest of the response (e.g., claiming to avoid ceiling-prop overs then submitting a $12 QB pass yds OVER).</td></tr></tbody></table>
+
+<h2>Aggregate Weekly Grade Per Model</h2>
+
+<p>For each model, per week, track and publish:</p>
+
+<ul><li>Number of picks</li><li>Win/Loss/Push</li><li>Profit/Loss (at recorded or conditional target prices)</li><li>ROI</li><li>Reasoning average (0-5, bounded per above)</li><li>Sizing average (0-3)</li><li>Source Honesty average (0-3)</li><li>Self-Reflection average (0-2)</li><li>Best pick (highest outcome + reasoning + honesty combined)</li><li>Worst pick (lowest combined)</li><li>Biggest miss (largest single-ticket loss)</li><li>Most useful insight (a factor the model named that clearly showed up in the game, whether or not the pick won)</li><li>Hallucination or fabrication count</li></ul>
+
+<p>The <strong>primary ranking is by ROI</strong>. Reasoning, Sizing, Honesty, and Reflection are secondary axes that explain how the model got there. A model that finishes the season with the best ROI is the best NFL picker this season. A model that finishes with mediocre ROI but a 4.5 reasoning average is a model with good football knowledge and bad betting judgment; that distinction goes in the debrief, not in the leaderboard.</p>
+
+<h2>Prompt Grade</h2>
+
+<p>For each prompt template, track:</p>
+
+<ul><li>Bets generated</li><li>Win rate</li><li>Profit/Loss</li><li>Reasoning average</li><li>Sizing average</li><li>Source Honesty average</li><li>Reserve rate (percentage of $20 not staked)</li><li>Ungradable pick rate</li></ul>
+
+<p>The best prompt is the one that produces the most useful, auditable, profitable decisions across all three models. A prompt that produces high reasoning scores but bleeds money loses; a prompt that produces boring winning picks with unremarkable reasoning wins.</p>
+
+<h2>Do Not Reward</h2>
+
+<ul><li>Long answers by themselves.</li><li>Confidence without evidence.</li><li>&quot;Sharp&quot; language without a market reason.</li><li>Generic team quality arguments.</li><li>Hindsight explanations added after the result.</li><li><strong>&quot;Real factor&quot; citations on the losing side of a pick that got beaten by the actual result.</strong></li><li>Fabricated citations, fabricated fetch reports, or unverifiable price labels.</li></ul>
+
+<h2>Reward</h2>
+
+<ul><li>Winning picks with clean, cited, market-based reasoning.</li><li>Sizing that matches stated edge and confidence.</li><li>Restraint (no-bet or reserve) when the edge is truly weak, when reserved and the game later proves the market was right.</li><li>Naming a factor pre-kickoff that clearly drove the result, ideally on the winning side. If the factor showed up on the winning side but the model picked the losing side, that is a &quot;most useful insight&quot; note and does not become a 5.</li></ul>
+
+</div>
+</div></section></main>
+</body></html>

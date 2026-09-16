@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Iteration system · Research · AI Analyzer</title>
+<meta name="description" content="How weekly prompts, rubric, and roster corrections are updated over the season.">
+<link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+<link rel="stylesheet" href="../assets/styles.css">
+</head><body>
+<nav class="site-nav" aria-label="Site"><div class="nav-primary">
+  <a class="nav-brand" href="../index.html"><span class="brand-mark">AI</span>Analyzer<span class="brand-sub">NFL</span></a>
+  <ul class="nav-links">
+    <li><a href="../nfl-2026.html">Week</a></li>
+    <li><a href="../schedule.html">Schedule</a></li>
+    <li><a href="../models.html">Models</a></li>
+    <li><a href="../bet-database.html">Results</a></li>
+    <li><a href="../methodology.html">Methodology</a></li>
+    <li><a href="../research/index.html">Research</a></li>
+  </ul>
+</div></nav>
+<main id="main"><section class="band band-paper"><div class="wrap">
+<div class="band-head"><div><div class="b-kicker">Research</div><div class="b-title">Iteration system</div></div><a class="b-more" href="index.html">&larr; Research index</a></div><div class="doc-body"><h1>2026 Iteration System</h1>
+
+<p>The 2026 AI Analyzer should be easy to adjust as the NFL season develops. The</p>
+<p>system should let us change prompts, strategy, grading, and presentation without</p>
+<p>breaking the weekly record.</p>
+
+<h2>Weekly Loop (v2, effective 2026-09-11)</h2>
+
+<p>1. <strong>Update team profiles</strong></p>
+<ul><li>Run <code>node scripts/update-team-profiles.js</code> to recompute <code>season_record</code></li></ul>
+<p>     from graded <code>NFL_GAMES</code> entries.</p>
+<ul><li>Hand-edit <code>Data/2026/rosters/&lt;team-slug&gt;.json</code> <code>health_snapshot</code> for</li></ul>
+<p>     the two teams playing: fill <code>out</code>, <code>questionable</code>, <code>ir</code>, <code>notes</code>, and</p>
+<p>     stamp <code>as_of</code> with today&#39;s date. Cite the team&#39;s official injury</p>
+<p>     report URL in the accompanying <code>changes_log</code> entry when a designation</p>
+<p>     changes.</p>
+
+<p>2. <strong>Create prompts</strong></p>
+<ul><li>Fill <code>Prompts/2026/templates/forced-selection.md</code> v2.2 for the game.</li><li>The prompt references both team profiles by path so the model has a</li></ul>
+<p>     single source of team truth (roster, health, record).</p>
+
+<p>3. <strong>Run prompts</strong></p>
+<ul><li>Save every raw response in <code>Docs/Responses/2026/week-XX/</code>.</li></ul>
+
+<p>4. <strong>Extract bets</strong></p>
+<ul><li>Convert each response into structured picks in</li></ul>
+<p>     <code>NFL_PREDICTIONS_2026</code>.</p>
+<ul><li>Preserve the original wording.</li><li>Flag vague, missing-line, or ungradable picks immediately.</li></ul>
+
+<p>5. <strong>Grade after the games</strong></p>
+<ul><li>Add game and bet rows to <code>assets/nfl-data.js</code> NFL_GAMES + NFL_BETS.</li><li>Add direct ESPN box-score links.</li><li>Run <code>node scripts/verify-nfl-data.js</code>.</li><li>Run <code>node scripts/build-game-pages.js</code>.</li><li>Re-run <code>node scripts/update-team-profiles.js</code> so the season_record</li></ul>
+<p>     block on each played team advances before next week&#39;s prompts run.</p>
+
+<p>6. <strong>Review and adjust</strong></p>
+<ul><li>Score outcomes.</li><li>Score reasoning using <code>Docs/2026/grading-rubric.md</code> v2. Outcome is</li></ul>
+<p>     the primary axis; reasoning is bounded by outcome.</p>
+<ul><li>Write one short weekly note on what changed for the next slate.</li></ul>
+
+<h2>Change Log For Prompts</h2>
+
+<p>Every prompt change should be recorded with:</p>
+
+<ul><li>Date changed.</li><li>Prompt name.</li><li>What changed.</li><li>Why it changed.</li><li>What metric should improve.</li></ul>
+
+<p>Example:</p>
+
+<pre><code>2026-09-10
+Prompt: context-heavy
+Change: added explicit &quot;what would make this bet lose&quot; field.
+Reason: models were giving confident picks without downside risk.
+Expected improvement: fewer weak props and fewer public-looking spread picks.
+</pre></code>
+
+<h2>Change Log (actual)</h2>
+
+<h3>2026-09-13: Prompt v3.0, independent-derivation lane</h3>
+
+<p>Retired the analytic doc <code>Docs/2026/what-has-worked.md</code> (added yesterday)</p>
+<p>and rewrote the Week 1 prompt generator so the prompt does NOT include</p>
+<p>any summary of &quot;what has worked&quot; or &quot;what to avoid&quot; for betting shapes.</p>
+
+<p>The point of tracking real graded outcomes across seasons is so the</p>
+<p>models can derive shape patterns themselves from that data. Feeding</p>
+<p>them our reads creates bias and turns the study into a language-copy</p>
+<p>exercise. v3.0 requires each model to filter NFL_BETS and</p>
+<p>NFL_CORRECTIONS on its own, cite specific rows for each pattern it</p>
+<p>proposes, and refuse to lean on conventional betting-industry</p>
+<p>heuristics without a citation to actual repository rows.</p>
+
+<p>Concrete changes:</p>
+
+<ul><li>Deleted <code>Docs/2026/what-has-worked.md</code> so it cannot leak.</li><li><code>scripts/prep-week1-prompts.js</code> regenerated all 28 Week 1 prompts at</li></ul>
+<p>  v3.0. Each prompt tells the model NOT to read any repo doc that</p>
+<p>  summarizes shapes or gives betting guidance, names specific files</p>
+<p>  to avoid (what-has-worked.md, redesign-direction.md, final-review.md</p>
+<p>  when it carries conclusions), and requires the model to log that it</p>
+<p>  ignored any such file in its sources block.</p>
+<ul><li>JSON schema gains `independent_derivations {profitable_shapes,</li></ul>
+<p>  losing_shapes}<code> block replacing v2.1/v2.2&#39;s </code>season_one_study`</p>
+<p>  block. Every proposed shape must cite specific games or rows.</p>
+<ul><li><code>scripts/validate-forced-response.js</code> updated to accept v2.2 and</li></ul>
+<p>  v3.0 and to require the new <code>independent_derivations</code>,</p>
+<p>  <code>team_profiles_read</code>, and <code>self_reflection</code> blocks on v3.0.</p>
+
+<p>The grading rubric v2 already includes a Source Honesty axis; a</p>
+<p>model that reads a shape-summary doc despite the prompt&#39;s</p>
+<p>instruction not to has a Source Honesty failure and caps at 1/5</p>
+<p>reasoning.</p>
+
+<h3>2026-09-12: Retire templates, write from evidence week by week</h3>
+
+<p>Removed <code>Prompts/2026/templates/</code> entirely. Templates rewarded copying</p>
+<p>language rather than reading evidence; the v2.0 -&gt; v2.1 -&gt; v2.2</p>
+<p>progression was symptomatic of the wrong abstraction. Replaced with:</p>
+
+<ul><li><code>Docs/2026/what-has-worked.md</code>: living analytic doc, updated after</li></ul>
+<p>  every graded slate. Anchored in NFL_BETS across Seasons 1 and 2 as of</p>
+<p>  the update date. Contains the current record of P/L-positive shapes,</p>
+<p>  the loss patterns to avoid, and pointers to the rubric v2 axes.</p>
+<ul><li><code>scripts/prep-week1-prompts.js</code>: one-off generator that embedded the</li></ul>
+<p>  current what-has-worked content directly into each Week 1 game prompt.</p>
+<p>  Not reusable next week. When Week 2 comes, rewrite what-has-worked.md</p>
+<p>  from the new evidence, then write a new prep-weekN generator that</p>
+<p>  embeds the new state.</p>
+
+<p>Also added <code>scripts/refresh-week-health.js</code> which reads</p>
+<p><code>Data/2026/schedule/week-XX.json</code>, fetches the ESPN roster feed for</p>
+<p>every team playing that week, and populates each team&#39;s</p>
+<p><code>health_snapshot</code> block from the injury designations in the feed. Ran</p>
+<p>against Week 1; 32/32 teams updated.</p>
+
+<p>New weekly loop step ordering:</p>
+
+<p>1. <code>node scripts/update-team-profiles.js</code> (updates season_record from</p>
+<p>   graded NFL_GAMES).</p>
+<p>2. <code>node scripts/refresh-week-health.js &lt;week&gt;</code> (updates</p>
+<p>   health_snapshot from ESPN roster feed).</p>
+<p>3. Manually augment health_snapshot for anything ESPN doesn&#39;t cover.</p>
+<p>4. Rewrite <code>Docs/2026/what-has-worked.md</code> from the current NFL_BETS</p>
+<p>   state.</p>
+<p>5. Write a new <code>scripts/prep-weekN-prompts.js</code> that embeds the current</p>
+<p>   what-has-worked content.</p>
+<p>6. Run it.</p>
+<p>7. Send prompts, save raw responses, extract picks, grade, promote,</p>
+<p>   re-run step 1.</p>
+
+<h3>2026-09-11: Grading rubric v2 and team-profile workflow</h3>
+
+<p>Two changes shipped after the Week 1 Rams / 49ers Melbourne outcome.</p>
+
+<p><strong>Grading rubric v2</strong> in <code>Docs/2026/grading-rubric.md</code>. v1 rewarded &quot;the</p>
+<p>model named a real factor&quot; even when the outcome disagreed. Sports</p>
+<p>predictions are wrong all the time, and the team that looks better on</p>
+<p>paper is often the team that loses; Week 1&#39;s Rams beat-down by SF is</p>
+<p>the working example. v1 would score a wrong-side LAR pick citing &quot;real</p>
+<p>factors&quot; (Aaron Donald out, Collins out, MCG surface, Stafford</p>
+<p>continuity) at 5/5 reasoning; v2 caps a LOSS at 4/5 and defaults it to</p>
+<p>3/5. WIN with generic public reasoning caps at 2/5. Fabricated</p>
+<p>citations cap the reasoning grade at 1/5 regardless of outcome. Primary</p>
+<p>ranking is season ROI; reasoning, sizing, source honesty, and</p>
+<p>self-reflection are secondary axes explaining how the model got there.</p>
+<p>Methodology page updated to match.</p>
+
+<p><strong>Team-profile workflow.</strong> Every <code>Data/2026/rosters/&lt;team-slug&gt;.json</code></p>
+<p>is now a team profile: the existing roster plus a new</p>
+<p><code>season_record</code> block (auto-computed from NFL_GAMES) and a</p>
+<p><code>health_snapshot</code> block (out / questionable / IR / notes, dated</p>
+<p>as_of). New script <code>scripts/update-team-profiles.js</code> recomputes</p>
+<p>season_record for all 32 teams from NFL_GAMES; run it after each week&#39;s</p>
+<p>promotion so the next week&#39;s prompts start from current records. The</p>
+<p>health_snapshot is hand-edited per playing team before each game.</p>
+
+<p><strong>Weekly loop revised.</strong> New order: update team profiles → create</p>
+<p>prompts → run prompts → extract → grade → re-run profile updater →</p>
+<p>review. The team-profile step is the load-bearing new addition.</p>
+
+<p><strong>Forced-selection prompt bumped to v2.2.</strong> New required blocks:</p>
+<p><code>team_profiles_read</code> (with as_of, record, health), plus prompt_version</p>
+<p>&quot;2.2&quot;. Reasoning rubric reference points at v2. Removes W9 P3 from the</p>
+<p>top-P/L reference set (ChatGPT caught in v2.1 that it finished 1-2</p>
+<p>-$12). Adds an explicit &quot;do not stack same-team exposure across single</p>
+<p>and SGP&quot; rule (ChatGPT lost the full $20 in Week 1 Game 2 to this</p>
+<p>pattern). Closes the Gemini fake-quote workaround by requiring quoted</p>
+<p>snippets to be absent from the prompt body.</p>
+
+<h3>2026-09-11: Promote Season 2 graded games into NFL_GAMES + NFL_BETS</h3>
+
+<p>Per the weekly loop step 4, graded results move out of the pending</p>
+<p>NFL_PREDICTIONS_2026 archive and into <code>assets/nfl-data.js</code> as the canonical</p>
+<p>NFL_GAMES + NFL_BETS records. First promotion covers Week 1 Game 1</p>
+<p>(Patriots at Seahawks, SEA 13-10) and Game 2 (49ers vs Rams Melbourne,</p>
+<p>SF 27-7). Eleven rows added to NFL_BETS across the two games:</p>
+
+<ul><li>Game 1: Claude 3 rows (UNDER 44.5 WIN, NE +3.5 WIN, Kupp UNDER 4.5 rec</li></ul>
+<p>  WIN, all at conditional -110), Gemini 1 row (NE +3.5 WIN at recorded</p>
+<p>  -118). ChatGPT reserved fully, no rows recorded.</p>
+<ul><li>Game 2: ChatGPT 2 rows (LAR TT OVER 23.5 LOSS at conditional -110,</li></ul>
+<p>  SGP LAR ML + LAR TT OVER 23.5 LOSS at conditional +200), Claude 3</p>
+<p>  rows (UNDER 45.5 WIN at conditional -110, Kyren OVER 16.5 rush att</p>
+<p>  LOSS at conditional -115, SGP UNDER 45.5 + Kyren OVER 16.5 LOSS at</p>
+<p>  conditional +180), Gemini 2 rows (UNDER 48.5 WIN at claimed -110,</p>
+<p>  SGP LAR TT OVER 23.5 + Kyren OVER 14.5 LOSS at conditional +220).</p>
+
+<p>The <code>prompt</code> column on each row records the lane and version used:</p>
+<p>&quot;LS-1.0&quot; for local-strength v1.0 (Claude Game 1), &quot;GS-1.0&quot; for</p>
+<p>github-strength v1.0 (Gemini Game 1), &quot;FS-2.1&quot; for forced-selection v2.1</p>
+<p>(all Game 2 tickets).</p>
+
+<p>Reserved (no-bet) tickets are not recorded as NFL_BETS rows. They stay</p>
+<p>in the NFL_PREDICTIONS_2026 result block as a reasoning record but do</p>
+<p>not distort win-rate math in NFL_BETS.</p>
+
+<p>The <code>nflGradedBets2026</code> adapter now skips predictions whose gameId has</p>
+<p>been promoted into NFL_GAMES, so bet-database.html and</p>
+<p>summarize-experiment.js do not double-count the same tickets.</p>
+
+<p>Season 1 archive page (<code>nfl-2025.html</code>) filters NFL_GAMES and NFL_BETS</p>
+<p>to 2025 dates only, so promoted Season 2 games do not appear in the</p>
+<p>Season 1 archive. Season 2 hub already filters correctly.</p>
+
+<h3>2026-09-10: Forced-selection v2.0 and Game 2 reset</h3>
+
+<p>Carlos requested at least one single and one 2+ leg parlay in every future</p>
+<p>run, with full $20 hypothetical allocation. Replaced both active Game 2</p>
+<p>prompt files; the old text remains in Git history only. No saved response</p>
+<p>files existed in that folder to delete. The earlier chat-supplied no-bet</p>
+<p>response is superseded, not evidence for the reset experiment.</p>
+<p>Missing Bovada quotes now permit labeled reference or conditional research</p>
+<p>cards, never invented observed odds. Added a separate validator and lane.</p>
+<p>This changes selection incentives and must not be treated as evidence that</p>
+<p>forced picks outperform the discretionary lane. Preserve all Game 1 records.</p>
+
+<h3>2026-09-10: Game 2 Bovada configuration r1</h3>
+
+<p>Instantiated both strength-lane v1.1 prompts for 49ers-Rams in Melbourne.</p>
+<p>Carlos specified Bovada as the actual ticket book. Require Bovada quotes,</p>
+<p>with other books as context only, and hold unpriced selections in reserve.</p>
+<p>Run-specific instructions prioritize corrected historical evidence, honest</p>
+<p>access reporting, official starter verification and independent current-game</p>
+<p>answers. This is not a controlled test of one isolated prompt change.</p>
+<p>No new selections or lock timestamps were created during preparation.</p>
+
+<h3>2026-09-10: All three current templates, v1.0 to v1.1</h3>
+
+<ul><li>Effective next run, including remaining Week 1 games.</li><li>Require per-ticket odds, sportsbook, source and quote capture time,</li></ul>
+<p>  maximum loss, potential profit/return and probability-versus-price reasoning.</p>
+<ul><li>Unpriced candidates remain unfunded. SGPs need the actual combined quote.</li><li>Trigger: first-game Claude picks had no payout prices; Gemini embedded -118</li></ul>
+<p>  in its line, rather than consistent structured fields.</p>
+<ul><li>First-game outcomes stand. Claude profit and combined ROI remain unavailable.</li></ul>
+<p>  Carlos&#39;s later supplied slips cannot backfill model prices.</p>
+<ul><li>Target 100% complete accepted funded tickets. Track missing-price rejections,</li></ul>
+<p>  arithmetic failures and provenance issues separately from win rate.</p>
+<ul><li>Preserve v1.0 in Git history and original prompt/response files.</li></ul>
+
+<pre><code>2026-09-08
+Prompt: bankroll-optimized (introduced as the Week 1 default)
+Change: replaced 2025-style &quot;here is a line, size a bet on it&quot; prompts with a
+  $20-bankroll allocation prompt. Models decide their own stakes across
+  straight bets, parlays, SGPs, and reserve. Sum must equal $20 exactly.
+  Every pick must name a specific line so it can be graded from the ESPN
+  box score.
+Reason: 2025 experiment had un-auditable &quot;take the QB passing over&quot; style
+  picks that could not be graded later, and had inconsistent stake sizing
+  across models. The $20 constraint gives every model the same budget and
+  forces them to reveal how they weigh conviction against edge.
+Expected improvement: every response is fully auditable; stake-sizing
+  behavior becomes a comparable variable across models; parlays get graded
+  as one bet (single stake, all legs must hit) instead of as separate rows.
+</pre></code>
+
+<pre><code>2026-09-08
+Prompt: research-mode (drafted, becomes default starting Week 2)
+Change: prompt no longer hand-feeds injury, weather, coaching, or surface
+  context. It supplies only the fixed betting universe (teams, kickoff,
+  venue name, line snapshot with source, ESPN box-score URL) and requires
+  the model to research everything else itself and cite each source. Same
+  $20 bankroll / parlay / reserve output structure as bankroll-optimized.
+Reason: Week 1 game 1 (Patriots at Seahawks) shipped with two factual
+  errors in the hand-written pre-game context (Drake Maye&#39;s season count
+  and Lumen Field&#39;s playing surface), both caught by GPT 5.5. Also, the
+  three models are being run in fresh chats with no local context, so
+  hand-fed prompts amplify prompt-writer mistakes without letting the
+  models correct them. Research-mode shifts the fact-finding onus onto the
+  model and grades it explicitly.
+Expected improvement: eliminates prompt-writer error as a variable;
+  exposes model research quality as a graded axis separate from betting
+  judgment; scales to 16 games/week without a human intake bottleneck.
+Fallback: if any model provably lacks working search in a given week,
+  rerun that specific game under bankroll-optimized and note it in
+  result.md as a methodology inconsistency for that week.
+</pre></code>
+
+<h2>Strategy Lanes</h2>
+
+<p>Start with three lanes:</p>
+
+<table class="doc-table"><thead><tr><th>Lane</th><th>Purpose</th><th>Default Behavior</th></tr></thead><tbody><tr><td>Baseline</td><td>Control prompt for comparison</td><td>Simple read, up to 3 picks</td></tr><tr><td>Context-heavy</td><td>Main workflow prompt</td><td>Game script, matchup reasons, avoid market</td></tr><tr><td>Risk-aware</td><td>Restraint prompt</td><td>Maximum 2 picks, pass if edge is weak</td></tr></tbody></table>
+
+<p>More lanes can be added later, but each one needs a reason and a metric.</p>
+
+<h2>Adjustment Rules</h2>
+
+<ul><li>Change one major thing at a time when possible.</li><li>Keep old prompt templates instead of overwriting them without a note.</li><li>Do not remove bad weeks from the record.</li><li>Do not hide misses. The misses are part of the project.</li><li>Prefer fewer, better picks over more picks.</li></ul>
+
+<h2>Weekly Success Metrics</h2>
+
+<p>Track:</p>
+
+<ul><li>Win/loss/push.</li><li>P/L.</li><li>ROI.</li><li>Reasoning score.</li><li>Ungradable pick count.</li><li>Number of no-bet recommendations.</li><li>Best prompt.</li><li>Worst prompt.</li><li>Best model.</li><li>Biggest miss.</li></ul>
+
+<p>The system is improving if it gets cleaner, more auditable, and more selective,</p>
+<p>even before it becomes profitable.</p>
+
+</div>
+</div></section></main>
+</body></html>

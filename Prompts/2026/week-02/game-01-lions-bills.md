@@ -29,21 +29,35 @@ LANE-SPECIFIC INSTRUCTIONS - READ THE ONE THAT MATCHES YOU
     Cite specific rows or blocks in your reasoning, with a short quoted
     snippet you actually pulled from the file.
 
-  * If you are Gemini (web app): you do NOT have working repository
-    access. Every attempt in Week 1 fabricated a "404" for
-    raw.githubusercontent.com URLs that in fact return 200. Stop
-    attempting repository fetches. Do open-web research only:
-      - Live sportsbook odds (name the book: DraftKings, FanDuel,
-        Bovada if you can actually reach the page, ESPN BET, etc.).
-      - Each team's official injury report / depth chart page.
-      - ESPN, PFF, or beat-writer coverage on the specific matchup.
-    Cite every source with a full URL and a short snippet you
-    actually read (not a title, not something you invented). Do NOT
-    claim to have read raw.githubusercontent.com/... paths. That
-    claim will be graded as a fabricated fetch and cap reasoning at
-    1/5 under rubric v2.
-    A human paste from the repository may appear inside this prompt;
-    if it does, treat that inline text as your only repository input.
+  * If you are Gemini (web app): repository raw URLs have never
+    resolved for you (12 fabricated 404s in Week 1 alone). Do NOT
+    attempt raw.githubusercontent.com paths again. Instead, fetch
+    the study's public research site — every research doc that
+    Claude and Codex read from disk is mirrored there as browseable
+    HTML at stable URLs:
+      - https://crespo1301.github.io/AI_Analyzer_Crespo/research/index.html
+        (index of every research page)
+      - https://crespo1301.github.io/AI_Analyzer_Crespo/research/teams/detroit-lions.html
+        (Detroit's roster, depth chart, health snapshot, season record)
+      - https://crespo1301.github.io/AI_Analyzer_Crespo/research/teams/buffalo-bills.html
+        (Buffalo's roster, depth chart, health snapshot, season record)
+      - https://crespo1301.github.io/AI_Analyzer_Crespo/research/rubric.html
+        (grading rubric v2)
+      - https://crespo1301.github.io/AI_Analyzer_Crespo/research/week-01-analysis.html
+        (Week 1 retrospective — safe to read; it is history, not future guidance)
+      - https://crespo1301.github.io/AI_Analyzer_Crespo/bet-database.html
+        (bet ledger for shape derivation)
+      - https://crespo1301.github.io/AI_Analyzer_Crespo/nfl-2026.html
+        (Week 1 results, current leaderboard)
+      - https://crespo1301.github.io/AI_Analyzer_Crespo/Sports_Pages/&lt;game-id&gt;.html
+        (per-game locked picks + grades — includes each model's raw response)
+    Also do open-web research on the specific matchup: live
+    sportsbook odds (name the book), each team's official injury
+    report / depth chart page, ESPN or beat-writer coverage.
+    Cite every source with a full URL and a short quoted snippet
+    you actually read. Fabricated fetches or claimed 404s on public
+    URLs will be graded as Source Honesty failures and cap
+    reasoning at 1/5 under rubric v2.
 
 WEEK 1 CONTEXT
 Week 1 is fully graded. Both teams played:
