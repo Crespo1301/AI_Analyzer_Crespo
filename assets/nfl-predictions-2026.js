@@ -340,6 +340,60 @@ var NFL_PREDICTIONS_2026 = [
             reason: "Fast-paced game script keeps Gibbs involved while Buffalo attacks through the air."
           }
         ]
+      },
+      Claude: {
+        version: "Claude Code",
+        total_stake: 20,
+        reserve: 0,
+        summary: "Projected BUF 30-24, total 54. Closed the Week 1 zero-player-prop gap with a volume-on-winner Cook leg. Bills-side exposure isolated to the SGP to avoid the W1 G2 same-team single+SGP concentration failure.",
+        bets: [
+          {
+            type: "straight",
+            market: "Total",
+            line: "Game total OVER 51.5 (min -110 conditional)",
+            stake: 10,
+            confidence: 6,
+            pricing_status: "conditional",
+            minimum_acceptable_odds: -110,
+            potential_net_profit: 9.09,
+            potential_total_return: 19.09,
+            break_even_probability: 0.5238,
+            estimated_win_probability: 0.57,
+            reason: "DET missing both starting safeties (Branch + Joseph OUT). Both teams cleared 30 in W1. Allen vs a compromised secondary is the exact TT-OVER environment DET beat NO in W1."
+          },
+          {
+            type: "straight",
+            market: "Player Rush Att",
+            line: "James Cook OVER 15.5 rush attempts (min -115 conditional)",
+            stake: 4,
+            confidence: 6,
+            pricing_status: "conditional",
+            minimum_acceptable_odds: -115,
+            potential_net_profit: 3.48,
+            potential_total_return: 7.48,
+            break_even_probability: 0.5349,
+            estimated_win_probability: 0.58,
+            reason: "Volume-on-projected-winner shape (mirrors W1 Jeanty O15.5 → 23 att and Hall O15.5 → 22 att). Home-favorite lead + clock-eating run-out drives."
+          },
+          {
+            type: "sgp",
+            market: "SGP",
+            line: "Bills ML + Bills TT OVER 27.5 (min +140 conditional)",
+            stake: 6,
+            confidence: 4,
+            pricing_status: "conditional",
+            minimum_acceptable_odds: 140,
+            potential_net_profit: 8.40,
+            potential_total_return: 14.40,
+            break_even_probability: 0.4167,
+            estimated_win_probability: 0.42,
+            legs: [
+              { market: "Moneyline", line: "Buffalo Bills moneyline", estimated_leg_probability: 0.62 },
+              { market: "Team Total", line: "Buffalo Bills OVER 27.5", estimated_leg_probability: 0.55 }
+            ],
+            reason: "Positively correlated home-fav ML + same-team TT OVER; mirrors S2 W1 MNF Chiefs ML + total SGP shape, direction flipped to OVER given DET's compromised secondary."
+          }
+        ]
       }
     }
   },
@@ -950,21 +1004,6 @@ var NFL_PREDICTIONS_2026 = [
           { outcome: "WIN", actual: "KC ML + 41 total UNDER 43.5", odds: 220, profit: 17.60 }
         ]
       }
-    }
-  },
-  {
-    week: 2, gameId: "lions-bills", label: "Lions at Bills (TNF)",
-    away: "Detroit Lions", home: "Buffalo Bills",
-    kickoff: "2026-09-17T20:15:00-04:00", kickoffDisplay: "Thu Sep 17, 8:15 PM ET",
-    venue: "Highmark Stadium, Orchard Park, NY", network: "Prime Video",
-    line_snapshot: { spread: "BUF -3 to -4", total: 51.5, moneyline: "BUF -165 / DET +140", source: "market ranges via research, 2026-09-17" },
-    espn: "https://www.espn.com/nfl/boxscore/_/gameId/401872932",
-    responseFolder: "Docs/Responses/2026/week-02/game-01-lions-bills/",
-    status: "locked", locked_at: "2026-09-17", prompt_template: "forced-selection v3.1",
-    models: {
-      ChatGPT: { version: "pending", total_stake: 0, reserve: 20, summary: "Awaiting v3.1 response.", bets: [] },
-      Claude: { version: "Claude Code", total_stake: 20, reserve: 0, summary: "Game OVER 51.5 $10 conditional -110 + Cook OVER 15.5 rush att $4 conditional -115 + SGP Bills ML + Bills TT OVER 27.5 $6 conditional +140. Projected BUF 30-24. Closed W1 zero-player-prop gap with volume-on-winner Cook leg. DET missing both starting safeties.", bets: [{type:"straight", market:"Total", line:"Game total OVER 51.5 (min -110 conditional)", stake:10, confidence:6, reason:"DET missing both safeties (Branch + Joseph OUT); both teams scored 30+ in W1"}, {type:"straight", market:"Player Rush Att", line:"James Cook OVER 15.5 rush att (min -115 conditional)", stake:4, confidence:6, reason:"Volume-on-winner: BUF home favorite, Cook 16-18 att floor in game-script-friendly spots"}, {type:"sgp", market:"SGP", line:"Bills ML + Bills TT OVER 27.5 (min +140 conditional)", stake:6, confidence:4, reason:"Correlated home-fav ML + TT OVER on compromised DET secondary"}] },
-      Gemini: { version: "pending", total_stake: 0, reserve: 20, summary: "Awaiting v3.1 response.", bets: [] }
     }
   }
 ];

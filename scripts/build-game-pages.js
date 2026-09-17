@@ -373,16 +373,6 @@ ${!entry.bets.length && review ? '<p><strong>Decision review:</strong> ' + esc(r
     <div class="factor-row"><div class="fr-label">Source</div><div class="fr-body">${esc(pred.line_snapshot.source || '')}</div></div>
   ` : '';
 
-  const responseLink = '';
-  const modelFileMap = { ChatGPT: 'chatgpt-picks.md', Claude: 'claude-picks.md', Gemini: 'gemini-picks.md' };
-  const rawPicksBlocks = pred.responseFolder ? NFL_MODELS.map(m => {
-    const filePath = path.join(repoRoot, pred.responseFolder, modelFileMap[m]);
-    if (!fs.existsSync(filePath)) return '';
-    const content = fs.readFileSync(filePath, 'utf8');
-    return `<article class="rp-card"><div class="rp-head"><div class="rp-name">${m}</div><span class="rp-tag">raw response</span></div><details open><summary>Show ${m}'s full response</summary><pre>${esc(content)}</pre></details></article>`;
-  }).filter(Boolean).join('') : '';
-  const rawPicksSection = rawPicksBlocks ? `<section class="band band-bone"><div class="wrap"><div class="band-head"><div><div class="b-kicker">Raw responses</div><div class="b-title">What each model <span class="accent">actually wrote</span></div></div></div><div class="raw-picks">${rawPicksBlocks}</div></div></section>` : '';
-
   return `<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -455,7 +445,7 @@ ${!entry.bets.length && review ? '<p><strong>Decision review:</strong> ' + esc(r
 <section class="band band-paper" style="padding: 32px 0;">
   <div class="wrap">
     <div class="disclaimer-box">
-      <strong>Week ${pred.week} &middot; ${esc(kickoffDisplay)}.</strong> Original predictions are preserved below. Recorded date: ${esc(pred.locked_at || '')}; this field does not establish a precise lock time. Each raw response identifies its prompt and model. ${final ? 'Outcomes are verified; reasoning is reviewed separately.' : 'Results will be checked after the game.'} ${responseLink}
+      <strong>Week ${pred.week} &middot; ${esc(kickoffDisplay)}.</strong> Original predictions are preserved below. Recorded date: ${esc(pred.locked_at || '')}; this field does not establish a precise lock time. ${final ? 'Outcomes are verified; reasoning is reviewed separately.' : 'Results will be checked after the game.'}
     </div>
   </div>
 </section>
@@ -480,7 +470,7 @@ ${modelResults}
   <div class="wrap">
     <div class="band-head">
       <div>
-        <div class="b-kicker">Model board</div>
+        <div class="b-kicker">Model Predictions</div>
         <div class="b-title">Locked <span class="accent">picks</span></div>
       </div>
     </div>
@@ -490,7 +480,6 @@ ${modelResults}
   </div>
 </section>
 
-${rawPicksSection}
 ${humanReview}
 
 ${final ? '' : `<section class="band band-bone">
