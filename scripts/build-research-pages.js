@@ -316,6 +316,11 @@ fs.writeFileSync(path.join(outDir, 'index.html'), shell('Research', 'All study r
         <h3>Bet database</h3>
         <p>Every graded pick from Season 1 and Season 2. Filterable. This is the raw data the shape derivations should cite.</p>
       </a>
+      <a class="rc rc-prompts" href="prompts/index.html">
+        <div class="rc-kicker">Copy-ready</div>
+        <h3>Weekly prompts</h3>
+        <p>Every locked forced-selection prompt with a one-click copy button. Paste straight into each model.</p>
+      </a>
       <a class="rc rc-season" href="../nfl-2026.html">
         <div class="rc-kicker">Live standings</div>
         <h3>Season hub</h3>
@@ -330,4 +335,78 @@ fs.writeFileSync(path.join(outDir, 'index.html'), shell('Research', 'All study r
   </div>
 `, '..'));
 
-console.log('Wrote research/index.html, research/teams/index.html, ' + teamFiles.length + ' team profiles, ' + docs.length + ' doc pages.');
+// Prompt pages: publish each weekly forced-selection prompt with a copy button.
+const promptsRoot = path.join(repoRoot, 'Prompts/2026');
+const promptsOut = path.join(outDir, 'prompts');
+fs.mkdirSync(promptsOut, { recursive: true });
+let promptCount = 0;
+const promptsByWeek = {};
+if (fs.existsSync(promptsRoot)) {
+  fs.readdirSync(promptsRoot).forEach(weekDir => {
+    const weekPath = path.join(promptsRoot, weekDir);
+    if (!fs.statSync(weekPath).isDirectory()) return;
+    const files = fs.readdirSync(weekPath).filter(f => f.endsWith('.md'));
+    if (!files.length) return;
+    const weekOut = path.join(promptsOut, weekDir);
+    fs.mkdirSync(weekOut, { recursive: true });
+    promptsByWeek[weekDir] = [];
+    files.forEach(f => {
+      const raw = fs.readFileSync(path.join(weekPath, f), 'utf8');
+      const slug = f.replace(/\.md$/, '');
+      const titleGuess = slug.replace(/^game-\d+-/, '').replace(/-/g, ' ');
+      promptsByWeek[weekDir].push({ slug, title: titleGuess });
+      const body = `
+  <section class="research-hero">
+    <div class="wrap">
+      <div class="rh-eyebrow">${esc(weekDir.replace('-', ' '))}, forced-selection v3.1</div>
+      <h1 class="rh-h1">${esc(titleGuess)}</h1>
+      <p class="rh-lede">Paste this prompt into each model to lock its ticket. Every model gets identical text. Model output goes into <code>Docs/Responses/2026/${esc(weekDir)}/game-<slug>/</code>.</p>
+      <button id="copy-btn" class="copy-btn" type="button">Copy prompt</button>
+    </div>
+  </section>
+  <div class="wrap">
+    <textarea id="prompt-body" class="prompt-body" readonly>${esc(raw)}</textarea>
+  </div>
+  <script>
+    (function(){
+      var btn = document.getElementById('copy-btn');
+      var ta = document.getElementById('prompt-body');
+      btn.addEventListener('click', function () {
+        ta.select();
+        try {
+          navigator.clipboard.writeText(ta.value).then(function(){ flash('Copied'); }, function(){ document.execCommand('copy'); flash('Copied'); });
+        } catch(e) { document.execCommand('copy'); flash('Copied'); }
+      });
+      function flash(msg) {
+        var prev = btn.textContent;
+        btn.textContent = msg;
+        setTimeout(function(){ btn.textContent = prev; }, 1500);
+      }
+    })();
+  </script>`;
+      fs.writeFileSync(path.join(weekOut, slug + '.html'), shell(titleGuess + ' prompt', 'Locked forced-selection prompt for ' + titleGuess + '.', body, '../../..'));
+      promptCount++;
+    });
+  });
+}
+
+// Prompts index (per week)
+const weekBlocks = Object.keys(promptsByWeek).sort().map(week => {
+  const list = promptsByWeek[week].sort((a, b) => a.slug.localeCompare(b.slug));
+  return `<section class="division-block">
+    <h2 class="div-title">${esc(week.replace('-', ' '))}</h2>
+    <div class="research-cards">${list.map(p => `<a class="rc rc-analysis" href="${esc(week)}/${esc(p.slug)}.html"><div class="rc-kicker">${esc(p.slug)}</div><h3>${esc(p.title)}</h3><p>Copy-ready prompt page with one-click copy.</p></a>`).join('')}</div>
+  </section>`;
+}).join('');
+fs.writeFileSync(path.join(promptsOut, 'index.html'), shell('All prompts', 'Weekly forced-selection prompts, viewable and copyable.', `
+  <section class="research-hero">
+    <div class="wrap">
+      <div class="rh-eyebrow">Prompts</div>
+      <h1 class="rh-h1">Weekly forced-selection prompts</h1>
+      <p class="rh-lede">Every prompt the models are fed each week, in one place. Each page has a copy button so you can paste the exact text into each model without formatting drift.</p>
+    </div>
+  </section>
+  <div class="wrap">${weekBlocks}</div>
+`, '../..'));
+
+console.log('Wrote research/index.html, research/teams/index.html, ' + teamFiles.length + ' team profiles, ' + docs.length + ' doc pages, ' + promptCount + ' prompt pages.');

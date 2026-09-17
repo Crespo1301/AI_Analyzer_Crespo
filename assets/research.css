@@ -141,3 +141,11 @@
   .pg-status { grid-column: 2; justify-self: start; margin-top: 2px; }
   .pg-note { grid-column: 1 / -1; margin-top: 2px; }
 }
+
+/* Prompt page: copy button + textarea */
+.copy-btn { display: inline-block; margin-top: 20px; padding: 12px 22px; border-radius: 6px; border: 0; background: var(--nfl-red); color: var(--paper); font-family: var(--f-display); font-weight: 800; font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; cursor: pointer; transition: background 140ms, transform 100ms; }
+.copy-btn:hover { background: #d61b26; }
+.copy-btn:active { transform: scale(0.98); }
+.prompt-body { display: block; width: 100%; max-width: 100%; min-height: 62vh; margin: 28px 0 48px; padding: 22px 26px; border-radius: 10px; border: 1px solid var(--line); background: var(--paper); color: var(--ink); font-family: 'SFMono-Regular', 'Consolas', 'Menlo', monospace; font-size: 13px; line-height: 1.55; resize: vertical; box-sizing: border-box; }
+.prompt-body:focus { outline: 2px solid var(--nfl-red); outline-offset: 2px; }
+.rc-prompts { border-top: 4px solid #b8860b; }
