@@ -903,6 +903,25 @@ button { font: inherit; cursor: pointer; border: 0; background: none; color: inh
 .mpred-bet .conf { margin-left: auto; font-size: 11px; color: var(--muted); letter-spacing: 0.6px; text-transform: uppercase; }
 .mpred-bet .desc { color: var(--gunmetal); font-size: 13px; }
 .mpred-bet .reason { color: var(--muted); font-size: 12px; }
+.pick-metrics {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 4px 0 2px;
+}
+.pick-metrics span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 22px;
+  padding: 3px 7px;
+  border: 1px solid var(--line-strong);
+  background: var(--paper);
+  color: var(--ink-2);
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
 .mpred-summary { font-size: 13px; color: var(--gunmetal); line-height: 1.5; padding-top: 8px; border-top: 1px solid var(--line); }
 @media (max-width: 900px) { .mpred-row { grid-template-columns: 1fr; } }
 
@@ -984,6 +1003,8 @@ button { font: inherit; cursor: pointer; border: 0; background: none; color: inh
 .result-callout.pending {
   background: var(--bone); color: var(--ink);
 }
+.result-callout.pending a { color: var(--ink); }
+.result-callout.pending a:hover { color: var(--paper); }
 .result-callout.pending .rc-tag { color: var(--nfl-red); }
 
 /* ================================================================
@@ -1388,8 +1409,17 @@ a:focus-visible, button:focus-visible, .btn:focus-visible, .wt-card:focus-visibl
 
 /* Inline model results on matchup cards */
 .mgl-models { padding: 4px 14px 12px; display: flex; flex-direction: column; gap: 4px; border-top: 1px solid var(--line); }
-.mgl-mrow { display: flex; align-items: center; gap: 10px; font-size: 12px; padding: 4px 0; }
+.mgl-mrow { display: grid; grid-template-columns: 58px auto auto 1fr; align-items: center; gap: 10px; font-size: 12px; padding: 4px 0; }
 .mgl-mname { font-family: var(--f-display); font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; font-size: 11px; color: var(--muted); min-width: 58px; }
+.mgl-pick {
+  min-width: 0;
+  color: var(--ink);
+  font-size: 11px;
+  line-height: 1.25;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
 .mgl-mbadges { display: flex; gap: 4px; flex: 1; }
 .mgl-tik { display: inline-flex; align-items: center; justify-content: center; min-width: 22px; height: 22px; padding: 0 6px; border-radius: 3px; font-family: var(--f-display); font-weight: 800; font-size: 11px; letter-spacing: 0.04em; }
 .mgl-tik.badge-win { background: rgba(15,122,47,0.15); color: #0f7a2f; border: 1px solid rgba(15,122,47,0.3); }

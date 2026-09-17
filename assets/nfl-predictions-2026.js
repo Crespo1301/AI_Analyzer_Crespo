@@ -240,6 +240,110 @@ var NFL_PREDICTIONS_2026 = [
     }
   },
   {
+    week: 2,
+    gameId: "lions-bills",
+    label: "Lions at Bills",
+    away: "Detroit Lions",
+    home: "Buffalo Bills",
+    kickoff: "2026-09-17T20:15:00-04:00",
+    kickoffDisplay: "Thu Sep 17, 8:15 PM ET",
+    venue: "Highmark Stadium, Orchard Park, NY",
+    network: "Prime Video",
+    line_snapshot: {
+      spread: "BUF -5.5 (FanDuel) / BUF -4.5 (Fanatics)",
+      total: 54.5,
+      moneyline: "BUF favored; exact Bovada price not verified",
+      source: "Codex used FanDuel at 2026-09-17 12:22 PM ET; Gemini used Fanatics/SportsGeek at 2026-09-17 12:24 PM ET"
+    },
+    espn: "https://www.espn.com/nfl/boxscore/_/gameId/401872932",
+    responseFolder: "Docs/Responses/2026/week-02/game-01-lions-bills/",
+    status: "locked",
+    locked_at: "2026-09-17",
+    prompt_template: "forced-selection v3.1",
+    models: {
+      ChatGPT: {
+        version: "Codex CLI / GPT-6",
+        total_stake: 20,
+        reserve: 0,
+        summary: "Projected Buffalo 31-27. Kept exact game spreads and a small correlated SGP; rejected unpriced player ceiling props. Bovada did not expose an event-specific quote, so tickets are reference-market or conditional.",
+        bets: [
+          {
+            type: "straight",
+            market: "Spread",
+            line: "Buffalo Bills -5.5 (@ -105 FanDuel reference)",
+            stake: 14,
+            confidence: 6,
+            pricing_status: "reference_market",
+            odds: -105,
+            potential_net_profit: 13.33,
+            potential_total_return: 27.33,
+            break_even_probability: 0.5122,
+            estimated_win_probability: 0.56,
+            reason: "Buffalo at home with Josh Allen; Detroit on a short week missing two offensive linemen and carrying secondary injuries."
+          },
+          {
+            type: "sgp",
+            market: "SGP",
+            line: "Bills ML + OVER 54.5 (minimum +220 conditional)",
+            stake: 6,
+            confidence: 3,
+            pricing_status: "conditional",
+            minimum_acceptable_odds: 220,
+            potential_net_profit: 13.20,
+            potential_total_return: 19.20,
+            break_even_probability: 0.3125,
+            estimated_win_probability: 0.33,
+            legs: [
+              { market: "Moneyline", line: "Buffalo Bills moneyline" },
+              { market: "Total", line: "OVER 54.5 total points" }
+            ],
+            reason: "Both teams scored 30+ in Week 1; a Buffalo win script can still require 55+ total points."
+          }
+        ]
+      },
+      Gemini: {
+        version: "Gemini web / 2.5 Flash",
+        total_stake: 20,
+        reserve: 0,
+        summary: "Projected Buffalo 31-24. Used a Buffalo spread single plus a volume-anchored player-prop parlay. Bovada was reported inaccessible; tickets are reference-market only.",
+        bets: [
+          {
+            type: "straight",
+            market: "Spread",
+            line: "Buffalo Bills -4.5 (@ -110 Fanatics reference)",
+            stake: 12,
+            confidence: 7,
+            pricing_status: "reference_market",
+            odds: -110,
+            potential_net_profit: 10.91,
+            potential_total_return: 22.91,
+            break_even_probability: 0.5238,
+            estimated_win_probability: 0.565,
+            reason: "Detroit's offensive line absences plus Buffalo's home-field and Josh Allen passing matchup."
+          },
+          {
+            type: "parlay",
+            market: "Parlay",
+            line: "Gibbs rush yards OVER + Josh Allen pass yards OVER (@ +264 Fanatics reference)",
+            stake: 8,
+            confidence: 4,
+            pricing_status: "reference_market",
+            odds: 264,
+            potential_net_profit: 21.12,
+            potential_total_return: 29.12,
+            break_even_probability: 0.2747,
+            estimated_win_probability: 0.31,
+            legs: [
+              { market: "Prop", line: "Jahmyr Gibbs OVER 68.5 rushing yards" },
+              { market: "Prop", line: "Josh Allen OVER 244.5 passing yards" }
+            ],
+            reason: "Fast-paced game script keeps Gibbs involved while Buffalo attacks through the air."
+          }
+        ]
+      }
+    }
+  },
+  {
     week: 1,
     gameId: "buccaneers-bengals",
     label: "Buccaneers at Bengals",
@@ -846,6 +950,21 @@ var NFL_PREDICTIONS_2026 = [
           { outcome: "WIN", actual: "KC ML + 41 total UNDER 43.5", odds: 220, profit: 17.60 }
         ]
       }
+    }
+  },
+  {
+    week: 2, gameId: "lions-bills", label: "Lions at Bills (TNF)",
+    away: "Detroit Lions", home: "Buffalo Bills",
+    kickoff: "2026-09-17T20:15:00-04:00", kickoffDisplay: "Thu Sep 17, 8:15 PM ET",
+    venue: "Highmark Stadium, Orchard Park, NY", network: "Prime Video",
+    line_snapshot: { spread: "BUF -3 to -4", total: 51.5, moneyline: "BUF -165 / DET +140", source: "market ranges via research, 2026-09-17" },
+    espn: "https://www.espn.com/nfl/boxscore/_/gameId/401872932",
+    responseFolder: "Docs/Responses/2026/week-02/game-01-lions-bills/",
+    status: "locked", locked_at: "2026-09-17", prompt_template: "forced-selection v3.1",
+    models: {
+      ChatGPT: { version: "pending", total_stake: 0, reserve: 20, summary: "Awaiting v3.1 response.", bets: [] },
+      Claude: { version: "Claude Code", total_stake: 20, reserve: 0, summary: "Game OVER 51.5 $10 conditional -110 + Cook OVER 15.5 rush att $4 conditional -115 + SGP Bills ML + Bills TT OVER 27.5 $6 conditional +140. Projected BUF 30-24. Closed W1 zero-player-prop gap with volume-on-winner Cook leg. DET missing both starting safeties.", bets: [{type:"straight", market:"Total", line:"Game total OVER 51.5 (min -110 conditional)", stake:10, confidence:6, reason:"DET missing both safeties (Branch + Joseph OUT); both teams scored 30+ in W1"}, {type:"straight", market:"Player Rush Att", line:"James Cook OVER 15.5 rush att (min -115 conditional)", stake:4, confidence:6, reason:"Volume-on-winner: BUF home favorite, Cook 16-18 att floor in game-script-friendly spots"}, {type:"sgp", market:"SGP", line:"Bills ML + Bills TT OVER 27.5 (min +140 conditional)", stake:6, confidence:4, reason:"Correlated home-fav ML + TT OVER on compromised DET secondary"}] },
+      Gemini: { version: "pending", total_stake: 0, reserve: 20, summary: "Awaiting v3.1 response.", bets: [] }
     }
   }
 ];

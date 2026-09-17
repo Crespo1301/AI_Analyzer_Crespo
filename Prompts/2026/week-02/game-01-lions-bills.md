@@ -16,7 +16,10 @@ study, Week 2, Detroit Lions at Buffalo Bills. Kickoff 2026-09-17
 Video (TNF). game_id: lions-bills.
 
 This is a hypothetical research allocation, not authorization to
-place wagers. Check the current time and official kickoff first. If
+place wagers. Carlos does not personally participate in these model
+allocations unless explicitly stated elsewhere, and any Carlos picks
+are separate, independent comparison records rather than part of the
+LLM entries. Check the current time and official kickoff first. If
 kickoff has passed, stop and report that pre-game eligibility has
 expired. Do not use hindsight.
 
@@ -103,7 +106,7 @@ defensive volume settled.
 
 BET-TYPE COVERAGE (mandatory reflection)
 Look at your own Week 1 bet mix. If you filed only game-level
-wagers (spreads, moneylines, game totals, favorite-ML plus total
+picks (spreads, moneylines, game totals, favorite-ML plus total
 SGPs) and no player-level picks despite team profiles carrying
 roster, depth chart, and health data, name that. Then consider
 whether a defensible player-level pick fits this matchup better
@@ -116,8 +119,9 @@ you stay game-level, say you considered a player-level angle and
 why you rejected it.
 
 BOVADA PRICING HONESTY
-Carlos places tickets on Bovada. Try to obtain current
-event-specific Bovada prices from
+Use Bovada only as an odds-review reference when it is reachable;
+do not imply Carlos is placing these tickets there. Try to obtain
+current event-specific Bovada prices from
 https://www.bovada.lv/sports/football/nfl. Do not log in, request
 credentials, bypass access controls, or place bets. Classify EVERY
 ticket as exactly one of:
@@ -183,6 +187,6 @@ ANSWER FORMAT
    reasoning_summary.
 
 Do not soften picks to match the market. Do not report a
-conditional ticket as a verified Bovada wager. Operator acceptance
+conditional ticket as a verified Bovada offer. Operator acceptance
 alone cannot turn an unverified quote into a verified one.
 ```

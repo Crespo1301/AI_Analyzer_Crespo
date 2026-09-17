@@ -108,6 +108,18 @@ function nflMatchupsForWeek(week) {
   return Object.keys(byId).map(function (id) { return byId[id]; });
 }
 
+function nflPredictionsByGameId() {
+  if (typeof NFL_PREDICTIONS_2026 === "undefined") return {};
+  return NFL_PREDICTIONS_2026.reduce(function (map, p) {
+    map[p.gameId] = p;
+    return map;
+  }, {});
+}
+
+function nflLocalGamePageHref(gameId) {
+  return 'Sports_Pages/' + gameId + '.html';
+}
+
 function nflLogoMark(teamName, size) {
   var team = NFL_TEAMS[teamName];
   if (!team) return "";
@@ -169,8 +181,9 @@ function nflSlotLocked(game) {
   var awayTeam = NFL_TEAMS[game.away] || {};
   var homeTeam = NFL_TEAMS[game.home] || {};
   var kickoff = game.kickoffDisplay || "";
+  var hasLocalPicks = !!nflPredictionsByGameId()[game.id];
   var isScheduled = game.source === "schedule";
-  var href = isScheduled ? game.espn : 'Sports_Pages/' + game.id + '.html';
+  var href = hasLocalPicks || !isScheduled ? nflLocalGamePageHref(game.id) : game.espn;
   var timeShort = kickoff.replace(/^[A-Za-z]{3}\s+[A-Za-z]{3}\s+\d+,?\s*/, '').replace(/\s+ET$/, '');
   return ''
     + '<a class="scoreboard-slot" href="' + esc(href) + '">'
@@ -271,19 +284,20 @@ function nflRenderMatchupGrid(mountId, opts) {
     host.innerHTML = '<div class="empty-state"><div class="es-title">Week ' + week + ' picks arrive before kickoff</div><p>Model responses are locked and published Tuesday through Wednesday of each game week. Nothing is fabricated in the interim.</p></div>';
     return;
   }
-  var predByGameId = (typeof NFL_PREDICTIONS_2026 !== "undefined") ? NFL_PREDICTIONS_2026.reduce(function (map, p) { map[p.gameId] = p; return map; }, {}) : {};
+  var predByGameId = nflPredictionsByGameId();
   function moneyStr(n) { var v = Math.round(n * 100) / 100; var sign = v > 0 ? "+" : v < 0 ? "-" : ""; return sign + "$" + Math.abs(v).toFixed(2); }
   var html = games.map(function (g) {
     var away = NFL_TEAMS[g.away] || {};
     var home = NFL_TEAMS[g.home] || {};
     var isFinal = g.status === "final";
     var isScheduled = g.source === "schedule";
-    var pageHref = isScheduled ? g.espn : 'Sports_Pages/' + g.id + '.html';
-    var statusChip = isFinal ? '<span class="mchip final">Final</span>' : isScheduled ? '<span class="mchip sched">Scheduled</span>' : '<span class="mchip locked">Locked</span>';
+    var pred = predByGameId[g.id];
+    var hasLocalPicks = !!pred;
+    var pageHref = hasLocalPicks || !isScheduled ? nflLocalGamePageHref(g.id) : g.espn;
+    var statusChip = isFinal ? '<span class="mchip final">Final</span>' : hasLocalPicks ? '<span class="mchip locked">Locked</span>' : isScheduled ? '<span class="mchip sched">Scheduled</span>' : '<span class="mchip locked">Locked</span>';
     var scoreOrTime = isFinal
       ? '<div class="mscore tabular">' + g.awayScore + ' &ndash; ' + g.homeScore + '</div>'
       : '<div class="mtime">' + esc(g.kickoffDisplay || 'TBD') + '</div>';
-    var pred = predByGameId[g.id];
     var isGraded = pred && pred.result && pred.result.status === "final";
     var modelRows = "";
     if (pred && pred.models) {
@@ -305,10 +319,11 @@ function nflRenderMatchupGrid(mountId, opts) {
           badges = mp.bets.map(function () { return '<span class="mgl-tik badge-pending">&bull;</span>'; }).join('');
         }
         var plStr = grades.length ? '<span class="mgl-pl ' + (totalPl > 0 ? 'pl-win' : totalPl < 0 ? 'pl-loss' : 'pl-flat') + '">' + moneyStr(totalPl) + '</span>' : '';
-        return '<div class="mgl-mrow"><span class="mgl-mname">' + m + '</span><span class="mgl-mbadges">' + badges + '</span>' + plStr + '</div>';
+        var firstPick = mp.bets && mp.bets.length ? '<span class="mgl-pick">' + esc(mp.bets[0].line || mp.bets[0].market || 'Pick logged') + '</span>' : '';
+        return '<div class="mgl-mrow"><span class="mgl-mname">' + m + '</span><span class="mgl-mbadges">' + badges + '</span>' + plStr + firstPick + '</div>';
       }).join('') + '</div>';
     }
-    var cta = isFinal ? 'Full analysis' : isScheduled ? 'ESPN details' : 'Read locked picks';
+    var cta = isFinal ? 'Full analysis' : hasLocalPicks ? 'Read locked picks' : isScheduled ? 'ESPN details' : 'Read locked picks';
     return ''
       + '<a class="mgame-lite" href="' + pageHref + '">'
       + '<div class="mgl-top">' + statusChip + '<span class="mgl-week">Wk ' + week + '</span></div>'

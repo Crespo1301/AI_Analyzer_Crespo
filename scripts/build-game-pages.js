@@ -48,6 +48,18 @@ function esc(s) {
   return String(s).replace(/[&<>"']/g, ch => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[ch]));
 }
 
+function betPricingDetails(b) {
+  const parts = [];
+  if (b.pricing_status) parts.push(`<span>${esc(b.pricing_status.replace(/_/g, ' '))}</span>`);
+  if (b.odds != null) parts.push(`<span>Odds ${Number(b.odds) > 0 ? '+' : ''}${esc(b.odds)}</span>`);
+  if (b.minimum_acceptable_odds != null) parts.push(`<span>Min ${Number(b.minimum_acceptable_odds) > 0 ? '+' : ''}${esc(b.minimum_acceptable_odds)}</span>`);
+  if (b.estimated_win_probability != null) parts.push(`<span>Est. ${(b.estimated_win_probability * 100).toFixed(1)}%</span>`);
+  if (b.break_even_probability != null) parts.push(`<span>BE ${(b.break_even_probability * 100).toFixed(1)}%</span>`);
+  if (b.potential_net_profit != null) parts.push(`<span>Profit $${Number(b.potential_net_profit).toFixed(2)}</span>`);
+  if (b.potential_total_return != null) parts.push(`<span>Return $${Number(b.potential_total_return).toFixed(2)}</span>`);
+  return parts.length ? `<div class="pick-metrics">${parts.join('')}</div>` : '';
+}
+
 function pageHtml(game) {
   const gameLabel = game.label;
   const bets = NFL_BETS.filter(b => b.game === gameLabel);
@@ -325,11 +337,12 @@ ${!entry.bets.length && review ? '<p><strong>Decision review:</strong> ' + esc(r
           const badge = grade ? `<span class="pick-badge ${badgeClass}">${esc(grade.outcome)}</span>` : '';
           const plStr = grade && typeof grade.profit === 'number' ? `<span class="pick-pl ${grade.profit > 0 ? 'pl-win' : grade.profit < 0 ? 'pl-loss' : 'pl-flat'}">${money(grade.profit)}</span>` : '';
           const outcomeRow = grade ? `<div class="pick-outcome">${badge}${plStr}<span class="pick-actual">${esc(grade.actual || '')}</span></div>` : '';
+          const pricing = betPricingDetails(b);
           if (b.type === 'sgp' || b.type === 'parlay') {
             const legs = (b.legs || []).map(l => esc(l.line)).join(' + ');
-            return `<div class="mpred-bet"><div class="line1"><span class="stake tabular">$${b.stake}</span><span class="market">${b.type === 'sgp' ? 'SGP' : 'Parlay'}</span><span class="conf">Conf ${b.confidence}/10</span></div><div class="desc">${esc(b.line)}${legs ? ' &middot; ' + legs : ''}</div>${outcomeRow}${b.reason ? `<div class="reason">${esc(b.reason)}</div>` : ''}</div>`;
+            return `<div class="mpred-bet"><div class="line1"><span class="stake tabular">$${b.stake}</span><span class="market">${b.type === 'sgp' ? 'SGP' : 'Parlay'}</span><span class="conf">Conf ${b.confidence}/10</span></div><div class="desc">${esc(b.line)}${legs ? ' &middot; ' + legs : ''}</div>${pricing}${outcomeRow}${b.reason ? `<div class="reason">${esc(b.reason)}</div>` : ''}</div>`;
           }
-          return `<div class="mpred-bet"><div class="line1"><span class="stake tabular">$${b.stake}</span><span class="market">${esc(b.market)}</span><span class="conf">Conf ${b.confidence}/10</span></div><div class="desc">${esc(b.line)}</div>${outcomeRow}${b.reason ? `<div class="reason">Original rationale: ${esc(b.reason)}</div>` : ''}</div>`;
+          return `<div class="mpred-bet"><div class="line1"><span class="stake tabular">$${b.stake}</span><span class="market">${esc(b.market)}</span><span class="conf">Conf ${b.confidence}/10</span></div><div class="desc">${esc(b.line)}</div>${pricing}${outcomeRow}${b.reason ? `<div class="reason">Original rationale: ${esc(b.reason)}</div>` : ''}</div>`;
         }).join('')
       : isExpired
         ? `<div class="mpred-bet none">EXPIRED. Response not received before kickoff. Full $${mp.reserve || 20} reserved.</div>`
