@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>bears panthers prompt, Research, AI Analyzer</title>
-<meta name="description" content="Locked forced-selection prompt for bears panthers.">
+<title>buccaneers bengals prompt, Research, AI Analyzer</title>
+<meta name="description" content="Locked forced-selection prompt for buccaneers bengals.">
 <link rel="icon" type="image/svg+xml" href="../../../assets/favicon.svg">
 <link rel="stylesheet" href="../../../assets/styles.css">
 <link rel="stylesheet" href="../../../assets/research.css">
@@ -23,31 +23,30 @@
   <section class="research-hero">
     <div class="wrap">
       <div class="rh-eyebrow">week 01, forced-selection v3.1</div>
-      <h1 class="rh-h1">bears panthers</h1>
-      <p class="rh-lede">Paste this prompt into each model to lock its ticket. Every model gets identical text. Model output goes into <code>Docs/Responses/2026/week-01/game-<slug>/</code>.</p>
+      <h1 class="rh-h1">buccaneers bengals</h1>
+      <p class="rh-lede">Paste this prompt into each model to lock its ticket. Every model gets identical text.</p>
       <button id="copy-btn" class="copy-btn" type="button">Copy prompt</button>
     </div>
   </section>
   <div class="wrap">
-    <textarea id="prompt-body" class="prompt-body" readonly># Local-access prompt v3.0, Week 1 Game 8: Chicago Bears at Carolina Panthers
+    <textarea id="prompt-body" class="prompt-body" readonly># Local-access prompt v3.0, Week 1 Game 3: Tampa Bay Buccaneers at Cincinnati Bengals
 
 For: Claude, or ChatGPT via the Codex CLI. Both have local filesystem access.
-Kickoff: 2026-09-13 1:00 PM ET at Bank of America Stadium, FOX.
+Kickoff: 2026-09-13 1:00 PM ET at Paycor Stadium, FOX.
 Written: 2026-09-13. v3.0 is the independent-derivation lane: the model
 derives shape patterns from raw graded data instead of receiving them
 pre-summarized.
 
 Save the raw response next to this file as `claude-picks.md` or
-`chatgpt-picks.md`. Any grading concerns (roster heuristic errors
-flagged, factual issues) go inline in the picks file itself as a
-&quot;Grading concerns&quot; section, not in a separate corrections doc.
+`chatgpt-picks.md`. If the model flagged a factual issue in the prompt,
+save `prompt-corrections.md` alongside.
 
 ## The prompt (copy from here down)
 
 ```text
 You are an independent entry in the CSolutions AI Analyzer NFL
-study, Week 1, Chicago Bears at Carolina Panthers. Kickoff 2026-09-13 1:00 PM ET at Bank of America Stadium,
-broadcast on FOX. game_id: bears-panthers.
+study, Week 1, Tampa Bay Buccaneers at Cincinnati Bengals. Kickoff 2026-09-13 1:00 PM ET at Paycor Stadium,
+broadcast on FOX. game_id: buccaneers-bengals.
 
 This is a hypothetical research allocation, not authorization to place
 wagers. Check the current time and official kickoff first. If kickoff
@@ -65,9 +64,7 @@ This study tracks real graded outcomes across two seasons. Do NOT
 read any repository summary, review, or handoff doc that tells you
 &quot;what has worked&quot; or &quot;what to avoid&quot; for betting shapes. That would
 feed you our bias. The study is designed so you derive shape patterns
-independently from the raw graded data.
-
-Read:
+independently from the raw graded data. Read:
 
 - assets/nfl-data.js NFL_BETS: every graded ticket across Seasons 1
   and 2. Filter, count, sort by P/L yourself.
@@ -103,8 +100,8 @@ to support a derivation, say so.
 
 TEAM PROFILE STEP
 Read both team profiles and cite specific values in your reasoning:
-- Data/2026/rosters/chicago-bears.json
-- Data/2026/rosters/carolina-panthers.json
+- Data/2026/rosters/tampa-bay-buccaneers.json
+- Data/2026/rosters/cincinnati-bengals.json
 
 Each profile contains: roster (offense skill positions, kicker, depth
 tables), season_record (through the most recent graded game), and
@@ -190,7 +187,7 @@ ANSWER FORMAT
 7. One valid JSON object with fields:
    prompt_template (&quot;forced-selection&quot;), prompt_version (&quot;3.0&quot;),
    model_role, model_version, generated_at, week (1),
-   game_id (&quot;bears-panthers&quot;), forced_allocation (true), bankroll (20),
+   game_id (&quot;buccaneers-bengals&quot;), forced_allocation (true), bankroll (20),
    total_stake (20), reserve (0),
    team_profiles_read (list of {path, as_of, season_record,
      health_key_players}),

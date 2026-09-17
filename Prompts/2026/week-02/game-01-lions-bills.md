@@ -16,18 +16,43 @@ positive stake. A parlay is one ticket with one stake.
 LANE-SPECIFIC INSTRUCTIONS - READ THE ONE THAT MATCHES YOU
 
   * If you are Claude (Claude Code) or ChatGPT (Codex CLI): you have
-    local filesystem access to the repository at
-    /home/cresp3/AI_Analyzer_Crespo. Read these files directly:
-      - assets/nfl-data.js  (NFL_BETS, NFL_CORRECTIONS - historical graded rows)
-      - assets/nfl-predictions-2026.js  (every Week 1 2026 pick, result, and grade, including your own)
+    FULL local filesystem access to the repository at
+    /home/cresp3/AI_Analyzer_Crespo. USE IT. Do not skip the file
+    reads to save tokens, do not summarize from memory, do not rely
+    on the prompt for context that is already on disk. Every one of
+    these files is required reading for this ticket:
+
+      - assets/nfl-data.js
+        NFL_BETS and NFL_CORRECTIONS. Every graded row from Season 1
+        with the exact market, price, outcome, and P/L. This is the
+        raw shape-derivation source.
+      - assets/nfl-predictions-2026.js
+        Every Week 1 2026 pick, result, and grade, including your
+        own model's tickets. Filter to your model_role and read your
+        own record before deciding what to repeat.
       - Data/2026/rosters/detroit-lions.json
       - Data/2026/rosters/buffalo-bills.json
+        Roster, verified starters, depth chart, season_record (now
+        1-0 for both teams with last_game notes), health_snapshot.
+        Every player-level claim in your reasoning must cite from
+        one of these.
       - Docs/2026/grading-rubric.md
-      - Docs/2026/week-01-analysis.md  (safe to read; it is retrospective, not future guidance)
+        Rubric v2. Read it before writing reasoning strings so you
+        know what earns 4/5 vs 2/5.
+      - Docs/2026/week-01-analysis.md
+        The Week 1 retrospective. Safe to read; it is history, not
+        forward guidance.
+      - Docs/Responses/2026/week-01/game-*/{chatgpt,claude,gemini}-picks.md
+        Every model's raw response from Week 1. Look at how your own
+        prior reasoning read against the outcome, and at how the
+        other models framed picks that beat yours.
+
     Do NOT read Docs/2026/what-has-worked.md if it exists; that is a
-    biased summary and defeats the study's independent-derivation goal.
-    Cite specific rows or blocks in your reasoning, with a short quoted
-    snippet you actually pulled from the file.
+    biased summary and defeats the study's independent-derivation
+    goal. In your response, cite specific rows or blocks with a
+    short quoted snippet you actually pulled from the file. Snippets
+    that do not appear in the file will be graded as fabricated
+    fetches under rubric v2 (source honesty axis, 1/5 cap).
 
   * If you are Gemini (web app): repository raw URLs have never
     resolved for you (12 fabricated 404s in Week 1 alone). Do NOT
