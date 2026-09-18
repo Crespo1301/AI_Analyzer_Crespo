@@ -20,8 +20,8 @@ A complete, expandable analysis hub with:
     ├─vikings_lions_interactive.html
 ├─/Docs
     ├─OVERVIEW.md
-    ├─PACKERS_PANTHERS_SUMMARY.md
-    ├─VIKINGS_LIONS_SUMMARY.md
+    ├─2025-archive/PACKERS_PANTHERS_SUMMARY.md
+    ├─2025-archive/VIKINGS_LIONS_SUMMARY.md
 ├─/Trash 
 ├── analysis_template.html              # 📝 Template for new analyses
 ├── README.md                           # 📚 User guide

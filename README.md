@@ -60,7 +60,7 @@ Never hand-edit generated files under `Sports_Pages/`. Edit `assets/nfl-data.js`
 /home/cresp3/scripts/visual-check.sh --desktop --url http://localhost:4173/ --out .visual-checks/home-desktop.png
 ```
 
-See `VISUAL-QA.md`.
+See `Docs/ops/VISUAL-QA.md`.
 
 ## Weekly workflow
 

@@ -15,7 +15,7 @@ Repo role: active public showcase tool featured in Portfolio as `AI Model Perfor
 ## Working Notes
 
 - Static analysis hub with HTML pages and documentation.
-- `assets/nfl-data.js` is the current public truth. Older files in `Docs/GRADING ANALYSIS/` are historical and may disagree with the corrected public data.
+- `assets/nfl-data.js` is the current public truth. Older files in `Docs/2025-archive/grading-analysis/` are historical and may disagree with the corrected public data.
 - For the 2026 season, preserve raw model responses in `Docs/Responses/2026/` before extracting bets.
 - Use `Docs/2026/grading-rubric.md` to score reasoning. Do not reward wordiness by itself.
 - Use `Docs/2026/iteration-system.md` when changing prompts, strategy lanes, or grading methods.
@@ -36,11 +36,11 @@ node scripts/build-game-pages.js
 
 ## Shared AI Tooling
 
-- Follow `AI-WORKFLOW.md` for the shared CSolutions AI stack.
+- Follow `Docs/ops/AI-WORKFLOW.md` (repo copy of the shared workflow) for the shared CSolutions AI stack.
 - Use local-only `.claude/skills/` or the shared workspace skill cache for `code-review-graph`, `Impeccable`, and `mattpocock/skills` workflows.
 - Use `.mcp.json` with `code-review-graph` after running `code-review-graph build` so exploration and reviews stay token-efficient.
 - Use OpenSpec for larger changes that benefit from proposal, spec, and task artifacts.
 
 ## Visual QA
 
-Use the workspace runner at `/home/cresp3/scripts/visual-check.sh` after any layout, responsive, spacing, animation, or visual-polish change. Start the local dev server, capture mobile and desktop screenshots into `.visual-checks/`, and inspect the rendered pixels before calling the work done. See `VISUAL-QA.md`.
+Use the workspace runner at `/home/cresp3/scripts/visual-check.sh` after any layout, responsive, spacing, animation, or visual-polish change. Start the local dev server, capture mobile and desktop screenshots into `.visual-checks/`, and inspect the rendered pixels before calling the work done. See `Docs/ops/VISUAL-QA.md`.

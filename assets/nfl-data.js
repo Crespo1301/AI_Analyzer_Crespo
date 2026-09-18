@@ -2,7 +2,7 @@
  * NFL Betting AI Evaluation - canonical data
  * CS 486 Team 5, Carlos Crespo, Fall 2025 (USF)
  *
- * Source of truth: Docs/GRADING ANALYSIS/Carlos_NFL_Bet_By_Bet_FINAL_VERIFIED.csv
+ * Source of truth: Docs/2025-archive/grading-analysis/Carlos_NFL_Bet_By_Bet_FINAL_VERIFIED.csv
  * Game results independently verified against ESPN box scores, Aug 2026.
  * Every other number on this site (model rankings, prompt performance, game
  * podiums) is computed from NFL_BETS + NFL_GAMES at render time, nothing is
