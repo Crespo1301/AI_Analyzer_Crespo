@@ -72,8 +72,8 @@ Season 2 launch redesign.
 - Open Graph and Twitter card metadata with a real `assets/og-default.svg` per route.
 - `assets/favicon.svg` set for tab identity.
 - `robots.txt` and `sitemap.xml` (24 URLs) generated from the route list plus every Sports_Pages entry.
-- `Docs/2026/redesign-direction.md` written as the reviewable Phase 1 direction document.
-- `Docs/2026/custom-domain-checklist.md` covers hosting attachment, DNS records, HTTPS verification, canonical URL update, sitemap update, and Search Console submission.
+- `Docs/2025-archive/redesign-direction.md` written as the reviewable Phase 1 direction document.
+- `Docs/ops/custom-domain-checklist.md` covers hosting attachment, DNS records, HTTPS verification, canonical URL update, sitemap update, and Search Console submission.
 
 ### Data integrity
 

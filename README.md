@@ -7,9 +7,9 @@ reviewed separately against source evidence.
 
 Season 2 (2026-27) has one recorded matchup and 16 scheduled Week 1 games.
 Later weeks remain scaffolds. Season 1 is a separate historical archive with
-known corrections. See `Docs/2026/brand-domain-plan.md` for the broader brand.
+known corrections. See `Docs/ops/brand-domain-plan.md` for the broader brand.
 
-Live site: currently `https://crespo1301.github.io/AI_Analyzer_Crespo/`. A custom domain is planned, see `Docs/2026/custom-domain-checklist.md`.
+Live site: currently `https://crespo1301.github.io/AI_Analyzer_Crespo/`. A custom domain is planned, see `Docs/ops/custom-domain-checklist.md`.
 
 ## Structure
 

@@ -24,7 +24,7 @@ service or an automated live-score feed.
 ## Brand Personality
 
 Direct, sporting, accountable. Follow the existing sports-editorial direction in
-Docs/2026/redesign-direction.md and the user's supplied NBA reference boards.
+Docs/2025-archive/redesign-direction.md and the user's supplied NBA reference boards.
 
 ## Anti-references
 

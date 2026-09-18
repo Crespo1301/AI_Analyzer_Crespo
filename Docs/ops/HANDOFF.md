@@ -60,7 +60,7 @@ The umbrella brand must support predictions beyond sports and build on
 CSolutions / Carlos Crespo. NFL is the first published category. No new domain
 has been selected or purchased during this pass.
 
-`Docs/2026/custom-domain-checklist.md` has the full switch. Origin default is `https://crespo1301.github.io/AI_Analyzer_Crespo`. Search for that string across the repo to swap it when you have the domain.
+`Docs/ops/custom-domain-checklist.md` has the full switch. Origin default is `https://crespo1301.github.io/AI_Analyzer_Crespo`. Search for that string across the repo to swap it when you have the domain.
 
 ## Session note
 
@@ -68,7 +68,7 @@ The follow-up pass includes browser checks at mobile, tablet, and desktop sizes,
 team-logo loading and fallback checks, and screenshots in local `.visual-checks/`.
 Portfolio media now uses this build's desktop and mobile screenshots. Data and
 browser checks pass. Domain selection remains Carlos's next decision; see
-`Docs/2026/brand-domain-plan.md`. No new domain is configured.
+`Docs/ops/brand-domain-plan.md`. No new domain is configured.
 
 For a draft weekly content brief, run:
 
