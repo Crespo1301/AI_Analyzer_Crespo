@@ -395,6 +395,26 @@ var NFL_PREDICTIONS_2026 = [
           }
         ]
       }
+    },
+    result: {
+      status: "final", verified_at: "2026-09-18", awayScore: 31, homeScore: 41,
+      source: "https://www.espn.com/nfl/boxscore/_/gameId/401872932",
+      note: "Bills 41, Lions 31. BUF won by 10, total 72. Cook 21 rush att / 135 yds / 1 TD. Allen 248 pass yds. Gibbs 52 rush yds.",
+      grades: {
+        ChatGPT: [
+          { outcome: "WIN", actual: "BUF won by 10, covered -5.5", odds: -105, profit: 13.33 },
+          { outcome: "WIN", actual: "Bills ML + 72 total OVER 54.5", odds: 220, profit: 13.20 }
+        ],
+        Claude: [
+          { outcome: "WIN", actual: "72 total OVER 51.5 by 20.5", odds: -110, profit: 9.09 },
+          { outcome: "WIN", actual: "Cook 21 rush att OVER 15.5", odds: -115, profit: 3.48 },
+          { outcome: "WIN", actual: "Bills ML + Bills TT 41 OVER 27.5", odds: 140, profit: 8.40 }
+        ],
+        Gemini: [
+          { outcome: "WIN", actual: "BUF won by 10, covered -4.5", odds: -110, profit: 10.91 },
+          { outcome: "LOSS", actual: "Parlay Gibbs 52 rush yds < 68.5 (Allen 248 pass yds OVER 244.5 hit but leg 1 failed)", odds: 264, profit: -8.00 }
+        ]
+      }
     }
   },
   {
