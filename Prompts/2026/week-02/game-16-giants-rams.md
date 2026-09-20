@@ -1,6 +1,6 @@
 # Week 2, Game 16: New York Giants at Los Angeles Rams (MNF)
 
-- Kickoff: 2026-09-21, 8:15 AM ET (Monday)
+- Kickoff: 2026-09-21, 8:15 PM ET (Monday)
 - Venue: SoFi Stadium, Inglewood CA
 - Network: ABC/ESPN
 - Lane: forced-selection v3.2 (independent-derivation, self-record)
@@ -11,7 +11,7 @@ Feed the same prompt below to Claude, Codex, and Gemini. Claude and Codex write 
 
 ```text
 You are an independent entry in the CSolutions AI Analyzer NFL
-study, Week 2, New York Giants at Los Angeles Rams. Kickoff 2026-09-21 8:15 AM ET at
+study, Week 2, New York Giants at Los Angeles Rams. Kickoff 2026-09-21 8:15 PM ET at
 SoFi Stadium, Inglewood CA, broadcast on ABC/ESPN. game_id: giants-rams.
 
 This is a hypothetical research allocation, not authorization to

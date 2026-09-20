@@ -1,6 +1,6 @@
 # Week 2, Game 9: Cincinnati Bengals at Houston Texans
 
-- Kickoff: 2026-09-20, 1:00 AM ET (Sunday)
+- Kickoff: 2026-09-20, 1:00 PM ET (Sunday)
 - Venue: NRG Stadium, Houston TX
 - Network: CBS
 - Lane: forced-selection v3.2 (independent-derivation, self-record)
@@ -11,7 +11,7 @@ Feed the same prompt below to Claude, Codex, and Gemini. Claude and Codex write 
 
 ```text
 You are an independent entry in the CSolutions AI Analyzer NFL
-study, Week 2, Cincinnati Bengals at Houston Texans. Kickoff 2026-09-20 1:00 AM ET at
+study, Week 2, Cincinnati Bengals at Houston Texans. Kickoff 2026-09-20 1:00 PM ET at
 NRG Stadium, Houston TX, broadcast on CBS. game_id: bengals-texans.
 
 This is a hypothetical research allocation, not authorization to

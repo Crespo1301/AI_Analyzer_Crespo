@@ -1,6 +1,6 @@
 # Week 2, Game 14: Miami Dolphins at San Francisco 49ers
 
-- Kickoff: 2026-09-20, 4:25 AM ET (Sunday)
+- Kickoff: 2026-09-20, 4:25 PM ET (Sunday)
 - Venue: Levi's Stadium, Santa Clara CA
 - Network: FOX
 - Lane: forced-selection v3.2 (independent-derivation, self-record)
@@ -11,7 +11,7 @@ Feed the same prompt below to Claude, Codex, and Gemini. Claude and Codex write 
 
 ```text
 You are an independent entry in the CSolutions AI Analyzer NFL
-study, Week 2, Miami Dolphins at San Francisco 49ers. Kickoff 2026-09-20 4:25 AM ET at
+study, Week 2, Miami Dolphins at San Francisco 49ers. Kickoff 2026-09-20 4:25 PM ET at
 Levi's Stadium, Santa Clara CA, broadcast on FOX. game_id: dolphins-niners.
 
 This is a hypothetical research allocation, not authorization to

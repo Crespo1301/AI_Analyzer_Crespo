@@ -1,6 +1,6 @@
 # Week 2, Game 10: Jacksonville Jaguars at Denver Broncos
 
-- Kickoff: 2026-09-20, 4:05 AM ET (Sunday)
+- Kickoff: 2026-09-20, 4:05 PM ET (Sunday)
 - Venue: Empower Field at Mile High, Denver CO
 - Network: CBS
 - Lane: forced-selection v3.2 (independent-derivation, self-record)
@@ -11,7 +11,7 @@ Feed the same prompt below to Claude, Codex, and Gemini. Claude and Codex write 
 
 ```text
 You are an independent entry in the CSolutions AI Analyzer NFL
-study, Week 2, Jacksonville Jaguars at Denver Broncos. Kickoff 2026-09-20 4:05 AM ET at
+study, Week 2, Jacksonville Jaguars at Denver Broncos. Kickoff 2026-09-20 4:05 PM ET at
 Empower Field at Mile High, Denver CO, broadcast on CBS. game_id: jaguars-broncos.
 
 This is a hypothetical research allocation, not authorization to

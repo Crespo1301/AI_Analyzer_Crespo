@@ -42,13 +42,9 @@ function venueFor(g) {
 }
 
 function kickoffFull(g) {
-  const [h, m] = g.kickoff_et.split(':');
-  const hh = parseInt(h, 10);
-  const suffix = hh >= 12 ? 'PM' : 'AM';
-  const hh12 = hh === 0 ? 12 : hh > 12 ? hh - 12 : hh;
-  const minute = m.replace(/\s*PM|\s*AM/i, '');
+  // g.kickoff_et already carries AM/PM, use it verbatim.
   const dayName = new Date(g.date + 'T12:00:00Z').toLocaleDateString('en-US', { weekday: 'long', timeZone: 'UTC' });
-  return `${g.date}, ${hh12}:${minute} ${suffix} ET (${dayName})`;
+  return `${g.date}, ${g.kickoff_et} ET (${dayName})`;
 }
 
 function promptBody(g, num) {
@@ -57,11 +53,7 @@ function promptBody(g, num) {
   const isMNF = g.network.toLowerCase().includes('abc') || g.network.toLowerCase().includes('espn');
   const badge = isTNF ? ' (TNF)' : isSNF ? ' (SNF)' : isMNF ? ' (MNF)' : '';
   const venue = venueFor(g);
-  const [h, m] = g.kickoff_et.split(':');
-  const hh = parseInt(h, 10);
-  const suffix = hh >= 12 ? 'PM' : 'AM';
-  const hh12 = hh === 0 ? 12 : hh > 12 ? hh - 12 : hh;
-  const timeStr = `${g.date} ${hh12}:${m.replace(/\s*PM|\s*AM/i, '')} ${suffix} ET`;
+  const timeStr = `${g.date} ${g.kickoff_et} ET`;
 
   return `# Week 2, Game ${num}: ${g.away} at ${g.home}${badge}
 

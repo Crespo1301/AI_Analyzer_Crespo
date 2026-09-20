@@ -1,6 +1,6 @@
 # Week 2, Game 15: Indianapolis Colts at Kansas City Chiefs (SNF)
 
-- Kickoff: 2026-09-20, 8:20 AM ET (Sunday)
+- Kickoff: 2026-09-20, 8:20 PM ET (Sunday)
 - Venue: GEHA Field at Arrowhead Stadium, Kansas City MO
 - Network: NBC
 - Lane: forced-selection v3.2 (independent-derivation, self-record)
@@ -11,7 +11,7 @@ Feed the same prompt below to Claude, Codex, and Gemini. Claude and Codex write 
 
 ```text
 You are an independent entry in the CSolutions AI Analyzer NFL
-study, Week 2, Indianapolis Colts at Kansas City Chiefs. Kickoff 2026-09-20 8:20 AM ET at
+study, Week 2, Indianapolis Colts at Kansas City Chiefs. Kickoff 2026-09-20 8:20 PM ET at
 GEHA Field at Arrowhead Stadium, Kansas City MO, broadcast on NBC. game_id: colts-chiefs.
 
 This is a hypothetical research allocation, not authorization to

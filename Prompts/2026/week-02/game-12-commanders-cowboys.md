@@ -1,6 +1,6 @@
 # Week 2, Game 12: Washington Commanders at Dallas Cowboys
 
-- Kickoff: 2026-09-20, 4:25 AM ET (Sunday)
+- Kickoff: 2026-09-20, 4:25 PM ET (Sunday)
 - Venue: AT&T Stadium, Arlington TX
 - Network: FOX
 - Lane: forced-selection v3.2 (independent-derivation, self-record)
@@ -11,7 +11,7 @@ Feed the same prompt below to Claude, Codex, and Gemini. Claude and Codex write 
 
 ```text
 You are an independent entry in the CSolutions AI Analyzer NFL
-study, Week 2, Washington Commanders at Dallas Cowboys. Kickoff 2026-09-20 4:25 AM ET at
+study, Week 2, Washington Commanders at Dallas Cowboys. Kickoff 2026-09-20 4:25 PM ET at
 AT&T Stadium, Arlington TX, broadcast on FOX. game_id: commanders-cowboys.
 
 This is a hypothetical research allocation, not authorization to

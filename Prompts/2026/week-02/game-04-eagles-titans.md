@@ -1,6 +1,6 @@
 # Week 2, Game 4: Philadelphia Eagles at Tennessee Titans
 
-- Kickoff: 2026-09-20, 1:00 AM ET (Sunday)
+- Kickoff: 2026-09-20, 1:00 PM ET (Sunday)
 - Venue: Nissan Stadium, Nashville TN
 - Network: FOX
 - Lane: forced-selection v3.2 (independent-derivation, self-record)
@@ -11,7 +11,7 @@ Feed the same prompt below to Claude, Codex, and Gemini. Claude and Codex write 
 
 ```text
 You are an independent entry in the CSolutions AI Analyzer NFL
-study, Week 2, Philadelphia Eagles at Tennessee Titans. Kickoff 2026-09-20 1:00 AM ET at
+study, Week 2, Philadelphia Eagles at Tennessee Titans. Kickoff 2026-09-20 1:00 PM ET at
 Nissan Stadium, Nashville TN, broadcast on FOX. game_id: eagles-titans.
 
 This is a hypothetical research allocation, not authorization to
