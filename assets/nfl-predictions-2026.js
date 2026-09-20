@@ -418,6 +418,36 @@ var NFL_PREDICTIONS_2026 = [
     }
   },
   {
+    week: 2, gameId: "dolphins-niners", label: "Dolphins at 49ers",
+    away: "Miami Dolphins", home: "San Francisco 49ers",
+    kickoff: "2026-09-20T16:25:00-04:00", kickoffDisplay: "Sun Sep 20, 4:25 PM ET",
+    venue: "Levi's Stadium, Santa Clara, CA", network: "FOX",
+    line_snapshot: { spread: "SF -13.5", total: 44.5, moneyline: "SF -950 / MIA +625", source: "FanDuel/DraftKings via ESPN game center 2026-09-20 pre-game" },
+    espn: "https://www.espn.com/nfl/boxscore/_/gameId/401872942",
+    responseFolder: "Docs/Responses/2026/week-02/game-14-dolphins-niners/",
+    status: "locked", locked_at: "2026-09-20", prompt_template: "forced-selection v3.2",
+    models: {
+      ChatGPT: { version: "pending", total_stake: 0, reserve: 20, summary: "Awaiting v3.2 response.", bets: [] },
+      Claude: { version: "pending", total_stake: 0, reserve: 20, summary: "Awaiting v3.2 response.", bets: [] },
+      Gemini: { version: "Gemini web", total_stake: 20, reserve: 0, summary: "SF -13.5 $12 reference_market FanDuel -105 + SGP McCaffrey Anytime TD (-250) + Achane O3.5 recs (-157) $8 reference_market DK/FanDuel +165. Big-favorite spread family flagged as historically unreliable (W1 LAC -9.5 outright loss). Ceiling Anytime TD + losing-side reception prop. Escalating record fabrication now claims graded G11-G13 results. Grading concerns inline.", bets: [{type:"straight", market:"Spread", line:"San Francisco 49ers -13.5 (reference_market FanDuel -105)", stake:12, confidence:6, reason:"SF at home vs MIA missing Chop Robinson + Ronnie Harrison Jr."}, {type:"parlay", market:"SGP", line:"McCaffrey Anytime TD (-250) + Achane O3.5 recs (-157) (reference DK/FanDuel +165)", stake:8, confidence:4, reason:"SF red-zone volume + Achane checkdown floor in trailing script"}] }
+    }
+  },
+  {
+    week: 2, gameId: "seahawks-cardinals", label: "Seahawks at Cardinals",
+    away: "Seattle Seahawks", home: "Arizona Cardinals",
+    kickoff: "2026-09-20T16:25:00-04:00", kickoffDisplay: "Sun Sep 20, 4:25 PM ET",
+    venue: "State Farm Stadium, Glendale, AZ", network: "FOX",
+    line_snapshot: { spread: "SEA -3.5", total: 41.5, moneyline: "SEA -205 / ARI +170", source: "DraftKings/Covers via ESPN game center 2026-09-20 pre-game" },
+    espn: "https://www.espn.com/nfl/boxscore/_/gameId/401872943",
+    responseFolder: "Docs/Responses/2026/week-02/game-13-seahawks-cardinals/",
+    status: "locked", locked_at: "2026-09-20", prompt_template: "forced-selection v3.2",
+    models: {
+      ChatGPT: { version: "pending", total_stake: 0, reserve: 20, summary: "Awaiting v3.2 response.", bets: [] },
+      Claude: { version: "pending", total_stake: 0, reserve: 20, summary: "Awaiting v3.2 response.", bets: [] },
+      Gemini: { version: "Gemini web", total_stake: 20, reserve: 0, summary: "UNDER 41.5 $12 reference_market DK -110 + SGP SEA ML (-198) + UNDER 45.5 alt (-180) $8 reference_market DK +130. Total-heavy shape shift (first game-total straight of Gemini's Week 2 slate) driven by Darnold OUT / Drew Lock starting for SEA. Same-direction total exposure across both tickets. Own-record fabrication returned (claimed W2 G11 result before Game 11 finished). Grading concerns inline.", bets: [{type:"straight", market:"Total", line:"UNDER 41.5 (reference_market DK -110)", stake:12, confidence:6, reason:"Drew Lock starting for injured Darnold drives conservative script"}, {type:"parlay", market:"SGP", line:"SEA ML (-198) + UNDER 45.5 alt (-180) (reference DK +130)", stake:8, confidence:4, reason:"Correlated SEA win + game stays UNDER 45.5"}] }
+    }
+  },
+  {
     week: 2, gameId: "commanders-cowboys", label: "Commanders at Cowboys",
     away: "Washington Commanders", home: "Dallas Cowboys",
     kickoff: "2026-09-20T16:25:00-04:00", kickoffDisplay: "Sun Sep 20, 4:25 PM ET",
