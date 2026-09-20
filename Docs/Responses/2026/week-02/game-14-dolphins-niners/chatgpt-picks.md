@@ -29,7 +29,7 @@ The reference odds are not current captured quotes; they are labeled context onl
 
 ```json
 {
-  "prompt_template":"forced-selection","prompt_version":"3.2","model_role":"Codex","model_version":"GPT-6","generated_at":"2026-09-20T15:44:36-04:00","week":2,"game_id":"dolphins-niners","forced_allocation":true,"bankroll":20,"total_stake":20,"reserve":0,
+  "prompt_template":"forced-selection","prompt_version":"3.2","model_role":"Codex","model_version":"GPT-6","generated_at":"2026-09-20T15:46:53-04:00","week":2,"game_id":"dolphins-niners","forced_allocation":true,"bankroll":20,"total_stake":20,"reserve":0,
   "team_profiles_read":[
     {"path_or_url":"Data/2026/rosters/miami-dolphins.json","as_of":"2026-09-13 health snapshot; profile 2026-09-09","season_record":"0-1, 13 PF, 27 PA","health_key_players":"Darrell Baker Jr. and Storm Duck listed out; James Ester questionable; Kenneth Grant, Rene Konga, Trey Moore, Cole Turner IR; current report separately lists Ronnie Harrison and Chop Robinson out."},
     {"path_or_url":"Data/2026/rosters/san-francisco-49ers.json","as_of":"2026-09-13 health snapshot; profile 2026-09-09","season_record":"1-0, 27 PF, 7 PA","health_key_players":"Snapshot lists nine out, two questionable; current report: Kaelon Black and Eddy Pineiro questionable, De'Zhaun Stribling out, key starters including McCaffrey and Bosa full."}

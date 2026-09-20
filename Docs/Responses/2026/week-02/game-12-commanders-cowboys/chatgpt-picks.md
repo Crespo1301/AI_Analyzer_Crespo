@@ -67,7 +67,7 @@ Team injury news includes official team sources, but both local health snapshots
     {"url":"https://www.commanders.com/news/commanders-vs-cowboys-week-2-injury-report-2026","fetch_succeeded":true,"quoted_snippet":"LB Frankie Luvu and TE Chig Okonkwo are out."},
     {"url":"https://www.dallascowboys.com/news/updates-september-2026","fetch_succeeded":true,"quoted_snippet":"With DeMarvion Overshown out due to a hamstring injury"},
     {"url":"https://agentbets.ai/odds/nfl/washington-commanders-vs-dallas-cowboys/","fetch_succeeded":true,"quoted_snippet":"Updated September 20, 2026 at 1:01 PM UTC; consensus spread Cowboys -4, total 51."},
-    {"url":"https://www.bovada.lv/sports/football/nfl","fetch_succeeded":true,"quoted_snippet":"Generic page; no event-specific offer retrieved."}
+    {"url":"https://www.bovada.lv/sports/football/nfl","fetch_succeeded":true,"quoted_snippet":"## NFL - NEXT EVENTS"}
   ],
   "reasoning_summary":"I checked eligibility before the listed kickoff and used the dated team records, current injury reporting, and an official Washington chart to correct the RB ordering heuristic. Washington's profile TE1 is on IR and Dallas's RB1 field names a player already on IR, so neither is a sound prop premise. My own small 2026 sample is 2–2 with +$6.53 across the reviewed tickets; I do not infer a stable edge from it. I make the required single plus correlated two-leg SGP conditional because Bovada pricing was unavailable and the accessible reference snapshot was stale."
 }

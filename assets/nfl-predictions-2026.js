@@ -418,6 +418,21 @@ var NFL_PREDICTIONS_2026 = [
     }
   },
   {
+    week: 2, gameId: "jaguars-broncos", label: "Jaguars at Broncos",
+    away: "Jacksonville Jaguars", home: "Denver Broncos",
+    kickoff: "2026-09-20T16:05:00-04:00", kickoffDisplay: "Sun Sep 20, 4:05 PM ET",
+    venue: "Empower Field at Mile High, Denver, CO", network: "CBS",
+    line_snapshot: { spread: "DEN -2.5", total: 45.5, moneyline: "JAX +124 / DEN -148", source: "DraftKings/Fantasy Life via ESPN game center 2026-09-20 pre-game" },
+    espn: "https://www.espn.com/nfl/boxscore/_/gameId/401872940",
+    responseFolder: "Docs/Responses/2026/week-02/game-10-jaguars-broncos/",
+    status: "locked", locked_at: "2026-09-20", prompt_template: "forced-selection v3.2",
+    models: {
+      ChatGPT: { version: "pending", total_stake: 0, reserve: 20, summary: "Awaiting v3.2 response.", bets: [] },
+      Claude: { version: "pending", total_stake: 0, reserve: 20, summary: "Awaiting v3.2 response.", bets: [] },
+      Gemini: { version: "Gemini web", total_stake: 20, reserve: 0, summary: "DEN -2.5 $12 reference_market DK -118 + SGP DEN ML (-148) + Jaleel McLaughlin O42.5 rush+rec yds (-115) $8 reference_market DK +185. Target-reallocation shape (Harvey OUT promotes McLaughlin). 19th fabricated /research/ 404. Retroactive record fabrication now includes W2 G8 result (game not yet finished). Grading concerns inline.", bets: [{type:"straight", market:"Spread", line:"Denver Broncos -2.5 (reference_market DK -118)", stake:12, confidence:6, reason:"DEN short home favorite at altitude coming off W1 loss"}, {type:"parlay", market:"SGP", line:"DEN ML (-148) + McLaughlin O42.5 rush+rec yds (-115) (reference DK +185)", stake:8, confidence:5, reason:"DEN winning script + McLaughlin promoted touches with Harvey OUT"}] }
+    }
+  },
+  {
     week: 2, gameId: "bengals-texans", label: "Bengals at Texans",
     away: "Cincinnati Bengals", home: "Houston Texans",
     kickoff: "2026-09-20T13:00:00-04:00", kickoffDisplay: "Sun Sep 20, 1:00 PM ET",

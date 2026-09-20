@@ -29,7 +29,7 @@ Bovada did not provide an event-specific quote. The DraftKings splits source is 
 
 ```json
 {
-  "prompt_template":"forced-selection","prompt_version":"3.2","model_role":"Codex","model_version":"GPT-6","generated_at":"2026-09-20T15:44:36-04:00","week":2,"game_id":"seahawks-cardinals","forced_allocation":true,"bankroll":20,"total_stake":20,"reserve":0,
+  "prompt_template":"forced-selection","prompt_version":"3.2","model_role":"Codex","model_version":"GPT-6","generated_at":"2026-09-20T15:45:40-04:00","week":2,"game_id":"seahawks-cardinals","forced_allocation":true,"bankroll":20,"total_stake":20,"reserve":0,
   "team_profiles_read":[
     {"path_or_url":"Data/2026/rosters/seattle-seahawks.json","as_of":"2026-09-13 health snapshot; profile 2026-09-09","season_record":"1-0, 13 PF, 10 PA","health_key_players":"Profile snapshot dates prior to Week 2; official Week 2 report lists Sam Darnold OUT, Ty Okada OUT, Anthony Bradford and Nick Emmanwori questionable; Bradford later downgraded OUT."},
     {"path_or_url":"Data/2026/rosters/arizona-cardinals.json","as_of":"2026-09-13 health snapshot; profile 2026-09-09","season_record":"1-0, 26 PF, 14 PA","health_key_players":"Official Seahawks injury report lists Garrett Williams OUT and six Cardinals questionable, including Isaac Seumalo, Isaiah Adams and Roy Lopez."}
@@ -51,7 +51,7 @@ Bovada did not provide an event-specific quote. The DraftKings splits source is 
     {"url":"https://www.seahawks.com/game-day/2026/reg-week2/seahawks-at-cardinals/","fetch_succeeded":true,"quoted_snippet":"WEEK 2 • SUN 09/20 • 1:25 PM PDT"},
     {"url":"https://www.azcardinals.com/team/depth-chart/","fetch_succeeded":true,"quoted_snippet":"Official Depth Chart; retrieved page appears stale/incomplete for RB ordering."},
     {"url":"https://dknetwork.draftkings.com/draftkings-sportsbook-betting-splits/?tb_edate=n7days&tb_eg=87637&tb_page=5","fetch_succeeded":true,"quoted_snippet":"Seattle -3.5 -120; Arizona +3.5 +100; total 40.5."},
-    {"url":"https://www.bovada.lv/sports/football/nfl","fetch_succeeded":true,"quoted_snippet":"Generic NFL page; event-specific quote not exposed."}
+    {"url":"https://www.bovada.lv/sports/football/nfl","fetch_succeeded":true,"quoted_snippet":"## NFL - NEXT EVENTS"}
   ],
   "reasoning_summary":"I checked the scheduled kickoff before it began, used both profile records and the official Seahawks game center/injury update, and verified the major starter change from Sam Darnold to Drew Lock through Seattle's coach report. Arizona's official depth page was reachable but did not verify all current starters, so I did not invent a Cardinals workload angle. Bovada offered no readable event quote and the DraftKings reference is stale; both ticket prices remain conditional."
 }
