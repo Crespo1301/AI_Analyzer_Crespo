@@ -418,6 +418,21 @@ var NFL_PREDICTIONS_2026 = [
     }
   },
   {
+    week: 2, gameId: "steelers-patriots", label: "Steelers at Patriots",
+    away: "Pittsburgh Steelers", home: "New England Patriots",
+    kickoff: "2026-09-20T13:00:00-04:00", kickoffDisplay: "Sun Sep 20, 1:00 PM ET",
+    venue: "Gillette Stadium, Foxborough, MA", network: "CBS",
+    line_snapshot: { spread: "NE -5.5", total: 41.5, moneyline: "NE -230 / PIT +190", source: "BetMGM/OddsChecker via ESPN game center 2026-09-20 pre-game" },
+    espn: "https://www.espn.com/nfl/boxscore/_/gameId/401872946",
+    responseFolder: "Docs/Responses/2026/week-02/game-05-steelers-patriots/",
+    status: "locked", locked_at: "2026-09-20", prompt_template: "forced-selection v3.2",
+    models: {
+      ChatGPT: { version: "pending", total_stake: 0, reserve: 20, summary: "Awaiting v3.2 response.", bets: [] },
+      Claude: { version: "pending", total_stake: 0, reserve: 20, summary: "Awaiting v3.2 response.", bets: [] },
+      Gemini: { version: "Gemini web", total_stake: 20, reserve: 0, summary: "NE -5.5 $12 reference_market BetMGM -112 + SGP NE ML (-218) + UNDER 45.5 alt (-165) $8 reference_market FanDuel +111. No fabricated /research/ 404 this time (positive shift). Fabricated own season record continues (claimed 2-2 -$2.89, actual 13-10 +$59.09). Cites Mike McCarthy as PIT HC (verify - real-world Tomlin). Same-team single+SGP concentration on NE-wins-defensive-game outcome. Grading concerns inline.", bets: [{type:"straight", market:"Spread", line:"New England Patriots -5.5 (reference_market BetMGM -112)", stake:12, confidence:6, reason:"NE home favorite; PIT missing Pittman Jr."}, {type:"parlay", market:"SGP", line:"NE ML (-218) + UNDER 45.5 alt (-165) (reference FanDuel +111)", stake:8, confidence:5, reason:"Correlated NE win + defensive-grind under"}] }
+    }
+  },
+  {
     week: 2, gameId: "eagles-titans", label: "Eagles at Titans",
     away: "Philadelphia Eagles", home: "Tennessee Titans",
     kickoff: "2026-09-20T13:00:00-04:00", kickoffDisplay: "Sun Sep 20, 1:00 PM ET",
