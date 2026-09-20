@@ -505,6 +505,16 @@ var NFL_PREDICTIONS_2026 = [
       ChatGPT: { version: "EXPIRED", total_stake: 0, reserve: 20, summary: "Codex hit the 1:00 PM ET kickoff before saving. Response file marked EXPIRED, no picks recorded.", bets: [] },
       Claude: { version: "Claude Code", total_stake: 20, reserve: 0, summary: "Nico Collins O6.5 recs $8 conditional -125 + SGP HOU ML + game OVER 46.5 $12 conditional +170. Both defenses gave up 27+ W1, both offenses scored 31+. Rejected Bengals player leg because Chase and Higgins both Q. HOU ML + OVER is the KC/BAL W1 shape flipped to a shootout.", bets: [{type:"straight", market:"Player Recs", line:"Nico Collins OVER 6.5 recs (min -125 conditional)", stake:8, confidence:6, reason:"Practical HOU WR1 with Tank Dell IR; Stroud alpha target"}, {type:"sgp", market:"SGP", line:"HOU ML + game OVER 46.5 (min +170 conditional)", stake:12, confidence:5, reason:"HOU wins shootout, correlated ML + total OVER"}] },
       Gemini: { version: "Gemini web", total_stake: 20, reserve: 0, summary: "CIN +2.5 $12 reference_market DK -102 + SGP Montgomery O58.5 rush yds (-115) + Schultz O4.5 recs (-110) $8 reference_market DK +240. Structural hedge (dog spread + favorite's players). CRITICAL: Gemini's Texans injury report source lists Nico Collins OUT for this game, which contradicts Claude's Collins-based bet built off the stale roster JSON. 18th fabricated /research/ 404 pattern returned. Fabricated own record continues.", bets: [{type:"straight", market:"Spread", line:"Cincinnati Bengals +2.5 (reference_market DK -102)", stake:12, confidence:6, reason:"HOU short home favorite missing Collins/Ingram/Clowney"}, {type:"parlay", market:"SGP", line:"Montgomery O58.5 rush yds (-115) + Schultz O4.5 recs (-110) (reference DK +240)", stake:8, confidence:4, reason:"Volume redistributes to Montgomery+Schultz with Collins OUT"}] }
+    },
+    result: {
+      status: "final", verified_at: "2026-09-20", awayScore: 20, homeScore: 6,
+      source: "https://www.espn.com/nfl/boxscore/_/gameId/401872934",
+      note: "Bengals 20, Texans 6. CIN won by 14; total 26. Collins was OUT.",
+      grades: {
+        ChatGPT: [],
+        Claude: [{outcome: "LOSS",actual: "Nico Collins OUT (0 recs, was on official inactive list)",odds:-125,profit:-8},{outcome: "LOSS",actual: "HOU ML lost + total 26 UNDER 46.5",odds:170,profit:-12}],
+        Gemini: [{outcome: "WIN",actual: "CIN won by 14, +2.5 wins easy",odds:-102,profit:11.76},{outcome: "LOSS",actual: "Montgomery 10 rush yds < 58.5 (though Schultz 12 recs hit)",odds:240,profit:-8}]
+      }
     }
   },
   {
@@ -520,6 +530,16 @@ var NFL_PREDICTIONS_2026 = [
       ChatGPT: { version: "pending", total_stake: 0, reserve: 20, summary: "Awaiting v3.2 response.", bets: [] },
       Claude: { version: "pending", total_stake: 0, reserve: 20, summary: "Awaiting v3.2 response.", bets: [] },
       Gemini: { version: "Gemini web", total_stake: 20, reserve: 0, summary: "NO +8.5 $12 reference_market DK -115 + SGP Derrick Henry Anytime TD (-250) + Bateman O42.5 rec yds (-114) $8 reference_market DK +145. Structural hedge design continues (dog spread + favorite's players). T2 leg 2 is target-reallocation on Zay Flowers OUT - genuine roster edge. T2 leg 1 is ceiling Anytime TD prop (family that has lost in Season 1). 17th fabricated /research/ 404 (pattern returned after 3 clean responses). ESCALATED record fabrication: claims 'W2 G7 record 1-1' before Game 7 has been played. Grading concerns inline.", bets: [{type:"straight", market:"Spread", line:"New Orleans Saints +8.5 (reference_market DK -115)", stake:12, confidence:6, reason:"NO dog with high-passing offense vs BAL missing Flowers"}, {type:"parlay", market:"SGP", line:"Henry Anytime TD (-250) + Bateman O42.5 rec yds (-114) (reference DK +145)", stake:8, confidence:5, reason:"Henry 3 TDs W1 + Bateman WR1 target share with Flowers OUT"}] }
+    },
+    result: {
+      status: "final", verified_at: "2026-09-20", awayScore: 24, homeScore: 17,
+      source: "https://www.espn.com/nfl/boxscore/_/gameId/401872938",
+      note: "Saints 24, Ravens 17. NO upset win; total 41.",
+      grades: {
+        ChatGPT: [],
+        Claude: [{outcome: "LOSS",actual: "Henry 16 rush att, line 17.5",odds:-120,profit:-8},{outcome: "LOSS",actual: "BAL ML lost + total 41 UNDER 49.5",odds:150,profit:-12}],
+        Gemini: [{outcome: "WIN",actual: "NO won outright, +8.5 wins easy",odds:-115,profit:10.43},{outcome: "WIN",actual: "Henry 1 rush TD + Bateman 88 rec yds OVER 42.5",odds:145,profit:11.6}]
+      }
     }
   },
   {
@@ -535,6 +555,16 @@ var NFL_PREDICTIONS_2026 = [
       ChatGPT: { version: "pending", total_stake: 0, reserve: 20, summary: "Awaiting v3.2 response.", bets: [] },
       Claude: { version: "pending", total_stake: 0, reserve: 20, summary: "Awaiting v3.2 response.", bets: [] },
       Gemini: { version: "Gemini web", total_stake: 20, reserve: 0, summary: "CLE +8.5 $12 reference_market DK -115 + SGP TB ML (-425) + Mayfield UNDER 214.5 pass yds (-114) $8 reference_market DK +135. Structural hedge: T1 on the dog, T2 on the favorite ML + defensive prop; both cash together if TB wins by 5-8. Cleaner design than same-team stacking. UNDER-on-QB-passing is a new shape family for the study (not the losing OVER-ceiling family). Third response in a row without fabricated /research/ 404. Fabricated own season record continues. Grading concerns inline.", bets: [{type:"straight", market:"Spread", line:"Cleveland Browns +8.5 (reference_market DK -115)", stake:12, confidence:6, reason:"CLE dog in low-total game with Myles Garrett pressure to keep margin single-digit"}, {type:"parlay", market:"SGP", line:"TB ML (-425) + Mayfield UNDER 214.5 pass yds (-114) (reference DK +135)", stake:8, confidence:5, reason:"TB wins outright but ground-game script caps Mayfield yardage"}] }
+    },
+    result: {
+      status: "final", verified_at: "2026-09-20", awayScore: 23, homeScore: 19,
+      source: "https://www.espn.com/nfl/boxscore/_/gameId/401872935",
+      note: "Browns 23, Buccaneers 19. CLE won outright; total 42.",
+      grades: {
+        ChatGPT: [],
+        Claude: [{outcome: "LOSS",actual: "Godwin Jr. 3 recs, line 5.5",odds:-125,profit:-8},{outcome: "LOSS",actual: "TB -3 lost (CLE won by 4) + total 42 UNDER 45.5",odds:180,profit:-12}],
+        Gemini: [{outcome: "WIN",actual: "CLE won outright, +8.5 wins easy",odds:-115,profit:10.43},{outcome: "LOSS",actual: "SGP: TB ML failed (CLE won) though Mayfield 176 pass yds UNDER 214.5 hit",odds:135,profit:-8}]
+      }
     }
   },
   {
@@ -550,6 +580,16 @@ var NFL_PREDICTIONS_2026 = [
       ChatGPT: { version: "pending", total_stake: 0, reserve: 20, summary: "Awaiting v3.2 response.", bets: [] },
       Claude: { version: "pending", total_stake: 0, reserve: 20, summary: "Awaiting v3.2 response.", bets: [] },
       Gemini: { version: "Gemini web", total_stake: 20, reserve: 0, summary: "NYJ +3.5 $12 reference_market DK -109 + SGP NYJ +3.5 (-109) + Hall O65.5 rush yds (-108) $8 reference_market DK +220. Contrarian home dog grounded in W1 tape (Jets controlled 38:46 clock; Packers blew game they yardage-won). Volume-on-projected-winner shape continues. No fabricated /research/ 404 (second response in a row). Fabricated own season record continues. Same-team single+SGP concentration. Grading concerns inline.", bets: [{type:"straight", market:"Spread", line:"New York Jets +3.5 (reference_market DK -109)", stake:12, confidence:6, reason:"NYJ home dog after 38:46 TOP W1 win; GB 1-6 ATS as road favorite (unverified)"}, {type:"parlay", market:"SGP", line:"NYJ +3.5 (-109) + Hall O65.5 rush yds (-108) (reference DK +220)", stake:8, confidence:4, reason:"Correlated NYJ cover + Hall volume on run-heavy script"}] }
+    },
+    result: {
+      status: "final", verified_at: "2026-09-20", awayScore: 17, homeScore: 17,
+      source: "https://www.espn.com/nfl/boxscore/_/gameId/401872936",
+      note: "Packers 17, Jets 17 TIE. Total 34.",
+      grades: {
+        ChatGPT: [],
+        Claude: [{outcome: "WIN",actual: "Breece Hall 16 rush att OVER 15.5",odds:-115,profit:6.96},{outcome: "WIN",actual: "NYJ ML pushed on tie, SGP recomputed to UNDER 43.5 alone (34 < 43.5). Book-dependent settle; treated as UNDER-single at -110.",odds:180,profit:10.91}],
+        Gemini: [{outcome: "WIN",actual: "NYJ tied so +3.5 covers",odds:-109,profit:11.01},{outcome: "WIN",actual: "NYJ +3.5 covers + Hall 16 rush att OVER 15.5",odds:220,profit:17.6}]
+      }
     }
   },
   {
@@ -565,6 +605,16 @@ var NFL_PREDICTIONS_2026 = [
       ChatGPT: { version: "pending", total_stake: 0, reserve: 20, summary: "Awaiting v3.2 response.", bets: [] },
       Claude: { version: "pending", total_stake: 0, reserve: 20, summary: "Awaiting v3.2 response.", bets: [] },
       Gemini: { version: "Gemini web", total_stake: 20, reserve: 0, summary: "NE -5.5 $12 reference_market BetMGM -112 + SGP NE ML (-218) + UNDER 45.5 alt (-165) $8 reference_market FanDuel +111. No fabricated /research/ 404 this time (positive shift). Fabricated own season record continues (claimed 2-2 -$2.89, actual 13-10 +$59.09). Cites Mike McCarthy as PIT HC (verify - real-world Tomlin). Same-team single+SGP concentration on NE-wins-defensive-game outcome. Grading concerns inline.", bets: [{type:"straight", market:"Spread", line:"New England Patriots -5.5 (reference_market BetMGM -112)", stake:12, confidence:6, reason:"NE home favorite; PIT missing Pittman Jr."}, {type:"parlay", market:"SGP", line:"NE ML (-218) + UNDER 45.5 alt (-165) (reference FanDuel +111)", stake:8, confidence:5, reason:"Correlated NE win + defensive-grind under"}] }
+    },
+    result: {
+      status: "final", verified_at: "2026-09-20", awayScore: 3, homeScore: 20,
+      source: "https://www.espn.com/nfl/boxscore/_/gameId/401872946",
+      note: "Patriots 20, Steelers 3. NE won by 17; total 23.",
+      grades: {
+        ChatGPT: [],
+        Claude: [{outcome: "PUSH",actual: "Rico Dowdle not on either team roster (Panthers RB), bet voided/N/A",odds:-115,profit:0},{outcome: "LOSS",actual: "PIT lost by 17, -3 lost badly; UNDER 41.5 hit but ML/spread leg failed",odds:180,profit:-12}],
+        Gemini: [{outcome: "WIN",actual: "NE won by 17, covered -5.5",odds:-112,profit:10.71},{outcome: "WIN",actual: "NE ML + total 23 UNDER 45.5 alt",odds:111,profit:8.88}]
+      }
     }
   },
   {
@@ -580,6 +630,16 @@ var NFL_PREDICTIONS_2026 = [
       ChatGPT: { version: "pending", total_stake: 0, reserve: 20, summary: "Awaiting v3.2 response.", bets: [] },
       Claude: { version: "pending", total_stake: 0, reserve: 20, summary: "Awaiting v3.2 response.", bets: [] },
       Gemini: { version: "Gemini web", total_stake: 20, reserve: 0, summary: "PHI -7.0 $12 reference_market DK -112 + SGP PHI -3.5 alt (-180) + Barkley O74.5 rush yds (-115) $8 reference_market DK +142. Re-run at 11:01 replaced 10:58 draft. Line now matches DK snippet cleanly. Same-team single+SGP concentration risk. Volume-on-winner shape held. 16th fabricated /research/ 404. Fabricated own season record (claimed 2-2 -$2.89, actual 13-10 +$59.09). Grading concerns inline.", bets: [{type:"straight", market:"Spread", line:"Philadelphia Eagles -7.0 (reference_market DK -112)", stake:12, confidence:6, reason:"PHI road favorite; TEN offense capped"}, {type:"parlay", market:"SGP", line:"PHI -3.5 alt (-180) + Barkley O74.5 rush yds (-115) (reference DK +142)", stake:8, confidence:4, reason:"Correlated PHI cover + Barkley clock-drain volume"}] }
+    },
+    result: {
+      status: "final", verified_at: "2026-09-20", awayScore: 24, homeScore: 20,
+      source: "https://www.espn.com/nfl/boxscore/_/gameId/401872939",
+      note: "Eagles 24, Titans 20. PHI won by 4; total 44.",
+      grades: {
+        ChatGPT: [{outcome: "LOSS",actual: "Total 44 > 39.5, OVER hit",odds:-110,profit:-16},{outcome: "WIN",actual: "PHI ML won + UNDER 44.5 hit (total 44)",odds:150,profit:6}],
+        Claude: [{outcome: "LOSS",actual: "Barkley 4 rush att, line 17.5",odds:-125,profit:-8},{outcome: "LOSS",actual: "PHI ML won but UNDER 43.5 lost (44 > 43.5)",odds:160,profit:-12}],
+        Gemini: [{outcome: "LOSS",actual: "PHI won by only 4, -7.0 lost",odds:-112,profit:-12},{outcome: "LOSS",actual: "SGP: PHI -3.5 alt hit but Barkley 9 rush yds < 74.5",odds:142,profit:-8}]
+      }
     }
   },
   {
@@ -595,6 +655,16 @@ var NFL_PREDICTIONS_2026 = [
       ChatGPT: { version: "pending", total_stake: 0, reserve: 20, summary: "Awaiting v3.2 response.", bets: [] },
       Claude: { version: "pending", total_stake: 0, reserve: 20, summary: "Awaiting v3.2 response.", bets: [] },
       Gemini: { version: "Gemini web", total_stake: 20, reserve: 0, summary: "CHI -4.5 $12 reference_market DK -110 + SGP CHI -2.5 alt (-180) + Caleb Williams O214.5 pass yds (-115) $8 reference_market DK +145. Vikings QB1 claim: roster file actually lists Murray as qb1 so Gemini aligns with repo, whether roster itself is correct is a separate data-quality question (my W1 G12 grading note was too harsh). 14th fabricated /research/ 404. DraftKings total quote shows 48.5 vs my ESPN check at 46.5. Grading concerns inline.", bets: [{type:"straight", market:"Spread", line:"Chicago Bears -4.5 (reference_market DK -110)", stake:12, confidence:6, reason:"CHI home; MIN with backup QB (claim disputed)"}, {type:"parlay", market:"SGP", line:"CHI -2.5 alt + Williams O214.5 pass yds (reference DK +145)", stake:8, confidence:4, reason:"Correlated home-fav spread + QB pass-yd volume"}] }
+    },
+    result: {
+      status: "final", verified_at: "2026-09-20", awayScore: 9, homeScore: 3,
+      source: "https://www.espn.com/nfl/boxscore/_/gameId/401872937",
+      note: "Vikings 9, Bears 3. Low-scoring MIN road win; total 12.",
+      grades: {
+        ChatGPT: [{outcome: "WIN",actual: "MIN won outright, +4.5 wins",odds:-110,profit:12.73},{outcome: "WIN",actual: "Aaron Jones 23 rush att OVER 10.5 + Swift 16 rush att OVER 11.5",odds:250,profit:15}],
+        Claude: [{outcome: "LOSS",actual: "Jefferson 3 recs, line 6.5",odds:-125,profit:-8},{outcome: "LOSS",actual: "MIN +2.5 hit but total 12 < 47.5 (UNDER); SGP OVER leg failed",odds:180,profit:-12}],
+        Gemini: [{outcome: "LOSS",actual: "CHI lost by 6, -4.5 lost",odds:-110,profit:-12},{outcome: "LOSS",actual: "SGP: CHI -2.5 alt lost + Williams 138 pass yds < 214.5",odds:145,profit:-8}]
+      }
     }
   },
   {
@@ -610,6 +680,16 @@ var NFL_PREDICTIONS_2026 = [
       ChatGPT: { version: "pending", total_stake: 0, reserve: 20, summary: "Awaiting v3.2 response.", bets: [] },
       Claude: { version: "pending", total_stake: 0, reserve: 20, summary: "Awaiting v3.2 response.", bets: [] },
       Gemini: { version: "Gemini web", total_stake: 20, reserve: 0, summary: "ATL +2.5 $12 reference_market -110 + SGP Bijan Robinson OVER 82.5 rush yds + ATL +2.5 $8 reference_market +250. Volume-on-projected-winner shape (Bijan vs CAR run D that gave up 291 yds W1). 13th fabricated /research/ 404 pattern; fabricated Season 2 record (claimed 2-2 -$2.89, actual 13-10 +$59.09); fabricated Kevin Stefanski as Falcons HC; fabricated 'CAR 0-2 ATS as favorites' claim. Grading concerns inline.", bets: [{type:"straight", market:"Spread", line:"Atlanta Falcons +2.5 (reference_market -110)", stake:12, confidence:5, reason:"ATL home dog with Rush at QB; NFC South divisional"}, {type:"parlay", market:"SGP", line:"Bijan Robinson OVER 82.5 rush yds + ATL +2.5 (reference +250)", stake:8, confidence:3, reason:"Volume-on-winner on CAR run D that gave up 291 yds W1"}] }
+    },
+    result: {
+      status: "final", verified_at: "2026-09-20", awayScore: 34, homeScore: 3,
+      source: "https://www.espn.com/nfl/boxscore/_/gameId/401872933",
+      note: "Panthers 34, Falcons 3. CAR won by 31; total 37.",
+      grades: {
+        ChatGPT: [{outcome: "WIN",actual: "CAR won by 31, covered -2.5",odds:-110,profit:12.73},{outcome: "LOSS",actual: "SGP ATL ML failed + Bijan 72 rush yds < 81.5",odds:450,profit:-6}],
+        Claude: [{outcome: "LOSS",actual: "Bijan 16 rush att, needed 17 (line 16.5)",odds:-120,profit:-8},{outcome: "LOSS",actual: "SGP ATL -3 leg failed (ATL lost by 31); UNDER 45.5 hit",odds:180,profit:-12}],
+        Gemini: [{outcome: "LOSS",actual: "ATL lost by 31, +2.5 lost",odds:-110,profit:-12},{outcome: "LOSS",actual: "SGP: ATL +2.5 lost + Bijan 72 rush yds < 82.5",odds:250,profit:-8}]
+      }
     }
   },
   {
