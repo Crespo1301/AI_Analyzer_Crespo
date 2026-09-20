@@ -418,6 +418,21 @@ var NFL_PREDICTIONS_2026 = [
     }
   },
   {
+    week: 2, gameId: "browns-buccaneers", label: "Browns at Buccaneers",
+    away: "Cleveland Browns", home: "Tampa Bay Buccaneers",
+    kickoff: "2026-09-20T13:00:00-04:00", kickoffDisplay: "Sun Sep 20, 1:00 PM ET",
+    venue: "Raymond James Stadium, Tampa, FL", network: "CBS",
+    line_snapshot: { spread: "TB -8.5", total: 41.5, moneyline: "TB -425 / CLE +330", source: "DraftKings/OddsChecker via ESPN game center 2026-09-20 pre-game" },
+    espn: "https://www.espn.com/nfl/boxscore/_/gameId/401872935",
+    responseFolder: "Docs/Responses/2026/week-02/game-07-browns-buccaneers/",
+    status: "locked", locked_at: "2026-09-20", prompt_template: "forced-selection v3.2",
+    models: {
+      ChatGPT: { version: "pending", total_stake: 0, reserve: 20, summary: "Awaiting v3.2 response.", bets: [] },
+      Claude: { version: "pending", total_stake: 0, reserve: 20, summary: "Awaiting v3.2 response.", bets: [] },
+      Gemini: { version: "Gemini web", total_stake: 20, reserve: 0, summary: "CLE +8.5 $12 reference_market DK -115 + SGP TB ML (-425) + Mayfield UNDER 214.5 pass yds (-114) $8 reference_market DK +135. Structural hedge: T1 on the dog, T2 on the favorite ML + defensive prop; both cash together if TB wins by 5-8. Cleaner design than same-team stacking. UNDER-on-QB-passing is a new shape family for the study (not the losing OVER-ceiling family). Third response in a row without fabricated /research/ 404. Fabricated own season record continues. Grading concerns inline.", bets: [{type:"straight", market:"Spread", line:"Cleveland Browns +8.5 (reference_market DK -115)", stake:12, confidence:6, reason:"CLE dog in low-total game with Myles Garrett pressure to keep margin single-digit"}, {type:"parlay", market:"SGP", line:"TB ML (-425) + Mayfield UNDER 214.5 pass yds (-114) (reference DK +135)", stake:8, confidence:5, reason:"TB wins outright but ground-game script caps Mayfield yardage"}] }
+    }
+  },
+  {
     week: 2, gameId: "packers-jets", label: "Packers at Jets",
     away: "Green Bay Packers", home: "New York Jets",
     kickoff: "2026-09-20T13:00:00-04:00", kickoffDisplay: "Sun Sep 20, 1:00 PM ET",
