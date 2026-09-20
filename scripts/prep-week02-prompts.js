@@ -192,18 +192,32 @@ OVERs, receiving yardage OVERs). The study data has treated
 those two shapes very differently. If you stay game-level, say
 you considered a player-level angle and why you rejected it.
 
-BOVADA PRICING HONESTY
-Use Bovada only as an odds-review reference when it is reachable;
-do not imply Carlos is placing these tickets there. Try to obtain
-current event-specific Bovada prices from
-https://www.bovada.lv/sports/football/nfl. Do not log in, request
-credentials, bypass access controls, or place bets. Classify
-EVERY ticket as exactly one of:
+PRICING HONESTY
+Try to obtain a current event-specific quote at a real
+sportsbook. Bovada (https://www.bovada.lv/sports/football/nfl)
+is heavily JS-rendered and usually will not expose a readable
+odds string to a plain HTTP fetch, so most attempts return no
+useful data. That is expected, not a failure to record. When
+Bovada is not reachable, use any of these public sportsbook
+pages that render odds in server-side HTML:
+  - https://sportsbook.draftkings.com/leagues/football/nfl
+  - https://sportsbook.fanduel.com/navigation/nfl
+  - https://sports.bwin.com/en/sports/american-football-12/betting/usa-9
+  - https://sports.betmgm.com/en/sports/football-11/betting/usa-9
+  - https://sportsbook.caesars.com/us/bet/nfl
+  - https://espnbet.com/sport/football/organization/united-states/competition/nfl
+  - https://sportsbook.fanatics.com/sports/nfl
+Team-specific pages, matchup previews on ESPN, or well-known
+odds aggregators (oddsshark.com, actionnetwork.com, vegasinsider.com,
+sportsbettingdime.com) are acceptable secondary references.
+Do not log in, request credentials, bypass access controls, or
+place bets. Classify EVERY ticket as exactly one of:
   - bovada_verified: exact line and current Bovada price actually
     retrieved. Include the exact captured_at time in ISO 8601.
     If you could not reach bovada.lv, do NOT use this label.
   - reference_market: exact line and price verified at another
-    named book, NOT a verified Bovada offer.
+    named book (DraftKings, FanDuel, BetMGM, Caesars, ESPN BET,
+    Fanatics, etc.). Name the book and include captured_at.
   - conditional: exact proposed line and minimum acceptable
     American odds derived from your probability and value
     assessment, NOT an observed quote.
