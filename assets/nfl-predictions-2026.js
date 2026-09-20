@@ -418,6 +418,21 @@ var NFL_PREDICTIONS_2026 = [
     }
   },
   {
+    week: 2, gameId: "bengals-texans", label: "Bengals at Texans",
+    away: "Cincinnati Bengals", home: "Houston Texans",
+    kickoff: "2026-09-20T13:00:00-04:00", kickoffDisplay: "Sun Sep 20, 1:00 PM ET",
+    venue: "NRG Stadium, Houston, TX", network: "CBS",
+    line_snapshot: { spread: "HOU -3", total: 45.5, moneyline: "CIN +124 / HOU -148", source: "DraftKings via ESPN game center 2026-09-20 pre-game" },
+    espn: "https://www.espn.com/nfl/boxscore/_/gameId/401872934",
+    responseFolder: "Docs/Responses/2026/week-02/game-09-bengals-texans/",
+    status: "locked", locked_at: "2026-09-20", prompt_template: "forced-selection v3.2",
+    models: {
+      ChatGPT: { version: "EXPIRED", total_stake: 0, reserve: 20, summary: "Codex hit the 1:00 PM ET kickoff before saving. Response file marked EXPIRED, no picks recorded.", bets: [] },
+      Claude: { version: "Claude Code", total_stake: 20, reserve: 0, summary: "Nico Collins O6.5 recs $8 conditional -125 + SGP HOU ML + game OVER 46.5 $12 conditional +170. Both defenses gave up 27+ W1, both offenses scored 31+. Rejected Bengals player leg because Chase and Higgins both Q. HOU ML + OVER is the KC/BAL W1 shape flipped to a shootout.", bets: [{type:"straight", market:"Player Recs", line:"Nico Collins OVER 6.5 recs (min -125 conditional)", stake:8, confidence:6, reason:"Practical HOU WR1 with Tank Dell IR; Stroud alpha target"}, {type:"sgp", market:"SGP", line:"HOU ML + game OVER 46.5 (min +170 conditional)", stake:12, confidence:5, reason:"HOU wins shootout, correlated ML + total OVER"}] },
+      Gemini: { version: "pending", total_stake: 0, reserve: 20, summary: "No response received before kickoff.", bets: [] }
+    }
+  },
+  {
     week: 2, gameId: "saints-ravens", label: "Saints at Ravens",
     away: "New Orleans Saints", home: "Baltimore Ravens",
     kickoff: "2026-09-20T13:00:00-04:00", kickoffDisplay: "Sun Sep 20, 1:00 PM ET",
