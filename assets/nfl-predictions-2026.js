@@ -418,6 +418,21 @@ var NFL_PREDICTIONS_2026 = [
     }
   },
   {
+    week: 2, gameId: "vikings-bears", label: "Vikings at Bears",
+    away: "Minnesota Vikings", home: "Chicago Bears",
+    kickoff: "2026-09-20T13:00:00-04:00", kickoffDisplay: "Sun Sep 20, 1:00 PM ET",
+    venue: "Soldier Field, Chicago, IL", network: "FOX",
+    line_snapshot: { spread: "CHI -4.5", total: 46.5, moneyline: "MIN +180 / CHI -218", source: "DraftKings via ESPN game center 2026-09-20 pre-game" },
+    espn: "https://www.espn.com/nfl/boxscore/_/gameId/401872937",
+    responseFolder: "Docs/Responses/2026/week-02/game-03-vikings-bears/",
+    status: "locked", locked_at: "2026-09-20", prompt_template: "forced-selection v3.2",
+    models: {
+      ChatGPT: { version: "pending", total_stake: 0, reserve: 20, summary: "Awaiting v3.2 response.", bets: [] },
+      Claude: { version: "pending", total_stake: 0, reserve: 20, summary: "Awaiting v3.2 response.", bets: [] },
+      Gemini: { version: "Gemini web", total_stake: 20, reserve: 0, summary: "CHI -4.5 $12 reference_market DK -110 + SGP CHI -2.5 alt (-180) + Caleb Williams O214.5 pass yds (-115) $8 reference_market DK +145. Vikings QB1 claim: roster file actually lists Murray as qb1 so Gemini aligns with repo, whether roster itself is correct is a separate data-quality question (my W1 G12 grading note was too harsh). 14th fabricated /research/ 404. DraftKings total quote shows 48.5 vs my ESPN check at 46.5. Grading concerns inline.", bets: [{type:"straight", market:"Spread", line:"Chicago Bears -4.5 (reference_market DK -110)", stake:12, confidence:6, reason:"CHI home; MIN with backup QB (claim disputed)"}, {type:"parlay", market:"SGP", line:"CHI -2.5 alt + Williams O214.5 pass yds (reference DK +145)", stake:8, confidence:4, reason:"Correlated home-fav spread + QB pass-yd volume"}] }
+    }
+  },
+  {
     week: 2, gameId: "panthers-falcons", label: "Panthers at Falcons",
     away: "Carolina Panthers", home: "Atlanta Falcons",
     kickoff: "2026-09-20T13:00:00-04:00", kickoffDisplay: "Sun Sep 20, 1:00 PM ET",
