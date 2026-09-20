@@ -162,7 +162,15 @@
       "date": "2026-09-14",
       "notes": "SNF road-favorite upset in Harbaugh Giants debut."
     },
-    "next_game": null
+    "next_game": {
+      "week": 2,
+      "game_id": "commanders-cowboys",
+      "opponent": "Washington Commanders",
+      "date": "2026-09-20",
+      "kickoff_et": "4:25 PM",
+      "network": "FOX",
+      "location": "home"
+    }
   },
   "health_snapshot": {
     "as_of": "2026-09-13",

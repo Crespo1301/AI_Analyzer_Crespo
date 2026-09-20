@@ -174,7 +174,15 @@
       "date": "2026-09-13",
       "notes": ""
     },
-    "next_game": null
+    "next_game": {
+      "week": 2,
+      "game_id": "jaguars-broncos",
+      "opponent": "Denver Broncos",
+      "date": "2026-09-20",
+      "kickoff_et": "4:05 PM",
+      "network": "CBS",
+      "location": "away (Denver Broncos home stadium)"
+    }
   },
   "health_snapshot": {
     "as_of": "2026-09-13",

@@ -166,11 +166,12 @@
     },
     "next_game": {
       "week": 2,
+      "game_id": "lions-bills",
       "opponent": "Detroit Lions",
       "date": "2026-09-17",
-      "location": "home (Highmark Stadium)",
       "kickoff_et": "8:15 PM",
-      "network": "Prime Video (TNF)"
+      "network": "Prime Video",
+      "location": "home"
     }
   },
   "health_snapshot": {

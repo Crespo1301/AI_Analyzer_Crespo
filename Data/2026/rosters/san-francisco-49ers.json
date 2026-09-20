@@ -188,7 +188,15 @@
       "date": "2026-09-11",
       "notes": ""
     },
-    "next_game": null
+    "next_game": {
+      "week": 2,
+      "game_id": "dolphins-niners",
+      "opponent": "Miami Dolphins",
+      "date": "2026-09-20",
+      "kickoff_et": "4:25 PM",
+      "network": "FOX",
+      "location": "home"
+    }
   },
   "health_snapshot": {
     "as_of": "2026-09-13",

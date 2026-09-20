@@ -172,7 +172,15 @@
       "date": "2026-09-13",
       "notes": "T.J. Watt late pick-6 pushed sluggish Steelers past ATL."
     },
-    "next_game": null
+    "next_game": {
+      "week": 2,
+      "game_id": "steelers-patriots",
+      "opponent": "New England Patriots",
+      "date": "2026-09-20",
+      "kickoff_et": "1:00 PM",
+      "network": "CBS",
+      "location": "away (New England Patriots home stadium)"
+    }
   },
   "health_snapshot": {
     "as_of": "2026-09-13",

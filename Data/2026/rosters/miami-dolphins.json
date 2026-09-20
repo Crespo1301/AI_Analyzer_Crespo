@@ -167,7 +167,15 @@
       "date": "2026-09-13",
       "notes": ""
     },
-    "next_game": null
+    "next_game": {
+      "week": 2,
+      "game_id": "dolphins-niners",
+      "opponent": "San Francisco 49ers",
+      "date": "2026-09-20",
+      "kickoff_et": "4:25 PM",
+      "network": "FOX",
+      "location": "away (San Francisco 49ers home stadium)"
+    }
   },
   "health_snapshot": {
     "as_of": "2026-09-13",

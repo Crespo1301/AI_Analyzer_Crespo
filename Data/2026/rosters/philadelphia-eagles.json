@@ -174,7 +174,15 @@
       "date": "2026-09-13",
       "notes": ""
     },
-    "next_game": null
+    "next_game": {
+      "week": 2,
+      "game_id": "eagles-titans",
+      "opponent": "Tennessee Titans",
+      "date": "2026-09-20",
+      "kickoff_et": "1:00 PM",
+      "network": "FOX",
+      "location": "away (Tennessee Titans home stadium)"
+    }
   },
   "health_snapshot": {
     "as_of": "2026-09-13",

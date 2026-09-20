@@ -167,7 +167,15 @@
       "date": "2026-09-13",
       "notes": "Ben Johnson debut. 59-37 shootout. Williams 2 pass TDs, Swift 3 rush TDs."
     },
-    "next_game": null
+    "next_game": {
+      "week": 2,
+      "game_id": "vikings-bears",
+      "opponent": "Minnesota Vikings",
+      "date": "2026-09-20",
+      "kickoff_et": "1:00 PM",
+      "network": "FOX",
+      "location": "home"
+    }
   },
   "health_snapshot": {
     "as_of": "2026-09-13",

@@ -169,7 +169,15 @@
       "date": "2026-09-15",
       "notes": ""
     },
-    "next_game": null
+    "next_game": {
+      "week": 2,
+      "game_id": "jaguars-broncos",
+      "opponent": "Jacksonville Jaguars",
+      "date": "2026-09-20",
+      "kickoff_et": "4:05 PM",
+      "network": "CBS",
+      "location": "home"
+    }
   },
   "health_snapshot": {
     "as_of": "2026-09-13",

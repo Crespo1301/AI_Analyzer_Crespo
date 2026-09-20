@@ -162,7 +162,15 @@
       "date": "2026-09-14",
       "notes": "John Harbaugh Giants debut win over DAL."
     },
-    "next_game": null
+    "next_game": {
+      "week": 2,
+      "game_id": "giants-rams",
+      "opponent": "Los Angeles Rams",
+      "date": "2026-09-21",
+      "kickoff_et": "8:15 PM",
+      "network": "ABC/ESPN",
+      "location": "away (Los Angeles Rams home stadium)"
+    }
   },
   "health_snapshot": {
     "as_of": "2026-09-13",
