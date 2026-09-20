@@ -418,6 +418,21 @@ var NFL_PREDICTIONS_2026 = [
     }
   },
   {
+    week: 2, gameId: "commanders-cowboys", label: "Commanders at Cowboys",
+    away: "Washington Commanders", home: "Dallas Cowboys",
+    kickoff: "2026-09-20T16:25:00-04:00", kickoffDisplay: "Sun Sep 20, 4:25 PM ET",
+    venue: "AT&T Stadium, Arlington, TX", network: "FOX",
+    line_snapshot: { spread: "DAL -4.5", total: 50.5, moneyline: "DAL -218 / WSH +172", source: "DraftKings/ActionNetwork via ESPN game center 2026-09-20 pre-game" },
+    espn: "https://www.espn.com/nfl/boxscore/_/gameId/401872944",
+    responseFolder: "Docs/Responses/2026/week-02/game-12-commanders-cowboys/",
+    status: "locked", locked_at: "2026-09-20", prompt_template: "forced-selection v3.2",
+    models: {
+      ChatGPT: { version: "pending", total_stake: 0, reserve: 20, summary: "Awaiting v3.2 response.", bets: [] },
+      Claude: { version: "pending", total_stake: 0, reserve: 20, summary: "Awaiting v3.2 response.", bets: [] },
+      Gemini: { version: "Gemini web", total_stake: 20, reserve: 0, summary: "WSH +4.5 $12 reference_market DK -120 + SGP WSH +6.5 alt (-165) + Jayden Daniels O36.5 rush yds (-114) $8 reference_market DK +210. No fabricated /research/ 404 or fabricated own-record numbers (both patterns absent for the 3rd consecutive Week 2 response). Dual-threat QB rush-yds volume is the profitable-shape variant. Same-team single+SGP concentration on WSH-stays-close outcome. Grading concerns inline.", bets: [{type:"straight", market:"Spread", line:"Washington Commanders +4.5 (reference_market DK -120)", stake:12, confidence:6, reason:"DAL missing Overshown/Hooker on defense; WSH dog value"}, {type:"parlay", market:"SGP", line:"WSH +6.5 alt (-165) + Daniels O36.5 rush yds (-114) (reference DK +210)", stake:8, confidence:4, reason:"Correlated WSH keeps close + Daniels rushing floor"}] }
+    }
+  },
+  {
     week: 2, gameId: "raiders-chargers", label: "Raiders at Chargers",
     away: "Las Vegas Raiders", home: "Los Angeles Chargers",
     kickoff: "2026-09-20T16:05:00-04:00", kickoffDisplay: "Sun Sep 20, 4:05 PM ET",
