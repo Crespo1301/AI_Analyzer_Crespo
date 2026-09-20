@@ -418,6 +418,21 @@ var NFL_PREDICTIONS_2026 = [
     }
   },
   {
+    week: 2, gameId: "raiders-chargers", label: "Raiders at Chargers",
+    away: "Las Vegas Raiders", home: "Los Angeles Chargers",
+    kickoff: "2026-09-20T16:05:00-04:00", kickoffDisplay: "Sun Sep 20, 4:05 PM ET",
+    venue: "SoFi Stadium, Inglewood, CA", network: "CBS",
+    line_snapshot: { spread: "LAC -6.5", total: 43.5, moneyline: "LV +240 / LAC -298", source: "DraftKings via NBC Sports/CBS Sports 2026-09-20 pre-game" },
+    espn: "https://www.espn.com/nfl/boxscore/_/gameId/401872941",
+    responseFolder: "Docs/Responses/2026/week-02/game-11-raiders-chargers/",
+    status: "locked", locked_at: "2026-09-20", prompt_template: "forced-selection v3.2",
+    models: {
+      ChatGPT: { version: "pending", total_stake: 0, reserve: 20, summary: "Awaiting v3.2 response.", bets: [] },
+      Claude: { version: "pending", total_stake: 0, reserve: 20, summary: "Awaiting v3.2 response.", bets: [] },
+      Gemini: { version: "Gemini web (self-reports Gemini 1.5 / 2026 Build)", total_stake: 20, reserve: 0, summary: "LV +6.5 $12 reference_market DK -110 + SGP LV +7.5 alt (-135) + Jeanty O70.5 total yds (-115) $8 reference_market DK +220. No fabricated /research/ 404 or fabricated own-record numbers this response - both fabrication patterns skipped. Model version claim inconsistent ('Gemini 1.5' vs prior '2.5 Flash'). Volume-on-projected-loser risk on Jeanty (LV is 6.5 dog). Grading concerns inline.", bets: [{type:"straight", market:"Spread", line:"Las Vegas Raiders +6.5 (reference_market DK -110)", stake:12, confidence:6, reason:"LAC OL missing Pipkins; Herbert 3 INTs W1; LV divisional dog value"}, {type:"parlay", market:"SGP", line:"LV +7.5 alt (-135) + Jeanty O70.5 total yds (-115) (reference DK +220)", stake:8, confidence:4, reason:"Correlated LV keeps close + Jeanty volume in projected competitive game"}] }
+    }
+  },
+  {
     week: 2, gameId: "jaguars-broncos", label: "Jaguars at Broncos",
     away: "Jacksonville Jaguars", home: "Denver Broncos",
     kickoff: "2026-09-20T16:05:00-04:00", kickoffDisplay: "Sun Sep 20, 4:05 PM ET",
