@@ -418,6 +418,21 @@ var NFL_PREDICTIONS_2026 = [
     }
   },
   {
+    week: 2, gameId: "saints-ravens", label: "Saints at Ravens",
+    away: "New Orleans Saints", home: "Baltimore Ravens",
+    kickoff: "2026-09-20T13:00:00-04:00", kickoffDisplay: "Sun Sep 20, 1:00 PM ET",
+    venue: "M&T Bank Stadium, Baltimore, MD", network: "CBS",
+    line_snapshot: { spread: "BAL -8.5", total: 45.5, moneyline: "BAL -375 / NO +295", source: "DraftKings/SportsGambler via ESPN game center 2026-09-20 pre-game" },
+    espn: "https://www.espn.com/nfl/boxscore/_/gameId/401872938",
+    responseFolder: "Docs/Responses/2026/week-02/game-08-saints-ravens/",
+    status: "locked", locked_at: "2026-09-20", prompt_template: "forced-selection v3.2",
+    models: {
+      ChatGPT: { version: "pending", total_stake: 0, reserve: 20, summary: "Awaiting v3.2 response.", bets: [] },
+      Claude: { version: "pending", total_stake: 0, reserve: 20, summary: "Awaiting v3.2 response.", bets: [] },
+      Gemini: { version: "Gemini web", total_stake: 20, reserve: 0, summary: "NO +8.5 $12 reference_market DK -115 + SGP Derrick Henry Anytime TD (-250) + Bateman O42.5 rec yds (-114) $8 reference_market DK +145. Structural hedge design continues (dog spread + favorite's players). T2 leg 2 is target-reallocation on Zay Flowers OUT - genuine roster edge. T2 leg 1 is ceiling Anytime TD prop (family that has lost in Season 1). 17th fabricated /research/ 404 (pattern returned after 3 clean responses). ESCALATED record fabrication: claims 'W2 G7 record 1-1' before Game 7 has been played. Grading concerns inline.", bets: [{type:"straight", market:"Spread", line:"New Orleans Saints +8.5 (reference_market DK -115)", stake:12, confidence:6, reason:"NO dog with high-passing offense vs BAL missing Flowers"}, {type:"parlay", market:"SGP", line:"Henry Anytime TD (-250) + Bateman O42.5 rec yds (-114) (reference DK +145)", stake:8, confidence:5, reason:"Henry 3 TDs W1 + Bateman WR1 target share with Flowers OUT"}] }
+    }
+  },
+  {
     week: 2, gameId: "browns-buccaneers", label: "Browns at Buccaneers",
     away: "Cleveland Browns", home: "Tampa Bay Buccaneers",
     kickoff: "2026-09-20T13:00:00-04:00", kickoffDisplay: "Sun Sep 20, 1:00 PM ET",
