@@ -418,6 +418,21 @@ var NFL_PREDICTIONS_2026 = [
     }
   },
   {
+    week: 2, gameId: "packers-jets", label: "Packers at Jets",
+    away: "Green Bay Packers", home: "New York Jets",
+    kickoff: "2026-09-20T13:00:00-04:00", kickoffDisplay: "Sun Sep 20, 1:00 PM ET",
+    venue: "MetLife Stadium, East Rutherford, NJ", network: "FOX",
+    line_snapshot: { spread: "GB -3.5", total: 44.5, moneyline: "GB -192 / NYJ +160", source: "DraftKings via ESPN game center 2026-09-20 pre-game" },
+    espn: "https://www.espn.com/nfl/boxscore/_/gameId/401872936",
+    responseFolder: "Docs/Responses/2026/week-02/game-06-packers-jets/",
+    status: "locked", locked_at: "2026-09-20", prompt_template: "forced-selection v3.2",
+    models: {
+      ChatGPT: { version: "pending", total_stake: 0, reserve: 20, summary: "Awaiting v3.2 response.", bets: [] },
+      Claude: { version: "pending", total_stake: 0, reserve: 20, summary: "Awaiting v3.2 response.", bets: [] },
+      Gemini: { version: "Gemini web", total_stake: 20, reserve: 0, summary: "NYJ +3.5 $12 reference_market DK -109 + SGP NYJ +3.5 (-109) + Hall O65.5 rush yds (-108) $8 reference_market DK +220. Contrarian home dog grounded in W1 tape (Jets controlled 38:46 clock; Packers blew game they yardage-won). Volume-on-projected-winner shape continues. No fabricated /research/ 404 (second response in a row). Fabricated own season record continues. Same-team single+SGP concentration. Grading concerns inline.", bets: [{type:"straight", market:"Spread", line:"New York Jets +3.5 (reference_market DK -109)", stake:12, confidence:6, reason:"NYJ home dog after 38:46 TOP W1 win; GB 1-6 ATS as road favorite (unverified)"}, {type:"parlay", market:"SGP", line:"NYJ +3.5 (-109) + Hall O65.5 rush yds (-108) (reference DK +220)", stake:8, confidence:4, reason:"Correlated NYJ cover + Hall volume on run-heavy script"}] }
+    }
+  },
+  {
     week: 2, gameId: "steelers-patriots", label: "Steelers at Patriots",
     away: "Pittsburgh Steelers", home: "New England Patriots",
     kickoff: "2026-09-20T13:00:00-04:00", kickoffDisplay: "Sun Sep 20, 1:00 PM ET",
