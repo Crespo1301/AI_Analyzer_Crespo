@@ -418,6 +418,21 @@ var NFL_PREDICTIONS_2026 = [
     }
   },
   {
+    week: 2, gameId: "panthers-falcons", label: "Panthers at Falcons",
+    away: "Carolina Panthers", home: "Atlanta Falcons",
+    kickoff: "2026-09-20T13:00:00-04:00", kickoffDisplay: "Sun Sep 20, 1:00 PM ET",
+    venue: "Mercedes-Benz Stadium, Atlanta, GA", network: "FOX",
+    line_snapshot: { spread: "CAR -2.5", total: 43.5, moneyline: "CAR -155 / ATL +130", source: "DraftKings via ESPN game center 2026-09-20 pre-game" },
+    espn: "https://www.espn.com/nfl/boxscore/_/gameId/401872933",
+    responseFolder: "Docs/Responses/2026/week-02/game-02-panthers-falcons/",
+    status: "locked", locked_at: "2026-09-20", prompt_template: "forced-selection v3.2",
+    models: {
+      ChatGPT: { version: "pending", total_stake: 0, reserve: 20, summary: "Awaiting v3.2 response.", bets: [] },
+      Claude: { version: "pending", total_stake: 0, reserve: 20, summary: "Awaiting v3.2 response.", bets: [] },
+      Gemini: { version: "Gemini web", total_stake: 20, reserve: 0, summary: "ATL +2.5 $12 reference_market -110 + SGP Bijan Robinson OVER 82.5 rush yds + ATL +2.5 $8 reference_market +250. Volume-on-projected-winner shape (Bijan vs CAR run D that gave up 291 yds W1). 13th fabricated /research/ 404 pattern; fabricated Season 2 record (claimed 2-2 -$2.89, actual 13-10 +$59.09); fabricated Kevin Stefanski as Falcons HC; fabricated 'CAR 0-2 ATS as favorites' claim. Grading concerns inline.", bets: [{type:"straight", market:"Spread", line:"Atlanta Falcons +2.5 (reference_market -110)", stake:12, confidence:5, reason:"ATL home dog with Rush at QB; NFC South divisional"}, {type:"parlay", market:"SGP", line:"Bijan Robinson OVER 82.5 rush yds + ATL +2.5 (reference +250)", stake:8, confidence:3, reason:"Volume-on-winner on CAR run D that gave up 291 yds W1"}] }
+    }
+  },
+  {
     week: 1,
     gameId: "buccaneers-bengals",
     label: "Buccaneers at Bengals",
