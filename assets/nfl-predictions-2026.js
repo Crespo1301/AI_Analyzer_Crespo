@@ -418,6 +418,21 @@ var NFL_PREDICTIONS_2026 = [
     }
   },
   {
+    week: 2, gameId: "eagles-titans", label: "Eagles at Titans",
+    away: "Philadelphia Eagles", home: "Tennessee Titans",
+    kickoff: "2026-09-20T13:00:00-04:00", kickoffDisplay: "Sun Sep 20, 1:00 PM ET",
+    venue: "Nissan Stadium, Nashville, TN", network: "FOX",
+    line_snapshot: { spread: "PHI -7 to -7.5", total: 39.5, moneyline: "PHI -325 / TEN +260", source: "DraftKings/oddschecker via ESPN game center 2026-09-20 pre-game" },
+    espn: "https://www.espn.com/nfl/boxscore/_/gameId/401872939",
+    responseFolder: "Docs/Responses/2026/week-02/game-04-eagles-titans/",
+    status: "locked", locked_at: "2026-09-20", prompt_template: "forced-selection v3.2",
+    models: {
+      ChatGPT: { version: "pending", total_stake: 0, reserve: 20, summary: "Awaiting v3.2 response.", bets: [] },
+      Claude: { version: "pending", total_stake: 0, reserve: 20, summary: "Awaiting v3.2 response.", bets: [] },
+      Gemini: { version: "Gemini web", total_stake: 20, reserve: 0, summary: "PHI -7.5 $12 reference_market DK -109 + SGP PHI -3.5 alt (-185) + Barkley O74.5 rush yds (-115) $8 reference_market DK +140. Same-team single+SGP concentration (all three legs cash if Philly controls script). Continued volume-on-winner shape correctly applied. 15th fabricated /research/ 404. Line-vs-market note: DK aggregator quote shows -7.0 not -7.5. Grading concerns inline.", bets: [{type:"straight", market:"Spread", line:"Philadelphia Eagles -7.5 (reference_market DK -109)", stake:12, confidence:6, reason:"PHI road favorite; TEN offense capped"}, {type:"parlay", market:"SGP", line:"PHI -3.5 alt + Barkley O74.5 rush yds (reference DK +140)", stake:8, confidence:4, reason:"Correlated PHI cover + Barkley clock-drain volume"}] }
+    }
+  },
+  {
     week: 2, gameId: "vikings-bears", label: "Vikings at Bears",
     away: "Minnesota Vikings", home: "Chicago Bears",
     kickoff: "2026-09-20T13:00:00-04:00", kickoffDisplay: "Sun Sep 20, 1:00 PM ET",
