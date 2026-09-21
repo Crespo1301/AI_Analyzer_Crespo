@@ -430,9 +430,43 @@ var NFL_PREDICTIONS_2026 = [
       ChatGPT: { version: "pending", total_stake: 0, reserve: 20, summary: "Awaiting v3.2 response.", bets: [] },
       Claude: { version: "pending", total_stake: 0, reserve: 20, summary: "Awaiting v3.2 response.", bets: [] },
       Gemini: { version: "Gemini web", total_stake: 20, reserve: 0, summary: "SF -13.5 $12 reference_market FanDuel -105 + SGP McCaffrey Anytime TD (-250) + Achane O3.5 recs (-157) $8 reference_market DK/FanDuel +165. Big-favorite spread family flagged as historically unreliable (W1 LAC -9.5 outright loss). Ceiling Anytime TD + losing-side reception prop. Escalating record fabrication now claims graded G11-G13 results. Grading concerns inline.", bets: [{type:"straight", market:"Spread", line:"San Francisco 49ers -13.5 (reference_market FanDuel -105)", stake:12, confidence:6, reason:"SF at home vs MIA missing Chop Robinson + Ronnie Harrison Jr."}, {type:"parlay", market:"SGP", line:"McCaffrey Anytime TD (-250) + Achane O3.5 recs (-157) (reference DK/FanDuel +165)", stake:8, confidence:4, reason:"SF red-zone volume + Achane checkdown floor in trailing script"}] }
+    },
+    result: {
+      status: "final", verified_at: "2026-09-21", awayScore: 13, homeScore: 35,
+      source: "https://www.espn.com/nfl/boxscore/_/gameId/401872942",
+      note: "49ers 35, Dolphins 13. SF covered -13.5 by 8.5. McCaffrey 2 rush TDs. Achane 3 recs on 6 targets.",
+      grades: { ChatGPT: [], Claude: [], Gemini: [{"outcome":"WIN","actual":"SF won by 22, covered -13.5","odds":-105,"profit":11.43},{"outcome":"LOSS","actual":"SGP: McCaffrey 2 rush TDs hit but Achane 3 recs < 3.5 line","odds":165,"profit":-8}] }
     }
   },
-  {
+    {
+    week: 2, gameId: "colts-chiefs", label: "Colts at Chiefs (SNF)",
+    away: "Indianapolis Colts", home: "Kansas City Chiefs",
+    kickoff: "2026-09-20T20:20:00-04:00", kickoffDisplay: "Sun Sep 20, 8:20 PM ET",
+    venue: "GEHA Field at Arrowhead Stadium, Kansas City, MO", network: "NBC",
+    line_snapshot: { spread: "KC -6.5", total: 46.5, moneyline: "KC -265 / IND +215", source: "FanDuel/DraftKings via ESPN game center 2026-09-20 pre-game" },
+    espn: "https://www.espn.com/nfl/boxscore/_/gameId/401872945",
+    responseFolder: "Docs/Responses/2026/week-02/game-15-colts-chiefs/",
+    status: "locked", locked_at: "2026-09-20", prompt_template: "forced-selection v3.2",
+    models: {
+      ChatGPT: { version: "pending", total_stake: 0, reserve: 20, summary: "No response received before kickoff.", bets: [] },
+      Claude: { version: "pending", total_stake: 0, reserve: 20, summary: "No response received before kickoff.", bets: [] },
+      Gemini: { version: "Gemini web", total_stake: 20, reserve: 0, summary: "KC -6.5 $12 reference_market FanDuel -115 + SGP Kelce O4.5 recs (-135) + Jonathan Taylor O62.5 rush yds (-115) $8 reference_market DK/FanDuel +215. No fabricated /research/ 404 this response. Own-record fabrication continues (retro-graded W2 G11-G14 before those had finished).", bets: [{type:"straight", market:"Spread", line:"Kansas City Chiefs -6.5 (reference_market FanDuel -115)", stake:12, confidence:6, reason:"KC home in prime time; IND allowed 41 to BAL W1"}, {type:"parlay", market:"SGP", line:"Kelce O4.5 recs (-135) + Jonathan Taylor O62.5 rush yds (-115) (reference DK/FanDuel +215)", stake:8, confidence:4, reason:"Two-sided volume anchor: Mahomes safety valve + IND workhorse RB"}] }
+    },
+    result: {
+      status: "final", verified_at: "2026-09-21", awayScore: 30, homeScore: 33,
+      source: "https://www.espn.com/nfl/boxscore/_/gameId/401872945",
+      note: "Chiefs 33, Colts 30 OT. KC won by 3, needed 7 for spread. Kelce 9 recs 101 yds 1 TD. Taylor 24 att 92 yds 2 TDs. Total 63.",
+      grades: {
+        ChatGPT: [],
+        Claude: [],
+        Gemini: [
+          { outcome: "LOSS", actual: "KC won by only 3, -6.5 lost", odds: -115, profit: -12.00 },
+          { outcome: "WIN", actual: "Kelce 9 recs OVER 4.5 + Taylor 92 rush yds OVER 62.5", odds: 215, profit: 17.20 }
+        ]
+      }
+    }
+  },
+{
     week: 2, gameId: "seahawks-cardinals", label: "Seahawks at Cardinals",
     away: "Seattle Seahawks", home: "Arizona Cardinals",
     kickoff: "2026-09-20T16:25:00-04:00", kickoffDisplay: "Sun Sep 20, 4:25 PM ET",
@@ -445,6 +479,12 @@ var NFL_PREDICTIONS_2026 = [
       ChatGPT: { version: "pending", total_stake: 0, reserve: 20, summary: "Awaiting v3.2 response.", bets: [] },
       Claude: { version: "pending", total_stake: 0, reserve: 20, summary: "Awaiting v3.2 response.", bets: [] },
       Gemini: { version: "Gemini web", total_stake: 20, reserve: 0, summary: "UNDER 41.5 $12 reference_market DK -110 + SGP SEA ML (-198) + UNDER 45.5 alt (-180) $8 reference_market DK +130. Total-heavy shape shift (first game-total straight of Gemini's Week 2 slate) driven by Darnold OUT / Drew Lock starting for SEA. Same-direction total exposure across both tickets. Own-record fabrication returned (claimed W2 G11 result before Game 11 finished). Grading concerns inline.", bets: [{type:"straight", market:"Total", line:"UNDER 41.5 (reference_market DK -110)", stake:12, confidence:6, reason:"Drew Lock starting for injured Darnold drives conservative script"}, {type:"parlay", market:"SGP", line:"SEA ML (-198) + UNDER 45.5 alt (-180) (reference DK +130)", stake:8, confidence:4, reason:"Correlated SEA win + game stays UNDER 45.5"}] }
+    },
+    result: {
+      status: "final", verified_at: "2026-09-21", awayScore: 31, homeScore: 7,
+      source: "https://www.espn.com/nfl/boxscore/_/gameId/401872943",
+      note: "Seahawks 31, Cardinals 7. Drew Lock 235 pass yds 3 TD; JSN 155 rec yds 3 TD. Total 38 UNDER 41.5.",
+      grades: { ChatGPT: [], Claude: [], Gemini: [{"outcome":"WIN","actual":"Total 38 UNDER 41.5","odds":-110,"profit":10.91},{"outcome":"WIN","actual":"SEA ML + total 38 UNDER 45.5 alt","odds":130,"profit":10.4}] }
     }
   },
   {
@@ -460,6 +500,12 @@ var NFL_PREDICTIONS_2026 = [
       ChatGPT: { version: "pending", total_stake: 0, reserve: 20, summary: "Awaiting v3.2 response.", bets: [] },
       Claude: { version: "pending", total_stake: 0, reserve: 20, summary: "Awaiting v3.2 response.", bets: [] },
       Gemini: { version: "Gemini web", total_stake: 20, reserve: 0, summary: "WSH +4.5 $12 reference_market DK -120 + SGP WSH +6.5 alt (-165) + Jayden Daniels O36.5 rush yds (-114) $8 reference_market DK +210. No fabricated /research/ 404 or fabricated own-record numbers (both patterns absent for the 3rd consecutive Week 2 response). Dual-threat QB rush-yds volume is the profitable-shape variant. Same-team single+SGP concentration on WSH-stays-close outcome. Grading concerns inline.", bets: [{type:"straight", market:"Spread", line:"Washington Commanders +4.5 (reference_market DK -120)", stake:12, confidence:6, reason:"DAL missing Overshown/Hooker on defense; WSH dog value"}, {type:"parlay", market:"SGP", line:"WSH +6.5 alt (-165) + Daniels O36.5 rush yds (-114) (reference DK +210)", stake:8, confidence:4, reason:"Correlated WSH keeps close + Daniels rushing floor"}] }
+    },
+    result: {
+      status: "final", verified_at: "2026-09-21", awayScore: 20, homeScore: 37,
+      source: "https://www.espn.com/nfl/boxscore/_/gameId/401872944",
+      note: "Cowboys 37, Commanders 20. DAL blowout; Daniels 69 rush yds. Daniels dislocated elbow late.",
+      grades: { ChatGPT: [], Claude: [], Gemini: [{"outcome":"LOSS","actual":"WSH lost by 17, +4.5 lost badly","odds":-120,"profit":-12},{"outcome":"LOSS","actual":"SGP: WSH +6.5 alt failed (lost by 17). Daniels 69 rush yds hit but leg failed","odds":210,"profit":-8}] }
     }
   },
   {
@@ -475,6 +521,12 @@ var NFL_PREDICTIONS_2026 = [
       ChatGPT: { version: "pending", total_stake: 0, reserve: 20, summary: "Awaiting v3.2 response.", bets: [] },
       Claude: { version: "pending", total_stake: 0, reserve: 20, summary: "Awaiting v3.2 response.", bets: [] },
       Gemini: { version: "Gemini web (self-reports Gemini 1.5 / 2026 Build)", total_stake: 20, reserve: 0, summary: "LV +6.5 $12 reference_market DK -110 + SGP LV +7.5 alt (-135) + Jeanty O70.5 total yds (-115) $8 reference_market DK +220. No fabricated /research/ 404 or fabricated own-record numbers this response - both fabrication patterns skipped. Model version claim inconsistent ('Gemini 1.5' vs prior '2.5 Flash'). Volume-on-projected-loser risk on Jeanty (LV is 6.5 dog). Grading concerns inline.", bets: [{type:"straight", market:"Spread", line:"Las Vegas Raiders +6.5 (reference_market DK -110)", stake:12, confidence:6, reason:"LAC OL missing Pipkins; Herbert 3 INTs W1; LV divisional dog value"}, {type:"parlay", market:"SGP", line:"LV +7.5 alt (-135) + Jeanty O70.5 total yds (-115) (reference DK +220)", stake:8, confidence:4, reason:"Correlated LV keeps close + Jeanty volume in projected competitive game"}] }
+    },
+    result: {
+      status: "final", verified_at: "2026-09-21", awayScore: 26, homeScore: 14,
+      source: "https://www.espn.com/nfl/boxscore/_/gameId/401872941",
+      note: "Raiders 26, Chargers 14. LV won outright as +6.5 dog. Jeanty 48 rush yds (needed 71).",
+      grades: { ChatGPT: [], Claude: [], Gemini: [{"outcome":"WIN","actual":"LV won by 12, +6.5 wins easy","odds":-110,"profit":10.91},{"outcome":"LOSS","actual":"LV +7.5 hit but Jeanty 48 rush yds < 70.5 total-yds line","odds":220,"profit":-8}] }
     }
   },
   {
@@ -490,6 +542,12 @@ var NFL_PREDICTIONS_2026 = [
       ChatGPT: { version: "pending", total_stake: 0, reserve: 20, summary: "Awaiting v3.2 response.", bets: [] },
       Claude: { version: "pending", total_stake: 0, reserve: 20, summary: "Awaiting v3.2 response.", bets: [] },
       Gemini: { version: "Gemini web", total_stake: 20, reserve: 0, summary: "DEN -2.5 $12 reference_market DK -118 + SGP DEN ML (-148) + Jaleel McLaughlin O42.5 rush+rec yds (-115) $8 reference_market DK +185. Target-reallocation shape (Harvey OUT promotes McLaughlin). 19th fabricated /research/ 404. Retroactive record fabrication now includes W2 G8 result (game not yet finished). Grading concerns inline.", bets: [{type:"straight", market:"Spread", line:"Denver Broncos -2.5 (reference_market DK -118)", stake:12, confidence:6, reason:"DEN short home favorite at altitude coming off W1 loss"}, {type:"parlay", market:"SGP", line:"DEN ML (-148) + McLaughlin O42.5 rush+rec yds (-115) (reference DK +185)", stake:8, confidence:5, reason:"DEN winning script + McLaughlin promoted touches with Harvey OUT"}] }
+    },
+    result: {
+      status: "final", verified_at: "2026-09-21", awayScore: 13, homeScore: 20,
+      source: "https://www.espn.com/nfl/boxscore/_/gameId/401872940",
+      note: "Broncos 20, Jaguars 13. DEN 14 unanswered in Q4. McLaughlin absent from box.",
+      grades: { ChatGPT: [], Claude: [], Gemini: [{"outcome":"WIN","actual":"DEN won by 7, covered -2.5","odds":-118,"profit":10.17},{"outcome":"LOSS","actual":"DEN ML hit but McLaughlin absent from box (0 rush+rec yds vs 42.5 line)","odds":185,"profit":-8}] }
     }
   },
   {
