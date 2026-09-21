@@ -262,6 +262,7 @@ fs.writeFileSync(path.join(teamsDir, 'index.html'), shell('All 32 Team Profiles'
 const docs = [
   { in: 'Docs/2026/grading-rubric.md', slug: 'rubric', title: 'Grading rubric v2', desc: 'Outcome-primary grading rubric for locked model picks.' },
   { in: 'Docs/2026/week-01-analysis.md', slug: 'week-01-analysis', title: 'Week 1 analysis', desc: 'What worked, what did not, and the bet-type coverage observation.' },
+  { in: 'Docs/2026/week-02-analysis.md', slug: 'week-02-analysis', title: 'Week 2 analysis', desc: 'Roster-refresh lessons, player-on-team sanity checks, and structural shape review.' },
   { in: 'Docs/2026/iteration-system.md', slug: 'iteration-system', title: 'Iteration system', desc: 'How weekly prompts, rubric, and roster corrections evolve.' }
 ];
 docs.forEach(d => {

@@ -439,6 +439,21 @@ var NFL_PREDICTIONS_2026 = [
     }
   },
     {
+    week: 2, gameId: "giants-rams", label: "Giants at Rams (MNF)",
+    away: "New York Giants", home: "Los Angeles Rams",
+    kickoff: "2026-09-21T20:15:00-04:00", kickoffDisplay: "Mon Sep 21, 8:15 PM ET",
+    venue: "SoFi Stadium, Inglewood, CA", network: "ABC/ESPN",
+    line_snapshot: { spread: "LAR -6.5", total: 47.5, moneyline: "LAR -305 / NYG +245", source: "DraftKings/Action Network via ESPN game center 2026-09-21 pre-game" },
+    espn: "https://www.espn.com/nfl/boxscore/_/gameId/401872947",
+    responseFolder: "Docs/Responses/2026/week-02/game-16-giants-rams/",
+    status: "locked", locked_at: "2026-09-21", prompt_template: "forced-selection v3.2",
+    models: {
+      ChatGPT: { version: "pending", total_stake: 0, reserve: 20, summary: "No response recorded before kickoff.", bets: [] },
+      Claude: { version: "pending", total_stake: 0, reserve: 20, summary: "No response recorded before kickoff.", bets: [] },
+      Gemini: { version: "Gemini web", total_stake: 20, reserve: 0, summary: "NYG +6.5 $12 reference_market DK -102 + SGP Dart O213.5 pass yds (-111) + Nabers O62.5 rec yds (-113) $8 reference_market DK/Action +195. Correlated QB pass yds + WR1 rec yds SGP. Rams depleted (Nacua doubtful, Garrett IR). Grading concerns inline (Garrett-on-Rams claim, retro record fabrication persists).", bets: [{type:"straight", market:"Spread", line:"New York Giants +6.5 (reference_market DK -102)", stake:12, confidence:6, reason:"Rams missing Nacua (WR1) and Garrett (edge); Giants dome environment with Dart"}, {type:"parlay", market:"SGP", line:"Dart O213.5 pass yds (-111) + Nabers O62.5 rec yds (-113) (reference DK +195)", stake:8, confidence:4, reason:"Correlated pass volume + WR1 target funnel in projected close game"}] }
+    }
+  },
+  {
     week: 2, gameId: "colts-chiefs", label: "Colts at Chiefs (SNF)",
     away: "Indianapolis Colts", home: "Kansas City Chiefs",
     kickoff: "2026-09-20T20:20:00-04:00", kickoffDisplay: "Sun Sep 20, 8:20 PM ET",
