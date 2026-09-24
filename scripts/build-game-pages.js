@@ -450,8 +450,6 @@ ${!entry.bets.length && review ? '<p><strong>Decision review:</strong> ' + esc(r
   </div>
 </section>
 
-${resultReview}
-${modelResults}
 <section class="band band-bone">
   <div class="wrap">
     <div class="band-head">
@@ -480,6 +478,8 @@ ${modelResults}
   </div>
 </section>
 
+${resultReview}
+${modelResults}
 ${humanReview}
 
 ${final ? '' : `<section class="band band-bone">
