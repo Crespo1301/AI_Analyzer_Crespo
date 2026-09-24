@@ -5,7 +5,24 @@
     "start": "2026-09-24",
     "end": "2026-09-28"
   },
-  "last_verified": "",
-  "source": "",
-  "games": []
+  "last_verified": "2026-09-24",
+  "source": "https://www.espn.com/nfl/schedule/_/week/3/year/2026/seasontype/2",
+  "games": [
+    { "id": "falcons-packers", "away": "Atlanta Falcons", "home": "Green Bay Packers", "date": "2026-09-24", "kickoff_et": "8:15 PM", "network": "Prime Video", "venue": "Lambeau Field, Green Bay WI" },
+    { "id": "chargers-bills", "away": "Los Angeles Chargers", "home": "Buffalo Bills", "date": "2026-09-27", "kickoff_et": "1:00 PM", "network": "FOX", "venue": "Highmark Stadium, Orchard Park NY" },
+    { "id": "panthers-browns", "away": "Carolina Panthers", "home": "Cleveland Browns", "date": "2026-09-27", "kickoff_et": "1:00 PM", "network": "FOX", "venue": "Huntington Bank Field, Cleveland OH" },
+    { "id": "jets-lions", "away": "New York Jets", "home": "Detroit Lions", "date": "2026-09-27", "kickoff_et": "1:00 PM", "network": "FOX", "venue": "Ford Field, Detroit MI" },
+    { "id": "texans-colts", "away": "Houston Texans", "home": "Indianapolis Colts", "date": "2026-09-27", "kickoff_et": "1:00 PM", "network": "CBS", "venue": "Lucas Oil Stadium, Indianapolis IN" },
+    { "id": "chiefs-dolphins", "away": "Kansas City Chiefs", "home": "Miami Dolphins", "date": "2026-09-27", "kickoff_et": "1:00 PM", "network": "CBS", "venue": "Hard Rock Stadium, Miami Gardens FL" },
+    { "id": "titans-giants", "away": "Tennessee Titans", "home": "New York Giants", "date": "2026-09-27", "kickoff_et": "1:00 PM", "network": "CBS", "venue": "MetLife Stadium, East Rutherford NJ" },
+    { "id": "bengals-steelers", "away": "Cincinnati Bengals", "home": "Pittsburgh Steelers", "date": "2026-09-27", "kickoff_et": "1:00 PM", "network": "CBS", "venue": "Acrisure Stadium, Pittsburgh PA" },
+    { "id": "seahawks-commanders", "away": "Seattle Seahawks", "home": "Washington Commanders", "date": "2026-09-27", "kickoff_et": "1:00 PM", "network": "FOX", "venue": "Northwest Stadium, Landover MD" },
+    { "id": "patriots-jaguars", "away": "New England Patriots", "home": "Jacksonville Jaguars", "date": "2026-09-27", "kickoff_et": "1:00 PM", "network": "CBS", "venue": "EverBank Stadium, Jacksonville FL" },
+    { "id": "cardinals-niners", "away": "Arizona Cardinals", "home": "San Francisco 49ers", "date": "2026-09-27", "kickoff_et": "4:05 PM", "network": "FOX", "venue": "Levi's Stadium, Santa Clara CA" },
+    { "id": "vikings-buccaneers", "away": "Minnesota Vikings", "home": "Tampa Bay Buccaneers", "date": "2026-09-27", "kickoff_et": "4:05 PM", "network": "FOX", "venue": "Raymond James Stadium, Tampa FL" },
+    { "id": "ravens-cowboys", "away": "Baltimore Ravens", "home": "Dallas Cowboys", "date": "2026-09-27", "kickoff_et": "4:25 PM", "network": "CBS", "venue": "Maracanã Stadium, Rio de Janeiro, Brazil (international series)" },
+    { "id": "raiders-saints", "away": "Las Vegas Raiders", "home": "New Orleans Saints", "date": "2026-09-27", "kickoff_et": "4:25 PM", "network": "CBS", "venue": "Caesars Superdome, New Orleans LA" },
+    { "id": "rams-broncos", "away": "Los Angeles Rams", "home": "Denver Broncos", "date": "2026-09-27", "kickoff_et": "8:20 PM", "network": "NBC", "venue": "Empower Field at Mile High, Denver CO" },
+    { "id": "eagles-bears", "away": "Philadelphia Eagles", "home": "Chicago Bears", "date": "2026-09-28", "kickoff_et": "8:15 PM", "network": "ESPN/ABC", "venue": "Soldier Field, Chicago IL" }
+  ]
 }

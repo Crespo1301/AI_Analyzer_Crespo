@@ -1,26 +1,32 @@
 {
   "team": "Green Bay Packers",
   "season": 2026,
-  "last_verified": "2026-09-09",
-  "source": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/teams/gb/roster",
+  "last_verified": "2026-09-24",
+  "source": "https://www.espn.com/nfl/team/roster/_/name/gb; https://www.espn.com/nfl/team/injuries/_/name/gb",
   "offense": {
     "qb1": {
       "player": "Jordan Love",
-      "corrected_note": "Franchise QB per Week 1 previews; jersey-heuristic picked Tyrod Taylor in error",
-      "heuristic_pick": "Tyrod Taylor",
-      "note": "16 yr, age 37"
+      "note": "7 yr, age 27. Jersey #10. Confirmed Week 3 starter; no injury designation on team injury report."
     },
     "qb2": {
-      "player": "Jordan Love",
-      "note": "7 yr, age 27"
+      "player": "Tyrod Taylor",
+      "note": "16 yr, age 37. Jersey #6. Veteran backup."
     },
     "rb1": {
       "player": "Josh Jacobs",
-      "note": "8 yr, age 28, status: Out"
+      "note": "8 yr, age 28. STATUS: Reserve / Commissioner's Exempt List as of 2026-09-23. NOT expected to play Week 3. Do NOT include in any player-prop leg unless status changes before kickoff."
     },
     "rb2": {
+      "player": "MarShawn Lloyd",
+      "note": "3 yr, age 25. Elevated in Jacobs's absence; verify starter designation against team depth chart Thursday."
+    },
+    "rb3": {
       "player": "Pierre Strong Jr.",
-      "note": "4 yr, age 27"
+      "note": "4 yr, age 27. Was listed questionable Week 1; confirm active status."
+    },
+    "rb4": {
+      "player": "Chris Brooks",
+      "note": "4 yr, age 26."
     },
     "wr1": {
       "player": "Matthew Golden",
@@ -144,6 +150,11 @@
   "prop_watchlist": [],
   "changes_log": [
     {
+      "date": "2026-09-24",
+      "change": "Week 3 refresh. QB1 verified as Jordan Love; removed stale 'jersey-heuristic picked Tyrod Taylor' block. RB1 Josh Jacobs flagged Reserve/Commissioner's Exempt (personal) — DO NOT bet Jacobs props. MarShawn Lloyd elevated to expected primary. season_record advanced to 1-1 after Week 2 OT win at NYJ 20-17. health_snapshot rebuilt from ESPN team injury page as_of 2026-09-23: added Aaron Banks OUT (toe), Jayden Reed OUT (neck), Zach Bako-Bewele season-ending patellar tear, Micah Parsons on PUP-R (knee, possible Week 5 return).",
+      "source": "https://www.espn.com/nfl/team/roster/_/name/gb; https://www.espn.com/nfl/team/injuries/_/name/gb; https://www.espn.com/nfl/team/schedule/_/name/gb"
+    },
+    {
       "date": "2026-09-13",
       "change": "Week 1 health_snapshot refreshed from ESPN roster feed: 5 out, 4 questionable, 5 IR.",
       "source": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/teams/gb/roster"
@@ -156,51 +167,62 @@
   ],
   "season_record": {
     "season": 2026,
-    "wins": 0,
+    "wins": 1,
     "losses": 1,
     "ties": 0,
-    "points_for": 22,
-    "points_against": 39,
-    "games_played": 1,
+    "points_for": 42,
+    "points_against": 56,
+    "games_played": 2,
     "last_game": {
-      "week": 1,
-      "opponent": "Minnesota Vikings",
-      "result": "L 22-39",
-      "date": "2026-09-13",
-      "notes": ""
-    },
-    "next_game": {
       "week": 2,
-      "game_id": "packers-jets",
       "opponent": "New York Jets",
+      "location": "away",
+      "result": "W 20-17 (OT)",
       "date": "2026-09-20",
-      "kickoff_et": "1:00 PM",
-      "network": "FOX",
-      "location": "away (New York Jets home stadium)"
+      "notes": "OT road win. Verify script from ESPN box score; team-total floor stayed modest despite the win."
+    },
+    "prior_games": [
+      {
+        "week": 1,
+        "opponent": "Minnesota Vikings",
+        "location": "away",
+        "result": "L 22-39",
+        "date": "2026-09-13",
+        "notes": "Blowout road loss."
+      }
+    ],
+    "next_game": {
+      "week": 3,
+      "game_id": "falcons-packers",
+      "opponent": "Atlanta Falcons",
+      "date": "2026-09-24",
+      "kickoff_et": "8:15 PM",
+      "network": "Prime Video (TNF)",
+      "location": "home (Lambeau Field)"
     }
   },
   "health_snapshot": {
-    "as_of": "2026-09-13",
+    "as_of": "2026-09-23",
     "out": [
-      "RB Josh Jacobs",
-      "DT Warren Brinson",
-      "TE Luke Musgrave",
-      "DE Micah Parsons",
-      "DT Jordon Riley"
+      "RB Josh Jacobs [Reserve/Commissioner's Exempt List - personal]",
+      "G Aaron Banks [toe]",
+      "WR Jayden Reed [neck]",
+      "OT Zach Bako-Bewele [complete patellar tendon tear, season-ending]",
+      "DT Warren Brinson [calf]"
     ],
     "questionable": [
-      "OT Zach Bako-Bewele",
-      "G Aaron Banks",
-      "LB Ty'Ron Hopper",
-      "RB Pierre Strong Jr."
+      "DT Javon Hargrave [concussion/knee]",
+      "DT Anthony Campbell [ankle]"
     ],
     "ir": [
       "S Johnathan Baldwin II",
-      "S Trey Dean III",
-      "DE Collin Oliver",
-      "WR Savion Williams",
-      "TE Thomas Yassmin"
+      "DE Collin Oliver [Achilles/calf]",
+      "WR Savion Williams [IR-R]",
+      "TE Thomas Yassmin",
+      "TE Luke Musgrave [PUP-R, neck]",
+      "DE Micah Parsons [PUP-R, knee, earliest possible return Week 5]",
+      "DT Jordon Riley [PUP-R]"
     ],
-    "notes": "Auto-refreshed from ESPN roster feed for Week 1. Verify against team's own injury report before locking picks."
+    "notes": "Refreshed from ESPN team injury page for Week 3 TNF vs ATL. Two independent RB1 losses (Jacobs on Exempt list, Reed on neck injury) reshape the offensive volume distribution. MarShawn Lloyd is the presumed lead back; verify against the team's official Wednesday injury report and Thursday inactives before locking any player-prop leg. Bako-Bewele's season-ending patellar tear is a real OL downgrade against a Falcons front already missing Ebukam."
   }
 }

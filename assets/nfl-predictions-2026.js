@@ -451,6 +451,19 @@ var NFL_PREDICTIONS_2026 = [
       ChatGPT: { version: "pending", total_stake: 0, reserve: 20, summary: "No response recorded before kickoff.", bets: [] },
       Claude: { version: "pending", total_stake: 0, reserve: 20, summary: "No response recorded before kickoff.", bets: [] },
       Gemini: { version: "Gemini web", total_stake: 20, reserve: 0, summary: "NYG +6.5 $12 reference_market DK -102 + SGP Dart O213.5 pass yds (-111) + Nabers O62.5 rec yds (-113) $8 reference_market DK/Action +195. Correlated QB pass yds + WR1 rec yds SGP. Rams depleted (Nacua doubtful, Garrett IR). Grading concerns inline (Garrett-on-Rams claim, retro record fabrication persists).", bets: [{type:"straight", market:"Spread", line:"New York Giants +6.5 (reference_market DK -102)", stake:12, confidence:6, reason:"Rams missing Nacua (WR1) and Garrett (edge); Giants dome environment with Dart"}, {type:"parlay", market:"SGP", line:"Dart O213.5 pass yds (-111) + Nabers O62.5 rec yds (-113) (reference DK +195)", stake:8, confidence:4, reason:"Correlated pass volume + WR1 target funnel in projected close game"}] }
+    },
+    result: {
+      status: "final", verified_at: "2026-09-22", awayScore: 6, homeScore: 28,
+      source: "https://www.espn.com/nfl/boxscore/_/gameId/401872947",
+      note: "Rams 28, Giants 6. LAR covered -6.5 easily (won by 22). Jaxson Dart line 3/5 for 20 pass yds. Malik Nabers 1 rec for 1 yd on 4 targets. Both Gemini legs lost; NYG spread and the QB pass yds / WR rec yds SGP both crushed by the blowout script.",
+      grades: {
+        ChatGPT: [],
+        Claude: [],
+        Gemini: [
+          { outcome: "LOSS", actual: "LAR won by 22; NYG +6.5 lost by 15.5", odds: -102, profit: -12.00 },
+          { outcome: "LOSS", actual: "Dart 20 pass yds (well UNDER 213.5), Nabers 1 rec yd (well UNDER 62.5); SGP crushed", odds: 195, profit: -8.00 }
+        ]
+      }
     }
   },
   {
@@ -1372,6 +1385,21 @@ Gemini: { version: "Gemini web", total_stake: 20, reserve: 0, summary: "ATL +2.5
           { outcome: "WIN", actual: "KC ML + 41 total UNDER 43.5", odds: 220, profit: 17.60 }
         ]
       }
+    }
+  },
+  {
+    week: 3, gameId: "falcons-packers", label: "Falcons at Packers (TNF)",
+    away: "Atlanta Falcons", home: "Green Bay Packers",
+    kickoff: "2026-09-24T20:15:00-04:00", kickoffDisplay: "Thu Sep 24, 8:15 PM ET",
+    venue: "Lambeau Field, Green Bay, WI", network: "Prime Video (TNF)",
+    line_snapshot: { spread: "GB -4.5 to -7.5 (walked)", total: 42.5, moneyline: "GB -245 / ATL +200", source: "DraftKings/ESPN Lines/CBS Sports composite captured 2026-09-24 pre-game" },
+    espn: "https://www.espn.com/nfl/boxscore/_/gameId/401872950",
+    responseFolder: "Docs/Responses/2026/week-03/game-01-falcons-packers/",
+    status: "locked", locked_at: "2026-09-24", prompt_template: "forced-selection v3.3",
+    models: {
+      ChatGPT: { version: "Codex CLI (self-reported GPT-6)", total_stake: 20, reserve: 0, summary: "Packers -4.5 $14 reference_market DK -115 + SGP Packers ML + UNDER 48.5 $6 conditional +170. Took the short-favorite spread (line at -4.5 at DraftKings capture, below the -6.5 big-favorite trap threshold). No player prop: backfield/inactive uncertainty failed a clean roster-role case. Self-reflection reported W1 '0-2 funded, Patriots-Seahawks reserve, -$20' and W2 '6-2 published +$50.99' matching the study ledger.", bets: [{type:"straight", market:"Spread", line:"Green Bay Packers -4.5 (reference_market DraftKings -115)", stake:14, confidence:6, reason:"Home GB controls a short ATL offense; short-favorite side of the trap threshold (-4.5, not -6.5+)"}, {type:"sgp", market:"SGP", line:"Packers ML + game UNDER 48.5 (conditional min +170)", stake:6, confidence:4, reason:"Controlled GB win + game stays UNDER 48.5; correlated"}] },
+      Claude: { version: "Claude Code (claude-opus-4-7)", total_stake: 20, reserve: 0, summary: "UNDER 42.5 $8 reference_market DK -110 (via ESPN Lines) + SGP Packers ML + game UNDER 42.5 $12 conditional +150. Skipped the spread (line walked -4.5 to -7.5, big-favorite trap per own W1/W2 record). Skipped all player props: Bijan trailing-side ceiling, Lloyd RBBC uncertainty, Watson ceiling, Kraft Q, London target-tree not stable off Penix first-game-back. Concentrated conviction on the low-scoring TNF grind script. Retro-record fabrication axis clean; Roster Sanity Gate results included.", bets: [{type:"straight", market:"Total", line:"UNDER 42.5 (reference_market DraftKings via ESPN Lines -110)", stake:8, confidence:6, reason:"GB missing 2 OL starters (Banks, Bako-Bewele); Penix first live action post-ACL; short TNF week; both offenses under-tuned"}, {type:"parlay", market:"SGP", line:"Packers ML + game UNDER 42.5 (conditional +150)", stake:12, confidence:4, reason:"Correlated home-fav ML + UNDER on a defensive-leaning script; same shape as W1 MNF Chiefs ML + UNDER 44.5 hit"}] },
+      Gemini: { version: "Gemini web (self-reported gemini-2.5-flash / '3.6 flash extended')", total_stake: 20, reserve: 0, summary: "UNDER 43.5 $10 reference_market DK -110 + SGP Green Bay Packers ML + Matthew Golden OVER 3.5 receptions $10 reference_market DK +180. Volume-anchored WR target-share leg on projected winner (Golden 26.1% target share, Reed OUT). Roster Sanity Gate results provided. Self-reflection reported W1 7-8 +$12.10 / W2 8-7 +$22.25 which does NOT match the study ledger (Gemini W1 12-9 +$56.18, W2 15-15 +$34.35) — Source Honesty axis flag on self-record fabrication carries over from W2.", bets: [{type:"straight", market:"Total", line:"UNDER 43.5 (reference_market DraftKings -110)", stake:10, confidence:6, reason:"ATL 8.0 PPG w/ Penix first live game post-ACL; GB O-line depleted; both teams UNDER-leaning"}, {type:"parlay", market:"SGP", line:"Green Bay Packers ML (-250) + Matthew Golden OVER 3.5 Rec (-135) (reference DK +180)", stake:10, confidence:4, reason:"Correlated home-fav win + WR target-share funnel with Reed OUT vs ATL secondary missing Terrell"}] }
     }
   }
 ];

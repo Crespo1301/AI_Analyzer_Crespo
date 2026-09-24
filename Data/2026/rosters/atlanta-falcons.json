@@ -1,16 +1,20 @@
 {
   "team": "Atlanta Falcons",
   "season": 2026,
-  "last_verified": "2026-09-09",
-  "source": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/teams/atl/roster",
+  "last_verified": "2026-09-24",
+  "source": "https://www.espn.com/nfl/team/roster/_/name/atl; https://www.espn.com/nfl/team/injuries/_/name/atl",
   "offense": {
     "qb1": {
-      "player": "Cooper Rush",
-      "note": "Actual Week 1 starter per NFL.com after Tua's Thursday oblique; Rush battling back spasms but confirmed to start"
+      "player": "Michael Penix Jr.",
+      "note": "3 yr, age 26. Verified starter for Week 3 vs GB per ESPN roster feed 2026-09-24; no injury designation on team injury report."
     },
     "qb2": {
+      "player": "Cooper Rush",
+      "note": "9 yr, age 32. Veteran backup."
+    },
+    "qb3": {
       "player": "Tua Tagovailoa",
-      "note": "OUT Week 1 (oblique, Thursday injury)"
+      "note": "7 yr, age 28. Rostered but not the Week 3 starter per ESPN depth."
     },
     "rb1": {
       "player": "Bijan Robinson",
@@ -147,6 +151,11 @@
   "prop_watchlist": [],
   "changes_log": [
     {
+      "date": "2026-09-24",
+      "change": "Week 3 refresh: QB1 corrected to Michael Penix Jr. (Cooper Rush moved to QB2, Tua to QB3) per ESPN team roster page. season_record advanced to 0-2 after Week 2 home loss to Carolina 3-34. health_snapshot rebuilt from ESPN team injury page as_of 2026-09-23: Samson Ebukam OUT (hamstring), Billy Bowman Jr. QUESTIONABLE (Achilles); A.J. Terrell Jr. added to IR (groin). next_game set to falcons-packers Week 3 @ Lambeau Field.",
+      "source": "https://www.espn.com/nfl/team/roster/_/name/atl; https://www.espn.com/nfl/team/injuries/_/name/atl; https://www.espn.com/nfl/team/schedule/_/name/atl"
+    },
+    {
       "date": "2026-09-13",
       "change": "Week 1 health_snapshot refreshed from ESPN roster feed: 7 out, 3 questionable, 4 IR.",
       "source": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/teams/atl/roster"
@@ -160,50 +169,57 @@
   "season_record": {
     "season": 2026,
     "wins": 0,
-    "losses": 1,
+    "losses": 2,
     "ties": 0,
-    "points_for": 13,
-    "points_against": 20,
-    "games_played": 1,
+    "points_for": 16,
+    "points_against": 54,
+    "games_played": 2,
     "last_game": {
-      "week": 1,
-      "opponent": "Pittsburgh Steelers",
-      "result": "L 13-20",
-      "date": "2026-09-13",
-      "notes": "Cooper Rush emergency start after Penix ruled out."
-    },
-    "next_game": {
       "week": 2,
-      "game_id": "panthers-falcons",
       "opponent": "Carolina Panthers",
+      "result": "L 3-34",
       "date": "2026-09-20",
-      "kickoff_et": "1:00 PM",
-      "network": "FOX",
-      "location": "home"
+      "notes": "Home blowout loss. Points-per-game floor collapsed vs a Panthers team that had been a road dog. Weekly-2 analysis flagged CAR as an underpriced road dog."
+    },
+    "prior_games": [
+      {
+        "week": 1,
+        "opponent": "Pittsburgh Steelers",
+        "location": "away",
+        "result": "L 13-20",
+        "date": "2026-09-13",
+        "notes": "Cooper Rush emergency start after Penix ruled out."
+      }
+    ],
+    "next_game": {
+      "week": 3,
+      "game_id": "falcons-packers",
+      "opponent": "Green Bay Packers",
+      "date": "2026-09-24",
+      "kickoff_et": "8:15 PM",
+      "network": "Prime Video (TNF)",
+      "location": "away (Lambeau Field)"
     }
   },
   "health_snapshot": {
-    "as_of": "2026-09-13",
+    "as_of": "2026-09-23",
     "out": [
-      "QB Michael Penix Jr.",
-      "QB Tua Tagovailoa",
-      "CB Billy Bowman Jr.",
-      "LB James Pearce Jr. [suspension]",
-      "LB DeAngelo Malone",
-      "OT Storm Norton",
-      "DT Anterio Thompson"
+      "DE Samson Ebukam [hamstring]",
+      "OT Storm Norton [PUP-R]",
+      "LB DeAngelo Malone [PUP-R]",
+      "DT Anterio Thompson [NFI-R]"
     ],
     "questionable": [
-      "QB Cooper Rush",
-      "DE Za'Darius Smith",
-      "DE Keshawn Banks"
+      "CB Billy Bowman Jr. [Achilles]"
     ],
     "ir": [
-      "LB JD Bertrand",
-      "WR Beaux Collins",
+      "CB A.J. Terrell Jr. [groin]",
+      "DT Da'Shawn Hand [quadriceps]",
+      "OL Cameron Williams [ankle]",
       "RB Trey Sermon",
-      "OL Cameron Williams"
+      "LB JD Bertrand",
+      "WR Beaux Collins [IR-R]"
     ],
-    "notes": "Auto-refreshed from ESPN roster feed for Week 1. Verify against team's own injury report before locking picks."
+    "notes": "Refreshed from ESPN team injury page for Week 3 TNF at GB. Cross-check the official Falcons Wednesday injury report and Thursday inactives before locking any player-prop leg. A.J. Terrell Jr. moving to IR is a meaningful downgrade for the ATL secondary vs. Jordan Love / Christian Watson."
   }
 }
