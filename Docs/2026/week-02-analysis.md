@@ -1,12 +1,12 @@
 # Week 2 Analysis, 2026 Season
 
-## Snapshot through 15 games graded (MNF pending)
+## Final snapshot through 16 games (MNF Giants @ Rams graded 2026-09-22)
 
 | Rank | Model | Record | P/L | Staked | ROI | Note |
 | :--: | ----- | ------ | --- | ------ | --- | ---- |
-| 1 | ChatGPT (via Codex CLI) | 6-2 | +$50.99 | $80 | +63.7% | Only filed 4 of 15 games. EXPIRED for Games 5-9 after hitting kickoff mid-batch. |
-| 2 | Gemini (web app) | 15-15 | +$34.35 | $300 | +11.5% | Filed 15 of 15. Cleanest structural discipline of the three. |
-| 3 | Claude (via Claude Code) | 5-13-1 | -$93.16 | $180 | -51.8% | Player-prop misses stacked; two hard roster errors below. |
+| 1 | ChatGPT (via Codex CLI) | 6-4 | +$30.99 | $100 | +31.0% | Only filed 5 of 16 games. EXPIRED for Games 5-9 after hitting kickoff mid-batch. MNF NYG +7.5 straight and NYG +10.5/UNDER 54.5 SGP both LOSS in 28-6 LAR blowout. |
+| 2 | Gemini (web app) | 15-17 | +$14.35 | $320 | +4.5% | Filed 16 of 16. MNF NYG +6.5 spread + Dart/Nabers SGP both LOSS. Cleanest structural discipline of the three. |
+| 3 | Claude (via Claude Code) | 6-14-1 | -$81.96 | $200 | -41.0% | Player-prop misses stacked; two hard roster errors below. MNF: Kyren OVER 17.5 rush att LOSS (12 actual) but LAR ML + UNDER 43.5 SGP WIN (+$19.20) at 34-total blowout. |
 
 ## What actually worked
 
