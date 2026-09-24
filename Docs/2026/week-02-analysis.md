@@ -1,12 +1,12 @@
 # Week 2 Analysis, 2026 Season
 
-## Final snapshot through 16 games (MNF Giants @ Rams graded 2026-09-22)
+## Final snapshot through 16 games (full backfill 2026-09-24)
 
 | Rank | Model | Record | P/L | Staked | ROI | Note |
 | :--: | ----- | ------ | --- | ------ | --- | ---- |
-| 1 | ChatGPT (via Codex CLI) | 6-4 | +$30.99 | $100 | +31.0% | Only filed 5 of 16 games. EXPIRED for Games 5-9 after hitting kickoff mid-batch. MNF NYG +7.5 straight and NYG +10.5/UNDER 54.5 SGP both LOSS in 28-6 LAR blowout. |
-| 2 | Gemini (web app) | 15-17 | +$14.35 | $320 | +4.5% | Filed 16 of 16. MNF NYG +6.5 spread + Dart/Nabers SGP both LOSS. Cleanest structural discipline of the three. |
-| 3 | Claude (via Claude Code) | 6-14-1 | -$81.96 | $200 | -41.0% | Player-prop misses stacked; two hard roster errors below. MNF: Kyren OVER 17.5 rush att LOSS (12 actual) but LAR ML + UNDER 43.5 SGP WIN (+$19.20) at 34-total blowout. |
+| 1 | Gemini (web app) | 15-17 | +$14.35 | $320 | +4.5% | Filed 16 of 16. MNF NYG +6.5 spread + Dart/Nabers SGP both LOSS. Cleanest structural discipline of the three. |
+| 2 | ChatGPT (via Codex CLI) | 9-13 | -$16.95 | $220 | -7.7% | Filed 11 of 16 (EXPIRED for Games 5-9 mid-batch). Won IND +6.5 W2G15 and LV +6.5 + SGP W2G11, lost the trailing-side dogs (JAX, WAS, MIA, ARI, NYG). |
+| 3 | Claude (via Claude Code) | 9-23-1 | -$138.44 | $320 | -43.3% | Filed 16 of 16. Player-prop misses stacked (BTJ, MHJ, Diggs, CMC, Kyren-WilliamsLAR); two hard roster errors (Rico Dowdle, Nico Collins). Only wins were LAR ML+UNDER SGP (+$19.20 MNF), LV Jeanty+LV+UNDER SGP (+$28.56 W2G11), Walker III OVER (+$6.96 W2G15), and Breece Hall OVER (+$9.09 W2G6). |
 
 ## What actually worked
 
