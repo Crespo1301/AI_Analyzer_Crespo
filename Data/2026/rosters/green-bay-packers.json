@@ -1,8 +1,8 @@
 {
   "team": "Green Bay Packers",
   "season": 2026,
-  "last_verified": "2026-09-24",
-  "source": "https://www.espn.com/nfl/team/roster/_/name/gb; https://www.espn.com/nfl/team/injuries/_/name/gb",
+  "last_verified": "2026-09-25",
+  "source": "https://www.espn.com/nfl/team/roster/_/name/gb; https://www.espn.com/nfl/team/injuries/_/name/gb; https://www.espn.com/nfl/boxscore/_/gameId/401872948",
   "offense": {
     "qb1": {
       "player": "Jordan Love",
@@ -147,8 +147,17 @@
       }
     ]
   },
-  "prop_watchlist": [],
+  "prop_watchlist": [
+    { "player": "Matthew Golden", "market": "receptions_over", "floor": 4, "why": "Held alpha target share with Reed OUT (5/100 W3, 26.1% target share through W2). Volume floor stable." },
+    { "player": "Christian Watson", "market": "receptions_over", "floor": 4, "why": "7/96 W3; secondary volume grew with Reed OUT. Ceiling-shape though — beware yardage OVERs." },
+    { "player": "Jordan Love", "market": "pass_attempts_over", "floor": 32, "why": "53 attempts in W3 loss; pass-heavy script when trailing. Do NOT bet pass yds OVER — ceiling shape." }
+  ],
   "changes_log": [
+    {
+      "date": "2026-09-25",
+      "change": "Week 3 post-TNF: season_record dropped to 1-2 after home loss to ATL 14-35. Love 28/53 for 312 yds 2 TDs 1 INT — high volume but low efficiency; garbage-time attempts inflated the yardage line. MarShawn Lloyd flopped as the elevated RB1 (4 att / 11 yds); the RBBC-uncertainty flag from the pre-game roster note was validated. Golden 5/100 recs kept the alpha WR role with Reed OUT. Kraft 4/26 played through Q. Set next_game to packers-buccaneers Week 4 @ Tampa.",
+      "source": "https://www.espn.com/nfl/boxscore/_/gameId/401872948; https://www.espn.com/nfl/team/schedule/_/name/gb"
+    },
     {
       "date": "2026-09-24",
       "change": "Week 3 refresh. QB1 verified as Jordan Love; removed stale 'jersey-heuristic picked Tyrod Taylor' block. RB1 Josh Jacobs flagged Reserve/Commissioner's Exempt (personal) — DO NOT bet Jacobs props. MarShawn Lloyd elevated to expected primary. season_record advanced to 1-1 after Week 2 OT win at NYJ 20-17. health_snapshot rebuilt from ESPN team injury page as_of 2026-09-23: added Aaron Banks OUT (toe), Jayden Reed OUT (neck), Zach Bako-Bewele season-ending patellar tear, Micah Parsons on PUP-R (knee, possible Week 5 return).",
@@ -168,20 +177,28 @@
   "season_record": {
     "season": 2026,
     "wins": 1,
-    "losses": 1,
+    "losses": 2,
     "ties": 0,
-    "points_for": 42,
-    "points_against": 56,
-    "games_played": 2,
+    "points_for": 56,
+    "points_against": 91,
+    "games_played": 3,
     "last_game": {
-      "week": 2,
-      "opponent": "New York Jets",
-      "location": "away",
-      "result": "W 20-17 (OT)",
-      "date": "2026-09-20",
-      "notes": "OT road win. Verify script from ESPN box score; team-total floor stayed modest despite the win."
+      "week": 3,
+      "opponent": "Atlanta Falcons",
+      "location": "home",
+      "result": "L 14-35",
+      "date": "2026-09-24",
+      "notes": "Home TNF blowout loss to +4.5-to-+7.5 dog. Love threw 53 times (garbage-time volume); MarShawn Lloyd flopped (4 att, 11 yds) validating pre-game RBBC-uncertainty flag. OL depletion (Banks, Bako-Bewele) plus a Reed-less receiver room got exploited by an ATL front that missed Ebukam and still generated pressure."
     },
     "prior_games": [
+      {
+        "week": 2,
+        "opponent": "New York Jets",
+        "location": "away",
+        "result": "W 20-17 (OT)",
+        "date": "2026-09-20",
+        "notes": "OT road win."
+      },
       {
         "week": 1,
         "opponent": "Minnesota Vikings",
@@ -192,27 +209,28 @@
       }
     ],
     "next_game": {
-      "week": 3,
-      "game_id": "falcons-packers",
-      "opponent": "Atlanta Falcons",
-      "date": "2026-09-24",
-      "kickoff_et": "8:15 PM",
-      "network": "Prime Video (TNF)",
-      "location": "home (Lambeau Field)"
+      "week": 4,
+      "game_id": "packers-buccaneers",
+      "opponent": "Tampa Bay Buccaneers",
+      "date": "2026-10-04",
+      "kickoff_et": "1:00 PM",
+      "network": "FOX",
+      "location": "away (Raymond James Stadium)"
     }
   },
   "health_snapshot": {
-    "as_of": "2026-09-23",
+    "as_of": "2026-09-25",
     "out": [
       "RB Josh Jacobs [Reserve/Commissioner's Exempt List - personal]",
       "G Aaron Banks [toe]",
       "WR Jayden Reed [neck]",
-      "OT Zach Bako-Bewele [complete patellar tendon tear, season-ending]",
+      "OT Zach Bako-Bewele [season-ending patellar tendon]",
       "DT Warren Brinson [calf]"
     ],
     "questionable": [
       "DT Javon Hargrave [concussion/knee]",
-      "DT Anthony Campbell [ankle]"
+      "DT Anthony Campbell [ankle]",
+      "TE Tucker Kraft [played through — verify Monday practice status]"
     ],
     "ir": [
       "S Johnathan Baldwin II",
@@ -223,6 +241,6 @@
       "DE Micah Parsons [PUP-R, knee, earliest possible return Week 5]",
       "DT Jordon Riley [PUP-R]"
     ],
-    "notes": "Refreshed from ESPN team injury page for Week 3 TNF vs ATL. Two independent RB1 losses (Jacobs on Exempt list, Reed on neck injury) reshape the offensive volume distribution. MarShawn Lloyd is the presumed lead back; verify against the team's official Wednesday injury report and Thursday inactives before locking any player-prop leg. Bako-Bewele's season-ending patellar tear is a real OL downgrade against a Falcons front already missing Ebukam."
+    "notes": "Post-Week 3 snapshot. Jacobs's Exempt-list situation is the load-bearing uncertainty for the rest of the month — Lloyd's Week 3 flop (4 att / 11 yds) means the market may over-weight Chris Brooks or Pierre Strong for Week 4. Refresh from https://www.espn.com/nfl/team/injuries/_/name/gb before Week 4 pick locks."
   }
 }

@@ -1470,13 +1470,32 @@ Gemini: { version: "Gemini web", total_stake: 20, reserve: 0, summary: "ATL +2.5
     kickoff: "2026-09-24T20:15:00-04:00", kickoffDisplay: "Thu Sep 24, 8:15 PM ET",
     venue: "Lambeau Field, Green Bay, WI", network: "Prime Video (TNF)",
     line_snapshot: { spread: "GB -4.5 to -7.5 (walked)", total: 42.5, moneyline: "GB -245 / ATL +200", source: "DraftKings/ESPN Lines/CBS Sports composite captured 2026-09-24 pre-game" },
-    espn: "https://www.espn.com/nfl/boxscore/_/gameId/401872950",
+    espn: "https://www.espn.com/nfl/boxscore/_/gameId/401872948",
     responseFolder: "Docs/Responses/2026/week-03/game-01-falcons-packers/",
     status: "locked", locked_at: "2026-09-24", prompt_template: "forced-selection v3.3",
     models: {
       ChatGPT: { version: "Codex CLI (self-reported GPT-5.6)", total_stake: 20, reserve: 0, summary: "Packers -4.5 $14 reference_market DK -115 + SGP Packers ML + UNDER 48.5 $6 conditional +170. Took the short-favorite spread (line at -4.5 at DraftKings capture, below the -6.5 big-favorite trap threshold). No player prop: backfield/inactive uncertainty failed a clean roster-role case. Self-reflection reported W1 '0-2 funded, Patriots-Seahawks reserve, -$20' and W2 '6-2 published +$50.99' matching the study ledger.", bets: [{type:"straight", market:"Spread", line:"Green Bay Packers -4.5 (reference_market DraftKings -115)", stake:14, confidence:6, reason:"Home GB controls a short ATL offense; short-favorite side of the trap threshold (-4.5, not -6.5+)"}, {type:"sgp", market:"SGP", line:"Packers ML + game UNDER 48.5 (conditional min +170)", stake:6, confidence:4, reason:"Controlled GB win + game stays UNDER 48.5; correlated"}] },
       Claude: { version: "Claude Code (claude-opus-4-7)", total_stake: 20, reserve: 0, summary: "UNDER 42.5 $8 reference_market DK -110 (via ESPN Lines) + SGP Packers ML + game UNDER 42.5 $12 conditional +150. Skipped the spread (line walked -4.5 to -7.5, big-favorite trap per own W1/W2 record). Skipped all player props: Bijan trailing-side ceiling, Lloyd RBBC uncertainty, Watson ceiling, Kraft Q, London target-tree not stable off Penix first-game-back. Concentrated conviction on the low-scoring TNF grind script. Retro-record fabrication axis clean; Roster Sanity Gate results included.", bets: [{type:"straight", market:"Total", line:"UNDER 42.5 (reference_market DraftKings via ESPN Lines -110)", stake:8, confidence:6, reason:"GB missing 2 OL starters (Banks, Bako-Bewele); Penix first live action post-ACL; short TNF week; both offenses under-tuned"}, {type:"parlay", market:"SGP", line:"Packers ML + game UNDER 42.5 (conditional +150)", stake:12, confidence:4, reason:"Correlated home-fav ML + UNDER on a defensive-leaning script; same shape as W1 MNF Chiefs ML + UNDER 44.5 hit"}] },
       Gemini: { version: "Gemini web (self-reported gemini-2.5-flash / '3.6 flash extended')", total_stake: 20, reserve: 0, summary: "UNDER 43.5 $10 reference_market DK -110 + SGP Green Bay Packers ML + Matthew Golden OVER 3.5 receptions $10 reference_market DK +180. Volume-anchored WR target-share leg on projected winner (Golden 26.1% target share, Reed OUT). Roster Sanity Gate results provided. Self-reflection reported W1 7-8 +$12.10 / W2 8-7 +$22.25 which does NOT match the study ledger (Gemini W1 12-9 +$56.18, W2 15-15 +$34.35) — Source Honesty axis flag on self-record fabrication carries over from W2.", bets: [{type:"straight", market:"Total", line:"UNDER 43.5 (reference_market DraftKings -110)", stake:10, confidence:6, reason:"ATL 8.0 PPG w/ Penix first live game post-ACL; GB O-line depleted; both teams UNDER-leaning"}, {type:"parlay", market:"SGP", line:"Green Bay Packers ML (-250) + Matthew Golden OVER 3.5 Rec (-135) (reference DK +180)", stake:10, confidence:4, reason:"Correlated home-fav win + WR target-share funnel with Reed OUT vs ATL secondary missing Terrell"}] }
+    },
+    result: {
+      status: "final", verified_at: "2026-09-25", awayScore: 35, homeScore: 14,
+      source: "https://www.espn.com/nfl/boxscore/_/gameId/401872948",
+      note: "Falcons 35, Packers 14. ATL outright upset as +4.5 to +7.5 dog. Total 49 blew past every UNDER line (42.5 / 43.5 / 48.5 all LOSS). Penix 18/25 for 256 pass yds 1 TD 1 INT. Bijan Robinson 29 rush att for 194 yds and 2 TDs — the biggest volume-anchored line on the board and every model rejected it. Drake London 9/194. Jordan Love 28/53 312 pass yds 2 TDs 1 INT in a garbage-time volume line. Golden 5/100 recs (Gemini's O3.5 leg hit but SGP still failed on GB ML). MarShawn Lloyd 4 att for 11 yds — Jacobs's absence and Reed OUT collapsed GB's script.",
+      grades: {
+        ChatGPT: [
+          { outcome: "LOSS", actual: "GB lost outright by 21; -4.5 crushed", odds: -115, profit: -14.00 },
+          { outcome: "LOSS", actual: "SGP: GB ML lost + UNDER 48.5 failed (49 total); both legs failed", odds: 170, profit: -6.00 }
+        ],
+        Claude: [
+          { outcome: "LOSS", actual: "Total 49 OVER 42.5", odds: -110, profit: -8.00 },
+          { outcome: "LOSS", actual: "SGP: GB ML lost + UNDER 42.5 failed; both legs failed", odds: 150, profit: -12.00 }
+        ],
+        Gemini: [
+          { outcome: "LOSS", actual: "Total 49 OVER 43.5", odds: -110, profit: -10.00 },
+          { outcome: "LOSS", actual: "SGP: Golden O3.5 leg hit (5 recs) but GB ML lost; SGP fails", odds: 180, profit: -10.00 }
+        ]
+      }
     }
   }
 ];
