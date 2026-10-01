@@ -5,7 +5,24 @@
     "start": "2026-10-01",
     "end": "2026-10-05"
   },
-  "last_verified": "",
-  "source": "",
-  "games": []
+  "last_verified": "2026-10-01",
+  "source": "https://www.espn.com/nfl/schedule/_/week/4/year/2026/seasontype/2",
+  "games": [
+    { "id": "steelers-browns", "away": "Pittsburgh Steelers", "home": "Cleveland Browns", "date": "2026-10-01", "kickoff_et": "8:15 PM", "network": "Prime Video", "venue": "Huntington Bank Field, Cleveland OH" },
+    { "id": "colts-commanders", "away": "Indianapolis Colts", "home": "Washington Commanders", "date": "2026-10-04", "kickoff_et": "9:30 AM", "network": "NFL Network", "venue": "Tottenham Hotspur Stadium, London (international series)" },
+    { "id": "patriots-bills", "away": "New England Patriots", "home": "Buffalo Bills", "date": "2026-10-04", "kickoff_et": "1:00 PM", "network": "CBS", "venue": "Highmark Stadium, Orchard Park NY" },
+    { "id": "jets-bears", "away": "New York Jets", "home": "Chicago Bears", "date": "2026-10-04", "kickoff_et": "1:00 PM", "network": "FOX", "venue": "Soldier Field, Chicago IL" },
+    { "id": "jaguars-bengals", "away": "Jacksonville Jaguars", "home": "Cincinnati Bengals", "date": "2026-10-04", "kickoff_et": "1:00 PM", "network": "CBS", "venue": "Paycor Stadium, Cincinnati OH" },
+    { "id": "cardinals-giants", "away": "Arizona Cardinals", "home": "New York Giants", "date": "2026-10-04", "kickoff_et": "1:00 PM", "network": "CBS", "venue": "MetLife Stadium, East Rutherford NJ" },
+    { "id": "rams-eagles", "away": "Los Angeles Rams", "home": "Philadelphia Eagles", "date": "2026-10-04", "kickoff_et": "1:00 PM", "network": "FOX", "venue": "Lincoln Financial Field, Philadelphia PA" },
+    { "id": "packers-buccaneers", "away": "Green Bay Packers", "home": "Tampa Bay Buccaneers", "date": "2026-10-04", "kickoff_et": "1:00 PM", "network": "FOX", "venue": "Raymond James Stadium, Tampa FL" },
+    { "id": "titans-ravens", "away": "Tennessee Titans", "home": "Baltimore Ravens", "date": "2026-10-04", "kickoff_et": "1:00 PM", "network": "CBS", "venue": "M&T Bank Stadium, Baltimore MD" },
+    { "id": "cowboys-texans", "away": "Dallas Cowboys", "home": "Houston Texans", "date": "2026-10-04", "kickoff_et": "1:00 PM", "network": "FOX", "venue": "NRG Stadium, Houston TX" },
+    { "id": "dolphins-vikings", "away": "Miami Dolphins", "home": "Minnesota Vikings", "date": "2026-10-04", "kickoff_et": "4:05 PM", "network": "FOX", "venue": "U.S. Bank Stadium, Minneapolis MN" },
+    { "id": "chiefs-raiders", "away": "Kansas City Chiefs", "home": "Las Vegas Raiders", "date": "2026-10-04", "kickoff_et": "4:25 PM", "network": "CBS", "venue": "Allegiant Stadium, Paradise NV" },
+    { "id": "broncos-niners", "away": "Denver Broncos", "home": "San Francisco 49ers", "date": "2026-10-04", "kickoff_et": "4:25 PM", "network": "CBS", "venue": "Levi's Stadium, Santa Clara CA" },
+    { "id": "chargers-seahawks", "away": "Los Angeles Chargers", "home": "Seattle Seahawks", "date": "2026-10-04", "kickoff_et": "4:25 PM", "network": "CBS", "venue": "Lumen Field, Seattle WA" },
+    { "id": "lions-panthers", "away": "Detroit Lions", "home": "Carolina Panthers", "date": "2026-10-04", "kickoff_et": "8:20 PM", "network": "NBC", "venue": "Bank of America Stadium, Charlotte NC" },
+    { "id": "falcons-saints", "away": "Atlanta Falcons", "home": "New Orleans Saints", "date": "2026-10-05", "kickoff_et": "8:15 PM", "network": "ESPN/ABC", "venue": "Caesars Superdome, New Orleans LA" }
+  ]
 }

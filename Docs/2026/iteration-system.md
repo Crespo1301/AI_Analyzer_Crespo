@@ -324,3 +324,30 @@ Track:
 
 The system is improving if it gets cleaner, more auditable, and more selective,
 even before it becomes profitable.
+
+## v3.5 — Hook-aware, script-aware, inactives-timestamped (effective 2026-10-01, Week 4)
+
+**Why:** W3 grading exposed three cross-model loss patterns that v3.4 did not prevent (full ledger in `Data/2026/results/week-03-grading.md`, debrief in `Docs/2026/week-03-analysis.md`).
+
+**Hard-rule changes vs v3.4:**
+
+A. **Hook-margin gate.** No player-prop OVER whose posted line is within 1 yd of the player's 2026 YPG average on their role. Either skip, or substitute rush-attempts OVER on the same player. (W3 evidence: Taylor 68.5→68, McCaffrey 75.5→75, Barkley 82.5→82, Jones 58.5→58 — four -0.5-yd losses.)
+
+B. **Script-aware receiver filter.** Reception OVER on winning-side WR1 requires projected pass attempts ≥ 30 OR pre-game total ≥ 46. (W3 evidence: Shakir, St. Brown, Kelce, Jefferson all missed when game script went run-heavy.)
+
+C. **Game-day inactives timestamp.** Every player-prop leg states ISO-8601 time of last inactives check. > 2h before kickoff → "pre_inactives_unconfirmed", stake halved or skipped. (W3 evidence: Daniels, Walker III, Dowdle all DNP late.)
+
+D. **Game-level Under filter.** ML + Under total SGP only when pre-game total ≤ 46. Above that, use team-total OVER on projected winner. (W3 evidence: Claude 6-for-6 on UNDER filter ≤ 46; 0-for-5 when posted total ≥ 48.)
+
+E. **Self-record quote-or-report-unknown.** Model quotes own P/L verbatim from the published grading ledger. No synthesizing numbers. Fabricated self-record caps reasoning at 1/5. (W3 evidence: Gemini W3G13 self-record contradicted its own W3G1 self-record.)
+
+F. **Codex throughput (operator-side, not prompt-side).** v3.5 does not try to fix Codex's compressed-stub pattern at the prompt layer. Operator runs Codex sequentially one game at a time, or hands lanes to Claude Code.
+
+All v3.4 clauses carry over: ≥ 3 tickets, ≥ 2 player-prop-driven, $6 game-level cap, Roster Sanity Gate, Volume-vs-Ceiling, Big-Favorite Spread Trap, Bovada honesty.
+
+**New JSON fields in v3.5 response:**
+- `role_average_margins` — per-player-prop ticket, list of {player, line, role_avg, margin, verdict}
+- `inactives_timestamps` — per-player-prop ticket, list of {player, iso8601, status}
+- `self_reflection.*_record_quoted` and `self_reflection.ledger_source` — forced quote-or-unknown pattern
+
+**Prompt files:** `Prompts/2026/week-04/game-NN-*.md` (16 files).

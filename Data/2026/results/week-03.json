@@ -1,0 +1,24 @@
+{
+  "season": 2026,
+  "week": 3,
+  "source": "https://www.espn.com/nfl/scoreboard/_/week/3/year/2026/seasontype/2",
+  "fetched_at": "2026-10-01",
+  "games": [
+    {"id": "falcons-packers", "away": "Atlanta Falcons", "away_score": 35, "home": "Green Bay Packers", "home_score": 14, "date": "2026-09-24"},
+    {"id": "chargers-bills", "away": "Los Angeles Chargers", "away_score": 16, "home": "Buffalo Bills", "home_score": 24, "date": "2026-09-27"},
+    {"id": "panthers-browns", "away": "Carolina Panthers", "away_score": 18, "home": "Cleveland Browns", "home_score": 21, "date": "2026-09-27"},
+    {"id": "jets-lions", "away": "New York Jets", "away_score": 24, "home": "Detroit Lions", "home_score": 31, "date": "2026-09-27"},
+    {"id": "texans-colts", "away": "Houston Texans", "away_score": 17, "home": "Indianapolis Colts", "home_score": 19, "date": "2026-09-27"},
+    {"id": "chiefs-dolphins", "away": "Kansas City Chiefs", "away_score": 24, "home": "Miami Dolphins", "home_score": 10, "date": "2026-09-27"},
+    {"id": "titans-giants", "away": "Tennessee Titans", "away_score": 7, "home": "New York Giants", "home_score": 12, "date": "2026-09-27"},
+    {"id": "bengals-steelers", "away": "Cincinnati Bengals", "away_score": 27, "home": "Pittsburgh Steelers", "home_score": 30, "date": "2026-09-27"},
+    {"id": "seahawks-commanders", "away": "Seattle Seahawks", "away_score": 31, "home": "Washington Commanders", "home_score": 33, "date": "2026-09-27"},
+    {"id": "patriots-jaguars", "away": "New England Patriots", "away_score": 6, "home": "Jacksonville Jaguars", "home_score": 35, "date": "2026-09-27"},
+    {"id": "cardinals-niners", "away": "Arizona Cardinals", "away_score": 30, "home": "San Francisco 49ers", "home_score": 36, "date": "2026-09-27"},
+    {"id": "vikings-buccaneers", "away": "Minnesota Vikings", "away_score": 23, "home": "Tampa Bay Buccaneers", "home_score": 16, "date": "2026-09-27"},
+    {"id": "ravens-cowboys", "away": "Baltimore Ravens", "away_score": 34, "home": "Dallas Cowboys", "home_score": 31, "date": "2026-09-27", "venue": "Maracanã Stadium, Rio de Janeiro"},
+    {"id": "raiders-saints", "away": "Las Vegas Raiders", "away_score": 35, "home": "New Orleans Saints", "home_score": 27, "date": "2026-09-27"},
+    {"id": "rams-broncos", "away": "Los Angeles Rams", "away_score": 26, "home": "Denver Broncos", "home_score": 30, "date": "2026-09-27"},
+    {"id": "eagles-bears", "away": "Philadelphia Eagles", "away_score": 7, "home": "Chicago Bears", "home_score": 27, "date": "2026-09-28"}
+  ]
+}
